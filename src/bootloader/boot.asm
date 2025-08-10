@@ -92,8 +92,9 @@ main:
     ; print hello world message
     mov si, msg_hello
     call puts
+    jmp 0x7E00 ; jump on kernel
 
-    cli                         ; disable interrupts, this way CPU can't get out of "halt" state
+    cli                         ; disable interrupts, this way CPU can't get out of "halt" state (if cpu exists kernel)
     hlt
 
 
