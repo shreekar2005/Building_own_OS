@@ -160,13 +160,12 @@ lba_to_chs:
 ;
 ; Reads sectors from a disk
 ; Parameters:
-;   - ax: LBA address
+;   - ax: LBA address (starting block number... 0 based indexing)
 ;   - cl: number of sectors to read (up to 128)
 ;   - dl: drive number
 ;   - es:bx: memory address where to store read data
 ;
 disk_read:
-
     push ax                             ; save registers we will modify
     push bx
     push cx
