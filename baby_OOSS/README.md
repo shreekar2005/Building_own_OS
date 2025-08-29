@@ -1,13 +1,15 @@
 # OOSS
 This is baby of OOSS (baby_OOSS) from scratch ☺️
-Here we wrote kernel and bootloader in assembly.
-We are loading bootloader from floppy image (which is actually virtual image of floppy disk)
-baby_OOSS have simple job :
-1: loads bootloader and say hello from baby_OOSS
-2: load kernel from bootloader and say hello from kernel 
 
-This will be long journey. 
-in OOSS we will work in C++
+Here we wrote kernel and bootloader in assembly.
+
+We are loading bootloader from floppy image (which is actually virtual image of floppy disk)
+
+baby_OOSS have simple job :
+1. loads bootloader and say hello from baby_OOSS
+2. load kernel from bootloader and say hello from kernel 
+ 
+For actual OOSS we will work in C++
 
 ### we are using Ubuntu to develop OOSS
 ## Requirements 
