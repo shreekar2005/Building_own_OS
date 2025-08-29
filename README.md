@@ -7,3 +7,5 @@ we are in learning phase also so there may be different versions for OOSS. Curre
 2. OOSS : our main goal OS to work on. It's major portion will be written in C++
 
 for more information refer to README.md from their respective folders.
+
+reference for learning : https://wiki.osdev.org/Expanded_Main_Page
