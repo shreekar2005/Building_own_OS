@@ -1,0 +1,17 @@
+Stage1 bootloader implementation:
+
+    Implemented bootloader which loades kernel but in 16bit, we have to upgrade this to load kernel in 32/64 bit protected mode to take full advantage of mahchine :)
+
+
+FAT filesystem :
+
+    LBA : Logical Block Addressing
+
+    LBA, or Logical Block Addressing, is the modern standard for specifying the location of data on a storage device like a hard drive or SSD.
+
+    LBA treats the entire disk as a simple, linear sequence of blocks (or sectors), and each one has a unique number. LBA 0 is the very first sector, LBA 1 is the second, and so on. 
+
+    Think of it like a library. The old, complicated way to find a book might be "Building C, Floor 4, Shelf 8, Book 12." This is similar to the old CHS (Cylinder-Head-Sector) system.
+
+    LBA simplifies this entirely. (Analogy = ipv6 identifies every device uniquely -tavishi)
+
