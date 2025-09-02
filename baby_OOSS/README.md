@@ -1,5 +1,5 @@
 # OOSS
-This is baby of OOSS (baby_OOSS) from scratch ☺️
+This is baby version of OOSS (baby_OOSS) from scratch ☺️
 
 Here we wrote kernel and bootloader in assembly.
 
