@@ -58,3 +58,9 @@ dkms.conf
 
 # build directory
 build
+
+busybox_linux/src/
+busybox_linux/temp.sh
+busybox_linux/bzImage
+busybox_linux/initrd
+busybox_linux/initrd.img
