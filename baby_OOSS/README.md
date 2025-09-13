@@ -22,3 +22,8 @@ For actual OOSS we will work in C++
 1. ```cd OOSS/baby_OOSS```
 2. ```make``` (to build project)
 3. ```qemu-system-i386 -fda build/main_floppy.img``` (to boot baby_OOSS virtually)
+
+
+## Demo images
+1. How this OS looks (He can greet from bootloader and kernel as well, hehe) 
+![img1](images/img1.png)
