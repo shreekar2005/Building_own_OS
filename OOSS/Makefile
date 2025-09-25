@@ -1,13 +1,10 @@
-kernelCPP = ./src/kernel.cpp
-loaderS = ./src/loader.s
-linkerLD = ./src/linker.ld
-
-objects = loader.o kernel.o
+SRC_DIR=src
+BUILD_DIR=build
 
 
 GPPPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -fno-pic
-ASPARAMS = --32
-LDPARAMS = -melf_i386
+ASPARAMS = --32 --noexecstack
+LDPARAMS = -melf_i386 
 
 
 .PHONY: all clean # to tell that all and clean are not files (they are just names to process)
@@ -15,20 +12,19 @@ LDPARAMS = -melf_i386
 # This is the first target so for mykernel.bin all dependencies will automatically got run again 
 all: mykernel.bin
 
-kernel.o: $(kernelCPP)
-	g++ $(GPPPARAMS) -o ./build/kernel.o -c $(kernelCPP)
+kernel.o: $(SRC_DIR)/kernel.cpp always
+	g++ $(GPPPARAMS) -o ./build/kernel.o -c $(SRC_DIR)/kernel.cpp
 
-loader.o: $(loaderS)
-	as $(ASPARAMS) -o ./build/loader.o $(loaderS)
+loader.o: $(SRC_DIR)/loader.s always
+	as $(ASPARAMS) -o ./build/loader.o $(SRC_DIR)/loader.s
 
-mykernel.bin: $(linkerLD) $(objects)
-	ld $(LDPARAMS) -T $< -o ./build/$@ ./build/loader.o ./build/kernel.o 
+mykernel.bin: $(SRC_DIR)/linker.ld kernel.o loader.o
+	ld $(LDPARAMS) -T $< -o $(BUILD_DIR)/$@ $(BUILD_DIR)/loader.o $(BUILD_DIR)/kernel.o 
 # $< is used for first dependancy file, $<< is used for second dependancy file
 # $@ is used for target file ... here target file is mykernel.bin
 
-# install: mykernel.bin
-# 	sudo cp $< /boot/mykernel.bin
+always:
+	mkdir -p $(BUILD_DIR)
 
-# It's also good practice to add a "clean" rule
 clean:
-	rm -f ./build/loader.o ./build/kernel.o ./build/mykernel.bin
+	rm -rf $(BUILD_DIR)/*
