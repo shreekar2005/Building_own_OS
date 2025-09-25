@@ -16,17 +16,29 @@ sudo apt-get install g++ binutils libc6-dev-i386 g++-multilib make qemu-system-x
 ### To boot from binary
 1. ```make bin``` (to build project)
 2. ```qemu-system-i386 -kernel ./build/mykernel.bin ```
+3. Combined :
+```bash
+make bin && qemu-system-i386 -kernel ./build/mykernel.bin
+```
 ### To boot from iso
 1. ```make iso``` (to build project)
 2. ```qemu-system-i386 -cdrom build/mykernel.iso```
+3. Combined :
+```bash
+make iso && qemu-system-i386 -cdrom build/mykernel.iso
+```
 ### To boot from VirtualBox
 1. ```make iso```
-2. Create new machine in VirtualBox using iso file made in build/mykernel.iso (This is one time step)
+2. Create new machine, named as "My Operating System" in VirtualBox using iso file made in build/mykernel.iso (This is one time step)
 3. KVM (Kernel-based Virtual Machine) have control on VT-x, So to give VT-x to VirualBox we have to remove KVM <br>
     ```sudo modprobe -r kvm_intel; sudo modprobe -r kvm # for intel processors```
 4. ```make run```
 5. After running you may turn on KVM module again <br>
     ```sudo modprobe kvm_intel; sudo modprobe kvm```
+6. Combined : (Dont forgot step2, step3 and step 5!!!)
+```bash
+make run
+```
 
 
 ## Learnings or some extra :
