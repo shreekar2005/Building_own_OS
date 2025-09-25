@@ -13,13 +13,17 @@ SECTIONS
         *(.rodata)
     }
 
-    .data :
+    /* A dedicated, read-only section for constructors */
+    .ctors : ALIGN(4)
     {
         start_ctors = .;
         KEEP(*(.init_array));
         KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*)));
         end_ctors = .;
+    }
 
+    .data :
+    {
         *(.data)
     }
 
@@ -27,10 +31,16 @@ SECTIONS
     {
         *(.bss)
     }
+    
+    /* Now this stack section is not actually loaded to executable file (to prevent larger size). This is just name to use in future if required */
+    .stack (NOLOAD) : { 
+        *(.stack)
+    }
 
     /DISCARD/ : 
     {
-        *(.fini_array*)
         *(.comment)
+        *(.eh_frame)
+        *(.got.plt)
     }
 }
