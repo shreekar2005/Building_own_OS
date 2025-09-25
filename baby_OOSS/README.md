@@ -1,4 +1,4 @@
-# OOSS
+# baby_OOSS
 This is baby version of OOSS (baby_OOSS) from scratch ☺️
 
 Here we wrote kernel and bootloader in assembly.
