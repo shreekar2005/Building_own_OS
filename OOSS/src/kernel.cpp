@@ -79,6 +79,10 @@ class A{
             char constructor_msg[]="constructor called \n";
             printf(constructor_msg);
         }
+        ~A(){
+            char destructor_msg[]="destructor called \n";
+            printf(destructor_msg);
+        }
 };
 
 // constructor will be called by the callConstructors() function.
@@ -89,7 +93,7 @@ extern "C" void kernelMain(void* multiboot_structure, unsigned int magicnumber){
     // constructor will be called WITHOUT the callConstructors() function.
     A a_local_instance;
 
-    char greeting_from_kernel[] = "Hello world! -- from OOSS";
+    char greeting_from_kernel[] = "Hello world! -- from OOSS\n";
     printf(greeting_from_kernel);
 
     while(1); // because kernel cannot stop at the end :)

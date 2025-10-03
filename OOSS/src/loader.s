@@ -1,5 +1,4 @@
 # actually this loader is part of kernel only, but we need some low level instructions to actually get into highlevel (c++) kernel. So i am writing this loader program
-
 .set MAGIC, 0x1badb002 
 .set FLAGS, (1<<0 | 1<<1)
 .set CHECKSUM, -(MAGIC+FLAGS)
@@ -19,6 +18,7 @@
 .extern kernelMain
 .extern callConstructors
 .extern clearScreen
+.extern printf
 .global loader
 loader:
     mov $kernel_stack, %esp # move kernel_stack value into esp register 
@@ -27,7 +27,9 @@ loader:
     push %eax # have value of pointer pointing to multiboot structure
     push %ebx # ebx have value equal to MAGIC
     call kernelMain # this not suppose to come again from kernelMain
+    
 
+    
 _stop: # another infinite loop (after kernel infi loop) for security :)
     cli
     hlt
