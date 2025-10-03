@@ -1,19 +1,35 @@
+#define exC extern "C"
+
+
 typedef void (*constructor_pointer)();
 // will fill values of start_ctors and end_ctors by linker
-extern "C" constructor_pointer start_ctors; // like void (*start_ctors)();
-extern "C" constructor_pointer end_ctors; 
+exC constructor_pointer start_ctors; // like void (*start_ctors)();
+exC constructor_pointer end_ctors; 
 // will call below function from loader
-extern "C" void callConstructors(){
+exC void callConstructors(){
     for(constructor_pointer* i=&start_ctors; i!=&end_ctors; i++){
         (*i)(); // calling each constructor pointer (like function pointer)
     }
 }
 
+
+typedef void (*destructor_pointer)();
+exC destructor_pointer start_dtors; // like void (*start_dtors)();
+exC destructor_pointer end_dtors; 
+// will call below function from loader
+exC void callDestructors(){
+    for(destructor_pointer* i=&start_dtors; i!=&end_dtors; i++){
+        (*i)(); // calling each constructor pointer (like function pointer)
+    }
+}
+
+
+
 // global variables will track the cursor's position for printf
 int cursor_x = 0;
 int cursor_y = 0;
 
-void printf(char* str){
+exC void printf(char* str){
     // actully from memory location 0xb8000 whatever is in memory that will be written on screen
     // 0xb8000 -> bb|bb|bb|bb|....
     // here for every short the high byte (first b) is reserverd for background color and char color to print
@@ -55,7 +71,7 @@ void printf(char* str){
 }
 
 // will call below function from loader
-extern "C" void clearScreen() {
+exC void clearScreen() {
     unsigned short* VideoMemory = (unsigned short*)0xb8000;
 
     // The character to fill the screen with: a space with our desired color.
@@ -88,8 +104,8 @@ class A{
 // constructor will be called by the callConstructors() function.
 A a_global_instance;
 
-// using extern "C" to avoid "name mangling" or "name decoration"
-extern "C" void kernelMain(void* multiboot_structure, unsigned int magicnumber){
+// using exC to avoid "name mangling" or "name decoration"
+exC void kernelMain(void* multiboot_structure, unsigned int magicnumber){
     // constructor will be called WITHOUT the callConstructors() function.
     A a_local_instance;
 

@@ -22,12 +22,18 @@ SECTIONS
         *(.rodata)
     } :text_segment
 
-    .ctors : ALIGN(4)
+    .ctors_dtors : ALIGN(4)
     {
         start_ctors = .;
         KEEP(*(.init_array));
         KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*)));
         end_ctors = .;
+        
+        start_dtors = .;
+        KEEP(*(.fini_array));
+        KEEP(*(SORT_BY_INIT_PRIORITY(.fini_array.*)));
+        end_dtors = .;
+
     } :text_segment /* constructors are also part of the read-only segment */
 
     /* assign sections to the 'data_segment' program header */

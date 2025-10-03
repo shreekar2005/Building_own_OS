@@ -13,27 +13,38 @@
 # with multiboot structure pointer, bootloader also copies magic number in EBX register
 # so we are going to give first param EAX and second param EBX to our kernelMain function
 
-.section .text # now actual code begins
-
-.extern kernelMain
+# extern From kernel.cpp
 .extern callConstructors
+.extern callDestructors
+.extern kernelMain
 .extern clearScreen
 .extern printf
-.global loader
-loader:
-    mov $kernel_stack, %esp # move kernel_stack value into esp register 
-    call clearScreen
-    call callConstructors
-    push %eax # have value of pointer pointing to multiboot structure
-    push %ebx # ebx have value equal to MAGIC
-    call kernelMain # this not suppose to come again from kernelMain
-    
 
-    
-_stop: # another infinite loop (after kernel infi loop) for security :)
-    cli
-    hlt
-    jmp _stop
+.section .text # now actual code begins
+    .global loader
+    loader:
+        mov $kernel_stack, %esp # move kernel_stack value into esp register 
+        call clearScreen
+
+        call callConstructors
+        push %eax # have value of pointer pointing to multiboot structure
+        push %ebx # ebx have value equal to MAGIC
+        call kernelMain # this not suppose to come again from kernelMain
+        add $8, %esp
+        call callDestructors
+
+        push $myString
+        call printf
+        add $4, %esp
+        
+    _stop: # another infinite loop (after kernel infi loop) for security :)
+        cli
+        hlt
+        jmp _stop
+
+.section .data
+    myString: 
+        .ascii "\nYou are exited kernel!!! THIS IS NOT ACCCPEATABLE ! \n"
 
 .section .stack
     .space 2*1024*1024 # move 2MB of space
