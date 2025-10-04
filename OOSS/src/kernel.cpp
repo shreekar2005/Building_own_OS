@@ -1,18 +1,24 @@
+#include <cstdint>
 #include "multiboot.h" // for handling multiboot info (provided by grub)
 #include "./utils_32bit/console.h"  // implemented my own printf function
 #define exC extern "C"
 
 
 void printMemoryMap(multiboot_info_t *mbi);
-
 // using exC to avoid "name mangling" or "name decoration"
 exC void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
 {
+    enable_cursor(0,15); // those args will decide size or shape of cursor ((0,15) is for blinking block)
+    update_cursor(0,0);
+    
     char greeting_from_kernel[] = "Hello world! -- from OOSS kernel";
     printf("%s\nMULTIBOOT_BOOTLOADER_MAGIC : %x\n", greeting_from_kernel, magicnumber);
     printMemoryMap(mbi);
     
-    while (1); // because kernel cannot stop at the end :)
+    while (1){
+        char c = get_char();
+    } // because kernel cannot stop at the end :)
+    disable_cursor();
 }
 
 // Add this function to your kernel.cpp file, for example, before kernelMain.
@@ -64,7 +70,7 @@ void printMemoryMap(multiboot_info_t *mbi)
         totalMemory+=(unsigned int)mmap->len;
     }
     totalMemory/=1024*1024;
-    printf("total memory = %fMB\n",totalMemory);
+    printf("total memory = %fMB\n\n",totalMemory);
 }
 
 // -------------------- Following functions will be called by loader -------------------------------
