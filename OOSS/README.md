@@ -1,7 +1,7 @@
 # OOSS
 This is actual OOSS from scratch ☺️
 
-Here I am writing kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
+Here I am writing 32bit kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
 
 ### I am using Ubuntu to develop OOSS
 ## Requirements 
@@ -17,6 +17,8 @@ sudo apt-get install g++ binutils libc6-dev-i386 g++-multilib make qemu-system-x
 ```bash
 make bin && qemu-system-i386 -kernel ./build/mykernel.bin
 ```
+![alt text](image.png)
+
 ### To boot from iso
 1. ```make iso``` (to build project)
 2. ```qemu-system-i386 -cdrom build/mykernel.iso```
@@ -36,6 +38,10 @@ make iso && qemu-system-i386 -cdrom build/mykernel.iso
 ```bash
 make run
 ```
+
+## What things are implemented in OOSS:
+1. Custom printf utility (checkout ./utils_32bit/console.c)
+2. Can use multiboot_info provided by grub bootloader
 
 
 ## Learnings or some extra :
