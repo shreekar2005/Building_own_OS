@@ -1,10 +1,7 @@
 # OOSS
 This is actual OOSS from scratch ☺️
 
-Here I wrote kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
-
-Jobs that current OOSS can do :
-1. greet to user by printing Hello message :)
+Here I am writing kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
 
 ### I am using Ubuntu to develop OOSS
 ## Requirements 
@@ -50,4 +47,6 @@ make run
 ### 3.  ```readelf``` and ```objdump``` : Tools to examine binaries
 1. Use readelf for understanding the ELF file structure and how it loads into memory. 
 2. Use objdump for disassembling code and general-purpose inspection.
-    
+### 4. also using ```ghidra``` for examine binaries (reverse engg) :
+1. Go to Ghidra github repository : [official Ghidra github link](https://github.com/NationalSecurityAgency/ghidra)
+2. Go to releases and download zip, ```unzip``` it, ```cd``` to it, run ```./ghidraRun```. 

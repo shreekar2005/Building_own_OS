@@ -9,9 +9,9 @@
     .long FLAGS # this is required to get information like memory map from bootloader (like GRUB) to our kerlen
     .long CHECKSUM
 
-# multiboot structure (different from my .multiboot) stores some information e.g. size of RAM etc. (boot loder creates this multiboot structure and stores pointer to that struction in EAX register)
-# with multiboot structure pointer, bootloader also copies magic number in EBX register
-# so we are going to give first param EAX and second param EBX to our kernelMain function
+# multiboot structure (not above .multiboot) stores some information e.g. size of RAM etc. (boot loder creates this multiboot structure and stores pointer to that struction in EBX register)
+# with multiboot structure pointer, bootloader also copies magic number in EAX register
+# so we are going to give first param EBX and second param EAX to our kernelMain function
 
 # extern From kernel.cpp
 .extern callConstructors
@@ -27,8 +27,8 @@
         call clearScreen
 
         call callConstructors
-        push %eax # have value of pointer pointing to multiboot structure
-        push %ebx # ebx have value equal to MAGIC
+        push %eax # the magic number is stored in EAX.
+        push %ebx # bootloader provides an information structure when the kernel boots. On x86, a physical pointer is stored in EBX
         call kernelMain # this not suppose to come again from kernelMain
         add $8, %esp
         call callDestructors
