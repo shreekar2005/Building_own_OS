@@ -42,7 +42,8 @@ make run
 ## What things are implemented in OOSS:
 1. Custom printf utility (checkout ./utils_32bit/console.c)
 2. Can use multiboot_info provided by grub bootloader
-
+3. Calling global object constructors and destructors which are listed in ```.init_array``` and ```.fini_array``` sections
+4. Can use keyboard input (typing on screen) by Polling method. (Without Interrupt Service)
 
 ## Learnings or some extra :
 ### 1. Using ```extern "C"``` in C++ :
