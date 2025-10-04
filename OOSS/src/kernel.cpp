@@ -21,7 +21,6 @@ exC void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     disable_cursor();
 }
 
-// Add this function to your kernel.cpp file, for example, before kernelMain.
 
 void printMemoryMap(multiboot_info_t *mbi)
 {
@@ -65,7 +64,7 @@ void printMemoryMap(multiboot_info_t *mbi)
             type_str = "Unknown";
             break;
         }
-        // We use %x for address and length for better readability
+        // We use %x for address
         printf("Addr: %x | Len: %dB | Type: %s\n", (unsigned int)mmap->addr, (unsigned int)mmap->len, type_str);
         totalMemory+=(unsigned int)mmap->len;
     }
