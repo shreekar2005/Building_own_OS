@@ -17,7 +17,7 @@ sudo apt-get install g++ binutils libc6-dev-i386 g++-multilib make qemu-system-x
 ```bash
 make bin && qemu-system-i386 -kernel ./build/mykernel.bin
 ```
-![alt text](image.png)
+![alt text](./ScreenShots/image.png)
 
 ### To boot from iso
 1. ```make iso``` (to build project)
