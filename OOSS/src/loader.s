@@ -1,5 +1,5 @@
 # actually this loader is part of kernel only, but we need some low level instructions to actually get into highlevel (c++) kernel. So i am writing this loader program
-.set MAGIC, 0x1badb002 
+.set MAGIC, 0x1badb002 # MULTIBOOT_HEADER_MAGIC
 .set FLAGS, (1<<0 | 1<<1)
 .set CHECKSUM, -(MAGIC+FLAGS)
 # .set will actully set that variable to given value only for assembler (variable will be not stored in object file)
@@ -10,7 +10,7 @@
     .long CHECKSUM
 
 # multiboot structure (not above .multiboot) stores some information e.g. size of RAM etc. (boot loder creates this multiboot structure and stores pointer to that struction in EBX register)
-# with multiboot structure pointer, bootloader also copies magic number in EAX register
+# bootloader also copies magic number in EAX register
 # so we are going to give first param EBX and second param EAX to our kernelMain function
 
 # extern From kernel.cpp
@@ -24,13 +24,16 @@
     .global loader
     loader:
         mov $kernel_stack, %esp # move kernel_stack value into esp register 
+        # Passing following as parameters to kernelMain
+        #######################################################################
+        push %eax # the MULTIBOOT_BOOTLOADER_MAGIC number is stored in EAX.
+        push %ebx # bootloader provides an information structure when the kernel boots, its pointer is stored in EBX
+        ######################################################################
         call clearScreen
-
         call callConstructors
-        push %eax # the magic number is stored in EAX.
-        push %ebx # bootloader provides an information structure when the kernel boots. On x86, a physical pointer is stored in EBX
         call kernelMain # this not suppose to come again from kernelMain
         add $8, %esp
+
         call callDestructors
 
         push $myString

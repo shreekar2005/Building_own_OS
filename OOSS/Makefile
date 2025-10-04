@@ -11,6 +11,11 @@ LDPARAMS  := -melf_i386
 KERNEL_OBJ := $(BUILD_DIR)/kernel.o
 LOADER_OBJ := $(BUILD_DIR)/loader.o
 OBJECTS    := $(LOADER_OBJ) $(KERNEL_OBJ)
+
+# Defining paths for utilities that we are going to use
+CONSOLE_OBJ := $(BUILD_DIR)/console.o # printf implementation
+UTIL_OBJECTS := $(CONSOLE_OBJ)
+
 TARGET_BIN := $(BUILD_DIR)/mykernel.bin
 TARGET_ISO := $(BUILD_DIR)/mykernel.iso
 
@@ -47,9 +52,13 @@ $(KERNEL_OBJ): $(SRC_DIR)/kernel.cpp | $(BUILD_DIR)
 $(LOADER_OBJ): $(SRC_DIR)/loader.s | $(BUILD_DIR)
 	as $(ASPARAMS) -o $@ $<
 
+# Rule to build console.o.
+$(CONSOLE_OBJ): $(SRC_DIR)/utils_32bit/console.c | $(BUILD_DIR)
+	g++ $(GPPPARAMS) -o $@ -c $<
+
 # Rule to link the final kernel binary.
-$(TARGET_BIN): $(OBJECTS) $(SRC_DIR)/linker.ld
-	ld $(LDPARAMS) -T $(SRC_DIR)/linker.ld -o $@ $(OBJECTS)
+$(TARGET_BIN): $(OBJECTS) $(SRC_DIR)/linker.ld $(UTIL_OBJECTS)
+	ld $(LDPARAMS) -T $(SRC_DIR)/linker.ld $(CONSOLE_OBJ) $(OBJECTS) -o $@ 
 
 # Rule to create the bootable ISO.
 $(TARGET_ISO): $(TARGET_BIN)
