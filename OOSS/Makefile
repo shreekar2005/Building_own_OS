@@ -3,32 +3,32 @@ SRC_DIR := src
 BUILD_DIR := build
 
 # Toolchain flags
-GPPPARAMS := -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -fno-pic
-ASPARAMS  := --32 --noexecstack
-LDPARAMS  := -melf_i386
+GPP       := i686-elf-g++
+GPPPARAMS := -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
+AS        := i686-elf-as
+ASPARAMS  := 
 
-# Define the full paths for the files we are building. This is much cleaner.
-KERNEL_OBJ := $(BUILD_DIR)/kernel.o
+# Actually we will not use this as g++ is better than ld for linking :)
+LD        := i686-elf-ld
+LDPARAMS  := -lgcc
+
+# Define the full paths for the files we will for building.
 LOADER_OBJ := $(BUILD_DIR)/loader.o
-OBJECTS    := $(LOADER_OBJ) $(KERNEL_OBJ)
-
-# Defining paths for utilities that we are going to use
+KERNEL_OBJ := $(BUILD_DIR)/kernel.o
 CONSOLE_OBJ := $(BUILD_DIR)/console.o # printf implementation
-UTIL_OBJECTS := $(CONSOLE_OBJ)
+OBJECTS    := $(LOADER_OBJ) $(CONSOLE_OBJ) $(KERNEL_OBJ)
 
+# Target builds
 TARGET_BIN := $(BUILD_DIR)/mykernel.bin
 TARGET_ISO := $(BUILD_DIR)/mykernel.iso
 
 # .PHONY is for targets that are NOT files
-.PHONY: default clean run
+.PHONY: default bin iso run clean
 
 default: $(TARGET_BIN) # Default target when you just type 'make'.
+
 bin: $(TARGET_BIN)
 iso: $(TARGET_ISO)
-
-# Rule to clean build directory
-clean:
-	rm -rf $(BUILD_DIR)
 
 # Rule to run the OS in VirtualBox, restarting it if it's already running.
 run: $(TARGET_ISO)
@@ -40,25 +40,29 @@ run: $(TARGET_ISO)
 	@echo "Starting VM..."
 	@VBoxManage startvm "My Operating System"
 
+# Rule to clean build directory
+clean:
+	rm -rf $(BUILD_DIR)
+
 # It's an "order-only" prerequisite for the object files (note the '|' symbol in Rule to build kernel.o and loader.o).
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 # Rule to build kernel.o.
 $(KERNEL_OBJ): $(SRC_DIR)/kernel.cpp | $(BUILD_DIR)
-	g++ $(GPPPARAMS) -o $@ -c $<
+	$(GPP) -c $< $(GPPPARAMS) -o $@
 
 # Rule to build loader.o.
 $(LOADER_OBJ): $(SRC_DIR)/loader.s | $(BUILD_DIR)
-	as $(ASPARAMS) -o $@ $<
+	$(AS) $< $(ASPARAMS) -o $@
 
 # Rule to build console.o.
-$(CONSOLE_OBJ): $(SRC_DIR)/utils_32bit/console.c | $(BUILD_DIR)
-	g++ $(GPPPARAMS) -o $@ -c $<
+$(CONSOLE_OBJ): $(SRC_DIR)/utils_32bit/console.cpp | $(BUILD_DIR)
+	$(GPP) -c $< $(GPPPARAMS) -o $@ 
 
-# Rule to link the final kernel binary.
-$(TARGET_BIN): $(OBJECTS) $(SRC_DIR)/linker.ld $(UTIL_OBJECTS)
-	ld $(LDPARAMS) -T $(SRC_DIR)/linker.ld $(CONSOLE_OBJ) $(OBJECTS) -o $@ 
+# Rule to link the final kernel binary. FOR LINKING g++ IS BETTER OVER ld
+$(TARGET_BIN): $(OBJECTS) $(SRC_DIR)/linker.ld
+	$(GPP) -T $(SRC_DIR)/linker.ld $(OBJECTS) $(GPPPARAMS) -o $@
 
 # Rule to create the bootable ISO.
 $(TARGET_ISO): $(TARGET_BIN)

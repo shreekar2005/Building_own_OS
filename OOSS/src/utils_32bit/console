@@ -8,6 +8,7 @@ extern "C" {
 // Public function declarations
 void printCharStr(const char* str);
 void clearScreen();
+/*my printf supports: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%, %ld, %li, %lu, %lx, %lX, %lo, %lld, %lli, %llu, %llx, %llX, %llo*/ 
 void printf(const char *format, ...);
 char get_char();
 void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);

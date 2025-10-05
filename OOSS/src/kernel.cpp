@@ -1,9 +1,9 @@
 #include <cstdint>
-#include "multiboot.h" // for handling multiboot info (provided by grub)
-#include "./utils_32bit/console.h"  // implemented my own printf function
+#include "multiboot" // for handling multiboot info (provided by grub)
+#include "./utils_32bit/console"  // implemented my own printf function
 #define exC extern "C"
 
-
+int global_var=1;
 void printMemoryMap(multiboot_info_t *mbi);
 // using exC to avoid "name mangling" or "name decoration"
 exC void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
@@ -14,9 +14,11 @@ exC void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     char greeting_from_kernel[] = "Hello world! -- from OOSS kernel";
     printf("%s\nMULTIBOOT_BOOTLOADER_MAGIC : %x\n", greeting_from_kernel, magicnumber);
     printMemoryMap(mbi);
-    
+    int local_var=1;
+    printf("%p %p\n",&local_var, &global_var);
     while (1){
         char c = get_char();
+        c=c; // just to avoid warning (unused variable)
     } // because kernel cannot stop at the end :)
     disable_cursor();
 }

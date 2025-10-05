@@ -1,5 +1,5 @@
-#include "console.h"
-#include <stdarg.h>
+#include "console"
+#include <cstdarg>
 
 int cursor_x_ = 0;
 int cursor_y_ = 0;
@@ -55,24 +55,24 @@ char get_char() {
 void enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
 {
     outb(0x3D4, 0x0A);
-	outb(0x3D5, (inb(0x3D5) & 0xC0) | cursor_start);
+    outb(0x3D5, (inb(0x3D5) & 0xC0) | cursor_start);
     
-	outb(0x3D4, 0x0B);
-	outb(0x3D5, (inb(0x3D5) & 0xE0) | cursor_end);
+    outb(0x3D4, 0x0B);
+    outb(0x3D5, (inb(0x3D5) & 0xE0) | cursor_end);
 }
 void update_cursor(int x, int y)
 {
-	uint16_t pos = y * 80 + x;
+    uint16_t pos = y * 80 + x;
 
-	outb(0x3D4, 0x0F);
-	outb(0x3D5, (uint8_t) (pos & 0xFF));
-	outb(0x3D4, 0x0E);
-	outb(0x3D5, (uint8_t) ((pos >> 8) & 0xFF));
+    outb(0x3D4, 0x0F);
+    outb(0x3D5, (uint8_t) (pos & 0xFF));
+    outb(0x3D4, 0x0E);
+    outb(0x3D5, (uint8_t) ((pos >> 8) & 0xFF));
 }
 void disable_cursor()
 {
-	outb(0x3D4, 0x0A);
-	outb(0x3D5, 0x20);
+    outb(0x3D4, 0x0A);
+    outb(0x3D5, 0x20);
 }
 
 #define TAB_WIDTH 4 // Standard tab width is 4 characters
@@ -182,11 +182,10 @@ static void reverse(char *str, int length)
     }
 }
 
-static void intToString(int n, char *buffer)
+static void ullToString(unsigned long long n, char *buffer, int base, int is_signed, int uppercase)
 {
     int i = 0;
     int isNegative = 0;
-    unsigned int u_n;
 
     if (n == 0)
     {
@@ -195,81 +194,24 @@ static void intToString(int n, char *buffer)
         return;
     }
 
-    if (n < 0)
+    if (is_signed && (long long)n < 0)
     {
         isNegative = 1;
-        u_n = -(unsigned int)n;
-    }
-    else
-    {
-        u_n = (unsigned int)n;
+        n = -(long long)n;
     }
 
-    while (u_n != 0)
+    while (n != 0)
     {
-        buffer[i++] = (u_n % 10) + '0';
-        u_n = u_n / 10;
+        int rem = n % base;
+        buffer[i++] = (rem > 9) ? ((rem - 10) + (uppercase ? 'A' : 'a')) : (rem + '0');
+        n = n / base;
     }
 
     if (isNegative)
     {
         buffer[i++] = '-';
     }
-    buffer[i] = '\0';
-    reverse(buffer, i);
-}
 
-static void unsignedIntToString(unsigned int n, char *buffer)
-{
-    int i = 0;
-    if (n == 0)
-    {
-        buffer[i++] = '0';
-        buffer[i] = '\0';
-        return;
-    }
-    while (n != 0)
-    {
-        buffer[i++] = (n % 10) + '0';
-        n = n / 10;
-    }
-    buffer[i] = '\0';
-    reverse(buffer, i);
-}
-
-static void hexToString(unsigned int n, char *buffer)
-{
-    int i = 0;
-    if (n == 0)
-    {
-        buffer[i++] = '0';
-        buffer[i] = '\0';
-        return;
-    }
-    while (n != 0)
-    {
-        unsigned int rem = n % 16;
-        buffer[i++] = (rem < 10) ? (rem + '0') : ((rem - 10) + 'A');
-        n = n / 16;
-    }
-    buffer[i] = '\0';
-    reverse(buffer, i);
-}
-
-static void binaryToString(unsigned int n, char *buffer)
-{
-    int i = 0;
-    if (n == 0)
-    {
-        buffer[i++] = '0';
-        buffer[i] = '\0';
-        return;
-    }
-    while (n > 0)
-    {
-        buffer[i++] = (n % 2) + '0';
-        n = n / 2;
-    }
     buffer[i] = '\0';
     reverse(buffer, i);
 }
@@ -293,35 +235,34 @@ static void doubleToString(double d, char *buffer, int precision)
         *ptr++ = '-';
         d = -d;
     }
-
-    int int_part = (int)d;
+    
+    unsigned long long int_part = (unsigned long long)d;
     double frac_part = d - (double)int_part;
 
-    char int_buffer[12];
-    intToString(int_part, int_buffer);
-    for (int i = 0; int_buffer[i] != '\0'; i++)
-        *ptr++ = int_buffer[i];
+    ullToString(int_part, ptr, 10, 0, 0);
+    while (*ptr) ptr++;
 
     *ptr++ = '.';
-
-    // Note: The fractional part is also converted to a 32-bit int
-    int frac_as_int = (int)(frac_part * power(10, precision) + 0.5);
-    char frac_buffer[12];
-    intToString(frac_as_int, frac_buffer);
+    
+    unsigned long long frac_as_ull = (unsigned long long)(frac_part * power(10, precision) + 0.5);
+    
+    char frac_buffer[32];
+    ullToString(frac_as_ull, frac_buffer, 10, 0, 0);
 
     int frac_len = 0;
-    for (frac_len = 0; frac_buffer[frac_len] != '\0'; frac_len++);
+    while(frac_buffer[frac_len] != '\0') frac_len++;
+    
     int padding = precision - frac_len;
-
     for (int i = 0; i < padding; i++)
         *ptr++ = '0';
-    for (int i = 0; frac_buffer[i] != '\0'; i++)
-        *ptr++ = frac_buffer[i];
+    
+    char* frac_ptr = frac_buffer;
+    while(*frac_ptr) *ptr++ = *frac_ptr++;
 
     *ptr = '\0';
 }
 
-// my printf supports: %c, %s, %d, %i, %u, %f, %x, %b, %p, %%
+/*my printf supports: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%, %ld, %li, %lu, %lx, %lX, %lo, %lld, %lli, %llu, %llx, %llX, %llo*/ 
 void printf(const char *format, ...)
 {
     va_list args;
@@ -336,6 +277,21 @@ void printf(const char *format, ...)
         {
             i++;
 
+            int is_long = 0;
+            int is_long_long = 0;
+
+            if (format[i] == 'l')
+            {
+                is_long = 1;
+                i++;
+                if (format[i] == 'l')
+                {
+                    is_long_long = 1;
+                    is_long = 0;
+                    i++;
+                }
+            }
+
             switch (format[i])
             {
             case 'c':
@@ -347,11 +303,21 @@ void printf(const char *format, ...)
                 break;
             case 'd':
             case 'i':
-                intToString(va_arg(args, int), buffer);
+                if (is_long_long)
+                    ullToString(va_arg(args, long long), buffer, 10, 1, 0);
+                else if (is_long)
+                    ullToString(va_arg(args, long), buffer, 10, 1, 0);
+                else
+                    ullToString(va_arg(args, int), buffer, 10, 1, 0);
                 printCharStr(buffer);
                 break;
             case 'u':
-                unsignedIntToString(va_arg(args, unsigned int), buffer);
+                if (is_long_long)
+                    ullToString(va_arg(args, unsigned long long), buffer, 10, 0, 0);
+                else if (is_long)
+                    ullToString(va_arg(args, unsigned long), buffer, 10, 0, 0);
+                else
+                    ullToString(va_arg(args, unsigned int), buffer, 10, 0, 0);
                 printCharStr(buffer);
                 break;
             case 'f':
@@ -359,18 +325,39 @@ void printf(const char *format, ...)
                 printCharStr(buffer);
                 break;
             case 'x':
-                hexToString(va_arg(args, unsigned int), buffer);
+            case 'X':
                 printCharStr("0x");
+                if (is_long_long)
+                    ullToString(va_arg(args, unsigned long long), buffer, 16, 0, (format[i] == 'X'));
+                else if (is_long)
+                    ullToString(va_arg(args, unsigned long), buffer, 16, 0, (format[i] == 'X'));
+                else
+                    ullToString(va_arg(args, unsigned int), buffer, 16, 0, (format[i] == 'X'));
                 printCharStr(buffer);
                 break;
             case 'b':
-                binaryToString(va_arg(args, unsigned int), buffer);
                 printCharStr("0b");
+                if (is_long_long)
+                    ullToString(va_arg(args, unsigned long long), buffer, 2, 0, 0);
+                else if (is_long)
+                    ullToString(va_arg(args, unsigned long), buffer, 2, 0, 0);
+                else
+                    ullToString(va_arg(args, unsigned int), buffer, 2, 0, 0);
+                printCharStr(buffer);
+                break;
+            case 'o':
+                printCharStr("0");
+                if (is_long_long)
+                    ullToString(va_arg(args, unsigned long long), buffer, 8, 0, 0);
+                else if (is_long)
+                    ullToString(va_arg(args, unsigned long), buffer, 8, 0, 0);
+                else
+                    ullToString(va_arg(args, unsigned int), buffer, 8, 0, 0);
                 printCharStr(buffer);
                 break;
             case 'p':
-                hexToString((unsigned int)va_arg(args, void *), buffer);
                 printCharStr("0x");
+                ullToString((unsigned long long)va_arg(args, void *), buffer, 16, 0, 0);
                 printCharStr(buffer);
                 break;
             case '%':

@@ -1,5 +1,6 @@
 # Cross compiler
-## Refer this website to build cross compiler : [osdev wiki page](https://wiki.osdev.org/GCC_Cross-Compiler)
+## [Why I need Cross Compiler](https://wiki.osdev.org/Why_do_I_need_a_Cross_Compiler%3F)
+## I referred this web-page to build cross compiler : [osdev wiki page](https://wiki.osdev.org/GCC_Cross-Compiler)
 
 ## Following process is for Ubuntu24.04 (may work on some distro, idk that)
 

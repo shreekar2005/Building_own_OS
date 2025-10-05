@@ -21,8 +21,8 @@
 .extern printf
 
 .section .text # now actual code begins
-    .global loader
-    loader:
+    .global _start
+    _start:
         mov $kernel_stack, %esp # move kernel_stack value into esp register 
         # Passing following as parameters to kernelMain
         #######################################################################
