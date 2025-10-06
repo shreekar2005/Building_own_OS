@@ -1,9 +1,9 @@
-# OOSS
-This is actual OOSS from scratch ☺️
+# OSOS
+This is actual OSOS from scratch ☺️
 
 Here I am writing 32bit kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
 
-### I am using Ubuntu24.04 to develop OOSS
+### I am using Ubuntu24.04 to develop OSOS
 ## Requirements 
 ### 1. Install reqrired tools
 `bash
@@ -12,9 +12,9 @@ sudo apt-get install g++ binutils libc6-dev-i386 g++-multilib make qemu-system-x
 ### 2. GCC cross-compiler (i686-elf-TOOL)
 Follow the Instructions in ../cross-compiler and `make your own cross-compiler`. You will need cross-compiler due to some reasons that you will find in cross-compiler README.
 
-#### If you dont want to make cross-compiler (which is not good idea) then you can go to this commit `f500e99459b3d1cf9e592b4be19fe4e2706ef2db` and follow current project and check whether you can build OOSS without cross compiler 🙂
+#### If you dont want to make cross-compiler (which is not good idea) then you can go to this commit `f500e99459b3d1cf9e592b4be19fe4e2706ef2db` and follow current project and check whether you can build OSOS without cross compiler 🙂
 
-## Steps to run OOSS
+## Steps to run OSOS
 ### To boot from binary
 1. `make bin` (to build project)
 2. `qemu-system-i386 -kernel ./build/mykernel.bin `
@@ -45,7 +45,7 @@ Follow the Instructions in ../cross-compiler and `make your own cross-compiler`.
     make run
     ```
 
-## What things are implemented in OOSS:
+## What things are implemented in OSOS:
 1. Custom printf utility (checkout ./utils_32bit/console.c)
 2. Can use multiboot_info provided by grub bootloader
 3. Calling global object constructors and destructors which are listed in `.init_array` and `.fini_array` sections (i am listing them in `.ctors_dtors` section created by linker script)

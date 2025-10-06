@@ -223,7 +223,7 @@ disk_reset:
     ret
 
 
-msg_hello:              db 'Hello from baby_OOSS - made by mukki-bukki !', ENDL, 0
+msg_hello:              db 'Hello from baby_OSOS - made by mukki-bukki !', ENDL, 0
 msg_read_failed:        db 'Read from disk failed!', ENDL, 0
 
 times 510-($-$$) db 0

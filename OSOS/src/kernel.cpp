@@ -11,7 +11,7 @@ exC void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     enable_cursor(0,15); // those args will decide size or shape of cursor ((0,15) is for blinking block)
     update_cursor(0,0);
     
-    char greeting_from_kernel[] = "Hello world! -- from OOSS kernel";
+    char greeting_from_kernel[] = "Hello world! -- from OSOS kernel";
     printf("%s\nMULTIBOOT_BOOTLOADER_MAGIC : %x\n", greeting_from_kernel, magicnumber);
     printMemoryMap(mbi);
     int local_var=1;
