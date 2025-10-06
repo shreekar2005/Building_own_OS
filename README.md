@@ -1,19 +1,18 @@
-# Welcome to OOSS
+# Welcome to Building_own_OS
 
-In this repo you will find src code for completely new operating system called OOSS (idk what name should I give to our OS to I choose OOSS 😁).
+## You will find detailed README in specific directory 
+e.g) README for OOSS is in OOSS directory, README for cross-compiler is in cross-compiler directory
 
-OOSS is 32bit OS
+## Introduction
+In this repo you will find src code for completely new operating system called "OOSS" (idk what name should I give to our OS to I choose "OOSS" 😁).
+I am in learning phase also so there may be subprojects like baby_OOSS, busybox_linux, etc.
 
-Our actual goal is to develop OOSS. <br>
-We are in learning phase also so there may be many subprojects like baby_OOSS, OOSS (our main goal project), busybox_linux, etc.
-
-Currently this project is divided into many subproject as follows
-1. ```baby_OOSS``` : for understanding how kernel loads in memory. In baby_OOSS we are loading bootloader in memory and then loading kernel from bootloder (with pure x86 assembly)
-2. ```OOSS``` : our main goal OS to work on. It's major portion will be written in C++
-3. ```busybox_linux``` : minimal linux based OS, which have many bash commands also (working). This is for understand how to build linux kernel
-
-### You will find detailed README for subprojects if you open specific directory 
+### Currently this Repository is divided as follows
+1. `baby_OOSS` : for understanding how kernel loads in memory. In baby_OOSS we are loading bootloader in memory and then loading kernel from bootloder (with pure x86 assembly)
+2. `cross-compiler` : You will need to build cross compiler in order to build OOSS
+3. `OOSS` : actuall OS to work on. It's major portion will be written in C++. OOSS will be 32bit OS
+4. `busybox_linux` : minimal linux based OS, which have many bash commands also (working). This is for understand how to build linux kernel
 
 ### Reference for learning : https://wiki.osdev.org/Expanded_Main_Page
 
-My machine for development : Ubuntu 24.04.2 LTS
+My machine for development : `Ubuntu 24.04.2 LTS`
