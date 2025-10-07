@@ -3,7 +3,6 @@
 #include "./utils_32bit/console"  // implemented my own printf function
 #define exC extern "C"
 
-int global_var=1;
 void printMemoryMap(multiboot_info_t *mbi);
 // using exC to avoid "name mangling" or "name decoration"
 exC void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
@@ -14,8 +13,7 @@ exC void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     char greeting_from_kernel[] = "Hello world! -- from OSOS kernel";
     printf("%s\nMULTIBOOT_BOOTLOADER_MAGIC : %x\n", greeting_from_kernel, magicnumber);
     printMemoryMap(mbi);
-    int local_var=1;
-    printf("%p %p\n",&local_var, &global_var);
+    
     while (1){
         char c = get_char();
         c=c; // just to avoid warning (unused variable)
@@ -67,7 +65,7 @@ void printMemoryMap(multiboot_info_t *mbi)
             break;
         }
         // We use %x for address
-        printf("Addr: %x | Len: %dB | Type: %s\n", (unsigned int)mmap->addr, (unsigned int)mmap->len, type_str);
+        printf("Addr: %llx | Len: %lldB | Type: %s\n", mmap->addr, mmap->len, type_str);
         totalMemory+=(unsigned int)mmap->len;
     }
     totalMemory/=1024*1024;
