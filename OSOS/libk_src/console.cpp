@@ -1,4 +1,4 @@
-#include "console"
+#include "../kernel_src/include/console"
 #include <cstdarg>
 
 int cursor_x_ = 0;

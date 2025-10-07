@@ -20,7 +20,7 @@ Follow the Instructions in ../cross-compiler and `make your own cross-compiler`.
 2. `qemu-system-i386 -kernel ./build/mykernel.bin `
 3. Combined :
     ```bash
-    make bin && qemu-system-i386 -kernel ./build/mykernel.bin
+    make bin && qemu-system-i386 -kernel kernel_build/mykernel.bin
     ```
     ![alt text](./ScreenShots/image.png)
 
@@ -29,7 +29,7 @@ Follow the Instructions in ../cross-compiler and `make your own cross-compiler`.
 2. `qemu-system-i386 -cdrom build/mykernel.iso`
 3. Combined :
     ```bash
-    make iso && qemu-system-i386 -cdrom build/mykernel.iso
+    make iso && qemu-system-i386 -cdrom kernel_build/mykernel.iso
     ```
 
 ### To boot from VirtualBox

@@ -1,6 +1,7 @@
 #include <cstdint>
-#include "multiboot" // for handling multiboot info (provided by grub)
-#include "./utils_32bit/console"  // implemented my own printf function
+#include "./include/multiboot" // header for handling multiboot info (provided by grub)
+#include "./include/console"  // header to use  printf function
+
 #define exC extern "C"
 
 void printMemoryMap(multiboot_info_t *mbi);
