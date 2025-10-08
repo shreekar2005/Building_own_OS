@@ -1,0 +1,12 @@
+#ifndef MEMORY_GUARD
+    #define MEMORY_GUARD
+    #include "./console"
+    #include "./multiboot"
+    #ifdef __cplusplus
+        extern "C" {
+    #endif
+    void printMemoryMap(multiboot_info_t *mbi);
+    #ifdef __cplusplus
+        }
+    #endif
+#endif

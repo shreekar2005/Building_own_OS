@@ -1,5 +1,4 @@
 #include "../kernel_src/include/console"
-#include <cstdarg>
 
 int cursor_x_ = 0;
 int cursor_y_ = 0;
@@ -29,7 +28,7 @@ static const char scancode_to_ascii[] = {
 };
 
 // Reads a single keypress via polling
-char get_char() {
+char keyboard_input_by_polling() {
     update_cursor(cursor_x_, cursor_y_);
     uint8_t scancode;
     

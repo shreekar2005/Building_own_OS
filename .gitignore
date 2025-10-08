@@ -56,8 +56,8 @@ dkms.conf
 # debug information files
 *.dwo
 
-# build directory
-build
+# build directories
+*build
 
 busybox_linux/src/
 busybox_linux/temp.sh

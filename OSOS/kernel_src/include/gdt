@@ -1,0 +1,11 @@
+#ifndef GDT_GUARD
+#define GDT_GUARD
+    #include "./console"
+    #ifdef __cplusplus
+        extern "C" {
+    #endif
+    void inspect_gdt();
+    #ifdef __cplusplus
+        }
+    #endif
+#endif
