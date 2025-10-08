@@ -6,7 +6,7 @@ LIBK_BUILD_DIR := libk_build
 
 # Toolchain flags
 CC       := i686-elf-g++
-CCPARAMS := -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
+CCPARAMS := -I ./$(KERNEL_SRC_DIR)/include -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
 AS        := i686-elf-as
 ASPARAMS  := 
 
@@ -33,7 +33,7 @@ TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
 # Default target when you just type 'make'. It starts qemu virtual machine
 qemu: bin 
-	qemu-system-x86_64 --kernel $(TARGET_BIN) -m 4
+	qemu-system-x86_64 --kernel $(TARGET_BIN) -m 4096
 
 # Rule to run the OS in VirtualBox, restarting it if it's already running.
 vm: iso

@@ -1,6 +1,6 @@
-#ifndef MEMORY_GUARD
-    #define MEMORY_GUARD
-    #include "./console"
+#ifndef KMEMORY_GUARD
+    #define KMEMORY_GUARD
+    #include "./kiostream"
     #include "./multiboot"
     #ifdef __cplusplus
         extern "C" {

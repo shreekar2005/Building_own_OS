@@ -1,7 +1,8 @@
 # OSOS
-This is actual OSOS from scratch ☺️
+> This is actual OSOS from scratch ☺️. Here I am writing 32bit kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
 
-Here I am writing 32bit kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
+---
+---
 
 ### I am using Ubuntu24.04 to develop OSOS
 ## Requirements 
@@ -13,6 +14,9 @@ sudo apt-get install g++ binutils libc6-dev-i386 g++-multilib make qemu-system-x
 Follow the Instructions in `../cross-compiler` and **make your own cross-compiler**. You will need cross-compiler due to some reasons that you will find in cross-compiler README.
 
 #### If you dont want to make cross-compiler (which is not good idea) then you can go to this commit `f500e99459b3d1cf9e592b4be19fe4e2706ef2db` and follow current project and check whether you can build OSOS without cross compiler 🙂
+
+---
+---
 
 ## Steps to run OSOS
 ### To boot from binary (Using QEMU PC System emulator)
@@ -29,34 +33,54 @@ make # it will build OSOSkernel.bin and boot with QEMU
     2. Set its name = "OSOS_Machine"
     3. Set ISO image = "our OSOS kernel ISO" (build by `make iso`)
     4. Set OS= "Other", Set OS Version = "Other/Unknown"
-    <br> <img src="./ScreenShots/image2.png" width="600" alt="OS and Version Settings"> <br>
+    <br> <img src="./ScreenShots/image2.png" width="500" alt="OS and Version Settings"> <br>
     5. Set Base Memory = 4GB
-    <br> <img src="./ScreenShots/image3.png" width="600" alt="Base Memory Setting"> <br>
+    <br> <img src="./ScreenShots/image3.png" width="500" alt="Base Memory Setting"> <br>
     6. Finish
 ### If you have Virtual Machine configured then you can directly run following command to start OSOS_Machine
 ```bash
-make vm # it will build OSOSkernel.iso and boot with Virtual Machine
+make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask for your sudo password)
 ```
 
+---
+---
 
 ## What things are implemented in OSOS:
 1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
-    1. **console** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
-    2. **gdt** : print_gdt()
-
+    1. **kiostream** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
+    2. **kgdt** : print_GDT(), init_GDT()
 2. Accessed multiboot info structure provided by grub bootloader.
 3. Calling global object constructors and destructors which are listed in `.init_array` and `.fini_array` sections of corresponding object files. (I am listing them in `.ctors_dtors` section in `OSOSkernel.bin` created by linker script)
 4. Can use keyboard input by Polling method. (Without Interrupt Service)
+5. Initialized Global Descriptor Table (GDT) as follows :
+<br> <img src="./ScreenShots/image4.png" width="600" alt="Base Memory Setting"> <br>
+Currently I am not separating kernel and user space (Ring0 and Ring3), That is security issue; but I will implement paging in future so there is no need for separating kernel and user space in GDT (currently flat memory)
+
+---
+---
 
 ## Learnings or some extra :
+
 ### 1. Using `extern "C"` in C++ :
-1. To prevent "name mangling" or "name decoration" (compiler modifies name of function or variable for some use cases).
-2. Use `extern "C"` if that function or variable is used by some program which is outside of current C++ file. e.g kernMain, callConstructors, clearScreen
+- To prevent "name mangling" or "name decoration" (compiler modifies name of function or variable for some use cases).
+- Use `extern "C"` if that function or variable is used by some program which is outside of current C++ file. e.g kernMain, callConstructors, clearScreen
+
 ### 2. `callConstructors` function :
-1. This function is to call constructor of global instances (constructor for local instance is called without any problem but for global instance we need this special function (actually in gcc standard libs, `crt0.o` take care of all this))
+- This function is to call constructor of global instances (constructor for local instance is called without any problem but for global instance we need this special function (actually in gcc standard libs, `crt0.o` take care of all this))
+
 ### 3.  `readelf` and `objdump` : Tools to examine binaries
-1. Use readelf for understanding the ELF file structure and how it loads into memory. 
-2. Use objdump for disassembling code and general-purpose inspection.
+- Use readelf for understanding the ELF file structure and how it loads into memory. 
+- Use objdump for disassembling code and general-purpose inspection.
+
 ### 4. Using `ghidra` for examine binaries (reverse engg) :
 1. Go to Ghidra github repository : [official Ghidra github link](https://github.com/NationalSecurityAgency/ghidra)
 2. Go to releases and download zip, `unzip` it, `cd` to it, run `./ghidraRun`. 
+### 5. My own rules while developing OSOS
+
+- Using `#include <>` for standard libraries
+- Using `#include ""` for OSOS specific libraries, e.g. libraries in `./kernel_src/include/`
+- Naming OSOS kernel libraries with prefix `'k'`, e.g. kiostream, kmemory, etc
+
+
+---
+---

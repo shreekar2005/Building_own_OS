@@ -1,4 +1,4 @@
-#include "../kernel_src/include/console"
+#include "../kernel_src/include/kiostream"
 
 int cursor_x_ = 0;
 int cursor_y_ = 0;
@@ -289,6 +289,7 @@ static void printHex(uintptr_t n, int digits) {
  * my printf supports:
  * Specifiers: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%
  * Flags:      '#' (alternative form for o, x, X, b)
+ * Precision:  '.<number>' for %x, %X, and %f (e.g., %.8X, %.2f)
  * Length:     'l' (long), 'll' (long long)
  */
 void printf(const char *format, ...)
@@ -304,15 +305,30 @@ void printf(const char *format, ...)
         if (format[i] == '%')
         {
             i++;
+            
+            // --- Parsing Flags, Precision, and Length ---
             int use_alternative_form = 0;
+            int precision = -1; // -1 indicates not specified
+            
+            // 1. Flags
             if (format[i] == '#') {
                 use_alternative_form = 1;
                 i++;
             }
 
+            // 2. Precision
+            if (format[i] == '.') {
+                i++;
+                precision = 0;
+                while (format[i] >= '0' && format[i] <= '9') {
+                    precision = precision * 10 + (format[i] - '0');
+                    i++;
+                }
+            }
+
+            // 3. Length
             int is_long = 0;
             int is_long_long = 0;
-
             if (format[i] == 'l')
             {
                 is_long = 1;
@@ -325,6 +341,7 @@ void printf(const char *format, ...)
                 }
             }
 
+            // --- Handling Specifiers ---
             switch (format[i])
             {
             case 'c':
@@ -354,12 +371,13 @@ void printf(const char *format, ...)
                 printCharStr(buffer);
                 break;
             case 'f':
-                doubleToString(va_arg(args, double), buffer, 6);
+                // Pass the parsed precision. doubleToString handles the default case.
+                doubleToString(va_arg(args, double), buffer, precision);
                 printCharStr(buffer);
                 break;
             case 'x':
             case 'X':
-                { // Use a block to declare a local variable
+                {
                     unsigned long long val;
                     if (is_long_long)
                         val = va_arg(args, unsigned long long);
@@ -372,6 +390,17 @@ void printf(const char *format, ...)
                         printCharStr("0x");
                     }
                     ullToString(val, buffer, 16, 0, (format[i] == 'X'));
+                    
+                    int len = 0;
+                    while(buffer[len] != '\0') len++;
+
+                    // Apply padding if precision is specified
+                    if (precision > len) {
+                        for (int j = 0; j < precision - len; j++) {
+                            printCharStr("0");
+                        }
+                    }
+
                     printCharStr(buffer);
                 }
                 break;

@@ -1,5 +1,5 @@
-#ifndef CONSOLE_H
-    #define CONSOLE_H
+#ifndef KIOSTREAM_H
+    #define KIOSTREAM_H
     #include <cstdint>
     #include <cstdarg>
     #ifdef __cplusplus
@@ -14,4 +14,4 @@
     #ifdef __cplusplus
         }
     #endif
-#endif // CONSOLE_H
+#endif // KIOSTREAM_H
