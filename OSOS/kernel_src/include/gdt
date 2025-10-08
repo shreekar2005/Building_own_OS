@@ -4,7 +4,7 @@
     #ifdef __cplusplus
         extern "C" {
     #endif
-    void inspect_gdt();
+    void print_gdt();
     #ifdef __cplusplus
         }
     #endif

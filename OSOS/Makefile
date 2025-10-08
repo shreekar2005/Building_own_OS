@@ -41,7 +41,7 @@ TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
 # Default target when you just type 'make'. It start qemu virtual machine
 qemu: bin 
-	qemu-system-x86_64 --kernel $(TARGET_BIN) -m 4000
+	qemu-system-x86_64 --kernel $(TARGET_BIN) -m 4
 
 # Rule to create the kernel binary.
 bin: $(TARGET_BIN) 

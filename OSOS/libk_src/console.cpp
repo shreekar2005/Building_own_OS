@@ -261,7 +261,36 @@ static void doubleToString(double d, char *buffer, int precision)
     *ptr = '\0';
 }
 
-/*my printf supports: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%, %ld, %li, %lu, %lx, %lX, %lo, %lld, %lli, %llu, %llx, %llX, %llo*/ 
+// A new helper function to handle hex printing with padding
+static void printHex(uintptr_t n, int digits) {
+    char buffer[32]; // Buffer to hold the converted string
+    
+    // Convert the number to a hex string
+    ullToString(n, buffer, 16, 0, 0);
+
+    // Figure out how long the string is
+    int len = 0;
+    while (buffer[len] != '\0') {
+        len++;
+    }
+
+    // Print the leading zeros
+    for (int i = 0; i < digits - len; i++) {
+        printCharStr("0");
+    }
+
+    // Print the actual number string
+    printCharStr(buffer);
+}
+
+
+
+/*
+ * my printf supports:
+ * Specifiers: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%
+ * Flags:      '#' (alternative form for o, x, X, b)
+ * Length:     'l' (long), 'll' (long long)
+ */
 void printf(const char *format, ...)
 {
     va_list args;
@@ -275,6 +304,11 @@ void printf(const char *format, ...)
         if (format[i] == '%')
         {
             i++;
+            int use_alternative_form = 0;
+            if (format[i] == '#') {
+                use_alternative_form = 1;
+                i++;
+            }
 
             int is_long = 0;
             int is_long_long = 0;
@@ -325,39 +359,63 @@ void printf(const char *format, ...)
                 break;
             case 'x':
             case 'X':
-                printCharStr("0x");
-                if (is_long_long)
-                    ullToString(va_arg(args, unsigned long long), buffer, 16, 0, (format[i] == 'X'));
-                else if (is_long)
-                    ullToString(va_arg(args, unsigned long), buffer, 16, 0, (format[i] == 'X'));
-                else
-                    ullToString(va_arg(args, unsigned int), buffer, 16, 0, (format[i] == 'X'));
-                printCharStr(buffer);
+                { // Use a block to declare a local variable
+                    unsigned long long val;
+                    if (is_long_long)
+                        val = va_arg(args, unsigned long long);
+                    else if (is_long)
+                        val = va_arg(args, unsigned long);
+                    else
+                        val = va_arg(args, unsigned int);
+
+                    if (use_alternative_form && val != 0) {
+                        printCharStr("0x");
+                    }
+                    ullToString(val, buffer, 16, 0, (format[i] == 'X'));
+                    printCharStr(buffer);
+                }
                 break;
-            case 'b':
-                printCharStr("0b");
-                if (is_long_long)
-                    ullToString(va_arg(args, unsigned long long), buffer, 2, 0, 0);
-                else if (is_long)
-                    ullToString(va_arg(args, unsigned long), buffer, 2, 0, 0);
-                else
-                    ullToString(va_arg(args, unsigned int), buffer, 2, 0, 0);
-                printCharStr(buffer);
+            case 'b': // note: %b and %#b are non-standard extensions
+                {
+                    unsigned long long val;
+                    if (is_long_long)
+                        val = va_arg(args, unsigned long long);
+                    else if (is_long)
+                        val = va_arg(args, unsigned long);
+                    else
+                        val = va_arg(args, unsigned int);
+                    
+                    if (use_alternative_form && val != 0) {
+                        printCharStr("0b");
+                    }
+                    ullToString(val, buffer, 2, 0, 0);
+                    printCharStr(buffer);
+                }
                 break;
             case 'o':
-                printCharStr("0");
-                if (is_long_long)
-                    ullToString(va_arg(args, unsigned long long), buffer, 8, 0, 0);
-                else if (is_long)
-                    ullToString(va_arg(args, unsigned long), buffer, 8, 0, 0);
-                else
-                    ullToString(va_arg(args, unsigned int), buffer, 8, 0, 0);
-                printCharStr(buffer);
+                {
+                    unsigned long long val;
+                    if (is_long_long)
+                        val = va_arg(args, unsigned long long);
+                    else if (is_long)
+                        val = va_arg(args, unsigned long);
+                    else
+                        val = va_arg(args, unsigned int);
+                    
+                    if (use_alternative_form && val != 0) {
+                        printCharStr("0");
+                    }
+                    ullToString(val, buffer, 8, 0, 0);
+                    printCharStr(buffer);
+                }
                 break;
             case 'p':
                 printCharStr("0x");
-                ullToString((unsigned long long)va_arg(args, void *), buffer, 16, 0, 0);
-                printCharStr(buffer);
+                if (sizeof(uintptr_t) == 4) { // 32-bit system
+                    printHex((uintptr_t)va_arg(args, void *), 8);
+                } else if (sizeof(uintptr_t) == 8) { // 64-bit system
+                    printHex((uintptr_t)va_arg(args, void *), 16);
+                }
                 break;
             case '%':
                 printCharStr("%");

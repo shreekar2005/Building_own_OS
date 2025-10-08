@@ -42,7 +42,7 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine
 ## What things are implemented in OSOS:
 1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
     1. **console** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
-    2. **gdt** : inspect_gdt()
+    2. **gdt** : print_gdt()
 
 2. Accessed multiboot info structure provided by grub bootloader.
 3. Calling global object constructors and destructors which are listed in `.init_array` and `.fini_array` sections of corresponding object files. (I am listing them in `.ctors_dtors` section in `OSOSkernel.bin` created by linker script)
