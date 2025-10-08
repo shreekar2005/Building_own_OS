@@ -19,7 +19,7 @@ Follow the Instructions in `../cross-compiler` and **make your own cross-compile
 ```bash
 make # it will build OSOSkernel.bin and boot with QEMU 
 ```
-<img src="./ScreenShots/image1.png" width="600" alt="Running OSOS on QEMU">
+<br> <img src="./ScreenShots/image1.png" width="600" alt="Running OSOS on QEMU"> <br>
 
 ### To boot from ISO (Using Virtual Box)
 #### Before booting from ISO (VirtualBox) Create new machin using following instructions :
@@ -28,10 +28,10 @@ make # it will build OSOSkernel.bin and boot with QEMU
     1. Create New Machine in Virtual Box
     2. Set its name = "OSOS_Machine"
     3. Set ISO image = "our OSOS kernel ISO" (build by `make iso`)
-    4. Set OS= "Other", Set OS Version = "Other/Unknown" <br>
-    <img src="./ScreenShots/image2.png" width="600" alt="OS and Version Settings">
-    5. Set Base Memory = 4GB <br>
-    <img src="./ScreenShots/image3.png" width="600" alt="Base Memory Setting">
+    4. Set OS= "Other", Set OS Version = "Other/Unknown"
+    <br> <img src="./ScreenShots/image2.png" width="600" alt="OS and Version Settings"> <br>
+    5. Set Base Memory = 4GB
+    <br> <img src="./ScreenShots/image3.png" width="600" alt="Base Memory Setting"> <br>
     6. Finish
 ### If you have Virtual Machine configured then you can directly run following command to start OSOS_Machine
 ```bash
