@@ -20,36 +20,45 @@ SECTIONS
         *(.multiboot)
         *(.text*)
         *(.rodata)
+
     } :text_segment
 
-    .ctors_dtors : ALIGN(4)
+    .ctors : ALIGN(4)
     {
-        start_ctors = .;
-        KEEP(*(.init_array));
-        KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*)));
-        end_ctors = .;
-        
-        start_dtors = .;
-        KEEP(*(.fini_array));
-        KEEP(*(SORT_BY_INIT_PRIORITY(.fini_array.*)));
-        end_dtors = .;
+        ctors_start = .;
+        KEEP(*(SORT(.ctors.*)))
+        KEEP(*(.ctors))
+        ctors_end = .;
 
-    } :text_segment /* constructors are also part of the read-only segment */
+    } :text_segment
+
+    .dtors : ALIGN(4)
+    {
+        dtors_start = .;
+        KEEP(*(SORT(.dtors.*)))
+        KEEP(*(.dtors))
+        dtors_end = .;
+
+    } :text_segment 
 
     /* assign sections to the 'data_segment' program header */
+
     .data :
     {
         *(.data)
+
     } :data_segment
 
     .bss :
     {
         *(.bss)
-    } :data_segment /* BSS is also part of the read-write segment */
+
+    } :data_segment
     
     .stack (NOLOAD) : { 
         *(.stack)
-    } :data_segment /* stack is also part of the read-write segment */
+
+    } :data_segment 
 
     /DISCARD/ : 
     {

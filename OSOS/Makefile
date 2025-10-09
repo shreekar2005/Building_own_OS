@@ -77,6 +77,8 @@ $(TARGET_ISO): $(TARGET_BIN)
 
 
 # Rule to clean build directory
+clear: clean
+	clear
 clean:
 	rm -rf $(KERNEL_BUILD_DIR)
 	rm -rf $(LIBK_BUILD_DIR)

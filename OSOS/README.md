@@ -48,9 +48,11 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ## What things are implemented in OSOS:
 1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
     1. **kiostream** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
-    2. **kgdt** : print_GDT(), init_GDT()
+    2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
+    3. **kgdt** : print_GDT(), init_GDT()
+    4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit), write and read port
 2. Accessed multiboot info structure provided by grub bootloader.
-3. Calling global object constructors and destructors which are listed in `.init_array` and `.fini_array` sections of corresponding object files. (I am listing them in `.ctors_dtors` section in `OSOSkernel.bin` created by linker script)
+3. Calling global object constructors and destructors which are listed in `.ctors` and `.dtors` sections of corresponding object files.
 4. Can use keyboard input by Polling method. (Without Interrupt Service)
 5. Initialized Global Descriptor Table (GDT) as follows :
 <br> <img src="./ScreenShots/image4.png" width="600" alt="Base Memory Setting"> <br>

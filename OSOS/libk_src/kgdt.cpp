@@ -126,7 +126,7 @@ void print_GDT() {
     asm volatile("sgdt %0" : "=m"(gdtr));
 
     // Print the location and size of the GDT
-    printf("GDT is located at: %p\n", (void*)gdtr.base);
+    printf("---\nGDT is located at: %p\n", (void*)gdtr.base);
     printf("Limit (size in bytes): %#x\n---\n", gdtr.limit);
 
     // Get a pointer to the first GDT entry
@@ -155,4 +155,5 @@ void print_GDT() {
                entry.access, 
                entry.granularity);
     }
+    printf("---\n");
 }
