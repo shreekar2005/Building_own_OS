@@ -53,3 +53,39 @@ void printMemoryMap(multiboot_info_t *mbi)
     double total_mb = total_available_bytes / 1024.0;
     printf("Total available memory: %.2f KB\n\n", total_mb);
 }
+
+
+/**
+ * The compiler requires these functions to be defined to handle memory
+ * allocation and deallocation, especially for classes with virtual
+ * destructors. Since we are not linking the standard library, we must
+ * provide our own. For now, they don't have to do anything.
+ */
+
+void* operator new(size_t size) noexcept {
+    (void)size;
+    return nullptr;
+}
+
+void* operator new[](size_t size) noexcept {
+    (void)size;
+    return nullptr;
+}
+
+void operator delete(void* ptr) noexcept {
+    (void)ptr;
+}
+
+void operator delete(void* ptr, size_t size) noexcept {
+    (void)ptr;
+    (void)size;
+}
+
+void operator delete[](void* ptr) noexcept {
+    (void)ptr;
+}
+
+void operator delete[](void* ptr, size_t size) noexcept {
+    (void)ptr;
+    (void)size;
+}

@@ -1,7 +1,8 @@
-#ifndef KMEMORY_GUARD
-    #define KMEMORY_GUARD
-    #include "./kiostream"
-    #include "./multiboot"
+#ifndef __KMEMORY_GUARD
+    #define __KMEMORY_GUARD
+    #include "kiostream"
+    #include "multiboot"
+    #include <cstddef>
     #ifdef __cplusplus
         extern "C" {
     #endif

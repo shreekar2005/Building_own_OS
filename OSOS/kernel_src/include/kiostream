@@ -1,5 +1,5 @@
-#ifndef KIOSTREAM_H
-    #define KIOSTREAM_H
+#ifndef __KIOSTREAM_H
+    #define __KIOSTREAM_H
     #include <cstdint>
     #include <cstdarg>
     #ifdef __cplusplus
