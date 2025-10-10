@@ -31,8 +31,8 @@ extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
         char c = keyboard_input_by_polling();
         (void)c; // just to avoid warning (unused variable)
     }
-    __cxa_finalize(0);
     disable_cursor();
+    __cxa_finalize(0);
     (void)mbi;
 }
 

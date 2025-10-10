@@ -3,12 +3,12 @@
 Port::Port(uint16_t portnumber){
     this->portnumber = portnumber;
 }
-// Port::~Port(){}
+Port::~Port(){}
 
 // ################################## 8Bit #####################################
 
 Port8Bit::Port8Bit(uint16_t portnumber):Port(portnumber){} 
-// Port8Bit ::~Port8Bit(){}
+Port8Bit ::~Port8Bit(){}
 
 void Port8Bit::write(uint8_t data){
     __asm__ volatile("outb %0, %1" : : "a"(data), "Nd"(portnumber));
@@ -22,7 +22,7 @@ uint8_t Port8Bit::read(){
 // ################################## 8BitSlow ##################################
 
 Port8BitSlow::Port8BitSlow(uint16_t portnumber):Port8Bit(portnumber){} 
-// Port8BitSlow::~Port8BitSlow(){}
+Port8BitSlow::~Port8BitSlow(){}
 
 void Port8BitSlow::write(uint8_t data){
     __asm__ volatile("outb %0, %1 \n jmp 1f \n 1: jmp 1f\n 1:" : : "a"(data), "Nd"(portnumber));
@@ -31,7 +31,7 @@ void Port8BitSlow::write(uint8_t data){
 // ################################## 16Bit #####################################
 
 Port16Bit::Port16Bit(uint16_t portnumber):Port(portnumber){} 
-// Port16Bit::~Port16Bit(){}
+Port16Bit::~Port16Bit(){}
 
 void Port16Bit::write(uint16_t data){
     __asm__ volatile("outw %0, %1" : : "a"(data), "Nd"(portnumber));
@@ -45,7 +45,7 @@ uint16_t Port16Bit::read(){
 // ################################## 32Bit #####################################
 
 Port32Bit::Port32Bit(uint16_t portnumber):Port(portnumber){} 
-// Port32Bit::~Port32Bit(){}
+Port32Bit::~Port32Bit(){}
 
 void Port32Bit::write(uint32_t data){
     __asm__ volatile("outl %0, %1" : : "a"(data), "Nd"(portnumber));
