@@ -6,7 +6,7 @@ LIBK_BUILD_DIR := libk_build
 
 # Toolchain flags
 CC       := i686-elf-g++
-CCPARAMS := -I ./$(KERNEL_SRC_DIR)/include -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc -fno-use-cxa-atexit
+CCPARAMS := -I ./$(KERNEL_SRC_DIR)/include -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
 AS        := i686-elf-as
 ASPARAMS  := 
 

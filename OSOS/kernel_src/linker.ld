@@ -32,6 +32,7 @@ SECTIONS
 
     } :text_segment
 
+    /*.dtors are not currently in use, may use in future*/
     .dtors : ALIGN(4)
     {
         dtors_start = .;

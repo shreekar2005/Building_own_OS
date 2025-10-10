@@ -1,6 +1,7 @@
 #ifndef KERNEL_PORT_H // Using a more standard include guard name
     #define KERNEL_PORT_H
     #include <cstdint>
+    #include <kiostream>
     /*
     Base class for all I/O ports
     Initialize with uint16_t portnumber
@@ -27,7 +28,7 @@
     class Port8Bit : public Port {
     public:
         explicit Port8Bit(uint16_t portnumber);
-        virtual ~Port8Bit();
+        virtual ~Port8Bit(){};
 
         virtual void write(uint8_t data);
         uint8_t read();

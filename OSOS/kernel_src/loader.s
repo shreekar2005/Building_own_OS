@@ -14,8 +14,6 @@
 # so we are going to give first param EBX and second param EAX to our kernelMain function
 
 # extern From kernel.cpp
-.extern callConstructors
-.extern callDestructors
 .extern kernelMain
 .extern clearScreen
 .extern printf
@@ -30,11 +28,8 @@
         push %ebx # bootloader provides an information structure when the kernel boots, its pointer is stored in EBX
         ######################################################################
         call clearScreen
-        call callConstructors
         call kernelMain # this not suppose to come again from kernelMain
         add $8, %esp
-
-        call callDestructors
 
         push $myString
         call printf

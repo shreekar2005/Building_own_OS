@@ -8,7 +8,7 @@ Port::Port(uint16_t portnumber){
 // ################################## 8Bit #####################################
 
 Port8Bit::Port8Bit(uint16_t portnumber):Port(portnumber){} 
-Port8Bit ::~Port8Bit(){}
+// Port8Bit ::~Port8Bit(){}
 
 void Port8Bit::write(uint8_t data){
     __asm__ volatile("outb %0, %1" : : "a"(data), "Nd"(portnumber));

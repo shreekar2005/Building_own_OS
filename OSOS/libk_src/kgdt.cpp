@@ -115,7 +115,7 @@ static void gdt_install() {
 
 
 // Initialize GDT table
-void init_GDT() {
+void __init_GDT() {
     gdt_install();
 }
 

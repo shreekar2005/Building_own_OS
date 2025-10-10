@@ -50,7 +50,7 @@
         extern "C" {
     #endif
     void print_GDT();
-    void init_GDT();
+    void __init_GDT();
     #ifdef __cplusplus
         }
     #endif

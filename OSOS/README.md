@@ -50,7 +50,8 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
     1. **kiostream** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
     2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
     3. **kgdt** : print_GDT(), init_GDT()
-    4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit), write and read port
+    4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit), write and read port**
+    5. **kicxxabi** : __callConstructors(), __cxa_finalize()
 2. Accessed multiboot info structure provided by grub bootloader.
 3. Calling global object constructors and destructors which are listed in `.ctors` and `.dtors` sections of corresponding object files.
 4. Can use keyboard input by Polling method. (Without Interrupt Service)
@@ -61,24 +62,29 @@ Currently I am not separating kernel and user space (Ring0 and Ring3), That is s
 ---
 ---
 
-## Learnings or some extra :
+## Helper programs (To correctly compile, link and run OSOS)
 
-### 1. Using `extern "C"` in C++ :
+### 1. Using `extern "C"`keyword :
 - To prevent "name mangling" or "name decoration" (compiler modifies name of function or variable for some use cases).
 - Use `extern "C"` if that function or variable is used by some program which is outside of current C++ file. e.g kernMain, callConstructors, clearScreen
 
-### 2. `callConstructors` function :
-- This function is to call constructor of global instances (constructor for local instance is called without any problem but for global instance we need this special function (actually in gcc standard libs, `crt0.o` take care of all this))
+### 2. `kicxxabi.cpp` in libk_src :
+- This is **Kernel Internal C++ Application Binary Interface**. Used by compiler while setting up virtual destructors etc.
+- **__callConstructors()** and **__cxa_finalize()** are implemented to call global constructors and destructors
 
-### 3.  `readelf` and `objdump` : Tools to examine binaries
+---
+---
+## Some extra :
+
+### 1.  `readelf` and `objdump` : Tools to examine binaries
 - Use readelf for understanding the ELF file structure and how it loads into memory. 
 - Use objdump for disassembling code and general-purpose inspection.
 
-### 4. Using `ghidra` for examine binaries (reverse engg) :
+### 2. Using `ghidra` for examine binaries (reverse engg) :
 1. Go to Ghidra github repository : [official Ghidra github link](https://github.com/NationalSecurityAgency/ghidra)
 2. Go to releases and download zip, `unzip` it, `cd` to it, run `./ghidraRun`. 
-### 5. My own rules while developing OSOS
 
+### 3. My personal rules while developing OSOS
 - Using `#include <>` for standard libraries
 - Using `#include ""` for OSOS specific libraries, e.g. libraries in `./kernel_src/include/`
 - Naming OSOS kernel libraries with prefix `'k'`, e.g. kiostream, kmemory, etc
