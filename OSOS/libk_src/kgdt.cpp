@@ -1,14 +1,10 @@
 #include "kgdt"
 
-// --- GDT_row (Segment Descriptor) Implementation ---
+// GDT_row (Segment Descriptor)
 
-/**
- * @brief Constructs a GDT entry.
- * @param base The 32-bit base address of the segment.
- * @param limit The 32-bit limit (size) of the segment.
- * @param access_byte The 8-bit access flags for the segment.
- * @param gran_byte The upper 4 bits of the granularity byte containing flags.
- */
+// Default constructor for a null GDT_row entry.
+GDT_row::GDT_row() : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
+
 GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
     this->limit_low   = (limit & 0xFFFF);
     this->base_low    = (base & 0xFFFF);
@@ -17,28 +13,16 @@ GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gra
 
     // The upper 4 bits of the 20-bit limit go into the lower 4 bits of the granularity byte.
     this->granularity = ((limit >> 16) & 0x0F);
-    
     // The granularity flags (G, D/B, L, AVL) go into the upper 4 bits.
     this->granularity |= (gran_byte & 0xF0);
-    
     // Set the access flags for this segment.
     this->access = access_byte;
 }
 
-/**
- * @brief Default constructor for a null GDT entry.
- */
-GDT_row::GDT_row() 
-    : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
-
 GDT_row::~GDT_row() {}
 
 
-// --- GDT (Global Descriptor Table) Implementation ---
-
-/**
- * @brief Constructs the GDT with standard kernel and user segments.
- */
+// GDT (Global Descriptor Table)
 GDT::GDT()
     // Use an initializer list to construct each GDT entry.
     : nullSegment(), // First entry must be a null descriptor.
@@ -57,9 +41,8 @@ GDT::GDT()
 
 GDT::~GDT() {}
 
-/**
- * @brief Loads this GDT into the CPU's GDTR and reloads segment registers.
- */
+
+// Loads this GDT into the CPU's GDTR and reloads segment registers.
 void GDT::installTable() {
     // A structure that matches the 6-byte format required by the 'lgdt' instruction.
     struct GDT_Pointer {
@@ -94,7 +77,6 @@ void GDT::installTable() {
 
 /**
  * @brief (Static) Prints the currently loaded GDT by reading the GDTR.
- * NOTE: This requires a working printf implementation in your kernel.
  */
 void GDT::printTable() {
     struct GDT_Pointer {

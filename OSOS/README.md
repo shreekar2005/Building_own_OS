@@ -49,8 +49,8 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
     1. **kiostream** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
     2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
-    3. **kgdt** : print_GDT(), init_GDT()
-    4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit), write and read port**
+    3. **kgdt** : class GDT with 1.methods : installTable | 2.static functions : kernel/user_CS/DS_selector()
+    4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read()
     5. **kicxxabi** : __callConstructors(), __cxa_finalize()
 2. Accessed multiboot info structure provided by grub bootloader.
 3. Calling global object constructors and destructors which are listed in `.ctors` and `.dtors` sections of corresponding object files.
