@@ -17,15 +17,18 @@ TestClass a_global_instance;
 
 extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
 {
-    __init_GDT();
+    GDT OSOS_GDT;
+    OSOS_GDT.installTable();
     __callConstructors();
-    // print_GDT();
     enable_cursor(0,15); // those args will decide size or shape of cursor ((0,15) is for blinking block)
-    // update_cursor(0,0);
-
+    
+    
+    
     char greeting_from_kernel[] = "Hello world! -- from OSOS kernel";
-    printf("%s\nMULTIBOOT_BOOTLOADER_MAGIC : %x\n", greeting_from_kernel, magicnumber);
-    // printMemoryMap(mbi);
+    printf("%s\nMULTIBOOT_BOOTLOADER_MAGIC : %x\n", greeting_from_kernel, magicnumber);\
+    
+    // GDT::printTable();
+    // __printMemoryMap(mbi);
     
     while (1){
         char c = keyboard_input_by_polling();

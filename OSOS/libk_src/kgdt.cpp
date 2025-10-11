@@ -1,159 +1,138 @@
-// #include "../kernel_src/include/gdt"
 #include "kgdt"
 
-#define GDT_ENTRIES 5 // We will have 5 entries: Null, Kernel Code, Kernel Data, User Code, User Data
-
-/* The GDT entry struct (defined by CPU architecture) */
-struct gdt_entry_t {
-    uint16_t limit_low;
-    uint16_t base_low;
-    uint8_t  base_middle;
-    uint8_t  access;
-    uint8_t  granularity;
-    uint8_t  base_high;
-} __attribute__((packed));
-
-/* The GDT Register (GDTR) struct */
-struct gdtr_t {
-    uint16_t limit;
-    uintptr_t base; // Use uintptr_t for an integer type that can hold a pointer
-} __attribute__((packed));
-
-
-// Our GDT and the pointer to it
-gdt_entry_t gdt_entries[GDT_ENTRIES];
-gdtr_t      gdt_ptr;
-
+// --- GDT_row (Segment Descriptor) Implementation ---
 
 /**
- * @brief Loads the specified GDT and reloads all segment registers.
- * @param gdt_ptr_addr The memory address of the GDTR structure.
+ * @brief Constructs a GDT entry.
+ * @param base The 32-bit base address of the segment.
+ * @param limit The 32-bit limit (size) of the segment.
+ * @param access_byte The 8-bit access flags for the segment.
+ * @param gran_byte The upper 4 bits of the granularity byte containing flags.
  */
-static void gdt_flush(uintptr_t gdt_ptr_addr) {
+GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
+    this->limit_low   = (limit & 0xFFFF);
+    this->base_low    = (base & 0xFFFF);
+    this->base_middle = (base >> 16) & 0xFF;
+    this->base_high   = (base >> 24) & 0xFF;
+
+    // The upper 4 bits of the 20-bit limit go into the lower 4 bits of the granularity byte.
+    this->granularity = ((limit >> 16) & 0x0F);
+    
+    // The granularity flags (G, D/B, L, AVL) go into the upper 4 bits.
+    this->granularity |= (gran_byte & 0xF0);
+    
+    // Set the access flags for this segment.
+    this->access = access_byte;
+}
+
+/**
+ * @brief Default constructor for a null GDT entry.
+ */
+GDT_row::GDT_row() 
+    : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
+
+GDT_row::~GDT_row() {}
+
+
+// --- GDT (Global Descriptor Table) Implementation ---
+
+/**
+ * @brief Constructs the GDT with standard kernel and user segments.
+ */
+GDT::GDT()
+    // Use an initializer list to construct each GDT entry.
+    : nullSegment(), // First entry must be a null descriptor.
+      kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
+      kernel_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL0, GDT_GRAN_FLAGS),
+      user_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL3, GDT_GRAN_FLAGS),
+      user_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL3, GDT_GRAN_FLAGS)
+{
+    // The GDT limit is its total size in bytes minus 1.
+    // 5 entries * 8 bytes/entry = 40 bytes. Limit = 39 (0x27).
+    limit = (sizeof(GDT_row) * 5) - 1;
+    
+    // The base address is the address of the first entry in our table.
+    base = (uintptr_t)&this->nullSegment;
+}
+
+GDT::~GDT() {}
+
+/**
+ * @brief Loads this GDT into the CPU's GDTR and reloads segment registers.
+ */
+void GDT::installTable() {
+    // A structure that matches the 6-byte format required by the 'lgdt' instruction.
+    struct GDT_Pointer {
+        uint16_t limit;
+        uint32_t base; // Use uint32_t for our i686 (32-bit) target
+    } __attribute__((packed));
+
+    GDT_Pointer gdt_ptr;
+    gdt_ptr.limit = this->limit;
+    gdt_ptr.base = this->base;
+    
     asm volatile(
-        // Load the Global Descriptor Table Register (GDTR) with the address
-        // of our GDT pointer structure. %0 is the input operand (gdt_ptr_addr).
+        // Load the address of our GDT_Pointer structure into the GDTR.
         "lgdt (%0)\n\t"
 
-        // Reload the data segment registers. 0x10 is the selector for our
-        // kernel data segment. We must use '%%' to escape the '%' for registers.
-        "mov $0x10, %%ax\n\t"
+        // Reload all data segment registers with the kernel data selector.
+        "mov $0x10, %%ax\n\t"   // 0x10 is the selector for kernel_DS
         "mov %%ax, %%ds\n\t"
         "mov %%ax, %%es\n\t"
         "mov %%ax, %%fs\n\t"
         "mov %%ax, %%gs\n\t"
         "mov %%ax, %%ss\n\t"
 
-        // Perform a far jump to reload the Code Segment (CS) register.
-        // 0x08 is the selector for our kernel code segment.
-        // '1f' creates a local label to jump to (f = forward).
-        "jmp $0x08, $1f\n\t"
-        "1:\n\t"
+        // Perform a 32-bit far jump to reload the CS register and flush the CPU pipeline.
+        "jmp $0x08, $flush_cs\n\t" // 0x08 is the selector for kernel_CS
+        "flush_cs:\n\t"
         : // No output operands
-        : "r"(gdt_ptr_addr) // Input operand: gdt_ptr_addr is passed in a general-purpose register
-        : "memory", "eax" // Clobbered resources: we modify memory and the EAX register
+        : "r"(&gdt_ptr) // Input: address of our GDT_Pointer
+        : "memory", "eax" // Clobbered registers
     );
 }
 
-
 /**
- * @brief Sets a single GDT entry.
- * @param num The index of the entry in the GDT.
- * @param base The base address of the segment.
- * @param limit The limit of the segment.
- * @param access The access flags for the segment.
- * @param gran The granularity flags for the segment.
+ * @brief (Static) Prints the currently loaded GDT by reading the GDTR.
+ * NOTE: This requires a working printf implementation in your kernel.
  */
-static void gdt_set_gate(int num, uint32_t base, uint32_t limit, uint8_t access, uint8_t gran) {
-    gdt_entries[num].base_low    = (base & 0xFFFF);
-    gdt_entries[num].base_middle = (base >> 16) & 0xFF;
-    gdt_entries[num].base_high   = (base >> 24) & 0xFF;
+void GDT::printTable() {
+    struct GDT_Pointer {
+        uint16_t limit;
+        uint32_t base;
+    } __attribute__((packed));
 
-    gdt_entries[num].limit_low   = (limit & 0xFFFF);
-    // Set the upper 4 bits of the limit in the lower 4 bits of the granularity byte
-    gdt_entries[num].granularity = ((limit >> 16) & 0x0F);
-
-    // Set the granularity flags (G, D/B, L, AVL) in the upper 4 bits of the granularity byte
-    gdt_entries[num].granularity |= (gran & 0xF0);
-    gdt_entries[num].access      = access;
-}
-
-/**
- * @brief Initializes and installs the GDT.
- */
-static void gdt_install() {
-    // Set up the GDTR pointer
-    gdt_ptr.limit = (sizeof(gdt_entry_t) * GDT_ENTRIES) - 1;
-    gdt_ptr.base  = (uintptr_t)&gdt_entries;
-
-    // 1. Null segment (required by CPU)
-    // Selector: 0x00
-    gdt_set_gate(0, 0, 0, 0, 0);
-
-    // We extract the access byte (lower 8 bits) and the granularity flags (from the higher 8 bits).
-    // Note: Parentheses around the GDT_... macros are CRITICAL to avoid operator precedence bugs.
-    
-    // 2. Kernel Code Segment (Ring 0)
-    // Selector: 0x08
-    gdt_set_gate(1, 0, 0xFFFFFFFF, ((GDT_CODE_PL0) & 0xFF), ((GDT_CODE_PL0) >> 8));
-
-    // 3. Kernel Data Segment (Ring 0)
-    // Selector: 0x10
-    gdt_set_gate(2, 0, 0xFFFFFFFF, ((GDT_DATA_PL0) & 0xFF), ((GDT_DATA_PL0) >> 8));
-
-    // 4. User Code Segment (Ring 3)
-    // Selector: 0x18
-    gdt_set_gate(3, 0, 0xFFFFFFFF, ((GDT_CODE_PL3) & 0xFF), ((GDT_CODE_PL3) >> 8));
-    
-    // 5. User Data Segment (Ring 3)
-    // Selector: 0x20
-    gdt_set_gate(4, 0, 0xFFFFFFFF, ((GDT_DATA_PL3) & 0xFF), ((GDT_DATA_PL3) >> 8));
-
-    // Load our new GDT
-    gdt_flush((uintptr_t)&gdt_ptr);
-}
-
-
-// Initialize GDT table
-void __init_GDT() {
-    gdt_install();
-}
-
-
-// Print global descriptor table
-void print_GDT() {
-    struct gdtr_t gdtr;
+    GDT_Pointer gdtr;
+    // Store the current GDT register contents into our struct.
     asm volatile("sgdt %0" : "=m"(gdtr));
 
-    // Print the location and size of the GDT
-    printf("---\nGDT is located at: %p\n", (void*)gdtr.base);
-    printf("Limit (size in bytes): %#x\n---\n", gdtr.limit);
+    printf("---\nCurrently Loaded GDT is at: %p\n", (void*)gdtr.base);
+    printf("Limit (size in bytes - 1): %#x\n---\n", gdtr.limit);
 
-    // Get a pointer to the first GDT entry
-    struct gdt_entry_t* gdt_entries_ptr = (struct gdt_entry_t*)gdtr.base;
-    
-    // Calculate how many entries there are
-    int num_entries = (gdtr.limit + 1) / sizeof(struct gdt_entry_t);
+    GDT_row* gdt_entries = (GDT_row*)gdtr.base;
+    int num_entries = (gdtr.limit + 1) / sizeof(GDT_row);
 
     for (int i = 0; i < num_entries; i++) {
-        struct gdt_entry_t entry = gdt_entries_ptr[i];
+        GDT_row entry = gdt_entries[i];
 
-        // Combine the scattered base and limit fields
+        // Reconstruct the base and limit from the scattered fields.
         uint32_t base = entry.base_high << 24 | entry.base_middle << 16 | entry.base_low;
         uint32_t limit = (entry.granularity & 0x0F) << 16 | entry.limit_low;
         
-        // Check the Granularity bit
+        // If the granularity bit is set, the limit is in 4 KiB pages.
         if ((entry.granularity & 0x80) != 0) {
-            // If the G bit is set, the limit is in 4 KiB pages
             limit = (limit << 12) | 0xFFF;
         }
 
         printf("Entry %d: Base=%p, Limit=%#x, Access=%#x, Granularity=%#x\n",
-               i, 
-               (void*)(uintptr_t)base, // Cast base to void* for %p
-               limit, 
-               entry.access, 
-               entry.granularity);
+               i, (void*)(uintptr_t)base, limit, entry.access, entry.granularity);
     }
     printf("---\n");
 }
+
+// --- Static functions to get segment selectors ---
+
+uint16_t GDT::kernel_CS_selector() { return sizeof(GDT_row) * 1; } // Selector 0x08
+uint16_t GDT::kernel_DS_selector() { return sizeof(GDT_row) * 2; } // Selector 0x10
+uint16_t GDT::user_CS_selector()   { return sizeof(GDT_row) * 3; } // Selector 0x18
+uint16_t GDT::user_DS_selector()   { return sizeof(GDT_row) * 4; } // Selector 0x20

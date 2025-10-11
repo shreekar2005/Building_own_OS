@@ -6,7 +6,7 @@
     #ifdef __cplusplus
         extern "C" {
     #endif
-    void printMemoryMap(multiboot_info_t *mbi);
+    void __printMemoryMap(multiboot_info_t *mbi);
     #ifdef __cplusplus
         }
     #endif
