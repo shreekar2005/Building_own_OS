@@ -1,6 +1,6 @@
-#ifndef __INTERRUPTS_H
+#ifndef __KINTERRUPT_H
 
-    #define __INTERRUPTS_H
+    #define __KINTERRUPT_H
     #include <cstdint>
     #include "kiostream"
     #include "kport"

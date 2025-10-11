@@ -1,4 +1,4 @@
-#include "interrupts"
+#include "kinterrupt"
 
 // Global pointer to the active interrupt manager instance
 // This allows our static C-style handlers to access the C++ object.

@@ -33,9 +33,9 @@ make # it will build OSOSkernel.bin and boot with QEMU
     2. Set its name = "OSOS_Machine"
     3. Set ISO image = "our OSOS kernel ISO" (build by `make iso`)
     4. Set OS= "Other", Set OS Version = "Other/Unknown"
-    <br> <img src="./ScreenShots/image2.png" width="500" alt="OS and Version Settings"> <br>
+    <!-- <br> <img src="./ScreenShots/image2.png" width="500" alt="OS and Version Settings"> <br> -->
     5. Set Base Memory = 4GB
-    <br> <img src="./ScreenShots/image3.png" width="500" alt="Base Memory Setting"> <br>
+    <!-- <br> <img src="./ScreenShots/image3.png" width="500" alt="Base Memory Setting"> <br> -->
     6. Finish
 ### If you have Virtual Machine configured then you can directly run following command to start OSOS_Machine
 ```bash
@@ -46,23 +46,32 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ---
 
 ## What things are implemented in OSOS:
+
 1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
     1. **kiostream** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
     2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
     3. **kgdt** : class GDT with 1.methods : installTable | 2.static functions : kernel/user_CS/DS_selector()
     4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read()
     5. **kicxxabi** : __callConstructors(), __cxa_finalize()
+    6. **kinterrupt** : Have InterruptManager, which can manage interrupts. 
+
 2. Accessed multiboot info structure provided by grub bootloader.
+
 3. Calling global object constructors and destructors which are listed in `.ctors` and `.dtors` sections of corresponding object files.
+
 4. Can use keyboard input by Polling method. (Without Interrupt Service)
+
 5. Initialized Global Descriptor Table (GDT) as follows :
 <br> <img src="./ScreenShots/image4.png" width="600" alt="Base Memory Setting"> <br>
 Currently I am not separating kernel and user space (Ring0 and Ring3), That is security issue; but I will implement paging in future so there is no need for separating kernel and user space in GDT (currently flat memory)
 
+6. Initialized Interrupt Descriptor Table (IDT) to enable interrupts and make OSOS an interrupt driven OS.
+<br> <img src="./ScreenShots/image5.png" width="600" alt="Base Memory Setting"> <br>
+This is beatutiful ScreenShot of switching between Timer Interrupt and Keyboard Interrupt :)
 ---
 ---
 
-## Helper programs (To correctly compile, link and run OSOS)
+## To correctly compile, link and run OSOS
 
 ### 1. Using `extern "C"`keyword :
 - To prevent "name mangling" or "name decoration" (compiler modifies name of function or variable for some use cases).

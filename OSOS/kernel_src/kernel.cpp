@@ -3,7 +3,7 @@
 #include "kiostream"  // header to use video memory : e.g. printf, keyboard_input_by_polling
 #include "kmemory" // for using printMemoryMap()
 #include "kgdt" // for global discripter table
-#include "interrupts"
+#include "kinterrupt"
 
 class TestClass{
     public :
