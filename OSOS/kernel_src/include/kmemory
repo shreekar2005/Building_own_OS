@@ -3,11 +3,5 @@
     #include "kiostream"
     #include "multiboot"
     #include <cstddef>
-    #ifdef __cplusplus
-        extern "C" {
-    #endif
     void __printMemoryMap(multiboot_info_t *mbi);
-    #ifdef __cplusplus
-        }
-    #endif
 #endif

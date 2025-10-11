@@ -1,0 +1,42 @@
+#ifndef __INTERRUPTS_H
+
+    #define __INTERRUPTS_H
+    #include <cstdint>
+    #include "kiostream"
+    #include "kport"
+    #include "kgdt"
+
+    class InterruptManager{
+        protected:
+            struct GateDescriptor{
+                uint16_t handlerAddressLowbits;
+                uint16_t gdt_codesegmentSelector;
+                uint8_t reserved;
+                uint8_t access;
+                uint16_t handlerAddressHighbits;
+
+            }__attribute__((packed));
+            static GateDescriptor interruptDescriptorTable[256];
+
+            static void setInterruptDescriptorTableEntry(
+                uint8_t interruptNumber,
+                uint16_t codeSegmentSelectorOffset,
+                void (*handler)(),
+                uint8_t DescriptorPrivilegeLever,
+                uint8_t DescriptorType);
+
+        public:
+            InterruptManager(GDT* gdt);
+            ~InterruptManager();
+
+            static uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
+            
+            static void handleException0x00();
+            
+            static void ignoreInterruptRequest();
+            static void handleInterruptRequest0x00();
+            static void handleInterruptRequest0x01();
+            
+    };
+
+#endif

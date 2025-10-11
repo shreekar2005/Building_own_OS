@@ -2,11 +2,6 @@
 	#define _ICXXABI_H
     #include "kiostream"
     #define ATEXIT_MAX_FUNCS	128
-
-    #ifdef __cplusplus
-    extern "C" {
-    #endif
-        
     typedef unsigned uarch_t;
     struct atexit_func_entry_t
     {
@@ -20,8 +15,5 @@
     };
     void __cxa_finalize(void *f);
     void __callConstructors();
-    #ifdef __cplusplus
-    };
-    #endif
 #endif
 
