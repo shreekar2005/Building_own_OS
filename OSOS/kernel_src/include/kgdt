@@ -32,43 +32,44 @@
 
 
     class GDT_row {
-        uint16_t limit_low;
-        uint16_t base_low;
-        uint8_t  base_middle;
-        uint8_t  access;
-        uint8_t  granularity;
-        uint8_t  base_high;
+        private :
+            uint16_t limit_low;
+            uint16_t base_low;
+            uint8_t  base_middle;
+            uint8_t  access;
+            uint8_t  granularity;
+            uint8_t  base_high;
 
-    public:
-        // Constructor now takes an 8-bit access byte and 8-bit granularity byte
-        GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte);
-        GDT_row(); // Default constructor for null segment
-        ~GDT_row();
+        public:
+            // Constructor now takes an 8-bit access byte and 8-bit granularity byte
+            GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte);
+            GDT_row(); // Default constructor for null segment
+            ~GDT_row();
 
-        // Friend class to allow GDT to access private members for printing
-        friend class GDT;
+            // Friend class to allow GDT to access private members for printing
+            friend class GDT;
 
     } __attribute__((packed));
 
     class GDT {
-    private:
-        uint16_t limit;
-        uintptr_t base;
-        GDT_row nullSegment;
-        GDT_row kernel_CS;
-        GDT_row kernel_DS;
-        GDT_row user_CS;
-        GDT_row user_DS;
+        private:
+            uint16_t limit;
+            uintptr_t base;
+            GDT_row nullSegment;
+            GDT_row kernel_CS;
+            GDT_row kernel_DS;
+            GDT_row user_CS;
+            GDT_row user_DS;
 
-    public:
-        GDT();
-        ~GDT();
-        void installTable();
-        static void printTable();
-        static uint16_t kernel_CS_selector();
-        static uint16_t kernel_DS_selector();
-        static uint16_t user_CS_selector();
-        static uint16_t user_DS_selector();
+        public:
+            GDT();
+            ~GDT();
+            void installTable();
+            static void printTable();
+            static uint16_t kernel_CS_selector();
+            static uint16_t kernel_DS_selector();
+            static uint16_t user_CS_selector();
+            static uint16_t user_DS_selector();
     } __attribute__((packed));
 
 #endif

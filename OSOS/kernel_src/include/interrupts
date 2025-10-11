@@ -6,37 +6,52 @@
     #include "kport"
     #include "kgdt"
 
+    class IDT_row{
+        private:
+            uint16_t handlerAddressLowbits;
+            uint16_t kernelCodeSegmentSelector;
+            uint8_t reserved;
+            uint8_t access;
+            uint16_t handlerAddressHighbits;
+        public:
+            IDT_row(
+                uint16_t handlerAddressLowbits,
+                uint16_t kernelCodeSegmentSelector,
+                uint8_t reserved,
+                uint8_t access,
+                uint16_t handlerAddressHighbits);
+            IDT_row();
+            ~IDT_row();
+            friend class InterruptManager;
+
+    }__attribute__((packed));
+
+    
     class InterruptManager{
+        public :
+            uint16_t limit;
+            uint32_t base;
         protected:
-            struct GateDescriptor{
-                uint16_t handlerAddressLowbits;
-                uint16_t gdt_codesegmentSelector;
-                uint8_t reserved;
-                uint8_t access;
-                uint16_t handlerAddressHighbits;
-
-            }__attribute__((packed));
-            static GateDescriptor interruptDescriptorTable[256];
-
-            static void setInterruptDescriptorTableEntry(
+            IDT_row interruptDescriptorTable[256];
+            void setIDTEntry(
                 uint8_t interruptNumber,
                 uint16_t codeSegmentSelectorOffset,
                 void (*handler)(),
                 uint8_t DescriptorPrivilegeLever,
                 uint8_t DescriptorType);
 
+            Port8BitSlow picMasterCommand;
+            Port8BitSlow picMasterData;
+            Port8BitSlow picSlaveCommand;
+            Port8BitSlow picSlaveData;
+            
+            uintptr_t DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp);
         public:
             InterruptManager(GDT* gdt);
             ~InterruptManager();
-
+            void installTable();
+            void activate();
             static uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
-            
-            static void handleException0x00();
-            
-            static void ignoreInterruptRequest();
-            static void handleInterruptRequest0x00();
-            static void handleInterruptRequest0x01();
-            
     };
 
 #endif

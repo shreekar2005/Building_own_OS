@@ -13,15 +13,17 @@ ASPARAMS  :=
 # --- STEP 1: Automatically find all source files ---
 KRNL_SOURCES_S := $(wildcard $(KERNEL_SRC_DIR)/*.s)
 KRNL_SOURCES_CPP := $(wildcard $(KERNEL_SRC_DIR)/*.cpp)
+LIBK_SOURCES_S := $(wildcard $(LIBK_SRC_DIR)/*.s)
 LIBK_SOURCES_CPP := $(wildcard $(LIBK_SRC_DIR)/*.cpp)
 
 # --- STEP 2: Automatically generate object file names from source file names ---
 KRNL_OBJS_S   := $(patsubst $(KERNEL_SRC_DIR)/%.s, $(KERNEL_BUILD_DIR)/%.o, $(KRNL_SOURCES_S))
 KRNL_OBJS_CPP := $(patsubst $(KERNEL_SRC_DIR)/%.cpp, $(KERNEL_BUILD_DIR)/%.o, $(KRNL_SOURCES_CPP))
+LIBK_OBJS_S   := $(patsubst $(LIBK_SRC_DIR)/%.s, $(LIBK_BUILD_DIR)/%.o, $(LIBK_SOURCES_S))
 LIBK_OBJS_CPP := $(patsubst $(LIBK_SRC_DIR)/%.cpp, $(LIBK_BUILD_DIR)/%.o, $(LIBK_SOURCES_CPP))
 
 # Combine all object files into one list
-OBJECTS := $(KRNL_OBJS_S) $(KRNL_OBJS_CPP) $(LIBK_OBJS_CPP)
+OBJECTS := $(KRNL_OBJS_S) $(KRNL_OBJS_CPP) $(LIBK_OBJS_S) $(LIBK_OBJS_CPP)
 
 
 # Target builds
@@ -94,6 +96,10 @@ $(KERNEL_BUILD_DIR)/%.o: $(KERNEL_SRC_DIR)/%.s | $(KERNEL_BUILD_DIR)
 # Rule to build kernel C++ files (.cpp -> .o)
 $(KERNEL_BUILD_DIR)/%.o: $(KERNEL_SRC_DIR)/%.cpp | $(KERNEL_BUILD_DIR)
 	$(CC) -c $< $(CCPARAMS) -o $@
+
+# Rule to build libk assembly files (.s -> .o)
+$(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.s | $(LIBK_BUILD_DIR)
+	$(AS) $< $(ASPARAMS) -o $@
 
 # Rule to build libk C++ files (.cpp -> .o)
 $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.cpp | $(LIBK_BUILD_DIR)

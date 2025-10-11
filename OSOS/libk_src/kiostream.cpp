@@ -280,7 +280,7 @@ static void printHex(uintptr_t n, int digits) {
  * Specifiers: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%
  * Flags:      '#' (alternative form for o, x, X, b)
  * Precision:  '.<number>' for %x, %X, and %f (e.g., %.8X, %.2f)
- * Length:     'l' (long), 'll' (long long)
+ * Length:     'l' (long), 'll' (long long), 'h' (short), 'hh' (char)
  */
 void printf(const char *format, ...)
 {
@@ -316,9 +316,11 @@ void printf(const char *format, ...)
                 }
             }
 
-            // 3. Length
+            // 3. Length Modifiers
             int is_long = 0;
             int is_long_long = 0;
+            int is_short = 0;
+            int is_char = 0;
             if (format[i] == 'l')
             {
                 is_long = 1;
@@ -329,7 +331,18 @@ void printf(const char *format, ...)
                     is_long = 0;
                     i++;
                 }
+            } else if (format[i] == 'h')
+            {
+                is_short = 1;
+                i++;
+                if (format[i] == 'h')
+                {
+                    is_char = 1;
+                    is_short = 0;
+                    i++;
+                }
             }
+
 
             // --- Handling Specifiers ---
             switch (format[i])
@@ -347,6 +360,10 @@ void printf(const char *format, ...)
                     ullToString(va_arg(args, long long), buffer, 10, 1, 0);
                 else if (is_long)
                     ullToString(va_arg(args, long), buffer, 10, 1, 0);
+                else if (is_char)
+                    ullToString((signed char)va_arg(args, int), buffer, 10, 1, 0);
+                else if (is_short)
+                    ullToString((short)va_arg(args, int), buffer, 10, 1, 0);
                 else
                     ullToString(va_arg(args, int), buffer, 10, 1, 0);
                 printCharStr(buffer);
@@ -356,6 +373,10 @@ void printf(const char *format, ...)
                     ullToString(va_arg(args, unsigned long long), buffer, 10, 0, 0);
                 else if (is_long)
                     ullToString(va_arg(args, unsigned long), buffer, 10, 0, 0);
+                else if (is_char)
+                    ullToString((unsigned char)va_arg(args, unsigned int), buffer, 10, 0, 0);
+                else if (is_short)
+                    ullToString((unsigned short)va_arg(args, unsigned int), buffer, 10, 0, 0);
                 else
                     ullToString(va_arg(args, unsigned int), buffer, 10, 0, 0);
                 printCharStr(buffer);
@@ -373,11 +394,15 @@ void printf(const char *format, ...)
                         val = va_arg(args, unsigned long long);
                     else if (is_long)
                         val = va_arg(args, unsigned long);
+                    else if (is_char)
+                        val = (unsigned char)va_arg(args, unsigned int);
+                    else if (is_short)
+                        val = (unsigned short)va_arg(args, unsigned int);
                     else
                         val = va_arg(args, unsigned int);
 
                     if (use_alternative_form && val != 0) {
-                        printCharStr("0x");
+                        printCharStr(format[i] == 'X' ? "0X" : "0x");
                     }
                     ullToString(val, buffer, 16, 0, (format[i] == 'X'));
                     
@@ -401,6 +426,10 @@ void printf(const char *format, ...)
                         val = va_arg(args, unsigned long long);
                     else if (is_long)
                         val = va_arg(args, unsigned long);
+                    else if (is_char)
+                        val = (unsigned char)va_arg(args, unsigned int);
+                    else if (is_short)
+                        val = (unsigned short)va_arg(args, unsigned int);
                     else
                         val = va_arg(args, unsigned int);
                     
@@ -418,6 +447,10 @@ void printf(const char *format, ...)
                         val = va_arg(args, unsigned long long);
                     else if (is_long)
                         val = va_arg(args, unsigned long);
+                    else if (is_char)
+                        val = (unsigned char)va_arg(args, unsigned int);
+                    else if (is_short)
+                        val = (unsigned short)va_arg(args, unsigned int);
                     else
                         val = va_arg(args, unsigned int);
                     
