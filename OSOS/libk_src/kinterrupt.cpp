@@ -2,7 +2,6 @@
 
 // Global pointer to the active interrupt manager instance
 // This allows our static C-style handlers to access the C++ object.
-InterruptManager* activeInterruptManager;
 
 // forward definitions of handlers (which are made .global in interruptstubs.s)
 // These need to be declared extern "C" to prevent C++ name mangling,
@@ -16,9 +15,6 @@ InterruptManager::InterruptManager(GDT* gdt):
     picMasterData(0x21),
     picSlaveCommand(0xA0),
     picSlaveData(0xA1){
-    
-    // Set the global pointer to this instance
-    activeInterruptManager = this;
         
     picMasterCommand.write(0x11);
     picSlaveCommand.write(0x11);
@@ -66,7 +62,11 @@ void InterruptManager::setIDTEntry(
         interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;
 }
 
+InterruptManager* activeInterruptManager=nullptr;
 void InterruptManager::installTable(){
+    // Set the global pointer to this instance
+    activeInterruptManager = this;
+    
     struct IDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -77,10 +77,7 @@ void InterruptManager::installTable(){
     idt_ptr.base = this->base;
 
     __asm__ volatile ("lidt %0" : : "m"(idt_ptr));
-}
-
-void InterruptManager::activate(){
-    __asm__ volatile ("sti");
+    printf("IDT Installed\n");
 }
 
 
@@ -101,7 +98,8 @@ uintptr_t InterruptManager::DoHandleInterrupt(uint8_t interruptNumber, uintptr_t
             break;
 
         case 0x21: // Keyboard
-            printf("Keyboard key pressed!\n");
+            // printf("Keyboard key pressed!\n");
+            keyboard_input_by_polling();
             break;
 
         default:   // All other interrupts
@@ -118,4 +116,64 @@ uintptr_t InterruptManager::DoHandleInterrupt(uint8_t interruptNumber, uintptr_t
     }
     
     return esp;
+}
+
+void InterruptManager::activate(){
+    __asm__ volatile ("sti");
+    printf("Interrupts Activated\n");
+}
+void InterruptManager::deactivate(){
+    __asm__ volatile ("cli");
+    printf("Interrupts Deactivated\n");
+}
+
+void InterruptManager::printLoadedTable() {
+    struct IDT_Pointer {
+        uint16_t limit;
+        uint32_t base;
+    } __attribute__((packed));
+
+    IDT_Pointer idt_ptr;
+    __asm__ volatile ("sidt %0" : "=m"(idt_ptr));
+
+    printf("---\n");
+    printf("INFO about : Currently Loaded IDT\n");
+    printf("Base Address: %#x\n", idt_ptr.base);
+    printf("Limit: %#x (%d bytes)\n", idt_ptr.limit, idt_ptr.limit);
+    printf("Entries: %d\n", (idt_ptr.limit + 1) / sizeof(IDT_row));
+    printf("---\n");
+
+    printf(" Idx | Handler Address | Selector | Access Flags\n");
+    IDT_row* current_idt = (IDT_row*)idt_ptr.base;
+    uint32_t num_entries = (idt_ptr.limit + 1) / sizeof(IDT_row);
+    for (uint32_t i = 0; i < num_entries; i++) {
+        uint32_t handler_address = (current_idt[i].handlerAddressHighbits << 16) | current_idt[i].handlerAddressLowbits;
+
+        if (handler_address != 0) {
+            printf(" %3d | %#015x | %#08x | %#012x\n", 
+                   i, 
+                   handler_address, 
+                   current_idt[i].kernelCodeSegmentSelector,
+                   current_idt[i].access
+            );
+        }
+    }
+    printf("---\n");
+}
+
+void InterruptManager::printLoadedTableHeader(){
+
+    struct IDT_Pointer {
+        uint16_t limit;
+        uint32_t base;
+    } __attribute__((packed));
+
+    IDT_Pointer idt_ptr;
+    __asm__ volatile ("sidt %0" : "=m"(idt_ptr));
+    printf("---\n");
+    printf("INFO about : Currently Loaded IDT\n");
+    printf("Base Address: %#x\n", idt_ptr.base);
+    printf("Limit: %#x (%d bytes)\n", idt_ptr.limit, idt_ptr.limit);
+    printf("Entries: %d\n", (idt_ptr.limit + 1) / sizeof(IDT_row));
+    printf("---\n");
 }

@@ -73,12 +73,13 @@ void GDT::installTable() {
         : "r"(&gdt_ptr) // Input: address of our GDT_Pointer
         : "memory", "eax" // Clobbered registers
     );
+    printf("GDT Installed\n");
 }
 
 /**
  * @brief (Static) Prints the currently loaded GDT by reading the GDTR.
  */
-void GDT::printTable() {
+void GDT::printLoadedTable() {
     struct GDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -88,8 +89,12 @@ void GDT::printTable() {
     // Store the current GDT register contents into our struct.
     asm volatile("sgdt %0" : "=m"(gdtr));
 
-    printf("---\nCurrently Loaded GDT is at: %p\n", (void*)gdtr.base);
-    printf("Limit (size in bytes - 1): %#x\n---\n", gdtr.limit);
+    printf("---\n");
+    printf("INFO about : Currently Loaded GDT\n");
+    printf("Base Address: %#x\n", gdtr.base);
+    printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
+    printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(GDT_row));
+    printf("---\n");
 
     GDT_row* gdt_entries = (GDT_row*)gdtr.base;
     int num_entries = (gdtr.limit + 1) / sizeof(GDT_row);
@@ -106,9 +111,27 @@ void GDT::printTable() {
             limit = (limit << 12) | 0xFFF;
         }
 
-        printf("Entry %d: Base=%p, Limit=%#x, Access=%#x, Granularity=%#x\n",
+        printf("GDT Entry %d: Base=%p, Limit=%#x, Access=%#x, Granularity=%#x\n",
                i, (void*)(uintptr_t)base, limit, entry.access, entry.granularity);
     }
+    printf("---\n");
+}
+
+void GDT::printLoadedTableHeader() {
+    struct GDT_Pointer {
+        uint16_t limit;
+        uint32_t base;
+    } __attribute__((packed));
+
+    GDT_Pointer gdtr;
+    // Store the current GDT register contents into our struct.
+    asm volatile("sgdt %0" : "=m"(gdtr));
+
+    printf("---\n");
+    printf("INFO about : Currently Loaded GDT\n");
+    printf("Base Address: %#x\n", gdtr.base);
+    printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
+    printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(GDT_row));
     printf("---\n");
 }
 

@@ -19,25 +19,26 @@ TestClass a_global_instance;
 extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
 {
     __callConstructors();
+    enable_cursor(0,15); // (0,15) is for blinking block
+    __clearScreen();
+
     GDT OSOS_GDT;
     OSOS_GDT.installTable();
-
-    enable_cursor(0,15); // those args will decide size or shape of cursor ((0,15) is for blinking block)
     
-    char greeting_from_kernel[] = "Hello world! -- from OSOS kernel";
-    printf("%s\nMULTIBOOT_BOOTLOADER_MAGIC : %x\n", greeting_from_kernel, magicnumber);\
-    
+    GDT::printLoadedTableHeader();
     InterruptManager OSOS_IDT(&OSOS_GDT);
-    OSOS_IDT.installTable(); // will activate later
-    OSOS_IDT.activate(); // IDT activated (interrupts are activated)
-
-    while (1){
-        char c = keyboard_input_by_polling();
-        (void)c; // just to avoid warning (unused variable)
+    OSOS_IDT.installTable();
+    InterruptManager::activate();
+    InterruptManager::printLoadedTableHeader();
+    
+    printf("Hello from OSOS kernel\n");
+    while (true){
+        // printf("ThisIsLongWord");
     }
     disable_cursor();
     __cxa_finalize(0);
     (void)mbi;
+    (void)magicnumber;
 }
 
 

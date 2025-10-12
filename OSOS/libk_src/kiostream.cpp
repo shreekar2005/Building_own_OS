@@ -5,8 +5,7 @@ int cursor_x_ = 0;
 int cursor_y_ = 0;
 #define MAGIC_WIDTH 80
 #define MAGIC_HEIGHT 25
-#define TAB_WIDTH 4 // Standard tab width is 4 characters
-
+#define TAB_WIDTH 4 
 
 // --- Global Port Objects ---
 Port8Bit keyboardDataPort(0x60);
@@ -37,8 +36,6 @@ void disable_cursor() {
     vgaDataPort.write(0x20);
 }
 
-// A very basic US QWERTY keyboard layout map.
-// Only handles key presses, not releases.
 static const char scancode_to_ascii[] = {
     0,   0, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '\b',
     '\t', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\n',
@@ -48,15 +45,12 @@ static const char scancode_to_ascii[] = {
     0, 0, 0, 0, 0,
 };
 
-// --- taking keyboard input by polling ---
 char keyboard_input_by_polling() {
-    update_cursor(cursor_x_, cursor_y_);
     uint8_t scancode;
-    // Wait until the keyboard controller has data for us.
     while ((keyboardStatusPort.read() & 1) == 0) {}
-
+    
     scancode = keyboardDataPort.read();
-
+    
     if (scancode < sizeof(scancode_to_ascii) && scancode_to_ascii[scancode] != 0) {
         printf("%c", scancode_to_ascii[scancode]);
         return scancode_to_ascii[scancode];
@@ -72,52 +66,43 @@ void printCharStr(const char *str)
 
     for (int i = 0; str[i] != '\0'; i++)
     {
-        // Handle special control characters ---
-
-        if (str[i] == '\n') // Newline character
+        if (str[i] == '\n')
         {
             cursor_y_++;
             cursor_x_ = 0;
         }
-        else if (str[i] == '\b') // Backspace character
+        else if (str[i] == '\b')
         {
-            // Only move back if not at the start of the line
             if (cursor_x_ > 0)
             {
                 cursor_x_--;
-                // Erase the character at the new position by writing a space
                 int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
                 VideoMemory[offset] = (VideoMemory[offset] & 0xFF00) | ' ';
             }
         }
-        else if (str[i] == '\r') // Carriage Return character
+        else if (str[i] == '\r')
         {
-            // Move cursor to the beginning of the current line
             cursor_x_ = 0;
         }
-        else if (str[i] == '\t') // Tab character
+        else if (str[i] == '\t')
         {
-            // Advance cursor to the next tab stop (multiple of TAB_WIDTH)
             cursor_x_ = cursor_x_ + (TAB_WIDTH - (cursor_x_ % TAB_WIDTH));
         }
-        else // normal char
+        else
         {
             int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
             VideoMemory[offset] = (VideoMemory[offset] & 0xFF00) | str[i];
             cursor_x_++;
         }
 
-        // If cursor goes past the right side, wrap to the next line.
         if (cursor_x_ >= MAGIC_WIDTH)
         {
             cursor_y_++;
             cursor_x_ = 0;
         }
 
-        // If cursor goes off the bottom of the screen, scroll everything up by one line.
         if (cursor_y_ >= MAGIC_HEIGHT)
         {
-            // 1. Move each line's content up by one row
             for (int y = 0; y < (MAGIC_HEIGHT - 1); y++)
             {
                 for (int x = 0; x < MAGIC_WIDTH; x++)
@@ -128,21 +113,19 @@ void printCharStr(const char *str)
                 }
             }
 
-            // 2. Clear the last line
             int last_line_offset_start = (MAGIC_HEIGHT - 1) * MAGIC_WIDTH;
             for (int x = 0; x < MAGIC_WIDTH; x++)
             {
                 VideoMemory[last_line_offset_start + x] = (VideoMemory[last_line_offset_start + x] & 0xFF00) | ' ';
             }
 
-            // 3. Reset cursor to the beginning of the now-empty last line
             cursor_y_ = MAGIC_HEIGHT - 1;
             cursor_x_ = 0;
         }
     }
 }
 
-void clearScreen()
+void __clearScreen()
 {
     unsigned short *VideoMemory = (unsigned short *)0xb8000;
     unsigned short blank = (0x07 << 8) | ' ';
@@ -251,36 +234,28 @@ static void doubleToString(double d, char *buffer, int precision)
     *ptr = '\0';
 }
 
-// A new helper function to handle hex printing with padding
 static void printHex(uintptr_t n, int digits) {
-    char buffer[32]; // Buffer to hold the converted string
-    
-    // Convert the number to a hex string
+    char buffer[32];
     ullToString(n, buffer, 16, 0, 0);
 
-    // Figure out how long the string is
     int len = 0;
     while (buffer[len] != '\0') {
         len++;
     }
 
-    // Print the leading zeros
     for (int i = 0; i < digits - len; i++) {
         printCharStr("0");
     }
-
-    // Print the actual number string
     printCharStr(buffer);
 }
-
-
 
 /*
  * my printf supports:
  * Specifiers: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%
- * Flags:      '#' (alternative form for o, x, X, b)
- * Precision:  '.<number>' for %x, %X, and %f (e.g., %.8X, %.2f)
- * Length:     'l' (long), 'll' (long long), 'h' (short), 'hh' (char)
+ * Flags:      '#', '0'
+ * Width:      '<number>' (e.g., %10d)
+ * Precision:  '.<number>' (e.g., %.8X)
+ * Length:     'l', 'll', 'h', 'hh'
  */
 void printf(const char *format, ...)
 {
@@ -288,7 +263,7 @@ void printf(const char *format, ...)
     va_start(args, format);
 
     char buffer[128];
-    char char_str[2] = {0};
+    char char_str[2] = {0, 0};
 
     for (int i = 0; format[i] != '\0'; i++)
     {
@@ -296,17 +271,29 @@ void printf(const char *format, ...)
         {
             i++;
             
-            // --- Parsing Flags, Precision, and Length ---
+            // --- Parse flags, width, precision, and length modifiers ---
             int use_alternative_form = 0;
-            int precision = -1; // -1 indicates not specified
+            int zero_pad = 0;
+            int width = 0;
+            int precision = -1;
             
             // 1. Flags
-            if (format[i] == '#') {
-                use_alternative_form = 1;
+            bool parsing_flags = true;
+            while(parsing_flags) {
+                switch(format[i]) {
+                    case '#': use_alternative_form = 1; i++; break;
+                    case '0': zero_pad = 1; i++; break;
+                    default: parsing_flags = false; break;
+                }
+            }
+
+            // 2. Width
+            while (format[i] >= '0' && format[i] <= '9') {
+                width = width * 10 + (format[i] - '0');
                 i++;
             }
 
-            // 2. Precision
+            // 3. Precision
             if (format[i] == '.') {
                 i++;
                 precision = 0;
@@ -314,169 +301,121 @@ void printf(const char *format, ...)
                     precision = precision * 10 + (format[i] - '0');
                     i++;
                 }
+                // Precision specifier for integers overrides the '0' flag.
+                zero_pad = 0;
             }
 
-            // 3. Length Modifiers
-            int is_long = 0;
-            int is_long_long = 0;
-            int is_short = 0;
-            int is_char = 0;
-            if (format[i] == 'l')
-            {
-                is_long = 1;
-                i++;
-                if (format[i] == 'l')
-                {
-                    is_long_long = 1;
-                    is_long = 0;
-                    i++;
-                }
-            } else if (format[i] == 'h')
-            {
-                is_short = 1;
-                i++;
-                if (format[i] == 'h')
-                {
-                    is_char = 1;
-                    is_short = 0;
-                    i++;
-                }
+            // 4. Length Modifiers
+            int is_long = 0, is_long_long = 0, is_short = 0, is_char = 0;
+            if (format[i] == 'l') {
+                is_long = 1; i++;
+                if (format[i] == 'l') { is_long_long = 1; is_long = 0; i++; }
+            } else if (format[i] == 'h') {
+                is_short = 1; i++;
+                if (format[i] == 'h') { is_char = 1; is_short = 0; i++; }
             }
 
-
-            // --- Handling Specifiers ---
+            // --- Handle Specifiers ---
             switch (format[i])
             {
-            case 'c':
-                char_str[0] = (char)va_arg(args, int);
-                printCharStr(char_str);
-                break;
-            case 's':
-                printCharStr(va_arg(args, char *));
-                break;
-            case 'd':
-            case 'i':
-                if (is_long_long)
-                    ullToString(va_arg(args, long long), buffer, 10, 1, 0);
-                else if (is_long)
-                    ullToString(va_arg(args, long), buffer, 10, 1, 0);
-                else if (is_char)
-                    ullToString((signed char)va_arg(args, int), buffer, 10, 1, 0);
-                else if (is_short)
-                    ullToString((short)va_arg(args, int), buffer, 10, 1, 0);
-                else
-                    ullToString(va_arg(args, int), buffer, 10, 1, 0);
-                printCharStr(buffer);
-                break;
-            case 'u':
-                if (is_long_long)
-                    ullToString(va_arg(args, unsigned long long), buffer, 10, 0, 0);
-                else if (is_long)
-                    ullToString(va_arg(args, unsigned long), buffer, 10, 0, 0);
-                else if (is_char)
-                    ullToString((unsigned char)va_arg(args, unsigned int), buffer, 10, 0, 0);
-                else if (is_short)
-                    ullToString((unsigned short)va_arg(args, unsigned int), buffer, 10, 0, 0);
-                else
-                    ullToString(va_arg(args, unsigned int), buffer, 10, 0, 0);
-                printCharStr(buffer);
-                break;
-            case 'f':
-                // Pass the parsed precision. doubleToString handles the default case.
-                doubleToString(va_arg(args, double), buffer, precision);
-                printCharStr(buffer);
-                break;
-            case 'x':
-            case 'X':
+                case 'c':
+                    char_str[0] = (char)va_arg(args, int);
+                    printCharStr(char_str);
+                    break;
+                case 's':
+                    printCharStr(va_arg(args, char *));
+                    break;
+                case 'f':
+                    doubleToString(va_arg(args, double), buffer, precision);
+                    printCharStr(buffer);
+                    break;
+
+                // Unified handler for all integer types
+                case 'd': case 'i': case 'u': case 'x': case 'X': case 'b': case 'o':
                 {
                     unsigned long long val;
-                    if (is_long_long)
-                        val = va_arg(args, unsigned long long);
-                    else if (is_long)
-                        val = va_arg(args, unsigned long);
-                    else if (is_char)
-                        val = (unsigned char)va_arg(args, unsigned int);
-                    else if (is_short)
-                        val = (unsigned short)va_arg(args, unsigned int);
-                    else
-                        val = va_arg(args, unsigned int);
+                    int base = 10;
+                    bool uppercase = false;
+                    char sign_char = 0;
 
-                    if (use_alternative_form && val != 0) {
-                        printCharStr(format[i] == 'X' ? "0X" : "0x");
+                    if (format[i] == 'd' || format[i] == 'i') {
+                        long long signed_val;
+                        if (is_long_long) signed_val = va_arg(args, long long);
+                        else if (is_long) signed_val = va_arg(args, long);
+                        else if (is_char) signed_val = (signed char)va_arg(args, int);
+                        else if (is_short) signed_val = (short)va_arg(args, int);
+                        else signed_val = va_arg(args, int);
+                        
+                        if (signed_val < 0) {
+                            sign_char = '-';
+                            val = -signed_val;
+                        } else {
+                            val = signed_val;
+                        }
+                    } else { // Unsigned types
+                        if (is_long_long) val = va_arg(args, unsigned long long);
+                        else if (is_long) val = va_arg(args, unsigned long);
+                        else if (is_char) val = (unsigned char)va_arg(args, unsigned int);
+                        else if (is_short) val = (unsigned short)va_arg(args, unsigned int);
+                        else val = va_arg(args, unsigned int);
                     }
-                    ullToString(val, buffer, 16, 0, (format[i] == 'X'));
-                    
-                    int len = 0;
-                    while(buffer[len] != '\0') len++;
 
-                    // Apply padding if precision is specified
-                    if (precision > len) {
-                        for (int j = 0; j < precision - len; j++) {
-                            printCharStr("0");
+                    switch(format[i]) {
+                        case 'x': base = 16; break;
+                        case 'X': base = 16; uppercase = true; break;
+                        case 'b': base = 2; break;
+                        case 'o': base = 8; break;
+                    }
+                    
+                    ullToString(val, buffer, base, 0, uppercase);
+
+                    const char* prefix = "";
+                    if (use_alternative_form && val != 0) {
+                        switch(format[i]) {
+                            case 'x': prefix = "0x"; break;
+                            case 'X': prefix = "0X"; break;
+                            case 'b': prefix = "0b"; break;
+                            case 'o': prefix = "0"; break;
                         }
                     }
-
-                    printCharStr(buffer);
-                }
-                break;
-            case 'b': // note: %b and %#b are non-standard extensions
-                {
-                    unsigned long long val;
-                    if (is_long_long)
-                        val = va_arg(args, unsigned long long);
-                    else if (is_long)
-                        val = va_arg(args, unsigned long);
-                    else if (is_char)
-                        val = (unsigned char)va_arg(args, unsigned int);
-                    else if (is_short)
-                        val = (unsigned short)va_arg(args, unsigned int);
-                    else
-                        val = va_arg(args, unsigned int);
                     
-                    if (use_alternative_form && val != 0) {
-                        printCharStr("0b");
-                    }
-                    ullToString(val, buffer, 2, 0, 0);
-                    printCharStr(buffer);
-                }
-                break;
-            case 'o':
-                {
-                    unsigned long long val;
-                    if (is_long_long)
-                        val = va_arg(args, unsigned long long);
-                    else if (is_long)
-                        val = va_arg(args, unsigned long);
-                    else if (is_char)
-                        val = (unsigned char)va_arg(args, unsigned int);
-                    else if (is_short)
-                        val = (unsigned short)va_arg(args, unsigned int);
-                    else
-                        val = va_arg(args, unsigned int);
+                    int num_len = 0; while(buffer[num_len]) num_len++;
+                    int prefix_len = 0; while(prefix[prefix_len]) prefix_len++;
                     
-                    if (use_alternative_form && val != 0) {
-                        printCharStr("0");
+                    int precision_pads = (precision > num_len) ? (precision - num_len) : 0;
+                    int total_len = num_len + (sign_char ? 1 : 0) + prefix_len + precision_pads;
+                    int width_pads = (width > total_len) ? (width - total_len) : 0;
+                    
+                    if (!zero_pad && width_pads > 0) {
+                        for (int j = 0; j < width_pads; j++) printCharStr(" ");
                     }
-                    ullToString(val, buffer, 8, 0, 0);
+                    if (sign_char) {
+                        char_str[0] = sign_char; printCharStr(char_str);
+                    }
+                    if (prefix_len > 0) printCharStr(prefix);
+                    if (zero_pad && width_pads > 0) {
+                        for (int j = 0; j < width_pads; j++) printCharStr("0");
+                    }
+                    if (precision_pads > 0) {
+                        for (int j = 0; j < precision_pads; j++) printCharStr("0");
+                    }
                     printCharStr(buffer);
+                    break;
                 }
-                break;
-            case 'p':
-                printCharStr("0x");
-                if (sizeof(uintptr_t) == 4) { // 32-bit system
-                    printHex((uintptr_t)va_arg(args, void *), 8);
-                } else if (sizeof(uintptr_t) == 8) { // 64-bit system
-                    printHex((uintptr_t)va_arg(args, void *), 16);
-                }
-                break;
-            case '%':
-                printCharStr("%");
-                break;
-            default:
-                printCharStr("%");
-                char_str[0] = format[i];
-                printCharStr(char_str);
-                break;
+                
+                case 'p':
+                    printCharStr("0x");
+                    if (sizeof(uintptr_t) == 4) printHex((uintptr_t)va_arg(args, void *), 8);
+                    else if (sizeof(uintptr_t) == 8) printHex((uintptr_t)va_arg(args, void *), 16);
+                    break;
+                case '%':
+                    printCharStr("%");
+                    break;
+                default:
+                    printCharStr("%");
+                    char_str[0] = format[i];
+                    printCharStr(char_str);
+                    break;
             }
         }
         else
@@ -486,4 +425,5 @@ void printf(const char *format, ...)
         }
     }
     va_end(args);
+    update_cursor(cursor_x_, cursor_y_);
 }

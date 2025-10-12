@@ -15,7 +15,6 @@
 
 # extern From kernel.cpp
 .extern kernelMain
-.extern clearScreen
 .extern printf
 
 .section .text # now actual code begins
@@ -27,7 +26,6 @@
         push %eax # the MULTIBOOT_BOOTLOADER_MAGIC number is stored in EAX.
         push %ebx # bootloader provides an information structure when the kernel boots, its pointer is stored in EBX
         ######################################################################
-        call clearScreen
         call kernelMain # this not suppose to come again from kernelMain
         add $8, %esp
 
@@ -42,7 +40,7 @@
 
 .section .data
     myString: 
-        .ascii "\nYou are exited kernel!!! THIS IS NOT ACCCPEATABLE ! \n"
+        .ascii "\nYou just exited kernel!!! THIS IS NOT ACCCPEATABLE ! >.< \n"
 
 .section .stack
     .space 2*1024*1024 # move 2MB of space

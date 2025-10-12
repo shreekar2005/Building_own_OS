@@ -2,7 +2,7 @@
     #define __KIOSTREAM_H
     #include <cstdint>
     #include <cstdarg>
-    extern "C" void clearScreen();
+    extern "C" void __clearScreen();
     extern "C" void printf(const char *format, ...);
     char keyboard_input_by_polling();
     void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);

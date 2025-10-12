@@ -42,17 +42,19 @@
                 void (*handler)(),
                 uint8_t DescriptorPrivilegeLever,
                 uint8_t DescriptorType);
-
             Port8BitSlow picMasterCommand;
             Port8BitSlow picMasterData;
             Port8BitSlow picSlaveCommand;
             Port8BitSlow picSlaveData;    
         public:
-            uintptr_t DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp);
             InterruptManager(GDT* gdt);
             ~InterruptManager();
             void installTable();
-            void activate();
+            uintptr_t DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp);
+            static void activate();
+            static void deactivate();
+            static void printLoadedTable();
+            static void printLoadedTableHeader();
     };
 
 #endif

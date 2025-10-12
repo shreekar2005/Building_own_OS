@@ -65,7 +65,8 @@
             GDT();
             ~GDT();
             void installTable();
-            static void printTable();
+            static void printLoadedTable();
+            static void printLoadedTableHeader();
             static uint16_t kernel_CS_selector();
             static uint16_t kernel_DS_selector();
             static uint16_t user_CS_selector();
