@@ -24,17 +24,16 @@ extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
 
     GDT OSOS_GDT;
     OSOS_GDT.installTable();
-    
     GDT::printLoadedTableHeader();
+
     InterruptManager OSOS_IDT(&OSOS_GDT);
     OSOS_IDT.installTable();
     InterruptManager::activate();
     InterruptManager::printLoadedTableHeader();
     
-    printf("Hello from OSOS kernel\n");
-    while (true){
-        // printf("ThisIsLongWord");
-    }
+    printf("HELLO FROM OSOS\n");
+    while (true){};
+
     disable_cursor();
     __cxa_finalize(0);
     (void)mbi;
