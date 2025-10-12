@@ -6,6 +6,16 @@
     #include "kport"
     #include "kgdt"
 
+    extern "C" {
+        uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
+
+        // following functions are defined in kinterruptstub.s
+        void ignoreInterruptRequest();
+        void handleInterruptRequest0x00(); // Timer
+        void handleInterruptRequest0x01(); // Keyboard
+        void handleInterruptRequest0x0C(); // PS/2 Mouse 
+    }
+
     class IDT_row{
         private:
             uint16_t handlerAddressLowbits;
@@ -14,16 +24,9 @@
             uint8_t access;
             uint16_t handlerAddressHighbits;
         public:
-            IDT_row(
-                uint16_t handlerAddressLowbits,
-                uint16_t kernelCodeSegmentSelector,
-                uint8_t reserved,
-                uint8_t access,
-                uint16_t handlerAddressHighbits);
             IDT_row();
             ~IDT_row();
             friend class InterruptManager;
-
     }__attribute__((packed));
 
     
@@ -43,15 +46,13 @@
             Port8BitSlow picMasterCommand;
             Port8BitSlow picMasterData;
             Port8BitSlow picSlaveCommand;
-            Port8BitSlow picSlaveData;
-            
-            uintptr_t DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp);
+            Port8BitSlow picSlaveData;    
         public:
+            uintptr_t DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp);
             InterruptManager(GDT* gdt);
             ~InterruptManager();
             void installTable();
             void activate();
-            static uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
     };
 
 #endif

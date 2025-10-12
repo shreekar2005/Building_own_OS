@@ -1,7 +1,7 @@
 .set IRQ_BASE, 0x20
 
 .section .text
-.extern _ZN16InterruptManager15handleInterruptEhm
+.extern  handleInterrupt
 
 // Common stub that all real interrupts will jump to
 common_interrupt_stub:
@@ -19,7 +19,7 @@ common_interrupt_stub:
     pushl %esp              // Arg 2: current stack pointer
     push (interruptnumber)  // Arg 1: the interrupt number we stored earlier
 
-    call _ZN16InterruptManager15handleInterruptEhm
+    call  handleInterrupt
 
     // The C++ handler returns the new stack pointer in EAX.
     // This cleans up the two arguments we pushed.

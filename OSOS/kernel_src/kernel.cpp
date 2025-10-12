@@ -30,7 +30,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     InterruptManager OSOS_IDT(&OSOS_GDT);
     OSOS_IDT.installTable(); // will activate later
     OSOS_IDT.activate(); // IDT activated (interrupts are activated)
-    
+
     while (1){
         char c = keyboard_input_by_polling();
         (void)c; // just to avoid warning (unused variable)

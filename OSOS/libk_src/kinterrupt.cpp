@@ -2,29 +2,13 @@
 
 // Global pointer to the active interrupt manager instance
 // This allows our static C-style handlers to access the C++ object.
-InterruptManager* activeInterruptManager = 0;
+InterruptManager* activeInterruptManager;
 
 // forward definitions of handlers (which are made .global in interruptstubs.s)
 // These need to be declared extern "C" to prevent C++ name mangling,
 // ensuring the linker can find the simple names defined in assembly.
-extern "C" {
-    void handleException0x00();
-    void ignoreInterruptRequest();
-    void handleInterruptRequest0x00(); // Timer
-    void handleInterruptRequest0x01(); // Keyboard
-    void handleInterruptRequest0x0C(); // PS/2 Mouse 
-}
-
 
 IDT_row::IDT_row(){}
-
-IDT_row::IDT_row(
-    uint16_t handlerAddressLowbits,
-    uint16_t kernelCodeSegmentSelector,
-    uint8_t reserved,
-    uint8_t access,
-    uint16_t handlerAddressHighbits){}
-
 IDT_row::~IDT_row(){}
 
 InterruptManager::InterruptManager(GDT* gdt):
@@ -100,7 +84,7 @@ void InterruptManager::activate(){
 }
 
 
-uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
+uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
     // Use the global pointer to access the PIC ports
     if (activeInterruptManager != 0) {
         activeInterruptManager->DoHandleInterrupt(interruptNumber, esp);
