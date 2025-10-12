@@ -7,8 +7,6 @@
     #include "kgdt"
 
     extern "C" {
-        uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
-
         // following functions are defined in kinterruptstub.s
         void ignoreInterruptRequest();
         void handleInterruptRequest0x00(); // Timer
@@ -42,15 +40,19 @@
                 void (*handler)(),
                 uint8_t DescriptorPrivilegeLever,
                 uint8_t DescriptorType);
-            Port8BitSlow picMasterCommand;
-            Port8BitSlow picMasterData;
-            Port8BitSlow picSlaveCommand;
-            Port8BitSlow picSlaveData;    
+                
+            static Port8BitSlow picMasterCommand;
+            static Port8BitSlow picMasterData;
+            static Port8BitSlow picSlaveCommand;
+            static Port8BitSlow picSlaveData;    
+            static InterruptManager* activeInterruptManager;
         public:
             InterruptManager(GDT* gdt);
             ~InterruptManager();
             void installTable();
             uintptr_t DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp);
+
+            static uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
             static void activate();
             static void deactivate();
             static void printLoadedTable();

@@ -10,12 +10,12 @@
 IDT_row::IDT_row(){}
 IDT_row::~IDT_row(){}
 
-InterruptManager::InterruptManager(GDT* gdt):
-    picMasterCommand(0x20),
-    picMasterData(0x21),
-    picSlaveCommand(0xA0),
-    picSlaveData(0xA1){
-        
+Port8BitSlow InterruptManager::picMasterCommand(0x20);
+Port8BitSlow InterruptManager::picMasterData(0x21);
+Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
+Port8BitSlow InterruptManager::picSlaveData(0xA1);
+
+InterruptManager::InterruptManager(GDT* gdt){
     picMasterCommand.write(0x11);
     picSlaveCommand.write(0x11);
 
@@ -62,10 +62,9 @@ void InterruptManager::setIDTEntry(
         interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;
 }
 
-InterruptManager* activeInterruptManager=nullptr;
+InterruptManager* InterruptManager::activeInterruptManager=nullptr;
 void InterruptManager::installTable(){
-    // Set the global pointer to this instance
-    activeInterruptManager = this;
+    InterruptManager::activeInterruptManager = this;
     
     struct IDT_Pointer {
         uint16_t limit;
@@ -81,10 +80,10 @@ void InterruptManager::installTable(){
 }
 
 
-uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
+uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
     // Use the global pointer to access the PIC ports
-    if (activeInterruptManager != 0) {
-        activeInterruptManager->DoHandleInterrupt(interruptNumber, esp);
+    if (InterruptManager::activeInterruptManager!= 0) {
+        InterruptManager::activeInterruptManager->DoHandleInterrupt(interruptNumber, esp);
     }
     return esp;
 }
