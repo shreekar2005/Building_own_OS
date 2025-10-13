@@ -17,7 +17,7 @@ common_interrupt_stub:
     // Push arguments for the C++ handler
     // C++ function signature: handleInterrupt(uint8_t interruptNumber, uintptr_t esp)
     pushl %esp              // Arg 2: current stack pointer
-    push (interruptnumber)  // Arg 1: the interrupt number we stored earlier
+    push (interruptNumber)  // Arg 1: the interrupt number we stored earlier
 
     call  _ZN16InterruptManager15handleInterruptEhm
 
@@ -39,25 +39,26 @@ common_interrupt_stub:
 
 
 // A separate, simple handler for interrupts we want to ignore
-.global ignoreInterruptRequest
-ignoreInterruptRequest:
+.global ignoreInterrupt
+ignoreInterrupt:
     iret
 
 
 // Macro for generating an IRQ stub
-.macro HandleInterruptRequest num, mangled_num
-.global handleInterruptRequest\mangled_num
-handleInterruptRequest\mangled_num:
-    movb $\num + IRQ_BASE, (interruptnumber)
+.macro handleIRQ IRQnum, handler_suffix
+.global handleIRQ\handler_suffix
+handleIRQ\handler_suffix:
+    movb $\IRQnum + IRQ_BASE, (interruptNumber) //interruptNumber is index for IDT table
     jmp common_interrupt_stub
 .endm
 
 // Generate the stubs we are using
-HandleInterruptRequest 0x00, 0x00 // Timer
-HandleInterruptRequest 0x01, 0x01 // Keyboard
-HandleInterruptRequest 0x0C, 0x0C // PS/2 Mouse
-// You can easily add more here, e.g., HandleInterruptRequest 0x0c, 0x0c for PS/2 mouse
+// handleIRQ IRQnum, handler_suffix
+handleIRQ 0x00, 0x00 // Timer : will convert its number from 0x00 to 0x20
+handleIRQ 0x01, 0x01 // Keyboard : will convert its number from 0x01 to 0x21
+// handleIRQ 0x0C, 0x0C // PS/2 Mouse : will convert its number from 0x0C to 0x2C
+
 
 
 .section .data
-    interruptnumber: .byte 0
+    interruptNumber: .byte 0

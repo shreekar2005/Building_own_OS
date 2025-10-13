@@ -97,6 +97,12 @@ This is beatutiful ScreenShot of switching between Timer Interrupt and Keyboard 
 - Using `#include <>` for standard libraries
 - Using `#include ""` for OSOS specific libraries, e.g. libraries in `./kernel_src/include/`
 - Naming OSOS kernel libraries with prefix `'k'`, e.g. kiostream, kmemory, etc
+- **Naming convensions :**  pointer names : `abc_xyz_pqr`, class/struct names :  `AbcXyzPqr` or `ABC_XyzPqr`, function/variable names : `abcXyzPqr`
+
+### 4. Interrupts :
+- **PIC (Programmable Interrupt Controller):** It recieves hardware Interrupt Requests (IRQs) and send the interruptNumber to CPU. CPU then go to IDT entry correspondin to interrupt number. There are 2 PICs (Master and Slave) and Slave is attached to one of input line of Master PIC
+- There are **Software Interrupts** that are recieved by CPU (e.g. divide by zero with interruptNumber = 0x00). So we should make their handlers also and keep their reference in IDT.
+- **Main Issue** : Actually PIC also recives IRQ number from 0x00 (e.g. Timer IRQnumber=0x00, Keyboard IRQnumber=0x01). So PIC just cannot forward that number to CPU because then CPU will just call same handler for 'divide by zero' and 'Timer' interrupt. So we will add some offset(0x20 for Master PIC and 0x28 for Slave PIC) such that new interrupt number of IRQ will not conflict with Software Interrupt number.
 
 
 ---

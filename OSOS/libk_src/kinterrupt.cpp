@@ -7,6 +7,20 @@
 // These need to be declared extern "C" to prevent C++ name mangling,
 // ensuring the linker can find the simple names defined in assembly.
 
+
+InterruptHandler::InterruptHandler(uint8_t interruptNumber, InterruptManager* interrupt_manager){
+    this->interruptNumber=interruptNumber;
+    this->interrupt_manager=interrupt_manager;
+    interrupt_manager->handlers[interruptNumber]=this;
+}
+InterruptHandler::~InterruptHandler(){
+    if(interrupt_manager->handlers[interruptNumber]==this) interrupt_manager->handlers[interruptNumber]=nullptr;
+}
+uintptr_t InterruptHandler::handleInterrupt(uintptr_t esp){
+    return esp;
+}
+
+
 IDT_row::IDT_row(){}
 IDT_row::~IDT_row(){}
 
@@ -16,20 +30,31 @@ Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
 Port8BitSlow InterruptManager::picSlaveData(0xA1);
 
 InterruptManager::InterruptManager(GDT* gdt){
+    // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.
     picMasterCommand.write(0x11);
     picSlaveCommand.write(0x11);
 
-    picMasterData.write(0x20); // Master PIC starts at interrupt 0x20
-    picSlaveData.write(0x28); // Slave PIC starts at interrupt 0x28
+    // ICW2: Vector Remapping.
+    // Master is told to remap its IRQs (0-7) to CPU vectors 0x20-0x27.
+    picMasterData.write(0x20);
+    // Slave is told to remap its IRQs (8-15) to CPU vectors 0x28-0x2F.
+    picSlaveData.write(0x28);
 
-    picMasterData.write(0x04); // Tell Master PIC that there is a slave at IRQ2 (00000100)
-    picSlaveData.write(0x02); // Tell Slave PIC its cascade identity (00000010)
+    // ICW3: Chaining Configuration.
+    // Master is told a slave is connected on its IRQ 2 line (0x04 = bit 2 set).
+    picMasterData.write(0x04);
+    // Slave is told its identity is 2.
+    picSlaveData.write(0x02);
 
-    picMasterData.write(0x01); // 8086/88 (MCS-80/85) mode
-    picSlaveData.write(0x01); // 8086/88 (MCS-80/85) mode
+    // ICW4: Environment Information.
+    // Both are told to operate in standard "8086/88" mode.
+    picMasterData.write(0x01);
+    picSlaveData.write(0x01);
 
-    picMasterData.write(0x00); // Unmask all interrupts
-    picSlaveData.write(0x00); // Unmask all interrupts
+    // OCW1: Interrupt Masking.
+    // This is the final step, enabling all interrupts by writing a mask of all zeros.
+    picMasterData.write(0x00);
+    picSlaveData.write(0x00);
 
     base=(uintptr_t)&interruptDescriptorTable;
     limit = sizeof(interruptDescriptorTable) - 1;
@@ -37,13 +62,13 @@ InterruptManager::InterruptManager(GDT* gdt){
     uint16_t kernelCSselectorOffset = gdt->kernel_CS_selector();
     uint8_t IDT_INTERRUPT_GATE=0xE;
     for(int i=0; i<256; i++){
-        setIDTEntry(i, kernelCSselectorOffset, &ignoreInterruptRequest, 0, IDT_INTERRUPT_GATE);
+        setIDTEntry(i, kernelCSselectorOffset, &ignoreInterrupt, 0, IDT_INTERRUPT_GATE);
     }
 
     // Set handlers for hardware interrupts
-    setIDTEntry(0x20, kernelCSselectorOffset, &handleInterruptRequest0x00, 0, IDT_INTERRUPT_GATE); // Timer
-    setIDTEntry(0x21, kernelCSselectorOffset, &handleInterruptRequest0x01, 0, IDT_INTERRUPT_GATE); // Keyboard
-    setIDTEntry(0x2C, kernelCSselectorOffset, &handleInterruptRequest0x0C, 0, IDT_INTERRUPT_GATE); // PS/2 Mouse
+    setIDTEntry(0x20, kernelCSselectorOffset, &handleIRQ0x00, 0, IDT_INTERRUPT_GATE); // Timer
+    setIDTEntry(0x21, kernelCSselectorOffset, &handleIRQ0x01, 0, IDT_INTERRUPT_GATE); // Keyboard
+    // setIDTEntry(0x2C, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // PS/2 Mouse
 }
 
 InterruptManager::~InterruptManager(){}
@@ -62,10 +87,9 @@ void InterruptManager::setIDTEntry(
         interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;
 }
 
-InterruptManager* InterruptManager::activeInterruptManager=nullptr;
+InterruptManager* installed_interrupt_manager=nullptr;
 void InterruptManager::installTable(){
-    InterruptManager::activeInterruptManager = this;
-    
+    installed_interrupt_manager=this;
     struct IDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -80,42 +104,6 @@ void InterruptManager::installTable(){
 }
 
 
-uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
-    // Use the global pointer to access the PIC ports
-    if (InterruptManager::activeInterruptManager!= 0) {
-        InterruptManager::activeInterruptManager->DoHandleInterrupt(interruptNumber, esp);
-    }
-    return esp;
-}
-
-uintptr_t InterruptManager::DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp) {
-    
-    // Use a switch to handle different interrupts
-    switch(interruptNumber) {
-        case 0x20: // Timer
-            // printf("Timer tick\n");
-            break;
-
-        case 0x21: // Keyboard
-            // printf("Keyboard key pressed!\n");
-            keyboard_input_by_polling();
-            break;
-
-        default:   // All other interrupts
-            printf("%hd INTERRUPT OCCURRED\n", interruptNumber);
-            break;
-    }
-
-    // Hardware interrupts must still be acknowledged to the PIC
-    if (interruptNumber >= 0x20 && interruptNumber <= 0x2F) {
-        if (interruptNumber >= 0x28) {
-            picSlaveCommand.write(0x20);
-        }
-        picMasterCommand.write(0x20);
-    }
-    
-    return esp;
-}
 
 void InterruptManager::activate(){
     __asm__ volatile ("sti");
@@ -175,4 +163,26 @@ void InterruptManager::printLoadedTableHeader(){
     printf("Limit: %#x (%d bytes)\n", idt_ptr.limit, idt_ptr.limit);
     printf("Entries: %d\n", (idt_ptr.limit + 1) / sizeof(IDT_row));
     printf("---\n");
+}
+
+
+uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
+    // Use the global pointer to access the PIC ports
+    // Use a switch to handle different interrupts
+    // printf("%#hx INTERRUPT OCCURRED\n", interruptNumber);
+
+    if(installed_interrupt_manager->handlers[interruptNumber]!=0){
+        esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);
+    }
+    else if(interruptNumber!=0x20){
+        printf("UNHANDLED INTERRUPT\n");
+    }
+
+    // Hardware interrupts must still be acknowledged to the PIC
+    if (0x20 <=interruptNumber && interruptNumber <= 0x2F) {
+        picMasterCommand.write(0x20);
+        if (0x28 <= interruptNumber) picSlaveCommand.write(0x20);
+    }
+    
+    return esp;
 }

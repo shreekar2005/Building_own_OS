@@ -62,7 +62,7 @@ char keyboard_input_by_polling() {
 
 void printCharStr(const char *str)
 {
-    unsigned short *VideoMemory = (unsigned short *)0xb8000;
+    unsigned short *video_memory = (unsigned short *)0xb8000;
 
     for (int i = 0; str[i] != '\0'; i++)
     {
@@ -77,7 +77,7 @@ void printCharStr(const char *str)
             {
                 cursor_x_--;
                 int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
-                VideoMemory[offset] = (VideoMemory[offset] & 0xFF00) | ' ';
+                video_memory[offset] = (video_memory[offset] & 0xFF00) | ' ';
             }
         }
         else if (str[i] == '\r')
@@ -91,7 +91,7 @@ void printCharStr(const char *str)
         else
         {
             int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
-            VideoMemory[offset] = (VideoMemory[offset] & 0xFF00) | str[i];
+            video_memory[offset] = (video_memory[offset] & 0xFF00) | str[i];
             cursor_x_++;
         }
 
@@ -109,14 +109,14 @@ void printCharStr(const char *str)
                 {
                     int current_offset = y * MAGIC_WIDTH + x;
                     int next_line_offset = (y + 1) * MAGIC_WIDTH + x;
-                    VideoMemory[current_offset] = VideoMemory[next_line_offset];
+                    video_memory[current_offset] = video_memory[next_line_offset];
                 }
             }
 
             int last_line_offset_start = (MAGIC_HEIGHT - 1) * MAGIC_WIDTH;
             for (int x = 0; x < MAGIC_WIDTH; x++)
             {
-                VideoMemory[last_line_offset_start + x] = (VideoMemory[last_line_offset_start + x] & 0xFF00) | ' ';
+                video_memory[last_line_offset_start + x] = (video_memory[last_line_offset_start + x] & 0xFF00) | ' ';
             }
 
             cursor_y_ = MAGIC_HEIGHT - 1;
@@ -127,13 +127,13 @@ void printCharStr(const char *str)
 
 void __clearScreen()
 {
-    unsigned short *VideoMemory = (unsigned short *)0xb8000;
+    unsigned short *video_memory = (unsigned short *)0xb8000;
     unsigned short blank = (0x07 << 8) | ' ';
     int screenSize = MAGIC_WIDTH * MAGIC_HEIGHT;
 
     for (int i = 0; i < screenSize; i++)
     {
-        VideoMemory[i] = blank;
+        video_memory[i] = blank;
     }
 
     cursor_x_ = 0;

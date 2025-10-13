@@ -8,11 +8,27 @@
 
     extern "C" {
         // following functions are defined in kinterruptstub.s
-        void ignoreInterruptRequest();
-        void handleInterruptRequest0x00(); // Timer
-        void handleInterruptRequest0x01(); // Keyboard
-        void handleInterruptRequest0x0C(); // PS/2 Mouse 
+        void ignoreInterrupt();
+        void handleIRQ0x00(); // Timer
+        void handleIRQ0x01(); // Keyboard
+        // void handleIRQ0x0C(); // PS/2 Mouse 
     }
+    class InterruptHandler;
+    class IDT_row;
+    class InterruptManager;
+
+
+    // -------------------------- Class structures ------------------------
+
+    class InterruptHandler{
+        protected:
+            uint8_t interruptNumber;
+            InterruptManager* interrupt_manager;
+            InterruptHandler(uint8_t interruptNumber, InterruptManager* interrupt_manager);
+            ~InterruptHandler();
+        public:
+            uintptr_t handleInterrupt(uintptr_t esp);
+    };
 
     class IDT_row{
         private:
@@ -26,14 +42,17 @@
             ~IDT_row();
             friend class InterruptManager;
     }__attribute__((packed));
-
     
     class InterruptManager{
+        
+        friend class InterruptHandler;
+
         public :
             uint16_t limit;
             uint32_t base;
         protected:
             IDT_row interruptDescriptorTable[256];
+            InterruptHandler* handlers[256];
             void setIDTEntry(
                 uint8_t interruptNumber,
                 uint16_t codeSegmentSelectorOffset,
@@ -45,18 +64,17 @@
             static Port8BitSlow picMasterData;
             static Port8BitSlow picSlaveCommand;
             static Port8BitSlow picSlaveData;    
-            static InterruptManager* activeInterruptManager;
+ 
         public:
             InterruptManager(GDT* gdt);
             ~InterruptManager();
             void installTable();
-            uintptr_t DoHandleInterrupt(uint8_t interruptNumber, uintptr_t esp);
 
-            static uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
             static void activate();
             static void deactivate();
             static void printLoadedTable();
             static void printLoadedTableHeader();
+            static uintptr_t handleInterrupt(uint8_t interruptNumber, uintptr_t esp);
     };
 
 #endif
