@@ -3,7 +3,7 @@
 ## You will find detailed README in specific directory 
 e.g) README for OSOS is in OSOS directory, README for cross-compiler is in cross-compiler directory
 
-## You are Strongly Requested to checkout `./OSOS/README.md` :)
+## You are Strongly Requested to checkout [`./OSOS/README.md`](https://github.com/shreekar2005/Building_own_OS/tree/main/OSOS#osos) :)
 ## Introduction
 In this repo you will find src code for completely new operating system called "OSOS" (idk what name should I give to our OS to I choose "`OSOS (Open Source Operating System)`" 😁).
 I am in learning phase also so there may be subprojects like baby_OSOS, busybox_linux, etc.
