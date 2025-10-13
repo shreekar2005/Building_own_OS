@@ -4,6 +4,7 @@
 #include "kmemory" // for using printMemoryMap()
 #include "kgdt" // for global discripter table
 #include "kinterrupt"
+#include "kkeyboard"
 
 class TestClass{
     public :
@@ -21,17 +22,19 @@ extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     __callConstructors();
     enable_cursor(0,15); // (0,15) is for blinking block
     __clearScreen();
-
-    GDT OSOS_GDT;
-    OSOS_GDT.installTable();
+    //-------------Global Descriptor Table -------------
+    GDT osos_GDT;
+    osos_GDT.installTable();
     GDT::printLoadedTableHeader();
-
-    InterruptManager OSOS_IDT(&OSOS_GDT);
-    OSOS_IDT.installTable();
+    //------------Interrupt Descriptor Table and Drivers -------------
+    InterruptManager osos_InterruptManager(&osos_GDT);
+    
+    KeyboardDriver keyboard(&osos_InterruptManager);
+    
+    osos_InterruptManager.installTable();
     InterruptManager::activate();
     InterruptManager::printLoadedTableHeader();
-    
-    printf("HELLO FROM OSOS\n");
+    printf("HELLO FROM OSOS :)\n");
     while (true){};
 
     disable_cursor();

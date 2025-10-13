@@ -48,26 +48,24 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ## What things are implemented in OSOS:
 
 1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
-    1. **kiostream** : printf(), keyboard_input_by_polling(), clearScreen(), enable/update/disable_cursor()
+    1. **kiostream** : printf(), clearScreen(), enable/update/disable_cursor()
     2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
     3. **kgdt** : class GDT with 1.methods : installTable | 2.static functions : kernel/user_CS/DS_selector()
     4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read()
     5. **kicxxabi** : __callConstructors(), __cxa_finalize()
     6. **kinterrupt** : Have InterruptManager, which can manage interrupts. 
+    6. **kkeyboard** : Keyboard driver to handle keyboard interrupt
 
 2. Accessed multiboot info structure provided by grub bootloader.
 
 3. Calling global object constructors and destructors which are listed in `.ctors` and `.dtors` sections of corresponding object files.
 
-4. Can use keyboard input by Polling method. (Without Interrupt Service)
+4. <br> <img src="./ScreenShots/image6.png" width="300" alt="Base Memory Setting"> <br>
+    - Initialized **Global Descriptor Table** (GDT) : Currently I am not separating kernel and user space (Ring0 and Ring3), That is security issue; but I will implement paging in future so there is no need for separating kernel and user space in GDT (currently flat memory)
+    - Initialized **Interrupt Descriptor Table** (IDT) to enable interrupts
 
-5. Initialized Global Descriptor Table (GDT) as follows :
-<br> <img src="./ScreenShots/image4.png" width="600" alt="Base Memory Setting"> <br>
-Currently I am not separating kernel and user space (Ring0 and Ring3), That is security issue; but I will implement paging in future so there is no need for separating kernel and user space in GDT (currently flat memory)
+5. Can handle keyboard input using Interrupt Service Routine.
 
-6. Initialized Interrupt Descriptor Table (IDT) to enable interrupts and make OSOS an interrupt driven OS.
-<br> <img src="./ScreenShots/image5.png" width="600" alt="Base Memory Setting"> <br>
-This is beatutiful ScreenShot of switching between Timer Interrupt and Keyboard Interrupt :)
 ---
 ---
 
@@ -102,7 +100,7 @@ This is beatutiful ScreenShot of switching between Timer Interrupt and Keyboard 
 ### 4. Interrupts :
 - **PIC (Programmable Interrupt Controller):** It recieves hardware Interrupt Requests (IRQs) and send the interruptNumber to CPU. CPU then go to IDT entry correspondin to interrupt number. There are 2 PICs (Master and Slave) and Slave is attached to one of input line of Master PIC
 - There are **Software Interrupts** that are recieved by CPU (e.g. divide by zero with interruptNumber = 0x00). So we should make their handlers also and keep their reference in IDT.
-- **Main Issue** : Actually PIC also recives IRQ number from 0x00 (e.g. Timer IRQnumber=0x00, Keyboard IRQnumber=0x01). So PIC just cannot forward that number to CPU because then CPU will just call same handler for 'divide by zero' and 'Timer' interrupt. So we will add some offset(0x20 for Master PIC and 0x28 for Slave PIC) such that new interrupt number of IRQ will not conflict with Software Interrupt number.
+- **Main Issue of PIC** : Actually PIC also recives IRQ number from 0x00 (e.g. Timer IRQnumber=0x00, Keyboard IRQnumber=0x01). So PIC just cannot forward that number to CPU because then CPU will just call same handler for 'divide by zero' and 'Timer' interrupt. So we will add some offset(0x20 for Master PIC and 0x28 for Slave PIC) such that new interrupt number of IRQ will not conflict with Software Interrupt number.
 
 
 ---

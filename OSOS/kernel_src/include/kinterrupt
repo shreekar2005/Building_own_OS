@@ -20,14 +20,14 @@
 
     // -------------------------- Class structures ------------------------
 
-    class InterruptHandler{
+    class InterruptHandler{ //This is Abstract class (we cannot make object of type InterruptHandler)
         protected:
             uint8_t interruptNumber;
             InterruptManager* interrupt_manager;
             InterruptHandler(uint8_t interruptNumber, InterruptManager* interrupt_manager);
             ~InterruptHandler();
         public:
-            uintptr_t handleInterrupt(uintptr_t esp);
+            virtual uintptr_t handleInterrupt(uintptr_t esp)=0; //pure virtual function
     };
 
     class IDT_row{

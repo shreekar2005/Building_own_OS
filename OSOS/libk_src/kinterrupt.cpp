@@ -16,9 +16,9 @@ InterruptHandler::InterruptHandler(uint8_t interruptNumber, InterruptManager* in
 InterruptHandler::~InterruptHandler(){
     if(interrupt_manager->handlers[interruptNumber]==this) interrupt_manager->handlers[interruptNumber]=nullptr;
 }
-uintptr_t InterruptHandler::handleInterrupt(uintptr_t esp){
-    return esp;
-}
+// uintptr_t InterruptHandler::handleInterrupt(uintptr_t esp){
+//     return esp;
+// }
 
 
 IDT_row::IDT_row(){}
@@ -87,7 +87,7 @@ void InterruptManager::setIDTEntry(
         interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;
 }
 
-InterruptManager* installed_interrupt_manager=nullptr;
+static InterruptManager* installed_interrupt_manager=nullptr;
 void InterruptManager::installTable(){
     installed_interrupt_manager=this;
     struct IDT_Pointer {
@@ -167,15 +167,14 @@ void InterruptManager::printLoadedTableHeader(){
 
 
 uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
-    // Use the global pointer to access the PIC ports
-    // Use a switch to handle different interrupts
-    // printf("%#hx INTERRUPT OCCURRED\n", interruptNumber);
+    // Use the global pointer "installed_interrupt_manager" to access the current interrupt manager
 
-    if(installed_interrupt_manager->handlers[interruptNumber]!=0){
+    if(installed_interrupt_manager->handlers[interruptNumber]!=nullptr){
         esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);
     }
-    else if(interruptNumber!=0x20){
-        printf("UNHANDLED INTERRUPT\n");
+
+    else if(interruptNumber!=0x20){ //0x20 is Hardware Timer Interrupt
+        printf("UNHANDLED INTERRUPT %#hx\n",interruptNumber);
     }
 
     // Hardware interrupts must still be acknowledged to the PIC

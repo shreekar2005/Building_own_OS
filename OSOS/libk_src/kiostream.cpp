@@ -1,17 +1,15 @@
 #include "kiostream"
 #include "kport"
 
-int cursor_x_ = 0;
-int cursor_y_ = 0;
+static int cursor_x_ = 0;
+static int cursor_y_ = 0;
 #define MAGIC_WIDTH 80
 #define MAGIC_HEIGHT 25
 #define TAB_WIDTH 4 
 
 // --- Global Port Objects ---
-Port8Bit keyboardDataPort(0x60);
-Port8Bit keyboardStatusPort(0x64);
-Port8Bit vgaIndexPort(0x3D4);
-Port8Bit vgaDataPort(0x3D5);
+static Port8Bit vgaIndexPort(0x3D4);
+static Port8Bit vgaDataPort(0x3D5);
 
 // --- VGA Cursor Control ---
 
@@ -36,31 +34,8 @@ void disable_cursor() {
     vgaDataPort.write(0x20);
 }
 
-static const char scancode_to_ascii[] = {
-    0,   0, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '\b',
-    '\t', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\n',
-    0, 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', '`', 0,
-    '\\', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 0, '*', 0,
-    ' ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0,
-};
 
-char keyboard_input_by_polling() {
-    uint8_t scancode;
-    while ((keyboardStatusPort.read() & 1) == 0) {}
-    
-    scancode = keyboardDataPort.read();
-    
-    if (scancode < sizeof(scancode_to_ascii) && scancode_to_ascii[scancode] != 0) {
-        printf("%c", scancode_to_ascii[scancode]);
-        return scancode_to_ascii[scancode];
-    }
-    
-    return 0; 
-}
-
-
-void printCharStr(const char *str)
+static void printCharStr(const char *str)
 {
     unsigned short *video_memory = (unsigned short *)0xb8000;
 
@@ -236,7 +211,7 @@ static void doubleToString(double d, char *buffer, int precision)
 
 static void printHex(uintptr_t n, int digits) {
     char buffer[32];
-    ullToString(n, buffer, 16, 0, 0);
+    ullToString(n, buffer, 16, 0, 1); // Use uppercase for pointers typically
 
     int len = 0;
     while (buffer[len] != '\0') {
@@ -249,16 +224,44 @@ static void printHex(uintptr_t n, int digits) {
     printCharStr(buffer);
 }
 
-/*
- * my printf supports:
- * Specifiers: %c, %s, %d, %i, %u, %f, %x, %X, %b, %o, %p, %%
- * Flags:      '#', '0'
- * Width:      '<number>' (e.g., %10d)
- * Precision:  '.<number>' (e.g., %.8X)
- * Length:     'l', 'll', 'h', 'hh'
+/**
+ * @brief A custom implementation of the standard printf function for writing to VGA text mode memory.
+ * * This function formats a string and prints it to the screen, handling various format specifiers,
+ * flags, width, precision, and length modifiers. It returns the total number of characters written.
+ * * @param format The format string.
+ * @param ... Variable arguments corresponding to the format specifiers.
+ * * @return The total number of characters written to the screen.
+ * * @details
+ * Supported Format Specifiers:
+ * %c - Character
+ * %s - String
+ * %d, %i - Signed decimal integer
+ * %u - Unsigned decimal integer
+ * %f - Floating point number (double)
+ * %x - Unsigned hexadecimal integer (lowercase)
+ * %X - Unsigned hexadecimal integer (uppercase)
+ * %b - Unsigned binary integer
+ * %o - Unsigned octal integer
+ * %p - Pointer address
+ * %% - A literal '%' character
+ * * Supported Flags:
+ * '#' - Alternative form (e.g., 0x for hex, 0 for octal).
+ * '0' - Zero-padding for width.
+ * * Supported Width:
+ * A number after '%' specifies the minimum field width (e.g., %10d).
+ * * Supported Precision:
+ * A period followed by a number specifies precision (e.g., %.4f, %.8X).
+ * For integers, this specifies the minimum number of digits to print.
+ * * Supported Length Modifiers:
+ * h  - short int (for d, i, u, x, X, o, b)
+ * hh - signed/unsigned char (for d, i, u, x, X, o, b)
+ * l  - long int
+ * ll - long long int
  */
-void printf(const char *format, ...)
+int printf(const char *format, ...)
 {
+    int chars_written = 0;
+
     va_list args;
     va_start(args, format);
 
@@ -271,20 +274,20 @@ void printf(const char *format, ...)
         {
             i++;
             
-            // --- Parse flags, width, precision, and length modifiers ---
             int use_alternative_form = 0;
             int zero_pad = 0;
             int width = 0;
             int precision = -1;
             
             // 1. Flags
-            bool parsing_flags = true;
-            while(parsing_flags) {
-                switch(format[i]) {
-                    case '#': use_alternative_form = 1; i++; break;
-                    case '0': zero_pad = 1; i++; break;
-                    default: parsing_flags = false; break;
-                }
+            // A boolean is clearer than using a while loop here
+            if (format[i] == '#') {
+                use_alternative_form = 1;
+                i++;
+            }
+            if (format[i] == '0') {
+                zero_pad = 1;
+                i++;
             }
 
             // 2. Width
@@ -301,7 +304,6 @@ void printf(const char *format, ...)
                     precision = precision * 10 + (format[i] - '0');
                     i++;
                 }
-                // Precision specifier for integers overrides the '0' flag.
                 zero_pad = 0;
             }
 
@@ -321,21 +323,38 @@ void printf(const char *format, ...)
                 case 'c':
                     char_str[0] = (char)va_arg(args, int);
                     printCharStr(char_str);
+                    chars_written++;
                     break;
                 case 's':
-                    printCharStr(va_arg(args, char *));
+                {
+                    const char *str = va_arg(args, char *);
+                    if (!str) {
+                        str = "(null)";
+                    }
+                    int len = 0;
+                    while (str[len]) {
+                        len++;
+                    }
+                    printCharStr(str);
+                    chars_written += len;
                     break;
+                }
                 case 'f':
+                {
                     doubleToString(va_arg(args, double), buffer, precision);
+                    int len = 0;
+                    while(buffer[len]) {
+                        len++;
+                    }
                     printCharStr(buffer);
+                    chars_written += len;
                     break;
-
-                // Unified handler for all integer types
+                }
                 case 'd': case 'i': case 'u': case 'x': case 'X': case 'b': case 'o':
                 {
                     unsigned long long val;
                     int base = 10;
-                    bool uppercase = false;
+                    int uppercase = 0;
                     char sign_char = 0;
 
                     if (format[i] == 'd' || format[i] == 'i') {
@@ -352,7 +371,7 @@ void printf(const char *format, ...)
                         } else {
                             val = signed_val;
                         }
-                    } else { // Unsigned types
+                    } else {
                         if (is_long_long) val = va_arg(args, unsigned long long);
                         else if (is_long) val = va_arg(args, unsigned long);
                         else if (is_char) val = (unsigned char)va_arg(args, unsigned int);
@@ -362,7 +381,7 @@ void printf(const char *format, ...)
 
                     switch(format[i]) {
                         case 'x': base = 16; break;
-                        case 'X': base = 16; uppercase = true; break;
+                        case 'X': base = 16; uppercase = 1; break;
                         case 'b': base = 2; break;
                         case 'o': base = 8; break;
                     }
@@ -386,6 +405,8 @@ void printf(const char *format, ...)
                     int total_len = num_len + (sign_char ? 1 : 0) + prefix_len + precision_pads;
                     int width_pads = (width > total_len) ? (width - total_len) : 0;
                     
+                    chars_written += width_pads + total_len;
+
                     if (!zero_pad && width_pads > 0) {
                         for (int j = 0; j < width_pads; j++) printCharStr(" ");
                     }
@@ -404,17 +425,22 @@ void printf(const char *format, ...)
                 }
                 
                 case 'p':
+                {
                     printCharStr("0x");
-                    if (sizeof(uintptr_t) == 4) printHex((uintptr_t)va_arg(args, void *), 8);
-                    else if (sizeof(uintptr_t) == 8) printHex((uintptr_t)va_arg(args, void *), 16);
+                    int hex_digits = sizeof(uintptr_t) * 2;
+                    printHex((uintptr_t)va_arg(args, void *), hex_digits);
+                    chars_written += 2 + hex_digits;
                     break;
+                }
                 case '%':
                     printCharStr("%");
+                    chars_written++;
                     break;
                 default:
                     printCharStr("%");
                     char_str[0] = format[i];
                     printCharStr(char_str);
+                    chars_written += 2;
                     break;
             }
         }
@@ -422,8 +448,10 @@ void printf(const char *format, ...)
         {
             char_str[0] = format[i];
             printCharStr(char_str);
+            chars_written++;
         }
     }
     va_end(args);
     update_cursor(cursor_x_, cursor_y_);
+    return chars_written;
 }
