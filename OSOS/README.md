@@ -42,6 +42,7 @@ make # it will build OSOSkernel.bin and boot with QEMU
 make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask for your sudo password)
 ```
 
+### *Read "Instructions" written in "Makefile" for more make procedures.*
 ---
 ---
 
@@ -102,6 +103,12 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 - There are **Software Interrupts** that are recieved by CPU (e.g. divide by zero with interruptNumber = 0x00). So we should make their handlers also and keep their reference in IDT.
 - **Main Issue of PIC** : Actually PIC also recives IRQ number from 0x00 (e.g. Timer IRQnumber=0x00, Keyboard IRQnumber=0x01). So PIC just cannot forward that number to CPU because then CPU will just call same handler for 'divide by zero' and 'Timer' interrupt. So we will add some offset(0x20 for Master PIC and 0x28 for Slave PIC) such that new interrupt number of IRQ will not conflict with Software Interrupt number.
 
+
+---
+---
+
+## One thing which blew my mind :
+In early days, many machines have only support to 32bit programs (only 4GB addressable memory). After introduction to 64bit systems some people developed **UEFI** (which is BIOS but it have mini-OS which runs in 64bit). Now I have ***ASUS TUF F15 (GAMING 2022)*** in which there is no option to keep BIOS in **"Legacy Mode"** or turn on **"CSM"**. So on my machine i cannot boot in 32bit OS. In today's date there are many laptops which supports both modern and legacy mode, but my laptop sucks :(. If you want to boot 32bit OSOS then you have to first disable **"Secure boot"** and then turn on **"CSM"** or switch to **"Legacy Mode"** from BIOS
 
 ---
 ---

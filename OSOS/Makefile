@@ -1,3 +1,18 @@
+# Instructions to use this makefile
+# make 			: To build elf and boot with elf and qemu
+# make qemu_elf	: To build elf and boot with elf and qemu
+# make qemu_iso	: To build iso and boot with iso and qemu
+# make vm		: To build iso and boot with iso and VirtualBox (read README for setting up VM)
+# make elf		: To build elf file by compiling and linking source code
+# make iso 		: To build iso file with existing elf 
+# make clean	: To delete all build directories
+# make clear	: To delete all build directories and clear the screen
+
+# .PHONY is for targets that are NOT files
+.PHONY: qemu_elf qemu_iso elf vm elf iso clear clean
+
+
+
 # Directories
 KERNEL_SRC_DIR := kernel_src
 KERNEL_BUILD_DIR := kernel_build
@@ -26,13 +41,11 @@ LIBK_OBJS_CPP := $(patsubst $(LIBK_SRC_DIR)/%.cpp, $(LIBK_BUILD_DIR)/%.o, $(LIBK
 # Combine all object files into one list
 OBJECTS := $(KRNL_OBJS_S) $(KRNL_OBJS_CPP) $(LIBK_OBJS_S) $(LIBK_OBJS_CPP)
 
-
 # Target builds
 TARGET_ELF := $(KERNEL_BUILD_DIR)/OSOSkernel.elf
 TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
-# .PHONY is for targets that are NOT files
-.PHONY: qemu elf elf vm iso install_OSOS uninstall_OSOS clean
+
 
 # Default target when you just type 'make'. It starts qemu virtual machine
 qemu_elf: elf 
@@ -82,6 +95,8 @@ $(TARGET_ISO): $(TARGET_ELF)
 	grub-mkrescue --output=$@ $(KERNEL_BUILD_DIR)/iso
 	rm -rf $(KERNEL_BUILD_DIR)/iso
 
+
+
 # Rule to clean build directory
 clear: clean
 	clear
@@ -108,45 +123,3 @@ $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.s | $(LIBK_BUILD_DIR)
 # Rule to build libk C++ files (.cpp -> .o)
 $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.cpp | $(LIBK_BUILD_DIR)
 	$(CC) -c $< $(CCPARAMS) -o $@
-
-
-
-# ------------------------------------------ GRUB Management Rules ------------------------------------------------
-
-# Rule to add a GRUB menu entry for the kernel.
-# 1. Copies the kernel to /boot.
-# 2. Checks if the menu entry already exists in /etc/grub.d/40_custom.
-# 3. If not, it appends the new menu entry.
-# 4. Runs update-grub to apply the changes.
-install_OSOS: elf
-	@echo "--- Adding GRUB Entry for OSOS ---"
-	@echo "Copying kernel to /boot directory..."
-	sudo cp $(TARGET_ELF) /boot/OSOSkernel.elf
-	@if sudo grep -q 'menuentry "OSOS"' /etc/grub.d/40_custom; then \
-		echo "GRUB entry for 'OSOS' already exists. Nothing to do."; \
-	else \
-		echo "Adding new GRUB entry to /etc/grub.d/40_custom..."; \
-		printf '\nmenuentry "OSOS" {\n\tmultiboot /boot/OSOSkernel.elf\n\tboot\n}\n' | sudo tee -a /etc/grub.d/40_custom > /dev/null; \
-		echo "Updating GRUB configuration..."; \
-		sudo update-grub; \
-		echo "Done. GRUB entry added successfully."; \
-	fi
-
-# Rule to remove the GRUB menu entry for the kernel.
-# 1. Checks if the menu entry exists.
-# 2. If it does, it removes the entire 'menuentry "OSOS" {...}' block.
-# 3. Removes the kernel files from /boot.
-# 4. Runs update-grub to apply the changes.
-uninstall_OSOS:
-	@echo "--- Removing GRUB Entry for OSOS ---"
-	@if sudo grep -q 'menuentry "OSOS"' /etc/grub.d/40_custom; then \
-		echo "Found GRUB entry. Removing it..."; \
-		sudo perl -i -0777 -pe 's/\n*menuentry "OSOS" \{.*?\}//s' /etc/grub.d/40_custom; \
-		echo "Removing kernel files from /boot..."; \
-		sudo rm -f /boot/OSOSkernel.elf /boot/OSOSkernel.iso; \
-		echo "Updating GRUB configuration..."; \
-		sudo update-grub; \
-		echo "Done. GRUB entry and kernel files removed."; \
-	else \
-		echo "GRUB entry for 'OSOS' not found. Nothing to remove."; \
-	fi
