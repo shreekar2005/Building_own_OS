@@ -4,7 +4,7 @@ KERNEL_BUILD_DIR := kernel_build
 LIBK_SRC_DIR := libk_src
 LIBK_BUILD_DIR := libk_build
 
-QEMU := qemu-system-x86_64
+QEMU := qemu-system-i386
 # Toolchain flags
 CC 			:= i686-elf-g++
 CCPARAMS 	:= -I ./$(KERNEL_SRC_DIR)/include -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
