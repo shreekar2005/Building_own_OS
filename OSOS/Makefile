@@ -5,10 +5,10 @@ LIBK_SRC_DIR := libk_src
 LIBK_BUILD_DIR := libk_build
 
 # Toolchain flags
-CC       := i686-elf-g++
-CCPARAMS := -I ./$(KERNEL_SRC_DIR)/include -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
-AS        := i686-elf-as
-ASPARAMS  := 
+CC 			:= i686-elf-g++
+CCPARAMS 	:= -I ./$(KERNEL_SRC_DIR)/include -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
+AS        	:= i686-elf-as
+ASPARAMS  	:= 
 
 # --- STEP 1: Automatically find all source files ---
 KRNL_SOURCES_S := $(wildcard $(KERNEL_SRC_DIR)/*.s)
@@ -27,15 +27,20 @@ OBJECTS := $(KRNL_OBJS_S) $(KRNL_OBJS_CPP) $(LIBK_OBJS_S) $(LIBK_OBJS_CPP)
 
 
 # Target builds
-TARGET_BIN := $(KERNEL_BUILD_DIR)/OSOSkernel.bin
+TARGET_ELF := $(KERNEL_BUILD_DIR)/OSOSkernel.elf
 TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
 # .PHONY is for targets that are NOT files
-.PHONY: qemu bin iso vm clean
+.PHONY: qemu elf elf vm iso clean
 
 # Default target when you just type 'make'. It starts qemu virtual machine
-qemu: bin 
-	qemu-system-x86_64 --kernel $(TARGET_BIN) -m 4096
+qemu: elf 
+	qemu-system-x86_64 --kernel $(TARGET_ELF) -m 4096
+
+# Rule to create the kernel ELF.
+elf: $(TARGET_ELF)
+$(TARGET_ELF): $(OBJECTS) $(KERNEL_SRC_DIR)/linker.ld
+	$(CC) -T $(KERNEL_SRC_DIR)/linker.ld $(OBJECTS) $(CCPARAMS) -o $@
 
 # Rule to run the OS in VirtualBox, restarting it if it's already running.
 vm: iso
@@ -55,28 +60,22 @@ vm: iso
 	@echo "VM has been powered off. Reloading KVM modules."
 	sudo modprobe kvm_intel; sudo modprobe kvm
 
-# Rule to create the kernel binary.
-bin: $(TARGET_BIN) 
-$(TARGET_BIN): $(OBJECTS) $(KERNEL_SRC_DIR)/linker.ld
-	$(CC) -T $(KERNEL_SRC_DIR)/linker.ld $(OBJECTS) $(CCPARAMS) -o $@
-
 # Rule to create the bootable ISO.
 iso: $(TARGET_ISO)
-$(TARGET_ISO): $(TARGET_BIN)
+$(TARGET_ISO): $(TARGET_ELF)
 	mkdir -p $(KERNEL_BUILD_DIR)/iso/boot/grub
-	cp $(TARGET_BIN) $(KERNEL_BUILD_DIR)/iso/boot/
+	cp $(TARGET_ELF) $(KERNEL_BUILD_DIR)/iso/boot/
 	
 	echo 'set timeout=2' > $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo 'set default=0' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo '' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo 'menuentry "OSOS" {' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo '  multiboot /boot/OSOSkernel.bin' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo '  multiboot /boot/OSOSkernel.elf' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo '  boot' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo '}' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 
 	grub-mkrescue --output=$@ $(KERNEL_BUILD_DIR)/iso
 	rm -rf $(KERNEL_BUILD_DIR)/iso
-
 
 # Rule to clean build directory
 clear: clean

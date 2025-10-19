@@ -12,7 +12,7 @@ PHDRS
 
 SECTIONS
 {
-    . = 0x0100000;
+    . = 1M;
     
     /* assign sections to the 'text_segment' program header */
     .text :
