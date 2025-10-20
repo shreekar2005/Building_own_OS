@@ -28,10 +28,11 @@ extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     GDT::printLoadedTableHeader();
     //------------Interrupt Descriptor Table and Drivers -------------
     InterruptManager osos_InterruptManager(&osos_GDT);
+    osos_InterruptManager.installTable();
     
+    //------------Creating object of drivers so that they will handle their corresponding Interrupts------------
     KeyboardDriver keyboard(&osos_InterruptManager);
     
-    osos_InterruptManager.installTable();
     InterruptManager::activate();
     InterruptManager::printLoadedTableHeader();
     printf("HELLO FROM OSOS :)\n");

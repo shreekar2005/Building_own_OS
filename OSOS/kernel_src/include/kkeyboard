@@ -7,6 +7,13 @@
     class KeyboardDriver : public InterruptHandler{
             Port8Bit dataPort;
             Port8Bit commandPort;
+            // for shift
+            bool shift_pressed;
+            // for caps
+            bool caps_on;
+            bool waiting_for_led_ack;
+            uint8_t led_byte_to_send;
+
         public :
             KeyboardDriver(InterruptManager* interrupt_manager);
             ~KeyboardDriver();

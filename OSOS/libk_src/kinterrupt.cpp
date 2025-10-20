@@ -168,7 +168,6 @@ void InterruptManager::printLoadedTableHeader(){
 
 uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
     // Use the global pointer "installed_interrupt_manager" to access the current interrupt manager
-
     if(installed_interrupt_manager->handlers[interruptNumber]!=nullptr){
         esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);
     }
