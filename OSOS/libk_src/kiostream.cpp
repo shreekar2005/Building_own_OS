@@ -42,7 +42,7 @@ static void printCharStr(const char *str)
 {
     uint16_t *video_memory = (uint16_t *)0xb8000;
     // FOR TEXT : Attribute for Bright White (0xF) text on a Black (0x0) background.
-    const uint16_t color_attribute = 0x0F00;
+    const uint16_t color_attribute = 0x0700;
 
     // --- MOUSE-SAFE PRINTING: remove mouse ---
     int mouse_offset = MouseDriver::__mouse_y_ * MAGIC_WIDTH + MouseDriver::__mouse_x_;
