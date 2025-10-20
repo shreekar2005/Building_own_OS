@@ -55,7 +55,9 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
     4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read()
     5. **kicxxabi** : __callConstructors(), __cxa_finalize()
     6. **kinterrupt** : Have InterruptManager, which can manage interrupts. 
-    6. **kkeyboard** : Keyboard driver to handle keyboard interrupt
+    7. **kkeyboard** : Keyboard driver to handle keyboard interrupt
+    8. **kmouse** : Mouse driver to handle mouse interrupts
+
 
 2. Accessed multiboot info structure provided by grub bootloader.
 

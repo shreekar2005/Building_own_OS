@@ -1,8 +1,9 @@
 #include "kiostream"
-#include "kport"
+#include "kmouse"
 
 static int cursor_x_ = 0;
 static int cursor_y_ = 0;
+
 #define MAGIC_WIDTH 80
 #define MAGIC_HEIGHT 25
 #define TAB_WIDTH 4 
@@ -22,6 +23,8 @@ void enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
 }
 
 void update_cursor(int x, int y) {
+    cursor_x_=x;
+    cursor_y_=y;
     uint16_t pos = y * 80 + x;
     vgaIndexPort.write(0x0F);
     vgaDataPort.write((uint8_t)(pos & 0xFF));
@@ -37,7 +40,14 @@ void disable_cursor() {
 
 static void printCharStr(const char *str)
 {
-    unsigned short *video_memory = (unsigned short *)0xb8000;
+    uint16_t *video_memory = (uint16_t *)0xb8000;
+    // FOR TEXT : Attribute for Bright White (0xF) text on a Black (0x0) background.
+    const uint16_t color_attribute = 0x0F00;
+
+    // --- MOUSE-SAFE PRINTING: remove mouse ---
+    int mouse_offset = MouseDriver::__mouse_y_ * MAGIC_WIDTH + MouseDriver::__mouse_x_;
+    if(mouse_offset>=0) video_memory[mouse_offset] = MouseDriver::old_char_under_cursor;
+
 
     for (int i = 0; str[i] != '\0'; i++)
     {
@@ -52,7 +62,7 @@ static void printCharStr(const char *str)
             {
                 cursor_x_--;
                 int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
-                video_memory[offset] = (video_memory[offset] & 0xFF00) | ' ';
+                video_memory[offset] = color_attribute | ' ';
             }
         }
         else if (str[i] == '\r')
@@ -66,7 +76,7 @@ static void printCharStr(const char *str)
         else
         {
             int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
-            video_memory[offset] = (video_memory[offset] & 0xFF00) | str[i];
+            video_memory[offset] = color_attribute | str[i];
             cursor_x_++;
         }
 
@@ -91,13 +101,18 @@ static void printCharStr(const char *str)
             int last_line_offset_start = (MAGIC_HEIGHT - 1) * MAGIC_WIDTH;
             for (int x = 0; x < MAGIC_WIDTH; x++)
             {
-                video_memory[last_line_offset_start + x] = (video_memory[last_line_offset_start + x] & 0xFF00) | ' ';
+                video_memory[last_line_offset_start + x] = color_attribute | ' ';
             }
 
             cursor_y_ = MAGIC_HEIGHT - 1;
             cursor_x_ = 0;
         }
     }
+
+    // --- MOUSE-SAFE PRINTING: add mouse again---
+    MouseDriver::old_char_under_cursor = video_memory[mouse_offset];
+    if(mouse_offset>=0) video_memory[mouse_offset] = (MouseDriver::old_char_under_cursor & 0x0FFF) | 0x9000;
+
 }
 
 void __clearScreen()

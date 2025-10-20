@@ -56,7 +56,7 @@ handleIRQ\handler_suffix:
 // handleIRQ IRQnum, handler_suffix
 handleIRQ 0x00, 0x00 // Timer : will convert its number from 0x00 to 0x20
 handleIRQ 0x01, 0x01 // Keyboard : will convert its number from 0x01 to 0x21
-// handleIRQ 0x0C, 0x0C // PS/2 Mouse : will convert its number from 0x0C to 0x2C
+handleIRQ 0x0C, 0x0C // PS/2 Mouse : will convert its number from 0x0C to 0x2C
 
 
 

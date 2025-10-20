@@ -5,6 +5,7 @@
 #include "kgdt" // for global discripter table
 #include "kinterrupt"
 #include "kkeyboard"
+#include "kmouse"
 
 class TestClass{
     public :
@@ -25,15 +26,15 @@ extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
     //-------------Global Descriptor Table -------------
     GDT osos_GDT;
     osos_GDT.installTable();
-    GDT::printLoadedTableHeader();
     //------------Interrupt Descriptor Table and Drivers -------------
     InterruptManager osos_InterruptManager(&osos_GDT);
     osos_InterruptManager.installTable();
-    
     //------------Creating object of drivers so that they will handle their corresponding Interrupts------------
+    MouseDriver mouse(&osos_InterruptManager);
     KeyboardDriver keyboard(&osos_InterruptManager);
-    
     InterruptManager::activate();
+    
+    GDT::printLoadedTableHeader();
     InterruptManager::printLoadedTableHeader();
     printf("HELLO FROM OSOS :)\n");
     while (true){};
