@@ -1,32 +1,13 @@
 #include "kdriver"
 
-Driver::Driver()
-{
-}
-
-Driver::~Driver()
-{
-}
-
-void Driver::activate(){
-
-}
-int Driver::reset(){
-    return 0;
-}
-void Driver::deactivate(){
-
-}
+Driver::Driver(){}
+Driver::~Driver(){}
 
 
-DriverManager::DriverManager()
-{
+DriverManager::DriverManager(){
     numDrivers=0;
 }
-
-DriverManager::~DriverManager()
-{
-}
+DriverManager::~DriverManager(){}
 
 void DriverManager::addDriver(Driver* driver){
     drivers[numDrivers]=driver;
