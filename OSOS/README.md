@@ -106,11 +106,16 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 1. Go to Ghidra github repository : [official Ghidra github link](https://github.com/NationalSecurityAgency/ghidra)
 2. Go to releases and download zip, `unzip` it, `cd` to it, run `./ghidraRun`. 
 
-### 3. My personal rules while developing OSOS
+### 3. My personal rules while developing OSOS (IMP if you are thinking to Contribute)
 - Using `#include <>` for standard libraries
 - Using `#include ""` for OSOS specific libraries, e.g. libraries in `./kernel_src/include/`
 - Naming OSOS kernel libraries with prefix `'k'`, e.g. kiostream, kmemory, etc
 - **Naming convensions :**  pointer names : `abc_xyz_pqr`, class/struct names :  `AbcXyzPqr` or `ABC_XyzPqr`, function/variable names : `abcXyzPqr`
+- all kernel library functions, classes, variables are divided in 4 **`namespaces`** : 
+    1. **basic** : kiostream, kmemory
+    2. **driver** : kdriver, kkeyboard, kmouse
+    3. **essential** : kgdt, kicxxabi
+    4. **hardware_communication** : kinterrupt, kport
 
 ### 4. Interrupts :
 - **PIC (Programmable Interrupt Controller):** It recieves hardware Interrupt Requests (IRQs) and send the interruptNumber to CPU. CPU then go to IDT entry correspondin to interrupt number. There are 2 PICs (Master and Slave) and Slave is attached to one of input line of Master PIC

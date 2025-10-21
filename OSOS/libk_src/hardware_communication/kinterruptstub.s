@@ -19,7 +19,7 @@ common_interrupt_stub:
     pushl %esp              // Arg 2: current stack pointer
     push (interruptNumber)  // Arg 1: the interrupt number we stored earlier
 
-    call  _ZN16InterruptManager15handleInterruptEhm
+    call  _ZN22hardware_communication16InterruptManager15handleInterruptEhm
 
     // The C++ handler returns the new stack pointer in EAX.
     // This cleans up the two arguments we pushed.

@@ -1,5 +1,5 @@
-#include "kiostream"
-#include "kmouse"
+#include "basic/kiostream"
+#include "driver/kmouse"
 
 static int cursor_x_ = 0;
 static int cursor_y_ = 0;
@@ -9,12 +9,12 @@ static int cursor_y_ = 0;
 #define TAB_WIDTH 4 
 
 // --- Global Port Objects ---
-static Port8Bit vgaIndexPort(0x3D4);
-static Port8Bit vgaDataPort(0x3D5);
+static hardware_communication::Port8Bit vgaIndexPort(0x3D4);
+static hardware_communication::Port8Bit vgaDataPort(0x3D5);
 
 // --- VGA Cursor Control ---
 
-void enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
+void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
     vgaIndexPort.write(0x0A);
     vgaDataPort.write((vgaDataPort.read() & 0xC0) | cursor_start);
     
@@ -22,7 +22,7 @@ void enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
     vgaDataPort.write((vgaDataPort.read() & 0xE0) | cursor_end);
 }
 
-void update_cursor(int x, int y) {
+void basic::update_cursor(int x, int y) {
     cursor_x_=x;
     cursor_y_=y;
     uint16_t pos = y * 80 + x;
@@ -32,7 +32,7 @@ void update_cursor(int x, int y) {
     vgaDataPort.write((uint8_t)((pos >> 8) & 0xFF));
 }
 
-void disable_cursor() {
+void basic::disable_cursor() {
     vgaIndexPort.write(0x0A);
     vgaDataPort.write(0x20);
 }
@@ -45,8 +45,8 @@ static void printCharStr(const char *str)
     const uint16_t color_attribute = 0x0700;
 
     // --- MOUSE-SAFE PRINTING: remove mouse ---
-    int mouse_offset = MouseDriver::__mouse_y_ * MAGIC_WIDTH + MouseDriver::__mouse_x_;
-    if(mouse_offset>=0) video_memory[mouse_offset] = MouseDriver::old_char_under_mouse_pointer;
+    int mouse_offset = driver::MouseDriver::__mouse_y_ * MAGIC_WIDTH + driver::MouseDriver::__mouse_x_;
+    if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::old_char_under_mouse_pointer;
 
 
     for (int i = 0; str[i] != '\0'; i++)
@@ -110,12 +110,12 @@ static void printCharStr(const char *str)
     }
 
     // --- MOUSE-SAFE PRINTING: add mouse again---
-    MouseDriver::old_char_under_mouse_pointer = video_memory[mouse_offset];
-    if(mouse_offset>=0) video_memory[mouse_offset] = MouseDriver::mouse_block_video_mem_value(MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
+    driver::MouseDriver::old_char_under_mouse_pointer = video_memory[mouse_offset];
+    if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::mouse_block_video_mem_value(driver::MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
 
 }
 
-void __clearScreen()
+void basic::__clearScreen()
 {
     unsigned short *video_memory = (unsigned short *)0xb8000;
     unsigned short blank = (0x07 << 8) | ' ';
@@ -273,7 +273,7 @@ static void printHex(uintptr_t n, int digits) {
  * l  - long int
  * ll - long long int
  */
-int printf(const char *format, ...)
+int basic::printf(const char *format, ...)
 {
     int chars_written = 0;
 

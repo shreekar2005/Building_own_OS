@@ -21,8 +21,8 @@
 
 // header src link :  https://cgit.git.savannah.gnu.org/cgit/grub.git/tree/doc/multiboot.h?h=multiboot
 
-#ifndef MULTIBOOT_HEADER
-#define MULTIBOOT_HEADER 1
+#ifndef OSOS_BASIC_MULTIBOOT_HEADER
+#define OSOS_BASIC_MULTIBOOT_HEADER 1
 
 /* How many bytes from the start of the file we search for the header.  */
 #define MULTIBOOT_SEARCH			8192
@@ -273,4 +273,4 @@ struct multiboot_apm_info
 
 #endif /* ! ASM_FILE */
 
-#endif /* ! MULTIBOOT_HEADER */
+#endif /* ! OSOS_BASIC_MULTIBOOT_HEADER */

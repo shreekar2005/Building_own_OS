@@ -1,12 +1,12 @@
 # Instructions to use this makefile
-# make 			: To build elf and boot with elf and qemu
-# make qemu_elf	: To build elf and boot with elf and qemu
-# make qemu_iso	: To build iso and boot with iso and qemu
-# make vm		: To build iso and boot with iso and VirtualBox (read README for setting up VM)
-# make elf		: To build elf file by compiling and linking source code
-# make iso 		: To build iso file with existing elf 
-# make clean	: To delete all build directories
-# make clear	: To delete all build directories and clear the screen
+# make          : To build elf and boot with elf and qemu
+# make qemu_elf : To build elf and boot with elf and qemu
+# make qemu_iso : To build iso and boot with iso and qemu
+# make vm       : To build iso and boot with iso and VirtualBox (read README for setting up VM)
+# make elf      : To build elf file by compiling and linking source code
+# make iso      : To build iso file with existing elf 
+# make clean    : To delete all build directories
+# make clear    : To delete all build directories and clear the screen
 
 # .PHONY is for targets that are NOT files
 .PHONY: qemu_elf qemu_iso elf vm elf iso clear clean
@@ -21,16 +21,16 @@ LIBK_BUILD_DIR := libk_build
 
 QEMU := qemu-system-i386
 # Toolchain flags
-CC 			:= i686-elf-g++
-CCPARAMS 	:= -I ./$(KERNEL_SRC_DIR)/include -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
-AS        	:= i686-elf-as
-ASPARAMS  	:= 
+CC          := i686-elf-g++
+CCPARAMS    := -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
+AS          := i686-elf-as
+ASPARAMS    := 
 
 # Automatically find all source files ---
 KRNL_SOURCES_S := $(wildcard $(KERNEL_SRC_DIR)/*.s)
 KRNL_SOURCES_CPP := $(wildcard $(KERNEL_SRC_DIR)/*.cpp)
-LIBK_SOURCES_S := $(wildcard $(LIBK_SRC_DIR)/*.s)
-LIBK_SOURCES_CPP := $(wildcard $(LIBK_SRC_DIR)/*.cpp)
+LIBK_SOURCES_S := $(wildcard $(LIBK_SRC_DIR)/*/*.s)
+LIBK_SOURCES_CPP := $(wildcard $(LIBK_SRC_DIR)/*/*.cpp)
 
 # Automatically generate object file names from source file names ---
 KRNL_OBJS_S   := $(patsubst $(KERNEL_SRC_DIR)/%.s, $(KERNEL_BUILD_DIR)/%.o, $(KRNL_SOURCES_S))
@@ -83,7 +83,7 @@ iso: $(TARGET_ISO)
 $(TARGET_ISO): $(TARGET_ELF)
 	mkdir -p $(KERNEL_BUILD_DIR)/iso/boot/grub
 	cp $(TARGET_ELF) $(KERNEL_BUILD_DIR)/iso/boot/
-	
+
 	echo 'set timeout=2' > $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo 'set default=0' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo '' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
@@ -118,8 +118,11 @@ $(KERNEL_BUILD_DIR)/%.o: $(KERNEL_SRC_DIR)/%.cpp | $(KERNEL_BUILD_DIR)
 
 # Rule to build libk assembly files (.s -> .o)
 $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.s | $(LIBK_BUILD_DIR)
+	@mkdir -p $(dir $@)
 	$(AS) $< $(ASPARAMS) -o $@
 
 # Rule to build libk C++ files (.cpp -> .o)
 $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.cpp | $(LIBK_BUILD_DIR)
+	@mkdir -p $(dir $@)
 	$(CC) -c $< $(CCPARAMS) -o $@
+	

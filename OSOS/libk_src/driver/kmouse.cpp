@@ -1,35 +1,35 @@
-#include "kmouse"
+#include "driver/kmouse"
 
 // --- MouseEventHandler ---
 
-MouseEventHandler::MouseEventHandler(){}
-MouseEventHandler::~MouseEventHandler(){}
+driver::MouseEventHandler::MouseEventHandler(){}
+driver::MouseEventHandler::~MouseEventHandler(){}
 
 
 // --- MouseDriver ---
 
 // Static member initialization
-uint16_t MouseDriver::old_char_under_mouse_pointer;
+uint16_t driver::MouseDriver::old_char_under_mouse_pointer;
 // DO NOT CHANGE THESE -1 INITIALIZATIONS (THAT WILL LEAD TO BUG OF "GHOST MOUSE POINTER")
-int8_t MouseDriver::__mouse_x_ = -1;
-int8_t MouseDriver::__mouse_y_ = -1;
+int8_t driver::MouseDriver::__mouse_x_ = -1;
+int8_t driver::MouseDriver::__mouse_y_ = -1;
 
-uint16_t MouseDriver::mouse_block_video_mem_value(uint16_t current_char, uint8_t mouse_pointer_color){
+uint16_t driver::MouseDriver::mouse_block_video_mem_value(uint16_t current_char, uint8_t mouse_pointer_color){
     return (current_char & 0x0FFF) | (mouse_pointer_color << 12);
 }
 
 // Constructor: Initialize with an event handler
-MouseDriver::MouseDriver(InterruptManager* interrupt_manager, MouseEventHandler* mouseEventHandler)
-: InterruptHandler(0x2C, interrupt_manager), 
+driver::MouseDriver::MouseDriver(hardware_communication::InterruptManager* interrupt_manager, driver::MouseEventHandler* mouseEventHandler)
+: hardware_communication::InterruptHandler(0x2C, interrupt_manager), 
   dataPort(0x60), 
   commandPort(0x64)
 {
     this->mouseEventHandler = mouseEventHandler;
 }
 
-MouseDriver::~MouseDriver(){}
+driver::MouseDriver::~MouseDriver(){}
 
-uint32_t MouseDriver::handleInterrupt(uint32_t esp){
+uint32_t driver::MouseDriver::handleInterrupt(uint32_t esp){
     // Check if the mouse has sent data
     uint8_t status = commandPort.read();
     if(!(status & 0x20)) return esp;
@@ -71,7 +71,7 @@ uint32_t MouseDriver::handleInterrupt(uint32_t esp){
 
 //------------------------------OVERRIDING VIRTUAL FUNCTIONS FROM DRIVER INTERFACE-----------------------------
 
-void MouseDriver::activate(){
+void driver::MouseDriver::activate(){
     while(commandPort.read() & 1) dataPort.read();
     offset = 0;
     buttons = 0;
@@ -96,8 +96,8 @@ void MouseDriver::activate(){
     dataPort.write(0xF4);
     dataPort.read(); // Acknowledge
     
-    printf("Mouse Driver activated!\n");
+    basic::printf("Mouse Driver activated!\n");
 }
 
-int MouseDriver::reset(){return 0;}
-void MouseDriver::deactivate(){}
+int driver::MouseDriver::reset(){return 0;}
+void driver::MouseDriver::deactivate(){}

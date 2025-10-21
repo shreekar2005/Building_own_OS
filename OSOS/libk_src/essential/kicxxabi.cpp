@@ -1,9 +1,9 @@
-#include "kicxxabi"
+#include "essential/kicxxabi"
 
 // To call constructors of global objects
 extern "C" void (*ctors_start)();
 extern "C" void (*ctors_end)();
-void __callConstructors(){
+void essential::__callConstructors(){
     for (void (**p)() = &ctors_start; p < &ctors_end; ++p)
     {
         (*p)(); // Call the constructor
@@ -21,7 +21,7 @@ void __callConstructors(){
 //     }
 // }
 
-atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS];
+essential::atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS];
 uarch_t __atexit_func_count = 0;
 
 void *__dso_handle = 0; //Attention! Optimally, you should remove the '= 0' part and define this in your asm script.
@@ -37,13 +37,13 @@ extern "C" int __cxa_atexit(void (*f)(void *), void *objptr, void *dso)
 };
 
 // Call this function, then every global destructor will be called
-void __cxa_finalize(void *f)
+void essential::__cxa_finalize(void *f)
 {
 	uarch_t i = __atexit_func_count;
 	if (!f)
 	{
 		/*
-		* According to the Itanium C++ ABI, if __cxa_finalize is called without a
+		* According to the Itanium C++ ABI, if essential::__cxa_finalize is called without a
 		* function ptr, then it means that we should destroy EVERYTHING MUAHAHAHA!!
 		*
 		* TODO:

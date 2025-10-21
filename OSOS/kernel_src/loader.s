@@ -15,7 +15,6 @@
 
 # extern From kernel.cpp
 .extern kernelMain
-.extern printf
 
 .section .text # now actual code begins
     .global _start
@@ -28,10 +27,6 @@
         ######################################################################
         call kernelMain # this not suppose to come again from kernelMain
         add $8, %esp
-
-        push $myString
-        call printf
-        add $4, %esp
         
     _stop: # another infinite loop (after kernel infi loop) for security :)
         cli

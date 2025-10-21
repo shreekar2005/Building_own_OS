@@ -1,7 +1,0 @@
-#ifndef __KMEMORY_H
-    #define __KMEMORY_H
-    #include "kiostream"
-    #include "multiboot"
-    #include <cstddef>
-    void __printMemoryMap(multiboot_info_t *mbi);
-#endif

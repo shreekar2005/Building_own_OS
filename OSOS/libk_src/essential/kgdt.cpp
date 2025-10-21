@@ -1,11 +1,11 @@
-#include "kgdt"
+#include "essential/kgdt"
 
 // GDT_row (Segment Descriptor)
 
 // Default constructor for a null GDT_row entry.
-GDT_row::GDT_row() : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
+essential::GDT_row::GDT_row() : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
 
-GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
+essential::GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
     this->limit_low   = (limit & 0xFFFF);
     this->base_low    = (base & 0xFFFF);
     this->base_middle = (base >> 16) & 0xFF;
@@ -19,11 +19,11 @@ GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gra
     this->access = access_byte;
 }
 
-GDT_row::~GDT_row() {}
+essential::GDT_row::~GDT_row() {}
 
 
 // GDT (Global Descriptor Table)
-GDT::GDT()
+essential::GDT::GDT()
     // Use an initializer list to construct each GDT entry.
     : nullSegment(), // First entry must be a null descriptor.
       kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
@@ -33,17 +33,17 @@ GDT::GDT()
 {
     // The GDT limit is its total size in bytes minus 1.
     // 5 entries * 8 bytes/entry = 40 bytes. Limit = 39 (0x27).
-    limit = (sizeof(GDT_row) * 5) - 1;
+    limit = (sizeof(essential::GDT_row) * 5) - 1;
     
     // The base address is the address of the first entry in our table.
     base = (uintptr_t)&this->nullSegment;
 }
 
-GDT::~GDT() {}
+essential::GDT::~GDT() {}
 
 
 // Loads this GDT into the CPU's GDTR and reloads segment registers.
-void GDT::installTable() {
+void essential::GDT::installTable() {
     // A structure that matches the 6-byte format required by the 'lgdt' instruction.
     struct GDT_Pointer {
         uint16_t limit;
@@ -73,13 +73,13 @@ void GDT::installTable() {
         : "r"(&gdt_ptr) // Input: address of our GDT_Pointer
         : "memory", "eax" // Clobbered registers
     );
-    printf("GDT Installed\n");
+    basic::printf("GDT Installed\n");
 }
 
 /**
  * @brief (Static) Prints the currently loaded GDT by reading the GDTR.
  */
-void GDT::printLoadedTable() {
+void essential::GDT::printLoadedTable() {
     struct GDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -89,18 +89,18 @@ void GDT::printLoadedTable() {
     // Store the current GDT register contents into our struct.
     asm volatile("sgdt %0" : "=m"(gdtr));
 
-    printf("---\n");
-    printf("INFO about : Currently Loaded GDT\n");
-    printf("Base Address: %#x\n", gdtr.base);
-    printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
-    printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(GDT_row));
-    printf("---\n");
+    basic::printf("---\n");
+    basic::printf("INFO about : Currently Loaded GDT\n");
+    basic::printf("Base Address: %#x\n", gdtr.base);
+    basic::printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
+    basic::printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(essential::GDT_row));
+    basic::printf("---\n");
 
-    GDT_row* gdt_entries = (GDT_row*)gdtr.base;
-    int num_entries = (gdtr.limit + 1) / sizeof(GDT_row);
+    essential::GDT_row* gdt_entries = (essential::GDT_row*)gdtr.base;
+    int num_entries = (gdtr.limit + 1) / sizeof(essential::GDT_row);
 
     for (int i = 0; i < num_entries; i++) {
-        GDT_row entry = gdt_entries[i];
+        essential::GDT_row entry = gdt_entries[i];
 
         // Reconstruct the base and limit from the scattered fields.
         uint32_t base = entry.base_high << 24 | entry.base_middle << 16 | entry.base_low;
@@ -111,13 +111,13 @@ void GDT::printLoadedTable() {
             limit = (limit << 12) | 0xFFF;
         }
 
-        printf("GDT Entry %d: Base=%p, Limit=%#x, Access=%#x, Granularity=%#x\n",
+        basic::printf("GDT Entry %d: Base=%p, Limit=%#x, Access=%#x, Granularity=%#x\n",
                i, (void*)(uintptr_t)base, limit, entry.access, entry.granularity);
     }
-    printf("---\n");
+    basic::printf("---\n");
 }
 
-void GDT::printLoadedTableHeader() {
+void essential::GDT::printLoadedTableHeader() {
     struct GDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -127,17 +127,17 @@ void GDT::printLoadedTableHeader() {
     // Store the current GDT register contents into our struct.
     asm volatile("sgdt %0" : "=m"(gdtr));
 
-    printf("---\n");
-    printf("INFO about : Currently Loaded GDT\n");
-    printf("Base Address: %#x\n", gdtr.base);
-    printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
-    printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(GDT_row));
-    printf("---\n");
+    basic::printf("---\n");
+    basic::printf("INFO about : Currently Loaded GDT\n");
+    basic::printf("Base Address: %#x\n", gdtr.base);
+    basic::printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
+    basic::printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(essential::GDT_row));
+    basic::printf("---\n");
 }
 
 // --- Static functions to get segment selectors ---
 
-uint16_t GDT::kernel_CS_selector() { return sizeof(GDT_row) * 1; } // Selector 0x08
-uint16_t GDT::kernel_DS_selector() { return sizeof(GDT_row) * 2; } // Selector 0x10
-uint16_t GDT::user_CS_selector()   { return sizeof(GDT_row) * 3; } // Selector 0x18
-uint16_t GDT::user_DS_selector()   { return sizeof(GDT_row) * 4; } // Selector 0x20
+uint16_t essential::GDT::kernel_CS_selector() { return sizeof(essential::GDT_row) * 1; } // Selector 0x08
+uint16_t essential::GDT::kernel_DS_selector() { return sizeof(essential::GDT_row) * 2; } // Selector 0x10
+uint16_t essential::GDT::user_CS_selector()   { return sizeof(essential::GDT_row) * 3; } // Selector 0x18
+uint16_t essential::GDT::user_DS_selector()   { return sizeof(essential::GDT_row) * 4; } // Selector 0x20

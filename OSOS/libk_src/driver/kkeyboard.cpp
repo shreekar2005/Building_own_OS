@@ -1,16 +1,17 @@
-#include "kkeyboard" 
-#include "kmouse"
+#include "driver/kkeyboard" 
+#include "driver/kmouse"
+
 // --- KeyboardEventHandler ---
 
-KeyboardEventHandler::KeyboardEventHandler(){}
-KeyboardEventHandler::~KeyboardEventHandler(){}
+driver::KeyboardEventHandler::KeyboardEventHandler(){}
+driver::KeyboardEventHandler::~KeyboardEventHandler(){}
 
 
 // --- KeyboardDriver ---
 
 // Constructor: Initialize the new state variable
-KeyboardDriver::KeyboardDriver(InterruptManager* interrupt_manager, KeyboardEventHandler* keyboardEventHandler)
-: InterruptHandler(0x21, interrupt_manager), 
+driver::KeyboardDriver::KeyboardDriver(hardware_communication::InterruptManager* interrupt_manager, driver::KeyboardEventHandler* keyboardEventHandler)
+: hardware_communication::InterruptHandler(0x21, interrupt_manager), 
   dataPort(0x60), 
   commandPort(0x64),
   shift_pressed(false),
@@ -19,9 +20,9 @@ KeyboardDriver::KeyboardDriver(InterruptManager* interrupt_manager, KeyboardEven
     this->keyboardEventHandler=keyboardEventHandler;
   }
 
-KeyboardDriver::~KeyboardDriver(){}
+driver::KeyboardDriver::~KeyboardDriver(){}
 
-uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
+uint32_t driver::KeyboardDriver::handleInterrupt(uint32_t esp){
     // Unshifted keys
     static const char scancode_no_shift[] = {
         0,   0, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '\b',
@@ -163,7 +164,7 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
 
 
 
-void KeyboardDriver::activate(){
+void driver::KeyboardDriver::activate(){
     while(commandPort.read() & 1) dataPort.read();
     commandPort.write(0xAE); // activate communication for keyboard
     commandPort.write(0x20); // get current state
@@ -171,8 +172,8 @@ void KeyboardDriver::activate(){
     commandPort.write(0x60); // set state
     dataPort.write(status);
     dataPort.write(0xF4);
-    printf("Keyboard Driver activated!\n");
+    basic::printf("Keyboard Driver activated!\n");
 }
 
-int KeyboardDriver::reset(){return 0;}
-void KeyboardDriver::deactivate(){}
+int driver::KeyboardDriver::reset(){return 0;}
+void driver::KeyboardDriver::deactivate(){}
