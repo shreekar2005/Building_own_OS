@@ -41,12 +41,12 @@ void disable_cursor() {
 static void printCharStr(const char *str)
 {
     uint16_t *video_memory = (uint16_t *)0xb8000;
-    // FOR TEXT : Attribute for Bright White (0xF) text on a Black (0x0) background.
+    // FOR TEXT : Attribute for Gray-White (0x7) text on a Black (0x0) background (last 2 bytes (LSBs) are not used for color).
     const uint16_t color_attribute = 0x0700;
 
     // --- MOUSE-SAFE PRINTING: remove mouse ---
     int mouse_offset = MouseDriver::__mouse_y_ * MAGIC_WIDTH + MouseDriver::__mouse_x_;
-    if(mouse_offset>=0) video_memory[mouse_offset] = MouseDriver::old_char_under_cursor;
+    if(mouse_offset>=0) video_memory[mouse_offset] = MouseDriver::old_char_under_mouse_pointer;
 
 
     for (int i = 0; str[i] != '\0'; i++)
@@ -110,8 +110,8 @@ static void printCharStr(const char *str)
     }
 
     // --- MOUSE-SAFE PRINTING: add mouse again---
-    MouseDriver::old_char_under_cursor = video_memory[mouse_offset];
-    if(mouse_offset>=0) video_memory[mouse_offset] = (MouseDriver::old_char_under_cursor & 0x0FFF) | 0x9000;
+    MouseDriver::old_char_under_mouse_pointer = video_memory[mouse_offset];
+    if(mouse_offset>=0) video_memory[mouse_offset] = MouseDriver::mouse_block_video_mem_value(MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
 
 }
 

@@ -1,10 +1,19 @@
-#ifndef __KKEYBOARD
-    #define __KKEYBOARD
+#ifndef __KKEYBOARD_H
+    #define __KKEYBOARD_H
     #include <cstdint>
     #include "kinterrupt"
     #include "kport"
+    #include "kdriver"
 
-    class KeyboardDriver : public InterruptHandler{
+    class KeyboardEventHandler{ //making this as ABSTRACT CLASS (actully interface) so that we can change behaviour of Keyboard as per where it is used.
+        public:
+            KeyboardEventHandler();
+            virtual ~KeyboardEventHandler();
+            virtual void onKeyDown(char ascii)=0; //expected to be overriden 
+            virtual void onKeyUp(char ascii)=0; //expected to be overriden 
+    };
+    
+    class KeyboardDriver : public InterruptHandler, public Driver{
             Port8Bit dataPort;
             Port8Bit commandPort;
             // for shift
@@ -14,10 +23,16 @@
             bool waiting_for_led_ack;
             uint8_t led_byte_to_send;
 
+            KeyboardEventHandler* keyboardEventHandler;
+
         public :
-            KeyboardDriver(InterruptManager* interrupt_manager);
+            KeyboardDriver(InterruptManager* interrupt_manager, KeyboardEventHandler* keyboardEventHandler);
             ~KeyboardDriver();
             uint32_t handleInterrupt(uint32_t esp) override; // function mainly defined in InterruptHandler class.
+
+            void activate() override;
+            // int reset() override;
+            // void deactivate() override;
     };
 
 #endif

@@ -1,22 +1,23 @@
-#include "kkeyboard"
+#include "kkeyboard" 
+
+// --- KeyboardEventHandler ---
+
+KeyboardEventHandler::KeyboardEventHandler(){}
+KeyboardEventHandler::~KeyboardEventHandler(){}
+
+
+// --- KeyboardDriver ---
 
 // Constructor: Initialize the new state variable
-KeyboardDriver::KeyboardDriver(InterruptManager* interrupt_manager)
+KeyboardDriver::KeyboardDriver(InterruptManager* interrupt_manager, KeyboardEventHandler* keyboardEventHandler)
 : InterruptHandler(0x21, interrupt_manager), 
   dataPort(0x60), 
   commandPort(0x64),
   shift_pressed(false),
   caps_on(false),
-  waiting_for_led_ack(false)
-{
-    while(commandPort.read() & 1) dataPort.read();
-    commandPort.write(0xAE); // activate communication for keyboard
-    commandPort.write(0x20); // get current state
-    uint8_t status = (dataPort.read() | 1) & ~0x10; // set LSB and clear 5th bit
-    commandPort.write(0x60); // set state
-    dataPort.write(status);
-    dataPort.write(0xF4);
-}
+  waiting_for_led_ack(false){
+    this->keyboardEventHandler=keyboardEventHandler;
+  }
 
 KeyboardDriver::~KeyboardDriver(){}
 
@@ -42,6 +43,8 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
     };
 
     uint8_t scancode = dataPort.read();
+    if(keyboardEventHandler==0) return esp; //if dont have any handler just return
+
 
     if (this->waiting_for_led_ack) {
         if (scancode == 0xFA) { // Got ACK
@@ -62,7 +65,7 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
     }
 
 
-    // Check for key release (break code)
+    // Check for key release
     if (scancode & 0x80) {
         scancode -= 0x80; 
         switch(scancode) {
@@ -70,9 +73,38 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
             case 0x36: // Right Shift Release
                 this->shift_pressed = false;
                 break;
+            
+            // Handle release of all other keys
+            default: {
+                char ascii = 0;
+                if (scancode < sizeof(scancode_no_shift)) {
+                    
+                    char base_char = scancode_no_shift[scancode];
+
+                    // Determine the character that was released based on the keyboard state
+                    if (base_char >= 'a' && base_char <= 'z') {
+                        if (this->shift_pressed ^ this->caps_on) {
+                            ascii = scancode_shifted[scancode];
+                        } else {
+                            ascii = base_char;
+                        }
+                    } else {
+                        if (this->shift_pressed) {
+                            ascii = scancode_shifted[scancode];
+                        } else {
+                            ascii = base_char;
+                        }
+                    }
+                    if (ascii != 0) {
+                        keyboardEventHandler->onKeyUp(ascii);
+                    }
+                }
+                break;
+            }
         }
     } 
-    // Check for key press (make code)
+
+    // Check for key press
     else {
         switch(scancode) {
             case 0x2A: // Left Shift Press
@@ -85,13 +117,13 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
                 
                 // Prepare to send LED update
                 this->led_byte_to_send = 0;
-                if (this->caps_on) this->led_byte_to_send |= 0x04; // Bit 2
+                if (this->caps_on) this->led_byte_to_send |= 0x04; // Bit 2 for Caps Lock LED
                 
                 dataPort.write(0xED); // Send "Set LEDs" command
                 this->waiting_for_led_ack = true; // Set state to wait for ACK
                 break;
 
-            default:
+            default: {
                 // It's a printable key
                 char ascii = 0;
                 if (scancode < sizeof(scancode_no_shift)) {
@@ -116,14 +148,23 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
                             ascii = base_char;
                         }
                     }
-                }
-
-                if (ascii != 0) {
-                    printf("%c", ascii);
+                    keyboardEventHandler->onKeyDown(ascii);
                 }
                 break;
+            }
         }
     }
 
     return esp;
+}
+
+void KeyboardDriver::activate(){
+    while(commandPort.read() & 1) dataPort.read();
+    commandPort.write(0xAE); // activate communication for keyboard
+    commandPort.write(0x20); // get current state
+    uint8_t status = (dataPort.read() | 1) & ~0x10; // set LSB and clear 5th bit
+    commandPort.write(0x60); // set state
+    dataPort.write(status);
+    dataPort.write(0xF4);
+    printf("Keyboard Driver activated!\n");
 }

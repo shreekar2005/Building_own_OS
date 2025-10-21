@@ -1,5 +1,5 @@
-#ifndef __KMEMORY_GUARD
-    #define __KMEMORY_GUARD
+#ifndef __KMEMORY_H
+    #define __KMEMORY_H
     #include "kiostream"
     #include "multiboot"
     #include <cstddef>

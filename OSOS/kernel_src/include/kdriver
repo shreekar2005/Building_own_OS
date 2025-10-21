@@ -1,0 +1,32 @@
+#ifndef __KDRIVER_H
+    #define __KDRIVER_H
+    #define MAX_NUMDRIVERS 265
+    class Driver{
+        private:
+            
+        public:
+            Driver();
+            virtual ~Driver();
+
+            virtual void activate();
+            virtual int reset();
+            virtual void deactivate();
+    };
+
+    class DriverManager{
+        private:
+            Driver* drivers[MAX_NUMDRIVERS];
+            int numDrivers;
+        public:
+            DriverManager();
+            ~DriverManager();
+            void addDriver(Driver*);
+            void activateAll();
+    };
+    
+
+    
+    
+    
+
+#endif

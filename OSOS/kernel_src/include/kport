@@ -1,5 +1,5 @@
-#ifndef KERNEL_PORT_H // Using a more standard include guard name
-    #define KERNEL_PORT_H
+#ifndef __KPORT_H // Using a more standard include guard name
+    #define __KPORT_H
     #include <cstdint>
     #include <kiostream>
     /*
