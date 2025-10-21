@@ -84,6 +84,18 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 
 ---
 ---
+
+## Using GDB (debugger) with our OSOS (running on qemu)
+1. Run QEMU with `-s` (for connecting with GDB on port 1234) and `-S` (To pause VM at very begginning. Resume VM with `c` in GDB).
+2. In another terminal start gdb, in gdb connect with remote target (qemu VM) using `target remote localhost:1234`
+3. Load symbol table using any symbol file of our OS : `symbol-file kernel_build/OSOSkernel.elf`
+4. Set breakpoints : e.g. `break kernelMain`
+5. Continue QEMU with `c` (which will pause at next breakpoint).
+- For good understanding you can see this "[YouTube Video Tutorial on "Using GDB for OS dev](https://youtu.be/H7SIDK6CiA4?si=swEXoYi1ppiO0EiO)" by me (***HINDI***) :)
+
+---
+---
+
 ## Some extra :
 
 ### 1.  `readelf` and `objdump` : Tools to examine binaries
@@ -105,9 +117,9 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 - There are **Software Interrupts** that are recieved by CPU (e.g. divide by zero with interruptNumber = 0x00). So we should make their handlers also and keep their reference in IDT.
 - **Main Issue of PIC** : Actually PIC also recives IRQ number from 0x00 (e.g. Timer IRQnumber=0x00, Keyboard IRQnumber=0x01). So PIC just cannot forward that number to CPU because then CPU will just call same handler for 'divide by zero' and 'Timer' interrupt. So we will add some offset(0x20 for Master PIC and 0x28 for Slave PIC) such that new interrupt number of IRQ will not conflict with Software Interrupt number.
 
+---
+---
 
----
----
 
 ## One thing which blew my mind :
 In early days, many machines have only support to 32bit programs (only 4GB addressable memory). After introduction to 64bit systems some people developed **UEFI** (which is BIOS but it have mini-OS which runs in 64bit). Now I have ***ASUS TUF F15 (GAMING 2022)*** in which there is no option to keep BIOS in **"Legacy Mode"** or turn on **"CSM"**. So on my machine i cannot boot in 32bit OS. In today's date there are many laptops which supports both modern and legacy mode, but my laptop sucks :(. If you want to boot 32bit OSOS then you have to first disable **"Secure boot"** and then turn on **"CSM"** or switch to **"Legacy Mode"** from BIOS

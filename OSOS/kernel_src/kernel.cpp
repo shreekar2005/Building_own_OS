@@ -1,3 +1,4 @@
+#include <cstdint>
 #include "kicxxabi"
 #include "multiboot" // header for handling multiboot info (provided by grub)
 #include "kiostream"  // header to use video memory : e.g. printf, keyboard_input_by_polling
@@ -6,7 +7,6 @@
 #include "kinterrupt"
 #include "kkeyboard"
 #include "kmouse"
-
 class TestClass{
     public :
         TestClass(){
@@ -18,7 +18,7 @@ class TestClass{
 };
 TestClass a_global_instance;
 
-extern "C" void kernelMain(multiboot_info_t *mbi, unsigned int magicnumber)
+extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
     __callConstructors();
     enable_cursor(0,15); // (0,15) is for blinking block
