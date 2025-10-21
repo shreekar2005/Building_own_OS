@@ -67,6 +67,10 @@ uint32_t MouseDriver::handleInterrupt(uint32_t esp){
     return esp;
 }
 
+
+
+//------------------------------OVERRIDING VIRTUAL FUNCTIONS FROM DRIVER INTERFACE-----------------------------
+
 void MouseDriver::activate(){
     while(commandPort.read() & 1) dataPort.read();
     offset = 0;
@@ -94,3 +98,6 @@ void MouseDriver::activate(){
     
     printf("Mouse Driver activated!\n");
 }
+
+int MouseDriver::reset(){return 0;}
+void MouseDriver::deactivate(){}

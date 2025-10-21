@@ -5,7 +5,7 @@
     #include "kport"
     #include "kiostream"
     #include "kdriver"
-
+    
     #define KMOUSE_COLOR_BLACK         0x0
     #define KMOUSE_COLOR_BLUE          0x1
     #define KMOUSE_COLOR_GREEN         0x2
@@ -23,9 +23,9 @@
     #define KMOUSE_COLOR_YELLOW        0xE
     #define KMOUSE_COLOR_WHITE         0xF
     #define MOUSE_POINTER_COLOR KMOUSE_COLOR_GREEN //Here actually you will choose which color should your mouse pointer have
-
-
-    class MouseEventHandler{ //making this as ABSTRACT CLASS (actully interface) so that we can change behaviour of Keyboard as per where it is used.
+    
+    // MouseEventHandler is an INTERFACE
+    class MouseEventHandler{
         public:
             MouseEventHandler();
             virtual ~MouseEventHandler();
@@ -52,8 +52,8 @@
             uint32_t handleInterrupt(uint32_t esp) override; // function mainly defined in InterruptHandler class.
             
             void activate() override;
-            // int reset() override;
-            // void deactivate() override;
+            int reset() override;
+            void deactivate() override;
     };
 
 #endif

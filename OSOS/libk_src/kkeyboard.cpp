@@ -1,5 +1,5 @@
 #include "kkeyboard" 
-
+#include "kmouse"
 // --- KeyboardEventHandler ---
 
 KeyboardEventHandler::KeyboardEventHandler(){}
@@ -158,6 +158,11 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp){
     return esp;
 }
 
+
+//------------------------------OVERRIDING VIRTUAL FUNCTIONS FROM DRIVER INTERFACE-----------------------------
+
+
+
 void KeyboardDriver::activate(){
     while(commandPort.read() & 1) dataPort.read();
     commandPort.write(0xAE); // activate communication for keyboard
@@ -168,3 +173,6 @@ void KeyboardDriver::activate(){
     dataPort.write(0xF4);
     printf("Keyboard Driver activated!\n");
 }
+
+int KeyboardDriver::reset(){return 0;}
+void KeyboardDriver::deactivate(){}

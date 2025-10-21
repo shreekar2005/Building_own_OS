@@ -1,7 +1,9 @@
 #ifndef __KDRIVER_H
     #define __KDRIVER_H
     #define MAX_NUMDRIVERS 265
-    class Driver{ //making driver an INTERFACE
+
+    //Driver is an INTERFACE
+    class Driver{ 
         private:
             
         public:

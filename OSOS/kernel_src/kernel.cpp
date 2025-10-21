@@ -41,16 +41,33 @@ class MouseEventHandler_for_kernel : public MouseEventHandler{
 
         void onMouseMove(int8_t delta_x, int8_t delta_y) override {
             static uint16_t* video_memory = (uint16_t*) 0xb8000;
+            static float deltaTod=0.2;
+            static float dx=0, dy=0;
+            dx+=delta_x*deltaTod;
+            dy+=delta_y*deltaTod;
+
             // Restore the character that was previously under the mouse pointer
             if (MouseDriver::__mouse_x_ >= 0 && MouseDriver::__mouse_y_ >= 0) {
                 video_memory[80 * MouseDriver::__mouse_y_ + MouseDriver::__mouse_x_] = MouseDriver::old_char_under_mouse_pointer;
             }
             // Update mouse coordinates based on delta
-            if(delta_x > 0) MouseDriver::__mouse_x_++;
-            else if(delta_x < 0) MouseDriver::__mouse_x_--;
+            if(dx > 1) {
+                MouseDriver::__mouse_x_++;
+                dx=0;
+            }
+            else if(dx < -1) {
+                MouseDriver::__mouse_x_--;
+                dx=0;
+            }
             
-            if(delta_y > 0) MouseDriver::__mouse_y_++;
-            else if(delta_y < 0) MouseDriver::__mouse_y_--;
+            if(dy > 1) {
+                MouseDriver::__mouse_y_++;
+                dy=0;
+            }
+            else if(dy < -1) {
+                MouseDriver::__mouse_y_--;
+                dy=0;
+            }
 
             // Clamp coordinates to screen boundaries
             if(MouseDriver::__mouse_x_ < 0) MouseDriver::__mouse_x_ = 0;
