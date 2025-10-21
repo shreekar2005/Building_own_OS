@@ -111,7 +111,7 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 - Using `#include ""` for OSOS specific libraries, e.g. libraries in `./kernel_src/include/`
 - Naming OSOS kernel libraries with prefix `'k'`, e.g. kiostream, kmemory, etc
 - **Naming convensions :**  pointer names : `abc_xyz_pqr`, class/struct names :  `AbcXyzPqr` or `ABC_XyzPqr`, function/variable names : `abcXyzPqr`
-- all kernel library functions, classes, variables are divided in 4 **`namespaces`** : 
+- all kernel library functions, classes, variables are divided in **`namespaces`** : 
     1. **basic** : kiostream, kmemory
     2. **driver** : kdriver, kkeyboard, kmouse
     3. **essential** : kgdt, kicxxabi
