@@ -16,7 +16,7 @@ sudo apt install make
 make setup
 ```
 
-### 3. GCC cross-compiler (i686-elf-TOOL)
+### 3. GCC cross-compiler (i686-elf-TOOL or osos-TOOL)
 Follow the Instructions in `../cross-compiler` and **make your own cross-compiler**. You will need cross-compiler due to some reasons that you will find in cross-compiler's README.
 
 #### If you dont want to make cross-compiler (which is not good idea) then you can go to this commit `f500e99459b3d1cf9e592b4be19fe4e2706ef2db` and follow current project and check whether you can build OSOS without cross compiler 🙂
