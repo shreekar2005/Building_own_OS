@@ -75,7 +75,7 @@ vm: iso
 	@VBoxManage startvm "OSOS_Machine"
 	@echo "Waiting for VM to shut down..."
 	@while ! VBoxManage showvminfo "OSOS_Machine" | grep -q "powered off"; do \
-		sleep 1; \
+		sleep 5; \
 	done
 	@echo "VM has been powered off. Reloading KVM modules."
 	sudo modprobe kvm_intel; sudo modprobe kvm
