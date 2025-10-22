@@ -55,25 +55,31 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ## What things are implemented in OSOS:
 
 1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
-    1. **kiostream** : printf(), clearScreen(), enable/update/disable_cursor()
-    2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
-    3. **kgdt** : class GDT with 1.methods : installTable | 2.static functions : kernel/user_CS/DS_selector()
-    4. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read()
-    5. **kicxxabi** : __callConstructors(), __cxa_finalize()
-    6. **kinterrupt** : Have InterruptManager, which can manage interrupts. 
-    7. **kkeyboard** : Keyboard driver to handle keyboard interrupt
-    8. **kmouse** : Mouse driver to handle mouse interrupts
+    - basic :
+        1. **kiostream** : printf(), clearScreen(), enable/update/disable_cursor()
+        2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
+    - driver :
+        1. **kdriver** : Class to manage all driver
+        2. **kmouse** : Mouse driver which give Interface for mouse event handlers
+        3. **kkeyboard** : Keyboard driver which give Interface for keyboard event handlers
+    - essential :
+        1. **kgdt** : Class GDT to setup segments (even if we use paging in future, we need to setup GDT in early stage)
+        2. **kicxxabi** : __callConstructors(), __cxa_finalize()
+    - hardware_communication :
+        1. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read()
+        2. **kinterrupt** : Have InterruptManager, which can manage interrupts. 
 
 
 2. Accessed multiboot info structure provided by grub bootloader.
 
-3. Calling global object constructors and destructors which are listed in `.ctors` and `.dtors` sections of corresponding object files.
+3. Calling global object constructors and destructors using **essential/kicxxabi**
 
-4. <br> <img src="./ScreenShots/image6.png" width="300" alt="Base Memory Setting"> <br>
-    - Initialized **Global Descriptor Table** (GDT) : Currently I am not separating kernel and user space (Ring0 and Ring3), That is security issue; but I will implement paging in future so there is no need for separating kernel and user space in GDT (currently flat memory)
+4. - Initialized **Global Descriptor Table** (GDT) : Currently I am not separating kernel and user space (Ring0 and Ring3), That is security issue; but I will implement paging in future so there is no need for separating kernel and user space in GDT (currently flat memory)
     - Initialized **Interrupt Descriptor Table** (IDT) to enable interrupts
+    <br> <img src="./ScreenShots/image6.png" width="300" alt="Base Memory Setting"> <br>
 
-5. Can handle keyboard input using Interrupt Service Routine.
+5. Can handle **Keyboard interrupts** using ISR.
+6. Can handle **Mouse interrupts** using ISR
 
 ---
 ---
@@ -84,7 +90,7 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 - To prevent "name mangling" or "name decoration" (compiler modifies name of function or variable for some use cases).
 - Use `extern "C"` if that function or variable is used by some program which is outside of current C++ file. e.g kernMain, callConstructors, clearScreen
 
-### 2. `kicxxabi.cpp` in libk_src :
+### 2. `kicxxabi.cpp` in libk_src/essential :
 - This is **Kernel Internal C++ Application Binary Interface**. Used by compiler while setting up virtual destructors etc.
 - **__callConstructors()** and **__cxa_finalize()** are implemented to call global constructors and destructors
 
@@ -108,7 +114,8 @@ make dbg_cli
 ### For VSCode users:
 - It is recommanded to work in `<repo_path>/OSOS/`
 - I have also added my `.vscode`. By those config files I can directly run OSOSkernel.elf from `Run Code` and can debug using `Debug C/C++ file` (in VSCode you may use keyboard shortcuts like `f5`, `f6`, etc. for better experience... )
-
+- Below is ScreenShot while using GDB with VSCode for debugging OSOS :)
+<br> <img src="./ScreenShots/image7.png" alt="Base Memory Setting"> <br>
 ---
 ---
 
