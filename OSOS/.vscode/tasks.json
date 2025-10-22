@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // For Debug button in VSCode
+
+            "label": "Clear, Build and Run QEMU",
+            "type": "shell",
+            "command": "make clear && make dbg_start_qemu",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

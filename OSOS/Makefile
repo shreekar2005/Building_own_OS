@@ -1,15 +1,16 @@
 # Instructions to use this makefile
-# make          	: To build elf and boot with elf and qemu
-# make qemu_elf 	: To build elf and boot with elf and qemu
-# make qemu_iso 	: To build iso and boot with iso and qemu
-# make vm       	: To build iso and boot with iso and VirtualBox (read README for setting up VM)
-# make elf      	: To build elf file by compiling and linking source code
-# make iso      	: To build iso file with existing elf 
-# make clean    	: To delete all build directories
-# make clear    	: To delete all build directories and clear the screen
-# make setup		: To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
-# make debug_elf 	: To build elf file with -g (keep debug info) and -O0(dont optimize while compiling) 
-# make debug		: To build debug_elf and connect QEMU instance with GDB
+# make          		: To build elf and boot with elf and qemu
+# make qemu_elf 		: To build elf and boot with elf and qemu
+# make qemu_iso 		: To build iso and boot with iso and qemu
+# make vm       		: To build iso and boot with iso and VirtualBox (read README for setting up VM)
+# make elf      		: To build elf file by compiling and linking source code
+# make iso      		: To build iso file with existing elf 
+# make clean    		: To delete all build directories
+# make clear    		: To delete all build directories and clear the screen
+# make setup			: To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
+# make dbg_elf 			: To build elf file with -g (keep debug info) and -O0(dont optimize while compiling) 
+# make dbg_start_qemu 	: To build dbg_elf and just start QEMU (can connect that from VSCode or cli GDB)
+# make dbg_cli			:To connect QEMU instance (created by `make dbg_start_qemu`) with cli GDB
 
 # .PHONY is for targets that are NOT files
 .PHONY: qemu_elf qemu_iso elf vm iso clear clean debug setup
@@ -135,14 +136,21 @@ setup:
 
 # This new target builds the ELF file with debug symbols (-g)
 # and no optimizations (-O0), which makes debugging much easier.
-debug_elf:
+dbg_elf:
 	@$(MAKE) CCPARAMS="$(CCPARAMS) -g -O0" ASPARAMS="$(ASPARAMS) -g" elf
 
-# Boot from ELF file and start listening on localhost:1234 for GDB connection (resume machine after resumed by GDB only)
-debug: debug_elf
-# Start QEMU in the background, save its process ID (PID)
-	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -s -S &
+
+# It builds the ELF and starts QEMU (paused), but does NOT start GDB.
+dbg_start_qemu: dbg_elf
+	@echo "Starting QEMU in background, paused for GDB..."
+	# Use nohup to detach QEMU from the shell
+	setsid $(QEMU) -kernel $(TARGET_ELF) -m 4096 -s -S > /dev/null 2>&1 &
 	@sleep 1
+
+
+# To start cli debugging using GDB
+dbg_cli: dbg_start_qemu
+	@echo "Starting GDB and attaching..."
 	$(GDB) $(TARGET_ELF) -ex "target remote localhost:1234"
 
 

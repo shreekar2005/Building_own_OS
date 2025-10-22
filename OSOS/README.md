@@ -78,7 +78,7 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ---
 ---
 
-## To correctly compile, link and run OSOS
+## While Developing OSOS 
 
 ### 1. Using `extern "C"`keyword :
 - To prevent "name mangling" or "name decoration" (compiler modifies name of function or variable for some use cases).
@@ -93,7 +93,7 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 
 ## Using GDB (debugger) with our OSOS (running on qemu)
 ```bash
-make debug
+make dbg_cli
 ```
 (run `make clean` which is recommanded before running `make debug`)
 
@@ -104,6 +104,10 @@ make debug
 4. Set breakpoints : e.g. `break kernelMain`
 5. Continue QEMU with `c` (which will pause at next breakpoint).
 - For good understanding you can see this "[YouTube Video Tutorial on "Using GDB for OS dev](https://youtu.be/H7SIDK6CiA4?si=swEXoYi1ppiO0EiO)" by me (***HINDI***) :)
+
+### For VSCode users:
+- It is recommanded to work in `<repo_path>/OSOS/`
+- I have also added my `.vscode`. By those config files I can directly run OSOSkernel.elf from `Run Code` and can debug using `Debug C/C++ file` (in VSCode you may use keyboard shortcuts like `f5`, `f6`, etc. for better experience... )
 
 ---
 ---

@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug OSOS Kernel",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/kernel_build/OSOSkernel.elf", // Path to your kernel ELF file
+            "preLaunchTask": "Clear, Build and Run QEMU",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "osos-gdb", // Your cross-compiler GDB
+            
+            // This is the magic part!
+            // It tells GDB to connect to QEMU
+            "miDebuggerServerAddress": "localhost:1234",
+            
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

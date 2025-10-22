@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "i686-elf Kernel",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "./libk_header",
+                "/home/shreekar/cross-compiler/i686-elf/build/i686-elf/include/c++/15.2.0",
+                "/home/shreekar/cross-compiler/i686-elf/build/i686-elf/include/c++/15.2.0/i686-elf",
+                "/home/shreekar/cross-compiler/i686-elf/build/lib/gcc/i686-elf/15.2.0/include"
+            ],
+            "defines": [],
+            "compilerPath": "/home/shreekar/cross-compiler/i686-elf/build/bin/i686-elf-g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x86"
+        }
+    ],
+    "version": 4
+}
