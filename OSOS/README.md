@@ -92,6 +92,12 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ---
 
 ## Using GDB (debugger) with our OSOS (running on qemu)
+```bash
+make debug
+```
+(run `make clean` which is recommanded before running `make debug`)
+
+### How GDB and QEMU work together :
 1. Run QEMU with `-s` (for connecting with GDB on port 1234) and `-S` (To pause VM at very begginning. Resume VM with `c` in GDB).
 2. In another terminal start gdb, in gdb connect with remote target (qemu VM) using `target remote localhost:1234`
 3. Load symbol table using any symbol file of our OS : `symbol-file kernel_build/OSOSkernel.elf`

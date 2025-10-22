@@ -11,7 +11,7 @@
 # make setup	: To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
 
 # .PHONY is for targets that are NOT files
-.PHONY: qemu_elf qemu_iso elf vm elf iso clear clean debug setup
+.PHONY: qemu_elf qemu_iso elf vm iso clear clean debug setup
 
 
 # Directories
@@ -41,11 +41,12 @@ TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
 # Toolchain flags
 CC          := osos-g++
-CCPARAMS    := -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
+CCPARAMS    := -O2 -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
 AS          := osos-as
 ASPARAMS    := 
 QEMU 		:= qemu-system-i386
 GDB			:= osos-gdb
+# -g is for adding debugging symbols
 
 # Default target when you just type 'make'. It starts qemu virtual machine
 qemu_elf: elf 
@@ -102,7 +103,7 @@ clean:
 
 # "Order-only" prerequisites to create build directories
 $(KERNEL_BUILD_DIR) $(LIBK_BUILD_DIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 # Rule to build kernel assembly files (.s -> .o)
 $(KERNEL_BUILD_DIR)/%.o: $(KERNEL_SRC_DIR)/%.s | $(KERNEL_BUILD_DIR)
@@ -123,16 +124,24 @@ $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.cpp | $(LIBK_BUILD_DIR)
 	$(CC) -c $< $(CCPARAMS) -o $@
 
 
+
+# Install dependencies for OSOS development
+setup:
+	sudo apt install qemu-system-x86 virtualbox grub-pc-bin xorriso
+
+
 # -----------------------------DEBUG PURPOSE ONLY (for GDB) ------------------------------------
+
+# This new target builds the ELF file with debug symbols (-g)
+# and no optimizations (-O0), which makes debugging much easier.
+debug_elf:
+	@$(MAKE) CCPARAMS="$(CCPARAMS) -g -O0" ASPARAMS="$(ASPARAMS) -g" elf
+
 # Boot from ELF file and start listening on localhost:1234 for GDB connection (resume machine after resumed by GDB only)
-debug: elf
-# 1. Start QEMU in the background, save its process ID (PID)
+debug: debug_elf
+# Start QEMU in the background, save its process ID (PID)
 	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -s -S &
 	@sleep 1
-# 2. Open a new terminal andrun GDB inside it, connecting to QEMU
-	gnome-terminal -- $(GDB) $(TARGET_ELF) -ex "target remote localhost:1234"
+	$(GDB) $(TARGET_ELF) -ex "target remote localhost:1234"
 
-
-setup:
-	sudo apt install qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal
 
