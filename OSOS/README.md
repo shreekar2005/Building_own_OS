@@ -27,7 +27,7 @@ Follow the Instructions in `../cross-compiler` and **make your own cross-compile
 ## Steps to run OSOS
 ### To boot from binary (Using QEMU PC System emulator)
 ```bash
-make # it will build OSOSkernel.bin and boot with QEMU 
+make # it will build OSOSkernel.elf and boot with QEMU 
 ```
 <br> <img src="./ScreenShots/image1.png" width="600" alt="Running OSOS on QEMU"> <br>
 
