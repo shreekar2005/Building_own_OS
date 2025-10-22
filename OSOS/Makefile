@@ -7,10 +7,11 @@
 # make iso      : To build iso file with existing elf 
 # make clean    : To delete all build directories
 # make clear    : To delete all build directories and clear the screen
+# make debug	: To debug OSOS (running on QEMU) with GDB
+# make setup	: To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
 
 # .PHONY is for targets that are NOT files
-.PHONY: qemu_elf qemu_iso elf vm elf iso clear clean
-
+.PHONY: qemu_elf qemu_iso elf vm elf iso clear clean debug setup
 
 
 # Directories
@@ -18,13 +19,6 @@ KERNEL_SRC_DIR := kernel_src
 KERNEL_BUILD_DIR := kernel_build
 LIBK_SRC_DIR := libk_src
 LIBK_BUILD_DIR := libk_build
-
-QEMU := qemu-system-i386
-# Toolchain flags
-CC          := i686-elf-g++
-CCPARAMS    := -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
-AS          := i686-elf-as
-ASPARAMS    := 
 
 # Automatically find all source files ---
 KRNL_SOURCES_S := $(wildcard $(KERNEL_SRC_DIR)/*.s)
@@ -45,7 +39,13 @@ OBJECTS := $(KRNL_OBJS_S) $(KRNL_OBJS_CPP) $(LIBK_OBJS_S) $(LIBK_OBJS_CPP)
 TARGET_ELF := $(KERNEL_BUILD_DIR)/OSOSkernel.elf
 TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
-
+# Toolchain flags
+CC          := osos-g++
+CCPARAMS    := -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
+AS          := osos-as
+ASPARAMS    := 
+QEMU 		:= qemu-system-i386
+GDB			:= osos-gdb
 
 # Default target when you just type 'make'. It starts qemu virtual machine
 qemu_elf: elf 
@@ -83,19 +83,15 @@ iso: $(TARGET_ISO)
 $(TARGET_ISO): $(TARGET_ELF)
 	mkdir -p $(KERNEL_BUILD_DIR)/iso/boot/grub
 	cp $(TARGET_ELF) $(KERNEL_BUILD_DIR)/iso/boot/
-
-	echo 'set timeout=2' > $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo 'set default=0' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo '' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo 'menuentry "OSOS" {' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo 'set timeout=2' 					> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo 'set default=0' 					>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo '' 								>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo 'menuentry "OSOS" {' 				>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo '  multiboot /boot/OSOSkernel.elf' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo '  boot' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo '}' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-
+	echo '  boot' 							>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo '}' 								>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	grub-mkrescue --output=$@ $(KERNEL_BUILD_DIR)/iso
 	rm -rf $(KERNEL_BUILD_DIR)/iso
-
-
 
 # Rule to clean build directory
 clear: clean
@@ -125,4 +121,18 @@ $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.s | $(LIBK_BUILD_DIR)
 $(LIBK_BUILD_DIR)/%.o: $(LIBK_SRC_DIR)/%.cpp | $(LIBK_BUILD_DIR)
 	@mkdir -p $(dir $@)
 	$(CC) -c $< $(CCPARAMS) -o $@
-	
+
+
+# -----------------------------DEBUG PURPOSE ONLY (for GDB) ------------------------------------
+# Boot from ELF file and start listening on localhost:1234 for GDB connection (resume machine after resumed by GDB only)
+debug: elf
+# 1. Start QEMU in the background, save its process ID (PID)
+	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -s -S &
+	@sleep 1
+# 2. Open a new terminal andrun GDB inside it, connecting to QEMU
+	gnome-terminal -- $(GDB) $(TARGET_ELF) -ex "target remote localhost:1234"
+
+
+setup:
+	sudo apt install qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal
+

@@ -5,13 +5,19 @@
 ---
 
 ### I am using Ubuntu24.04 to develop OSOS
-## Requirements 
+## Requirements (be sure that you dont have conflicting installations e.g. VirtualBox downloaded from oracle website)
 ### 1. Install reqrired tools
-`bash
-sudo apt-get install g++ binutils libc6-dev-i386 g++-multilib make qemu-system-x86 mtools xorriso grub-pc-bin
-` 
-### 2. GCC cross-compiler (i686-elf-TOOL)
-Follow the Instructions in `../cross-compiler` and **make your own cross-compiler**. You will need cross-compiler due to some reasons that you will find in cross-compiler README.
+```bash
+sudo apt update
+sudo apt install make
+```
+### 2. Install dependencies (Ubuntu 24.04.3 LTS)
+```bash
+make setup
+```
+
+### 3. GCC cross-compiler (i686-elf-TOOL)
+Follow the Instructions in `../cross-compiler` and **make your own cross-compiler**. You will need cross-compiler due to some reasons that you will find in cross-compiler's README.
 
 #### If you dont want to make cross-compiler (which is not good idea) then you can go to this commit `f500e99459b3d1cf9e592b4be19fe4e2706ef2db` and follow current project and check whether you can build OSOS without cross compiler 🙂
 
