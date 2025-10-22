@@ -1,14 +1,15 @@
 # Instructions to use this makefile
-# make          : To build elf and boot with elf and qemu
-# make qemu_elf : To build elf and boot with elf and qemu
-# make qemu_iso : To build iso and boot with iso and qemu
-# make vm       : To build iso and boot with iso and VirtualBox (read README for setting up VM)
-# make elf      : To build elf file by compiling and linking source code
-# make iso      : To build iso file with existing elf 
-# make clean    : To delete all build directories
-# make clear    : To delete all build directories and clear the screen
-# make debug	: To debug OSOS (running on QEMU) with GDB
-# make setup	: To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
+# make          	: To build elf and boot with elf and qemu
+# make qemu_elf 	: To build elf and boot with elf and qemu
+# make qemu_iso 	: To build iso and boot with iso and qemu
+# make vm       	: To build iso and boot with iso and VirtualBox (read README for setting up VM)
+# make elf      	: To build elf file by compiling and linking source code
+# make iso      	: To build iso file with existing elf 
+# make clean    	: To delete all build directories
+# make clear    	: To delete all build directories and clear the screen
+# make setup		: To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
+# make debug_elf 	: To build elf file with -g (keep debug info) and -O0(dont optimize while compiling) 
+# make debug		: To build debug_elf and connect QEMU instance with GDB
 
 # .PHONY is for targets that are NOT files
 .PHONY: qemu_elf qemu_iso elf vm iso clear clean debug setup
