@@ -20,7 +20,10 @@ cd <path_to_repo>/cross-compiler
 ```
 #### 3. Give execute access and run script
 ```bash
-sudo chmod +x ./build_cross_compiler.sh & ./build_cross_compiler.sh
+sudo chmod +x ./build_cross_compiler.sh
+```
+```bash
+./build_cross_compiler.sh
 ```
 
 ### Libraries will be in `~/cross-compiler/i686-elf/build/bin/`
