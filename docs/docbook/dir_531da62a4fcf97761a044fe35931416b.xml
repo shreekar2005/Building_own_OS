@@ -14,11 +14,11 @@ Directory dependency graph for basic:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a20708">kiostream.hpp</link></para>
+            <listitem><para>file <link linkend="_a00077">kiostream.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a20705">kmemory.hpp</link></para>
+            <listitem><para>file <link linkend="_a00074">kmemory.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a20702">multiboot.hpp</link></para>
+            <listitem><para>file <link linkend="_a00071">multiboot.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

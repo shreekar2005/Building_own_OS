@@ -2,9 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_531da62a4fcf97761a044fe35931416b" kind="dir">
     <compoundname>libk_header/basic</compoundname>
-    <innerfile refid="d4/dca/a20708">kiostream.hpp</innerfile>
-    <innerfile refid="d8/dcb/a20705">kmemory.hpp</innerfile>
-    <innerfile refid="d1/d64/a20702">multiboot.hpp</innerfile>
+    <innerfile refid="d1/d09/a00077">kiostream.hpp</innerfile>
+    <innerfile refid="db/db6/a00074">kmemory.hpp</innerfile>
+    <innerfile refid="d0/d89/a00071">multiboot.hpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

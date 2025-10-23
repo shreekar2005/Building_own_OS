@@ -14,9 +14,9 @@ Directory dependency graph for hardware_communication:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a20669">kinterrupt.cpp</link></para>
+            <listitem><para>file <link linkend="_a00035">kinterrupt.cpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a20666">kport.cpp</link></para>
+            <listitem><para>file <link linkend="_a00032">kport.cpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

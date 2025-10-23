@@ -1,0 +1,153 @@
+\doxysubsection{hardware\+\_\+communication\+::Interrupt\+Handler}
+\hypertarget{a01019}{}\label{a01019}\index{hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}}
+
+
+{\ttfamily \#include "{}kinterrupt.\+hpp"{}}
+
+
+
+Inheritance diagram for hardware\+\_\+communication\+::Interrupt\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d08/a01018}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for hardware\+\_\+communication\+::Interrupt\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/ded/a01017}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uintptr\+\_\+t \mbox{\hyperlink{a01019_aa89d41d69840cb4f1c8692fa6ded28f4}{handle\+Interrupt}} (uintptr\+\_\+t esp)=0
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01019_a134c8931dff43e766f1ddc4d0f35cd48}{Interrupt\+Handler}} (uint8\+\_\+t \mbox{\hyperlink{a01019_afeede822d3e98957e76e627a54ec2f7a}{interrupt\+Number}}, \mbox{\hyperlink{a01027}{Interrupt\+Manager}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a01019_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\+\_\+manager}})
+\item 
+\mbox{\hyperlink{a01019_a5114528f0db9926365b345337e42af9b}{\texorpdfstring{$\sim$}{\string~}\+Interrupt\+Handler}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01027}{Interrupt\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01019_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\+\_\+manager}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a01019_afeede822d3e98957e76e627a54ec2f7a}{interrupt\+Number}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{a00080_source_l00023}{23}} of file \mbox{\hyperlink{a00080_source}{kinterrupt.\+hpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01019_a134c8931dff43e766f1ddc4d0f35cd48}\label{a01019_a134c8931dff43e766f1ddc4d0f35cd48} 
+\index{hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}!InterruptHandler@{InterruptHandler}}
+\index{InterruptHandler@{InterruptHandler}!hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}}
+\doxyparagraph{\texorpdfstring{InterruptHandler()}{InterruptHandler()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Interrupt\+Handler\+::\+Interrupt\+Handler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+Number,  }\item[{\mbox{\hyperlink{a01027}{hardware\+\_\+communication\+::\+Interrupt\+Manager}} \texorpdfstring{$\ast$}{*}}]{interrupt\+\_\+manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00035_source_l00011}{11}} of file \mbox{\hyperlink{a00035_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ this-\/>\mbox{\hyperlink{a01019_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}}=\mbox{\hyperlink{a01019_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}};}
+\DoxyCodeLine{00013\ \ \ \ \ this-\/>interrupt\_manager=\mbox{\hyperlink{a01019_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{a01019_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}}-\/>\mbox{\hyperlink{a01027_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[\mbox{\hyperlink{a01019_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}}]=\textcolor{keyword}{this};}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00080_source_l00056}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::handlers}}, \mbox{\hyperlink{a00080_source_l00026}{interrupt\+\_\+manager}}, and \mbox{\hyperlink{a00080_source_l00025}{interrupt\+Number}}.
+
+\Hypertarget{a01019_a5114528f0db9926365b345337e42af9b}\label{a01019_a5114528f0db9926365b345337e42af9b} 
+\index{hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}!````~InterruptHandler@{\texorpdfstring{$\sim$}{\string~}InterruptHandler}}
+\index{````~InterruptHandler@{\texorpdfstring{$\sim$}{\string~}InterruptHandler}!hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}InterruptHandler()}{\string~InterruptHandler()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Interrupt\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Interrupt\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00035_source_l00016}{16}} of file \mbox{\hyperlink{a00035_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a01019_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}}-\/>\mbox{\hyperlink{a01027_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[\mbox{\hyperlink{a01019_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}}]==\textcolor{keyword}{this})\ \mbox{\hyperlink{a01019_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}}-\/>\mbox{\hyperlink{a01027_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[\mbox{\hyperlink{a01019_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}}]=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a01019_aa89d41d69840cb4f1c8692fa6ded28f4}\label{a01019_aa89d41d69840cb4f1c8692fa6ded28f4} 
+\index{hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}!handleInterrupt@{handleInterrupt}}
+\index{handleInterrupt@{handleInterrupt}!hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}}
+\doxyparagraph{\texorpdfstring{handleInterrupt()}{handleInterrupt()}}
+{\footnotesize\ttfamily virtual uintptr\+\_\+t hardware\+\_\+communication\+::\+Interrupt\+Handler\+::handle\+Interrupt (\begin{DoxyParamCaption}\item[{uintptr\+\_\+t}]{esp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00035_source_l00169}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::handle\+Interrupt()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/daf/a01019_aa89d41d69840cb4f1c8692fa6ded28f4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{a01019_ae86f4eae0ce9272b2027d44bdfd71e33}\label{a01019_ae86f4eae0ce9272b2027d44bdfd71e33} 
+\index{hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}!interrupt\_manager@{interrupt\_manager}}
+\index{interrupt\_manager@{interrupt\_manager}!hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}}
+\doxyparagraph{\texorpdfstring{interrupt\_manager}{interrupt\_manager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01027}{Interrupt\+Manager}}\texorpdfstring{$\ast$}{*} hardware\+\_\+communication\+::\+Interrupt\+Handler\+::interrupt\+\_\+manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00080_source_l00026}{26}} of file \mbox{\hyperlink{a00080_source}{kinterrupt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00035_source_l00011}{Interrupt\+Handler()}}.
+
+\Hypertarget{a01019_afeede822d3e98957e76e627a54ec2f7a}\label{a01019_afeede822d3e98957e76e627a54ec2f7a} 
+\index{hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}!interruptNumber@{interruptNumber}}
+\index{interruptNumber@{interruptNumber}!hardware\_communication::InterruptHandler@{hardware\_communication::InterruptHandler}}
+\doxyparagraph{\texorpdfstring{interruptNumber}{interruptNumber}}
+{\footnotesize\ttfamily uint8\+\_\+t hardware\+\_\+communication\+::\+Interrupt\+Handler\+::interrupt\+Number\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00080_source_l00025}{25}} of file \mbox{\hyperlink{a00080_source}{kinterrupt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00035_source_l00011}{Interrupt\+Handler()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libk\+\_\+header/hardware\+\_\+communication/\mbox{\hyperlink{a00080}{kinterrupt.\+hpp}}\item 
+libk\+\_\+src/hardware\+\_\+communication/\mbox{\hyperlink{a00035}{kinterrupt.\+cpp}}\end{DoxyCompactItemize}

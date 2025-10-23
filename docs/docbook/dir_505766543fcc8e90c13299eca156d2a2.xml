@@ -14,9 +14,9 @@ Directory dependency graph for essential:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a20681">kgdt.cpp</link></para>
+            <listitem><para>file <link linkend="_a00047">kgdt.cpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a20684">kicxxabi.cpp</link></para>
+            <listitem><para>file <link linkend="_a00050">kicxxabi.cpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

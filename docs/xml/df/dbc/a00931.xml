@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="df/dbc/a00931" kind="class" language="C++" prot="public">
+    <compoundname>MouseEventHandler_for_kernel</compoundname>
+    <basecompoundref refid="de/de2/a00999" prot="public" virt="non-virtual">driver::MouseEventHandler</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/dbc/a00931_1a41f57ab9baa5850e39086362ce44b1cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MouseEventHandler_for_kernel::MouseEventHandler_for_kernel</definition>
+        <argsstring>()</argsstring>
+        <name>MouseEventHandler_for_kernel</name>
+        <qualifiedname>MouseEventHandler_for_kernel::MouseEventHandler_for_kernel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kernel_src/kernel.cpp" line="29" column="9" bodyfile="kernel_src/kernel.cpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dbc/a00931_1aa96e9bf8dce2b60b7f86577c3a74455d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MouseEventHandler_for_kernel::~MouseEventHandler_for_kernel</definition>
+        <argsstring>()</argsstring>
+        <name>~MouseEventHandler_for_kernel</name>
+        <qualifiedname>MouseEventHandler_for_kernel::~MouseEventHandler_for_kernel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kernel_src/kernel.cpp" line="30" column="9" bodyfile="kernel_src/kernel.cpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="df/dbc/a00931_1ae860a16e70322e5c4bb01e1108e50bb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MouseEventHandler_for_kernel::onMouseDown</definition>
+        <argsstring>(uint8_t button) override</argsstring>
+        <name>onMouseDown</name>
+        <qualifiedname>MouseEventHandler_for_kernel::onMouseDown</qualifiedname>
+        <reimplements refid="de/de2/a00999_1a2f12c5f63356c3045fd6cb46fd89374f">onMouseDown</reimplements>
+        <param>
+          <type>uint8_t</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kernel_src/kernel.cpp" line="32" column="14" bodyfile="kernel_src/kernel.cpp" bodystart="32" bodyend="36"/>
+        <references refid="dc/d10/a01003_1ac2077f6309c79d5f585fb966b57fe065" compoundref="db/dab/a00089" startline="50">driver::MouseDriver::__mouse_x_</references>
+        <references refid="dc/d10/a01003_1aa02009b37420687ef18db8a05ff9181f" compoundref="db/dab/a00089" startline="50">driver::MouseDriver::__mouse_y_</references>
+        <references refid="d1/dd6/a00108_1a9d1f0f838e646660db6d9284725c2b4c" compoundref="d6/d5b/a00026" startline="25" endline="33">basic::update_cursor</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dbc/a00931_1adbb4c4e2814b335579119c324313f652" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MouseEventHandler_for_kernel::onMouseMove</definition>
+        <argsstring>(int8_t delta_x, int8_t delta_y) override</argsstring>
+        <name>onMouseMove</name>
+        <qualifiedname>MouseEventHandler_for_kernel::onMouseMove</qualifiedname>
+        <reimplements refid="de/de2/a00999_1a68f635b3b65f927d37d4e0835f7e0b30">onMouseMove</reimplements>
+        <param>
+          <type>int8_t</type>
+          <declname>delta_x</declname>
+        </param>
+        <param>
+          <type>int8_t</type>
+          <declname>delta_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kernel_src/kernel.cpp" line="43" column="14" bodyfile="kernel_src/kernel.cpp" bodystart="43" bodyend="82"/>
+        <references refid="dc/d10/a01003_1ac2077f6309c79d5f585fb966b57fe065" compoundref="db/dab/a00089" startline="50">driver::MouseDriver::__mouse_x_</references>
+        <references refid="dc/d10/a01003_1aa02009b37420687ef18db8a05ff9181f" compoundref="db/dab/a00089" startline="50">driver::MouseDriver::__mouse_y_</references>
+        <references refid="dc/d10/a01003_1a1a2a455ca7146dea3148afa8cb6c9ed5" compoundref="d5/df9/a00044" startline="17" endline="19">driver::MouseDriver::mouse_block_video_mem_value</references>
+        <references refid="db/dab/a00089_1a637dd833f5f7af42afa1f42349a4d89e" compoundref="db/dab/a00089" startline="25">MOUSE_POINTER_COLOR</references>
+        <references refid="dc/d10/a01003_1a4a671e7e2b235f6bec473cb960401bd6" compoundref="db/dab/a00089" startline="48">driver::MouseDriver::old_char_under_mouse_pointer</references>
+      </memberdef>
+      <memberdef kind="function" id="df/dbc/a00931_1afca536c2187a65da265daa2d2af75d4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MouseEventHandler_for_kernel::onMouseUp</definition>
+        <argsstring>(uint8_t button) override</argsstring>
+        <name>onMouseUp</name>
+        <qualifiedname>MouseEventHandler_for_kernel::onMouseUp</qualifiedname>
+        <reimplements refid="de/de2/a00999_1a09b77fe86bfa79313b5c5b91d09eb514">onMouseUp</reimplements>
+        <param>
+          <type>uint8_t</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kernel_src/kernel.cpp" line="38" column="14" bodyfile="kernel_src/kernel.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MouseEventHandler_for_kernel</label>
+        <link refid="df/dbc/a00931"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>driver::MouseEventHandler</label>
+        <link refid="de/de2/a00999"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MouseEventHandler_for_kernel</label>
+        <link refid="df/dbc/a00931"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>driver::MouseEventHandler</label>
+        <link refid="de/de2/a00999"/>
+      </node>
+    </collaborationgraph>
+    <location file="kernel_src/kernel.cpp" line="27" column="1" bodyfile="kernel_src/kernel.cpp" bodystart="27" bodyend="83"/>
+    <listofallmembers>
+      <member refid="de/de2/a00999_1aa0fd3739c52bcd4d553cefaf41760a9b" prot="public" virt="non-virtual"><scope>MouseEventHandler_for_kernel</scope><name>MouseEventHandler</name></member>
+      <member refid="df/dbc/a00931_1a41f57ab9baa5850e39086362ce44b1cb" prot="public" virt="non-virtual"><scope>MouseEventHandler_for_kernel</scope><name>MouseEventHandler_for_kernel</name></member>
+      <member refid="df/dbc/a00931_1ae860a16e70322e5c4bb01e1108e50bb1" prot="public" virt="virtual"><scope>MouseEventHandler_for_kernel</scope><name>onMouseDown</name></member>
+      <member refid="df/dbc/a00931_1adbb4c4e2814b335579119c324313f652" prot="public" virt="virtual"><scope>MouseEventHandler_for_kernel</scope><name>onMouseMove</name></member>
+      <member refid="df/dbc/a00931_1afca536c2187a65da265daa2d2af75d4d" prot="public" virt="virtual"><scope>MouseEventHandler_for_kernel</scope><name>onMouseUp</name></member>
+      <member refid="de/de2/a00999_1abbfe4a7ae2911f989513178530314211" prot="public" virt="virtual"><scope>MouseEventHandler_for_kernel</scope><name>~MouseEventHandler</name></member>
+      <member refid="df/dbc/a00931_1aa96e9bf8dce2b60b7f86577c3a74455d" prot="public" virt="non-virtual"><scope>MouseEventHandler_for_kernel</scope><name>~MouseEventHandler_for_kernel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

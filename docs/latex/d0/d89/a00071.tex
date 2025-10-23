@@ -1,0 +1,1268 @@
+\doxysubsection{libk\+\_\+header/basic/multiboot.hpp File Reference}
+\hypertarget{a00071}{}\label{a00071}\index{libk\_header/basic/multiboot.hpp@{libk\_header/basic/multiboot.hpp}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d6e/a00073}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00071_dd/d20/a00939}{multiboot\+\_\+aout\+\_\+symbol\+\_\+table\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00071_d8/d49/a00979}{multiboot\+\_\+apm\+\_\+info}}
+\item 
+struct \mbox{\hyperlink{a00071_d4/d94/a00967}{multiboot\+\_\+color}}
+\item 
+struct \mbox{\hyperlink{a00071_d1/ddd/a00943}{multiboot\+\_\+elf\+\_\+section\+\_\+header\+\_\+table\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00071_d8/d19/a00935}{multiboot\+\_\+header}}
+\item 
+struct \mbox{\hyperlink{a00071_d3/d29/a00947}{multiboot\+\_\+info\+\_\+t}}
+\item 
+union \mbox{\hyperlink{a00071_d0/d7d/a01419}{multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+}}
+\item 
+struct \mbox{\hyperlink{a00071_d9/ddc/a01423}{multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+.\+\_\+\+\_\+unnamed4\+\_\+\+\_\+}}
+\item 
+struct \mbox{\hyperlink{a00071_db/d78/a01427}{multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+.\+\_\+\+\_\+unnamed6\+\_\+\+\_\+}}
+\item 
+union \mbox{\hyperlink{a00071_de/d70/a01415}{multiboot\+\_\+info.\+u}}
+\item 
+struct \mbox{\hyperlink{a00071_d0/d3c/a00971}{multiboot\+\_\+memory\+\_\+map\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00071_db/dbf/a00975}{multiboot\+\_\+module\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00071_a791f0c6a97c36de5388c990503ee4639}{MULTIBOOT\+\_\+\+AOUT\+\_\+\+KLUDGE}}~0x00010000
+\item 
+\#define \mbox{\hyperlink{a00071_aacd617f4e3daafd6eab95fb6215ccae4}{MULTIBOOT\+\_\+\+BOOTLOADER\+\_\+\+MAGIC}}~0x2\+BADB002
+\item 
+\#define \mbox{\hyperlink{a00071_af6005f97267af2cb0ff37fb245284440}{MULTIBOOT\+\_\+\+FRAMEBUFFER\+\_\+\+TYPE\+\_\+\+EGA\+\_\+\+TEXT}}~2
+\item 
+\#define \mbox{\hyperlink{a00071_a8e2af641ff42074bb807c3ec9e33b2e0}{MULTIBOOT\+\_\+\+FRAMEBUFFER\+\_\+\+TYPE\+\_\+\+INDEXED}}~0
+\item 
+\#define \mbox{\hyperlink{a00071_a34b2f01226ea42de22e06db7f652fbb1}{MULTIBOOT\+\_\+\+FRAMEBUFFER\+\_\+\+TYPE\+\_\+\+RGB}}~1
+\item 
+\#define \mbox{\hyperlink{a00071_abc554da6e5184d34e039b551177434ba}{MULTIBOOT\+\_\+\+HEADER\+\_\+\+ALIGN}}~4
+\item 
+\#define \mbox{\hyperlink{a00071_ab36ad4b4a42c58aac4ad1f2ba13054e9}{MULTIBOOT\+\_\+\+HEADER\+\_\+\+MAGIC}}~0x1\+BADB002
+\item 
+\#define \mbox{\hyperlink{a00071_a7f583196f43e30e93323f5e44554d726}{MULTIBOOT\+\_\+\+INFO\+\_\+\+ALIGN}}~0x00000004
+\item 
+\#define \mbox{\hyperlink{a00071_a186ab9e55c5bc612b9fd7e10b4be5600}{MULTIBOOT\+\_\+\+INFO\+\_\+\+AOUT\+\_\+\+SYMS}}~0x00000010
+\item 
+\#define \mbox{\hyperlink{a00071_aab73446f0cee2e9dc91f43eb9a0c806b}{MULTIBOOT\+\_\+\+INFO\+\_\+\+APM\+\_\+\+TABLE}}~0x00000400
+\item 
+\#define \mbox{\hyperlink{a00071_a9743476d5f32c9ae22f6254a0e3ba11d}{MULTIBOOT\+\_\+\+INFO\+\_\+\+BOOT\+\_\+\+LOADER\+\_\+\+NAME}}~0x00000200
+\item 
+\#define \mbox{\hyperlink{a00071_acfde5ffdd699c023dd8f4b89aa66556f}{MULTIBOOT\+\_\+\+INFO\+\_\+\+BOOTDEV}}~0x00000002
+\item 
+\#define \mbox{\hyperlink{a00071_ae75fb4f821b7ab405d46318d9b90a677}{MULTIBOOT\+\_\+\+INFO\+\_\+\+CMDLINE}}~0x00000004
+\item 
+\#define \mbox{\hyperlink{a00071_ad60e5b72325f5752e955879f3fbb44c3}{MULTIBOOT\+\_\+\+INFO\+\_\+\+CONFIG\+\_\+\+TABLE}}~0x00000100
+\item 
+\#define \mbox{\hyperlink{a00071_af2c5803d8cc6e1e8c00181ca546e68ab}{MULTIBOOT\+\_\+\+INFO\+\_\+\+DRIVE\+\_\+\+INFO}}~0x00000080
+\item 
+\#define \mbox{\hyperlink{a00071_ad7d22ae99c11dc92152acdc8494a71f0}{MULTIBOOT\+\_\+\+INFO\+\_\+\+ELF\+\_\+\+SHDR}}~0\+X00000020
+\item 
+\#define \mbox{\hyperlink{a00071_a1c07b211ed2c374f5fbcf40c97bce2c0}{MULTIBOOT\+\_\+\+INFO\+\_\+\+FRAMEBUFFER\+\_\+\+INFO}}~0x00001000
+\item 
+\#define \mbox{\hyperlink{a00071_a2d16dabdfdee01362c3457d06f0ff850}{MULTIBOOT\+\_\+\+INFO\+\_\+\+MEM\+\_\+\+MAP}}~0x00000040
+\item 
+\#define \mbox{\hyperlink{a00071_a1cb6047ede9a179b2958048573269d7a}{MULTIBOOT\+\_\+\+INFO\+\_\+\+MEMORY}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{a00071_a9a06a0175854cc6af54ddb6bd798c5bc}{MULTIBOOT\+\_\+\+INFO\+\_\+\+MODS}}~0x00000008
+\item 
+\#define \mbox{\hyperlink{a00071_abf0a727e2e262407c77d54baf40d2f39}{MULTIBOOT\+\_\+\+INFO\+\_\+\+VBE\+\_\+\+INFO}}~0x00000800
+\item 
+\#define \mbox{\hyperlink{a00071_af35be82586f332a561d00207c937ee57}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+ACPI\+\_\+\+RECLAIMABLE}}~3
+\item 
+\#define \mbox{\hyperlink{a00071_a7fe141351ebcde0acbd6118ad0ea1a21}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+AVAILABLE}}~1
+\item 
+\#define \mbox{\hyperlink{a00071_a1604ec18ac949d88dab993904b08c075}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+BADRAM}}~5
+\item 
+\#define \mbox{\hyperlink{a00071_afdfca6bbbf4b7dca40e9d43e58201f55}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+INFO}}~0x00000002
+\item 
+\#define \mbox{\hyperlink{a00071_a68f78286f7434d373a82f1b6f6473c72}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+NVS}}~4
+\item 
+\#define \mbox{\hyperlink{a00071_a0299aedc71e1f6707181471bafb18e7c}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+RESERVED}}~2
+\item 
+\#define \mbox{\hyperlink{a00071_ab3284a28549f2a2f1a2001ca023aaa1e}{MULTIBOOT\+\_\+\+MOD\+\_\+\+ALIGN}}~0x00001000
+\item 
+\#define \mbox{\hyperlink{a00071_aab5e5487e858de2a031cd3f1232f7b60}{MULTIBOOT\+\_\+\+PAGE\+\_\+\+ALIGN}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{a00071_a0b53e2de91aa7498c4b476776b27e5f3}{MULTIBOOT\+\_\+\+SEARCH}}~8192
+\item 
+\#define \mbox{\hyperlink{a00071_a74a1da9293ae3835241c60b2d9e65e8d}{MULTIBOOT\+\_\+\+VIDEO\+\_\+\+MODE}}~0x00000004
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned short \mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\+\_\+uint16\+\_\+t}}
+\item 
+typedef unsigned int \mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\+\_\+uint32\+\_\+t}}
+\item 
+typedef unsigned long long \mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\+\_\+uint64\+\_\+t}}
+\item 
+typedef unsigned char \mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\+\_\+uint8\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00071_d0/d3c/a00971}{multiboot\+\_\+mmap\+\_\+entry}} \mbox{\hyperlink{a00071_aa6b9a7218d544abc2be2bd335681b0a1}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed))
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00071_db/dbf/a00975}{multiboot\+\_\+mod\+\_\+list}} \mbox{\hyperlink{a00071_a4bbf25084dee10ec29f4356cacced463}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\item 
+\mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\+\_\+uint64\+\_\+t}} \mbox{\hyperlink{a00071_a8286ae6db03c34c4bb161accbfbfbbcd}{addr}}
+\item 
+\mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\+\_\+uint64\+\_\+t}} \mbox{\hyperlink{a00071_a6de3a6d27a7e07942958b912d39792e6}{len}}
+\item 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\+\_\+uint32\+\_\+t}} \mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}}
+\item 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\+\_\+uint32\+\_\+t}} \mbox{\hyperlink{a00071_a8da1a8c7127a0371eec0810a29e30f3c}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Class Documentation}
+\index{multiboot\_aout\_symbol\_table@{multiboot\_aout\_symbol\_table}}\label{a00939}
+\Hypertarget{a00071_a00939}
+\doxyparagraph{struct multiboot\+\_\+aout\+\_\+symbol\+\_\+table}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00127}{127}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+aout\+\_\+symbol\+\_\+table\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{de/db9/a00937}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_af0a1d2238495093ad75f36e3a146c0c7}\label{a00071_af0a1d2238495093ad75f36e3a146c0c7}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a488f52dbb30b4de2ae2f42f0bdfda154}\label{a00071_a488f52dbb30b4de2ae2f42f0bdfda154}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+reserved&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a7ed0107153c88e6604e9a6105a4c7be0}\label{a00071_a7ed0107153c88e6604e9a6105a4c7be0}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+strsize&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_afbdc23500d3d7a59486a0b8ff4066c1e}\label{a00071_afbdc23500d3d7a59486a0b8ff4066c1e}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+tabsize&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_apm\_info@{multiboot\_apm\_info}}\label{a00979}
+\Hypertarget{a00071_a00979}
+\doxyparagraph{struct multiboot\+\_\+apm\+\_\+info}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00261}{261}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+apm\+\_\+info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{d5/d6c/a00977}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_a9eedcae62ee49310914e238d07094c4b}\label{a00071_a9eedcae62ee49310914e238d07094c4b}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+cseg&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a9abc154a9c3a0f3d9ae96cf2b5044b43}\label{a00071_a9abc154a9c3a0f3d9ae96cf2b5044b43}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+cseg\_16&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a09573729600592739fe8f2480217a30d}\label{a00071_a09573729600592739fe8f2480217a30d}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+cseg\_16\_len&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a95aa6b556019e1b9c526b190341cc531}\label{a00071_a95aa6b556019e1b9c526b190341cc531}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+cseg\_len&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a98cd7da8760cf5d49ba55e1f9e76c6d4}\label{a00071_a98cd7da8760cf5d49ba55e1f9e76c6d4}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+dseg&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_afee11d31183fe424af90546b10c9fac2}\label{a00071_afee11d31183fe424af90546b10c9fac2}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+dseg\_len&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a55fb7837ae61f63d0310b65767a2505c}\label{a00071_a55fb7837ae61f63d0310b65767a2505c}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+flags&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a97958b174fe0234cafab9019eb009b91}\label{a00071_a97958b174fe0234cafab9019eb009b91}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+offset&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ab06d9309bdc00fa4a8c37fdab639beb5}\label{a00071_ab06d9309bdc00fa4a8c37fdab639beb5}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+version&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_color@{multiboot\_color}}\label{a00967}
+\Hypertarget{a00071_a00967}
+\doxyparagraph{struct multiboot\+\_\+color}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00225}{225}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+color\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{d3/dcd/a00965}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_a6f8d17b0f35ff4cbf9c51dcbc3ea7d01}\label{a00071_a6f8d17b0f35ff4cbf9c51dcbc3ea7d01}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+blue&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a08e1c8bc977b39015c9043645e79713d}\label{a00071_a08e1c8bc977b39015c9043645e79713d}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+green&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a4c8a91229f40c06c3c63b4c37e83d219}\label{a00071_a4c8a91229f40c06c3c63b4c37e83d219}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+red&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_elf\_section\_header\_table@{multiboot\_elf\_section\_header\_table}}\label{a00943}
+\Hypertarget{a00071_a00943}
+\doxyparagraph{struct multiboot\+\_\+elf\+\_\+section\+\_\+header\+\_\+table}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00137}{137}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+elf\+\_\+section\+\_\+header\+\_\+table\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{d6/dad/a00941}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_aac90242e270ae9df01fc3bb784b858b6}\label{a00071_aac90242e270ae9df01fc3bb784b858b6}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a6ed3ef34bb39d72a19533b11fe156e1f}\label{a00071_a6ed3ef34bb39d72a19533b11fe156e1f}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+num&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a45886444dce7cc10353528373f3e50c2}\label{a00071_a45886444dce7cc10353528373f3e50c2}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+shndx&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ab2740d89d4139f93c9452cca2c676c5c}\label{a00071_ab2740d89d4139f93c9452cca2c676c5c}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+size&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_header@{multiboot\_header}}\label{a00935}
+\Hypertarget{a00071_a00935}
+\doxyparagraph{struct multiboot\+\_\+header}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00101}{101}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+header\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{d0/d5b/a00933}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_ab4f2496ec9b0d1a95985929d281dfa19}\label{a00071_ab4f2496ec9b0d1a95985929d281dfa19}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+bss\_end\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a17e73abddfe8264c254767a20099038d}\label{a00071_a17e73abddfe8264c254767a20099038d}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+checksum&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_aba85b53dc3af1bf99c71292a776e9dff}\label{a00071_aba85b53dc3af1bf99c71292a776e9dff}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+depth&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ac3d807775a9d69730e6698dcdcf6491e}\label{a00071_ac3d807775a9d69730e6698dcdcf6491e}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+entry\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ab922f32c179ec7bde91519d19f27d95b}\label{a00071_ab922f32c179ec7bde91519d19f27d95b}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+flags&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a9718b2fc6ce29a37e9a209f92ab856e3}\label{a00071_a9718b2fc6ce29a37e9a209f92ab856e3}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+header\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a055c5e6553ea032897ad50a12f998a17}\label{a00071_a055c5e6553ea032897ad50a12f998a17}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+height&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a99de1cf326c46c76c6039f317b7a1ef2}\label{a00071_a99de1cf326c46c76c6039f317b7a1ef2}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+load\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ac9efc1a4c3cd18f286b2fd50ff052e31}\label{a00071_ac9efc1a4c3cd18f286b2fd50ff052e31}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+load\_end\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a7fddee92e60ff58e159c6bf2c40bf29b}\label{a00071_a7fddee92e60ff58e159c6bf2c40bf29b}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+magic&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a4c90b7929342dd5aab7d08afa0906d28}\label{a00071_a4c90b7929342dd5aab7d08afa0906d28}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mode\_type&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ad72a1a3dd608e73c818d0c27974def40}\label{a00071_ad72a1a3dd608e73c818d0c27974def40}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+width&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_info@{multiboot\_info}}\label{a00947}
+\Hypertarget{a00071_a00947}
+\doxyparagraph{struct multiboot\+\_\+info}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00146}{146}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+info\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/db0/a00945}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_a949c07914ae1ba8624fbb6b0dc7b0af6}\label{a00071_a949c07914ae1ba8624fbb6b0dc7b0af6}} 
+union \mbox{\hyperlink{a00071_d0/d7d/a01419}{multiboot\_info.\_\_unnamed2\_\_}}&
+\_\_unnamed\_\_&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ab340bc8f88281872676db0f52ebe7c0e}\label{a00071_ab340bc8f88281872676db0f52ebe7c0e}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+apm\_table&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ae32646de911267c65892a286ef3d529e}\label{a00071_ae32646de911267c65892a286ef3d529e}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+boot\_device&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a4a3251d6b4cf85d935d989a0a369feed}\label{a00071_a4a3251d6b4cf85d935d989a0a369feed}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+boot\_loader\_name&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a95a5e2cc69960e4d906abd585f91f210}\label{a00071_a95a5e2cc69960e4d906abd585f91f210}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+cmdline&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a94b06ab87dbfaf966822a39cf1d9e2d6}\label{a00071_a94b06ab87dbfaf966822a39cf1d9e2d6}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+config\_table&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a12916653d21ac1694b6d609a10d15332}\label{a00071_a12916653d21ac1694b6d609a10d15332}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+drives\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a8bb6cc3d388a8abafecc7018744c14f3}\label{a00071_a8bb6cc3d388a8abafecc7018744c14f3}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+drives\_length&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a39f175b6fb4debca237d3ff93e960a25}\label{a00071_a39f175b6fb4debca237d3ff93e960a25}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+flags&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a77a4d6e2b12fbd2b3e6e61d978ae5fc0}\label{a00071_a77a4d6e2b12fbd2b3e6e61d978ae5fc0}} 
+\mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\_uint64\_t}}&
+framebuffer\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ab7b460c75f0342dfb1e339d2b3a2a9da}\label{a00071_ab7b460c75f0342dfb1e339d2b3a2a9da}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_bpp&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a0e8539780b79a018883d96bb444cd9c8}\label{a00071_a0e8539780b79a018883d96bb444cd9c8}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+framebuffer\_height&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ab0ecb8c7debe9ac1ac7910ae957367f6}\label{a00071_ab0ecb8c7debe9ac1ac7910ae957367f6}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+framebuffer\_pitch&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a540391adf02da7cb6876fe78d65a13d7}\label{a00071_a540391adf02da7cb6876fe78d65a13d7}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_type&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a770273793bac06df17306c7fa136c58f}\label{a00071_a770273793bac06df17306c7fa136c58f}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+framebuffer\_width&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a6b80f033d5a9151a4d1abd2d155942a7}\label{a00071_a6b80f033d5a9151a4d1abd2d155942a7}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mem\_lower&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a1ea7d9e665d6fff00665d97e81207a8f}\label{a00071_a1ea7d9e665d6fff00665d97e81207a8f}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mem\_upper&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a19825c91eb6aa23fa61ee3851a6ce8da}\label{a00071_a19825c91eb6aa23fa61ee3851a6ce8da}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mmap\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a3dd43c3204f821c0a1b5604686d9eae7}\label{a00071_a3dd43c3204f821c0a1b5604686d9eae7}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mmap\_length&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a766e9dadbf4a845c12704c923cb13f02}\label{a00071_a766e9dadbf4a845c12704c923cb13f02}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mods\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a415feb83a215790e2e8f9e2e1e3df55c}\label{a00071_a415feb83a215790e2e8f9e2e1e3df55c}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mods\_count&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a0558f47498813865abaec2f6281c5f92}\label{a00071_a0558f47498813865abaec2f6281c5f92}} 
+union \mbox{\hyperlink{a00071_de/d70/a01415}{multiboot\_info.u}}&
+u&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a21c63bc2905c6fd19449eea6e8514856}\label{a00071_a21c63bc2905c6fd19449eea6e8514856}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+vbe\_control\_info&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a31ea288eaa679a7e3a4dafb91d833f78}\label{a00071_a31ea288eaa679a7e3a4dafb91d833f78}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+vbe\_interface\_len&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a272d3a053e085dc513ba4dc4eb688816}\label{a00071_a272d3a053e085dc513ba4dc4eb688816}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+vbe\_interface\_off&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a6cd85049f18e6c157d173538b162d9a6}\label{a00071_a6cd85049f18e6c157d173538b162d9a6}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+vbe\_interface\_seg&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_aec0fcaec97380658da787d4989f7b93f}\label{a00071_aec0fcaec97380658da787d4989f7b93f}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+vbe\_mode&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_ace25791339e03186c9364bb5f461f773}\label{a00071_ace25791339e03186c9364bb5f461f773}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+vbe\_mode\_info&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_info.\_\_unnamed2\_\_@{multiboot\_info.\_\_unnamed2\_\_}}\label{a01419}
+\Hypertarget{a00071_a01419}
+\doxyparagraph{union multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00205}{205}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{de/daf/a01417}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_aa4d79cb252987ad7f099770543e601a1}\label{a00071_aa4d79cb252987ad7f099770543e601a1}} 
+struct \mbox{\hyperlink{a00071_d9/ddc/a01423}{multiboot\_info.\_\_unnamed2\_\_.\_\_unnamed4\_\_}}&
+\_\_unnamed\_\_&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a21945c50944818f4cf3b6aef8608f9ce}\label{a00071_a21945c50944818f4cf3b6aef8608f9ce}} 
+struct \mbox{\hyperlink{a00071_db/d78/a01427}{multiboot\_info.\_\_unnamed2\_\_.\_\_unnamed6\_\_}}&
+\_\_unnamed\_\_&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_info.\_\_unnamed2\_\_.\_\_unnamed4\_\_@{multiboot\_info.\_\_unnamed2\_\_.\_\_unnamed4\_\_}}\label{a01423}
+\Hypertarget{a00071_a01423}
+\doxyparagraph{struct multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+.\+\_\+\+\_\+unnamed4\+\_\+\+\_\+}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00207}{207}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+.\+\_\+\+\_\+unnamed4\+\_\+\+\_\+\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{d4/d20/a01421}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_ab4a160c025f0db5470ddced0d2c99de3}\label{a00071_ab4a160c025f0db5470ddced0d2c99de3}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+framebuffer\_palette\_addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a9ea6d9ae58149f37ee098ce870bf07f0}\label{a00071_a9ea6d9ae58149f37ee098ce870bf07f0}} 
+\mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}&
+framebuffer\_palette\_num\_colors&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_info.\_\_unnamed2\_\_.\_\_unnamed6\_\_@{multiboot\_info.\_\_unnamed2\_\_.\_\_unnamed6\_\_}}\label{a01427}
+\Hypertarget{a00071_a01427}
+\doxyparagraph{struct multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+.\+\_\+\+\_\+unnamed6\+\_\+\+\_\+}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00212}{212}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+info.\+\_\+\+\_\+unnamed2\+\_\+\+\_\+.\+\_\+\+\_\+unnamed6\+\_\+\+\_\+\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{db/df2/a01425}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_ace107d23f7f4af6fd8d969926c5c9d16}\label{a00071_ace107d23f7f4af6fd8d969926c5c9d16}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_blue\_field\_position&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_aa8eaba7a0a6cf04509a014ac4bc937c0}\label{a00071_aa8eaba7a0a6cf04509a014ac4bc937c0}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_blue\_mask\_size&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_adfcdecf04630d77ee5e41006f47dc4d7}\label{a00071_adfcdecf04630d77ee5e41006f47dc4d7}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_green\_field\_position&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_abc2579d314db9a050c48043a1b7f5ea9}\label{a00071_abc2579d314db9a050c48043a1b7f5ea9}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_green\_mask\_size&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a4dd2fad32ee3a2ce5379d7bf0a23dabe}\label{a00071_a4dd2fad32ee3a2ce5379d7bf0a23dabe}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_red\_field\_position&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a0d868424e2b703471e3d73c0a72bc75c}\label{a00071_a0d868424e2b703471e3d73c0a72bc75c}} 
+\mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}&
+framebuffer\_red\_mask\_size&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_info.u@{multiboot\_info.u}}\label{a01415}
+\Hypertarget{a00071_a01415}
+\doxyparagraph{union multiboot\+\_\+info.\+u}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00165}{165}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+info.\+u\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{d7/d68/a01413}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_adcc9d90eba827321c643ad06b62c7817}\label{a00071_adcc9d90eba827321c643ad06b62c7817}} 
+multiboot\_aout\_symbol\_table\_t&
+aout\_sym&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_af2b83453f34de71046f2bbb48051c1f4}\label{a00071_af2b83453f34de71046f2bbb48051c1f4}} 
+multiboot\_elf\_section\_header\_table\_t&
+elf\_sec&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_mmap\_entry@{multiboot\_mmap\_entry}}\label{a00971}
+\Hypertarget{a00071_a00971}
+\doxyparagraph{struct multiboot\+\_\+mmap\+\_\+entry}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00232}{232}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+memory\+\_\+map\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{d7/dfd/a00969}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_a40e066ba79afd138308bd0db4b3f4f5b}\label{a00071_a40e066ba79afd138308bd0db4b3f4f5b}} 
+\mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\_uint64\_t}}&
+addr&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a0c5d40a87a63b01fc424bb3c15c89997}\label{a00071_a0c5d40a87a63b01fc424bb3c15c89997}} 
+\mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\_uint64\_t}}&
+len&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a1b4b5157d5e972e92981177fd1eb6d67}\label{a00071_a1b4b5157d5e972e92981177fd1eb6d67}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+size&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_affc11fb6e6ece4860a1929b791073538}\label{a00071_affc11fb6e6ece4860a1929b791073538}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+type&
+\\
+\hline
+
+\end{DoxyFields}
+\index{multiboot\_mod\_list@{multiboot\_mod\_list}}\label{a00975}
+\Hypertarget{a00071_a00975}
+\doxyparagraph{struct multiboot\+\_\+mod\+\_\+list}
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00246}{246}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Collaboration diagram for multiboot\+\_\+module\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{d3/da5/a00973}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Class Members}
+\mbox{\Hypertarget{a00071_a3219140f9baf1a790a602db25e8597c7}\label{a00071_a3219140f9baf1a790a602db25e8597c7}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+cmdline&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_aa2b5dda7d7d51a1f3fbd613adfa640b0}\label{a00071_aa2b5dda7d7d51a1f3fbd613adfa640b0}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mod\_end&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_a3bcfca83ccb172cd79123a8341ed4cfb}\label{a00071_a3bcfca83ccb172cd79123a8341ed4cfb}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+mod\_start&
+\\
+\hline
+
+\mbox{\Hypertarget{a00071_aff552d4c321b0607d77cda0c2cdc5708}\label{a00071_aff552d4c321b0607d77cda0c2cdc5708}} 
+\mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}&
+pad&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{a00071_a791f0c6a97c36de5388c990503ee4639}\label{a00071_a791f0c6a97c36de5388c990503ee4639} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_AOUT\_KLUDGE@{MULTIBOOT\_AOUT\_KLUDGE}}
+\index{MULTIBOOT\_AOUT\_KLUDGE@{MULTIBOOT\_AOUT\_KLUDGE}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_AOUT\_KLUDGE}{MULTIBOOT\_AOUT\_KLUDGE}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+AOUT\+\_\+\+KLUDGE~0x00010000}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00055}{55}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_aacd617f4e3daafd6eab95fb6215ccae4}\label{a00071_aacd617f4e3daafd6eab95fb6215ccae4} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_BOOTLOADER\_MAGIC@{MULTIBOOT\_BOOTLOADER\_MAGIC}}
+\index{MULTIBOOT\_BOOTLOADER\_MAGIC@{MULTIBOOT\_BOOTLOADER\_MAGIC}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_BOOTLOADER\_MAGIC}{MULTIBOOT\_BOOTLOADER\_MAGIC}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+BOOTLOADER\+\_\+\+MAGIC~0x2\+BADB002}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00035}{35}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_af6005f97267af2cb0ff37fb245284440}\label{a00071_af6005f97267af2cb0ff37fb245284440} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_FRAMEBUFFER\_TYPE\_EGA\_TEXT@{MULTIBOOT\_FRAMEBUFFER\_TYPE\_EGA\_TEXT}}
+\index{MULTIBOOT\_FRAMEBUFFER\_TYPE\_EGA\_TEXT@{MULTIBOOT\_FRAMEBUFFER\_TYPE\_EGA\_TEXT}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_FRAMEBUFFER\_TYPE\_EGA\_TEXT}{MULTIBOOT\_FRAMEBUFFER\_TYPE\_EGA\_TEXT}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+FRAMEBUFFER\+\_\+\+TYPE\+\_\+\+EGA\+\_\+\+TEXT~2}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00203}{203}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a8e2af641ff42074bb807c3ec9e33b2e0}\label{a00071_a8e2af641ff42074bb807c3ec9e33b2e0} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_FRAMEBUFFER\_TYPE\_INDEXED@{MULTIBOOT\_FRAMEBUFFER\_TYPE\_INDEXED}}
+\index{MULTIBOOT\_FRAMEBUFFER\_TYPE\_INDEXED@{MULTIBOOT\_FRAMEBUFFER\_TYPE\_INDEXED}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_FRAMEBUFFER\_TYPE\_INDEXED}{MULTIBOOT\_FRAMEBUFFER\_TYPE\_INDEXED}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+FRAMEBUFFER\+\_\+\+TYPE\+\_\+\+INDEXED~0}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00201}{201}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a34b2f01226ea42de22e06db7f652fbb1}\label{a00071_a34b2f01226ea42de22e06db7f652fbb1} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_FRAMEBUFFER\_TYPE\_RGB@{MULTIBOOT\_FRAMEBUFFER\_TYPE\_RGB}}
+\index{MULTIBOOT\_FRAMEBUFFER\_TYPE\_RGB@{MULTIBOOT\_FRAMEBUFFER\_TYPE\_RGB}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_FRAMEBUFFER\_TYPE\_RGB}{MULTIBOOT\_FRAMEBUFFER\_TYPE\_RGB}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+FRAMEBUFFER\+\_\+\+TYPE\+\_\+\+RGB~1}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00202}{202}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_abc554da6e5184d34e039b551177434ba}\label{a00071_abc554da6e5184d34e039b551177434ba} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_HEADER\_ALIGN@{MULTIBOOT\_HEADER\_ALIGN}}
+\index{MULTIBOOT\_HEADER\_ALIGN@{MULTIBOOT\_HEADER\_ALIGN}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_HEADER\_ALIGN}{MULTIBOOT\_HEADER\_ALIGN}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+HEADER\+\_\+\+ALIGN~4}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00029}{29}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_ab36ad4b4a42c58aac4ad1f2ba13054e9}\label{a00071_ab36ad4b4a42c58aac4ad1f2ba13054e9} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_HEADER\_MAGIC@{MULTIBOOT\_HEADER\_MAGIC}}
+\index{MULTIBOOT\_HEADER\_MAGIC@{MULTIBOOT\_HEADER\_MAGIC}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_HEADER\_MAGIC}{MULTIBOOT\_HEADER\_MAGIC}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+HEADER\+\_\+\+MAGIC~0x1\+BADB002}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00032}{32}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a7f583196f43e30e93323f5e44554d726}\label{a00071_a7f583196f43e30e93323f5e44554d726} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_ALIGN@{MULTIBOOT\_INFO\_ALIGN}}
+\index{MULTIBOOT\_INFO\_ALIGN@{MULTIBOOT\_INFO\_ALIGN}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_ALIGN}{MULTIBOOT\_INFO\_ALIGN}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+ALIGN~0x00000004}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00041}{41}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a186ab9e55c5bc612b9fd7e10b4be5600}\label{a00071_a186ab9e55c5bc612b9fd7e10b4be5600} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_AOUT\_SYMS@{MULTIBOOT\_INFO\_AOUT\_SYMS}}
+\index{MULTIBOOT\_INFO\_AOUT\_SYMS@{MULTIBOOT\_INFO\_AOUT\_SYMS}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_AOUT\_SYMS}{MULTIBOOT\_INFO\_AOUT\_SYMS}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+AOUT\+\_\+\+SYMS~0x00000010}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00071}{71}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_aab73446f0cee2e9dc91f43eb9a0c806b}\label{a00071_aab73446f0cee2e9dc91f43eb9a0c806b} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_APM\_TABLE@{MULTIBOOT\_INFO\_APM\_TABLE}}
+\index{MULTIBOOT\_INFO\_APM\_TABLE@{MULTIBOOT\_INFO\_APM\_TABLE}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_APM\_TABLE}{MULTIBOOT\_INFO\_APM\_TABLE}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+APM\+\_\+\+TABLE~0x00000400}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00088}{88}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a9743476d5f32c9ae22f6254a0e3ba11d}\label{a00071_a9743476d5f32c9ae22f6254a0e3ba11d} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_BOOT\_LOADER\_NAME@{MULTIBOOT\_INFO\_BOOT\_LOADER\_NAME}}
+\index{MULTIBOOT\_INFO\_BOOT\_LOADER\_NAME@{MULTIBOOT\_INFO\_BOOT\_LOADER\_NAME}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_BOOT\_LOADER\_NAME}{MULTIBOOT\_INFO\_BOOT\_LOADER\_NAME}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+BOOT\+\_\+\+LOADER\+\_\+\+NAME~0x00000200}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00085}{85}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_acfde5ffdd699c023dd8f4b89aa66556f}\label{a00071_acfde5ffdd699c023dd8f4b89aa66556f} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_BOOTDEV@{MULTIBOOT\_INFO\_BOOTDEV}}
+\index{MULTIBOOT\_INFO\_BOOTDEV@{MULTIBOOT\_INFO\_BOOTDEV}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_BOOTDEV}{MULTIBOOT\_INFO\_BOOTDEV}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+BOOTDEV~0x00000002}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00062}{62}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_ae75fb4f821b7ab405d46318d9b90a677}\label{a00071_ae75fb4f821b7ab405d46318d9b90a677} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_CMDLINE@{MULTIBOOT\_INFO\_CMDLINE}}
+\index{MULTIBOOT\_INFO\_CMDLINE@{MULTIBOOT\_INFO\_CMDLINE}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_CMDLINE}{MULTIBOOT\_INFO\_CMDLINE}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+CMDLINE~0x00000004}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00064}{64}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_ad60e5b72325f5752e955879f3fbb44c3}\label{a00071_ad60e5b72325f5752e955879f3fbb44c3} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_CONFIG\_TABLE@{MULTIBOOT\_INFO\_CONFIG\_TABLE}}
+\index{MULTIBOOT\_INFO\_CONFIG\_TABLE@{MULTIBOOT\_INFO\_CONFIG\_TABLE}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_CONFIG\_TABLE}{MULTIBOOT\_INFO\_CONFIG\_TABLE}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+CONFIG\+\_\+\+TABLE~0x00000100}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00082}{82}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_af2c5803d8cc6e1e8c00181ca546e68ab}\label{a00071_af2c5803d8cc6e1e8c00181ca546e68ab} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_DRIVE\_INFO@{MULTIBOOT\_INFO\_DRIVE\_INFO}}
+\index{MULTIBOOT\_INFO\_DRIVE\_INFO@{MULTIBOOT\_INFO\_DRIVE\_INFO}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_DRIVE\_INFO}{MULTIBOOT\_INFO\_DRIVE\_INFO}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+DRIVE\+\_\+\+INFO~0x00000080}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00079}{79}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_ad7d22ae99c11dc92152acdc8494a71f0}\label{a00071_ad7d22ae99c11dc92152acdc8494a71f0} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_ELF\_SHDR@{MULTIBOOT\_INFO\_ELF\_SHDR}}
+\index{MULTIBOOT\_INFO\_ELF\_SHDR@{MULTIBOOT\_INFO\_ELF\_SHDR}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_ELF\_SHDR}{MULTIBOOT\_INFO\_ELF\_SHDR}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+ELF\+\_\+\+SHDR~0\+X00000020}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00073}{73}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a1c07b211ed2c374f5fbcf40c97bce2c0}\label{a00071_a1c07b211ed2c374f5fbcf40c97bce2c0} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_FRAMEBUFFER\_INFO@{MULTIBOOT\_INFO\_FRAMEBUFFER\_INFO}}
+\index{MULTIBOOT\_INFO\_FRAMEBUFFER\_INFO@{MULTIBOOT\_INFO\_FRAMEBUFFER\_INFO}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_FRAMEBUFFER\_INFO}{MULTIBOOT\_INFO\_FRAMEBUFFER\_INFO}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+FRAMEBUFFER\+\_\+\+INFO~0x00001000}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00092}{92}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a2d16dabdfdee01362c3457d06f0ff850}\label{a00071_a2d16dabdfdee01362c3457d06f0ff850} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_MEM\_MAP@{MULTIBOOT\_INFO\_MEM\_MAP}}
+\index{MULTIBOOT\_INFO\_MEM\_MAP@{MULTIBOOT\_INFO\_MEM\_MAP}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_MEM\_MAP}{MULTIBOOT\_INFO\_MEM\_MAP}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+MEM\+\_\+\+MAP~0x00000040}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00076}{76}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a1cb6047ede9a179b2958048573269d7a}\label{a00071_a1cb6047ede9a179b2958048573269d7a} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_MEMORY@{MULTIBOOT\_INFO\_MEMORY}}
+\index{MULTIBOOT\_INFO\_MEMORY@{MULTIBOOT\_INFO\_MEMORY}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_MEMORY}{MULTIBOOT\_INFO\_MEMORY}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+MEMORY~0x00000001}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00060}{60}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a9a06a0175854cc6af54ddb6bd798c5bc}\label{a00071_a9a06a0175854cc6af54ddb6bd798c5bc} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_MODS@{MULTIBOOT\_INFO\_MODS}}
+\index{MULTIBOOT\_INFO\_MODS@{MULTIBOOT\_INFO\_MODS}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_MODS}{MULTIBOOT\_INFO\_MODS}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+MODS~0x00000008}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00066}{66}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_abf0a727e2e262407c77d54baf40d2f39}\label{a00071_abf0a727e2e262407c77d54baf40d2f39} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_INFO\_VBE\_INFO@{MULTIBOOT\_INFO\_VBE\_INFO}}
+\index{MULTIBOOT\_INFO\_VBE\_INFO@{MULTIBOOT\_INFO\_VBE\_INFO}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_INFO\_VBE\_INFO}{MULTIBOOT\_INFO\_VBE\_INFO}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+INFO\+\_\+\+VBE\+\_\+\+INFO~0x00000800}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00091}{91}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_af35be82586f332a561d00207c937ee57}\label{a00071_af35be82586f332a561d00207c937ee57} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE@{MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE}}
+\index{MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE@{MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE}{MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+MEMORY\+\_\+\+ACPI\+\_\+\+RECLAIMABLE~3}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00239}{239}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a7fe141351ebcde0acbd6118ad0ea1a21}\label{a00071_a7fe141351ebcde0acbd6118ad0ea1a21} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_MEMORY\_AVAILABLE@{MULTIBOOT\_MEMORY\_AVAILABLE}}
+\index{MULTIBOOT\_MEMORY\_AVAILABLE@{MULTIBOOT\_MEMORY\_AVAILABLE}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_MEMORY\_AVAILABLE}{MULTIBOOT\_MEMORY\_AVAILABLE}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+MEMORY\+\_\+\+AVAILABLE~1}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00237}{237}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a1604ec18ac949d88dab993904b08c075}\label{a00071_a1604ec18ac949d88dab993904b08c075} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_MEMORY\_BADRAM@{MULTIBOOT\_MEMORY\_BADRAM}}
+\index{MULTIBOOT\_MEMORY\_BADRAM@{MULTIBOOT\_MEMORY\_BADRAM}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_MEMORY\_BADRAM}{MULTIBOOT\_MEMORY\_BADRAM}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+MEMORY\+\_\+\+BADRAM~5}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00241}{241}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_afdfca6bbbf4b7dca40e9d43e58201f55}\label{a00071_afdfca6bbbf4b7dca40e9d43e58201f55} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_MEMORY\_INFO@{MULTIBOOT\_MEMORY\_INFO}}
+\index{MULTIBOOT\_MEMORY\_INFO@{MULTIBOOT\_MEMORY\_INFO}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_MEMORY\_INFO}{MULTIBOOT\_MEMORY\_INFO}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+MEMORY\+\_\+\+INFO~0x00000002}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00049}{49}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a68f78286f7434d373a82f1b6f6473c72}\label{a00071_a68f78286f7434d373a82f1b6f6473c72} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_MEMORY\_NVS@{MULTIBOOT\_MEMORY\_NVS}}
+\index{MULTIBOOT\_MEMORY\_NVS@{MULTIBOOT\_MEMORY\_NVS}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_MEMORY\_NVS}{MULTIBOOT\_MEMORY\_NVS}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+MEMORY\+\_\+\+NVS~4}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00240}{240}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a0299aedc71e1f6707181471bafb18e7c}\label{a00071_a0299aedc71e1f6707181471bafb18e7c} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_MEMORY\_RESERVED@{MULTIBOOT\_MEMORY\_RESERVED}}
+\index{MULTIBOOT\_MEMORY\_RESERVED@{MULTIBOOT\_MEMORY\_RESERVED}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_MEMORY\_RESERVED}{MULTIBOOT\_MEMORY\_RESERVED}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+MEMORY\+\_\+\+RESERVED~2}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00238}{238}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_ab3284a28549f2a2f1a2001ca023aaa1e}\label{a00071_ab3284a28549f2a2f1a2001ca023aaa1e} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_MOD\_ALIGN@{MULTIBOOT\_MOD\_ALIGN}}
+\index{MULTIBOOT\_MOD\_ALIGN@{MULTIBOOT\_MOD\_ALIGN}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_MOD\_ALIGN}{MULTIBOOT\_MOD\_ALIGN}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+MOD\+\_\+\+ALIGN~0x00001000}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00038}{38}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_aab5e5487e858de2a031cd3f1232f7b60}\label{a00071_aab5e5487e858de2a031cd3f1232f7b60} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_PAGE\_ALIGN@{MULTIBOOT\_PAGE\_ALIGN}}
+\index{MULTIBOOT\_PAGE\_ALIGN@{MULTIBOOT\_PAGE\_ALIGN}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_PAGE\_ALIGN}{MULTIBOOT\_PAGE\_ALIGN}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+PAGE\+\_\+\+ALIGN~0x00000001}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00046}{46}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a0b53e2de91aa7498c4b476776b27e5f3}\label{a00071_a0b53e2de91aa7498c4b476776b27e5f3} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_SEARCH@{MULTIBOOT\_SEARCH}}
+\index{MULTIBOOT\_SEARCH@{MULTIBOOT\_SEARCH}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_SEARCH}{MULTIBOOT\_SEARCH}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+SEARCH~8192}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00028}{28}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a74a1da9293ae3835241c60b2d9e65e8d}\label{a00071_a74a1da9293ae3835241c60b2d9e65e8d} 
+\index{multiboot.hpp@{multiboot.hpp}!MULTIBOOT\_VIDEO\_MODE@{MULTIBOOT\_VIDEO\_MODE}}
+\index{MULTIBOOT\_VIDEO\_MODE@{MULTIBOOT\_VIDEO\_MODE}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{MULTIBOOT\_VIDEO\_MODE}{MULTIBOOT\_VIDEO\_MODE}}
+{\footnotesize\ttfamily \#define MULTIBOOT\+\_\+\+VIDEO\+\_\+\+MODE~0x00000004}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00052}{52}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+\doxysubsubsection{Typedef Documentation}
+\Hypertarget{a00071_a3a11e3c2b5e0617736a05343aa5795b3}\label{a00071_a3a11e3c2b5e0617736a05343aa5795b3} 
+\index{multiboot.hpp@{multiboot.hpp}!multiboot\_uint16\_t@{multiboot\_uint16\_t}}
+\index{multiboot\_uint16\_t@{multiboot\_uint16\_t}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{multiboot\_uint16\_t}{multiboot\_uint16\_t}}
+{\footnotesize\ttfamily typedef unsigned short \mbox{\hyperlink{a00071_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\+\_\+uint16\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00097}{97}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a009f355da41fed4badb8a52d432f5186}\label{a00071_a009f355da41fed4badb8a52d432f5186} 
+\index{multiboot.hpp@{multiboot.hpp}!multiboot\_uint32\_t@{multiboot\_uint32\_t}}
+\index{multiboot\_uint32\_t@{multiboot\_uint32\_t}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{multiboot\_uint32\_t}{multiboot\_uint32\_t}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\+\_\+uint32\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00098}{98}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a8dfdd61648b48aa31845db590970e06a}\label{a00071_a8dfdd61648b48aa31845db590970e06a} 
+\index{multiboot.hpp@{multiboot.hpp}!multiboot\_uint64\_t@{multiboot\_uint64\_t}}
+\index{multiboot\_uint64\_t@{multiboot\_uint64\_t}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{multiboot\_uint64\_t}{multiboot\_uint64\_t}}
+{\footnotesize\ttfamily typedef unsigned long long \mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\+\_\+uint64\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00099}{99}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a037f602538fccf97e90021c19fdfc047}\label{a00071_a037f602538fccf97e90021c19fdfc047} 
+\index{multiboot.hpp@{multiboot.hpp}!multiboot\_uint8\_t@{multiboot\_uint8\_t}}
+\index{multiboot\_uint8\_t@{multiboot\_uint8\_t}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{multiboot\_uint8\_t}{multiboot\_uint8\_t}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{a00071_a037f602538fccf97e90021c19fdfc047}{multiboot\+\_\+uint8\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00096}{96}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{a00071_aa6b9a7218d544abc2be2bd335681b0a1}\label{a00071_aa6b9a7218d544abc2be2bd335681b0a1} 
+\index{multiboot.hpp@{multiboot.hpp}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{a00071_d0/d3c/a00971}{multiboot\+\_\+mmap\+\_\+entry}} \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsubsection{Variable Documentation}
+\Hypertarget{a00071_a4bbf25084dee10ec29f4356cacced463}\label{a00071_a4bbf25084dee10ec29f4356cacced463} 
+\index{multiboot.hpp@{multiboot.hpp}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{\_\_attribute\_\_}{\_\_attribute\_\_}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{a00071_db/dbf/a00975}{multiboot\+\_\+mod\+\_\+list}} \+\_\+\+\_\+attribute\+\_\+\+\_\+}
+
+
+
+Referenced by \mbox{\hyperlink{a00047_source_l00046}{essential\+::\+GDT\+::install\+Table()}}, \mbox{\hyperlink{a00047_source_l00082}{essential\+::\+GDT\+::print\+Loaded\+Table()}}, and \mbox{\hyperlink{a00047_source_l00120}{essential\+::\+GDT\+::print\+Loaded\+Table\+Header()}}.
+
+\Hypertarget{a00071_a8286ae6db03c34c4bb161accbfbfbbcd}\label{a00071_a8286ae6db03c34c4bb161accbfbfbbcd} 
+\index{multiboot.hpp@{multiboot.hpp}!addr@{addr}}
+\index{addr@{addr}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{addr}{addr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\+\_\+uint64\+\_\+t}} addr}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00001}{1}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+\Hypertarget{a00071_a6de3a6d27a7e07942958b912d39792e6}\label{a00071_a6de3a6d27a7e07942958b912d39792e6} 
+\index{multiboot.hpp@{multiboot.hpp}!len@{len}}
+\index{len@{len}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00071_a8dfdd61648b48aa31845db590970e06a}{multiboot\+\_\+uint64\+\_\+t}} len}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00002}{2}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00026_source_l00276}{basic\+::printf()}}, and \mbox{\hyperlink{a00026_source_l00227}{print\+Hex()}}.
+
+\Hypertarget{a00071_a6d813a0f2b5281b18dea3f4cda696c33}\label{a00071_a6d813a0f2b5281b18dea3f4cda696c33} 
+\index{multiboot.hpp@{multiboot.hpp}!size@{size}}
+\index{size@{size}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\+\_\+uint32\+\_\+t}} size}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00000}{0}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00023_source_l00079}{operator delete()}}, \mbox{\hyperlink{a00023_source_l00088}{operator delete\mbox{[}$\,$\mbox{]}()}}, \mbox{\hyperlink{a00023_source_l00065}{operator new()}}, and \mbox{\hyperlink{a00023_source_l00070}{operator new\mbox{[}$\,$\mbox{]}()}}.
+
+\Hypertarget{a00071_a8da1a8c7127a0371eec0810a29e30f3c}\label{a00071_a8da1a8c7127a0371eec0810a29e30f3c} 
+\index{multiboot.hpp@{multiboot.hpp}!type@{type}}
+\index{type@{type}!multiboot.hpp@{multiboot.hpp}}
+\doxyparagraph{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00071_a009f355da41fed4badb8a52d432f5186}{multiboot\+\_\+uint32\+\_\+t}} type}
+
+
+
+Definition at line \mbox{\hyperlink{a00071_source_l00008}{8}} of file \mbox{\hyperlink{a00071_source}{multiboot.\+hpp}}.
+

@@ -2,8 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_7e9b38ff86f40c049b6923d6e5368e6c" kind="dir">
     <compoundname>libk_src/basic</compoundname>
-    <innerfile refid="df/df3/a20660">kiostream.cpp</innerfile>
-    <innerfile refid="d7/db7/a20657">kmemory.cpp</innerfile>
+    <innerfile refid="d6/d5b/a00026">kiostream.cpp</innerfile>
+    <innerfile refid="d3/d52/a00023">kmemory.cpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

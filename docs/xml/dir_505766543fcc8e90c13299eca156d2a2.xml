@@ -2,8 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_505766543fcc8e90c13299eca156d2a2" kind="dir">
     <compoundname>libk_src/essential</compoundname>
-    <innerfile refid="db/d53/a20681">kgdt.cpp</innerfile>
-    <innerfile refid="d3/d48/a20684">kicxxabi.cpp</innerfile>
+    <innerfile refid="d6/d2d/a00047">kgdt.cpp</innerfile>
+    <innerfile refid="d5/de0/a00050">kicxxabi.cpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

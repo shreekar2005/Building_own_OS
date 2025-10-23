@@ -14,11 +14,11 @@ Directory dependency graph for driver:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a20723">kdriver.hpp</link></para>
+            <listitem><para>file <link linkend="_a00092">kdriver.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a20717">kkeyboard.hpp</link></para>
+            <listitem><para>file <link linkend="_a00086">kkeyboard.hpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a20720">kmouse.hpp</link></para>
+            <listitem><para>file <link linkend="_a00089">kmouse.hpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -1,0 +1,496 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dc/d10/a01003" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>driver::MouseDriver</compoundname>
+    <basecompoundref refid="db/daf/a01019" prot="public" virt="non-virtual">hardware_communication::InterruptHandler</basecompoundref>
+    <basecompoundref refid="d7/d98/a00983" prot="public" virt="non-virtual">driver::Driver</basecompoundref>
+    <includes refid="db/dab/a00089" local="yes">kmouse.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dc/d10/a01003_1aaa1d55d296d88995ac49a8a9a75a79d4" prot="private" static="no" mutable="no">
+        <type>int8_t</type>
+        <definition>int8_t driver::MouseDriver::buffer[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>buffer</name>
+        <qualifiedname>driver::MouseDriver::buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="42" column="24" bodyfile="libk_header/driver/kmouse.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d10/a01003_1a7942997bd5ead2767e9627d91789dd70" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t driver::MouseDriver::buttons</definition>
+        <argsstring></argsstring>
+        <name>buttons</name>
+        <qualifiedname>driver::MouseDriver::buttons</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="44" column="25" bodyfile="libk_header/driver/kmouse.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d10/a01003_1a2877a9f46dd83a5f05f17fd83a0a7725" prot="private" static="no" mutable="no">
+        <type><ref refid="de/d26/a01035" kindref="compound">hardware_communication::Port8Bit</ref></type>
+        <definition>hardware_communication::Port8Bit driver::MouseDriver::commandPort</definition>
+        <argsstring></argsstring>
+        <name>commandPort</name>
+        <qualifiedname>driver::MouseDriver::commandPort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="41" column="50" bodyfile="libk_header/driver/kmouse.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d10/a01003_1a8e30a6f6c5839fcf9c3ab63aa167d046" prot="private" static="no" mutable="no">
+        <type><ref refid="de/d26/a01035" kindref="compound">hardware_communication::Port8Bit</ref></type>
+        <definition>hardware_communication::Port8Bit driver::MouseDriver::dataPort</definition>
+        <argsstring></argsstring>
+        <name>dataPort</name>
+        <qualifiedname>driver::MouseDriver::dataPort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="40" column="50" bodyfile="libk_header/driver/kmouse.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d10/a01003_1a804f5657a062e0a18f3b56781f884c66" prot="private" static="no" mutable="no">
+        <type><ref refid="de/de2/a00999" kindref="compound">MouseEventHandler</ref> *</type>
+        <definition>MouseEventHandler* driver::MouseDriver::mouseEventHandler</definition>
+        <argsstring></argsstring>
+        <name>mouseEventHandler</name>
+        <qualifiedname>driver::MouseDriver::mouseEventHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="45" column="35" bodyfile="libk_header/driver/kmouse.hpp" bodystart="45" bodyend="-1"/>
+        <referencedby refid="dc/d10/a01003_1a639956c8ce11d62ee443825e9b9695af" compoundref="d5/df9/a00044" startline="22" endline="28">MouseDriver</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d10/a01003_1a313426dd9aa1af1540cbffc2e77c58c1" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t driver::MouseDriver::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <qualifiedname>driver::MouseDriver::offset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="43" column="25" bodyfile="libk_header/driver/kmouse.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="dc/d10/a01003_1ac2077f6309c79d5f585fb966b57fe065" prot="public" static="yes" mutable="no">
+        <type>int8_t</type>
+        <definition>int8_t driver::MouseDriver::__mouse_x_</definition>
+        <argsstring></argsstring>
+        <name>__mouse_x_</name>
+        <qualifiedname>driver::MouseDriver::__mouse_x_</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="50" column="31" bodyfile="libk_header/driver/kmouse.hpp" bodystart="50" bodyend="-1"/>
+        <referencedby refid="df/dbc/a00931_1ae860a16e70322e5c4bb01e1108e50bb1" compoundref="df/d03/a00062" startline="32" endline="36">MouseEventHandler_for_kernel::onMouseDown</referencedby>
+        <referencedby refid="df/dbc/a00931_1adbb4c4e2814b335579119c324313f652" compoundref="df/d03/a00062" startline="43" endline="82">MouseEventHandler_for_kernel::onMouseMove</referencedby>
+        <referencedby refid="d6/d5b/a00026_1a6bd99ada5f7c46567ee0ceca6c369d47" compoundref="d6/d5b/a00026" startline="41" endline="116">printCharStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d10/a01003_1aa02009b37420687ef18db8a05ff9181f" prot="public" static="yes" mutable="no">
+        <type>int8_t</type>
+        <definition>int8_t driver::MouseDriver::__mouse_y_</definition>
+        <argsstring></argsstring>
+        <name>__mouse_y_</name>
+        <qualifiedname>driver::MouseDriver::__mouse_y_</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="50" column="42" bodyfile="libk_header/driver/kmouse.hpp" bodystart="50" bodyend="-1"/>
+        <referencedby refid="df/dbc/a00931_1ae860a16e70322e5c4bb01e1108e50bb1" compoundref="df/d03/a00062" startline="32" endline="36">MouseEventHandler_for_kernel::onMouseDown</referencedby>
+        <referencedby refid="df/dbc/a00931_1adbb4c4e2814b335579119c324313f652" compoundref="df/d03/a00062" startline="43" endline="82">MouseEventHandler_for_kernel::onMouseMove</referencedby>
+        <referencedby refid="d6/d5b/a00026_1a6bd99ada5f7c46567ee0ceca6c369d47" compoundref="d6/d5b/a00026" startline="41" endline="116">printCharStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d10/a01003_1a4a671e7e2b235f6bec473cb960401bd6" prot="public" static="yes" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driver::MouseDriver::old_char_under_mouse_pointer</definition>
+        <argsstring></argsstring>
+        <name>old_char_under_mouse_pointer</name>
+        <qualifiedname>driver::MouseDriver::old_char_under_mouse_pointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="48" column="33" bodyfile="libk_header/driver/kmouse.hpp" bodystart="48" bodyend="-1"/>
+        <referencedby refid="df/dbc/a00931_1adbb4c4e2814b335579119c324313f652" compoundref="df/d03/a00062" startline="43" endline="82">MouseEventHandler_for_kernel::onMouseMove</referencedby>
+        <referencedby refid="d6/d5b/a00026_1a6bd99ada5f7c46567ee0ceca6c369d47" compoundref="d6/d5b/a00026" startline="41" endline="116">printCharStr</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="dc/d10/a01003_1a1a2a455ca7146dea3148afa8cb6c9ed5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t driver::MouseDriver::mouse_block_video_mem_value</definition>
+        <argsstring>(uint16_t old_char_under_mouse_pointer, uint8_t mouse_pointer_color)</argsstring>
+        <name>mouse_block_video_mem_value</name>
+        <qualifiedname>driver::MouseDriver::mouse_block_video_mem_value</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>old_char_under_mouse_pointer</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mouse_pointer_color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="49" column="33" bodyfile="libk_src/driver/kmouse.cpp" bodystart="17" bodyend="19"/>
+        <referencedby refid="df/dbc/a00931_1adbb4c4e2814b335579119c324313f652" compoundref="df/d03/a00062" startline="43" endline="82">MouseEventHandler_for_kernel::onMouseMove</referencedby>
+        <referencedby refid="d6/d5b/a00026_1a6bd99ada5f7c46567ee0ceca6c369d47" compoundref="d6/d5b/a00026" startline="41" endline="116">printCharStr</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dc/d10/a01003_1a639956c8ce11d62ee443825e9b9695af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::MouseDriver::MouseDriver</definition>
+        <argsstring>(hardware_communication::InterruptManager *interrupt_manager, MouseEventHandler *mouseEventHandler)</argsstring>
+        <name>MouseDriver</name>
+        <qualifiedname>driver::MouseDriver::MouseDriver</qualifiedname>
+        <param>
+          <type><ref refid="dd/dfd/a01027" kindref="compound">hardware_communication::InterruptManager</ref> *</type>
+          <declname>interrupt_manager</declname>
+        </param>
+        <param>
+          <type><ref refid="de/de2/a00999" kindref="compound">MouseEventHandler</ref> *</type>
+          <declname>mouseEventHandler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="51" column="17" bodyfile="libk_src/driver/kmouse.cpp" bodystart="22" bodyend="28"/>
+        <references refid="dc/d10/a01003_1a804f5657a062e0a18f3b56781f884c66" compoundref="db/dab/a00089" startline="45">mouseEventHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d10/a01003_1a8c25e4a4b42d1d39b332ba6d4cbd6a22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::MouseDriver::~MouseDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~MouseDriver</name>
+        <qualifiedname>driver::MouseDriver::~MouseDriver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="52" column="17" bodyfile="libk_src/driver/kmouse.cpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d10/a01003_1a446769df0b3b537a525476c7c8be47bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void driver::MouseDriver::activate</definition>
+        <argsstring>() override</argsstring>
+        <name>activate</name>
+        <qualifiedname>driver::MouseDriver::activate</qualifiedname>
+        <reimplements refid="d7/d98/a00983_1a8c86c1e52652d8b491d37a3b60b535b0">activate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="55" column="22" bodyfile="libk_src/driver/kmouse.cpp" bodystart="74" bodyend="100"/>
+        <references refid="db/dab/a00089_1a637dd833f5f7af42afa1f42349a4d89e" compoundref="db/dab/a00089" startline="25">MOUSE_POINTER_COLOR</references>
+        <references refid="d1/dd6/a00108_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d6/d5b/a00026" startline="276" endline="472">basic::printf</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d10/a01003_1a4329c1cdedc72adf0b95cb3911c4acf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void driver::MouseDriver::deactivate</definition>
+        <argsstring>() override</argsstring>
+        <name>deactivate</name>
+        <qualifiedname>driver::MouseDriver::deactivate</qualifiedname>
+        <reimplements refid="d7/d98/a00983_1a4b3b5e5a163c2c0e3cb58ea752ebcef1">deactivate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="57" column="22" bodyfile="libk_src/driver/kmouse.cpp" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d10/a01003_1a1b2f08490b7954e5ca504cd8bb6862c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t driver::MouseDriver::handleInterrupt</definition>
+        <argsstring>(uint32_t esp) override</argsstring>
+        <name>handleInterrupt</name>
+        <qualifiedname>driver::MouseDriver::handleInterrupt</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>esp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="53" column="26" bodyfile="libk_src/driver/kmouse.cpp" bodystart="32" bodyend="68"/>
+        <references refid="de/de2/a00999_1a68f635b3b65f927d37d4e0835f7e0b30">driver::MouseEventHandler::onMouseMove</references>
+      </memberdef>
+      <memberdef kind="function" id="db/daf/a01019_1aa89d41d69840cb4f1c8692fa6ded28f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>uintptr_t</type>
+        <definition>virtual uintptr_t hardware_communication::InterruptHandler::handleInterrupt</definition>
+        <argsstring>(uintptr_t esp)=0</argsstring>
+        <name>handleInterrupt</name>
+        <qualifiedname>hardware_communication::InterruptHandler::handleInterrupt</qualifiedname>
+        <param>
+          <type>uintptr_t</type>
+          <declname>esp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kinterrupt.hpp" line="30" column="35"/>
+        <referencedby refid="dd/dfd/a01027_1a2d3ef1656e1eaaf86be40a200a49a4b2" compoundref="d4/d8c/a00035" startline="169" endline="186">hardware_communication::InterruptManager::handleInterrupt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d10/a01003_1aabe3740996bf70fda96f0a25228954a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int driver::MouseDriver::reset</definition>
+        <argsstring>() override</argsstring>
+        <name>reset</name>
+        <qualifiedname>driver::MouseDriver::reset</qualifiedname>
+        <reimplements refid="d7/d98/a00983_1a98d2e779c02364fc58c172d0d2a32bdd">reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="56" column="21" bodyfile="libk_src/driver/kmouse.cpp" bodystart="102" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="db/daf/a01019_1ae86f4eae0ce9272b2027d44bdfd71e33" prot="protected" static="no" mutable="no">
+        <type><ref refid="da/dec/a00080_1a6c5563315b1a2f5c67ae8b78d06e3c7f" kindref="member">InterruptManager</ref> *</type>
+        <definition>InterruptManager* hardware_communication::InterruptHandler::interrupt_manager</definition>
+        <argsstring></argsstring>
+        <name>interrupt_manager</name>
+        <qualifiedname>hardware_communication::InterruptHandler::interrupt_manager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kinterrupt.hpp" line="26" column="34" bodyfile="libk_header/hardware_communication/kinterrupt.hpp" bodystart="26" bodyend="-1"/>
+        <referencedby refid="db/daf/a01019_1a134c8931dff43e766f1ddc4d0f35cd48" compoundref="d4/d8c/a00035" startline="11" endline="15">hardware_communication::InterruptHandler::InterruptHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="db/daf/a01019_1afeede822d3e98957e76e627a54ec2f7a" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hardware_communication::InterruptHandler::interruptNumber</definition>
+        <argsstring></argsstring>
+        <name>interruptNumber</name>
+        <qualifiedname>hardware_communication::InterruptHandler::interruptNumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kinterrupt.hpp" line="25" column="25" bodyfile="libk_header/hardware_communication/kinterrupt.hpp" bodystart="25" bodyend="-1"/>
+        <referencedby refid="db/daf/a01019_1a134c8931dff43e766f1ddc4d0f35cd48" compoundref="d4/d8c/a00035" startline="11" endline="15">hardware_communication::InterruptHandler::InterruptHandler</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>driver::Driver</label>
+        <link refid="d7/d98/a00983"/>
+      </node>
+      <node id="1">
+        <label>driver::MouseDriver</label>
+        <link refid="dc/d10/a01003"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>hardware_communication::InterruptHandler</label>
+        <link refid="db/daf/a01019"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>driver::Driver</label>
+        <link refid="d7/d98/a00983"/>
+      </node>
+      <node id="1">
+        <label>driver::MouseDriver</label>
+        <link refid="dc/d10/a01003"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-commandPort</edgelabel>
+          <edgelabel>-dataPort</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>+__mouse_x_</edgelabel>
+          <edgelabel>+__mouse_y_</edgelabel>
+          <edgelabel>-buffer</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-buttons</edgelabel>
+          <edgelabel>-offset</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>-mouseEventHandler</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>+old_char_under_mouse_pointer</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>driver::MouseEventHandler</label>
+        <link refid="de/de2/a00999"/>
+      </node>
+      <node id="7">
+        <label>hardware_communication::IDT_row</label>
+        <link refid="d6/dcd/a01023"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-handlerAddressHighbits</edgelabel>
+          <edgelabel>-handlerAddressLowbits</edgelabel>
+          <edgelabel>-kernelCodeSegmentSelector</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-access</edgelabel>
+          <edgelabel>-reserved</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>hardware_communication::InterruptHandler</label>
+        <link refid="db/daf/a01019"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#interruptNumber</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>#interrupt_manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>hardware_communication::InterruptManager</label>
+        <link refid="dd/dfd/a01027"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+limit</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+base</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>#interruptDescriptorTable</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>#handlers</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>#picMasterCommand</edgelabel>
+          <edgelabel>#picMasterData</edgelabel>
+          <edgelabel>#picSlaveCommand</edgelabel>
+          <edgelabel>#picSlaveData</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>hardware_communication::Port</label>
+        <link refid="d6/dcf/a01031"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>#portnumber</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>hardware_communication::Port8Bit</label>
+        <link refid="de/d26/a01035"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>hardware_communication::Port8BitSlow</label>
+        <link refid="df/d21/a01039"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>int8_t</label>
+      </node>
+      <node id="14">
+        <label>static uint16_t</label>
+      </node>
+      <node id="5">
+        <label>uint16_t</label>
+      </node>
+      <node id="6">
+        <label>uint32_t</label>
+      </node>
+      <node id="3">
+        <label>uint8_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="libk_header/driver/kmouse.hpp" line="39" column="9" bodyfile="libk_header/driver/kmouse.hpp" bodystart="39" bodyend="58"/>
+    <listofallmembers>
+      <member refid="dc/d10/a01003_1ac2077f6309c79d5f585fb966b57fe065" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>__mouse_x_</name></member>
+      <member refid="dc/d10/a01003_1aa02009b37420687ef18db8a05ff9181f" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>__mouse_y_</name></member>
+      <member refid="dc/d10/a01003_1a446769df0b3b537a525476c7c8be47bc" prot="public" virt="virtual"><scope>driver::MouseDriver</scope><name>activate</name></member>
+      <member refid="dc/d10/a01003_1aaa1d55d296d88995ac49a8a9a75a79d4" prot="private" virt="non-virtual"><scope>driver::MouseDriver</scope><name>buffer</name></member>
+      <member refid="dc/d10/a01003_1a7942997bd5ead2767e9627d91789dd70" prot="private" virt="non-virtual"><scope>driver::MouseDriver</scope><name>buttons</name></member>
+      <member refid="dc/d10/a01003_1a2877a9f46dd83a5f05f17fd83a0a7725" prot="private" virt="non-virtual"><scope>driver::MouseDriver</scope><name>commandPort</name></member>
+      <member refid="dc/d10/a01003_1a8e30a6f6c5839fcf9c3ab63aa167d046" prot="private" virt="non-virtual"><scope>driver::MouseDriver</scope><name>dataPort</name></member>
+      <member refid="dc/d10/a01003_1a4329c1cdedc72adf0b95cb3911c4acf6" prot="public" virt="virtual"><scope>driver::MouseDriver</scope><name>deactivate</name></member>
+      <member refid="d7/d98/a00983_1a7de0c11fff1dc1f5d004b2a76e840840" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>Driver</name></member>
+      <member refid="dc/d10/a01003_1a1b2f08490b7954e5ca504cd8bb6862c0" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>handleInterrupt</name></member>
+      <member refid="db/daf/a01019_1aa89d41d69840cb4f1c8692fa6ded28f4" prot="public" virt="pure-virtual" ambiguityscope="hardware_communication::InterruptHandler::"><scope>driver::MouseDriver</scope><name>handleInterrupt</name></member>
+      <member refid="db/daf/a01019_1ae86f4eae0ce9272b2027d44bdfd71e33" prot="protected" virt="non-virtual"><scope>driver::MouseDriver</scope><name>interrupt_manager</name></member>
+      <member refid="db/daf/a01019_1a134c8931dff43e766f1ddc4d0f35cd48" prot="protected" virt="non-virtual"><scope>driver::MouseDriver</scope><name>InterruptHandler</name></member>
+      <member refid="db/daf/a01019_1afeede822d3e98957e76e627a54ec2f7a" prot="protected" virt="non-virtual"><scope>driver::MouseDriver</scope><name>interruptNumber</name></member>
+      <member refid="dc/d10/a01003_1a1a2a455ca7146dea3148afa8cb6c9ed5" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>mouse_block_video_mem_value</name></member>
+      <member refid="dc/d10/a01003_1a639956c8ce11d62ee443825e9b9695af" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>MouseDriver</name></member>
+      <member refid="dc/d10/a01003_1a804f5657a062e0a18f3b56781f884c66" prot="private" virt="non-virtual"><scope>driver::MouseDriver</scope><name>mouseEventHandler</name></member>
+      <member refid="dc/d10/a01003_1a313426dd9aa1af1540cbffc2e77c58c1" prot="private" virt="non-virtual"><scope>driver::MouseDriver</scope><name>offset</name></member>
+      <member refid="dc/d10/a01003_1a4a671e7e2b235f6bec473cb960401bd6" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>old_char_under_mouse_pointer</name></member>
+      <member refid="dc/d10/a01003_1aabe3740996bf70fda96f0a25228954a6" prot="public" virt="virtual"><scope>driver::MouseDriver</scope><name>reset</name></member>
+      <member refid="d7/d98/a00983_1aacc7524b989c2561147c5dd0b901381c" prot="public" virt="virtual"><scope>driver::MouseDriver</scope><name>~Driver</name></member>
+      <member refid="db/daf/a01019_1a5114528f0db9926365b345337e42af9b" prot="protected" virt="non-virtual"><scope>driver::MouseDriver</scope><name>~InterruptHandler</name></member>
+      <member refid="dc/d10/a01003_1a8c25e4a4b42d1d39b332ba6d4cbd6a22" prot="public" virt="non-virtual"><scope>driver::MouseDriver</scope><name>~MouseDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

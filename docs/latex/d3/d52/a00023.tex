@@ -1,0 +1,155 @@
+\doxysubsection{libk\+\_\+src/basic/kmemory.cpp File Reference}
+\hypertarget{a00023}{}\label{a00023}\index{libk\_src/basic/kmemory.cpp@{libk\_src/basic/kmemory.cpp}}
+{\ttfamily \#include "{}basic/kmemory.\+hpp"{}}\newline
+Include dependency graph for kmemory.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/de2/a00024}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00023_afa145befcf5e7b83424408ca503c8637}{operator delete}} (void \texorpdfstring{$\ast$}{*}ptr) noexcept
+\item 
+void \mbox{\hyperlink{a00023_af057efbdbcd21ea12954d49cd2d245c6}{operator delete}} (void \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t \mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}}) noexcept
+\item 
+void \mbox{\hyperlink{a00023_a22aea74a1155aa798d6032da46da2391}{operator delete\mbox{[}$\,$\mbox{]}}} (void \texorpdfstring{$\ast$}{*}ptr) noexcept
+\item 
+void \mbox{\hyperlink{a00023_ab26fe706b29fdeb33d5f6ead76c05815}{operator delete\mbox{[}$\,$\mbox{]}}} (void \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t \mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}}) noexcept
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00023_a1a7f24760c8c7ad3bfcd54856d906fc2}{operator new}} (size\+\_\+t \mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}}) noexcept
+\begin{DoxyCompactList}\small\item\em The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00023_aa75472ab4b765cf6f6b5b0ebcd4a28c8}{operator new\mbox{[}$\,$\mbox{]}}} (size\+\_\+t \mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}}) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{a00023_afa145befcf5e7b83424408ca503c8637}\label{a00023_afa145befcf5e7b83424408ca503c8637} 
+\index{kmemory.cpp@{kmemory.cpp}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!kmemory.cpp@{kmemory.cpp}}
+\doxyparagraph{\texorpdfstring{operator delete()}{operator delete()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void operator delete (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00023_source_l00075}{75}} of file \mbox{\hyperlink{a00023_source}{kmemory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ (void)ptr;}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+\Hypertarget{a00023_af057efbdbcd21ea12954d49cd2d245c6}\label{a00023_af057efbdbcd21ea12954d49cd2d245c6} 
+\index{kmemory.cpp@{kmemory.cpp}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!kmemory.cpp@{kmemory.cpp}}
+\doxyparagraph{\texorpdfstring{operator delete()}{operator delete()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void operator delete (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00023_source_l00079}{79}} of file \mbox{\hyperlink{a00023_source}{kmemory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ (void)ptr;}
+\DoxyCodeLine{00081\ \ \ \ \ (void)\mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}};}
+\DoxyCodeLine{00082\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00071_source_l00000}{size}}.
+
+\Hypertarget{a00023_a22aea74a1155aa798d6032da46da2391}\label{a00023_a22aea74a1155aa798d6032da46da2391} 
+\index{kmemory.cpp@{kmemory.cpp}!operator delete\mbox{[}\mbox{]}@{operator delete[]}}
+\index{operator delete\mbox{[}\mbox{]}@{operator delete[]}!kmemory.cpp@{kmemory.cpp}}
+\doxyparagraph{\texorpdfstring{operator delete[]()}{operator delete[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void operator delete\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00023_source_l00084}{84}} of file \mbox{\hyperlink{a00023_source}{kmemory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ (void)ptr;}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+\Hypertarget{a00023_ab26fe706b29fdeb33d5f6ead76c05815}\label{a00023_ab26fe706b29fdeb33d5f6ead76c05815} 
+\index{kmemory.cpp@{kmemory.cpp}!operator delete\mbox{[}\mbox{]}@{operator delete[]}}
+\index{operator delete\mbox{[}\mbox{]}@{operator delete[]}!kmemory.cpp@{kmemory.cpp}}
+\doxyparagraph{\texorpdfstring{operator delete[]()}{operator delete[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void operator delete\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00023_source_l00088}{88}} of file \mbox{\hyperlink{a00023_source}{kmemory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ (void)ptr;}
+\DoxyCodeLine{00090\ \ \ \ \ (void)\mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}};}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00071_source_l00000}{size}}.
+
+\Hypertarget{a00023_a1a7f24760c8c7ad3bfcd54856d906fc2}\label{a00023_a1a7f24760c8c7ad3bfcd54856d906fc2} 
+\index{kmemory.cpp@{kmemory.cpp}!operator new@{operator new}}
+\index{operator new@{operator new}!kmemory.cpp@{kmemory.cpp}}
+\doxyparagraph{\texorpdfstring{operator new()}{operator new()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} operator new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors. 
+
+Since we are not linking the standard library, we must provide our own. For now, they don\textquotesingle{}t have to do anything. 
+
+Definition at line \mbox{\hyperlink{a00023_source_l00065}{65}} of file \mbox{\hyperlink{a00023_source}{kmemory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ (void)\mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00071_source_l00000}{size}}.
+
+\Hypertarget{a00023_aa75472ab4b765cf6f6b5b0ebcd4a28c8}\label{a00023_aa75472ab4b765cf6f6b5b0ebcd4a28c8} 
+\index{kmemory.cpp@{kmemory.cpp}!operator new\mbox{[}\mbox{]}@{operator new[]}}
+\index{operator new\mbox{[}\mbox{]}@{operator new[]}!kmemory.cpp@{kmemory.cpp}}
+\doxyparagraph{\texorpdfstring{operator new[]()}{operator new[]()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} operator new\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00023_source_l00070}{70}} of file \mbox{\hyperlink{a00023_source}{kmemory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ (void)\mbox{\hyperlink{a00071_a6d813a0f2b5281b18dea3f4cda696c33}{size}};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00071_source_l00000}{size}}.
+
