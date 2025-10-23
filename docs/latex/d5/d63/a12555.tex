@@ -1,0 +1,144 @@
+\doxysubsection{hardware\+\_\+communication\+::Port32\+Bit}
+\hypertarget{a12555}{}\label{a12555}\index{hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}}
+
+
+{\ttfamily \#include "{}kport.\+hpp"{}}
+
+
+
+Inheritance diagram for hardware\+\_\+communication\+::Port32\+Bit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{d5/da1/a12554}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for hardware\+\_\+communication\+::Port32\+Bit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{d7/df0/a12553}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a12555_a507afa8607757baedf1789d73c2a173d}{Port32\+Bit}} (uint16\+\_\+t \mbox{\hyperlink{a12539_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}})
+\item 
+\mbox{\hyperlink{a12555_a3e87dc7d610b279e8e7e072a0d1ee78c}{\texorpdfstring{$\sim$}{\string~}\+Port32\+Bit}} () override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{a12555_a41093c437a9508f984c90ae68e9c03bf}{read}} ()
+\item 
+void \mbox{\hyperlink{a12555_a64a16fe840224ef769ab2933770d1b21}{write}} (uint32\+\_\+t data)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{a12539_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{a11570_source_l00080}{80}} of file \mbox{\hyperlink{a11570_source}{kport.\+hpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a12555_a507afa8607757baedf1789d73c2a173d}\label{a12555_a507afa8607757baedf1789d73c2a173d} 
+\index{hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}!Port32Bit@{Port32Bit}}
+\index{Port32Bit@{Port32Bit}!hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}}
+\doxyparagraph{\texorpdfstring{Port32Bit()}{Port32Bit()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Port32\+Bit\+::\+Port32\+Bit (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{portnumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{a11594_source_l00047}{47}} of file \mbox{\hyperlink{a11594_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ :\mbox{\hyperlink{a12539_ad001c21b67d4c138f65024f167030cca}{Port}}(\mbox{\hyperlink{a12539_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}})\{\}\ }
+
+\end{DoxyCode}
+\Hypertarget{a12555_a3e87dc7d610b279e8e7e072a0d1ee78c}\label{a12555_a3e87dc7d610b279e8e7e072a0d1ee78c} 
+\index{hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}!````~Port32Bit@{\texorpdfstring{$\sim$}{\string~}Port32Bit}}
+\index{````~Port32Bit@{\texorpdfstring{$\sim$}{\string~}Port32Bit}!hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Port32Bit()}{\string~Port32Bit()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Port32\+Bit\+::\texorpdfstring{$\sim$}{\string~}\+Port32\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{a11594_source_l00048}{48}} of file \mbox{\hyperlink{a11594_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a12555_a41093c437a9508f984c90ae68e9c03bf}\label{a12555_a41093c437a9508f984c90ae68e9c03bf} 
+\index{hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}!read@{read}}
+\index{read@{read}!hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}}
+\doxyparagraph{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily uint32\+\_\+t hardware\+\_\+communication\+::\+Port32\+Bit\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a11594_source_l00053}{53}} of file \mbox{\hyperlink{a11594_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ uint32\_t\ result;}
+\DoxyCodeLine{00055\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}inl\ \%1,\ \%0"{}}\ :\textcolor{stringliteral}{"{}=a"{}}(result)\ :\ \textcolor{stringliteral}{"{}Nd"{}}(\mbox{\hyperlink{a12539_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}}));}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
+\Hypertarget{a12555_a64a16fe840224ef769ab2933770d1b21}\label{a12555_a64a16fe840224ef769ab2933770d1b21} 
+\index{hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}!write@{write}}
+\index{write@{write}!hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}}
+\doxyparagraph{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Port32\+Bit\+::write (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a11594_source_l00050}{50}} of file \mbox{\hyperlink{a11594_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}outl\ \%0,\ \%1"{}}\ :\ :\ \textcolor{stringliteral}{"{}a"{}}(data),\ \textcolor{stringliteral}{"{}Nd"{}}(\mbox{\hyperlink{a12539_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}}));}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{a12539_aab0c5c82b0190df88ddbb595bfac539a}\label{a12539_aab0c5c82b0190df88ddbb595bfac539a} 
+\index{hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}!portnumber@{portnumber}}
+\index{portnumber@{portnumber}!hardware\_communication::Port32Bit@{hardware\_communication::Port32Bit}}
+\doxyparagraph{\texorpdfstring{portnumber}{portnumber}}
+{\footnotesize\ttfamily uint16\+\_\+t hardware\+\_\+communication\+::\+Port\+::portnumber\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{a11570_source_l00013}{13}} of file \mbox{\hyperlink{a11570_source}{kport.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a11594_source_l00003}{hardware\+\_\+communication\+::\+Port\+::\+Port()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/shreekar/\+Desktop/\+Building\+\_\+own\+\_\+\+OS/\+OSOS/libk\+\_\+header/hardware\+\_\+communication/\mbox{\hyperlink{a11570}{kport.\+hpp}}\item 
+/home/shreekar/\+Desktop/\+Building\+\_\+own\+\_\+\+OS/\+OSOS/libk\+\_\+src/hardware\+\_\+communication/\mbox{\hyperlink{a11594}{kport.\+cpp}}\end{DoxyCompactItemize}

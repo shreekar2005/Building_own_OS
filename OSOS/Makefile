@@ -11,8 +11,7 @@
 # make dbg_elf 			: To build elf file with -g (keep debug info) and -O0(dont optimize while compiling) 
 # make dbg_start_qemu 	: To build dbg_elf and just start QEMU (can connect that from VSCode or cli GDB)
 # make dbg_cli			: To connect QEMU instance (created by `make dbg_start_qemu`) with cli GDB
-# make docs				: To update doxygen_docs 
-
+# make docs				: To update docs - OSOS documentation (which have technical details and info for project)
 # .PHONY is for targets that are NOT files
 .PHONY: qemu_elf qemu_iso elf vm iso clear clean debug setup dbg_elf dbg_start_qemu dbg_cli docs
 
@@ -154,6 +153,5 @@ dbg_cli: dbg_start_qemu
 	@echo "Starting GDB and attaching..."
 	$(GDB) $(TARGET_ELF) -ex "target remote localhost:1234"
 
-# make sure you have these installed : sudo apt install doxygen graphviz pandoc
 docs :
-	doxygen
+	cd ../docs && doxygen && cd ../OSOS

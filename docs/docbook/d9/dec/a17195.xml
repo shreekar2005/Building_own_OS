@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a17195" xml:lang="en-US">
+<title>hardware_communication::InterruptHandler</title>
+<indexterm><primary>hardware_communication::InterruptHandler</primary></indexterm>
+<para>
+<computeroutput>#include &quot;kinterrupt.hpp&quot;</computeroutput>
+</para>
+Inheritance diagram for hardware_communication::InterruptHandler:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d8/d62/a17194.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for hardware_communication::InterruptHandler:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d6/d36/a17193.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual uintptr_t <link linkend="_a17195_1aa89d41d69840cb4f1c8692fa6ded28f4">handleInterrupt</link> (uintptr_t esp)=0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a17195_1a134c8931dff43e766f1ddc4d0f35cd48">InterruptHandler</link> (uint8_t <link linkend="_a17195_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>, <link linkend="_a17203">InterruptManager</link> *<link linkend="_a17195_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_a17195_1a5114528f0db9926365b345337e42af9b">~InterruptHandler</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a17203">InterruptManager</link> * <link linkend="_a17195_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a17195_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_a16235_source_1l00023">23</link> of file <link linkend="_a16235_source">kinterrupt.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a17195_1a134c8931dff43e766f1ddc4d0f35cd48"/><section>
+    <title>InterruptHandler()</title>
+<indexterm><primary>InterruptHandler</primary><secondary>hardware_communication::InterruptHandler</secondary></indexterm>
+<indexterm><primary>hardware_communication::InterruptHandler</primary><secondary>InterruptHandler</secondary></indexterm>
+<para><computeroutput>hardware_communication::InterruptHandler::InterruptHandler (uint8_t interruptNumber, <link linkend="_a17203">hardware_communication::InterruptManager</link> * interrupt_manager)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16265_source_1l00011">11</link> of file <link linkend="_a16265_source">kinterrupt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00012 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a17195_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>=<link linkend="_a17195_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>;
+00013 &#32;&#32;&#32;&#32;this-&gt;interrupt_manager=<link linkend="_a17195_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>;
+00014 &#32;&#32;&#32;&#32;<link linkend="_a17195_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>-&gt;<link linkend="_a17203_1ac8aba191e612ad605b8b188f78e65d3b">handlers</link>[<link linkend="_a17195_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>]=<emphasis role="keyword">this</emphasis>;
+00015 }
+</programlisting><para>
+References <link linkend="_a16235_source_1l00056">hardware_communication::InterruptManager::handlers</link>, <link linkend="_a16235_source_1l00026">interrupt_manager</link>, and <link linkend="_a16235_source_1l00025">interruptNumber</link>.</para>
+</section>
+<anchor xml:id="_a17195_1a5114528f0db9926365b345337e42af9b"/><section>
+    <title>~InterruptHandler()</title>
+<indexterm><primary>~InterruptHandler</primary><secondary>hardware_communication::InterruptHandler</secondary></indexterm>
+<indexterm><primary>hardware_communication::InterruptHandler</primary><secondary>~InterruptHandler</secondary></indexterm>
+<para><computeroutput>hardware_communication::InterruptHandler::~InterruptHandler ( )<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16265_source_1l00016">16</link> of file <link linkend="_a16265_source">kinterrupt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_a17195_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>-&gt;<link linkend="_a17203_1ac8aba191e612ad605b8b188f78e65d3b">handlers</link>[<link linkend="_a17195_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>]==<emphasis role="keyword">this</emphasis>)&#32;<link linkend="_a17195_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>-&gt;<link linkend="_a17203_1ac8aba191e612ad605b8b188f78e65d3b">handlers</link>[<link linkend="_a17195_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>]=<emphasis role="keyword">nullptr</emphasis>;
+00018 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a17195_1aa89d41d69840cb4f1c8692fa6ded28f4"/><section>
+    <title>handleInterrupt()</title>
+<indexterm><primary>handleInterrupt</primary><secondary>hardware_communication::InterruptHandler</secondary></indexterm>
+<indexterm><primary>hardware_communication::InterruptHandler</primary><secondary>handleInterrupt</secondary></indexterm>
+<para><computeroutput>virtual uintptr_t hardware_communication::InterruptHandler::handleInterrupt (uintptr_t esp)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Referenced by <link linkend="_a16265_source_1l00169">hardware_communication::InterruptManager::handleInterrupt()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d9/dec/a17195_aa89d41d69840cb4f1c8692fa6ded28f4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a17195_1ae86f4eae0ce9272b2027d44bdfd71e33"/><section>
+    <title>interrupt_manager</title>
+<indexterm><primary>interrupt_manager</primary><secondary>hardware_communication::InterruptHandler</secondary></indexterm>
+<indexterm><primary>hardware_communication::InterruptHandler</primary><secondary>interrupt_manager</secondary></indexterm>
+<para><computeroutput><link linkend="_a17203">InterruptManager</link>* hardware_communication::InterruptHandler::interrupt_manager<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16235_source_1l00026">26</link> of file <link linkend="_a16235_source">kinterrupt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a16265_source_1l00011">InterruptHandler()</link>.</para>
+</section>
+<anchor xml:id="_a17195_1afeede822d3e98957e76e627a54ec2f7a"/><section>
+    <title>interruptNumber</title>
+<indexterm><primary>interruptNumber</primary><secondary>hardware_communication::InterruptHandler</secondary></indexterm>
+<indexterm><primary>hardware_communication::InterruptHandler</primary><secondary>interruptNumber</secondary></indexterm>
+<para><computeroutput>uint8_t hardware_communication::InterruptHandler::interruptNumber<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16235_source_1l00025">25</link> of file <link linkend="_a16235_source">kinterrupt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a16265_source_1l00011">InterruptHandler()</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/<link linkend="_a16235">kinterrupt.hpp</link>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/<link linkend="_a16265">kinterrupt.cpp</link></section>
+</section>

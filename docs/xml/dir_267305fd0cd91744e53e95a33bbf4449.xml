@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_267305fd0cd91744e53e95a33bbf4449" kind="dir">
+    <compoundname>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src</compoundname>
+    <innerdir refid="dir_f1daeb3a5efd11763b002b7c8c80cbc4">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic</innerdir>
+    <innerdir refid="dir_5b5337be9c567761b45350e8fb23514b">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver</innerdir>
+    <innerdir refid="dir_9ca8e72f093c4bbb5f21665bfa76adc4">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential</innerdir>
+    <innerdir refid="dir_5608498c1410927f4d1a780666bcc3ac">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d5/d7d/a14865" kind="class" language="C++" prot="public">
+    <compoundname>hardware_communication::IDT_row</compoundname>
+    <includes refid="d7/d30/a13901" local="yes">kinterrupt.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/d7d/a14865_1afa706321cb5ba41a6035dbe1ec39c265" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hardware_communication::IDT_row::access</definition>
+        <argsstring></argsstring>
+        <name>access</name>
+        <qualifiedname>hardware_communication::IDT_row::access</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="38" column="25" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d7d/a14865_1af1a4bb042f75f10c5e2b08034e82aed3" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hardware_communication::IDT_row::handlerAddressHighbits</definition>
+        <argsstring></argsstring>
+        <name>handlerAddressHighbits</name>
+        <qualifiedname>hardware_communication::IDT_row::handlerAddressHighbits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="39" column="26" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="39" bodyend="-1"/>
+        <referencedby refid="d9/d4e/a14869_1aac20f3a896bea512413568a60ad48c3d" compoundref="d7/d92/a13931" startline="117" endline="149">hardware_communication::InterruptManager::printLoadedTable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d7d/a14865_1a3390e4d53e904d420187ecc0247e9289" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hardware_communication::IDT_row::handlerAddressLowbits</definition>
+        <argsstring></argsstring>
+        <name>handlerAddressLowbits</name>
+        <qualifiedname>hardware_communication::IDT_row::handlerAddressLowbits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="35" column="26" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d7d/a14865_1a800309c99800063315cddf536a3d0d67" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hardware_communication::IDT_row::kernelCodeSegmentSelector</definition>
+        <argsstring></argsstring>
+        <name>kernelCodeSegmentSelector</name>
+        <qualifiedname>hardware_communication::IDT_row::kernelCodeSegmentSelector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="36" column="26" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d7d/a14865_1a96bce1ce9c6a7e9b5a20607f41a2e876" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hardware_communication::IDT_row::reserved</definition>
+        <argsstring></argsstring>
+        <name>reserved</name>
+        <qualifiedname>hardware_communication::IDT_row::reserved</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="37" column="25" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="d5/d7d/a14865_1a6c5563315b1a2f5c67ae8b78d06e3c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class InterruptManager</definition>
+        <argsstring></argsstring>
+        <name>InterruptManager</name>
+        <qualifiedname>hardware_communication::IDT_row::InterruptManager</qualifiedname>
+        <param>
+          <type><ref refid="d9/d4e/a14869" kindref="compound">InterruptManager</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="43" column="30" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d7d/a14865_1a5149970639d0f251d529808a192b4b55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::IDT_row::IDT_row</definition>
+        <argsstring>()</argsstring>
+        <name>IDT_row</name>
+        <qualifiedname>hardware_communication::IDT_row::IDT_row</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="41" column="17" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d7d/a14865_1a9cad760dfa1c1f76f98b6207365f7e2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::IDT_row::~IDT_row</definition>
+        <argsstring>()</argsstring>
+        <name>~IDT_row</name>
+        <qualifiedname>hardware_communication::IDT_row::~IDT_row</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="42" column="17" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="25" bodyend="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>hardware_communication::IDT_row</label>
+        <link refid="d5/d7d/a14865"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-handlerAddressHighbits</edgelabel>
+          <edgelabel>-handlerAddressLowbits</edgelabel>
+          <edgelabel>-kernelCodeSegmentSelector</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-access</edgelabel>
+          <edgelabel>-reserved</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uint16_t</label>
+      </node>
+      <node id="3">
+        <label>uint8_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="33" column="9" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="33" bodyend="44"/>
+    <listofallmembers>
+      <member refid="d5/d7d/a14865_1afa706321cb5ba41a6035dbe1ec39c265" prot="private" virt="non-virtual"><scope>hardware_communication::IDT_row</scope><name>access</name></member>
+      <member refid="d5/d7d/a14865_1af1a4bb042f75f10c5e2b08034e82aed3" prot="private" virt="non-virtual"><scope>hardware_communication::IDT_row</scope><name>handlerAddressHighbits</name></member>
+      <member refid="d5/d7d/a14865_1a3390e4d53e904d420187ecc0247e9289" prot="private" virt="non-virtual"><scope>hardware_communication::IDT_row</scope><name>handlerAddressLowbits</name></member>
+      <member refid="d5/d7d/a14865_1a5149970639d0f251d529808a192b4b55" prot="public" virt="non-virtual"><scope>hardware_communication::IDT_row</scope><name>IDT_row</name></member>
+      <member refid="d5/d7d/a14865_1a800309c99800063315cddf536a3d0d67" prot="private" virt="non-virtual"><scope>hardware_communication::IDT_row</scope><name>kernelCodeSegmentSelector</name></member>
+      <member refid="d5/d7d/a14865_1a96bce1ce9c6a7e9b5a20607f41a2e876" prot="private" virt="non-virtual"><scope>hardware_communication::IDT_row</scope><name>reserved</name></member>
+      <member refid="d5/d7d/a14865_1a9cad760dfa1c1f76f98b6207365f7e2d" prot="public" virt="non-virtual"><scope>hardware_communication::IDT_row</scope><name>~IDT_row</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

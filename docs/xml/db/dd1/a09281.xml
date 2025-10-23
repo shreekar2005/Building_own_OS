@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="db/dd1/a09281" kind="namespace" language="Unknown">
+    <compoundname>std</compoundname>
+    <innerclass refid="d7/d36/a09289" prot="public">std::allocator</innerclass>
+    <innerclass refid="d2/d8b/a09965" prot="public">std::array</innerclass>
+    <innerclass refid="d6/dc2/a09313" prot="public">std::atomic</innerclass>
+    <innerclass refid="d6/d9a/a09317" prot="public">std::atomic_ref</innerclass>
+    <innerclass refid="dd/d2c/a09293" prot="public">std::auto_ptr</innerclass>
+    <innerclass refid="db/d97/a10045" prot="public">std::bad_alloc</innerclass>
+    <innerclass refid="d8/d45/a10049" prot="public">std::bad_cast</innerclass>
+    <innerclass refid="dc/db9/a10069" prot="public">std::bad_exception</innerclass>
+    <innerclass refid="d2/d89/a10053" prot="public">std::bad_typeid</innerclass>
+    <innerclass refid="d4/d04/a09409" prot="public">std::basic_fstream</innerclass>
+    <innerclass refid="d3/dd5/a09401" prot="public">std::basic_ifstream</innerclass>
+    <innerclass refid="dd/dd0/a09385" prot="public">std::basic_ios</innerclass>
+    <innerclass refid="d6/d8f/a09397" prot="public">std::basic_iostream</innerclass>
+    <innerclass refid="d2/d11/a09389" prot="public">std::basic_istream</innerclass>
+    <innerclass refid="de/d56/a09413" prot="public">std::basic_istringstream</innerclass>
+    <innerclass refid="dd/d76/a09405" prot="public">std::basic_ofstream</innerclass>
+    <innerclass refid="dc/dc6/a09393" prot="public">std::basic_ostream</innerclass>
+    <innerclass refid="d9/d5a/a09417" prot="public">std::basic_ostringstream</innerclass>
+    <innerclass refid="d7/d12/a09497" prot="public">std::basic_string</innerclass>
+    <innerclass refid="d2/d90/a09617" prot="public">std::basic_string_view</innerclass>
+    <innerclass refid="df/d2e/a09421" prot="public">std::basic_stringstream</innerclass>
+    <innerclass refid="d2/d27/a09741" prot="public">std::bitset</innerclass>
+    <innerclass refid="d9/da4/a09737" prot="public">std::complex</innerclass>
+    <innerclass refid="de/d5d/a09745" prot="public">std::deque</innerclass>
+    <innerclass refid="d0/d7d/a10073" prot="public">std::domain_error</innerclass>
+    <innerclass refid="d7/de3/a09341" prot="public">std::error_category</innerclass>
+    <innerclass refid="da/d9d/a09337" prot="public">std::error_code</innerclass>
+    <innerclass refid="dd/ded/a09349" prot="public">std::error_condition</innerclass>
+    <innerclass refid="d6/d80/a10041" prot="public">std::exception</innerclass>
+    <innerclass refid="d7/d65/a09785" prot="public">std::forward_list</innerclass>
+    <innerclass refid="de/df5/a09465" prot="public">std::fstream</innerclass>
+    <innerclass refid="d4/d03/a09449" prot="public">std::ifstream</innerclass>
+    <innerclass refid="d1/d50/a10077" prot="public">std::invalid_argument</innerclass>
+    <innerclass refid="d2/d63/a09425" prot="public">std::ios</innerclass>
+    <innerclass refid="d8/d64/a09333" prot="public">std::ios_base</innerclass>
+    <innerclass refid="d8/dab/a09433" prot="public">std::istream</innerclass>
+    <innerclass refid="d4/d7d/a09473" prot="public">std::istringstream</innerclass>
+    <innerclass refid="d4/d01/a09357" prot="public">std::jthread</innerclass>
+    <innerclass refid="da/d65/a10081" prot="public">std::length_error</innerclass>
+    <innerclass refid="d0/d58/a09765" prot="public">std::list</innerclass>
+    <innerclass refid="d2/d80/a09321" prot="public">std::lock_guard</innerclass>
+    <innerclass refid="d5/d56/a10057" prot="public">std::logic_error</innerclass>
+    <innerclass refid="d3/de7/a09805" prot="public">std::map</innerclass>
+    <innerclass refid="d3/dfe/a09845" prot="public">std::multimap</innerclass>
+    <innerclass refid="d0/de2/a09925" prot="public">std::multiset</innerclass>
+    <innerclass refid="de/d4d/a09361" prot="public">std::mutex</innerclass>
+    <innerclass refid="d4/d2c/a09457" prot="public">std::ofstream</innerclass>
+    <innerclass refid="d2/db0/a09441" prot="public">std::ostream</innerclass>
+    <innerclass refid="da/d67/a09481" prot="public">std::ostringstream</innerclass>
+    <innerclass refid="d5/d60/a10085" prot="public">std::out_of_range</innerclass>
+    <innerclass refid="d1/d98/a10093" prot="public">std::overflow_error</innerclass>
+    <innerclass refid="d4/dac/a10029" prot="public">std::priority_queue</innerclass>
+    <innerclass refid="dd/d67/a10025" prot="public">std::queue</innerclass>
+    <innerclass refid="d2/d8f/a10089" prot="public">std::range_error</innerclass>
+    <innerclass refid="df/d7f/a09369" prot="public">std::recursive_mutex</innerclass>
+    <innerclass refid="d3/db8/a09373" prot="public">std::recursive_timed_mutex</innerclass>
+    <innerclass refid="d3/dfc/a10065" prot="public">std::runtime_error</innerclass>
+    <innerclass refid="d9/db5/a09885" prot="public">std::set</innerclass>
+    <innerclass refid="d8/de3/a09329" prot="public">std::shared_lock</innerclass>
+    <innerclass refid="da/d6c/a09377" prot="public">std::shared_mutex</innerclass>
+    <innerclass refid="db/d78/a09305" prot="public">std::shared_ptr</innerclass>
+    <innerclass refid="db/d82/a09381" prot="public">std::shared_timed_mutex</innerclass>
+    <innerclass refid="d4/d21/a09297" prot="public">std::smart_ptr</innerclass>
+    <innerclass refid="d3/d2f/a10005" prot="public">std::span</innerclass>
+    <innerclass refid="d0/d31/a10033" prot="public">std::stack</innerclass>
+    <innerclass refid="d6/de2/a09517" prot="public">std::string</innerclass>
+    <innerclass refid="d2/d38/a09637" prot="public">std::string_view</innerclass>
+    <innerclass refid="de/d00/a09489" prot="public">std::stringstream</innerclass>
+    <innerclass refid="d1/d28/a09345" prot="public">std::system_error</innerclass>
+    <innerclass refid="d7/d03/a09353" prot="public">std::thread</innerclass>
+    <innerclass refid="d5/d53/a09365" prot="public">std::timed_mutex</innerclass>
+    <innerclass refid="dc/d6c/a09577" prot="public">std::u16string</innerclass>
+    <innerclass refid="d1/d51/a09697" prot="public">std::u16string_view</innerclass>
+    <innerclass refid="de/dae/a09597" prot="public">std::u32string</innerclass>
+    <innerclass refid="d4/dbc/a09717" prot="public">std::u32string_view</innerclass>
+    <innerclass refid="d1/d47/a09557" prot="public">std::u8string</innerclass>
+    <innerclass refid="d5/ddd/a09677" prot="public">std::u8string_view</innerclass>
+    <innerclass refid="d1/df9/a10097" prot="public">std::underflow_error</innerclass>
+    <innerclass refid="d9/dbf/a09325" prot="public">std::unique_lock</innerclass>
+    <innerclass refid="dc/d7d/a09301" prot="public">std::unique_ptr</innerclass>
+    <innerclass refid="d2/d8a/a09825" prot="public">std::unordered_map</innerclass>
+    <innerclass refid="dd/d92/a09865" prot="public">std::unordered_multimap</innerclass>
+    <innerclass refid="d4/d5d/a09945" prot="public">std::unordered_multiset</innerclass>
+    <innerclass refid="df/daa/a09905" prot="public">std::unordered_set</innerclass>
+    <innerclass refid="da/dbb/a10037" prot="public">std::valarray</innerclass>
+    <innerclass refid="db/d9e/a09985" prot="public">std::vector</innerclass>
+    <innerclass refid="d0/db1/a09309" prot="public">std::weak_ptr</innerclass>
+    <innerclass refid="dc/d31/a09469" prot="public">std::wfstream</innerclass>
+    <innerclass refid="d8/d03/a09453" prot="public">std::wifstream</innerclass>
+    <innerclass refid="d3/d4f/a09429" prot="public">std::wios</innerclass>
+    <innerclass refid="d9/d6a/a09437" prot="public">std::wistream</innerclass>
+    <innerclass refid="d6/ddd/a09477" prot="public">std::wistringstream</innerclass>
+    <innerclass refid="da/dbf/a09461" prot="public">std::wofstream</innerclass>
+    <innerclass refid="d3/d4a/a09445" prot="public">std::wostream</innerclass>
+    <innerclass refid="d8/d9d/a09485" prot="public">std::wostringstream</innerclass>
+    <innerclass refid="d3/df3/a09537" prot="public">std::wstring</innerclass>
+    <innerclass refid="d0/d7f/a09657" prot="public">std::wstring_view</innerclass>
+    <innerclass refid="d9/d28/a09493" prot="public">std::wstringstream</innerclass>
+    <briefdescription>
+<para>STL namespace. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[STL]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

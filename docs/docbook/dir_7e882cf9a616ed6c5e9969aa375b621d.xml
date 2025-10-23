@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_7e882cf9a616ed6c5e9969aa375b621d" xml:lang="en-US">
+<title>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header Directory Reference</title>
+<indexterm><primary>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header Directory Reference</primary></indexterm>
+Directory dependency graph for libk_header:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_7e882cf9a616ed6c5e9969aa375b621d_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_34d45cb43cfea5813562be995e166360">basic</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_7faf50180643549cf2b0d5c9077f3326">driver</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_2c285d0013eb7350cfc94246c04dff6e">essential</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_d09c0e5baeb6db8b18c7b52a276e4647">hardware_communication</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

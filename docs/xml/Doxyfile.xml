@@ -3,9 +3,9 @@
   <option  id='DOXYFILE_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='PROJECT_NAME' default='no' type='string'><value><![CDATA["OSOS - Documentation"]]></value></option>
   <option  id='PROJECT_NUMBER' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='PROJECT_BRIEF' default='no' type='string'><value><![CDATA["OSOS is 32-bit Operating System, Currently under development by Shreekar"]]></value></option>
+  <option  id='PROJECT_BRIEF' default='no' type='string'><value><![CDATA["OSOS is 32-bit Operating System, Currently under development - by Shreekar"]]></value></option>
   <option  id='PROJECT_LOGO' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='OUTPUT_DIRECTORY' default='no' type='string'><value><![CDATA[../docs/]]></value></option>
+  <option  id='OUTPUT_DIRECTORY' default='no' type='string'><value><![CDATA[.]]></value></option>
   <option  id='CREATE_SUBDIRS' default='no' type='bool'><value>YES</value></option>
   <option  id='CREATE_SUBDIRS_LEVEL' default='yes' type='int'><value>8</value></option>
   <option  id='ALLOW_UNICODE_NAMES' default='no' type='bool'><value>YES</value></option>
@@ -121,10 +121,10 @@
   <option  id='WARN_LINE_FORMAT' default='yes' type='string'><value><![CDATA["at line $line of file $file"]]></value></option>
   <option  id='WARN_LOGFILE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='INPUT' default='no' type='stringlist'>
-    <value><![CDATA[kernel_src]]></value>
-    <value><![CDATA[libk_header]]></value>
-    <value><![CDATA[libk_src]]></value>
-    <value><![CDATA[mainpage.dox]]></value>
+    <value><![CDATA[../OSOS/kernel_src]]></value>
+    <value><![CDATA[../OSOS/libk_header]]></value>
+    <value><![CDATA[../OSOS/libk_src]]></value>
+    <value><![CDATA[./mainpage.dox]]></value>
   </option>
   <option  id='INPUT_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='INPUT_FILE_ENCODING' default='yes' type='stringlist'>
@@ -184,11 +184,10 @@
   </option>
   <option  id='RECURSIVE' default='no' type='bool'><value>YES</value></option>
   <option  id='EXCLUDE' default='no' type='stringlist'>
-    <value><![CDATA[kernel_build]]></value>
-    <value><![CDATA[libk_build]]></value>
-    <value><![CDATA[doxygen_docs]]></value>
-    <value><![CDATA[ScreenShots]]></value>
-    <value><![CDATA[trying]]></value>
+    <value><![CDATA[../OSOS/kernel_build]]></value>
+    <value><![CDATA[../OSOS/libk_build]]></value>
+    <value><![CDATA[../OSOS/ScreenShots]]></value>
+    <value><![CDATA[../OSOS/trying]]></value>
   </option>
   <option  id='EXCLUDE_SYMLINKS' default='no' type='bool'><value>YES</value></option>
   <option  id='EXCLUDE_PATTERNS' default='yes' type='stringlist'>

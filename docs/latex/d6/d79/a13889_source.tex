@@ -1,0 +1,130 @@
+\doxysubsection{kernel.\+cpp}
+\hypertarget{a13889_source}{}\label{a13889_source}\index{/home/shreekar/Desktop/Building\_own\_OS/OSOS/kernel\_src/kernel.cpp@{/home/shreekar/Desktop/Building\_own\_OS/OSOS/kernel\_src/kernel.cpp}}
+\mbox{\hyperlink{a13889}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13892}{basic/multiboot.hpp}}"{}}\ \textcolor{comment}{//\ header\ for\ handling\ multiboot\ info\ (provided\ by\ grub)}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13916}{essential/kicxxabi.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13898}{basic/kiostream.hpp}}"{}}\ \ \textcolor{comment}{//\ header\ to\ use\ video\ memory\ :\ e.g.\ printf,\ keyboard\_input\_by\_polling}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13895}{basic/kmemory.hpp}}"{}}\ \textcolor{comment}{//\ for\ using\ printMemoryMap()}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13919}{essential/kgdt.hpp}}"{}}\ \textcolor{comment}{//\ for\ global\ discripter\ table}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13901}{hardware\_communication/kinterrupt.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13907}{driver/kkeyboard.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13910}{driver/kmouse.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13913}{driver/kdriver.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00013}\mbox{\hyperlink{a14769}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a14769}{KeyboardEventHandler\_for\_kernel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a14833}{driver::KeyboardEventHandler}}\{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00015}\mbox{\hyperlink{a14769_af9abf3fb85dea27db802a8f092c4a2fc}{00015}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14769_af9abf3fb85dea27db802a8f092c4a2fc}{KeyboardEventHandler\_for\_kernel}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00016}\mbox{\hyperlink{a14769_ab2b7f34603d9cdd36554a4f7f6dde585}{00016}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14769_ab2b7f34603d9cdd36554a4f7f6dde585}{\string~KeyboardEventHandler\_for\_kernel}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00017}\mbox{\hyperlink{a14769_af82a0bd16f995dd285d4f7822117377c}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14769_af82a0bd16f995dd285d4f7822117377c}{onKeyDown}}(\textcolor{keywordtype}{char}\ ascii)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ascii\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a13950_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\%c"{}},\ ascii);}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00022}\mbox{\hyperlink{a14769_a0d74a48573c10174ac8bf836ac39f886}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14769_a0d74a48573c10174ac8bf836ac39f886}{onKeyUp}}(\textcolor{keywordtype}{char}\ ascii)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ ascii;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00025}00025\ \};}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00027}\mbox{\hyperlink{a14773}{00027}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a14773}{MouseEventHandler\_for\_kernel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a14841}{driver::MouseEventHandler}}\{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00029}\mbox{\hyperlink{a14773_a41f57ab9baa5850e39086362ce44b1cb}{00029}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14773_a41f57ab9baa5850e39086362ce44b1cb}{MouseEventHandler\_for\_kernel}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00030}\mbox{\hyperlink{a14773_aa96e9bf8dce2b60b7f86577c3a74455d}{00030}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14773_aa96e9bf8dce2b60b7f86577c3a74455d}{\string~MouseEventHandler\_for\_kernel}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Default\ implementations\ for\ the\ handler.\ A\ specific\ handler\ can\ override\ these.}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00032}\mbox{\hyperlink{a14773_ae860a16e70322e5c4bb01e1108e50bb1}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14773_ae860a16e70322e5c4bb01e1108e50bb1}{onMouseDown}}(uint8\_t\ button)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ button;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a13950_a9d1f0f838e646660db6d9284725c2b4c}{basic::update\_cursor}}(\mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}},\ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}});}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ printf("{}Mouse\ Down:\ \%d\(\backslash\)n"{},\ button);}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00038}\mbox{\hyperlink{a14773_afca536c2187a65da265daa2d2af75d4d}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14773_afca536c2187a65da265daa2d2af75d4d}{onMouseUp}}(uint8\_t\ button)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ button;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ printf("{}Mouse\ Up:\ \%d\(\backslash\)n"{},\ button);}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00043}\mbox{\hyperlink{a14773_adbb4c4e2814b335579119c324313f652}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14773_adbb4c4e2814b335579119c324313f652}{onMouseMove}}(int8\_t\ delta\_x,\ int8\_t\ delta\_y)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t*\ video\_memory\ =\ (uint16\_t*)\ 0xb8000;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ deltaTod=0.2;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ dx=0,\ dy=0;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ dx+=delta\_x*deltaTod;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ dy+=delta\_y*deltaTod;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Restore\ the\ character\ that\ was\ previously\ under\ the\ mouse\ pointer}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}\ >=\ 0\ \&\&\ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ >=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ video\_memory[80\ *\ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ +\ \mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}]\ =\ \mbox{\hyperlink{a14845_a4a671e7e2b235f6bec473cb960401bd6}{driver::MouseDriver::old\_char\_under\_mouse\_pointer}};}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ mouse\ coordinates\ based\ on\ delta}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dx\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}++;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx=0;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(dx\ <\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dx=0;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dy\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}++;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dy=0;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(dy\ <\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dy=0;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clamp\ coordinates\ to\ screen\ boundaries}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}\ <\ 0)\ \mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}\ >=\ 80)\ \mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}\ =\ 79;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ <\ 0)\ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ >=\ 25)\ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ =\ 24;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ the\ character\ at\ the\ new\ position\ and\ draw\ the\ pointer\ over\ it}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14845_a4a671e7e2b235f6bec473cb960401bd6}{driver::MouseDriver::old\_char\_under\_mouse\_pointer}}\ =\ video\_memory[80\ *\ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ +\ \mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}];}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ video\_memory[80\ *\ \mbox{\hyperlink{a14845_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ +\ \mbox{\hyperlink{a14845_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}]\ =\ \mbox{\hyperlink{a14845_a1a2a455ca7146dea3148afa8cb6c9ed5}{driver::MouseDriver::mouse\_block\_video\_mem\_value}}(\mbox{\hyperlink{a14845_a4a671e7e2b235f6bec473cb960401bd6}{driver::MouseDriver::old\_char\_under\_mouse\_pointer}},\ \mbox{\hyperlink{a13910_a637dd833f5f7af42afa1f42349a4d89e}{MOUSE\_POINTER\_COLOR}});}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00083}00083\ \};}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00085}\mbox{\hyperlink{a13889_abb4e4866092116b520310d61961bfe12}{00085}}\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a13889_abb4e4866092116b520310d61961bfe12}{kernelMain}}(multiboot\_info\_t\ *mbi,\ uint32\_t\ magicnumber)}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00086}00086\ \{}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ int\ a=1/0;}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{a13952_a433c3d2d19d89890b522ac26b05fa7aa}{essential::\_\_callConstructors}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{a13950_a8ca6648639f335b207c748074dcf9f25}{basic::enable\_cursor}}(0,15);\ \textcolor{comment}{//\ (0,15)\ is\ for\ blinking\ block}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{a13950_a02923caa95013ec5d9333c25d9cca1d6}{basic::\_\_clearScreen}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Global\ Descriptor\ Table\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{a14853}{essential::GDT}}\ osos\_GDT;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00093}00093\ \ \ \ \ osos\_GDT.\mbox{\hyperlink{a14853_af8e3c1da270077eb7cc6551b35c0e5ca}{installTable}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Interrupt\ Descriptor\ Table\ and\ Drivers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{a14869}{hardware\_communication::InterruptManager}}\ osos\_InterruptManager(\&osos\_GDT);}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00096}00096\ \ \ \ \ osos\_InterruptManager.\mbox{\hyperlink{a14869_a81d593116320da32f1aa4057087f1e11}{installTable}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00097}00097\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Creating\ object\ of\ drivers\ so\ that\ they\ will\ handle\ their\ corresponding\ Interrupts-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{a14829}{driver::DriverManager}}\ driverManager;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00101}00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14769}{KeyboardEventHandler\_for\_kernel}}\ keyboardEventHandler\_for\_kernel;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14837}{driver::KeyboardDriver}}\ keyboard(\&osos\_InterruptManager,\&keyboardEventHandler\_for\_kernel);}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00103}00103\ \ \ \ \ \ \ \ \ driverManager.\mbox{\hyperlink{a14829_ab8bd89b91ea49f343276c3c841153cd8}{addDriver}}(\&keyboard);}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14773}{MouseEventHandler\_for\_kernel}}\ mouseEventHandler\_for\_kernel;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00106}00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a14845}{driver::MouseDriver}}\ mouse(\&osos\_InterruptManager,\ \&mouseEventHandler\_for\_kernel);}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00107}00107\ \ \ \ \ \ \ \ \ driverManager.\mbox{\hyperlink{a14829_ab8bd89b91ea49f343276c3c841153cd8}{addDriver}}(\&mouse);}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00109}00109\ \ \ \ \ driverManager.\mbox{\hyperlink{a14829_a05b071d8a8c12f2d284fb61f4ecd116e}{activateAll}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{a14869_a1ab5b6378071338ede295f0bffaf3d51}{hardware\_communication::InterruptManager::activate}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00112}00112\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{a14853_a2ae998750fc1e18e6778e92774bd3574}{essential::GDT::printLoadedTableHeader}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{a14869_ad8a6f694662a3a36ba9353197e20c1b1}{hardware\_communication::InterruptManager::printLoadedTableHeader}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{a13950_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}HELLO\ FROM\ OSOS\ :)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\{\};}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00118}00118\ \ \ \ \ \mbox{\hyperlink{a13950_a4b31902bf2cff8ff28405aa57d9f4575}{basic::disable\_cursor}}();}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00119}00119\ \ \ \ \ \mbox{\hyperlink{a13952_a098e7240e26e869c035075be004b4ee9}{essential::\_\_cxa\_finalize}}(0);}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00120}00120\ \ \ \ \ (void)mbi;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00121}00121\ \ \ \ \ (void)magicnumber;}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{a13889_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{a13889_source_l00124}00124\ }
+
+\end{DoxyCode}

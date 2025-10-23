@@ -1,0 +1,282 @@
+\doxysubsection{multiboot.\+hpp}
+\hypertarget{a13892_source}{}\label{a13892_source}\index{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/basic/multiboot.hpp@{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/basic/multiboot.hpp}}
+\mbox{\hyperlink{a13892}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00001}\mbox{\hyperlink{a13892_a8286ae6db03c34c4bb161accbfbfbbcd}{00001}}\ \textcolor{comment}{/*\ \ multiboot.h\ -\/\ Multiboot\ header\ file.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00002}\mbox{\hyperlink{a13892_a6de3a6d27a7e07942958b912d39792e6}{00002}}\ \textcolor{comment}{/*\ \ Copyright\ (C)\ 1999,2003,2007,2008,2009,2010\ \ Free\ Software\ Foundation,\ Inc.}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00004}00004\ \textcolor{comment}{\ *\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00005}00005\ \textcolor{comment}{\ *\ \ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00006}00006\ \textcolor{comment}{\ *\ \ deal\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00007}00007\ \textcolor{comment}{\ *\ \ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00008}\mbox{\hyperlink{a13892_a8da1a8c7127a0371eec0810a29e30f3c}{00008}}\ \textcolor{comment}{\ *\ \ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00009}00009\ \textcolor{comment}{\ *\ \ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00010}00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00011}00011\ \textcolor{comment}{\ *\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00012}00012\ \textcolor{comment}{\ *\ \ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00014}00014\ \textcolor{comment}{\ *\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00015}00015\ \textcolor{comment}{\ *\ \ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00016}00016\ \textcolor{comment}{\ *\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ \ IN\ NO\ EVENT\ SHALL\ ANY}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00017}00017\ \textcolor{comment}{\ *\ \ DEVELOPER\ OR\ DISTRIBUTOR\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00018}00018\ \textcolor{comment}{\ *\ \ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00019}00019\ \textcolor{comment}{\ *\ \ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00020}00020\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00022}00022\ \textcolor{comment}{//\ header\ src\ link\ :\ \ https://cgit.git.savannah.gnu.org/cgit/grub.git/tree/doc/multiboot.h?h=multiboot}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00024}00024\ \textcolor{preprocessor}{\#ifndef\ OSOS\_BASIC\_MULTIBOOT\_HEADER}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00025}00025\ \textcolor{preprocessor}{\#define\ OSOS\_BASIC\_MULTIBOOT\_HEADER\ 1}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00027}00027\ \textcolor{comment}{/*\ How\ many\ bytes\ from\ the\ start\ of\ the\ file\ we\ search\ for\ the\ header.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00028}\mbox{\hyperlink{a13892_a0b53e2de91aa7498c4b476776b27e5f3}{00028}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_SEARCH\ \ \ \ \ \ \ \ \ \ \ \ 8192}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00029}\mbox{\hyperlink{a13892_abc554da6e5184d34e039b551177434ba}{00029}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_HEADER\_ALIGN\ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00031}00031\ \textcolor{comment}{/*\ The\ magic\ field\ should\ contain\ this.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00032}\mbox{\hyperlink{a13892_ab36ad4b4a42c58aac4ad1f2ba13054e9}{00032}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_HEADER\_MAGIC\ \ \ \ \ \ \ \ \ \ 0x1BADB002}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00034}00034\ \textcolor{comment}{/*\ This\ should\ be\ in\ \%eax.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00035}\mbox{\hyperlink{a13892_aacd617f4e3daafd6eab95fb6215ccae4}{00035}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_BOOTLOADER\_MAGIC\ \ \ \ \ \ 0x2BADB002}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00037}00037\ \textcolor{comment}{/*\ Alignment\ of\ multiboot\ modules.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00038}\mbox{\hyperlink{a13892_ab3284a28549f2a2f1a2001ca023aaa1e}{00038}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_MOD\_ALIGN\ \ \ \ \ \ \ \ \ 0x00001000}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00040}00040\ \textcolor{comment}{/*\ Alignment\ of\ the\ multiboot\ info\ structure.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00041}\mbox{\hyperlink{a13892_a7f583196f43e30e93323f5e44554d726}{00041}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_ALIGN\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00043}00043\ \textcolor{comment}{/*\ Flags\ set\ in\ the\ 'flags'\ member\ of\ the\ multiboot\ header.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00045}00045\ \textcolor{comment}{/*\ Align\ all\ boot\ modules\ on\ i386\ page\ (4KB)\ boundaries.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00046}\mbox{\hyperlink{a13892_aab5e5487e858de2a031cd3f1232f7b60}{00046}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_PAGE\_ALIGN\ \ \ \ \ \ \ \ \ \ \ \ 0x00000001}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00048}00048\ \textcolor{comment}{/*\ Must\ pass\ memory\ information\ to\ OS.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00049}\mbox{\hyperlink{a13892_afdfca6bbbf4b7dca40e9d43e58201f55}{00049}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_MEMORY\_INFO\ \ \ \ \ \ \ \ \ \ \ 0x00000002}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00051}00051\ \textcolor{comment}{/*\ Must\ pass\ video\ information\ to\ OS.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00052}\mbox{\hyperlink{a13892_a74a1da9293ae3835241c60b2d9e65e8d}{00052}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_VIDEO\_MODE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00054}00054\ \textcolor{comment}{/*\ This\ flag\ indicates\ the\ use\ of\ the\ address\ fields\ in\ the\ header.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00055}\mbox{\hyperlink{a13892_a791f0c6a97c36de5388c990503ee4639}{00055}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_AOUT\_KLUDGE\ \ \ \ \ \ \ \ \ \ \ 0x00010000}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00057}00057\ \textcolor{comment}{/*\ Flags\ to\ be\ set\ in\ the\ 'flags'\ member\ of\ the\ multiboot\ info\ structure.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00059}00059\ \textcolor{comment}{/*\ is\ there\ basic\ lower/upper\ memory\ information?\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00060}\mbox{\hyperlink{a13892_a1cb6047ede9a179b2958048573269d7a}{00060}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_MEMORY\ \ \ \ \ \ \ \ \ \ \ 0x00000001}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00061}00061\ \textcolor{comment}{/*\ is\ there\ a\ boot\ device\ set?\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00062}\mbox{\hyperlink{a13892_acfde5ffdd699c023dd8f4b89aa66556f}{00062}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_BOOTDEV\ \ \ \ \ \ \ \ \ \ 0x00000002}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00063}00063\ \textcolor{comment}{/*\ is\ the\ command-\/line\ defined?\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00064}\mbox{\hyperlink{a13892_ae75fb4f821b7ab405d46318d9b90a677}{00064}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_CMDLINE\ \ \ \ \ \ \ \ \ \ 0x00000004}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00065}00065\ \textcolor{comment}{/*\ are\ there\ modules\ to\ do\ something\ with?\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00066}\mbox{\hyperlink{a13892_a9a06a0175854cc6af54ddb6bd798c5bc}{00066}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_MODS\ \ \ \ \ \ \ \ \ 0x00000008}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00068}00068\ \textcolor{comment}{/*\ These\ next\ two\ are\ mutually\ exclusive\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00070}00070\ \textcolor{comment}{/*\ is\ there\ a\ symbol\ table\ loaded?\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00071}\mbox{\hyperlink{a13892_a186ab9e55c5bc612b9fd7e10b4be5600}{00071}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_AOUT\_SYMS\ \ \ \ \ \ \ \ 0x00000010}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00072}00072\ \textcolor{comment}{/*\ is\ there\ an\ ELF\ section\ header\ table?\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00073}\mbox{\hyperlink{a13892_ad7d22ae99c11dc92152acdc8494a71f0}{00073}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_ELF\_SHDR\ \ \ \ \ \ \ \ \ 0X00000020}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00075}00075\ \textcolor{comment}{/*\ is\ there\ a\ full\ memory\ map?\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00076}\mbox{\hyperlink{a13892_a2d16dabdfdee01362c3457d06f0ff850}{00076}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_MEM\_MAP\ \ \ \ \ \ \ \ \ \ 0x00000040}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00078}00078\ \textcolor{comment}{/*\ Is\ there\ drive\ info?\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00079}\mbox{\hyperlink{a13892_af2c5803d8cc6e1e8c00181ca546e68ab}{00079}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_DRIVE\_INFO\ \ \ \ \ \ \ 0x00000080}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00081}00081\ \textcolor{comment}{/*\ Is\ there\ a\ config\ table?\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00082}\mbox{\hyperlink{a13892_ad60e5b72325f5752e955879f3fbb44c3}{00082}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_CONFIG\_TABLE\ \ \ \ \ 0x00000100}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00084}00084\ \textcolor{comment}{/*\ Is\ there\ a\ boot\ loader\ name?\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00085}\mbox{\hyperlink{a13892_a9743476d5f32c9ae22f6254a0e3ba11d}{00085}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_BOOT\_LOADER\_NAME\ \ \ \ \ 0x00000200}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00087}00087\ \textcolor{comment}{/*\ Is\ there\ a\ APM\ table?\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00088}\mbox{\hyperlink{a13892_aab73446f0cee2e9dc91f43eb9a0c806b}{00088}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_APM\_TABLE\ \ \ \ \ \ \ \ 0x00000400}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00090}00090\ \textcolor{comment}{/*\ Is\ there\ video\ information?\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00091}\mbox{\hyperlink{a13892_abf0a727e2e262407c77d54baf40d2f39}{00091}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_VBE\_INFO\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000800}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00092}\mbox{\hyperlink{a13892_a1c07b211ed2c374f5fbcf40c97bce2c0}{00092}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_INFO\_FRAMEBUFFER\_INFO\ \ \ \ \ \ \ \ \ 0x00001000}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00094}00094\ \textcolor{preprocessor}{\#ifndef\ ASM\_FILE}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00096}\mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{00096}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00097}\mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{00097}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \ \ \ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00098}\mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{00098}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00099}\mbox{\hyperlink{a13892_a8dfdd61648b48aa31845db590970e06a}{00099}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ \mbox{\hyperlink{a13892_a8dfdd61648b48aa31845db590970e06a}{multiboot\_uint64\_t}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00101}\mbox{\hyperlink{a13892}{00101}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d4/d34/a14777}{multiboot\_header}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00103}00103\ \ \ \textcolor{comment}{/*\ Must\ be\ MULTIBOOT\_MAGIC\ -\/\ see\ above.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00104}\mbox{\hyperlink{a13892_a7fddee92e60ff58e159c6bf2c40bf29b}{00104}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a7fddee92e60ff58e159c6bf2c40bf29b}{magic}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00106}00106\ \ \ \textcolor{comment}{/*\ Feature\ flags.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00107}\mbox{\hyperlink{a13892_ab922f32c179ec7bde91519d19f27d95b}{00107}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ab922f32c179ec7bde91519d19f27d95b}{flags}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00109}00109\ \ \ \textcolor{comment}{/*\ The\ above\ fields\ plus\ this\ one\ must\ equal\ 0\ mod\ 2\string^32.\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00110}\mbox{\hyperlink{a13892_a17e73abddfe8264c254767a20099038d}{00110}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a17e73abddfe8264c254767a20099038d}{checksum}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00112}00112\ \ \ \textcolor{comment}{/*\ These\ are\ only\ valid\ if\ MULTIBOOT\_AOUT\_KLUDGE\ is\ set.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00113}\mbox{\hyperlink{a13892_a9718b2fc6ce29a37e9a209f92ab856e3}{00113}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a9718b2fc6ce29a37e9a209f92ab856e3}{header\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00114}\mbox{\hyperlink{a13892_a99de1cf326c46c76c6039f317b7a1ef2}{00114}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a99de1cf326c46c76c6039f317b7a1ef2}{load\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00115}\mbox{\hyperlink{a13892_ac9efc1a4c3cd18f286b2fd50ff052e31}{00115}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ac9efc1a4c3cd18f286b2fd50ff052e31}{load\_end\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00116}\mbox{\hyperlink{a13892_ab4f2496ec9b0d1a95985929d281dfa19}{00116}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ab4f2496ec9b0d1a95985929d281dfa19}{bss\_end\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00117}\mbox{\hyperlink{a13892_ac3d807775a9d69730e6698dcdcf6491e}{00117}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ac3d807775a9d69730e6698dcdcf6491e}{entry\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00119}00119\ \ \ \textcolor{comment}{/*\ These\ are\ only\ valid\ if\ MULTIBOOT\_VIDEO\_MODE\ is\ set.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00120}\mbox{\hyperlink{a13892_a4c90b7929342dd5aab7d08afa0906d28}{00120}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a4c90b7929342dd5aab7d08afa0906d28}{mode\_type}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00121}\mbox{\hyperlink{a13892_ad72a1a3dd608e73c818d0c27974def40}{00121}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ad72a1a3dd608e73c818d0c27974def40}{width}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00122}\mbox{\hyperlink{a13892_a055c5e6553ea032897ad50a12f998a17}{00122}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a055c5e6553ea032897ad50a12f998a17}{height}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00123}\mbox{\hyperlink{a13892_aba85b53dc3af1bf99c71292a776e9dff}{00123}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_aba85b53dc3af1bf99c71292a776e9dff}{depth}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00124}00124\ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00126}00126\ \textcolor{comment}{/*\ The\ symbol\ table\ for\ a.out.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00127}\mbox{\hyperlink{a13892}{00127}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d4/d8b/a14781}{multiboot\_aout\_symbol\_table}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00128}00128\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00129}\mbox{\hyperlink{a13892_afbdc23500d3d7a59486a0b8ff4066c1e}{00129}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_afbdc23500d3d7a59486a0b8ff4066c1e}{tabsize}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00130}\mbox{\hyperlink{a13892_a7ed0107153c88e6604e9a6105a4c7be0}{00130}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a7ed0107153c88e6604e9a6105a4c7be0}{strsize}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00131}\mbox{\hyperlink{a13892_af0a1d2238495093ad75f36e3a146c0c7}{00131}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_af0a1d2238495093ad75f36e3a146c0c7}{addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00132}\mbox{\hyperlink{a13892_a488f52dbb30b4de2ae2f42f0bdfda154}{00132}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a488f52dbb30b4de2ae2f42f0bdfda154}{reserved}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00133}00133\ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00134}00134\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d4/d8b/a14781}{multiboot\_aout\_symbol\_table}}\ multiboot\_aout\_symbol\_table\_t;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00136}00136\ \textcolor{comment}{/*\ The\ section\ header\ table\ for\ ELF.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00137}\mbox{\hyperlink{a13892}{00137}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d3/d25/a14785}{multiboot\_elf\_section\_header\_table}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00138}00138\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00139}\mbox{\hyperlink{a13892_a6ed3ef34bb39d72a19533b11fe156e1f}{00139}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a6ed3ef34bb39d72a19533b11fe156e1f}{num}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00140}\mbox{\hyperlink{a13892_ab2740d89d4139f93c9452cca2c676c5c}{00140}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ab2740d89d4139f93c9452cca2c676c5c}{size}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00141}\mbox{\hyperlink{a13892_aac90242e270ae9df01fc3bb784b858b6}{00141}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_aac90242e270ae9df01fc3bb784b858b6}{addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00142}\mbox{\hyperlink{a13892_a45886444dce7cc10353528373f3e50c2}{00142}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a45886444dce7cc10353528373f3e50c2}{shndx}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00143}00143\ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00144}00144\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d3/d25/a14785}{multiboot\_elf\_section\_header\_table}}\ multiboot\_elf\_section\_header\_table\_t;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00146}\mbox{\hyperlink{a13892}{00146}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_db/d65/a14789}{multiboot\_info}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00147}00147\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00148}00148\ \ \ \textcolor{comment}{/*\ Multiboot\ info\ version\ number\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00149}\mbox{\hyperlink{a13892_a39f175b6fb4debca237d3ff93e960a25}{00149}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a39f175b6fb4debca237d3ff93e960a25}{flags}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00151}00151\ \ \ \textcolor{comment}{/*\ Available\ memory\ from\ BIOS\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00152}\mbox{\hyperlink{a13892_a6b80f033d5a9151a4d1abd2d155942a7}{00152}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a6b80f033d5a9151a4d1abd2d155942a7}{mem\_lower}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00153}\mbox{\hyperlink{a13892_a1ea7d9e665d6fff00665d97e81207a8f}{00153}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a1ea7d9e665d6fff00665d97e81207a8f}{mem\_upper}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00155}00155\ \ \ \textcolor{comment}{/*\ "{}root"{}\ partition\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00156}\mbox{\hyperlink{a13892_ae32646de911267c65892a286ef3d529e}{00156}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ae32646de911267c65892a286ef3d529e}{boot\_device}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00158}00158\ \ \ \textcolor{comment}{/*\ Kernel\ command\ line\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00159}\mbox{\hyperlink{a13892_a95a5e2cc69960e4d906abd585f91f210}{00159}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a95a5e2cc69960e4d906abd585f91f210}{cmdline}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00161}00161\ \ \ \textcolor{comment}{/*\ Boot-\/Module\ list\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00162}\mbox{\hyperlink{a13892_a415feb83a215790e2e8f9e2e1e3df55c}{00162}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a415feb83a215790e2e8f9e2e1e3df55c}{mods\_count}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00163}\mbox{\hyperlink{a13892_a766e9dadbf4a845c12704c923cb13f02}{00163}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a766e9dadbf4a845c12704c923cb13f02}{mods\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00165}\mbox{\hyperlink{a13892}{00165}}\ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00166}00166\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00167}00167\ \ \ \ \ multiboot\_aout\_symbol\_table\_t\ aout\_sym;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00168}00168\ \ \ \ \ multiboot\_elf\_section\_header\_table\_t\ elf\_sec;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00169}\mbox{\hyperlink{a13892_a0558f47498813865abaec2f6281c5f92}{00169}}\ \ \ \}\ \mbox{\hyperlink{a13892_a0558f47498813865abaec2f6281c5f92}{u}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00171}00171\ \ \ \textcolor{comment}{/*\ Memory\ Mapping\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00172}\mbox{\hyperlink{a13892_a3dd43c3204f821c0a1b5604686d9eae7}{00172}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a3dd43c3204f821c0a1b5604686d9eae7}{mmap\_length}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00173}\mbox{\hyperlink{a13892_a19825c91eb6aa23fa61ee3851a6ce8da}{00173}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a19825c91eb6aa23fa61ee3851a6ce8da}{mmap\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00175}00175\ \ \ \textcolor{comment}{/*\ Drive\ Info\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00176}\mbox{\hyperlink{a13892_a8bb6cc3d388a8abafecc7018744c14f3}{00176}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a8bb6cc3d388a8abafecc7018744c14f3}{drives\_length}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00177}\mbox{\hyperlink{a13892_a12916653d21ac1694b6d609a10d15332}{00177}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a12916653d21ac1694b6d609a10d15332}{drives\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00179}00179\ \ \ \textcolor{comment}{/*\ ROM\ configuration\ table\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00180}\mbox{\hyperlink{a13892_a94b06ab87dbfaf966822a39cf1d9e2d6}{00180}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a94b06ab87dbfaf966822a39cf1d9e2d6}{config\_table}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00182}00182\ \ \ \textcolor{comment}{/*\ Boot\ Loader\ Name\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00183}\mbox{\hyperlink{a13892_a4a3251d6b4cf85d935d989a0a369feed}{00183}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a4a3251d6b4cf85d935d989a0a369feed}{boot\_loader\_name}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00185}00185\ \ \ \textcolor{comment}{/*\ APM\ table\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00186}\mbox{\hyperlink{a13892_ab340bc8f88281872676db0f52ebe7c0e}{00186}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ab340bc8f88281872676db0f52ebe7c0e}{apm\_table}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00188}00188\ \ \ \textcolor{comment}{/*\ Video\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00189}\mbox{\hyperlink{a13892_a21c63bc2905c6fd19449eea6e8514856}{00189}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a21c63bc2905c6fd19449eea6e8514856}{vbe\_control\_info}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00190}\mbox{\hyperlink{a13892_ace25791339e03186c9364bb5f461f773}{00190}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ace25791339e03186c9364bb5f461f773}{vbe\_mode\_info}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00191}\mbox{\hyperlink{a13892_aec0fcaec97380658da787d4989f7b93f}{00191}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_aec0fcaec97380658da787d4989f7b93f}{vbe\_mode}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00192}\mbox{\hyperlink{a13892_a6cd85049f18e6c157d173538b162d9a6}{00192}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a6cd85049f18e6c157d173538b162d9a6}{vbe\_interface\_seg}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00193}\mbox{\hyperlink{a13892_a272d3a053e085dc513ba4dc4eb688816}{00193}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a272d3a053e085dc513ba4dc4eb688816}{vbe\_interface\_off}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00194}\mbox{\hyperlink{a13892_a31ea288eaa679a7e3a4dafb91d833f78}{00194}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a31ea288eaa679a7e3a4dafb91d833f78}{vbe\_interface\_len}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00196}\mbox{\hyperlink{a13892_a77a4d6e2b12fbd2b3e6e61d978ae5fc0}{00196}}\ \ \ \mbox{\hyperlink{a13892_a8dfdd61648b48aa31845db590970e06a}{multiboot\_uint64\_t}}\ \mbox{\hyperlink{a13892_a77a4d6e2b12fbd2b3e6e61d978ae5fc0}{framebuffer\_addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00197}\mbox{\hyperlink{a13892_ab0ecb8c7debe9ac1ac7910ae957367f6}{00197}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_ab0ecb8c7debe9ac1ac7910ae957367f6}{framebuffer\_pitch}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00198}\mbox{\hyperlink{a13892_a770273793bac06df17306c7fa136c58f}{00198}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a770273793bac06df17306c7fa136c58f}{framebuffer\_width}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00199}\mbox{\hyperlink{a13892_a0e8539780b79a018883d96bb444cd9c8}{00199}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a0e8539780b79a018883d96bb444cd9c8}{framebuffer\_height}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00200}\mbox{\hyperlink{a13892_ab7b460c75f0342dfb1e339d2b3a2a9da}{00200}}\ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ \mbox{\hyperlink{a13892_ab7b460c75f0342dfb1e339d2b3a2a9da}{framebuffer\_bpp}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00201}\mbox{\hyperlink{a13892_a8e2af641ff42074bb807c3ec9e33b2e0}{00201}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_FRAMEBUFFER\_TYPE\_INDEXED\ 0}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00202}\mbox{\hyperlink{a13892_a34b2f01226ea42de22e06db7f652fbb1}{00202}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_FRAMEBUFFER\_TYPE\_RGB\ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00203}\mbox{\hyperlink{a13892_af6005f97267af2cb0ff37fb245284440}{00203}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_FRAMEBUFFER\_TYPE\_EGA\_TEXT\ 2}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00204}\mbox{\hyperlink{a13892_a540391adf02da7cb6876fe78d65a13d7}{00204}}\ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ \mbox{\hyperlink{a13892_a540391adf02da7cb6876fe78d65a13d7}{framebuffer\_type}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00205}\mbox{\hyperlink{a13892}{00205}}\ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00206}00206\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00207}\mbox{\hyperlink{a13892}{00207}}\ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00208}00208\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00209}00209\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ framebuffer\_palette\_addr;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00210}00210\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ framebuffer\_palette\_num\_colors;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00211}00211\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00212}\mbox{\hyperlink{a13892}{00212}}\ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00213}00213\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00214}00214\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ framebuffer\_red\_field\_position;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00215}00215\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ framebuffer\_red\_mask\_size;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00216}00216\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ framebuffer\_green\_field\_position;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00217}00217\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ framebuffer\_green\_mask\_size;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00218}00218\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ framebuffer\_blue\_field\_position;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00219}00219\ \ \ \ \ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ framebuffer\_blue\_mask\_size;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00220}00220\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00221}00221\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00222}00222\ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00223}\mbox{\hyperlink{a13892_aa6b9a7218d544abc2be2bd335681b0a1}{00223}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_db/d65/a14789}{multiboot\_info}}\ multiboot\_info\_t;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00225}\mbox{\hyperlink{a13892}{00225}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d1/d1a/a14809}{multiboot\_color}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00226}00226\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00227}\mbox{\hyperlink{a13892_a4c8a91229f40c06c3c63b4c37e83d219}{00227}}\ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ \mbox{\hyperlink{a13892_a4c8a91229f40c06c3c63b4c37e83d219}{red}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00228}\mbox{\hyperlink{a13892_a08e1c8bc977b39015c9043645e79713d}{00228}}\ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ \mbox{\hyperlink{a13892_a08e1c8bc977b39015c9043645e79713d}{green}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00229}\mbox{\hyperlink{a13892_a6f8d17b0f35ff4cbf9c51dcbc3ea7d01}{00229}}\ \ \ \mbox{\hyperlink{a13892_a037f602538fccf97e90021c19fdfc047}{multiboot\_uint8\_t}}\ \mbox{\hyperlink{a13892_a6f8d17b0f35ff4cbf9c51dcbc3ea7d01}{blue}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00230}00230\ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00232}\mbox{\hyperlink{a13892}{00232}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d9/d75/a14813}{multiboot\_mmap\_entry}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00233}00233\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00234}\mbox{\hyperlink{a13892_a1b4b5157d5e972e92981177fd1eb6d67}{00234}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a1b4b5157d5e972e92981177fd1eb6d67}{size}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00235}\mbox{\hyperlink{a13892_a40e066ba79afd138308bd0db4b3f4f5b}{00235}}\ \ \ \mbox{\hyperlink{a13892_a8dfdd61648b48aa31845db590970e06a}{multiboot\_uint64\_t}}\ \mbox{\hyperlink{a13892_a40e066ba79afd138308bd0db4b3f4f5b}{addr}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00236}\mbox{\hyperlink{a13892_a0c5d40a87a63b01fc424bb3c15c89997}{00236}}\ \ \ \mbox{\hyperlink{a13892_a8dfdd61648b48aa31845db590970e06a}{multiboot\_uint64\_t}}\ \mbox{\hyperlink{a13892_a0c5d40a87a63b01fc424bb3c15c89997}{len}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00237}\mbox{\hyperlink{a13892_a7fe141351ebcde0acbd6118ad0ea1a21}{00237}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_MEMORY\_AVAILABLE\ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00238}\mbox{\hyperlink{a13892_a0299aedc71e1f6707181471bafb18e7c}{00238}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_MEMORY\_RESERVED\ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00239}\mbox{\hyperlink{a13892_af35be82586f332a561d00207c937ee57}{00239}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE\ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00240}\mbox{\hyperlink{a13892_a68f78286f7434d373a82f1b6f6473c72}{00240}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_MEMORY\_NVS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00241}\mbox{\hyperlink{a13892_a1604ec18ac949d88dab993904b08c075}{00241}}\ \textcolor{preprocessor}{\#define\ MULTIBOOT\_MEMORY\_BADRAM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00242}\mbox{\hyperlink{a13892_affc11fb6e6ece4860a1929b791073538}{00242}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_affc11fb6e6ece4860a1929b791073538}{type}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00243}00243\ \}\ \mbox{\hyperlink{a13892_a4bbf25084dee10ec29f4356cacced463}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00244}00244\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d9/d75/a14813}{multiboot\_mmap\_entry}}\ multiboot\_memory\_map\_t;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00246}\mbox{\hyperlink{a13892}{00246}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_df/d0b/a14817}{multiboot\_mod\_list}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00247}00247\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00248}00248\ \ \ \textcolor{comment}{/*\ the\ memory\ used\ goes\ from\ bytes\ 'mod\_start'\ to\ 'mod\_end-\/1'\ inclusive\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00249}\mbox{\hyperlink{a13892_a3bcfca83ccb172cd79123a8341ed4cfb}{00249}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a3bcfca83ccb172cd79123a8341ed4cfb}{mod\_start}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00250}\mbox{\hyperlink{a13892_aa2b5dda7d7d51a1f3fbd613adfa640b0}{00250}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_aa2b5dda7d7d51a1f3fbd613adfa640b0}{mod\_end}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00252}00252\ \ \ \textcolor{comment}{/*\ Module\ command\ line\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00253}\mbox{\hyperlink{a13892_a3219140f9baf1a790a602db25e8597c7}{00253}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a3219140f9baf1a790a602db25e8597c7}{cmdline}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00255}00255\ \ \ \textcolor{comment}{/*\ padding\ to\ take\ it\ to\ 16\ bytes\ (must\ be\ zero)\ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00256}\mbox{\hyperlink{a13892_aff552d4c321b0607d77cda0c2cdc5708}{00256}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_aff552d4c321b0607d77cda0c2cdc5708}{pad}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00257}\mbox{\hyperlink{a13892_a4bbf25084dee10ec29f4356cacced463}{00257}}\ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00258}00258\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_df/d0b/a14817}{multiboot\_mod\_list}}\ multiboot\_module\_t;}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00260}00260\ \textcolor{comment}{/*\ APM\ BIOS\ info.\ \ */}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00261}\mbox{\hyperlink{a13892}{00261}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a13892_d0/dc0/a14821}{multiboot\_apm\_info}}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00262}00262\ \{}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00263}\mbox{\hyperlink{a13892_ab06d9309bdc00fa4a8c37fdab639beb5}{00263}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_ab06d9309bdc00fa4a8c37fdab639beb5}{version}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00264}\mbox{\hyperlink{a13892_a9eedcae62ee49310914e238d07094c4b}{00264}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a9eedcae62ee49310914e238d07094c4b}{cseg}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00265}\mbox{\hyperlink{a13892_a97958b174fe0234cafab9019eb009b91}{00265}}\ \ \ \mbox{\hyperlink{a13892_a009f355da41fed4badb8a52d432f5186}{multiboot\_uint32\_t}}\ \mbox{\hyperlink{a13892_a97958b174fe0234cafab9019eb009b91}{offset}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00266}\mbox{\hyperlink{a13892_a9abc154a9c3a0f3d9ae96cf2b5044b43}{00266}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a9abc154a9c3a0f3d9ae96cf2b5044b43}{cseg\_16}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00267}\mbox{\hyperlink{a13892_a98cd7da8760cf5d49ba55e1f9e76c6d4}{00267}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a98cd7da8760cf5d49ba55e1f9e76c6d4}{dseg}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00268}\mbox{\hyperlink{a13892_a55fb7837ae61f63d0310b65767a2505c}{00268}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a55fb7837ae61f63d0310b65767a2505c}{flags}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00269}\mbox{\hyperlink{a13892_a95aa6b556019e1b9c526b190341cc531}{00269}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a95aa6b556019e1b9c526b190341cc531}{cseg\_len}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00270}\mbox{\hyperlink{a13892_a09573729600592739fe8f2480217a30d}{00270}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_a09573729600592739fe8f2480217a30d}{cseg\_16\_len}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00271}\mbox{\hyperlink{a13892_afee11d31183fe424af90546b10c9fac2}{00271}}\ \ \ \mbox{\hyperlink{a13892_a3a11e3c2b5e0617736a05343aa5795b3}{multiboot\_uint16\_t}}\ \mbox{\hyperlink{a13892_afee11d31183fe424af90546b10c9fac2}{dseg\_len}};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00272}00272\ \};}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00274}00274\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !\ ASM\_FILE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{a13892_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{a13892_source_l00276}00276\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !\ OSOS\_BASIC\_MULTIBOOT\_HEADER\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

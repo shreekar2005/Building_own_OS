@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_34d45cb43cfea5813562be995e166360" kind="dir">
+    <compoundname>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic</compoundname>
+    <innerfile refid="df/d80/a16232">kiostream.hpp</innerfile>
+    <innerfile refid="d9/df6/a16229">kmemory.hpp</innerfile>
+    <innerfile refid="d5/dd5/a16226">multiboot.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/"/>
+  </compounddef>
+</doxygen>

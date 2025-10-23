@@ -1,0 +1,46 @@
+\doxysubsection{kkeyboard.\+hpp}
+\hypertarget{a16241_source}{}\label{a16241_source}\index{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/driver/kkeyboard.hpp@{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/driver/kkeyboard.hpp}}
+\mbox{\hyperlink{a16241}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ \_OSOS\_DRIVER\_KKEYBOARD\_H}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00002}00002\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_OSOS\_DRIVER\_KKEYBOARD\_H}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00003}00003\ \textcolor{preprocessor}{\ \ \ \ \#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00004}00004\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{a16235}{hardware\_communication/kinterrupt.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00005}00005\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{a16238}{hardware\_communication/kport.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00006}00006\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{a16247}{driver/kdriver.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a16285}{driver}}\{}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{comment}{//KeyboardEventHandler\ is\ an\ INTREFACE}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00009}\mbox{\hyperlink{a17167}{00009}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a17167}{KeyboardEventHandler}}\{}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a17167_a63ee0249476256e721e05e6375383317}{KeyboardEventHandler}}();}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a17167_aed6531b818751f0f23b6b9836ac94aa0}{\string~KeyboardEventHandler}}();}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00013}\mbox{\hyperlink{a17167_ae2b923ef0eb58e29f57a155debadac6a}{00013}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a17167_ae2b923ef0eb58e29f57a155debadac6a}{onKeyDown}}(\textcolor{keywordtype}{char}\ ascii)=0;}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00014}\mbox{\hyperlink{a17167_a28547100b7420e1f73b745df873cd411}{00014}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a17167_a28547100b7420e1f73b745df873cd411}{onKeyUp}}(\textcolor{keywordtype}{char}\ ascii)=0;}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00015}00015\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00016}00016\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a16241_source_l00017}\mbox{\hyperlink{a17171}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a17171}{KeyboardDriver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a17195}{hardware\_communication::InterruptHandler}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a17159}{driver::Driver}}\{}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00018}\mbox{\hyperlink{a17171_afd6cdddb62a2a2d2b31043eb32887b41}{00018}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a17211}{hardware\_communication::Port8Bit}}\ \mbox{\hyperlink{a17171_afd6cdddb62a2a2d2b31043eb32887b41}{dataPort}};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00019}\mbox{\hyperlink{a17171_a58fc9113701ffc04637996780c843ff0}{00019}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a17211}{hardware\_communication::Port8Bit}}\ \mbox{\hyperlink{a17171_a58fc9113701ffc04637996780c843ff0}{commandPort}};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ shift}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00021}\mbox{\hyperlink{a17171_afba07c783deebfb275c1437f7c23601d}{00021}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a17171_afba07c783deebfb275c1437f7c23601d}{shift\_pressed}};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ caps}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00023}\mbox{\hyperlink{a17171_a8a63dbc25a08a75f62ae0674df1deb30}{00023}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a17171_a8a63dbc25a08a75f62ae0674df1deb30}{caps\_on}};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00024}\mbox{\hyperlink{a17171_a703464394033a8f4f664d9289ae2e9f8}{00024}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a17171_a703464394033a8f4f664d9289ae2e9f8}{waiting\_for\_led\_ack}};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00025}\mbox{\hyperlink{a17171_aed7b5d279f6f1dffee10d5fb92ed6b1c}{00025}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{a17171_aed7b5d279f6f1dffee10d5fb92ed6b1c}{led\_byte\_to\_send}};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a16241_source_l00027}\mbox{\hyperlink{a17171_a11ec84b7abf113ec270f124564776e1f}{00027}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a17167}{KeyboardEventHandler}}*\ \mbox{\hyperlink{a17171_a11ec84b7abf113ec270f124564776e1f}{keyboardEventHandler}};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{a16241_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ public\ :}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a17171}{KeyboardDriver}}(\mbox{\hyperlink{a17203}{hardware\_communication::InterruptManager}}*\ \mbox{\hyperlink{a17195_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}},\ \mbox{\hyperlink{a17167}{KeyboardEventHandler}}*\ \mbox{\hyperlink{a17171_a11ec84b7abf113ec270f124564776e1f}{keyboardEventHandler}});}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a17171_a77da196f3c04c549e1085ce5566e5df3}{\string~KeyboardDriver}}();}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a17171_a248fa0da9acac54a3a8880c7b66b3f2b}{handleInterrupt}}(uint32\_t\ esp)\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ function\ mainly\ defined\ in\ InterruptHandler\ class.}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{a16241_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a17171_a58553d39d7dcfe6b55e8ddb1e7b1d187}{activate}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a17171_a22b7b080ab1c8b0f2ed4beba75b34691}{reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a17171_aaa7e99b6214dc8439230a95dd57e617e}{deactivate}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00037}00037\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a16241_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{a16241_source_l00040}00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

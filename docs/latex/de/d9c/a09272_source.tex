@@ -1,0 +1,109 @@
+\doxysubsection{kmouse.\+cpp}
+\hypertarget{a09272_source}{}\label{a09272_source}\index{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_src/driver/kmouse.cpp@{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_src/driver/kmouse.cpp}}
+\mbox{\hyperlink{a09272}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a09242}{driver/kmouse.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00003}00003\ \textcolor{comment}{//\ -\/-\/-\/\ MouseEventHandler\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00005}\mbox{\hyperlink{a10173_aa0fd3739c52bcd4d553cefaf41760a9b}{00005}}\ \mbox{\hyperlink{a10173_aa0fd3739c52bcd4d553cefaf41760a9b}{driver::MouseEventHandler::MouseEventHandler}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00006}\mbox{\hyperlink{a10173_abbfe4a7ae2911f989513178530314211}{00006}}\ \mbox{\hyperlink{a10173_abbfe4a7ae2911f989513178530314211}{driver::MouseEventHandler::\string~MouseEventHandler}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00009}00009\ \textcolor{comment}{//\ -\/-\/-\/\ MouseDriver\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00011}00011\ \textcolor{comment}{//\ Static\ member\ initialization}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00012}00012\ uint16\_t\ \mbox{\hyperlink{a10177_a4a671e7e2b235f6bec473cb960401bd6}{driver::MouseDriver::old\_char\_under\_mouse\_pointer}};}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00013}00013\ \textcolor{comment}{//\ DO\ NOT\ CHANGE\ THESE\ -\/1\ INITIALIZATIONS\ (THAT\ WILL\ LEAD\ TO\ BUG\ OF\ "{}GHOST\ MOUSE\ POINTER"{})}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00014}00014\ int8\_t\ \mbox{\hyperlink{a10177_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00015}00015\ int8\_t\ \mbox{\hyperlink{a10177_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00017}\mbox{\hyperlink{a10177_a1a2a455ca7146dea3148afa8cb6c9ed5}{00017}}\ uint16\_t\ \mbox{\hyperlink{a10177_a1a2a455ca7146dea3148afa8cb6c9ed5}{driver::MouseDriver::mouse\_block\_video\_mem\_value}}(uint16\_t\ current\_char,\ uint8\_t\ mouse\_pointer\_color)\{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ (current\_char\ \&\ 0x0FFF)\ |\ (mouse\_pointer\_color\ <<\ 12);}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00021}00021\ \textcolor{comment}{//\ Constructor:\ Initialize\ with\ an\ event\ handler}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00022}\mbox{\hyperlink{a10177_a639956c8ce11d62ee443825e9b9695af}{00022}}\ \mbox{\hyperlink{a10177_a639956c8ce11d62ee443825e9b9695af}{driver::MouseDriver::MouseDriver}}(\mbox{\hyperlink{a10201}{hardware\_communication::InterruptManager}}*\ interrupt\_manager,\ \mbox{\hyperlink{a10173}{driver::MouseEventHandler}}*\ mouseEventHandler)}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00023}00023\ :\ \mbox{\hyperlink{a09285}{hardware\_communication}}::InterruptHandler(0x2C,\ interrupt\_manager),\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00024}00024\ \ \ dataPort(0x60),\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00025}00025\ \ \ commandPort(0x64)}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00027}00027\ \ \ \ \ this-\/>mouseEventHandler\ =\ \mbox{\hyperlink{a10177_a804f5657a062e0a18f3b56781f884c66}{mouseEventHandler}};}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00030}\mbox{\hyperlink{a10177_a8c25e4a4b42d1d39b332ba6d4cbd6a22}{00030}}\ \mbox{\hyperlink{a10177_a8c25e4a4b42d1d39b332ba6d4cbd6a22}{driver::MouseDriver::\string~MouseDriver}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00032}\mbox{\hyperlink{a10177_a1b2f08490b7954e5ca504cd8bb6862c0}{00032}}\ uint32\_t\ \mbox{\hyperlink{a10177_a1b2f08490b7954e5ca504cd8bb6862c0}{driver::MouseDriver::handleInterrupt}}(uint32\_t\ esp)\{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ mouse\ has\ sent\ data}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00034}00034\ \ \ \ \ uint8\_t\ status\ =\ commandPort.read();}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{if}(!(status\ \&\ 0x20))\ \textcolor{keywordflow}{return}\ esp;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Read\ the\ next\ byte\ of\ the\ packet}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00038}00038\ \ \ \ \ buffer[offset]\ =\ dataPort.read();}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00039}00039\ \ \ \ \ offset\ =\ (offset\ +\ 1)\ \%\ 3;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ When\ a\ full\ 3-\/byte\ packet\ is\ received}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}(offset\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mouseEventHandler\ ==\ 0)\ \textcolor{keywordflow}{return}\ esp;\ \textcolor{comment}{//\ Do\ nothing\ without\ a\ handler}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Handle\ Mouse\ Movement\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00046}00046\ \ \ \ \ \ \ \ \ int8\_t\ delta\_x\ =\ buffer[1];}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00047}00047\ \ \ \ \ \ \ \ \ int8\_t\ delta\_y\ =\ -\/buffer[2];\ \textcolor{comment}{//\ Y-\/axis\ is\ inverted\ from\ the\ mouse's\ perspective}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (delta\_x\ !=\ 0\ ||\ delta\_y\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ mouseEventHandler-\/>\mbox{\hyperlink{a10173_a68f635b3b65f927d37d4e0835f7e0b30}{onMouseMove}}(delta\_x,\ delta\_y);}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Handle\ Mouse\ Buttons\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(uint8\_t\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ state\ of\ button\ 'i'\ has\ changed}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((buffer[0]\ \&\ (1\ <<\ i))\ !=\ (buttons\ \&\ (1\ <<\ i)))\ \{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(buffer[0]\ \&\ (1\ <<\ i))\ \{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mouseEventHandler-\/>onMouseDown(i\ +\ 1);\ \textcolor{comment}{//\ Left=1,\ Right=2,\ Middle=3}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mouseEventHandler-\/>onMouseUp(i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00064}00064\ \ \ \ \ \ \ \ \ buttons\ =\ buffer[0];\ \textcolor{comment}{//\ Save\ the\ current\ button\ state\ for\ the\ next\ interrupt}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{return}\ esp;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00072}00072\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/OVERRIDING\ VIRTUAL\ FUNCTIONS\ FROM\ DRIVER\ INTERFACE-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00074}\mbox{\hyperlink{a10177_a446769df0b3b537a525476c7c8be47bc}{00074}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a10177_a446769df0b3b537a525476c7c8be47bc}{driver::MouseDriver::activate}}()\{}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{while}(commandPort.read()\ \&\ 1)\ dataPort.read();}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00076}00076\ \ \ \ \ offset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00077}00077\ \ \ \ \ buttons\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00078}00078\ \ \ \ \ \_\_mouse\_x\_\ =\ 40;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00079}00079\ \ \ \ \ \_\_mouse\_y\_\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t*\ video\_memory\ =\ (uint16\_t*)\ 0xb8000;}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00082}00082\ \ \ \ \ old\_char\_under\_mouse\_pointer\ =\ video\_memory[80\ *\ \_\_mouse\_y\_\ +\ \_\_mouse\_x\_];}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00083}00083\ \ \ \ \ video\_memory[80\ *\ \_\_mouse\_y\_\ +\ \_\_mouse\_x\_]\ =\ mouse\_block\_video\_mem\_value(old\_char\_under\_mouse\_pointer,\ \mbox{\hyperlink{a09242_a637dd833f5f7af42afa1f42349a4d89e}{MOUSE\_POINTER\_COLOR}});}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00085}00085\ \ \ \ \ \textcolor{comment}{//\ Enable\ the\ auxiliary\ mouse\ device}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00086}00086\ \ \ \ \ commandPort.write(0xA8);\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00087}00087\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ Enable\ the\ interrupts\ for\ the\ mouse}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00089}00089\ \ \ \ \ commandPort.write(0x20);\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00090}00090\ \ \ \ \ uint8\_t\ status\ =\ (dataPort.read()\ |\ 2);\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00091}00091\ \ \ \ \ commandPort.write(0x60);}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00092}00092\ \ \ \ \ dataPort.write(status);}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ Set\ mouse\ to\ use\ default\ settings\ and\ enable\ packet\ streaming}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00095}00095\ \ \ \ \ commandPort.write(0xD4);}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00096}00096\ \ \ \ \ dataPort.write(0xF4);}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00097}00097\ \ \ \ \ dataPort.read();\ \textcolor{comment}{//\ Acknowledge}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00098}00098\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{a09282_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Mouse\ Driver\ activated!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{a09272_source_l00102}\mbox{\hyperlink{a10177_aabe3740996bf70fda96f0a25228954a6}{00102}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a10177_aabe3740996bf70fda96f0a25228954a6}{driver::MouseDriver::reset}}()\{\textcolor{keywordflow}{return}\ 0;\}}
+\DoxyCodeLine{\Hypertarget{a09272_source_l00103}\mbox{\hyperlink{a10177_a4329c1cdedc72adf0b95cb3911c4acf6}{00103}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a10177_a4329c1cdedc72adf0b95cb3911c4acf6}{driver::MouseDriver::deactivate}}()\{\}}
+
+\end{DoxyCode}

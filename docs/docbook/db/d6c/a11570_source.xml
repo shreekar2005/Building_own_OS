@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a11570_source" xml:lang="en-US">
+<title>kport.hpp</title>
+<indexterm><primary>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_a11570_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;_OSOS_HARDWARE_COMMUNICATION_KPORT_H&#32;</emphasis><emphasis role="comment">//&#32;Using&#32;a&#32;more&#32;standard&#32;include&#32;guard&#32;name</emphasis>
+<anchor xml:id="_a11570_source_1l00002"/>00002 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#define&#32;_OSOS_HARDWARE_COMMUNICATION_KPORT_H</emphasis>
+<anchor xml:id="_a11570_source_1l00003"/>00003 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#include&#32;&lt;cstdint&gt;</emphasis>
+<anchor xml:id="_a11570_source_1l00004"/>00004 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#include&#32;&quot;<link linkend="_a11564">basic/kiostream.hpp</link>&quot;</emphasis>
+<anchor xml:id="_a11570_source_1l00005"/>00005 
+<anchor xml:id="_a11570_source_1l00006"/>00006 &#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis><link linkend="_a11619">hardware_communication</link>{
+<anchor xml:id="_a11570_source_1l00007"/>00007 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+<anchor xml:id="_a11570_source_1l00008"/>00008 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Base&#32;class&#32;for&#32;all&#32;I/O&#32;ports</emphasis>
+<anchor xml:id="_a11570_source_1l00009"/>00009 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Initialize&#32;with&#32;uint16_t&#32;portnumber</emphasis>
+<anchor xml:id="_a11570_source_1l00010"/>00010 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+<anchor xml:id="_a11570_source_1l00011"/><link linkend="_a12539">00011</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_a12539">Port</link>&#32;{
+<anchor xml:id="_a11570_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+<anchor xml:id="_a11570_source_1l00013"/><link linkend="_a12539_1aab0c5c82b0190df88ddbb595bfac539a">00013</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a12539_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>;
+<anchor xml:id="_a11570_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;making&#32;constructor&#32;explicit&#32;to&#32;prevent&#32;unintended&#32;conversions</emphasis>
+<anchor xml:id="_a11570_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_a12539">Port</link>(uint16_t&#32;<link linkend="_a12539_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>);
+<anchor xml:id="_a11570_source_1l00016"/>00016 
+<anchor xml:id="_a11570_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_a11570_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;A&#32;base&#32;class&#32;with&#32;virtual&#32;functions&#32;MUST&#32;have&#32;a&#32;virtual&#32;destructor</emphasis>
+<anchor xml:id="_a11570_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_a12539_1a8b13c33da4911afcbdcb21c97768a72e">~Port</link>();
+<anchor xml:id="_a11570_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="_a11570_source_1l00021"/>00021 
+<anchor xml:id="_a11570_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;---&#32;8-Bit&#32;Ports&#32;---</emphasis>
+<anchor xml:id="_a11570_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_a11570_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+<anchor xml:id="_a11570_source_1l00025"/>00025 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Initialize&#32;with&#32;uint16_t&#32;portnumber</emphasis>
+<anchor xml:id="_a11570_source_1l00026"/>00026 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;have&#32;methods&#32;:</emphasis>
+<anchor xml:id="_a11570_source_1l00027"/>00027 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;void&#32;write(uint8_t&#32;data);</emphasis>
+<anchor xml:id="_a11570_source_1l00028"/>00028 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint8_t&#32;read();</emphasis>
+<anchor xml:id="_a11570_source_1l00029"/>00029 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+<anchor xml:id="_a11570_source_1l00030"/><link linkend="_a12543">00030</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_a12543">Port8Bit</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_a12539">Port</link>&#32;{
+<anchor xml:id="_a11570_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_a11570_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_a12543">Port8Bit</link>(uint16_t&#32;<link linkend="_a12539_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>);
+<anchor xml:id="_a11570_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_a12543_1a475bc218672c5743a9f8425cc84eb630">~Port8Bit</link>()&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_a11570_source_1l00034"/>00034 
+<anchor xml:id="_a11570_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a12543_1a523b6a757b27418dc015ed13e74bef60">write</link>(uint8_t&#32;data);
+<anchor xml:id="_a11570_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_a12543_1ae8688251b574c3fd335b99f7e93fff2d">read</link>();
+<anchor xml:id="_a11570_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="_a11570_source_1l00038"/>00038 
+<anchor xml:id="_a11570_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+<anchor xml:id="_a11570_source_1l00040"/>00040 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Initialize&#32;with&#32;uint16_t&#32;portnumber</emphasis>
+<anchor xml:id="_a11570_source_1l00041"/>00041 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;have&#32;methods&#32;:</emphasis>
+<anchor xml:id="_a11570_source_1l00042"/>00042 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;void&#32;write(uint8_t&#32;data);</emphasis>
+<anchor xml:id="_a11570_source_1l00043"/>00043 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint8_t&#32;read();&#32;(inherited)</emphasis>
+<anchor xml:id="_a11570_source_1l00044"/>00044 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+<anchor xml:id="_a11570_source_1l00045"/><link linkend="_a12547">00045</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_a12547">Port8BitSlow</link>&#32;final&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_a12543">Port8Bit</link>&#32;{
+<anchor xml:id="_a11570_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_a11570_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_a12547">Port8BitSlow</link>(uint16_t&#32;<link linkend="_a12539_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>);
+<anchor xml:id="_a11570_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12547_1aa19647802064296f8bf76cc12f10d243">~Port8BitSlow</link>()&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_a11570_source_1l00049"/>00049 
+<anchor xml:id="_a11570_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;&apos;override&apos;&#32;to&#32;ensure&#32;you&#32;are&#32;correctly&#32;overriding&#32;a&#32;base&#32;class&#32;function</emphasis>
+<anchor xml:id="_a11570_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a12547_1af84b15d5a205a421a9877e2341714031">write</link>(uint8_t&#32;data)&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_a11570_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;read()&#32;:&#32;inherited&#32;from&#32;Port8Bit</emphasis>
+<anchor xml:id="_a11570_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="_a11570_source_1l00054"/>00054 
+<anchor xml:id="_a11570_source_1l00055"/>00055 
+<anchor xml:id="_a11570_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;---&#32;16-Bit&#32;Port&#32;---</emphasis>
+<anchor xml:id="_a11570_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+<anchor xml:id="_a11570_source_1l00058"/>00058 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Initialize&#32;with&#32;uint16_t&#32;portnumber</emphasis>
+<anchor xml:id="_a11570_source_1l00059"/>00059 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;have&#32;methods&#32;:</emphasis>
+<anchor xml:id="_a11570_source_1l00060"/>00060 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;void&#32;write(uint16_t&#32;data);</emphasis>
+<anchor xml:id="_a11570_source_1l00061"/>00061 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;read();</emphasis>
+<anchor xml:id="_a11570_source_1l00062"/>00062 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+<anchor xml:id="_a11570_source_1l00063"/><link linkend="_a12551">00063</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_a12551">Port16Bit</link>&#32;final&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_a12539">Port</link>&#32;{
+<anchor xml:id="_a11570_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_a11570_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_a12551">Port16Bit</link>(uint16_t&#32;<link linkend="_a12539_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>);
+<anchor xml:id="_a11570_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12551_1a78dfa215194c676583e1b7e2dab38608">~Port16Bit</link>()&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_a11570_source_1l00067"/>00067 
+<anchor xml:id="_a11570_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a12551_1ac5a46ce99a70874a8a4fcb090eb40575">write</link>(uint16_t&#32;data);
+<anchor xml:id="_a11570_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a12551_1a6b5df5669e802e31f27f0a4a0e62492a">read</link>();
+<anchor xml:id="_a11570_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="_a11570_source_1l00071"/>00071 
+<anchor xml:id="_a11570_source_1l00072"/>00072 
+<anchor xml:id="_a11570_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;---&#32;32-Bit&#32;Port&#32;---</emphasis>
+<anchor xml:id="_a11570_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+<anchor xml:id="_a11570_source_1l00075"/>00075 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Initialize&#32;with&#32;uint16_t&#32;portnumber</emphasis>
+<anchor xml:id="_a11570_source_1l00076"/>00076 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;have&#32;methods&#32;:</emphasis>
+<anchor xml:id="_a11570_source_1l00077"/>00077 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;void&#32;write(uint32_t&#32;data);</emphasis>
+<anchor xml:id="_a11570_source_1l00078"/>00078 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;read();</emphasis>
+<anchor xml:id="_a11570_source_1l00079"/>00079 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+<anchor xml:id="_a11570_source_1l00080"/><link linkend="_a12555">00080</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_a12555">Port32Bit</link>&#32;final&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_a12539">Port</link>&#32;{
+<anchor xml:id="_a11570_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_a11570_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_a12555">Port32Bit</link>(uint16_t&#32;<link linkend="_a12539_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>);
+<anchor xml:id="_a11570_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12555_1a3e87dc7d610b279e8e7e072a0d1ee78c">~Port32Bit</link>()&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_a11570_source_1l00084"/>00084 
+<anchor xml:id="_a11570_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a12555_1a64a16fe840224ef769ab2933770d1b21">write</link>(uint32_t&#32;data);
+<anchor xml:id="_a11570_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a12555_1a41093c437a9508f984c90ae68e9c03bf">read</link>();
+<anchor xml:id="_a11570_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="_a11570_source_1l00088"/>00088 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a11570_source_1l00089"/>00089 
+<anchor xml:id="_a11570_source_1l00090"/>00090 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;KERNEL_PORT_H</emphasis>
+</programlisting></section>

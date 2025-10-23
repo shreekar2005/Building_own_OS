@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d4/d0f/a11606" kind="file" language="C++">
+    <compoundname>kmouse.cpp</compoundname>
+    <includes refid="d5/d6b/a11576" local="yes">driver/kmouse.hpp</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>basic/kiostream.hpp</label>
+        <link refid="d1/de2/a11564"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>driver/kdriver.hpp</label>
+        <link refid="dc/d15/a11579"/>
+      </node>
+      <node id="2">
+        <label>driver/kmouse.hpp</label>
+        <link refid="d5/d6b/a11576"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>essential/kgdt.hpp</label>
+        <link refid="dd/db5/a11585"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>hardware_communication/kinterrupt.hpp</label>
+        <link refid="dd/d35/a11567"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>hardware_communication/kport.hpp</label>
+        <link refid="db/d6c/a11570"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kmouse.cpp</label>
+        <link refid="d4/d0f/a11606"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstdarg</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d5/d6b/a11576" kindref="compound">driver/kmouse.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>MouseEventHandler<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="df/d1b/a12507_1aa0fd3739c52bcd4d553cefaf41760a9b" refkind="member"><highlight class="normal"><ref refid="df/d1b/a12507_1aa0fd3739c52bcd4d553cefaf41760a9b" kindref="member">driver::MouseEventHandler::MouseEventHandler</ref>(){}</highlight></codeline>
+<codeline lineno="6" refid="df/d1b/a12507_1abbfe4a7ae2911f989513178530314211" refkind="member"><highlight class="normal"><ref refid="df/d1b/a12507_1abbfe4a7ae2911f989513178530314211" kindref="member">driver::MouseEventHandler::~MouseEventHandler</ref>(){}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>MouseDriver<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Static<sp/>member<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">uint16_t<sp/><ref refid="d9/d53/a12511_1a4a671e7e2b235f6bec473cb960401bd6" kindref="member">driver::MouseDriver::old_char_under_mouse_pointer</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DO<sp/>NOT<sp/>CHANGE<sp/>THESE<sp/>-1<sp/>INITIALIZATIONS<sp/>(THAT<sp/>WILL<sp/>LEAD<sp/>TO<sp/>BUG<sp/>OF<sp/>&quot;GHOST<sp/>MOUSE<sp/>POINTER&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">int8_t<sp/><ref refid="d9/d53/a12511_1ac2077f6309c79d5f585fb966b57fe065" kindref="member">driver::MouseDriver::__mouse_x_</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">int8_t<sp/><ref refid="d9/d53/a12511_1aa02009b37420687ef18db8a05ff9181f" kindref="member">driver::MouseDriver::__mouse_y_</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="d9/d53/a12511_1a1a2a455ca7146dea3148afa8cb6c9ed5" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="d9/d53/a12511_1a1a2a455ca7146dea3148afa8cb6c9ed5" kindref="member">driver::MouseDriver::mouse_block_video_mem_value</ref>(uint16_t<sp/>current_char,<sp/>uint8_t<sp/>mouse_pointer_color){</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(current_char<sp/>&amp;<sp/>0x0FFF)<sp/>|<sp/>(mouse_pointer_color<sp/>&lt;&lt;<sp/>12);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constructor:<sp/>Initialize<sp/>with<sp/>an<sp/>event<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="d9/d53/a12511_1a639956c8ce11d62ee443825e9b9695af" refkind="member"><highlight class="normal"><ref refid="d9/d53/a12511_1a639956c8ce11d62ee443825e9b9695af" kindref="member">driver::MouseDriver::MouseDriver</ref>(<ref refid="da/dec/a12535" kindref="compound">hardware_communication::InterruptManager</ref>*<sp/>interrupt_manager,<sp/><ref refid="df/d1b/a12507" kindref="compound">driver::MouseEventHandler</ref>*<sp/>mouseEventHandler)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">:<sp/><ref refid="d2/ddf/a11619" kindref="compound">hardware_communication</ref>::InterruptHandler(0x2C,<sp/>interrupt_manager),<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>dataPort(0x60),<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>commandPort(0x64)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;mouseEventHandler<sp/>=<sp/><ref refid="d9/d53/a12511_1a804f5657a062e0a18f3b56781f884c66" kindref="member">mouseEventHandler</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="d9/d53/a12511_1a8c25e4a4b42d1d39b332ba6d4cbd6a22" refkind="member"><highlight class="normal"><ref refid="d9/d53/a12511_1a8c25e4a4b42d1d39b332ba6d4cbd6a22" kindref="member">driver::MouseDriver::~MouseDriver</ref>(){}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="d9/d53/a12511_1a1b2f08490b7954e5ca504cd8bb6862c0" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="d9/d53/a12511_1a1b2f08490b7954e5ca504cd8bb6862c0" kindref="member">driver::MouseDriver::handleInterrupt</ref>(uint32_t<sp/>esp){</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>the<sp/>mouse<sp/>has<sp/>sent<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>status<sp/>=<sp/>commandPort.read();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(status<sp/>&amp;<sp/>0x20))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>esp;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>next<sp/>byte<sp/>of<sp/>the<sp/>packet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>buffer[offset]<sp/>=<sp/>dataPort.read();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>offset<sp/>=<sp/>(offset<sp/>+<sp/>1)<sp/>%<sp/>3;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>a<sp/>full<sp/>3-byte<sp/>packet<sp/>is<sp/>received</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(offset<sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mouseEventHandler<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>esp;<sp/></highlight><highlight class="comment">//<sp/>Do<sp/>nothing<sp/>without<sp/>a<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Handle<sp/>Mouse<sp/>Movement<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int8_t<sp/>delta_x<sp/>=<sp/>buffer[1];</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int8_t<sp/>delta_y<sp/>=<sp/>-buffer[2];<sp/></highlight><highlight class="comment">//<sp/>Y-axis<sp/>is<sp/>inverted<sp/>from<sp/>the<sp/>mouse&apos;s<sp/>perspective</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(delta_x<sp/>!=<sp/>0<sp/>||<sp/>delta_y<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mouseEventHandler-&gt;<ref refid="df/d1b/a12507_1a68f635b3b65f927d37d4e0835f7e0b30" kindref="member">onMouseMove</ref>(delta_x,<sp/>delta_y);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Handle<sp/>Mouse<sp/>Buttons<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>3;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>the<sp/>state<sp/>of<sp/>button<sp/>&apos;i&apos;<sp/>has<sp/>changed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((buffer[0]<sp/>&amp;<sp/>(1<sp/>&lt;&lt;<sp/>i))<sp/>!=<sp/>(buttons<sp/>&amp;<sp/>(1<sp/>&lt;&lt;<sp/>i)))<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(buffer[0]<sp/>&amp;<sp/>(1<sp/>&lt;&lt;<sp/>i))<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mouseEventHandler-&gt;onMouseDown(i<sp/>+<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>Left=1,<sp/>Right=2,<sp/>Middle=3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mouseEventHandler-&gt;onMouseUp(i<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buttons<sp/>=<sp/>buffer[0];<sp/></highlight><highlight class="comment">//<sp/>Save<sp/>the<sp/>current<sp/>button<sp/>state<sp/>for<sp/>the<sp/>next<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>esp;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//------------------------------OVERRIDING<sp/>VIRTUAL<sp/>FUNCTIONS<sp/>FROM<sp/>DRIVER<sp/>INTERFACE-----------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="d9/d53/a12511_1a446769df0b3b537a525476c7c8be47bc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d53/a12511_1a446769df0b3b537a525476c7c8be47bc" kindref="member">driver::MouseDriver::activate</ref>(){</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(commandPort.read()<sp/>&amp;<sp/>1)<sp/>dataPort.read();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>offset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>buttons<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>__mouse_x_<sp/>=<sp/>40;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>__mouse_y_<sp/>=<sp/>12;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint16_t*<sp/>video_memory<sp/>=<sp/>(uint16_t*)<sp/>0xb8000;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>old_char_under_mouse_pointer<sp/>=<sp/>video_memory[80<sp/>*<sp/>__mouse_y_<sp/>+<sp/>__mouse_x_];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>video_memory[80<sp/>*<sp/>__mouse_y_<sp/>+<sp/>__mouse_x_]<sp/>=<sp/>mouse_block_video_mem_value(old_char_under_mouse_pointer,<sp/><ref refid="d5/d6b/a11576_1a637dd833f5f7af42afa1f42349a4d89e" kindref="member">MOUSE_POINTER_COLOR</ref>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>auxiliary<sp/>mouse<sp/>device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>commandPort.write(0xA8);<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>interrupts<sp/>for<sp/>the<sp/>mouse</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>commandPort.write(0x20);<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>status<sp/>=<sp/>(dataPort.read()<sp/>|<sp/>2);<sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>commandPort.write(0x60);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>dataPort.write(status);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>mouse<sp/>to<sp/>use<sp/>default<sp/>settings<sp/>and<sp/>enable<sp/>packet<sp/>streaming</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>commandPort.write(0xD4);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>dataPort.write(0xF4);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>dataPort.read();<sp/></highlight><highlight class="comment">//<sp/>Acknowledge</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d4b/a11616_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;Mouse<sp/>Driver<sp/>activated!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="d9/d53/a12511_1aabe3740996bf70fda96f0a25228954a6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d9/d53/a12511_1aabe3740996bf70fda96f0a25228954a6" kindref="member">driver::MouseDriver::reset</ref>(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;}</highlight></codeline>
+<codeline lineno="103" refid="d9/d53/a12511_1a4329c1cdedc72adf0b95cb3911c4acf6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d53/a12511_1a4329c1cdedc72adf0b95cb3911c4acf6" kindref="member">driver::MouseDriver::deactivate</ref>(){}</highlight></codeline>
+    </programlisting>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kmouse.cpp"/>
+  </compounddef>
+</doxygen>

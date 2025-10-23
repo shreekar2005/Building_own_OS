@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d8/d12/a10593" kind="union" language="C++" prot="public">
+    <compoundname>multiboot_info.__unnamed2__</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d8/d12/a10593_1aa4d79cb252987ad7f099770543e601a1" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="dc/d6b/a10121" kindref="compound">multiboot_info</ref></type>
+        <definition></definition>
+        <argsstring></argsstring>
+        <name></name>
+        <qualifiedname>multiboot_info.__unnamed2__</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/multiboot.hpp" line="211" column="5"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d12/a10593_1a21945c50944818f4cf3b6aef8608f9ce" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="dc/d6b/a10121" kindref="compound">multiboot_info</ref></type>
+        <definition></definition>
+        <argsstring></argsstring>
+        <name></name>
+        <qualifiedname>multiboot_info.__unnamed2__</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/multiboot.hpp" line="220" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>multiboot_info.__unnamed2__</label>
+        <link refid="d8/d12/a10593"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/multiboot.hpp" line="205" column="3" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/multiboot.hpp" bodystart="206" bodyend="221"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

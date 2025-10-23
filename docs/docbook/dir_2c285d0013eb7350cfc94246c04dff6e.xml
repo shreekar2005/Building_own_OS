@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_2c285d0013eb7350cfc94246c04dff6e" xml:lang="en-US">
+<title>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential Directory Reference</title>
+<indexterm><primary>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential Directory Reference</primary></indexterm>
+Directory dependency graph for essential:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_2c285d0013eb7350cfc94246c04dff6e_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a16253">kgdt.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a16250">kicxxabi.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

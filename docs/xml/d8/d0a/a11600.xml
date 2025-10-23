@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d8/d0a/a11600" kind="file" language="C++">
+    <compoundname>kdriver.cpp</compoundname>
+    <includes refid="dc/d15/a11579" local="yes">driver/kdriver.hpp</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>driver/kdriver.hpp</label>
+        <link refid="dc/d15/a11579"/>
+      </node>
+      <node id="1">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kdriver.cpp</label>
+        <link refid="d8/d0a/a11600"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dc/d15/a11579" kindref="compound">driver/kdriver.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="d9/d09/a12491_1a7de0c11fff1dc1f5d004b2a76e840840" refkind="member"><highlight class="normal"><ref refid="d9/d09/a12491_1a7de0c11fff1dc1f5d004b2a76e840840" kindref="member">driver::Driver::Driver</ref>(){}</highlight></codeline>
+<codeline lineno="4" refid="d9/d09/a12491_1aacc7524b989c2561147c5dd0b901381c" refkind="member"><highlight class="normal"><ref refid="d9/d09/a12491_1aacc7524b989c2561147c5dd0b901381c" kindref="member">driver::Driver::~Driver</ref>(){}</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="db/dbb/a12495_1af3bed49a4b243c2f65d09c35db15158b" refkind="member"><highlight class="normal"><ref refid="db/dbb/a12495_1af3bed49a4b243c2f65d09c35db15158b" kindref="member">driver::DriverManager::DriverManager</ref>(){</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>numDrivers=0;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10" refid="db/dbb/a12495_1a29731c1f4b1215fd5c4ab27624ae6563" refkind="member"><highlight class="normal"><ref refid="db/dbb/a12495_1a29731c1f4b1215fd5c4ab27624ae6563" kindref="member">driver::DriverManager::~DriverManager</ref>(){}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="db/dbb/a12495_1ab8bd89b91ea49f343276c3c841153cd8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dbb/a12495_1ab8bd89b91ea49f343276c3c841153cd8" kindref="member">driver::DriverManager::addDriver</ref>(<ref refid="d9/d09/a12491" kindref="compound">driver::Driver</ref>*<sp/><ref refid="d3/dfa/a11617" kindref="compound">driver</ref>){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>drivers[numDrivers]=<ref refid="d3/dfa/a11617" kindref="compound">driver</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>numDrivers++;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="db/dbb/a12495_1a05b071d8a8c12f2d284fb61f4ecd116e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="db/dbb/a12495_1a05b071d8a8c12f2d284fb61f4ecd116e" kindref="member">driver::DriverManager::activateAll</ref>(){</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;numDrivers;<sp/>i++){</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>drivers[i]-&gt;activate();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kdriver.cpp"/>
+  </compounddef>
+</doxygen>

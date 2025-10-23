@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d1/d14/a17171" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>driver::KeyboardDriver</compoundname>
+    <basecompoundref refid="d9/dec/a17195" prot="public" virt="non-virtual">hardware_communication::InterruptHandler</basecompoundref>
+    <basecompoundref refid="d6/d6f/a17159" prot="public" virt="non-virtual">driver::Driver</basecompoundref>
+    <includes refid="d7/dbd/a16241" local="yes">kkeyboard.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d14/a17171_1a8a63dbc25a08a75f62ae0674df1deb30" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool driver::KeyboardDriver::caps_on</definition>
+        <argsstring></argsstring>
+        <name>caps_on</name>
+        <qualifiedname>driver::KeyboardDriver::caps_on</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="23" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d14/a17171_1a58fc9113701ffc04637996780c843ff0" prot="private" static="no" mutable="no">
+        <type><ref refid="da/db0/a17211" kindref="compound">hardware_communication::Port8Bit</ref></type>
+        <definition>hardware_communication::Port8Bit driver::KeyboardDriver::commandPort</definition>
+        <argsstring></argsstring>
+        <name>commandPort</name>
+        <qualifiedname>driver::KeyboardDriver::commandPort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="19" column="50" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d14/a17171_1afd6cdddb62a2a2d2b31043eb32887b41" prot="private" static="no" mutable="no">
+        <type><ref refid="da/db0/a17211" kindref="compound">hardware_communication::Port8Bit</ref></type>
+        <definition>hardware_communication::Port8Bit driver::KeyboardDriver::dataPort</definition>
+        <argsstring></argsstring>
+        <name>dataPort</name>
+        <qualifiedname>driver::KeyboardDriver::dataPort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="18" column="50" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d14/a17171_1a11ec84b7abf113ec270f124564776e1f" prot="private" static="no" mutable="no">
+        <type><ref refid="d4/de0/a17167" kindref="compound">KeyboardEventHandler</ref> *</type>
+        <definition>KeyboardEventHandler* driver::KeyboardDriver::keyboardEventHandler</definition>
+        <argsstring></argsstring>
+        <name>keyboardEventHandler</name>
+        <qualifiedname>driver::KeyboardDriver::keyboardEventHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="27" column="38" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="27" bodyend="-1"/>
+        <referencedby refid="d1/d14/a17171_1a63898e993f02352193db996d00179347" compoundref="dc/d22/a16271" startline="13" endline="21">KeyboardDriver</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d14/a17171_1aed7b5d279f6f1dffee10d5fb92ed6b1c" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t driver::KeyboardDriver::led_byte_to_send</definition>
+        <argsstring></argsstring>
+        <name>led_byte_to_send</name>
+        <qualifiedname>driver::KeyboardDriver::led_byte_to_send</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="25" column="25" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d14/a17171_1afba07c783deebfb275c1437f7c23601d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool driver::KeyboardDriver::shift_pressed</definition>
+        <argsstring></argsstring>
+        <name>shift_pressed</name>
+        <qualifiedname>driver::KeyboardDriver::shift_pressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="21" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d14/a17171_1a703464394033a8f4f664d9289ae2e9f8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool driver::KeyboardDriver::waiting_for_led_ack</definition>
+        <argsstring></argsstring>
+        <name>waiting_for_led_ack</name>
+        <qualifiedname>driver::KeyboardDriver::waiting_for_led_ack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="24" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d14/a17171_1a63898e993f02352193db996d00179347" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::KeyboardDriver::KeyboardDriver</definition>
+        <argsstring>(hardware_communication::InterruptManager *interrupt_manager, KeyboardEventHandler *keyboardEventHandler)</argsstring>
+        <name>KeyboardDriver</name>
+        <qualifiedname>driver::KeyboardDriver::KeyboardDriver</qualifiedname>
+        <param>
+          <type><ref refid="d2/d2e/a17203" kindref="compound">hardware_communication::InterruptManager</ref> *</type>
+          <declname>interrupt_manager</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/de0/a17167" kindref="compound">KeyboardEventHandler</ref> *</type>
+          <declname>keyboardEventHandler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="30" column="17" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="13" bodyend="21"/>
+        <references refid="d1/d14/a17171_1a11ec84b7abf113ec270f124564776e1f" compoundref="d7/dbd/a16241" startline="27">keyboardEventHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/d14/a17171_1a77da196f3c04c549e1085ce5566e5df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::KeyboardDriver::~KeyboardDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~KeyboardDriver</name>
+        <qualifiedname>driver::KeyboardDriver::~KeyboardDriver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="31" column="17" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d14/a17171_1a58553d39d7dcfe6b55e8ddb1e7b1d187" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void driver::KeyboardDriver::activate</definition>
+        <argsstring>() override</argsstring>
+        <name>activate</name>
+        <qualifiedname>driver::KeyboardDriver::activate</qualifiedname>
+        <reimplements refid="d6/d6f/a17159_1a8c86c1e52652d8b491d37a3b60b535b0">activate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="34" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="167" bodyend="176"/>
+        <references refid="d8/d86/a16284_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="da/da1/a16259" startline="276" endline="472">basic::printf</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/d14/a17171_1aaa7e99b6214dc8439230a95dd57e617e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void driver::KeyboardDriver::deactivate</definition>
+        <argsstring>() override</argsstring>
+        <name>deactivate</name>
+        <qualifiedname>driver::KeyboardDriver::deactivate</qualifiedname>
+        <reimplements refid="d6/d6f/a17159_1a4b3b5e5a163c2c0e3cb58ea752ebcef1">deactivate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="36" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="179" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d14/a17171_1a248fa0da9acac54a3a8880c7b66b3f2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t driver::KeyboardDriver::handleInterrupt</definition>
+        <argsstring>(uint32_t esp) override</argsstring>
+        <name>handleInterrupt</name>
+        <qualifiedname>driver::KeyboardDriver::handleInterrupt</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>esp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="32" column="26" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="25" bodyend="160"/>
+        <references refid="d4/de0/a17167_1a28547100b7420e1f73b745df873cd411">driver::KeyboardEventHandler::onKeyUp</references>
+      </memberdef>
+      <memberdef kind="function" id="d9/dec/a17195_1aa89d41d69840cb4f1c8692fa6ded28f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>uintptr_t</type>
+        <definition>virtual uintptr_t hardware_communication::InterruptHandler::handleInterrupt</definition>
+        <argsstring>(uintptr_t esp)=0</argsstring>
+        <name>handleInterrupt</name>
+        <qualifiedname>hardware_communication::InterruptHandler::handleInterrupt</qualifiedname>
+        <param>
+          <type>uintptr_t</type>
+          <declname>esp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="30" column="35"/>
+        <referencedby refid="d2/d2e/a17203_1a2d3ef1656e1eaaf86be40a200a49a4b2" compoundref="d7/dae/a16265" startline="169" endline="186">hardware_communication::InterruptManager::handleInterrupt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d1/d14/a17171_1a22b7b080ab1c8b0f2ed4beba75b34691" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int driver::KeyboardDriver::reset</definition>
+        <argsstring>() override</argsstring>
+        <name>reset</name>
+        <qualifiedname>driver::KeyboardDriver::reset</qualifiedname>
+        <reimplements refid="d6/d6f/a17159_1a98d2e779c02364fc58c172d0d2a32bdd">reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="35" column="21" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="178" bodyend="178"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d9/dec/a17195_1ae86f4eae0ce9272b2027d44bdfd71e33" prot="protected" static="no" mutable="no">
+        <type><ref refid="db/d09/a16235_1a6c5563315b1a2f5c67ae8b78d06e3c7f" kindref="member">InterruptManager</ref> *</type>
+        <definition>InterruptManager* hardware_communication::InterruptHandler::interrupt_manager</definition>
+        <argsstring></argsstring>
+        <name>interrupt_manager</name>
+        <qualifiedname>hardware_communication::InterruptHandler::interrupt_manager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="26" column="34" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="26" bodyend="-1"/>
+        <referencedby refid="d9/dec/a17195_1a134c8931dff43e766f1ddc4d0f35cd48" compoundref="d7/dae/a16265" startline="11" endline="15">hardware_communication::InterruptHandler::InterruptHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d9/dec/a17195_1afeede822d3e98957e76e627a54ec2f7a" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t hardware_communication::InterruptHandler::interruptNumber</definition>
+        <argsstring></argsstring>
+        <name>interruptNumber</name>
+        <qualifiedname>hardware_communication::InterruptHandler::interruptNumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="25" column="25" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="25" bodyend="-1"/>
+        <referencedby refid="d9/dec/a17195_1a134c8931dff43e766f1ddc4d0f35cd48" compoundref="d7/dae/a16265" startline="11" endline="15">hardware_communication::InterruptHandler::InterruptHandler</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>driver::Driver</label>
+        <link refid="d6/d6f/a17159"/>
+      </node>
+      <node id="1">
+        <label>driver::KeyboardDriver</label>
+        <link refid="d1/d14/a17171"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>hardware_communication::InterruptHandler</label>
+        <link refid="d9/dec/a17195"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>bool</label>
+      </node>
+      <node id="11">
+        <label>driver::Driver</label>
+        <link refid="d6/d6f/a17159"/>
+      </node>
+      <node id="1">
+        <label>driver::KeyboardDriver</label>
+        <link refid="d1/d14/a17171"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-commandPort</edgelabel>
+          <edgelabel>-dataPort</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>-caps_on</edgelabel>
+          <edgelabel>-shift_pressed</edgelabel>
+          <edgelabel>-waiting_for_led_ack</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-led_byte_to_send</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>-keyboardEventHandler</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>driver::KeyboardEventHandler</label>
+        <link refid="d4/de0/a17167"/>
+      </node>
+      <node id="7">
+        <label>hardware_communication::IDT_row</label>
+        <link refid="d4/dcb/a17199"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-handlerAddressHighbits</edgelabel>
+          <edgelabel>-handlerAddressLowbits</edgelabel>
+          <edgelabel>-kernelCodeSegmentSelector</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-access</edgelabel>
+          <edgelabel>-reserved</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>hardware_communication::InterruptHandler</label>
+        <link refid="d9/dec/a17195"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#interruptNumber</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>#interrupt_manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>hardware_communication::InterruptManager</label>
+        <link refid="d2/d2e/a17203"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+limit</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+base</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>#interruptDescriptorTable</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>#handlers</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>#picMasterCommand</edgelabel>
+          <edgelabel>#picMasterData</edgelabel>
+          <edgelabel>#picSlaveCommand</edgelabel>
+          <edgelabel>#picSlaveData</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>hardware_communication::Port</label>
+        <link refid="d7/dbb/a17207"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>#portnumber</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>hardware_communication::Port8Bit</label>
+        <link refid="da/db0/a17211"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>hardware_communication::Port8BitSlow</label>
+        <link refid="df/dd0/a17215"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>uint16_t</label>
+      </node>
+      <node id="6">
+        <label>uint32_t</label>
+      </node>
+      <node id="3">
+        <label>uint8_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="17" column="9" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="17" bodyend="37"/>
+    <listofallmembers>
+      <member refid="d1/d14/a17171_1a58553d39d7dcfe6b55e8ddb1e7b1d187" prot="public" virt="virtual"><scope>driver::KeyboardDriver</scope><name>activate</name></member>
+      <member refid="d1/d14/a17171_1a8a63dbc25a08a75f62ae0674df1deb30" prot="private" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>caps_on</name></member>
+      <member refid="d1/d14/a17171_1a58fc9113701ffc04637996780c843ff0" prot="private" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>commandPort</name></member>
+      <member refid="d1/d14/a17171_1afd6cdddb62a2a2d2b31043eb32887b41" prot="private" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>dataPort</name></member>
+      <member refid="d1/d14/a17171_1aaa7e99b6214dc8439230a95dd57e617e" prot="public" virt="virtual"><scope>driver::KeyboardDriver</scope><name>deactivate</name></member>
+      <member refid="d6/d6f/a17159_1a7de0c11fff1dc1f5d004b2a76e840840" prot="public" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>Driver</name></member>
+      <member refid="d1/d14/a17171_1a248fa0da9acac54a3a8880c7b66b3f2b" prot="public" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>handleInterrupt</name></member>
+      <member refid="d9/dec/a17195_1aa89d41d69840cb4f1c8692fa6ded28f4" prot="public" virt="pure-virtual" ambiguityscope="hardware_communication::InterruptHandler::"><scope>driver::KeyboardDriver</scope><name>handleInterrupt</name></member>
+      <member refid="d9/dec/a17195_1ae86f4eae0ce9272b2027d44bdfd71e33" prot="protected" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>interrupt_manager</name></member>
+      <member refid="d9/dec/a17195_1a134c8931dff43e766f1ddc4d0f35cd48" prot="protected" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>InterruptHandler</name></member>
+      <member refid="d9/dec/a17195_1afeede822d3e98957e76e627a54ec2f7a" prot="protected" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>interruptNumber</name></member>
+      <member refid="d1/d14/a17171_1a63898e993f02352193db996d00179347" prot="public" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>KeyboardDriver</name></member>
+      <member refid="d1/d14/a17171_1a11ec84b7abf113ec270f124564776e1f" prot="private" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>keyboardEventHandler</name></member>
+      <member refid="d1/d14/a17171_1aed7b5d279f6f1dffee10d5fb92ed6b1c" prot="private" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>led_byte_to_send</name></member>
+      <member refid="d1/d14/a17171_1a22b7b080ab1c8b0f2ed4beba75b34691" prot="public" virt="virtual"><scope>driver::KeyboardDriver</scope><name>reset</name></member>
+      <member refid="d1/d14/a17171_1afba07c783deebfb275c1437f7c23601d" prot="private" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>shift_pressed</name></member>
+      <member refid="d1/d14/a17171_1a703464394033a8f4f664d9289ae2e9f8" prot="private" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>waiting_for_led_ack</name></member>
+      <member refid="d6/d6f/a17159_1aacc7524b989c2561147c5dd0b901381c" prot="public" virt="virtual"><scope>driver::KeyboardDriver</scope><name>~Driver</name></member>
+      <member refid="d9/dec/a17195_1a5114528f0db9926365b345337e42af9b" prot="protected" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>~InterruptHandler</name></member>
+      <member refid="d1/d14/a17171_1a77da196f3c04c549e1085ce5566e5df3" prot="public" virt="non-virtual"><scope>driver::KeyboardDriver</scope><name>~KeyboardDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

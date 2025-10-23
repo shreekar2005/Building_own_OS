@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d4/de0/a17167" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>driver::KeyboardEventHandler</compoundname>
+    <derivedcompoundref refid="d5/dfd/a17103" prot="public" virt="non-virtual">KeyboardEventHandler_for_kernel</derivedcompoundref>
+    <includes refid="d7/dbd/a16241" local="yes">kkeyboard.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/de0/a17167_1a63ee0249476256e721e05e6375383317" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::KeyboardEventHandler::KeyboardEventHandler</definition>
+        <argsstring>()</argsstring>
+        <name>KeyboardEventHandler</name>
+        <qualifiedname>driver::KeyboardEventHandler::KeyboardEventHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="11" column="17" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="6" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de0/a17167_1aed6531b818751f0f23b6b9836ac94aa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>driver::KeyboardEventHandler::~KeyboardEventHandler</definition>
+        <argsstring>()</argsstring>
+        <name>~KeyboardEventHandler</name>
+        <qualifiedname>driver::KeyboardEventHandler::~KeyboardEventHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="12" column="25" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de0/a17167_1ae2b923ef0eb58e29f57a155debadac6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void driver::KeyboardEventHandler::onKeyDown</definition>
+        <argsstring>(char ascii)=0</argsstring>
+        <name>onKeyDown</name>
+        <qualifiedname>driver::KeyboardEventHandler::onKeyDown</qualifiedname>
+        <reimplementedby refid="d5/dfd/a17103_1af82a0bd16f995dd285d4f7822117377c">onKeyDown</reimplementedby>
+        <param>
+          <type>char</type>
+          <declname>ascii</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="13" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/de0/a17167_1a28547100b7420e1f73b745df873cd411" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void driver::KeyboardEventHandler::onKeyUp</definition>
+        <argsstring>(char ascii)=0</argsstring>
+        <name>onKeyUp</name>
+        <qualifiedname>driver::KeyboardEventHandler::onKeyUp</qualifiedname>
+        <reimplementedby refid="d5/dfd/a17103_1a0d74a48573c10174ac8bf836ac39f886">onKeyUp</reimplementedby>
+        <param>
+          <type>char</type>
+          <declname>ascii</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="14" column="30"/>
+        <referencedby refid="d1/d14/a17171_1a248fa0da9acac54a3a8880c7b66b3f2b" compoundref="dc/d22/a16271" startline="25" endline="160">driver::KeyboardDriver::handleInterrupt</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KeyboardEventHandler_for_kernel</label>
+        <link refid="d5/dfd/a17103"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>driver::KeyboardEventHandler</label>
+        <link refid="d4/de0/a17167"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>driver::KeyboardEventHandler</label>
+        <link refid="d4/de0/a17167"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" line="9" column="9" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp" bodystart="9" bodyend="15"/>
+    <listofallmembers>
+      <member refid="d4/de0/a17167_1a63ee0249476256e721e05e6375383317" prot="public" virt="non-virtual"><scope>driver::KeyboardEventHandler</scope><name>KeyboardEventHandler</name></member>
+      <member refid="d4/de0/a17167_1ae2b923ef0eb58e29f57a155debadac6a" prot="public" virt="pure-virtual"><scope>driver::KeyboardEventHandler</scope><name>onKeyDown</name></member>
+      <member refid="d4/de0/a17167_1a28547100b7420e1f73b745df873cd411" prot="public" virt="pure-virtual"><scope>driver::KeyboardEventHandler</scope><name>onKeyUp</name></member>
+      <member refid="d4/de0/a17167_1aed6531b818751f0f23b6b9836ac94aa0" prot="public" virt="virtual"><scope>driver::KeyboardEventHandler</scope><name>~KeyboardEventHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
