@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "OSOS - 32-bit Operating System", "index.html", [
+  [ "OSOS - Documentation", "index.html", [
     [ "OSOS - 32-bit Operating System Documentation", "index.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
