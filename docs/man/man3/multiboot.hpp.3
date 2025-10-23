@@ -1,0 +1,702 @@
+.TH "libk_header/basic/multiboot.hpp" 3 "Thu Oct 23 2025 23:59:22" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libk_header/basic/multiboot.hpp
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBmultiboot_aout_symbol_table_t\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_apm_info\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_color\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_elf_section_header_table_t\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_header\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_info_t\fP"
+.br
+.ti -1c
+.RI "union \fBmultiboot_info\&.__unnamed2__\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_info\&.__unnamed2__\&.__unnamed4__\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_info\&.__unnamed2__\&.__unnamed6__\fP"
+.br
+.ti -1c
+.RI "union \fBmultiboot_info\&.u\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_memory_map_t\fP"
+.br
+.ti -1c
+.RI "struct \fBmultiboot_module_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMULTIBOOT_AOUT_KLUDGE\fP   0x00010000"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_BOOTLOADER_MAGIC\fP   0x2BADB002"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT\fP   2"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_FRAMEBUFFER_TYPE_INDEXED\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_FRAMEBUFFER_TYPE_RGB\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_HEADER_ALIGN\fP   4"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_HEADER_MAGIC\fP   0x1BADB002"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_ALIGN\fP   0x00000004"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_AOUT_SYMS\fP   0x00000010"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_APM_TABLE\fP   0x00000400"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_BOOT_LOADER_NAME\fP   0x00000200"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_BOOTDEV\fP   0x00000002"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_CMDLINE\fP   0x00000004"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_CONFIG_TABLE\fP   0x00000100"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_DRIVE_INFO\fP   0x00000080"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_ELF_SHDR\fP   0X00000020"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_FRAMEBUFFER_INFO\fP   0x00001000"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_MEM_MAP\fP   0x00000040"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_MEMORY\fP   0x00000001"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_MODS\fP   0x00000008"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_INFO_VBE_INFO\fP   0x00000800"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_MEMORY_ACPI_RECLAIMABLE\fP   3"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_MEMORY_AVAILABLE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_MEMORY_BADRAM\fP   5"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_MEMORY_INFO\fP   0x00000002"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_MEMORY_NVS\fP   4"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_MEMORY_RESERVED\fP   2"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_MOD_ALIGN\fP   0x00001000"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_PAGE_ALIGN\fP   0x00000001"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_SEARCH\fP   8192"
+.br
+.ti -1c
+.RI "#define \fBMULTIBOOT_VIDEO_MODE\fP   0x00000004"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned short \fBmultiboot_uint16_t\fP"
+.br
+.ti -1c
+.RI "typedef unsigned int \fBmultiboot_uint32_t\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long long \fBmultiboot_uint64_t\fP"
+.br
+.ti -1c
+.RI "typedef unsigned char \fBmultiboot_uint8_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct \fBmultiboot_mmap_entry\fP \fB__attribute__\fP ((packed))"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "struct \fBmultiboot_mod_list\fP \fB__attribute__\fP"
+.br
+.ti -1c
+.RI "\fBmultiboot_uint64_t\fP \fBaddr\fP"
+.br
+.ti -1c
+.RI "\fBmultiboot_uint64_t\fP \fBlen\fP"
+.br
+.ti -1c
+.RI "\fBmultiboot_uint32_t\fP \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBmultiboot_uint32_t\fP \fBtype\fP"
+.br
+.in -1c
+.SH "Class Documentation"
+.PP 
+.SH "struct multiboot_aout_symbol_table"
+.PP 
+Definition at line \fB127\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint32_t\fP \fIaddr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIreserved\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIstrsize\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fItabsize\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_apm_info"
+.PP 
+Definition at line \fB261\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint16_t\fP \fIcseg\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIcseg_16\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIcseg_16_len\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIcseg_len\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIdseg\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIdseg_len\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIflags\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIoffset\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIversion\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_color"
+.PP 
+Definition at line \fB225\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint8_t\fP \fIblue\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIgreen\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIred\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_elf_section_header_table"
+.PP 
+Definition at line \fB137\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint32_t\fP \fIaddr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fInum\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIshndx\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIsize\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_header"
+.PP 
+Definition at line \fB101\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint32_t\fP \fIbss_end_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIchecksum\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIdepth\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIentry_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIflags\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIheader_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIheight\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIload_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIload_end_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImagic\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImode_type\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIwidth\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_info"
+.PP 
+Definition at line \fB146\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+union \fBmultiboot_info\&.__unnamed2__\fP \fI__unnamed__\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIapm_table\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIboot_device\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIboot_loader_name\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIcmdline\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIconfig_table\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIdrives_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIdrives_length\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIflags\fP 
+.br
+.PP
+\fBmultiboot_uint64_t\fP \fIframebuffer_addr\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIframebuffer_bpp\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIframebuffer_height\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIframebuffer_pitch\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIframebuffer_type\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIframebuffer_width\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImem_lower\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImem_upper\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImmap_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImmap_length\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImods_addr\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImods_count\fP 
+.br
+.PP
+union \fBmultiboot_info\&.u\fP \fIu\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIvbe_control_info\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIvbe_interface_len\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIvbe_interface_off\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIvbe_interface_seg\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIvbe_mode\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIvbe_mode_info\fP 
+.br
+.PP
+.RE
+.PP
+.SH "union multiboot_info\&.__unnamed2__"
+.PP 
+Definition at line \fB205\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+struct \fBmultiboot_info\&.__unnamed2__\&.__unnamed4__\fP \fI__unnamed__\fP 
+.br
+.PP
+struct \fBmultiboot_info\&.__unnamed2__\&.__unnamed6__\fP \fI__unnamed__\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_info\&.__unnamed2__\&.__unnamed4__"
+.PP 
+Definition at line \fB207\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint32_t\fP \fIframebuffer_palette_addr\fP 
+.br
+.PP
+\fBmultiboot_uint16_t\fP \fIframebuffer_palette_num_colors\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_info\&.__unnamed2__\&.__unnamed6__"
+.PP 
+Definition at line \fB212\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint8_t\fP \fIframebuffer_blue_field_position\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIframebuffer_blue_mask_size\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIframebuffer_green_field_position\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIframebuffer_green_mask_size\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIframebuffer_red_field_position\fP 
+.br
+.PP
+\fBmultiboot_uint8_t\fP \fIframebuffer_red_mask_size\fP 
+.br
+.PP
+.RE
+.PP
+.SH "union multiboot_info\&.u"
+.PP 
+Definition at line \fB165\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+multiboot_aout_symbol_table_t \fIaout_sym\fP 
+.br
+.PP
+multiboot_elf_section_header_table_t \fIelf_sec\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_mmap_entry"
+.PP 
+Definition at line \fB232\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint64_t\fP \fIaddr\fP 
+.br
+.PP
+\fBmultiboot_uint64_t\fP \fIlen\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIsize\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fItype\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct multiboot_mod_list"
+.PP 
+Definition at line \fB246\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+\fBClass Members:\fP
+.RS 4
+\fBmultiboot_uint32_t\fP \fIcmdline\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImod_end\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fImod_start\fP 
+.br
+.PP
+\fBmultiboot_uint32_t\fP \fIpad\fP 
+.br
+.PP
+.RE
+.PP
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define MULTIBOOT_AOUT_KLUDGE   0x00010000"
+
+.PP
+Definition at line \fB55\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_BOOTLOADER_MAGIC   0x2BADB002"
+
+.PP
+Definition at line \fB35\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT   2"
+
+.PP
+Definition at line \fB203\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED   0"
+
+.PP
+Definition at line \fB201\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_FRAMEBUFFER_TYPE_RGB   1"
+
+.PP
+Definition at line \fB202\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_HEADER_ALIGN   4"
+
+.PP
+Definition at line \fB29\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_HEADER_MAGIC   0x1BADB002"
+
+.PP
+Definition at line \fB32\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_ALIGN   0x00000004"
+
+.PP
+Definition at line \fB41\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_AOUT_SYMS   0x00000010"
+
+.PP
+Definition at line \fB71\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_APM_TABLE   0x00000400"
+
+.PP
+Definition at line \fB88\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_BOOT_LOADER_NAME   0x00000200"
+
+.PP
+Definition at line \fB85\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_BOOTDEV   0x00000002"
+
+.PP
+Definition at line \fB62\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_CMDLINE   0x00000004"
+
+.PP
+Definition at line \fB64\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_CONFIG_TABLE   0x00000100"
+
+.PP
+Definition at line \fB82\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_DRIVE_INFO   0x00000080"
+
+.PP
+Definition at line \fB79\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_ELF_SHDR   0X00000020"
+
+.PP
+Definition at line \fB73\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_FRAMEBUFFER_INFO   0x00001000"
+
+.PP
+Definition at line \fB92\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_MEM_MAP   0x00000040"
+
+.PP
+Definition at line \fB76\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_MEMORY   0x00000001"
+
+.PP
+Definition at line \fB60\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_MODS   0x00000008"
+
+.PP
+Definition at line \fB66\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_INFO_VBE_INFO   0x00000800"
+
+.PP
+Definition at line \fB91\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_MEMORY_ACPI_RECLAIMABLE   3"
+
+.PP
+Definition at line \fB239\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_MEMORY_AVAILABLE   1"
+
+.PP
+Definition at line \fB237\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_MEMORY_BADRAM   5"
+
+.PP
+Definition at line \fB241\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_MEMORY_INFO   0x00000002"
+
+.PP
+Definition at line \fB49\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_MEMORY_NVS   4"
+
+.PP
+Definition at line \fB240\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_MEMORY_RESERVED   2"
+
+.PP
+Definition at line \fB238\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_MOD_ALIGN   0x00001000"
+
+.PP
+Definition at line \fB38\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_PAGE_ALIGN   0x00000001"
+
+.PP
+Definition at line \fB46\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_SEARCH   8192"
+
+.PP
+Definition at line \fB28\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "#define MULTIBOOT_VIDEO_MODE   0x00000004"
+
+.PP
+Definition at line \fB52\fP of file \fBmultiboot\&.hpp\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef unsigned short \fBmultiboot_uint16_t\fP"
+
+.PP
+Definition at line \fB97\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "typedef unsigned int \fBmultiboot_uint32_t\fP"
+
+.PP
+Definition at line \fB98\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "typedef unsigned long long \fBmultiboot_uint64_t\fP"
+
+.PP
+Definition at line \fB99\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "typedef unsigned char \fBmultiboot_uint8_t\fP"
+
+.PP
+Definition at line \fB96\fP of file \fBmultiboot\&.hpp\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "struct \fBmultiboot_mmap_entry\fP __attribute__ ((packed))"
+
+.SH "Variable Documentation"
+.PP 
+.SS "struct \fBmultiboot_mod_list\fP __attribute__"
+
+.PP
+Referenced by \fBessential::GDT::installTable()\fP, \fBessential::GDT::printLoadedTable()\fP, and \fBessential::GDT::printLoadedTableHeader()\fP\&.
+.SS "\fBmultiboot_uint64_t\fP addr"
+
+.PP
+Definition at line \fB1\fP of file \fBmultiboot\&.hpp\fP\&.
+.SS "\fBmultiboot_uint64_t\fP len"
+
+.PP
+Definition at line \fB2\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+Referenced by \fBbasic::printf()\fP, and \fBprintHex()\fP\&.
+.SS "\fBmultiboot_uint32_t\fP size"
+
+.PP
+Definition at line \fB0\fP of file \fBmultiboot\&.hpp\fP\&.
+.PP
+Referenced by \fBoperator delete()\fP, \fBoperator delete[]()\fP, \fBoperator new()\fP, and \fBoperator new[]()\fP\&.
+.SS "\fBmultiboot_uint32_t\fP type"
+
+.PP
+Definition at line \fB8\fP of file \fBmultiboot\&.hpp\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

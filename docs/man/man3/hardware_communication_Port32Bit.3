@@ -1,0 +1,92 @@
+.TH "hardware_communication::Port32Bit" 3 "Thu Oct 23 2025 23:59:22" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hardware_communication::Port32Bit
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'kport\&.hpp'\fP
+.PP
+Inherits \fBhardware_communication::Port\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPort32Bit\fP (uint16_t \fBportnumber\fP)"
+.br
+.ti -1c
+.RI "\fB~Port32Bit\fP () override"
+.br
+.ti -1c
+.RI "uint32_t \fBread\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (uint32_t data)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBportnumber\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB80\fP of file \fBkport\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "hardware_communication::Port32Bit::Port32Bit (uint16_t portnumber)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB47\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+47 :Port(portnumber){} 
+.fi
+
+.SS "hardware_communication::Port32Bit::~Port32Bit ()\fC [override]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+48 {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "uint32_t hardware_communication::Port32Bit::read ()"
+
+.PP
+Definition at line \fB53\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+53                                               {
+54     uint32_t result;
+55     __asm__ volatile("inl %1, %0" :"=a"(result) : "Nd"(portnumber));
+56     return result;
+57 }
+.fi
+
+.SS "void hardware_communication::Port32Bit::write (uint32_t data)"
+
+.PP
+Definition at line \fB50\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+50                                                         {
+51     __asm__ volatile("outl %0, %1" : : "a"(data), "Nd"(portnumber));
+52 }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "uint16_t hardware_communication::Port::portnumber\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line \fB13\fP of file \fBkport\&.hpp\fP\&.
+.PP
+Referenced by \fBhardware_communication::Port::Port()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

@@ -1,0 +1,301 @@
+.TH "driver::MouseDriver" 3 "Thu Oct 23 2025 23:59:22" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+driver::MouseDriver
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'kmouse\&.hpp'\fP
+.PP
+Inherits \fBhardware_communication::InterruptHandler\fP, and \fBdriver::Driver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMouseDriver\fP (\fBhardware_communication::InterruptManager\fP *\fBinterrupt_manager\fP, \fBMouseEventHandler\fP *\fBmouseEventHandler\fP)"
+.br
+.ti -1c
+.RI "\fB~MouseDriver\fP ()"
+.br
+.ti -1c
+.RI "void \fBactivate\fP () override"
+.br
+.ti -1c
+.RI "void \fBdeactivate\fP () override"
+.br
+.ti -1c
+.RI "uint32_t \fBhandleInterrupt\fP (uint32_t esp) override"
+.br
+.ti -1c
+.RI "virtual uintptr_t \fBhandleInterrupt\fP (uintptr_t esp)=0"
+.br
+.ti -1c
+.RI "int \fBreset\fP () override"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static uint16_t \fBmouse_block_video_mem_value\fP (uint16_t \fBold_char_under_mouse_pointer\fP, uint8_t mouse_pointer_color)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static int8_t \fB__mouse_x_\fP = \-1"
+.br
+.ti -1c
+.RI "static int8_t \fB__mouse_y_\fP = \-1"
+.br
+.ti -1c
+.RI "static uint16_t \fBold_char_under_mouse_pointer\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBInterruptManager\fP * \fBinterrupt_manager\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBinterruptNumber\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int8_t \fBbuffer\fP [3]"
+.br
+.ti -1c
+.RI "uint8_t \fBbuttons\fP"
+.br
+.ti -1c
+.RI "\fBhardware_communication::Port8Bit\fP \fBcommandPort\fP"
+.br
+.ti -1c
+.RI "\fBhardware_communication::Port8Bit\fP \fBdataPort\fP"
+.br
+.ti -1c
+.RI "\fBMouseEventHandler\fP * \fBmouseEventHandler\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBoffset\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB39\fP of file \fBkmouse\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "driver::MouseDriver::MouseDriver (\fBhardware_communication::InterruptManager\fP * interrupt_manager, \fBdriver::MouseEventHandler\fP * mouseEventHandler)"
+
+.PP
+Definition at line \fB22\fP of file \fBkmouse\&.cpp\fP\&..PP
+.nf
+23 : hardware_communication::InterruptHandler(0x2C, interrupt_manager), 
+24   dataPort(0x60), 
+25   commandPort(0x64)
+26 {
+27     this\->mouseEventHandler = mouseEventHandler;
+28 }
+.fi
+
+.PP
+References \fBmouseEventHandler\fP\&.
+.SS "driver::MouseDriver::~MouseDriver ()"
+
+.PP
+Definition at line \fB30\fP of file \fBkmouse\&.cpp\fP\&..PP
+.nf
+30 {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void driver::MouseDriver::activate ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdriver::Driver\fP\&.
+.PP
+Definition at line \fB74\fP of file \fBkmouse\&.cpp\fP\&..PP
+.nf
+74                                 {
+75     while(commandPort\&.read() & 1) dataPort\&.read();
+76     offset = 0;
+77     buttons = 0;
+78     __mouse_x_ = 40;
+79     __mouse_y_ = 12;
+80 
+81     static uint16_t* video_memory = (uint16_t*) 0xb8000;
+82     old_char_under_mouse_pointer = video_memory[80 * __mouse_y_ + __mouse_x_];
+83     video_memory[80 * __mouse_y_ + __mouse_x_] = mouse_block_video_mem_value(old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
+84 
+85     // Enable the auxiliary mouse device
+86     commandPort\&.write(0xA8); 
+87     
+88     // Enable the interrupts for the mouse
+89     commandPort\&.write(0x20); 
+90     uint8_t status = (dataPort\&.read() | 2); 
+91     commandPort\&.write(0x60);
+92     dataPort\&.write(status);
+93 
+94     // Set mouse to use default settings and enable packet streaming
+95     commandPort\&.write(0xD4);
+96     dataPort\&.write(0xF4);
+97     dataPort\&.read(); // Acknowledge
+98     
+99     basic::printf("Mouse Driver activated!\\n");
+100 }
+.fi
+
+.PP
+References \fBMOUSE_POINTER_COLOR\fP, and \fBbasic::printf()\fP\&.
+.SS "void driver::MouseDriver::deactivate ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdriver::Driver\fP\&.
+.PP
+Definition at line \fB103\fP of file \fBkmouse\&.cpp\fP\&..PP
+.nf
+103 {}
+.fi
+
+.SS "uint32_t driver::MouseDriver::handleInterrupt (uint32_t esp)\fC [override]\fP"
+
+.PP
+Definition at line \fB32\fP of file \fBkmouse\&.cpp\fP\&..PP
+.nf
+32                                                        {
+33     // Check if the mouse has sent data
+34     uint8_t status = commandPort\&.read();
+35     if(!(status & 0x20)) return esp;
+36     
+37     // Read the next byte of the packet
+38     buffer[offset] = dataPort\&.read();
+39     offset = (offset + 1) % 3;
+40 
+41     // When a full 3\-byte packet is received
+42     if(offset == 0){
+43         if(mouseEventHandler == 0) return esp; // Do nothing without a handler
+44 
+45         // \-\-\- Handle Mouse Movement \-\-\-
+46         int8_t delta_x = buffer[1];
+47         int8_t delta_y = \-buffer[2]; // Y\-axis is inverted from the mouse's perspective
+48 
+49         if (delta_x != 0 || delta_y != 0) {
+50             mouseEventHandler\->onMouseMove(delta_x, delta_y);
+51         }
+52 
+53         // \-\-\- Handle Mouse Buttons \-\-\-
+54         for(uint8_t i = 0; i < 3; i++) {
+55             // Check if the state of button 'i' has changed
+56             if((buffer[0] & (1 << i)) != (buttons & (1 << i))) {
+57                 if(buffer[0] & (1 << i)) {
+58                     mouseEventHandler\->onMouseDown(i + 1); // Left=1, Right=2, Middle=3
+59                 } else {
+60                     mouseEventHandler\->onMouseUp(i + 1);
+61                 }
+62             }
+63         }
+64         buttons = buffer[0]; // Save the current button state for the next interrupt
+65     }
+66 
+67     return esp;
+68 }
+.fi
+
+.PP
+References \fBdriver::MouseEventHandler::onMouseMove()\fP\&.
+.SS "virtual uintptr_t hardware_communication::InterruptHandler::handleInterrupt (uintptr_t esp)\fC [pure virtual]\fP, \fC [inherited]\fP"
+
+.PP
+Referenced by \fBhardware_communication::InterruptManager::handleInterrupt()\fP\&.
+.SS "uint16_t driver::MouseDriver::mouse_block_video_mem_value (uint16_t old_char_under_mouse_pointer, uint8_t mouse_pointer_color)\fC [static]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBkmouse\&.cpp\fP\&..PP
+.nf
+17                                                                                                          {
+18     return (current_char & 0x0FFF) | (mouse_pointer_color << 12);
+19 }
+.fi
+
+.PP
+Referenced by \fBMouseEventHandler_for_kernel::onMouseMove()\fP, and \fBprintCharStr()\fP\&.
+.SS "int driver::MouseDriver::reset ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdriver::Driver\fP\&.
+.PP
+Definition at line \fB102\fP of file \fBkmouse\&.cpp\fP\&..PP
+.nf
+102 {return 0;}
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int8_t driver::MouseDriver::__mouse_x_ = \-1\fC [static]\fP"
+
+.PP
+Definition at line \fB50\fP of file \fBkmouse\&.hpp\fP\&.
+.PP
+Referenced by \fBMouseEventHandler_for_kernel::onMouseDown()\fP, \fBMouseEventHandler_for_kernel::onMouseMove()\fP, and \fBprintCharStr()\fP\&.
+.SS "int8_t driver::MouseDriver::__mouse_y_ = \-1\fC [static]\fP"
+
+.PP
+Definition at line \fB50\fP of file \fBkmouse\&.hpp\fP\&.
+.PP
+Referenced by \fBMouseEventHandler_for_kernel::onMouseDown()\fP, \fBMouseEventHandler_for_kernel::onMouseMove()\fP, and \fBprintCharStr()\fP\&.
+.SS "int8_t driver::MouseDriver::buffer[3]\fC [private]\fP"
+
+.PP
+Definition at line \fB42\fP of file \fBkmouse\&.hpp\fP\&.
+.SS "uint8_t driver::MouseDriver::buttons\fC [private]\fP"
+
+.PP
+Definition at line \fB44\fP of file \fBkmouse\&.hpp\fP\&.
+.SS "\fBhardware_communication::Port8Bit\fP driver::MouseDriver::commandPort\fC [private]\fP"
+
+.PP
+Definition at line \fB41\fP of file \fBkmouse\&.hpp\fP\&.
+.SS "\fBhardware_communication::Port8Bit\fP driver::MouseDriver::dataPort\fC [private]\fP"
+
+.PP
+Definition at line \fB40\fP of file \fBkmouse\&.hpp\fP\&.
+.SS "\fBInterruptManager\fP* hardware_communication::InterruptHandler::interrupt_manager\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line \fB26\fP of file \fBkinterrupt\&.hpp\fP\&.
+.PP
+Referenced by \fBhardware_communication::InterruptHandler::InterruptHandler()\fP\&.
+.SS "uint8_t hardware_communication::InterruptHandler::interruptNumber\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBkinterrupt\&.hpp\fP\&.
+.PP
+Referenced by \fBhardware_communication::InterruptHandler::InterruptHandler()\fP\&.
+.SS "\fBMouseEventHandler\fP* driver::MouseDriver::mouseEventHandler\fC [private]\fP"
+
+.PP
+Definition at line \fB45\fP of file \fBkmouse\&.hpp\fP\&.
+.PP
+Referenced by \fBMouseDriver()\fP\&.
+.SS "uint8_t driver::MouseDriver::offset\fC [private]\fP"
+
+.PP
+Definition at line \fB43\fP of file \fBkmouse\&.hpp\fP\&.
+.SS "uint16_t driver::MouseDriver::old_char_under_mouse_pointer\fC [static]\fP"
+
+.PP
+Definition at line \fB48\fP of file \fBkmouse\&.hpp\fP\&.
+.PP
+Referenced by \fBMouseEventHandler_for_kernel::onMouseMove()\fP, and \fBprintCharStr()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

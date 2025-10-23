@@ -1,0 +1,508 @@
+\doxysubsection{libk\+\_\+header/essential/kgdt.hpp File Reference}
+\hypertarget{a20729}{}\label{a20729}\index{libk\_header/essential/kgdt.hpp@{libk\_header/essential/kgdt.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include "{}basic/kiostream.\+hpp"{}}\newline
+Include dependency graph for kgdt.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d3a/a20730}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dcd/a20731}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a21639}{essential\+::\+GDT}}
+\item 
+class \mbox{\hyperlink{a21635}{essential\+::\+GDT\+\_\+row}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a20738}{essential}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a20729_ac4461ee84aade9ee824de64d4846ec98}{GDT\+\_\+\+ACCESS\+\_\+\+CODE\+\_\+\+PL0}}~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(0) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_ae04daf26bdb792ae557ef1216021cc43}{SEG\+\_\+\+CODE\+\_\+\+EXRD}})
+\item 
+\#define \mbox{\hyperlink{a20729_a01d908c8637340b21274e0176b320c05}{GDT\+\_\+\+ACCESS\+\_\+\+CODE\+\_\+\+PL3}}~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(3) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_ae04daf26bdb792ae557ef1216021cc43}{SEG\+\_\+\+CODE\+\_\+\+EXRD}})
+\item 
+\#define \mbox{\hyperlink{a20729_a1adfff1c72212b5c4e1df35485bb102a}{GDT\+\_\+\+ACCESS\+\_\+\+DATA\+\_\+\+PL0}}~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(0) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_add294548173871e30e54b92bf5da2758}{SEG\+\_\+\+DATA\+\_\+\+RDWR}})
+\item 
+\#define \mbox{\hyperlink{a20729_ac7f57dcdd84028460100b6da75ad4938}{GDT\+\_\+\+ACCESS\+\_\+\+DATA\+\_\+\+PL3}}~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(3) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_add294548173871e30e54b92bf5da2758}{SEG\+\_\+\+DATA\+\_\+\+RDWR}})
+\item 
+\#define \mbox{\hyperlink{a20729_a4941c819dbbef299c391bf53c24caf8d}{GDT\+\_\+\+GRAN\+\_\+\+FLAGS}}~\mbox{\hyperlink{a20729_ae86357f11d481de7242f3178629241b8}{SEG\+\_\+\+GRAN\+\_\+\+GRAN}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a7667e7c13f08890d3a6051346233691c}{SEG\+\_\+\+GRAN\+\_\+\+SIZE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a9759917f0cd67a1d7c87849e211a7993}{SEG\+\_\+\+GRAN\+\_\+\+LONG}}(0) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a79a943b17e5929ca9e06fc7cc1cb0ccc}{SEG\+\_\+\+GRAN\+\_\+\+SAVL}}(0)
+\item 
+\#define \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(x)~((x) $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(x)~((x) $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(x)~(((x) \& 0x03) $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(x)~((x) $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{a20729_ae04daf26bdb792ae557ef1216021cc43}{SEG\+\_\+\+CODE\+\_\+\+EXRD}}~0x0A
+\item 
+\#define \mbox{\hyperlink{a20729_add294548173871e30e54b92bf5da2758}{SEG\+\_\+\+DATA\+\_\+\+RDWR}}~0x02
+\item 
+\#define \mbox{\hyperlink{a20729_ae86357f11d481de7242f3178629241b8}{SEG\+\_\+\+GRAN\+\_\+\+GRAN}}(x)~((x) $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{a20729_a9759917f0cd67a1d7c87849e211a7993}{SEG\+\_\+\+GRAN\+\_\+\+LONG}}(x)~((x) $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{a20729_a79a943b17e5929ca9e06fc7cc1cb0ccc}{SEG\+\_\+\+GRAN\+\_\+\+SAVL}}(x)~((x) $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{a20729_a7667e7c13f08890d3a6051346233691c}{SEG\+\_\+\+GRAN\+\_\+\+SIZE}}(x)~((x) $<$$<$ 6)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a20729_ab808423f6529092dc90fcb7836fe024a}{\texorpdfstring{$\sim$}{\string~}\+GDT}} ()
+\item 
+\mbox{\hyperlink{a20729_a5322ab07a139d8ae6f9c518b288bde15}{\texorpdfstring{$\sim$}{\string~}\+GDT\+\_\+row}} ()
+\item 
+class \mbox{\hyperlink{a21635}{essential\+::\+GDT\+\_\+row}} \mbox{\hyperlink{a20738_a52e3ec8c29cc4bb68f65445749f0bfdb}{essential\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed))
+\item 
+\mbox{\hyperlink{a20729_ad6539f5ca5082793a69451b8c1fc6523}{GDT\+\_\+row}} ()
+\item 
+\mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} (uint32\+\_\+t \mbox{\hyperlink{a20729_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}, uint32\+\_\+t \mbox{\hyperlink{a20729_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}}, uint8\+\_\+t access\+\_\+byte, uint8\+\_\+t gran\+\_\+byte)
+\item 
+void \mbox{\hyperlink{a20729_a258db7c2f70fd1b20332ee3c00cd1d89}{install\+Table}} ()
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a20729_a169aef5ef99da67bb0047dfc3d6a22e4}{kernel\+\_\+\+CS\+\_\+selector}} ()
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a20729_aaa6fbf4816b6af649fc82186fe18b4e0}{kernel\+\_\+\+DS\+\_\+selector}} ()
+\item 
+static void \mbox{\hyperlink{a20729_a0a72b35b5fcadccd545ee4c5ef7efdd3}{print\+Loaded\+Table}} ()
+\item 
+static void \mbox{\hyperlink{a20729_a6aba53071c94f3ffe96befc625602c9c}{print\+Loaded\+Table\+Header}} ()
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a20729_a6ef65886fcf664d696b4361309452c2c}{user\+\_\+\+CS\+\_\+selector}} ()
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a20729_a95dcc3ea7fb0310df8f2ab457deca483}{user\+\_\+\+DS\+\_\+selector}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a20729_a8b0d6200bc639dd37ff68847a0adde5f}{access}}
+\item 
+uintptr\+\_\+t \mbox{\hyperlink{a20729_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a20729_a1a173457c7aa39c59c008fcc3332d2b3}{base\+\_\+high}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{a20729_a71e21ea67de59991e9a27666a1752a8f}{base\+\_\+low}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a20729_a6b67e86f6de9204d76adab79069aec29}{base\+\_\+middle}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a20729_acfea365f69e71368a2db03333d4afd6f}{granularity}}
+\item 
+\mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} \mbox{\hyperlink{a20729_a42e2af3e7b809f6f5e06ecfecdb504e0}{kernel\+\_\+\+CS}}
+\item 
+\mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} \mbox{\hyperlink{a20729_a1b73e3464fcb9312774f2347e1b7604e}{kernel\+\_\+\+DS}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{a20729_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{a20729_aa7ae5b5a918e00776ff07fb1c58a348d}{limit\+\_\+low}}
+\item 
+\mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} \mbox{\hyperlink{a20729_a4facd1fb9d9bd77b1dd234a062c8d9dd}{null\+Segment}}
+\item 
+\mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} \mbox{\hyperlink{a20729_a8d89c16e869ec13a725c780925713916}{user\+\_\+\+CS}}
+\item 
+\mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} \mbox{\hyperlink{a20729_a137b4628cf352225e57720432f2db487}{user\+\_\+\+DS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{a20729_ac4461ee84aade9ee824de64d4846ec98}\label{a20729_ac4461ee84aade9ee824de64d4846ec98} 
+\index{kgdt.hpp@{kgdt.hpp}!GDT\_ACCESS\_CODE\_PL0@{GDT\_ACCESS\_CODE\_PL0}}
+\index{GDT\_ACCESS\_CODE\_PL0@{GDT\_ACCESS\_CODE\_PL0}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{GDT\_ACCESS\_CODE\_PL0}{GDT\_ACCESS\_CODE\_PL0}}
+{\footnotesize\ttfamily \#define GDT\+\_\+\+ACCESS\+\_\+\+CODE\+\_\+\+PL0~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(0) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_ae04daf26bdb792ae557ef1216021cc43}{SEG\+\_\+\+CODE\+\_\+\+EXRD}})}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00024}{24}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a01d908c8637340b21274e0176b320c05}\label{a20729_a01d908c8637340b21274e0176b320c05} 
+\index{kgdt.hpp@{kgdt.hpp}!GDT\_ACCESS\_CODE\_PL3@{GDT\_ACCESS\_CODE\_PL3}}
+\index{GDT\_ACCESS\_CODE\_PL3@{GDT\_ACCESS\_CODE\_PL3}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{GDT\_ACCESS\_CODE\_PL3}{GDT\_ACCESS\_CODE\_PL3}}
+{\footnotesize\ttfamily \#define GDT\+\_\+\+ACCESS\+\_\+\+CODE\+\_\+\+PL3~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(3) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_ae04daf26bdb792ae557ef1216021cc43}{SEG\+\_\+\+CODE\+\_\+\+EXRD}})}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00026}{26}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a1adfff1c72212b5c4e1df35485bb102a}\label{a20729_a1adfff1c72212b5c4e1df35485bb102a} 
+\index{kgdt.hpp@{kgdt.hpp}!GDT\_ACCESS\_DATA\_PL0@{GDT\_ACCESS\_DATA\_PL0}}
+\index{GDT\_ACCESS\_DATA\_PL0@{GDT\_ACCESS\_DATA\_PL0}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{GDT\_ACCESS\_DATA\_PL0}{GDT\_ACCESS\_DATA\_PL0}}
+{\footnotesize\ttfamily \#define GDT\+\_\+\+ACCESS\+\_\+\+DATA\+\_\+\+PL0~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(0) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_add294548173871e30e54b92bf5da2758}{SEG\+\_\+\+DATA\+\_\+\+RDWR}})}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00025}{25}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_ac7f57dcdd84028460100b6da75ad4938}\label{a20729_ac7f57dcdd84028460100b6da75ad4938} 
+\index{kgdt.hpp@{kgdt.hpp}!GDT\_ACCESS\_DATA\_PL3@{GDT\_ACCESS\_DATA\_PL3}}
+\index{GDT\_ACCESS\_DATA\_PL3@{GDT\_ACCESS\_DATA\_PL3}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{GDT\_ACCESS\_DATA\_PL3}{GDT\_ACCESS\_DATA\_PL3}}
+{\footnotesize\ttfamily \#define GDT\+\_\+\+ACCESS\+\_\+\+DATA\+\_\+\+PL3~\mbox{\hyperlink{a20729_ab9e609c85bc4472f4f9b69697f2e5067}{SEG\+\_\+\+ACCESS\+\_\+\+PRES}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}{SEG\+\_\+\+ACCESS\+\_\+\+PRIV}}(3) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a0d47ea941c3bdfd06858a467d2e76d83}{SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}{SEG\+\_\+\+ACCESS\+\_\+\+TYPE}}(\mbox{\hyperlink{a20729_add294548173871e30e54b92bf5da2758}{SEG\+\_\+\+DATA\+\_\+\+RDWR}})}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00027}{27}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a4941c819dbbef299c391bf53c24caf8d}\label{a20729_a4941c819dbbef299c391bf53c24caf8d} 
+\index{kgdt.hpp@{kgdt.hpp}!GDT\_GRAN\_FLAGS@{GDT\_GRAN\_FLAGS}}
+\index{GDT\_GRAN\_FLAGS@{GDT\_GRAN\_FLAGS}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{GDT\_GRAN\_FLAGS}{GDT\_GRAN\_FLAGS}}
+{\footnotesize\ttfamily \#define GDT\+\_\+\+GRAN\+\_\+\+FLAGS~\mbox{\hyperlink{a20729_ae86357f11d481de7242f3178629241b8}{SEG\+\_\+\+GRAN\+\_\+\+GRAN}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a7667e7c13f08890d3a6051346233691c}{SEG\+\_\+\+GRAN\+\_\+\+SIZE}}(1) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a9759917f0cd67a1d7c87849e211a7993}{SEG\+\_\+\+GRAN\+\_\+\+LONG}}(0) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{a20729_a79a943b17e5929ca9e06fc7cc1cb0ccc}{SEG\+\_\+\+GRAN\+\_\+\+SAVL}}(0)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00031}{31}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a0d47ea941c3bdfd06858a467d2e76d83}\label{a20729_a0d47ea941c3bdfd06858a467d2e76d83} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_ACCESS\_DESCTYPE@{SEG\_ACCESS\_DESCTYPE}}
+\index{SEG\_ACCESS\_DESCTYPE@{SEG\_ACCESS\_DESCTYPE}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_ACCESS\_DESCTYPE}{SEG\_ACCESS\_DESCTYPE}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+ACCESS\+\_\+\+DESCTYPE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00009}{9}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_ab9e609c85bc4472f4f9b69697f2e5067}\label{a20729_ab9e609c85bc4472f4f9b69697f2e5067} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_ACCESS\_PRES@{SEG\_ACCESS\_PRES}}
+\index{SEG\_ACCESS\_PRES@{SEG\_ACCESS\_PRES}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_ACCESS\_PRES}{SEG\_ACCESS\_PRES}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+ACCESS\+\_\+\+PRES(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $<$$<$ 7)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00011}{11}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a0cb0ae4ca069ed571a3b2db9190e12df}\label{a20729_a0cb0ae4ca069ed571a3b2db9190e12df} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_ACCESS\_PRIV@{SEG\_ACCESS\_PRIV}}
+\index{SEG\_ACCESS\_PRIV@{SEG\_ACCESS\_PRIV}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_ACCESS\_PRIV}{SEG\_ACCESS\_PRIV}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+ACCESS\+\_\+\+PRIV(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x) \& 0x03) $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00010}{10}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3}\label{a20729_a6c474d3015717ee1a2d99ae6a7b00ec3} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_ACCESS\_TYPE@{SEG\_ACCESS\_TYPE}}
+\index{SEG\_ACCESS\_TYPE@{SEG\_ACCESS\_TYPE}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_ACCESS\_TYPE}{SEG\_ACCESS\_TYPE}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+ACCESS\+\_\+\+TYPE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $<$$<$ 0)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00008}{8}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_ae04daf26bdb792ae557ef1216021cc43}\label{a20729_ae04daf26bdb792ae557ef1216021cc43} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_CODE\_EXRD@{SEG\_CODE\_EXRD}}
+\index{SEG\_CODE\_EXRD@{SEG\_CODE\_EXRD}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_CODE\_EXRD}{SEG\_CODE\_EXRD}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+CODE\+\_\+\+EXRD~0x0A}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00021}{21}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_add294548173871e30e54b92bf5da2758}\label{a20729_add294548173871e30e54b92bf5da2758} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_DATA\_RDWR@{SEG\_DATA\_RDWR}}
+\index{SEG\_DATA\_RDWR@{SEG\_DATA\_RDWR}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_DATA\_RDWR}{SEG\_DATA\_RDWR}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+DATA\+\_\+\+RDWR~0x02}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00020}{20}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_ae86357f11d481de7242f3178629241b8}\label{a20729_ae86357f11d481de7242f3178629241b8} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_GRAN\_GRAN@{SEG\_GRAN\_GRAN}}
+\index{SEG\_GRAN\_GRAN@{SEG\_GRAN\_GRAN}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_GRAN\_GRAN}{SEG\_GRAN\_GRAN}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+GRAN\+\_\+\+GRAN(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $<$$<$ 7)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00017}{17}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a9759917f0cd67a1d7c87849e211a7993}\label{a20729_a9759917f0cd67a1d7c87849e211a7993} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_GRAN\_LONG@{SEG\_GRAN\_LONG}}
+\index{SEG\_GRAN\_LONG@{SEG\_GRAN\_LONG}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_GRAN\_LONG}{SEG\_GRAN\_LONG}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+GRAN\+\_\+\+LONG(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00015}{15}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a79a943b17e5929ca9e06fc7cc1cb0ccc}\label{a20729_a79a943b17e5929ca9e06fc7cc1cb0ccc} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_GRAN\_SAVL@{SEG\_GRAN\_SAVL}}
+\index{SEG\_GRAN\_SAVL@{SEG\_GRAN\_SAVL}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_GRAN\_SAVL}{SEG\_GRAN\_SAVL}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+GRAN\+\_\+\+SAVL(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00014}{14}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a7667e7c13f08890d3a6051346233691c}\label{a20729_a7667e7c13f08890d3a6051346233691c} 
+\index{kgdt.hpp@{kgdt.hpp}!SEG\_GRAN\_SIZE@{SEG\_GRAN\_SIZE}}
+\index{SEG\_GRAN\_SIZE@{SEG\_GRAN\_SIZE}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{SEG\_GRAN\_SIZE}{SEG\_GRAN\_SIZE}}
+{\footnotesize\ttfamily \#define SEG\+\_\+\+GRAN\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $<$$<$ 6)}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00016}{16}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{a20729_ab808423f6529092dc90fcb7836fe024a}\label{a20729_ab808423f6529092dc90fcb7836fe024a} 
+\index{kgdt.hpp@{kgdt.hpp}!````~GDT@{\texorpdfstring{$\sim$}{\string~}GDT}}
+\index{````~GDT@{\texorpdfstring{$\sim$}{\string~}GDT}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GDT()}{\string~GDT()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::\texorpdfstring{$\sim$}{\string~}\+GDT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a20729_a5322ab07a139d8ae6f9c518b288bde15}\label{a20729_a5322ab07a139d8ae6f9c518b288bde15} 
+\index{kgdt.hpp@{kgdt.hpp}!````~GDT\_row@{\texorpdfstring{$\sim$}{\string~}GDT\_row}}
+\index{````~GDT\_row@{\texorpdfstring{$\sim$}{\string~}GDT\_row}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GDT\_row()}{\string~GDT\_row()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::\texorpdfstring{$\sim$}{\string~}\+GDT\+\_\+row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a20729_ad6539f5ca5082793a69451b8c1fc6523}\label{a20729_ad6539f5ca5082793a69451b8c1fc6523} 
+\index{kgdt.hpp@{kgdt.hpp}!GDT\_row@{GDT\_row}}
+\index{GDT\_row@{GDT\_row}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{GDT\_row()}{GDT\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::\+GDT\+\_\+row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a20729_a24693ad4185e3f70d2be14a964474436}\label{a20729_a24693ad4185e3f70d2be14a964474436} 
+\index{kgdt.hpp@{kgdt.hpp}!GDT\_row@{GDT\_row}}
+\index{GDT\_row@{GDT\_row}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{GDT\_row()}{GDT\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::\+GDT\+\_\+row (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{base,  }\item[{uint32\+\_\+t}]{limit,  }\item[{uint8\+\_\+t}]{access\+\_\+byte,  }\item[{uint8\+\_\+t}]{gran\+\_\+byte }\end{DoxyParamCaption})}
+
+\Hypertarget{a20729_a258db7c2f70fd1b20332ee3c00cd1d89}\label{a20729_a258db7c2f70fd1b20332ee3c00cd1d89} 
+\index{kgdt.hpp@{kgdt.hpp}!installTable@{installTable}}
+\index{installTable@{installTable}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{installTable()}{installTable()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::install\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a20729_a169aef5ef99da67bb0047dfc3d6a22e4}\label{a20729_a169aef5ef99da67bb0047dfc3d6a22e4} 
+\index{kgdt.hpp@{kgdt.hpp}!kernel\_CS\_selector@{kernel\_CS\_selector}}
+\index{kernel\_CS\_selector@{kernel\_CS\_selector}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{kernel\_CS\_selector()}{kernel\_CS\_selector()}}
+{\footnotesize\ttfamily static uint16\+\_\+t \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::kernel\+\_\+\+CS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a20729_aaa6fbf4816b6af649fc82186fe18b4e0}\label{a20729_aaa6fbf4816b6af649fc82186fe18b4e0} 
+\index{kgdt.hpp@{kgdt.hpp}!kernel\_DS\_selector@{kernel\_DS\_selector}}
+\index{kernel\_DS\_selector@{kernel\_DS\_selector}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{kernel\_DS\_selector()}{kernel\_DS\_selector()}}
+{\footnotesize\ttfamily static uint16\+\_\+t \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::kernel\+\_\+\+DS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a20729_a0a72b35b5fcadccd545ee4c5ef7efdd3}\label{a20729_a0a72b35b5fcadccd545ee4c5ef7efdd3} 
+\index{kgdt.hpp@{kgdt.hpp}!printLoadedTable@{printLoadedTable}}
+\index{printLoadedTable@{printLoadedTable}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{printLoadedTable()}{printLoadedTable()}}
+{\footnotesize\ttfamily static void \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::print\+Loaded\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a20729_a6aba53071c94f3ffe96befc625602c9c}\label{a20729_a6aba53071c94f3ffe96befc625602c9c} 
+\index{kgdt.hpp@{kgdt.hpp}!printLoadedTableHeader@{printLoadedTableHeader}}
+\index{printLoadedTableHeader@{printLoadedTableHeader}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{printLoadedTableHeader()}{printLoadedTableHeader()}}
+{\footnotesize\ttfamily static void \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::print\+Loaded\+Table\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a20729_a6ef65886fcf664d696b4361309452c2c}\label{a20729_a6ef65886fcf664d696b4361309452c2c} 
+\index{kgdt.hpp@{kgdt.hpp}!user\_CS\_selector@{user\_CS\_selector}}
+\index{user\_CS\_selector@{user\_CS\_selector}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{user\_CS\_selector()}{user\_CS\_selector()}}
+{\footnotesize\ttfamily static uint16\+\_\+t \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::user\+\_\+\+CS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a20729_a95dcc3ea7fb0310df8f2ab457deca483}\label{a20729_a95dcc3ea7fb0310df8f2ab457deca483} 
+\index{kgdt.hpp@{kgdt.hpp}!user\_DS\_selector@{user\_DS\_selector}}
+\index{user\_DS\_selector@{user\_DS\_selector}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{user\_DS\_selector()}{user\_DS\_selector()}}
+{\footnotesize\ttfamily static uint16\+\_\+t \+\_\+\+\_\+attribute\+\_\+\+\_\+\+::user\+\_\+\+DS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsubsection{Variable Documentation}
+\Hypertarget{a20729_a8b0d6200bc639dd37ff68847a0adde5f}\label{a20729_a8b0d6200bc639dd37ff68847a0adde5f} 
+\index{kgdt.hpp@{kgdt.hpp}!access@{access}}
+\index{access@{access}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{access}{access}}
+{\footnotesize\ttfamily uint8\+\_\+t access\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00004}{4}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20681_source_l00008}{essential\+::\+GDT\+\_\+row\+::\+GDT\+\_\+row()}}, and \mbox{\hyperlink{a20669_source_l00117}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table()}}.
+
+\Hypertarget{a20729_ad516e6ff5b7dd7f6ce2946c527ddb8b9}\label{a20729_ad516e6ff5b7dd7f6ce2946c527ddb8b9} 
+\index{kgdt.hpp@{kgdt.hpp}!base@{base}}
+\index{base@{base}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily uintptr\+\_\+t base\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00002}{2}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20669_source_l00032}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::\+Interrupt\+Manager()}}, \mbox{\hyperlink{a20681_source_l00046}{essential\+::\+GDT\+::install\+Table()}}, \mbox{\hyperlink{a20669_source_l00091}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::install\+Table()}}, \mbox{\hyperlink{a20660_source_l00181}{power()}}, \mbox{\hyperlink{a20660_source_l00276}{basic\+::printf()}}, \mbox{\hyperlink{a20681_source_l00082}{essential\+::\+GDT\+::print\+Loaded\+Table()}}, \mbox{\hyperlink{a20669_source_l00117}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table()}}, \mbox{\hyperlink{a20681_source_l00120}{essential\+::\+GDT\+::print\+Loaded\+Table\+Header()}}, \mbox{\hyperlink{a20669_source_l00151}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table\+Header()}}, and \mbox{\hyperlink{a20660_source_l00147}{ull\+To\+String()}}.
+
+\Hypertarget{a20729_a1a173457c7aa39c59c008fcc3332d2b3}\label{a20729_a1a173457c7aa39c59c008fcc3332d2b3} 
+\index{kgdt.hpp@{kgdt.hpp}!base\_high@{base\_high}}
+\index{base\_high@{base\_high}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{base\_high}{base\_high}}
+{\footnotesize\ttfamily uint8\+\_\+t base\+\_\+high\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00006}{6}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20681_source_l00008}{essential\+::\+GDT\+\_\+row\+::\+GDT\+\_\+row()}}.
+
+\Hypertarget{a20729_a71e21ea67de59991e9a27666a1752a8f}\label{a20729_a71e21ea67de59991e9a27666a1752a8f} 
+\index{kgdt.hpp@{kgdt.hpp}!base\_low@{base\_low}}
+\index{base\_low@{base\_low}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{base\_low}{base\_low}}
+{\footnotesize\ttfamily uint16\+\_\+t base\+\_\+low\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00002}{2}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20681_source_l00008}{essential\+::\+GDT\+\_\+row\+::\+GDT\+\_\+row()}}.
+
+\Hypertarget{a20729_a6b67e86f6de9204d76adab79069aec29}\label{a20729_a6b67e86f6de9204d76adab79069aec29} 
+\index{kgdt.hpp@{kgdt.hpp}!base\_middle@{base\_middle}}
+\index{base\_middle@{base\_middle}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{base\_middle}{base\_middle}}
+{\footnotesize\ttfamily uint8\+\_\+t base\+\_\+middle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00003}{3}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20681_source_l00008}{essential\+::\+GDT\+\_\+row\+::\+GDT\+\_\+row()}}.
+
+\Hypertarget{a20729_acfea365f69e71368a2db03333d4afd6f}\label{a20729_acfea365f69e71368a2db03333d4afd6f} 
+\index{kgdt.hpp@{kgdt.hpp}!granularity@{granularity}}
+\index{granularity@{granularity}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{granularity}{granularity}}
+{\footnotesize\ttfamily uint8\+\_\+t granularity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00005}{5}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20681_source_l00008}{essential\+::\+GDT\+\_\+row\+::\+GDT\+\_\+row()}}.
+
+\Hypertarget{a20729_a42e2af3e7b809f6f5e06ecfecdb504e0}\label{a20729_a42e2af3e7b809f6f5e06ecfecdb504e0} 
+\index{kgdt.hpp@{kgdt.hpp}!kernel\_CS@{kernel\_CS}}
+\index{kernel\_CS@{kernel\_CS}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{kernel\_CS}{kernel\_CS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} kernel\+\_\+\+CS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00004}{4}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a1b73e3464fcb9312774f2347e1b7604e}\label{a20729_a1b73e3464fcb9312774f2347e1b7604e} 
+\index{kgdt.hpp@{kgdt.hpp}!kernel\_DS@{kernel\_DS}}
+\index{kernel\_DS@{kernel\_DS}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{kernel\_DS}{kernel\_DS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} kernel\+\_\+\+DS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00005}{5}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_ab28e82ae69032cb4ad3ec3a0be3d7129}\label{a20729_ab28e82ae69032cb4ad3ec3a0be3d7129} 
+\index{kgdt.hpp@{kgdt.hpp}!limit@{limit}}
+\index{limit@{limit}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{limit}{limit}}
+{\footnotesize\ttfamily uint16\+\_\+t limit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00001}{1}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20669_source_l00032}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::\+Interrupt\+Manager()}}, \mbox{\hyperlink{a20681_source_l00046}{essential\+::\+GDT\+::install\+Table()}}, \mbox{\hyperlink{a20669_source_l00091}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::install\+Table()}}, \mbox{\hyperlink{a20681_source_l00082}{essential\+::\+GDT\+::print\+Loaded\+Table()}}, \mbox{\hyperlink{a20669_source_l00117}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table()}}, \mbox{\hyperlink{a20681_source_l00120}{essential\+::\+GDT\+::print\+Loaded\+Table\+Header()}}, and \mbox{\hyperlink{a20669_source_l00151}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table\+Header()}}.
+
+\Hypertarget{a20729_aa7ae5b5a918e00776ff07fb1c58a348d}\label{a20729_aa7ae5b5a918e00776ff07fb1c58a348d} 
+\index{kgdt.hpp@{kgdt.hpp}!limit\_low@{limit\_low}}
+\index{limit\_low@{limit\_low}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{limit\_low}{limit\_low}}
+{\footnotesize\ttfamily uint16\+\_\+t limit\+\_\+low\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00001}{1}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a20681_source_l00008}{essential\+::\+GDT\+\_\+row\+::\+GDT\+\_\+row()}}.
+
+\Hypertarget{a20729_a4facd1fb9d9bd77b1dd234a062c8d9dd}\label{a20729_a4facd1fb9d9bd77b1dd234a062c8d9dd} 
+\index{kgdt.hpp@{kgdt.hpp}!nullSegment@{nullSegment}}
+\index{nullSegment@{nullSegment}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{nullSegment}{nullSegment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} null\+Segment\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00003}{3}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a8d89c16e869ec13a725c780925713916}\label{a20729_a8d89c16e869ec13a725c780925713916} 
+\index{kgdt.hpp@{kgdt.hpp}!user\_CS@{user\_CS}}
+\index{user\_CS@{user\_CS}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{user\_CS}{user\_CS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} user\+\_\+\+CS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00006}{6}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a20729_a137b4628cf352225e57720432f2db487}\label{a20729_a137b4628cf352225e57720432f2db487} 
+\index{kgdt.hpp@{kgdt.hpp}!user\_DS@{user\_DS}}
+\index{user\_DS@{user\_DS}!kgdt.hpp@{kgdt.hpp}}
+\doxyparagraph{\texorpdfstring{user\_DS}{user\_DS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a20729_a24693ad4185e3f70d2be14a964474436}{GDT\+\_\+row}} user\+\_\+\+DS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a20729_source_l00007}{7}} of file \mbox{\hyperlink{a20729_source}{kgdt.\+hpp}}.
+

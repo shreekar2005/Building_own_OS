@@ -1,0 +1,136 @@
+.TH "MouseEventHandler_for_kernel" 3 "Thu Oct 23 2025 23:59:22" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MouseEventHandler_for_kernel
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdriver::MouseEventHandler\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMouseEventHandler_for_kernel\fP ()"
+.br
+.ti -1c
+.RI "\fB~MouseEventHandler_for_kernel\fP ()"
+.br
+.ti -1c
+.RI "void \fBonMouseDown\fP (uint8_t button) override"
+.br
+.ti -1c
+.RI "void \fBonMouseMove\fP (int8_t delta_x, int8_t delta_y) override"
+.br
+.ti -1c
+.RI "void \fBonMouseUp\fP (uint8_t button) override"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB27\fP of file \fBkernel\&.cpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MouseEventHandler_for_kernel::MouseEventHandler_for_kernel ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB29\fP of file \fBkernel\&.cpp\fP\&..PP
+.nf
+29 {}
+.fi
+
+.SS "MouseEventHandler_for_kernel::~MouseEventHandler_for_kernel ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB30\fP of file \fBkernel\&.cpp\fP\&..PP
+.nf
+30 {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MouseEventHandler_for_kernel::onMouseDown (uint8_t button)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdriver::MouseEventHandler\fP\&.
+.PP
+Definition at line \fB32\fP of file \fBkernel\&.cpp\fP\&..PP
+.nf
+32                                                   {
+33             (void) button;
+34             basic::update_cursor(driver::MouseDriver::__mouse_x_, driver::MouseDriver::__mouse_y_);
+35             // printf("Mouse Down: %d\\n", button);
+36         }
+.fi
+
+.PP
+References \fBdriver::MouseDriver::__mouse_x_\fP, \fBdriver::MouseDriver::__mouse_y_\fP, and \fBbasic::update_cursor()\fP\&.
+.SS "void MouseEventHandler_for_kernel::onMouseMove (int8_t delta_x, int8_t delta_y)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdriver::MouseEventHandler\fP\&.
+.PP
+Definition at line \fB43\fP of file \fBkernel\&.cpp\fP\&..PP
+.nf
+43                                                                   {
+44             static uint16_t* video_memory = (uint16_t*) 0xb8000;
+45             static float deltaTod=0\&.2;
+46             static float dx=0, dy=0;
+47             dx+=delta_x*deltaTod;
+48             dy+=delta_y*deltaTod;
+49 
+50             // Restore the character that was previously under the mouse pointer
+51             if (driver::MouseDriver::__mouse_x_ >= 0 && driver::MouseDriver::__mouse_y_ >= 0) {
+52                 video_memory[80 * driver::MouseDriver::__mouse_y_ + driver::MouseDriver::__mouse_x_] = driver::MouseDriver::old_char_under_mouse_pointer;
+53             }
+54             // Update mouse coordinates based on delta
+55             if(dx > 1) {
+56                 driver::MouseDriver::__mouse_x_++;
+57                 dx=0;
+58             }
+59             else if(dx < \-1) {
+60                 driver::MouseDriver::__mouse_x_\-\-;
+61                 dx=0;
+62             }
+63             
+64             if(dy > 1) {
+65                 driver::MouseDriver::__mouse_y_++;
+66                 dy=0;
+67             }
+68             else if(dy < \-1) {
+69                 driver::MouseDriver::__mouse_y_\-\-;
+70                 dy=0;
+71             }
+72 
+73             // Clamp coordinates to screen boundaries
+74             if(driver::MouseDriver::__mouse_x_ < 0) driver::MouseDriver::__mouse_x_ = 0;
+75             if(driver::MouseDriver::__mouse_x_ >= 80) driver::MouseDriver::__mouse_x_ = 79;
+76             if(driver::MouseDriver::__mouse_y_ < 0) driver::MouseDriver::__mouse_y_ = 0;
+77             if(driver::MouseDriver::__mouse_y_ >= 25) driver::MouseDriver::__mouse_y_ = 24;
+78 
+79             // Save the character at the new position and draw the pointer over it
+80             driver::MouseDriver::old_char_under_mouse_pointer = video_memory[80 * driver::MouseDriver::__mouse_y_ + driver::MouseDriver::__mouse_x_];
+81             video_memory[80 * driver::MouseDriver::__mouse_y_ + driver::MouseDriver::__mouse_x_] = driver::MouseDriver::mouse_block_video_mem_value(driver::MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
+82         }
+.fi
+
+.PP
+References \fBdriver::MouseDriver::__mouse_x_\fP, \fBdriver::MouseDriver::__mouse_y_\fP, \fBdriver::MouseDriver::mouse_block_video_mem_value()\fP, \fBMOUSE_POINTER_COLOR\fP, and \fBdriver::MouseDriver::old_char_under_mouse_pointer\fP\&.
+.SS "void MouseEventHandler_for_kernel::onMouseUp (uint8_t button)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdriver::MouseEventHandler\fP\&.
+.PP
+Definition at line \fB38\fP of file \fBkernel\&.cpp\fP\&..PP
+.nf
+38                                                 {
+39             (void) button;
+40             // printf("Mouse Up: %d\\n", button);
+41         }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

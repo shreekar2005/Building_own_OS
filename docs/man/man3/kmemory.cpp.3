@@ -1,0 +1,113 @@
+.TH "libk_src/basic/kmemory.cpp" 3 "Thu Oct 23 2025 23:59:22" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libk_src/basic/kmemory.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'basic/kmemory\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBoperator delete\fP (void *ptr) noexcept"
+.br
+.ti -1c
+.RI "void \fBoperator delete\fP (void *ptr, size_t \fBsize\fP) noexcept"
+.br
+.ti -1c
+.RI "void \fBoperator delete[]\fP (void *ptr) noexcept"
+.br
+.ti -1c
+.RI "void \fBoperator delete[]\fP (void *ptr, size_t \fBsize\fP) noexcept"
+.br
+.ti -1c
+.RI "void * \fBoperator new\fP (size_t \fBsize\fP) noexcept"
+.br
+.RI "The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors\&. "
+.ti -1c
+.RI "void * \fBoperator new[]\fP (size_t \fBsize\fP) noexcept"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void operator delete (void * ptr)\fC [noexcept]\fP"
+
+.PP
+Definition at line \fB75\fP of file \fBkmemory\&.cpp\fP\&..PP
+.nf
+75                                          {
+76     (void)ptr;
+77 }
+.fi
+
+.SS "void operator delete (void * ptr, size_t size)\fC [noexcept]\fP"
+
+.PP
+Definition at line \fB79\fP of file \fBkmemory\&.cpp\fP\&..PP
+.nf
+79                                                       {
+80     (void)ptr;
+81     (void)size;
+82 }
+.fi
+
+.PP
+References \fBsize\fP\&.
+.SS "void operator delete[] (void * ptr)\fC [noexcept]\fP"
+
+.PP
+Definition at line \fB84\fP of file \fBkmemory\&.cpp\fP\&..PP
+.nf
+84                                            {
+85     (void)ptr;
+86 }
+.fi
+
+.SS "void operator delete[] (void * ptr, size_t size)\fC [noexcept]\fP"
+
+.PP
+Definition at line \fB88\fP of file \fBkmemory\&.cpp\fP\&..PP
+.nf
+88                                                         {
+89     (void)ptr;
+90     (void)size;
+91 }
+.fi
+
+.PP
+References \fBsize\fP\&.
+.SS "void * operator new (size_t size)\fC [noexcept]\fP"
+
+.PP
+The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors\&. Since we are not linking the standard library, we must provide our own\&. For now, they don't have to do anything\&. 
+.PP
+Definition at line \fB65\fP of file \fBkmemory\&.cpp\fP\&..PP
+.nf
+65                                          {
+66     (void)size;
+67     return nullptr;
+68 }
+.fi
+
+.PP
+References \fBsize\fP\&.
+.SS "void * operator new[] (size_t size)\fC [noexcept]\fP"
+
+.PP
+Definition at line \fB70\fP of file \fBkmemory\&.cpp\fP\&..PP
+.nf
+70                                            {
+71     (void)size;
+72     return nullptr;
+73 }
+.fi
+
+.PP
+References \fBsize\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

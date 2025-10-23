@@ -1,0 +1,89 @@
+.TH "libk_src/essential/kicxxabi.cpp" 3 "Thu Oct 23 2025 23:59:22" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libk_src/essential/kicxxabi.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'essential/kicxxabi\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB__cxa_atexit\fP (void(*f)(void *), void *objptr, void *dso)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBuarch_t\fP \fB__atexit_func_count\fP = 0"
+.br
+.ti -1c
+.RI "\fBessential::atexit_func_entry_t\fP \fB__atexit_funcs\fP [\fBATEXIT_MAX_FUNCS\fP]"
+.br
+.ti -1c
+.RI "void * \fB__dso_handle\fP = 0"
+.br
+.ti -1c
+.RI "void(* \fBctors_end\fP )()"
+.br
+.ti -1c
+.RI "void(* \fBctors_start\fP )()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int __cxa_atexit (void(*)(void *) f, void * objptr, void * dso)"
+
+.PP
+Definition at line \fB29\fP of file \fBkicxxabi\&.cpp\fP\&..PP
+.nf
+30 {
+31     if (__atexit_func_count >= ATEXIT_MAX_FUNCS) {return \-1;};
+32     __atexit_funcs[__atexit_func_count]\&.destructor_func = f;
+33     __atexit_funcs[__atexit_func_count]\&.obj_ptr = objptr;
+34     __atexit_funcs[__atexit_func_count]\&.dso_handle = dso;
+35     __atexit_func_count++;
+36     return 0; /*I would prefer if functions returned 1 on success, but the ABI says\&.\&.\&.*/
+37 };
+.fi
+
+.PP
+References \fB__atexit_func_count\fP, \fB__atexit_funcs\fP, \fBATEXIT_MAX_FUNCS\fP, \fBessential::atexit_func_entry_t::destructor_func\fP, \fBessential::atexit_func_entry_t::dso_handle\fP, and \fBessential::atexit_func_entry_t::obj_ptr\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBuarch_t\fP __atexit_func_count = 0"
+
+.PP
+Definition at line \fB25\fP of file \fBkicxxabi\&.cpp\fP\&.
+.PP
+Referenced by \fB__cxa_atexit()\fP, and \fBessential::__cxa_finalize()\fP\&.
+.SS "\fBessential::atexit_func_entry_t\fP __atexit_funcs[\fBATEXIT_MAX_FUNCS\fP]"
+
+.PP
+Definition at line \fB24\fP of file \fBkicxxabi\&.cpp\fP\&.
+.PP
+Referenced by \fB__cxa_atexit()\fP, and \fBessential::__cxa_finalize()\fP\&.
+.SS "void* __dso_handle = 0"
+
+.PP
+Definition at line \fB27\fP of file \fBkicxxabi\&.cpp\fP\&.
+.SS "void(* ctors_end) () ()"
+
+.PP
+Definition at line \fB5\fP of file \fBkicxxabi\&.cpp\fP\&.
+.PP
+Referenced by \fBessential::__callConstructors()\fP\&.
+.SS "void(* ctors_start) () ()"
+
+.PP
+Definition at line \fB4\fP of file \fBkicxxabi\&.cpp\fP\&.
+.PP
+Referenced by \fBessential::__callConstructors()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

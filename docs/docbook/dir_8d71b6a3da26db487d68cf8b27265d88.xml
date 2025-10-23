@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_8d71b6a3da26db487d68cf8b27265d88" xml:lang="en-US">
+<title>kernel_src Directory Reference</title>
+<indexterm><primary>kernel_src Directory Reference</primary></indexterm>
+Directory dependency graph for kernel_src:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_8d71b6a3da26db487d68cf8b27265d88_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a20696">kernel.cpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

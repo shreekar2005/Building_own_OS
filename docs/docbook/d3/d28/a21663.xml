@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a21663" xml:lang="en-US">
+<title>hardware_communication::Port8Bit</title>
+<indexterm><primary>hardware_communication::Port8Bit</primary></indexterm>
+<para>
+<computeroutput>#include &quot;kport.hpp&quot;</computeroutput>
+</para>
+Inheritance diagram for hardware_communication::Port8Bit:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d7/d50/a21662.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for hardware_communication::Port8Bit:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/d94/a21661.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a21663_1a057109ca3c28fbb9064c60ba5cdb1190">Port8Bit</link> (uint16_t <link linkend="_a21659_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>)</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a21663_1a475bc218672c5743a9f8425cc84eb630">~Port8Bit</link> () override</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a21663_1ae8688251b574c3fd335b99f7e93fff2d">read</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a21663_1a523b6a757b27418dc015ed13e74bef60">write</link> (uint8_t data)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_a21659_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_a20714_source_1l00030">30</link> of file <link linkend="_a20714_source">kport.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a21663_1a057109ca3c28fbb9064c60ba5cdb1190"/><section>
+    <title>Port8Bit()</title>
+<indexterm><primary>Port8Bit</primary><secondary>hardware_communication::Port8Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port8Bit</primary><secondary>Port8Bit</secondary></indexterm>
+<para><computeroutput>hardware_communication::Port8Bit::Port8Bit (uint16_t portnumber)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a20666_source_1l00010">10</link> of file <link linkend="_a20666_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00010 :<link linkend="_a21659_1ad001c21b67d4c138f65024f167030cca">Port</link>(<link linkend="_a21659_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>){}&#32;
+</programlisting></section>
+<anchor xml:id="_a21663_1a475bc218672c5743a9f8425cc84eb630"/><section>
+    <title>~Port8Bit()</title>
+<indexterm><primary>~Port8Bit</primary><secondary>hardware_communication::Port8Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port8Bit</primary><secondary>~Port8Bit</secondary></indexterm>
+<para><computeroutput>hardware_communication::Port8Bit::~Port8Bit ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a20666_source_1l00011">11</link> of file <link linkend="_a20666_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00011 {}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a21663_1ae8688251b574c3fd335b99f7e93fff2d"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>hardware_communication::Port8Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port8Bit</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>uint8_t hardware_communication::Port8Bit::read ( )</computeroutput></para><para>
+Definition at line <link linkend="_a20666_source_1l00016">16</link> of file <link linkend="_a20666_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00017 &#32;&#32;&#32;&#32;uint8_t&#32;result;
+00018 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>(<emphasis role="stringliteral">&quot;inb&#32;%1,&#32;%0&quot;</emphasis>&#32;:<emphasis role="stringliteral">&quot;=a&quot;</emphasis>(result)&#32;:&#32;<emphasis role="stringliteral">&quot;Nd&quot;</emphasis>(<link linkend="_a21659_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>));
+00019 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+00020 }
+</programlisting><para>
+Referenced by <link linkend="_a20660_source_1l00017">basic::enable_cursor()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d28/a21663_ae8688251b574c3fd335b99f7e93fff2d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a21663_1a523b6a757b27418dc015ed13e74bef60"/><section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>hardware_communication::Port8Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port8Bit</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void hardware_communication::Port8Bit::write (uint8_t data)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented in <link linkend="_a21667_1af84b15d5a205a421a9877e2341714031">hardware_communication::Port8BitSlow</link>.</para>
+<para>
+Definition at line <link linkend="_a20666_source_1l00013">13</link> of file <link linkend="_a20666_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00014 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>(<emphasis role="stringliteral">&quot;outb&#32;%0,&#32;%1&quot;</emphasis>&#32;:&#32;:&#32;<emphasis role="stringliteral">&quot;a&quot;</emphasis>(data),&#32;<emphasis role="stringliteral">&quot;Nd&quot;</emphasis>(<link linkend="_a21659_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>));
+00015 }
+</programlisting><para>
+Referenced by <link linkend="_a20660_source_1l00035">basic::disable_cursor()</link>, <link linkend="_a20660_source_1l00017">basic::enable_cursor()</link>, and <link linkend="_a20660_source_1l00025">basic::update_cursor()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d28/a21663_a523b6a757b27418dc015ed13e74bef60_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a21659_1aab0c5c82b0190df88ddbb595bfac539a"/><section>
+    <title>portnumber</title>
+<indexterm><primary>portnumber</primary><secondary>hardware_communication::Port8Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port8Bit</primary><secondary>portnumber</secondary></indexterm>
+<para><computeroutput>uint16_t hardware_communication::Port::portnumber<computeroutput>[protected]</computeroutput>, <computeroutput>[inherited]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a20714_source_1l00013">13</link> of file <link linkend="_a20714_source">kport.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a20666_source_1l00003">hardware_communication::Port::Port()</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+libk_header/hardware_communication/<link linkend="_a20714">kport.hpp</link>libk_src/hardware_communication/<link linkend="_a20666">kport.cpp</link></section>
+</section>

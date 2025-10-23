@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_53afcd4fba698aab0c6227766ed2d23a" xml:lang="en-US">
+<title>libk_header/hardware_communication Directory Reference</title>
+<indexterm><primary>libk_header/hardware_communication Directory Reference</primary></indexterm>
+Directory dependency graph for hardware_communication:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_53afcd4fba698aab0c6227766ed2d23a_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a20711">kinterrupt.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a20714">kport.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>
