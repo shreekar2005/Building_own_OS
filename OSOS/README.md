@@ -131,8 +131,8 @@ make dbg_cli
 
 ### 3. My personal rules while developing OSOS (IMP if you are thinking to Contribute)
 - Using `#include <>` for standard libraries
-- Using `#include ""` for OSOS specific libraries, e.g. libraries in `./kernel_src/include/`
-- Naming OSOS kernel libraries with prefix `'k'`, e.g. kiostream, kmemory, etc
+- Using `#include ""` for OSOS specific libraries, e.g. libraries in `./libk_headers/`
+- Naming OSOS kernel libraries with prefix `'k'`, e.g. kiostream.hpp, kmemory.hpp, etc
 - **Naming convensions :**  pointer names : `abc_xyz_pqr`, class/struct names :  `AbcXyzPqr` or `ABC_XyzPqr`, function/variable names : `abcXyzPqr`
 - all kernel library functions, classes, variables are divided in **`namespaces`** : 
     1. **basic** : kiostream, kmemory

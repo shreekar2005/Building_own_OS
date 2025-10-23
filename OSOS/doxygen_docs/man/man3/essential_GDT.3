@@ -1,0 +1,301 @@
+.TH "essential::GDT" 3 "Thu Oct 23 2025 23:53:37" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+essential::GDT
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'kgdt\&.hpp'\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGDT\fP ()"
+.br
+.ti -1c
+.RI "\fB~GDT\fP ()"
+.br
+.ti -1c
+.RI "void \fBinstallTable\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static uint16_t \fBkernel_CS_selector\fP ()"
+.br
+.ti -1c
+.RI "static uint16_t \fBkernel_DS_selector\fP ()"
+.br
+.ti -1c
+.RI "static void \fBprintLoadedTable\fP ()"
+.br
+.RI "(Static) Prints the currently loaded \fBGDT\fP by reading the GDTR\&. "
+.ti -1c
+.RI "static void \fBprintLoadedTableHeader\fP ()"
+.br
+.ti -1c
+.RI "static uint16_t \fBuser_CS_selector\fP ()"
+.br
+.ti -1c
+.RI "static uint16_t \fBuser_DS_selector\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "uintptr_t \fBbase\fP"
+.br
+.ti -1c
+.RI "\fBGDT_row\fP \fBkernel_CS\fP"
+.br
+.ti -1c
+.RI "\fBGDT_row\fP \fBkernel_DS\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBGDT_row\fP \fBnullSegment\fP"
+.br
+.ti -1c
+.RI "\fBGDT_row\fP \fBuser_CS\fP"
+.br
+.ti -1c
+.RI "\fBGDT_row\fP \fBuser_DS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB54\fP of file \fBkgdt\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "essential::GDT::GDT ()"
+
+.PP
+Definition at line \fB26\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+28     : nullSegment(), // First entry must be a null descriptor\&.
+29       kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
+30       kernel_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL0, GDT_GRAN_FLAGS),
+31       user_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL3, GDT_GRAN_FLAGS),
+32       user_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL3, GDT_GRAN_FLAGS)
+33 {
+34     // The GDT limit is its total size in bytes minus 1\&.
+35     // 5 entries * 8 bytes/entry = 40 bytes\&. Limit = 39 (0x27)\&.
+36     limit = (sizeof(essential::GDT_row) * 5) \- 1;
+37     
+38     // The base address is the address of the first entry in our table\&.
+39     base = (uintptr_t)&this\->nullSegment;
+40 }
+.fi
+
+.PP
+References \fBbase\fP, \fBlimit\fP, and \fBnullSegment\fP\&.
+.SS "essential::GDT::~GDT ()"
+
+.PP
+Definition at line \fB42\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+42 {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void essential::GDT::installTable ()"
+
+.PP
+Definition at line \fB46\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+46                                 {
+47     // A structure that matches the 6\-byte format required by the 'lgdt' instruction\&.
+48     struct GDT_Pointer {
+49         uint16_t limit;
+50         uint32_t base; // Use uint32_t for our i686 (32\-bit) target
+51     } __attribute__((packed));
+52 
+53     GDT_Pointer gdt_ptr;
+54     gdt_ptr\&.limit = this\->limit;
+55     gdt_ptr\&.base = this\->base;
+56     
+57     asm volatile(
+58         // Load the address of our GDT_Pointer structure into the GDTR\&.
+59         "lgdt (%0)\\n\\t"
+60 
+61         // Reload all data segment registers with the kernel data selector\&.
+62         "mov $0x10, %%ax\\n\\t"   // 0x10 is the selector for kernel_DS
+63         "mov %%ax, %%ds\\n\\t"
+64         "mov %%ax, %%es\\n\\t"
+65         "mov %%ax, %%fs\\n\\t"
+66         "mov %%ax, %%gs\\n\\t"
+67         "mov %%ax, %%ss\\n\\t"
+68 
+69         // Perform a 32\-bit far jump to reload the CS register and flush the CPU pipeline\&.
+70         "jmp $0x08, $flush_cs\\n\\t" // 0x08 is the selector for kernel_CS
+71         "flush_cs:\\n\\t"
+72         : // No output operands
+73         : "r"(&gdt_ptr) // Input: address of our GDT_Pointer
+74         : "memory", "eax" // Clobbered registers
+75     );
+76     basic::printf("GDT Installed\\n");
+77 }
+.fi
+
+.PP
+References \fB__attribute__\fP, \fBbase\fP, \fBlimit\fP, and \fBbasic::printf()\fP\&.
+.PP
+Referenced by \fBkernelMain()\fP\&.
+.SS "uint16_t essential::GDT::kernel_CS_selector ()\fC [static]\fP"
+
+.PP
+Definition at line \fB140\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+140 { return sizeof(essential::GDT_row) * 1; } // Selector 0x08
+.fi
+
+.PP
+Referenced by \fBhardware_communication::InterruptManager::InterruptManager()\fP\&.
+.SS "uint16_t essential::GDT::kernel_DS_selector ()\fC [static]\fP"
+
+.PP
+Definition at line \fB141\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+141 { return sizeof(essential::GDT_row) * 2; } // Selector 0x10
+.fi
+
+.SS "void essential::GDT::printLoadedTable ()\fC [static]\fP"
+
+.PP
+(Static) Prints the currently loaded \fBGDT\fP by reading the GDTR\&. 
+.PP
+Definition at line \fB82\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+82                                     {
+83     struct GDT_Pointer {
+84         uint16_t limit;
+85         uint32_t base;
+86     } __attribute__((packed));
+87 
+88     GDT_Pointer gdtr;
+89     // Store the current GDT register contents into our struct\&.
+90     asm volatile("sgdt %0" : "=m"(gdtr));
+91 
+92     basic::printf("\-\-\-\\n");
+93     basic::printf("INFO about : Currently Loaded GDT\\n");
+94     basic::printf("Base Address: %#x\\n", gdtr\&.base);
+95     basic::printf("Limit: %#x (%d bytes)\\n", gdtr\&.limit, gdtr\&.limit);
+96     basic::printf("Entries: %d\\n", (gdtr\&.limit + 1) / sizeof(essential::GDT_row));
+97     basic::printf("\-\-\-\\n");
+98 
+99     essential::GDT_row* gdt_entries = (essential::GDT_row*)gdtr\&.base;
+100     int num_entries = (gdtr\&.limit + 1) / sizeof(essential::GDT_row);
+101 
+102     for (int i = 0; i < num_entries; i++) {
+103         essential::GDT_row entry = gdt_entries[i];
+104 
+105         // Reconstruct the base and limit from the scattered fields\&.
+106         uint32_t base = entry\&.base_high << 24 | entry\&.base_middle << 16 | entry\&.base_low;
+107         uint32_t limit = (entry\&.granularity & 0x0F) << 16 | entry\&.limit_low;
+108         
+109         // If the granularity bit is set, the limit is in 4 KiB pages\&.
+110         if ((entry\&.granularity & 0x80) != 0) {
+111             limit = (limit << 12) | 0xFFF;
+112         }
+113 
+114         basic::printf("GDT Entry %d: Base=%p, Limit=%#x, Access=%#x, Granularity=%#x\\n",
+115                i, (void*)(uintptr_t)base, limit, entry\&.access, entry\&.granularity);
+116     }
+117     basic::printf("\-\-\-\\n");
+118 }
+.fi
+
+.PP
+References \fB__attribute__\fP, \fBessential::GDT_row::access\fP, \fBbase\fP, \fBessential::GDT_row::base_high\fP, \fBessential::GDT_row::base_low\fP, \fBessential::GDT_row::base_middle\fP, \fBessential::GDT_row::granularity\fP, \fBlimit\fP, \fBessential::GDT_row::limit_low\fP, and \fBbasic::printf()\fP\&.
+.SS "void essential::GDT::printLoadedTableHeader ()\fC [static]\fP"
+
+.PP
+Definition at line \fB120\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+120                                           {
+121     struct GDT_Pointer {
+122         uint16_t limit;
+123         uint32_t base;
+124     } __attribute__((packed));
+125 
+126     GDT_Pointer gdtr;
+127     // Store the current GDT register contents into our struct\&.
+128     asm volatile("sgdt %0" : "=m"(gdtr));
+129 
+130     basic::printf("\-\-\-\\n");
+131     basic::printf("INFO about : Currently Loaded GDT\\n");
+132     basic::printf("Base Address: %#x\\n", gdtr\&.base);
+133     basic::printf("Limit: %#x (%d bytes)\\n", gdtr\&.limit, gdtr\&.limit);
+134     basic::printf("Entries: %d\\n", (gdtr\&.limit + 1) / sizeof(essential::GDT_row));
+135     basic::printf("\-\-\-\\n");
+136 }
+.fi
+
+.PP
+References \fB__attribute__\fP, \fBbase\fP, \fBlimit\fP, and \fBbasic::printf()\fP\&.
+.PP
+Referenced by \fBkernelMain()\fP\&.
+.SS "uint16_t essential::GDT::user_CS_selector ()\fC [static]\fP"
+
+.PP
+Definition at line \fB142\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+142 { return sizeof(essential::GDT_row) * 3; } // Selector 0x18
+.fi
+
+.SS "uint16_t essential::GDT::user_DS_selector ()\fC [static]\fP"
+
+.PP
+Definition at line \fB143\fP of file \fBkgdt\&.cpp\fP\&..PP
+.nf
+143 { return sizeof(essential::GDT_row) * 4; }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "uintptr_t essential::GDT::base\fC [private]\fP"
+
+.PP
+Definition at line \fB57\fP of file \fBkgdt\&.hpp\fP\&.
+.PP
+Referenced by \fBGDT()\fP\&.
+.SS "\fBGDT_row\fP essential::GDT::kernel_CS\fC [private]\fP"
+
+.PP
+Definition at line \fB59\fP of file \fBkgdt\&.hpp\fP\&.
+.SS "\fBGDT_row\fP essential::GDT::kernel_DS\fC [private]\fP"
+
+.PP
+Definition at line \fB60\fP of file \fBkgdt\&.hpp\fP\&.
+.SS "uint16_t essential::GDT::limit\fC [private]\fP"
+
+.PP
+Definition at line \fB56\fP of file \fBkgdt\&.hpp\fP\&.
+.PP
+Referenced by \fBGDT()\fP\&.
+.SS "\fBGDT_row\fP essential::GDT::nullSegment\fC [private]\fP"
+
+.PP
+Definition at line \fB58\fP of file \fBkgdt\&.hpp\fP\&.
+.PP
+Referenced by \fBGDT()\fP\&.
+.SS "\fBGDT_row\fP essential::GDT::user_CS\fC [private]\fP"
+
+.PP
+Definition at line \fB61\fP of file \fBkgdt\&.hpp\fP\&.
+.SS "\fBGDT_row\fP essential::GDT::user_DS\fC [private]\fP"
+
+.PP
+Definition at line \fB62\fP of file \fBkgdt\&.hpp\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

@@ -1,0 +1,517 @@
+\doxysubsection{libk\+\_\+src/basic/kiostream.cpp File Reference}
+\hypertarget{a00053}{}\label{a00053}\index{libk\_src/basic/kiostream.cpp@{libk\_src/basic/kiostream.cpp}}
+{\ttfamily \#include "{}basic/kiostream.\+hpp"{}}\newline
+{\ttfamily \#include "{}driver/kmouse.\+hpp"{}}\newline
+Include dependency graph for kiostream.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dea/a00054}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00053_a887422301cbe9a94f8b96263415640cf}{MAGIC\+\_\+\+HEIGHT}}~25
+\item 
+\#define \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\+\_\+\+WIDTH}}~80
+\item 
+\#define \mbox{\hyperlink{a00053_a49426d7a9b562958ad2ab7fbf134f368}{TAB\+\_\+\+WIDTH}}~4
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a00053_af382674e4c9fb57a14b178d4ee12273a}{double\+To\+String}} (double d, char \texorpdfstring{$\ast$}{*}buffer, int precision)
+\item 
+static double \mbox{\hyperlink{a00053_a91bacd34c601c4cfe39f1ffa6c2a1385}{power}} (double \mbox{\hyperlink{a00152_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}, int exp)
+\item 
+static void \mbox{\hyperlink{a00053_a6bd99ada5f7c46567ee0ceca6c369d47}{print\+Char\+Str}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+static void \mbox{\hyperlink{a00053_aab6eb585b409591414f84a1e3f606345}{print\+Hex}} (uintptr\+\_\+t n, int digits)
+\item 
+static void \mbox{\hyperlink{a00053_a913f40d6652965fdd1e34a04ab7dba2d}{reverse}} (char \texorpdfstring{$\ast$}{*}str, int length)
+\item 
+static void \mbox{\hyperlink{a00053_a14bf754296559bf0266e127e677e8107}{ull\+To\+String}} (unsigned long long n, char \texorpdfstring{$\ast$}{*}buffer, int \mbox{\hyperlink{a00152_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}, int is\+\_\+signed, int uppercase)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\+\_\+x\+\_\+}} = 0
+\item 
+static int \mbox{\hyperlink{a00053_a1bda227f31ddf346294cb531f7554ef3}{cursor\+\_\+y\+\_\+}} = 0
+\item 
+static \mbox{\hyperlink{a01089}{hardware\+\_\+communication\+::\+Port8\+Bit}} \mbox{\hyperlink{a00053_a32de8112c133d2f05cae84bde7d98239}{vga\+Data\+Port}} (0x3\+D5)
+\item 
+static \mbox{\hyperlink{a01089}{hardware\+\_\+communication\+::\+Port8\+Bit}} \mbox{\hyperlink{a00053_a0cece8394c6a6dedd523238e9057125f}{vga\+Index\+Port}} (0x3\+D4)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{a00053_a887422301cbe9a94f8b96263415640cf}\label{a00053_a887422301cbe9a94f8b96263415640cf} 
+\index{kiostream.cpp@{kiostream.cpp}!MAGIC\_HEIGHT@{MAGIC\_HEIGHT}}
+\index{MAGIC\_HEIGHT@{MAGIC\_HEIGHT}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{MAGIC\_HEIGHT}{MAGIC\_HEIGHT}}
+{\footnotesize\ttfamily \#define MAGIC\+\_\+\+HEIGHT~25}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00008}{8}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+\Hypertarget{a00053_a5be9493285a1f50a67d98b887537217d}\label{a00053_a5be9493285a1f50a67d98b887537217d} 
+\index{kiostream.cpp@{kiostream.cpp}!MAGIC\_WIDTH@{MAGIC\_WIDTH}}
+\index{MAGIC\_WIDTH@{MAGIC\_WIDTH}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{MAGIC\_WIDTH}{MAGIC\_WIDTH}}
+{\footnotesize\ttfamily \#define MAGIC\+\_\+\+WIDTH~80}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00007}{7}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+\Hypertarget{a00053_a49426d7a9b562958ad2ab7fbf134f368}\label{a00053_a49426d7a9b562958ad2ab7fbf134f368} 
+\index{kiostream.cpp@{kiostream.cpp}!TAB\_WIDTH@{TAB\_WIDTH}}
+\index{TAB\_WIDTH@{TAB\_WIDTH}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{TAB\_WIDTH}{TAB\_WIDTH}}
+{\footnotesize\ttfamily \#define TAB\+\_\+\+WIDTH~4}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00009}{9}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{a00053_af382674e4c9fb57a14b178d4ee12273a}\label{a00053_af382674e4c9fb57a14b178d4ee12273a} 
+\index{kiostream.cpp@{kiostream.cpp}!doubleToString@{doubleToString}}
+\index{doubleToString@{doubleToString}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{doubleToString()}{doubleToString()}}
+{\footnotesize\ttfamily static void double\+To\+String (\begin{DoxyParamCaption}\item[{double}]{d,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{precision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00189}{189}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00190\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{if}\ (precision\ <\ 0)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ precision\ =\ 6;}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{char}\ *ptr\ =\ buffer;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{if}\ (d\ <\ 0)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ *ptr++\ =\ \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ d\ =\ -\/d;}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ int\_part\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ long)d;}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{double}\ frac\_part\ =\ d\ -\/\ (double)int\_part;}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{a00053_a14bf754296559bf0266e127e677e8107}{ullToString}}(int\_part,\ ptr,\ 10,\ 0,\ 0);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{while}\ (*ptr)\ ptr++;}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ *ptr++\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00208\ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ frac\_as\_ull\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ long)(frac\_part\ *\ \mbox{\hyperlink{a00053_a91bacd34c601c4cfe39f1ffa6c2a1385}{power}}(10,\ precision)\ +\ 0.5);}
+\DoxyCodeLine{00210\ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{char}\ frac\_buffer[32];}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{a00053_a14bf754296559bf0266e127e677e8107}{ullToString}}(frac\_as\_ull,\ frac\_buffer,\ 10,\ 0,\ 0);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{int}\ frac\_len\ =\ 0;}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{while}(frac\_buffer[frac\_len]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})\ frac\_len++;}
+\DoxyCodeLine{00216\ \ \ \ \ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{int}\ padding\ =\ precision\ -\/\ frac\_len;}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ padding;\ i++)}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ *ptr++\ =\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00220\ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{char}*\ frac\_ptr\ =\ frac\_buffer;}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{while}(*frac\_ptr)\ *ptr++\ =\ *frac\_ptr++;}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ *ptr\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00225\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00053_source_l00181}{power()}}, and \mbox{\hyperlink{a00053_source_l00147}{ull\+To\+String()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00276}{basic\+::printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_af382674e4c9fb57a14b178d4ee12273a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_af382674e4c9fb57a14b178d4ee12273a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00053_a91bacd34c601c4cfe39f1ffa6c2a1385}\label{a00053_a91bacd34c601c4cfe39f1ffa6c2a1385} 
+\index{kiostream.cpp@{kiostream.cpp}!power@{power}}
+\index{power@{power}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{power()}{power()}}
+{\footnotesize\ttfamily static double power (\begin{DoxyParamCaption}\item[{double}]{base,  }\item[{int}]{exp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00181}{181}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00182\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 1.0;}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ exp;\ ++i)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ res\ *=\ \mbox{\hyperlink{a00152_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00187\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00152_source_l00002}{base}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00189}{double\+To\+String()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_a91bacd34c601c4cfe39f1ffa6c2a1385_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00053_a6bd99ada5f7c46567ee0ceca6c369d47}\label{a00053_a6bd99ada5f7c46567ee0ceca6c369d47} 
+\index{kiostream.cpp@{kiostream.cpp}!printCharStr@{printCharStr}}
+\index{printCharStr@{printCharStr}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{printCharStr()}{printCharStr()}}
+{\footnotesize\ttfamily static void print\+Char\+Str (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00041}{41}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ uint16\_t\ *video\_memory\ =\ (uint16\_t\ *)0xb8000;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ FOR\ TEXT\ :\ Attribute\ for\ Gray-\/White\ (0x7)\ text\ on\ a\ Black\ (0x0)\ background\ (last\ 2\ bytes\ (LSBs)\ are\ not\ used\ for\ color).}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ color\_attribute\ =\ 0x0700;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ MOUSE-\/SAFE\ PRINTING:\ remove\ mouse\ -\/-\/-\/}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ mouse\_offset\ =\ \mbox{\hyperlink{a01057_aa02009b37420687ef18db8a05ff9181f}{driver::MouseDriver::\_\_mouse\_y\_}}\ *\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}}\ +\ \mbox{\hyperlink{a01057_ac2077f6309c79d5f585fb966b57fe065}{driver::MouseDriver::\_\_mouse\_x\_}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}(mouse\_offset>=0)\ video\_memory[mouse\_offset]\ =\ \mbox{\hyperlink{a01057_a4a671e7e2b235f6bec473cb960401bd6}{driver::MouseDriver::old\_char\_under\_mouse\_pointer}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}++;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)b'})}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ >\ 0)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}-\/-\/;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offset\ =\ \mbox{\hyperlink{a00053_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}\ *\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}}\ +\ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ video\_memory[offset]\ =\ color\_attribute\ |\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)t'})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ =\ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ +\ (\mbox{\hyperlink{a00053_a49426d7a9b562958ad2ab7fbf134f368}{TAB\_WIDTH}}\ -\/\ (\mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ \%\ \mbox{\hyperlink{a00053_a49426d7a9b562958ad2ab7fbf134f368}{TAB\_WIDTH}}));}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offset\ =\ \mbox{\hyperlink{a00053_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}\ *\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}}\ +\ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ video\_memory[offset]\ =\ color\_attribute\ |\ str[i];}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}++;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ >=\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}})}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}++;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ =\ 0;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00053_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}\ >=\ \mbox{\hyperlink{a00053_a887422301cbe9a94f8b96263415640cf}{MAGIC\_HEIGHT}})}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ (\mbox{\hyperlink{a00053_a887422301cbe9a94f8b96263415640cf}{MAGIC\_HEIGHT}}\ -\/\ 1);\ y++)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}};\ x++)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ current\_offset\ =\ y\ *\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}}\ +\ x;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ next\_line\_offset\ =\ (y\ +\ 1)\ *\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}}\ +\ x;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ video\_memory[current\_offset]\ =\ video\_memory[next\_line\_offset];}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ last\_line\_offset\_start\ =\ (\mbox{\hyperlink{a00053_a887422301cbe9a94f8b96263415640cf}{MAGIC\_HEIGHT}}\ -\/\ 1)\ *\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{a00053_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}};\ x++)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ video\_memory[last\_line\_offset\_start\ +\ x]\ =\ color\_attribute\ |\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}\ =\ \mbox{\hyperlink{a00053_a887422301cbe9a94f8b96263415640cf}{MAGIC\_HEIGHT}}\ -\/\ 1;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ MOUSE-\/SAFE\ PRINTING:\ add\ mouse\ again-\/-\/-\/}}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{a01057_a4a671e7e2b235f6bec473cb960401bd6}{driver::MouseDriver::old\_char\_under\_mouse\_pointer}}\ =\ video\_memory[mouse\_offset];}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}(mouse\_offset>=0)\ video\_memory[mouse\_offset]\ =\ \mbox{\hyperlink{a01057_a1a2a455ca7146dea3148afa8cb6c9ed5}{driver::MouseDriver::mouse\_block\_video\_mem\_value}}(\mbox{\hyperlink{a01057_a4a671e7e2b235f6bec473cb960401bd6}{driver::MouseDriver::old\_char\_under\_mouse\_pointer}},\ \mbox{\hyperlink{a00143_a637dd833f5f7af42afa1f42349a4d89e}{MOUSE\_POINTER\_COLOR}});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00143_source_l00050}{driver\+::\+Mouse\+Driver\+::\+\_\+\+\_\+mouse\+\_\+x\+\_\+}}, \mbox{\hyperlink{a00143_source_l00050}{driver\+::\+Mouse\+Driver\+::\+\_\+\+\_\+mouse\+\_\+y\+\_\+}}, \mbox{\hyperlink{a00053_source_l00004}{cursor\+\_\+x\+\_\+}}, \mbox{\hyperlink{a00053_source_l00005}{cursor\+\_\+y\+\_\+}}, \mbox{\hyperlink{a00053_source_l00008}{MAGIC\+\_\+\+HEIGHT}}, \mbox{\hyperlink{a00053_source_l00007}{MAGIC\+\_\+\+WIDTH}}, \mbox{\hyperlink{a00071_source_l00017}{driver\+::\+Mouse\+Driver\+::mouse\+\_\+block\+\_\+video\+\_\+mem\+\_\+value()}}, \mbox{\hyperlink{a00143_source_l00025}{MOUSE\+\_\+\+POINTER\+\_\+\+COLOR}}, \mbox{\hyperlink{a00143_source_l00048}{driver\+::\+Mouse\+Driver\+::old\+\_\+char\+\_\+under\+\_\+mouse\+\_\+pointer}}, and \mbox{\hyperlink{a00053_source_l00009}{TAB\+\_\+\+WIDTH}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00276}{basic\+::printf()}}, and \mbox{\hyperlink{a00053_source_l00227}{print\+Hex()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{dc/dee/a00053_a6bd99ada5f7c46567ee0ceca6c369d47_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_a6bd99ada5f7c46567ee0ceca6c369d47_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00053_aab6eb585b409591414f84a1e3f606345}\label{a00053_aab6eb585b409591414f84a1e3f606345} 
+\index{kiostream.cpp@{kiostream.cpp}!printHex@{printHex}}
+\index{printHex@{printHex}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{printHex()}{printHex()}}
+{\footnotesize\ttfamily static void print\+Hex (\begin{DoxyParamCaption}\item[{uintptr\+\_\+t}]{n,  }\item[{int}]{digits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00227}{227}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[32];}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{a00053_a14bf754296559bf0266e127e677e8107}{ullToString}}(n,\ buffer,\ 16,\ 0,\ 1);\ \textcolor{comment}{//\ Use\ uppercase\ for\ pointers\ typically}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00125_a6de3a6d27a7e07942958b912d39792e6}{len}}\ =\ 0;}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{while}\ (buffer[\mbox{\hyperlink{a00125_a6de3a6d27a7e07942958b912d39792e6}{len}}]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00125_a6de3a6d27a7e07942958b912d39792e6}{len}}++;}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ digits\ -\/\ \mbox{\hyperlink{a00125_a6de3a6d27a7e07942958b912d39792e6}{len}};\ i++)\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00053_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(\textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{a00053_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(buffer);}
+\DoxyCodeLine{00240\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00125_source_l00002}{len}}, \mbox{\hyperlink{a00053_source_l00041}{print\+Char\+Str()}}, and \mbox{\hyperlink{a00053_source_l00147}{ull\+To\+String()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00276}{basic\+::printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_aab6eb585b409591414f84a1e3f606345_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_aab6eb585b409591414f84a1e3f606345_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00053_a913f40d6652965fdd1e34a04ab7dba2d}\label{a00053_a913f40d6652965fdd1e34a04ab7dba2d} 
+\index{kiostream.cpp@{kiostream.cpp}!reverse@{reverse}}
+\index{reverse@{reverse}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily static void reverse (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00133}{133}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{int}\ start\ =\ 0;}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{int}\ end\ =\ length\ -\/\ 1;}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{while}\ (start\ <\ end)}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ temp\ =\ str[start];}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ str[start]\ =\ str[end];}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ str[end]\ =\ temp;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ start++;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ end-\/-\/;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00147}{ull\+To\+String()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_a913f40d6652965fdd1e34a04ab7dba2d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00053_a14bf754296559bf0266e127e677e8107}\label{a00053_a14bf754296559bf0266e127e677e8107} 
+\index{kiostream.cpp@{kiostream.cpp}!ullToString@{ullToString}}
+\index{ullToString@{ullToString}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{ullToString()}{ullToString()}}
+{\footnotesize\ttfamily static void ull\+To\+String (\begin{DoxyParamCaption}\item[{unsigned long long}]{n,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{base,  }\item[{int}]{is\+\_\+signed,  }\item[{int}]{uppercase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00147}{147}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ isNegative\ =\ 0;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ buffer[i++]\ =\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ buffer[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_signed\ \&\&\ (\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long})n\ <\ 0)}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ isNegative\ =\ 1;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ n\ =\ -\/(\textcolor{keywordtype}{long}\ long)n;}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{while}\ (n\ !=\ 0)}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rem\ =\ n\ \%\ \mbox{\hyperlink{a00152_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ buffer[i++]\ =\ (rem\ >\ 9)\ ?\ ((rem\ -\/\ 10)\ +\ (uppercase\ ?\ \textcolor{charliteral}{'A'}\ :\ \textcolor{charliteral}{'a'}))\ :\ (rem\ +\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ n\ =\ n\ /\ \mbox{\hyperlink{a00152_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{if}\ (isNegative)}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ buffer[i++]\ =\ \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ buffer[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{a00053_a913f40d6652965fdd1e34a04ab7dba2d}{reverse}}(buffer,\ i);}
+\DoxyCodeLine{00179\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a00152_source_l00002}{base}}, and \mbox{\hyperlink{a00053_source_l00133}{reverse()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00189}{double\+To\+String()}}, \mbox{\hyperlink{a00053_source_l00276}{basic\+::printf()}}, and \mbox{\hyperlink{a00053_source_l00227}{print\+Hex()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{dc/dee/a00053_a14bf754296559bf0266e127e677e8107_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dee/a00053_a14bf754296559bf0266e127e677e8107_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Variable Documentation}
+\Hypertarget{a00053_a133981c4ba48aed67a5b874f7b213583}\label{a00053_a133981c4ba48aed67a5b874f7b213583} 
+\index{kiostream.cpp@{kiostream.cpp}!cursor\_x\_@{cursor\_x\_}}
+\index{cursor\_x\_@{cursor\_x\_}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{cursor\_x\_}{cursor\_x\_}}
+{\footnotesize\ttfamily int cursor\+\_\+x\+\_\+ = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00004}{4}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00118}{basic\+::\+\_\+\+\_\+clear\+Screen()}}, \mbox{\hyperlink{a00053_source_l00041}{print\+Char\+Str()}}, \mbox{\hyperlink{a00053_source_l00276}{basic\+::printf()}}, and \mbox{\hyperlink{a00053_source_l00025}{basic\+::update\+\_\+cursor()}}.
+
+\Hypertarget{a00053_a1bda227f31ddf346294cb531f7554ef3}\label{a00053_a1bda227f31ddf346294cb531f7554ef3} 
+\index{kiostream.cpp@{kiostream.cpp}!cursor\_y\_@{cursor\_y\_}}
+\index{cursor\_y\_@{cursor\_y\_}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{cursor\_y\_}{cursor\_y\_}}
+{\footnotesize\ttfamily int cursor\+\_\+y\+\_\+ = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00053_source_l00005}{5}} of file \mbox{\hyperlink{a00053_source}{kiostream.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00118}{basic\+::\+\_\+\+\_\+clear\+Screen()}}, \mbox{\hyperlink{a00053_source_l00041}{print\+Char\+Str()}}, \mbox{\hyperlink{a00053_source_l00276}{basic\+::printf()}}, and \mbox{\hyperlink{a00053_source_l00025}{basic\+::update\+\_\+cursor()}}.
+
+\Hypertarget{a00053_a32de8112c133d2f05cae84bde7d98239}\label{a00053_a32de8112c133d2f05cae84bde7d98239} 
+\index{kiostream.cpp@{kiostream.cpp}!vgaDataPort@{vgaDataPort}}
+\index{vgaDataPort@{vgaDataPort}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{vgaDataPort}{vgaDataPort}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01089}{hardware\+\_\+communication\+::\+Port8\+Bit}} vga\+Data\+Port(0x3\+D5) (\begin{DoxyParamCaption}\item[{0x3\+D5}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00035}{basic\+::disable\+\_\+cursor()}}, \mbox{\hyperlink{a00053_source_l00017}{basic\+::enable\+\_\+cursor()}}, and \mbox{\hyperlink{a00053_source_l00025}{basic\+::update\+\_\+cursor()}}.
+
+\Hypertarget{a00053_a0cece8394c6a6dedd523238e9057125f}\label{a00053_a0cece8394c6a6dedd523238e9057125f} 
+\index{kiostream.cpp@{kiostream.cpp}!vgaIndexPort@{vgaIndexPort}}
+\index{vgaIndexPort@{vgaIndexPort}!kiostream.cpp@{kiostream.cpp}}
+\doxyparagraph{\texorpdfstring{vgaIndexPort}{vgaIndexPort}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01089}{hardware\+\_\+communication\+::\+Port8\+Bit}} vga\+Index\+Port(0x3\+D4) (\begin{DoxyParamCaption}\item[{0x3\+D4}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00035}{basic\+::disable\+\_\+cursor()}}, \mbox{\hyperlink{a00053_source_l00017}{basic\+::enable\+\_\+cursor()}}, and \mbox{\hyperlink{a00053_source_l00025}{basic\+::update\+\_\+cursor()}}.
+

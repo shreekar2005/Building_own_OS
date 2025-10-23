@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a12306" xml:lang="en-US">
+<title>essential::GDT</title>
+<indexterm><primary>essential::GDT</primary></indexterm>
+<para>
+<computeroutput>#include &quot;kgdt.hpp&quot;</computeroutput>
+</para>
+Collaboration diagram for essential::GDT:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../db/d4d/a12304.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a12306_1aa061ecab5a20a3556413fbbde4fe89d7">GDT</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_a12306_1a9b61f75de7fa2ffe9589f43c3f6a6a6c">~GDT</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_a12306_1af8e3c1da270077eb7cc6551b35c0e5ca">installTable</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static uint16_t <link linkend="_a12306_1a89a8d2c17e3c22e7200bff09252f46e1">kernel_CS_selector</link> ()</para>
+</listitem>
+            <listitem><para>static uint16_t <link linkend="_a12306_1a34661a528b1630bff806e25411ad6ec3">kernel_DS_selector</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_a12306_1a9c89bddfdb21d5cc09c1d82411982de9">printLoadedTable</link> ()</para>
+
+<para>(Static) Prints the currently loaded <link linkend="_a12306">GDT</link> by reading the GDTR. </para>
+</listitem>
+            <listitem><para>static void <link linkend="_a12306_1a2ae998750fc1e18e6778e92774bd3574">printLoadedTableHeader</link> ()</para>
+</listitem>
+            <listitem><para>static uint16_t <link linkend="_a12306_1a8806a14009c4f0432d4b7043d687be17">user_CS_selector</link> ()</para>
+</listitem>
+            <listitem><para>static uint16_t <link linkend="_a12306_1a90661f97e9cf214dd6d977b19c01f7fc">user_DS_selector</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uintptr_t <link linkend="_a12306_1ad0a48a89930e6a6c4467c977f4e91269">base</link></para>
+</listitem>
+            <listitem><para><link linkend="_a12302">GDT_row</link> <link linkend="_a12306_1a20d7a6bb352e3f696c1c68bb394766d8">kernel_CS</link></para>
+</listitem>
+            <listitem><para><link linkend="_a12302">GDT_row</link> <link linkend="_a12306_1ac8a5b4f6a3dc223e2eb6abebe19c9f08">kernel_DS</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a12306_1a4105a25a1ec71dc7e338639bb370c664">limit</link></para>
+</listitem>
+            <listitem><para><link linkend="_a12302">GDT_row</link> <link linkend="_a12306_1a154c2e2725809d873c8e7d5f19ea66c5">nullSegment</link></para>
+</listitem>
+            <listitem><para><link linkend="_a12302">GDT_row</link> <link linkend="_a12306_1a32508694f9db3188cd4aba126cbfb5bb">user_CS</link></para>
+</listitem>
+            <listitem><para><link linkend="_a12302">GDT_row</link> <link linkend="_a12306_1a73463d83e2048869692d0adf1acac7a6">user_DS</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_a11396_source_1l00054">54</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a12306_1aa061ecab5a20a3556413fbbde4fe89d7"/><section>
+    <title>GDT()</title>
+<indexterm><primary>GDT</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>GDT</secondary></indexterm>
+<para><computeroutput>essential::GDT::GDT ( )</computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00026">26</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00028 &#32;&#32;&#32;&#32;:&#32;<link linkend="_a12306_1a154c2e2725809d873c8e7d5f19ea66c5">nullSegment</link>(),&#32;<emphasis role="comment">//&#32;First&#32;entry&#32;must&#32;be&#32;a&#32;null&#32;descriptor.</emphasis>
+00029 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12306_1a20d7a6bb352e3f696c1c68bb394766d8">kernel_CS</link>(0,&#32;0xFFFFFFFF,&#32;<link linkend="_a11396_1ac4461ee84aade9ee824de64d4846ec98">GDT_ACCESS_CODE_PL0</link>,&#32;<link linkend="_a11396_1a4941c819dbbef299c391bf53c24caf8d">GDT_GRAN_FLAGS</link>),
+00030 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12306_1ac8a5b4f6a3dc223e2eb6abebe19c9f08">kernel_DS</link>(0,&#32;0xFFFFFFFF,&#32;<link linkend="_a11396_1a1adfff1c72212b5c4e1df35485bb102a">GDT_ACCESS_DATA_PL0</link>,&#32;<link linkend="_a11396_1a4941c819dbbef299c391bf53c24caf8d">GDT_GRAN_FLAGS</link>),
+00031 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12306_1a32508694f9db3188cd4aba126cbfb5bb">user_CS</link>(0,&#32;0xFFFFFFFF,&#32;<link linkend="_a11396_1a01d908c8637340b21274e0176b320c05">GDT_ACCESS_CODE_PL3</link>,&#32;<link linkend="_a11396_1a4941c819dbbef299c391bf53c24caf8d">GDT_GRAN_FLAGS</link>),
+00032 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12306_1a73463d83e2048869692d0adf1acac7a6">user_DS</link>(0,&#32;0xFFFFFFFF,&#32;<link linkend="_a11396_1ac7f57dcdd84028460100b6da75ad4938">GDT_ACCESS_DATA_PL3</link>,&#32;<link linkend="_a11396_1a4941c819dbbef299c391bf53c24caf8d">GDT_GRAN_FLAGS</link>)
+00033 {
+00034 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;GDT&#32;limit&#32;is&#32;its&#32;total&#32;size&#32;in&#32;bytes&#32;minus&#32;1.</emphasis>
+00035 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;5&#32;entries&#32;*&#32;8&#32;bytes/entry&#32;=&#32;40&#32;bytes.&#32;Limit&#32;=&#32;39&#32;(0x27).</emphasis>
+00036 &#32;&#32;&#32;&#32;<link linkend="_a12306_1a4105a25a1ec71dc7e338639bb370c664">limit</link>&#32;=&#32;(<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>)&#32;*&#32;5)&#32;-&#32;1;
+00037 &#32;&#32;&#32;&#32;
+00038 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;base&#32;address&#32;is&#32;the&#32;address&#32;of&#32;the&#32;first&#32;entry&#32;in&#32;our&#32;table.</emphasis>
+00039 &#32;&#32;&#32;&#32;<link linkend="_a12306_1ad0a48a89930e6a6c4467c977f4e91269">base</link>&#32;=&#32;(uintptr_t)&amp;this-&gt;<link linkend="_a12306_1a154c2e2725809d873c8e7d5f19ea66c5">nullSegment</link>;
+00040 }
+</programlisting><para>
+References <link linkend="_a11396_source_1l00057">base</link>, <link linkend="_a11396_source_1l00056">limit</link>, and <link linkend="_a11396_source_1l00058">nullSegment</link>.</para>
+</section>
+<anchor xml:id="_a12306_1a9b61f75de7fa2ffe9589f43c3f6a6a6c"/><section>
+    <title>~GDT()</title>
+<indexterm><primary>~GDT</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>~GDT</secondary></indexterm>
+<para><computeroutput>essential::GDT::~GDT ( )</computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00042">42</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00042 {}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a12306_1af8e3c1da270077eb7cc6551b35c0e5ca"/><section>
+    <title>installTable()</title>
+<indexterm><primary>installTable</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>installTable</secondary></indexterm>
+<para><computeroutput>void essential::GDT::installTable ( )</computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00046">46</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00047 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;A&#32;structure&#32;that&#32;matches&#32;the&#32;6-byte&#32;format&#32;required&#32;by&#32;the&#32;&apos;lgdt&apos;&#32;instruction.</emphasis>
+00048 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>GDT_Pointer&#32;{
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a11396_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>;
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a11396_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>;&#32;<emphasis role="comment">//&#32;Use&#32;uint32_t&#32;for&#32;our&#32;i686&#32;(32-bit)&#32;target</emphasis>
+00051 &#32;&#32;&#32;&#32;}&#32;<link linkend="_a11369_1a4bbf25084dee10ec29f4356cacced463">__attribute__</link>((packed));
+00052 
+00053 &#32;&#32;&#32;&#32;GDT_Pointer&#32;gdt_ptr;
+00054 &#32;&#32;&#32;&#32;gdt_ptr.limit&#32;=&#32;this-&gt;<link linkend="_a12306_1a4105a25a1ec71dc7e338639bb370c664">limit</link>;
+00055 &#32;&#32;&#32;&#32;gdt_ptr.base&#32;=&#32;this-&gt;<link linkend="_a12306_1ad0a48a89930e6a6c4467c977f4e91269">base</link>;
+00056 &#32;&#32;&#32;&#32;
+00057 &#32;&#32;&#32;&#32;<emphasis role="keyword">asm</emphasis>&#32;<emphasis role="keyword">volatile</emphasis>(
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Load&#32;the&#32;address&#32;of&#32;our&#32;GDT_Pointer&#32;structure&#32;into&#32;the&#32;GDTR.</emphasis>
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;lgdt&#32;(%0)\n\t&quot;</emphasis>
+00060 
+00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Reload&#32;all&#32;data&#32;segment&#32;registers&#32;with&#32;the&#32;kernel&#32;data&#32;selector.</emphasis>
+00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;mov&#32;$0x10,&#32;%%ax\n\t&quot;</emphasis>&#32;&#32;&#32;<emphasis role="comment">//&#32;0x10&#32;is&#32;the&#32;selector&#32;for&#32;kernel_DS</emphasis>
+00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;mov&#32;%%ax,&#32;%%ds\n\t&quot;</emphasis>
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;mov&#32;%%ax,&#32;%%es\n\t&quot;</emphasis>
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;mov&#32;%%ax,&#32;%%fs\n\t&quot;</emphasis>
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;mov&#32;%%ax,&#32;%%gs\n\t&quot;</emphasis>
+00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;mov&#32;%%ax,&#32;%%ss\n\t&quot;</emphasis>
+00068 
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Perform&#32;a&#32;32-bit&#32;far&#32;jump&#32;to&#32;reload&#32;the&#32;CS&#32;register&#32;and&#32;flush&#32;the&#32;CPU&#32;pipeline.</emphasis>
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;jmp&#32;$0x08,&#32;$flush_cs\n\t&quot;</emphasis>&#32;<emphasis role="comment">//&#32;0x08&#32;is&#32;the&#32;selector&#32;for&#32;kernel_CS</emphasis>
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;flush_cs:\n\t&quot;</emphasis>
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<emphasis role="comment">//&#32;No&#32;output&#32;operands</emphasis>
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<emphasis role="stringliteral">&quot;r&quot;</emphasis>(&amp;gdt_ptr)&#32;<emphasis role="comment">//&#32;Input:&#32;address&#32;of&#32;our&#32;GDT_Pointer</emphasis>
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<emphasis role="stringliteral">&quot;memory&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;eax&quot;</emphasis>&#32;<emphasis role="comment">//&#32;Clobbered&#32;registers</emphasis>
+00075 &#32;&#32;&#32;&#32;);
+00076 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;GDT&#32;Installed\n&quot;</emphasis>);
+00077 }
+</programlisting><para>
+References <link linkend="_a11369_1a4bbf25084dee10ec29f4356cacced463">__attribute__</link>, <link linkend="_a11396_source_1l00002">base</link>, <link linkend="_a11396_source_1l00001">limit</link>, and <link linkend="_a11297_source_1l00276">basic::printf()</link>.</para>
+<para>
+Referenced by <link linkend="_a11333_source_1l00085">kernelMain()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d9f/a12306_af8e3c1da270077eb7cc6551b35c0e5ca_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d9f/a12306_af8e3c1da270077eb7cc6551b35c0e5ca_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a12306_1a89a8d2c17e3c22e7200bff09252f46e1"/><section>
+    <title>kernel_CS_selector()</title>
+<indexterm><primary>kernel_CS_selector</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>kernel_CS_selector</secondary></indexterm>
+<para><computeroutput>uint16_t essential::GDT::kernel_CS_selector ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00140">140</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00140 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>)&#32;*&#32;1;&#32;}&#32;<emphasis role="comment">//&#32;Selector&#32;0x08</emphasis>
+</programlisting><para>
+Referenced by <link linkend="_a11306_source_1l00032">hardware_communication::InterruptManager::InterruptManager()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d9f/a12306_a89a8d2c17e3c22e7200bff09252f46e1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a12306_1a34661a528b1630bff806e25411ad6ec3"/><section>
+    <title>kernel_DS_selector()</title>
+<indexterm><primary>kernel_DS_selector</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>kernel_DS_selector</secondary></indexterm>
+<para><computeroutput>uint16_t essential::GDT::kernel_DS_selector ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00141">141</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00141 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>)&#32;*&#32;2;&#32;}&#32;<emphasis role="comment">//&#32;Selector&#32;0x10</emphasis>
+</programlisting></section>
+<anchor xml:id="_a12306_1a9c89bddfdb21d5cc09c1d82411982de9"/><section>
+    <title>printLoadedTable()</title>
+<indexterm><primary>printLoadedTable</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>printLoadedTable</secondary></indexterm>
+<para><computeroutput>void essential::GDT::printLoadedTable ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>(Static) Prints the currently loaded <link linkend="_a12306">GDT</link> by reading the GDTR. </para>
+</para>
+<para>
+Definition at line <link linkend="_a11318_source_1l00082">82</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00083 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>GDT_Pointer&#32;{
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a11396_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>;
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a11396_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>;
+00086 &#32;&#32;&#32;&#32;}&#32;<link linkend="_a11369_1a4bbf25084dee10ec29f4356cacced463">__attribute__</link>((packed));
+00087 
+00088 &#32;&#32;&#32;&#32;GDT_Pointer&#32;gdtr;
+00089 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;the&#32;current&#32;GDT&#32;register&#32;contents&#32;into&#32;our&#32;struct.</emphasis>
+00090 &#32;&#32;&#32;&#32;<emphasis role="keyword">asm</emphasis>&#32;<emphasis role="keyword">volatile</emphasis>(<emphasis role="stringliteral">&quot;sgdt&#32;%0&quot;</emphasis>&#32;:&#32;<emphasis role="stringliteral">&quot;=m&quot;</emphasis>(gdtr));
+00091 
+00092 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+00093 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;INFO&#32;about&#32;:&#32;Currently&#32;Loaded&#32;GDT\n&quot;</emphasis>);
+00094 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Base&#32;Address:&#32;%#x\n&quot;</emphasis>,&#32;gdtr.base);
+00095 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Limit:&#32;%#x&#32;(%d&#32;bytes)\n&quot;</emphasis>,&#32;gdtr.limit,&#32;gdtr.limit);
+00096 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Entries:&#32;%d\n&quot;</emphasis>,&#32;(gdtr.limit&#32;+&#32;1)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>));
+00097 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+00098 
+00099 &#32;&#32;&#32;&#32;<link linkend="_a12302">essential::GDT_row</link>*&#32;gdt_entries&#32;=&#32;(<link linkend="_a12302">essential::GDT_row</link>*)gdtr.base;
+00100 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;num_entries&#32;=&#32;(gdtr.limit&#32;+&#32;1)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>);
+00101 
+00102 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;num_entries;&#32;i++)&#32;{
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12302">essential::GDT_row</link>&#32;entry&#32;=&#32;gdt_entries[i];
+00104 
+00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Reconstruct&#32;the&#32;base&#32;and&#32;limit&#32;from&#32;the&#32;scattered&#32;fields.</emphasis>
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a12306_1ad0a48a89930e6a6c4467c977f4e91269">base</link>&#32;=&#32;entry.<link linkend="_a12302_1a2cbd86d4258ecebf7b46cc9bb8611b5b">base_high</link>&#32;&lt;&lt;&#32;24&#32;|&#32;entry.<link linkend="_a12302_1a8429e04bddc6a61c4e95b88901ae219d">base_middle</link>&#32;&lt;&lt;&#32;16&#32;|&#32;entry.<link linkend="_a12302_1a298d18522898ad48c1e05b79f1f4dff7">base_low</link>;
+00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a12306_1a4105a25a1ec71dc7e338639bb370c664">limit</link>&#32;=&#32;(entry.<link linkend="_a12302_1af180a640dbd5213b3f936ff7cf48deaf">granularity</link>&#32;&amp;&#32;0x0F)&#32;&lt;&lt;&#32;16&#32;|&#32;entry.<link linkend="_a12302_1a2bddbe405dfbbbd101c475bd1bd65112">limit_low</link>;
+00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;granularity&#32;bit&#32;is&#32;set,&#32;the&#32;limit&#32;is&#32;in&#32;4&#32;KiB&#32;pages.</emphasis>
+00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((entry.granularity&#32;&amp;&#32;0x80)&#32;!=&#32;0)&#32;{
+00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a12306_1a4105a25a1ec71dc7e338639bb370c664">limit</link>&#32;=&#32;(<link linkend="_a12306_1a4105a25a1ec71dc7e338639bb370c664">limit</link>&#32;&lt;&lt;&#32;12)&#32;|&#32;0xFFF;
+00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00113 
+00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;GDT&#32;Entry&#32;%d:&#32;Base=%p,&#32;Limit=%#x,&#32;Access=%#x,&#32;Granularity=%#x\n&quot;</emphasis>,
+00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i,&#32;(<emphasis role="keywordtype">void</emphasis>*)(uintptr_t)<link linkend="_a12306_1ad0a48a89930e6a6c4467c977f4e91269">base</link>,&#32;<link linkend="_a12306_1a4105a25a1ec71dc7e338639bb370c664">limit</link>,&#32;entry.access,&#32;entry.granularity);
+00116 &#32;&#32;&#32;&#32;}
+00117 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+00118 }
+</programlisting><para>
+References <link linkend="_a11369_1a4bbf25084dee10ec29f4356cacced463">__attribute__</link>, <link linkend="_a11396_source_1l00039">essential::GDT_row::access</link>, <link linkend="_a11396_source_1l00002">base</link>, <link linkend="_a11396_source_1l00041">essential::GDT_row::base_high</link>, <link linkend="_a11396_source_1l00037">essential::GDT_row::base_low</link>, <link linkend="_a11396_source_1l00038">essential::GDT_row::base_middle</link>, <link linkend="_a11396_source_1l00040">essential::GDT_row::granularity</link>, <link linkend="_a11396_source_1l00001">limit</link>, <link linkend="_a11396_source_1l00036">essential::GDT_row::limit_low</link>, and <link linkend="_a11297_source_1l00276">basic::printf()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d9f/a12306_a9c89bddfdb21d5cc09c1d82411982de9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a12306_1a2ae998750fc1e18e6778e92774bd3574"/><section>
+    <title>printLoadedTableHeader()</title>
+<indexterm><primary>printLoadedTableHeader</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>printLoadedTableHeader</secondary></indexterm>
+<para><computeroutput>void essential::GDT::printLoadedTableHeader ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00120">120</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00121 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>GDT_Pointer&#32;{
+00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a11396_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>;
+00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a11396_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>;
+00124 &#32;&#32;&#32;&#32;}&#32;<link linkend="_a11369_1a4bbf25084dee10ec29f4356cacced463">__attribute__</link>((packed));
+00125 
+00126 &#32;&#32;&#32;&#32;GDT_Pointer&#32;gdtr;
+00127 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;the&#32;current&#32;GDT&#32;register&#32;contents&#32;into&#32;our&#32;struct.</emphasis>
+00128 &#32;&#32;&#32;&#32;<emphasis role="keyword">asm</emphasis>&#32;<emphasis role="keyword">volatile</emphasis>(<emphasis role="stringliteral">&quot;sgdt&#32;%0&quot;</emphasis>&#32;:&#32;<emphasis role="stringliteral">&quot;=m&quot;</emphasis>(gdtr));
+00129 
+00130 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+00131 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;INFO&#32;about&#32;:&#32;Currently&#32;Loaded&#32;GDT\n&quot;</emphasis>);
+00132 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Base&#32;Address:&#32;%#x\n&quot;</emphasis>,&#32;gdtr.base);
+00133 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Limit:&#32;%#x&#32;(%d&#32;bytes)\n&quot;</emphasis>,&#32;gdtr.limit,&#32;gdtr.limit);
+00134 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Entries:&#32;%d\n&quot;</emphasis>,&#32;(gdtr.limit&#32;+&#32;1)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>));
+00135 &#32;&#32;&#32;&#32;<link linkend="_a11403_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+00136 }
+</programlisting><para>
+References <link linkend="_a11369_1a4bbf25084dee10ec29f4356cacced463">__attribute__</link>, <link linkend="_a11396_source_1l00002">base</link>, <link linkend="_a11396_source_1l00001">limit</link>, and <link linkend="_a11297_source_1l00276">basic::printf()</link>.</para>
+<para>
+Referenced by <link linkend="_a11333_source_1l00085">kernelMain()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d9f/a12306_a2ae998750fc1e18e6778e92774bd3574_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d9f/a12306_a2ae998750fc1e18e6778e92774bd3574_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a12306_1a8806a14009c4f0432d4b7043d687be17"/><section>
+    <title>user_CS_selector()</title>
+<indexterm><primary>user_CS_selector</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>user_CS_selector</secondary></indexterm>
+<para><computeroutput>uint16_t essential::GDT::user_CS_selector ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00142">142</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00142 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>)&#32;*&#32;3;&#32;}&#32;<emphasis role="comment">//&#32;Selector&#32;0x18</emphasis>
+</programlisting></section>
+<anchor xml:id="_a12306_1a90661f97e9cf214dd6d977b19c01f7fc"/><section>
+    <title>user_DS_selector()</title>
+<indexterm><primary>user_DS_selector</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>user_DS_selector</secondary></indexterm>
+<para><computeroutput>uint16_t essential::GDT::user_DS_selector ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11318_source_1l00143">143</link> of file <link linkend="_a11318_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00143 {&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a12302">essential::GDT_row</link>)&#32;*&#32;4;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a12306_1ad0a48a89930e6a6c4467c977f4e91269"/><section>
+    <title>base</title>
+<indexterm><primary>base</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>base</secondary></indexterm>
+<para><computeroutput>uintptr_t essential::GDT::base<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11396_source_1l00057">57</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a11318_source_1l00026">GDT()</link>.</para>
+</section>
+<anchor xml:id="_a12306_1a20d7a6bb352e3f696c1c68bb394766d8"/><section>
+    <title>kernel_CS</title>
+<indexterm><primary>kernel_CS</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>kernel_CS</secondary></indexterm>
+<para><computeroutput><link linkend="_a12302">GDT_row</link> essential::GDT::kernel_CS<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11396_source_1l00059">59</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a12306_1ac8a5b4f6a3dc223e2eb6abebe19c9f08"/><section>
+    <title>kernel_DS</title>
+<indexterm><primary>kernel_DS</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>kernel_DS</secondary></indexterm>
+<para><computeroutput><link linkend="_a12302">GDT_row</link> essential::GDT::kernel_DS<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11396_source_1l00060">60</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a12306_1a4105a25a1ec71dc7e338639bb370c664"/><section>
+    <title>limit</title>
+<indexterm><primary>limit</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>limit</secondary></indexterm>
+<para><computeroutput>uint16_t essential::GDT::limit<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11396_source_1l00056">56</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a11318_source_1l00026">GDT()</link>.</para>
+</section>
+<anchor xml:id="_a12306_1a154c2e2725809d873c8e7d5f19ea66c5"/><section>
+    <title>nullSegment</title>
+<indexterm><primary>nullSegment</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>nullSegment</secondary></indexterm>
+<para><computeroutput><link linkend="_a12302">GDT_row</link> essential::GDT::nullSegment<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11396_source_1l00058">58</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a11318_source_1l00026">GDT()</link>.</para>
+</section>
+<anchor xml:id="_a12306_1a32508694f9db3188cd4aba126cbfb5bb"/><section>
+    <title>user_CS</title>
+<indexterm><primary>user_CS</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>user_CS</secondary></indexterm>
+<para><computeroutput><link linkend="_a12302">GDT_row</link> essential::GDT::user_CS<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11396_source_1l00061">61</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a12306_1a73463d83e2048869692d0adf1acac7a6"/><section>
+    <title>user_DS</title>
+<indexterm><primary>user_DS</primary><secondary>essential::GDT</secondary></indexterm>
+<indexterm><primary>essential::GDT</primary><secondary>user_DS</secondary></indexterm>
+<para><computeroutput><link linkend="_a12302">GDT_row</link> essential::GDT::user_DS<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a11396_source_1l00062">62</link> of file <link linkend="_a11396_source">kgdt.hpp</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+libk_header/essential/<link linkend="_a11396">kgdt.hpp</link>libk_src/essential/<link linkend="_a11318">kgdt.cpp</link></section>
+</section>

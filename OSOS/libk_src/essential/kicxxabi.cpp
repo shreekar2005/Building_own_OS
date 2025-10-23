@@ -1,4 +1,4 @@
-#include "essential/kicxxabi"
+#include "essential/kicxxabi.hpp"
 
 // To call constructors of global objects
 extern "C" void (*ctors_start)();

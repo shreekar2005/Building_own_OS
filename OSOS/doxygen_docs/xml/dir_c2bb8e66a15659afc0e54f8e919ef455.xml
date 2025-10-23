@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_c2bb8e66a15659afc0e54f8e919ef455" kind="dir">
+    <compoundname>libk_header/essential</compoundname>
+    <innerfile refid="d9/dc6/a18425">kgdt.hpp</innerfile>
+    <innerfile refid="dc/de4/a18422">kicxxabi.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libk_header/essential/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a18341_source" xml:lang="en-US">
+<title>kkeyboard.cpp</title>
+<indexterm><primary>libk_src/driver/kkeyboard.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_a18341_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_a18413">driver/kkeyboard.hpp</link>&quot;</emphasis>&#32;
+<anchor xml:id="_a18341_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_a18416">driver/kmouse.hpp</link>&quot;</emphasis>
+<anchor xml:id="_a18341_source_1l00003"/>00003 
+<anchor xml:id="_a18341_source_1l00004"/>00004 <emphasis role="comment">//&#32;---&#32;KeyboardEventHandler&#32;---</emphasis>
+<anchor xml:id="_a18341_source_1l00005"/>00005 
+<anchor xml:id="_a18341_source_1l00006"/><link linkend="_a19315_1a63ee0249476256e721e05e6375383317">00006</link> <link linkend="_a19315_1a63ee0249476256e721e05e6375383317">driver::KeyboardEventHandler::KeyboardEventHandler</link>(){}
+<anchor xml:id="_a18341_source_1l00007"/><link linkend="_a19315_1aed6531b818751f0f23b6b9836ac94aa0">00007</link> <link linkend="_a19315_1aed6531b818751f0f23b6b9836ac94aa0">driver::KeyboardEventHandler::~KeyboardEventHandler</link>(){}
+<anchor xml:id="_a18341_source_1l00008"/>00008 
+<anchor xml:id="_a18341_source_1l00009"/>00009 
+<anchor xml:id="_a18341_source_1l00010"/>00010 <emphasis role="comment">//&#32;---&#32;KeyboardDriver&#32;---</emphasis>
+<anchor xml:id="_a18341_source_1l00011"/>00011 
+<anchor xml:id="_a18341_source_1l00012"/>00012 <emphasis role="comment">//&#32;Constructor:&#32;Initialize&#32;the&#32;new&#32;state&#32;variable</emphasis>
+<anchor xml:id="_a18341_source_1l00013"/><link linkend="_a19319_1a63898e993f02352193db996d00179347">00013</link> <link linkend="_a19319_1a63898e993f02352193db996d00179347">driver::KeyboardDriver::KeyboardDriver</link>(<link linkend="_a19351">hardware_communication::InterruptManager</link>*&#32;interrupt_manager,&#32;<link linkend="_a19315">driver::KeyboardEventHandler</link>*&#32;keyboardEventHandler)
+<anchor xml:id="_a18341_source_1l00014"/>00014 :&#32;<link linkend="_a18435">hardware_communication</link>::InterruptHandler(0x21,&#32;interrupt_manager),&#32;
+<anchor xml:id="_a18341_source_1l00015"/>00015 &#32;&#32;dataPort(0x60),&#32;
+<anchor xml:id="_a18341_source_1l00016"/>00016 &#32;&#32;commandPort(0x64),
+<anchor xml:id="_a18341_source_1l00017"/>00017 &#32;&#32;shift_pressed(false),
+<anchor xml:id="_a18341_source_1l00018"/>00018 &#32;&#32;caps_on(false),
+<anchor xml:id="_a18341_source_1l00019"/>00019 &#32;&#32;waiting_for_led_ack(false){
+<anchor xml:id="_a18341_source_1l00020"/>00020 &#32;&#32;&#32;&#32;this-&gt;keyboardEventHandler=<link linkend="_a19319_1a11ec84b7abf113ec270f124564776e1f">keyboardEventHandler</link>;
+<anchor xml:id="_a18341_source_1l00021"/>00021 &#32;&#32;}
+<anchor xml:id="_a18341_source_1l00022"/>00022 
+<anchor xml:id="_a18341_source_1l00023"/><link linkend="_a19319_1a77da196f3c04c549e1085ce5566e5df3">00023</link> <link linkend="_a19319_1a77da196f3c04c549e1085ce5566e5df3">driver::KeyboardDriver::~KeyboardDriver</link>(){}
+<anchor xml:id="_a18341_source_1l00024"/>00024 
+<anchor xml:id="_a18341_source_1l00025"/><link linkend="_a19319_1a248fa0da9acac54a3a8880c7b66b3f2b">00025</link> uint32_t&#32;<link linkend="_a19319_1a248fa0da9acac54a3a8880c7b66b3f2b">driver::KeyboardDriver::handleInterrupt</link>(uint32_t&#32;esp){
+<anchor xml:id="_a18341_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Unshifted&#32;keys</emphasis>
+<anchor xml:id="_a18341_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;scancode_no_shift[]&#32;=&#32;{
+<anchor xml:id="_a18341_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;0,&#32;<emphasis role="charliteral">&apos;1&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;2&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;3&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;4&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;5&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;6&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;7&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;8&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;9&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;-&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;=&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;\b&apos;</emphasis>,
+<anchor xml:id="_a18341_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="charliteral">&apos;\t&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;q&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;w&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;e&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;r&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;t&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;y&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;u&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;i&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;o&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;p&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;[&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;]&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;\n&apos;</emphasis>,
+<anchor xml:id="_a18341_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;s&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;d&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;f&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;g&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;h&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;j&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;k&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;l&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;;&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;\&apos;&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;`&apos;</emphasis>,&#32;0,
+<anchor xml:id="_a18341_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="charliteral">&apos;\\&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;z&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;x&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;c&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;v&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;b&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;n&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;m&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;,&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;.&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;/&apos;</emphasis>,&#32;0,&#32;<emphasis role="charliteral">&apos;*&apos;</emphasis>,&#32;0,
+<anchor xml:id="_a18341_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,
+<anchor xml:id="_a18341_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,
+<anchor xml:id="_a18341_source_1l00034"/>00034 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_a18341_source_1l00035"/>00035 
+<anchor xml:id="_a18341_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Shifted&#32;keys</emphasis>
+<anchor xml:id="_a18341_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;scancode_shifted[]&#32;=&#32;{
+<anchor xml:id="_a18341_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;0,&#32;<emphasis role="charliteral">&apos;!&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;@&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;#&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;$&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;%&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;^&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;&amp;&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;*&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;(&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;)&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;_&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;+&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;\b&apos;</emphasis>,
+<anchor xml:id="_a18341_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="charliteral">&apos;\t&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;Q&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;W&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;E&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;R&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;T&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;Y&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;U&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;I&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;O&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;P&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;{&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;}&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;\n&apos;</emphasis>,
+<anchor xml:id="_a18341_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;<emphasis role="charliteral">&apos;A&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;S&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;D&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;F&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;G&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;H&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;J&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;K&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;L&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;:&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;&quot;&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;~&apos;</emphasis>,&#32;0,
+<anchor xml:id="_a18341_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="charliteral">&apos;|&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;Z&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;C&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;V&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;B&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;N&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;M&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;&lt;&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;&gt;&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;?&apos;</emphasis>,&#32;0,&#32;<emphasis role="charliteral">&apos;*&apos;</emphasis>,&#32;0,
+<anchor xml:id="_a18341_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,
+<anchor xml:id="_a18341_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0,&#32;0,&#32;0,&#32;0,&#32;0,
+<anchor xml:id="_a18341_source_1l00044"/>00044 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_a18341_source_1l00045"/>00045 
+<anchor xml:id="_a18341_source_1l00046"/>00046 &#32;&#32;&#32;&#32;uint8_t&#32;scancode&#32;=&#32;dataPort.read();
+<anchor xml:id="_a18341_source_1l00047"/>00047 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(keyboardEventHandler==0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;esp;&#32;<emphasis role="comment">//if&#32;dont&#32;have&#32;any&#32;handler&#32;just&#32;return</emphasis>
+<anchor xml:id="_a18341_source_1l00048"/>00048 
+<anchor xml:id="_a18341_source_1l00049"/>00049 
+<anchor xml:id="_a18341_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(this-&gt;waiting_for_led_ack)&#32;{
+<anchor xml:id="_a18341_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(scancode&#32;==&#32;0xFA)&#32;{&#32;<emphasis role="comment">//&#32;Got&#32;ACK</emphasis>
+<anchor xml:id="_a18341_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dataPort.write(this-&gt;led_byte_to_send);
+<anchor xml:id="_a18341_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;waiting_for_led_ack&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_a18341_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;we&#32;get&#32;something&#32;else,&#32;the&#32;keyboard&#32;is&#32;out&#32;of&#32;sync.</emphasis>
+<anchor xml:id="_a18341_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&apos;ll&#32;just&#32;drop&#32;out&#32;of&#32;the&#32;ACK-waiting&#32;state&#32;and&#32;process</emphasis>
+<anchor xml:id="_a18341_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;the&#32;scancode&#32;normally&#32;(by&#32;falling&#32;through).</emphasis>
+<anchor xml:id="_a18341_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;waiting_for_led_ack&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_a18341_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00061"/>00061 
+<anchor xml:id="_a18341_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;we&#32;got&#32;the&#32;ACK,&#32;we&apos;re&#32;done&#32;for&#32;this&#32;interrupt.</emphasis>
+<anchor xml:id="_a18341_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(scancode&#32;==&#32;0xFA)&#32;{
+<anchor xml:id="_a18341_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;esp;
+<anchor xml:id="_a18341_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00066"/>00066 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00067"/>00067 
+<anchor xml:id="_a18341_source_1l00068"/>00068 
+<anchor xml:id="_a18341_source_1l00069"/>00069 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;for&#32;key&#32;release</emphasis>
+<anchor xml:id="_a18341_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(scancode&#32;&amp;&#32;0x80)&#32;{
+<anchor xml:id="_a18341_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;scancode&#32;-=&#32;0x80;&#32;
+<anchor xml:id="_a18341_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(scancode)&#32;{
+<anchor xml:id="_a18341_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;0x2A:&#32;<emphasis role="comment">//&#32;Left&#32;Shift&#32;Release</emphasis>
+<anchor xml:id="_a18341_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;0x36:&#32;<emphasis role="comment">//&#32;Right&#32;Shift&#32;Release</emphasis>
+<anchor xml:id="_a18341_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;shift_pressed&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_a18341_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_a18341_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_a18341_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Handle&#32;release&#32;of&#32;all&#32;other&#32;keys</emphasis>
+<anchor xml:id="_a18341_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:&#32;{
+<anchor xml:id="_a18341_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;ascii&#32;=&#32;0;
+<anchor xml:id="_a18341_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(scancode&#32;&lt;&#32;<emphasis role="keyword">sizeof</emphasis>(scancode_no_shift))&#32;{
+<anchor xml:id="_a18341_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_a18341_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;base_char&#32;=&#32;scancode_no_shift[scancode];
+<anchor xml:id="_a18341_source_1l00084"/>00084 
+<anchor xml:id="_a18341_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Determine&#32;the&#32;character&#32;that&#32;was&#32;released&#32;based&#32;on&#32;the&#32;keyboard&#32;state</emphasis>
+<anchor xml:id="_a18341_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(base_char&#32;&gt;=&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>&#32;&amp;&amp;&#32;base_char&#32;&lt;=&#32;<emphasis role="charliteral">&apos;z&apos;</emphasis>)&#32;{
+<anchor xml:id="_a18341_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(this-&gt;shift_pressed&#32;^&#32;this-&gt;caps_on)&#32;{
+<anchor xml:id="_a18341_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;scancode_shifted[scancode];
+<anchor xml:id="_a18341_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;base_char;
+<anchor xml:id="_a18341_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(this-&gt;shift_pressed)&#32;{
+<anchor xml:id="_a18341_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;scancode_shifted[scancode];
+<anchor xml:id="_a18341_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;base_char;
+<anchor xml:id="_a18341_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(ascii&#32;!=&#32;0)&#32;{
+<anchor xml:id="_a18341_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;keyboardEventHandler-&gt;<link linkend="_a19315_1a28547100b7420e1f73b745df873cd411">onKeyUp</link>(ascii);
+<anchor xml:id="_a18341_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_a18341_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00106"/>00106 &#32;&#32;&#32;&#32;}&#32;
+<anchor xml:id="_a18341_source_1l00107"/>00107 
+<anchor xml:id="_a18341_source_1l00108"/>00108 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;for&#32;key&#32;press</emphasis>
+<anchor xml:id="_a18341_source_1l00109"/>00109 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(scancode)&#32;{
+<anchor xml:id="_a18341_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;0x2A:&#32;<emphasis role="comment">//&#32;Left&#32;Shift&#32;Press</emphasis>
+<anchor xml:id="_a18341_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;0x36:&#32;<emphasis role="comment">//&#32;Right&#32;Shift&#32;Press</emphasis>
+<anchor xml:id="_a18341_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;shift_pressed&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_a18341_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_a18341_source_1l00115"/>00115 
+<anchor xml:id="_a18341_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;0x3A:&#32;<emphasis role="comment">//&#32;Caps&#32;Lock&#32;Press</emphasis>
+<anchor xml:id="_a18341_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;caps_on&#32;=&#32;!this-&gt;caps_on;&#32;<emphasis role="comment">//&#32;Toggle&#32;the&#32;state</emphasis>
+<anchor xml:id="_a18341_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_a18341_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Prepare&#32;to&#32;send&#32;LED&#32;update</emphasis>
+<anchor xml:id="_a18341_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;led_byte_to_send&#32;=&#32;0;
+<anchor xml:id="_a18341_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(this-&gt;caps_on)&#32;this-&gt;led_byte_to_send&#32;|=&#32;0x04;&#32;<emphasis role="comment">//&#32;Bit&#32;2&#32;for&#32;Caps&#32;Lock&#32;LED</emphasis>
+<anchor xml:id="_a18341_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_a18341_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dataPort.write(0xED);&#32;<emphasis role="comment">//&#32;Send&#32;&quot;Set&#32;LEDs&quot;&#32;command</emphasis>
+<anchor xml:id="_a18341_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;waiting_for_led_ack&#32;=&#32;<emphasis role="keyword">true</emphasis>;&#32;<emphasis role="comment">//&#32;Set&#32;state&#32;to&#32;wait&#32;for&#32;ACK</emphasis>
+<anchor xml:id="_a18341_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_a18341_source_1l00126"/>00126 
+<anchor xml:id="_a18341_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:&#32;{
+<anchor xml:id="_a18341_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;It&apos;s&#32;a&#32;printable&#32;key</emphasis>
+<anchor xml:id="_a18341_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;ascii&#32;=&#32;0;
+<anchor xml:id="_a18341_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(scancode&#32;&lt;&#32;<emphasis role="keyword">sizeof</emphasis>(scancode_no_shift))&#32;{
+<anchor xml:id="_a18341_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_a18341_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;base_char&#32;=&#32;scancode_no_shift[scancode];
+<anchor xml:id="_a18341_source_1l00133"/>00133 
+<anchor xml:id="_a18341_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;it&apos;s&#32;an&#32;alphabet&#32;character</emphasis>
+<anchor xml:id="_a18341_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(base_char&#32;&gt;=&#32;<emphasis role="charliteral">&apos;a&apos;</emphasis>&#32;&amp;&amp;&#32;base_char&#32;&lt;=&#32;<emphasis role="charliteral">&apos;z&apos;</emphasis>)&#32;{
+<anchor xml:id="_a18341_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;It&apos;s&#32;a&#32;letter.&#32;Apply&#32;Shift&#32;XOR&#32;Caps&#32;Lock</emphasis>
+<anchor xml:id="_a18341_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(shift&#32;^&#32;caps)&#32;=&#32;true&#32;means&#32;capitalize</emphasis>
+<anchor xml:id="_a18341_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(this-&gt;shift_pressed&#32;^&#32;this-&gt;caps_on)&#32;{
+<anchor xml:id="_a18341_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;scancode_shifted[scancode];&#32;<emphasis role="comment">//&#32;Uppercase</emphasis>
+<anchor xml:id="_a18341_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;base_char;&#32;<emphasis role="comment">//&#32;Lowercase</emphasis>
+<anchor xml:id="_a18341_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00143"/>00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;It&apos;s&#32;not&#32;a&#32;letter&#32;(number,&#32;symbol,&#32;etc.)</emphasis>
+<anchor xml:id="_a18341_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Only&#32;Shift&#32;applies</emphasis>
+<anchor xml:id="_a18341_source_1l00146"/>00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(this-&gt;shift_pressed)&#32;{
+<anchor xml:id="_a18341_source_1l00147"/>00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;scancode_shifted[scancode];
+<anchor xml:id="_a18341_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_a18341_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ascii&#32;=&#32;base_char;
+<anchor xml:id="_a18341_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00151"/>00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;keyboardEventHandler-&gt;onKeyDown(ascii);
+<anchor xml:id="_a18341_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00154"/>00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_a18341_source_1l00155"/>00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00156"/>00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00157"/>00157 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18341_source_1l00158"/>00158 
+<anchor xml:id="_a18341_source_1l00159"/>00159 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;esp;
+<anchor xml:id="_a18341_source_1l00160"/>00160 }
+<anchor xml:id="_a18341_source_1l00161"/>00161 
+<anchor xml:id="_a18341_source_1l00162"/>00162 
+<anchor xml:id="_a18341_source_1l00163"/>00163 <emphasis role="comment">//------------------------------OVERRIDING&#32;VIRTUAL&#32;FUNCTIONS&#32;FROM&#32;DRIVER&#32;INTERFACE-----------------------------</emphasis>
+<anchor xml:id="_a18341_source_1l00164"/>00164 
+<anchor xml:id="_a18341_source_1l00165"/>00165 
+<anchor xml:id="_a18341_source_1l00166"/>00166 
+<anchor xml:id="_a18341_source_1l00167"/><link linkend="_a19319_1a58553d39d7dcfe6b55e8ddb1e7b1d187">00167</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a19319_1a58553d39d7dcfe6b55e8ddb1e7b1d187">driver::KeyboardDriver::activate</link>(){
+<anchor xml:id="_a18341_source_1l00168"/>00168 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(commandPort.read()&#32;&amp;&#32;1)&#32;dataPort.read();
+<anchor xml:id="_a18341_source_1l00169"/>00169 &#32;&#32;&#32;&#32;commandPort.write(0xAE);&#32;<emphasis role="comment">//&#32;activate&#32;communication&#32;for&#32;keyboard</emphasis>
+<anchor xml:id="_a18341_source_1l00170"/>00170 &#32;&#32;&#32;&#32;commandPort.write(0x20);&#32;<emphasis role="comment">//&#32;get&#32;current&#32;state</emphasis>
+<anchor xml:id="_a18341_source_1l00171"/>00171 &#32;&#32;&#32;&#32;uint8_t&#32;status&#32;=&#32;(dataPort.read()&#32;|&#32;1)&#32;&amp;&#32;~0x10;&#32;<emphasis role="comment">//&#32;set&#32;LSB&#32;and&#32;clear&#32;5th&#32;bit</emphasis>
+<anchor xml:id="_a18341_source_1l00172"/>00172 &#32;&#32;&#32;&#32;commandPort.write(0x60);&#32;<emphasis role="comment">//&#32;set&#32;state</emphasis>
+<anchor xml:id="_a18341_source_1l00173"/>00173 &#32;&#32;&#32;&#32;dataPort.write(status);
+<anchor xml:id="_a18341_source_1l00174"/>00174 &#32;&#32;&#32;&#32;dataPort.write(0xF4);
+<anchor xml:id="_a18341_source_1l00175"/>00175 &#32;&#32;&#32;&#32;<link linkend="_a18432_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Keyboard&#32;Driver&#32;activated!\n&quot;</emphasis>);
+<anchor xml:id="_a18341_source_1l00176"/>00176 }
+<anchor xml:id="_a18341_source_1l00177"/>00177 
+<anchor xml:id="_a18341_source_1l00178"/><link linkend="_a19319_1a22b7b080ab1c8b0f2ed4beba75b34691">00178</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_a19319_1a22b7b080ab1c8b0f2ed4beba75b34691">driver::KeyboardDriver::reset</link>(){<emphasis role="keywordflow">return</emphasis>&#32;0;}
+<anchor xml:id="_a18341_source_1l00179"/><link linkend="_a19319_1aaa7e99b6214dc8439230a95dd57e617e">00179</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a19319_1aaa7e99b6214dc8439230a95dd57e617e">driver::KeyboardDriver::deactivate</link>(){}
+</programlisting></section>

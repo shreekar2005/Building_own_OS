@@ -1,4 +1,4 @@
-#include "hardware_communication/kport"
+#include "hardware_communication/kport.hpp"
 
 hardware_communication::Port::Port(uint16_t portnumber){
     this->portnumber = portnumber;

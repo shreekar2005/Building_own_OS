@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a16025" xml:lang="en-US">
+<title>libk_header/hardware_communication/kinterrupt.hpp File Reference</title>
+<indexterm><primary>libk_header/hardware_communication/kinterrupt.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;cstdint&gt;<?linebreak?>#include &quot;basic/kiostream.hpp&quot;<?linebreak?>#include &quot;hardware_communication/kport.hpp&quot;<?linebreak?>#include &quot;essential/kgdt.hpp&quot;<?linebreak?></programlisting>Include dependency graph for kinterrupt.hpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d7a/a16026.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d9/ded/a16027.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a16965">hardware_communication::IDT_row</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a16961">hardware_communication::InterruptHandler</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a16969">hardware_communication::InterruptManager</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_a16053">hardware_communication</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a16025_1a3fe23003c5b71fa3b47543c074c38ac3">~IDT_row</link> ()</para>
+</listitem>
+            <listitem><para>class <link linkend="_a16965">hardware_communication::IDT_row</link> <link linkend="_a16053_1a269f53904f53339ae2df626922b404b2">hardware_communication::__attribute__</link> ((packed))</para>
+</listitem>
+            <listitem><para>void <link linkend="_a16025_1adf60fad10b12cc19ad193c928d36445c">handleIRQ0x00</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_a16025_1a6498ed740318b424aaae4db1f223e558">handleIRQ0x01</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_a16025_1a996c60cc7e88bb1c85505c19f6c35117">handleIRQ0x0C</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_a16025_1ab2572e8a0d5fb3acf2373d28ba45ce25">IDT_row</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_a16025_1a07e074bde074261858311b014bc2b398">ignoreInterrupt</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a16969">hardware_communication::InterruptManager</link> <link linkend="_a16053_1a21c3ca5c318038eaed596c14fd2666ed">hardware_communication::__attribute__</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a16025_1a8b0d6200bc639dd37ff68847a0adde5f">access</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a16025_1a7884c02f32fe35058379ebdc96c5767c">handlerAddressHighbits</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a16025_1adf5df650f7c6f6e7792d97ee2b851265">handlerAddressLowbits</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a16025_1acca378f87bf61c0de2befa4244846bfe">kernelCodeSegmentSelector</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a16025_1acb7bc06bed6f6408d719334fc41698c7">reserved</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a16025_1a3fe23003c5b71fa3b47543c074c38ac3"/><section>
+    <title>~IDT_row()</title>
+<indexterm><primary>~IDT_row</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>~IDT_row</secondary></indexterm>
+<para><computeroutput>__attribute__::~IDT_row ( )</computeroutput></para></section>
+<anchor xml:id="_a16025_1adf60fad10b12cc19ad193c928d36445c"/><section>
+    <title>handleIRQ0x00()</title>
+<indexterm><primary>handleIRQ0x00</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>handleIRQ0x00</secondary></indexterm>
+<para><computeroutput>void handleIRQ0x00 ( )</computeroutput></para><para>
+Referenced by <link linkend="_a15983_source_1l00032">hardware_communication::InterruptManager::InterruptManager()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d86/a16025_adf60fad10b12cc19ad193c928d36445c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a16025_1a6498ed740318b424aaae4db1f223e558"/><section>
+    <title>handleIRQ0x01()</title>
+<indexterm><primary>handleIRQ0x01</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>handleIRQ0x01</secondary></indexterm>
+<para><computeroutput>void handleIRQ0x01 ( )</computeroutput></para><para>
+Referenced by <link linkend="_a15983_source_1l00032">hardware_communication::InterruptManager::InterruptManager()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d86/a16025_a6498ed740318b424aaae4db1f223e558_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a16025_1a996c60cc7e88bb1c85505c19f6c35117"/><section>
+    <title>handleIRQ0x0C()</title>
+<indexterm><primary>handleIRQ0x0C</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>handleIRQ0x0C</secondary></indexterm>
+<para><computeroutput>void handleIRQ0x0C ( )</computeroutput></para><para>
+Referenced by <link linkend="_a15983_source_1l00032">hardware_communication::InterruptManager::InterruptManager()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d86/a16025_a996c60cc7e88bb1c85505c19f6c35117_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a16025_1ab2572e8a0d5fb3acf2373d28ba45ce25"/><section>
+    <title>IDT_row()</title>
+<indexterm><primary>IDT_row</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>IDT_row</secondary></indexterm>
+<para><computeroutput>__attribute__::IDT_row ( )</computeroutput></para></section>
+<anchor xml:id="_a16025_1a07e074bde074261858311b014bc2b398"/><section>
+    <title>ignoreInterrupt()</title>
+<indexterm><primary>ignoreInterrupt</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>ignoreInterrupt</secondary></indexterm>
+<para><computeroutput>void ignoreInterrupt ( )</computeroutput></para><para>
+Referenced by <link linkend="_a15983_source_1l00032">hardware_communication::InterruptManager::InterruptManager()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d86/a16025_a07e074bde074261858311b014bc2b398_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_a16025_1a8b0d6200bc639dd37ff68847a0adde5f"/><section>
+    <title>access</title>
+<indexterm><primary>access</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>access</secondary></indexterm>
+<para><computeroutput>uint8_t access<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16025_source_1l00004">4</link> of file <link linkend="_a16025_source">kinterrupt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a16025_1a7884c02f32fe35058379ebdc96c5767c"/><section>
+    <title>handlerAddressHighbits</title>
+<indexterm><primary>handlerAddressHighbits</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>handlerAddressHighbits</secondary></indexterm>
+<para><computeroutput>uint16_t handlerAddressHighbits<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16025_source_1l00005">5</link> of file <link linkend="_a16025_source">kinterrupt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a16025_1adf5df650f7c6f6e7792d97ee2b851265"/><section>
+    <title>handlerAddressLowbits</title>
+<indexterm><primary>handlerAddressLowbits</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>handlerAddressLowbits</secondary></indexterm>
+<para><computeroutput>uint16_t handlerAddressLowbits<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16025_source_1l00001">1</link> of file <link linkend="_a16025_source">kinterrupt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a15983_source_1l00117">hardware_communication::InterruptManager::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a16025_1acca378f87bf61c0de2befa4244846bfe"/><section>
+    <title>kernelCodeSegmentSelector</title>
+<indexterm><primary>kernelCodeSegmentSelector</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>kernelCodeSegmentSelector</secondary></indexterm>
+<para><computeroutput>uint16_t kernelCodeSegmentSelector<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16025_source_1l00002">2</link> of file <link linkend="_a16025_source">kinterrupt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a15983_source_1l00117">hardware_communication::InterruptManager::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a16025_1acb7bc06bed6f6408d719334fc41698c7"/><section>
+    <title>reserved</title>
+<indexterm><primary>reserved</primary><secondary>kinterrupt.hpp</secondary></indexterm>
+<indexterm><primary>kinterrupt.hpp</primary><secondary>reserved</secondary></indexterm>
+<para><computeroutput>uint8_t reserved<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a16025_source_1l00003">3</link> of file <link linkend="_a16025_source">kinterrupt.hpp</link>.</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,1913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+<namespace>org.doxygen.Project</namespace>
+<virtualFolder>doc</virtualFolder>
+<filterSection>
+<filterAttribute>doxygen</filterAttribute>
+<toc>
+<section title="OSOS - 32-bit Operating System" ref="index.html">
+<section title="OSOS - 32-bit Operating System Documentation" ref="index.html"/>
+<section title="Namespaces" ref="namespaces.html">
+<section title="Namespace List" ref="namespaces.html">
+<section title="basic" ref="d1/d22/a18432.html">
+<section title="__clearScreen" ref="d1/d22/a18432.html#a02923caa95013ec5d9333c25d9cca1d6"/>
+<section title="__printMemoryMap" ref="d1/d22/a18432.html#a53c6425a55d9fb93998da01f2416f9ad"/>
+<section title="disable_cursor" ref="d1/d22/a18432.html#a4b31902bf2cff8ff28405aa57d9f4575"/>
+<section title="enable_cursor" ref="d1/d22/a18432.html#a8ca6648639f335b207c748074dcf9f25"/>
+<section title="printf" ref="d1/d22/a18432.html#a45ee52b918a784ff0e96e7c8917a91d9"/>
+<section title="update_cursor" ref="d1/d22/a18432.html#a9d1f0f838e646660db6d9284725c2b4c"/>
+</section>
+<section title="driver" ref="de/d62/a18433.html">
+<section title="Driver" ref="dc/d37/a19307.html">
+<section title="Driver" ref="dc/d37/a19307.html#a7de0c11fff1dc1f5d004b2a76e840840"/>
+<section title="~Driver" ref="dc/d37/a19307.html#aacc7524b989c2561147c5dd0b901381c"/>
+<section title="activate" ref="dc/d37/a19307.html#a8c86c1e52652d8b491d37a3b60b535b0"/>
+<section title="deactivate" ref="dc/d37/a19307.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1"/>
+<section title="reset" ref="dc/d37/a19307.html#a98d2e779c02364fc58c172d0d2a32bdd"/>
+</section>
+<section title="DriverManager" ref="d3/d37/a19311.html">
+<section title="DriverManager" ref="d3/d37/a19311.html#af3bed49a4b243c2f65d09c35db15158b"/>
+<section title="~DriverManager" ref="d3/d37/a19311.html#a29731c1f4b1215fd5c4ab27624ae6563"/>
+<section title="activateAll" ref="d3/d37/a19311.html#a05b071d8a8c12f2d284fb61f4ecd116e"/>
+<section title="addDriver" ref="d3/d37/a19311.html#ab8bd89b91ea49f343276c3c841153cd8"/>
+<section title="drivers" ref="d3/d37/a19311.html#acdf43f6340b26ad2d9b9c90d8974b370"/>
+<section title="numDrivers" ref="d3/d37/a19311.html#a347286da44d912bba3f720d8b0600946"/>
+</section>
+<section title="KeyboardDriver" ref="dc/d7c/a19319.html">
+<section title="KeyboardDriver" ref="dc/d7c/a19319.html#a63898e993f02352193db996d00179347"/>
+<section title="~KeyboardDriver" ref="dc/d7c/a19319.html#a77da196f3c04c549e1085ce5566e5df3"/>
+<section title="activate" ref="dc/d7c/a19319.html#a58553d39d7dcfe6b55e8ddb1e7b1d187"/>
+<section title="deactivate" ref="dc/d7c/a19319.html#aaa7e99b6214dc8439230a95dd57e617e"/>
+<section title="handleInterrupt" ref="dc/d7c/a19319.html#a248fa0da9acac54a3a8880c7b66b3f2b"/>
+<section title="handleInterrupt" ref="dc/d7c/a19319.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="reset" ref="dc/d7c/a19319.html#a22b7b080ab1c8b0f2ed4beba75b34691"/>
+<section title="caps_on" ref="dc/d7c/a19319.html#a8a63dbc25a08a75f62ae0674df1deb30"/>
+<section title="commandPort" ref="dc/d7c/a19319.html#a58fc9113701ffc04637996780c843ff0"/>
+<section title="dataPort" ref="dc/d7c/a19319.html#afd6cdddb62a2a2d2b31043eb32887b41"/>
+<section title="interrupt_manager" ref="dc/d7c/a19319.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="dc/d7c/a19319.html#afeede822d3e98957e76e627a54ec2f7a"/>
+<section title="keyboardEventHandler" ref="dc/d7c/a19319.html#a11ec84b7abf113ec270f124564776e1f"/>
+<section title="led_byte_to_send" ref="dc/d7c/a19319.html#aed7b5d279f6f1dffee10d5fb92ed6b1c"/>
+<section title="shift_pressed" ref="dc/d7c/a19319.html#afba07c783deebfb275c1437f7c23601d"/>
+<section title="waiting_for_led_ack" ref="dc/d7c/a19319.html#a703464394033a8f4f664d9289ae2e9f8"/>
+</section>
+<section title="KeyboardEventHandler" ref="d0/d72/a19315.html">
+<section title="KeyboardEventHandler" ref="d0/d72/a19315.html#a63ee0249476256e721e05e6375383317"/>
+<section title="~KeyboardEventHandler" ref="d0/d72/a19315.html#aed6531b818751f0f23b6b9836ac94aa0"/>
+<section title="onKeyDown" ref="d0/d72/a19315.html#ae2b923ef0eb58e29f57a155debadac6a"/>
+<section title="onKeyUp" ref="d0/d72/a19315.html#a28547100b7420e1f73b745df873cd411"/>
+</section>
+<section title="MouseDriver" ref="da/dea/a19327.html">
+<section title="MouseDriver" ref="da/dea/a19327.html#a639956c8ce11d62ee443825e9b9695af"/>
+<section title="~MouseDriver" ref="da/dea/a19327.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22"/>
+<section title="activate" ref="da/dea/a19327.html#a446769df0b3b537a525476c7c8be47bc"/>
+<section title="deactivate" ref="da/dea/a19327.html#a4329c1cdedc72adf0b95cb3911c4acf6"/>
+<section title="handleInterrupt" ref="da/dea/a19327.html#a1b2f08490b7954e5ca504cd8bb6862c0"/>
+<section title="handleInterrupt" ref="da/dea/a19327.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="mouse_block_video_mem_value" ref="da/dea/a19327.html#a1a2a455ca7146dea3148afa8cb6c9ed5"/>
+<section title="reset" ref="da/dea/a19327.html#aabe3740996bf70fda96f0a25228954a6"/>
+<section title="__mouse_x_" ref="da/dea/a19327.html#ac2077f6309c79d5f585fb966b57fe065"/>
+<section title="__mouse_y_" ref="da/dea/a19327.html#aa02009b37420687ef18db8a05ff9181f"/>
+<section title="buffer" ref="da/dea/a19327.html#aaa1d55d296d88995ac49a8a9a75a79d4"/>
+<section title="buttons" ref="da/dea/a19327.html#a7942997bd5ead2767e9627d91789dd70"/>
+<section title="commandPort" ref="da/dea/a19327.html#a2877a9f46dd83a5f05f17fd83a0a7725"/>
+<section title="dataPort" ref="da/dea/a19327.html#a8e30a6f6c5839fcf9c3ab63aa167d046"/>
+<section title="interrupt_manager" ref="da/dea/a19327.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="da/dea/a19327.html#afeede822d3e98957e76e627a54ec2f7a"/>
+<section title="mouseEventHandler" ref="da/dea/a19327.html#a804f5657a062e0a18f3b56781f884c66"/>
+<section title="offset" ref="da/dea/a19327.html#a313426dd9aa1af1540cbffc2e77c58c1"/>
+<section title="old_char_under_mouse_pointer" ref="da/dea/a19327.html#a4a671e7e2b235f6bec473cb960401bd6"/>
+</section>
+<section title="MouseEventHandler" ref="d5/d17/a19323.html">
+<section title="MouseEventHandler" ref="d5/d17/a19323.html#aa0fd3739c52bcd4d553cefaf41760a9b"/>
+<section title="~MouseEventHandler" ref="d5/d17/a19323.html#abbfe4a7ae2911f989513178530314211"/>
+<section title="onMouseDown" ref="d5/d17/a19323.html#a2f12c5f63356c3045fd6cb46fd89374f"/>
+<section title="onMouseMove" ref="d5/d17/a19323.html#a68f635b3b65f927d37d4e0835f7e0b30"/>
+<section title="onMouseUp" ref="d5/d17/a19323.html#a09b77fe86bfa79313b5c5b91d09eb514"/>
+</section>
+</section>
+<section title="essential" ref="d2/d7a/a18434.html">
+<section title="atexit_func_entry_t" ref="d7/d5c/a19339.html">
+<section title="destructor_func" ref="d7/d5c/a19339.html#a665175c477008154e9b40ef96a8d81c2"/>
+<section title="dso_handle" ref="d7/d5c/a19339.html#a98800f0ffd56e2dc77c46a741e1cf008"/>
+<section title="obj_ptr" ref="d7/d5c/a19339.html#a24ece443578ebec2449e72e998521a11"/>
+</section>
+<section title="GDT" ref="d3/d8c/a19335.html">
+<section title="GDT" ref="d3/d8c/a19335.html#aa061ecab5a20a3556413fbbde4fe89d7"/>
+<section title="~GDT" ref="d3/d8c/a19335.html#a9b61f75de7fa2ffe9589f43c3f6a6a6c"/>
+<section title="installTable" ref="d3/d8c/a19335.html#af8e3c1da270077eb7cc6551b35c0e5ca"/>
+<section title="kernel_CS_selector" ref="d3/d8c/a19335.html#a89a8d2c17e3c22e7200bff09252f46e1"/>
+<section title="kernel_DS_selector" ref="d3/d8c/a19335.html#a34661a528b1630bff806e25411ad6ec3"/>
+<section title="printLoadedTable" ref="d3/d8c/a19335.html#a9c89bddfdb21d5cc09c1d82411982de9"/>
+<section title="printLoadedTableHeader" ref="d3/d8c/a19335.html#a2ae998750fc1e18e6778e92774bd3574"/>
+<section title="user_CS_selector" ref="d3/d8c/a19335.html#a8806a14009c4f0432d4b7043d687be17"/>
+<section title="user_DS_selector" ref="d3/d8c/a19335.html#a90661f97e9cf214dd6d977b19c01f7fc"/>
+<section title="base" ref="d3/d8c/a19335.html#ad0a48a89930e6a6c4467c977f4e91269"/>
+<section title="kernel_CS" ref="d3/d8c/a19335.html#a20d7a6bb352e3f696c1c68bb394766d8"/>
+<section title="kernel_DS" ref="d3/d8c/a19335.html#ac8a5b4f6a3dc223e2eb6abebe19c9f08"/>
+<section title="limit" ref="d3/d8c/a19335.html#a4105a25a1ec71dc7e338639bb370c664"/>
+<section title="nullSegment" ref="d3/d8c/a19335.html#a154c2e2725809d873c8e7d5f19ea66c5"/>
+<section title="user_CS" ref="d3/d8c/a19335.html#a32508694f9db3188cd4aba126cbfb5bb"/>
+<section title="user_DS" ref="d3/d8c/a19335.html#a73463d83e2048869692d0adf1acac7a6"/>
+</section>
+<section title="GDT_row" ref="dd/da0/a19331.html">
+<section title="GDT_row" ref="dd/da0/a19331.html#a5692f86b7ebf4eefdeb78e48f281092b"/>
+<section title="GDT_row" ref="dd/da0/a19331.html#a27ff8d9a6bf6c2c98cf78a0257e4667e"/>
+<section title="~GDT_row" ref="dd/da0/a19331.html#a6eb69c55c0bd16040b2d766dd068df31"/>
+<section title="GDT" ref="dd/da0/a19331.html#a235097b2551abe03269f88341b4bdf87"/>
+<section title="access" ref="dd/da0/a19331.html#a7f01a0febd325787f1ff47d6a3b668a9"/>
+<section title="base_high" ref="dd/da0/a19331.html#a2cbd86d4258ecebf7b46cc9bb8611b5b"/>
+<section title="base_low" ref="dd/da0/a19331.html#a298d18522898ad48c1e05b79f1f4dff7"/>
+<section title="base_middle" ref="dd/da0/a19331.html#a8429e04bddc6a61c4e95b88901ae219d"/>
+<section title="granularity" ref="dd/da0/a19331.html#af180a640dbd5213b3f936ff7cf48deaf"/>
+<section title="limit_low" ref="dd/da0/a19331.html#a2bddbe405dfbbbd101c475bd1bd65112"/>
+</section>
+<section title="__attribute__" ref="d2/d7a/a18434.html#a52e3ec8c29cc4bb68f65445749f0bfdb"/>
+<section title="__callConstructors" ref="d2/d7a/a18434.html#a433c3d2d19d89890b522ac26b05fa7aa"/>
+<section title="__cxa_finalize" ref="d2/d7a/a18434.html#a098e7240e26e869c035075be004b4ee9"/>
+</section>
+<section title="hardware_communication" ref="d6/d23/a18435.html">
+<section title="IDT_row" ref="d7/d8c/a19347.html">
+<section title="IDT_row" ref="d7/d8c/a19347.html#a5149970639d0f251d529808a192b4b55"/>
+<section title="~IDT_row" ref="d7/d8c/a19347.html#a9cad760dfa1c1f76f98b6207365f7e2d"/>
+<section title="InterruptManager" ref="d7/d8c/a19347.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+<section title="access" ref="d7/d8c/a19347.html#afa706321cb5ba41a6035dbe1ec39c265"/>
+<section title="handlerAddressHighbits" ref="d7/d8c/a19347.html#af1a4bb042f75f10c5e2b08034e82aed3"/>
+<section title="handlerAddressLowbits" ref="d7/d8c/a19347.html#a3390e4d53e904d420187ecc0247e9289"/>
+<section title="kernelCodeSegmentSelector" ref="d7/d8c/a19347.html#a800309c99800063315cddf536a3d0d67"/>
+<section title="reserved" ref="d7/d8c/a19347.html#a96bce1ce9c6a7e9b5a20607f41a2e876"/>
+</section>
+<section title="InterruptHandler" ref="d0/dcf/a19343.html">
+<section title="InterruptHandler" ref="d0/dcf/a19343.html#a134c8931dff43e766f1ddc4d0f35cd48"/>
+<section title="~InterruptHandler" ref="d0/dcf/a19343.html#a5114528f0db9926365b345337e42af9b"/>
+<section title="handleInterrupt" ref="d0/dcf/a19343.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="interrupt_manager" ref="d0/dcf/a19343.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="d0/dcf/a19343.html#afeede822d3e98957e76e627a54ec2f7a"/>
+</section>
+<section title="InterruptManager" ref="d9/d99/a19351.html">
+<section title="InterruptManager" ref="d9/d99/a19351.html#aec70c703cac64ef1eec4b5a94d2e145c"/>
+<section title="~InterruptManager" ref="d9/d99/a19351.html#a65276f26b5d5197482a415b83a898560"/>
+<section title="activate" ref="d9/d99/a19351.html#a1ab5b6378071338ede295f0bffaf3d51"/>
+<section title="deactivate" ref="d9/d99/a19351.html#a9451566bf08617378ca2144505d394a6"/>
+<section title="handleInterrupt" ref="d9/d99/a19351.html#a2d3ef1656e1eaaf86be40a200a49a4b2"/>
+<section title="installTable" ref="d9/d99/a19351.html#a81d593116320da32f1aa4057087f1e11"/>
+<section title="printLoadedTable" ref="d9/d99/a19351.html#aac20f3a896bea512413568a60ad48c3d"/>
+<section title="printLoadedTableHeader" ref="d9/d99/a19351.html#ad8a6f694662a3a36ba9353197e20c1b1"/>
+<section title="setIDTEntry" ref="d9/d99/a19351.html#af448c0d55d2e226050b7f4efb6d4abe8"/>
+<section title="InterruptHandler" ref="d9/d99/a19351.html#a9aef4ea3434f8ddeaf9c32a63e6faf05"/>
+<section title="base" ref="d9/d99/a19351.html#ad94bd8e9c355fde3e814d4894bab0181"/>
+<section title="handlers" ref="d9/d99/a19351.html#ac8aba191e612ad605b8b188f78e65d3b"/>
+<section title="interruptDescriptorTable" ref="d9/d99/a19351.html#a7b6bb52a8072c51bfcb4f4877c3d0226"/>
+<section title="limit" ref="d9/d99/a19351.html#a1991d8428ff7c74b31f42d48bb49547a"/>
+<section title="picMasterCommand" ref="d9/d99/a19351.html#acb04723d03d6b34abbc5f7407cab0b33"/>
+<section title="picMasterData" ref="d9/d99/a19351.html#a5287e31a546f60708b085b387332a904"/>
+<section title="picSlaveCommand" ref="d9/d99/a19351.html#afed9d24b37c8f9386a71f4284b2502a4"/>
+<section title="picSlaveData" ref="d9/d99/a19351.html#ac1111b7cfbd27b37f03a0678ae5dbaf1"/>
+</section>
+<section title="Port" ref="d3/d5b/a19355.html">
+<section title="Port" ref="d3/d5b/a19355.html#ad001c21b67d4c138f65024f167030cca"/>
+<section title="~Port" ref="d3/d5b/a19355.html#a8b13c33da4911afcbdcb21c97768a72e"/>
+<section title="portnumber" ref="d3/d5b/a19355.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port16Bit" ref="dd/d6a/a19367.html">
+<section title="Port16Bit" ref="dd/d6a/a19367.html#a418bb2fc65b3bec91704d0e5e8957131"/>
+<section title="~Port16Bit" ref="dd/d6a/a19367.html#a78dfa215194c676583e1b7e2dab38608"/>
+<section title="read" ref="dd/d6a/a19367.html#a6b5df5669e802e31f27f0a4a0e62492a"/>
+<section title="write" ref="dd/d6a/a19367.html#ac5a46ce99a70874a8a4fcb090eb40575"/>
+<section title="portnumber" ref="dd/d6a/a19367.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port32Bit" ref="d8/d2a/a19371.html">
+<section title="Port32Bit" ref="d8/d2a/a19371.html#a507afa8607757baedf1789d73c2a173d"/>
+<section title="~Port32Bit" ref="d8/d2a/a19371.html#a3e87dc7d610b279e8e7e072a0d1ee78c"/>
+<section title="read" ref="d8/d2a/a19371.html#a41093c437a9508f984c90ae68e9c03bf"/>
+<section title="write" ref="d8/d2a/a19371.html#a64a16fe840224ef769ab2933770d1b21"/>
+<section title="portnumber" ref="d8/d2a/a19371.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port8Bit" ref="d9/d0b/a19359.html">
+<section title="Port8Bit" ref="d9/d0b/a19359.html#a057109ca3c28fbb9064c60ba5cdb1190"/>
+<section title="~Port8Bit" ref="d9/d0b/a19359.html#a475bc218672c5743a9f8425cc84eb630"/>
+<section title="read" ref="d9/d0b/a19359.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+<section title="write" ref="d9/d0b/a19359.html#a523b6a757b27418dc015ed13e74bef60"/>
+<section title="portnumber" ref="d9/d0b/a19359.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port8BitSlow" ref="dc/da5/a19363.html">
+<section title="Port8BitSlow" ref="dc/da5/a19363.html#aa830f1cf49e155af1033a8e611ecc6c1"/>
+<section title="~Port8BitSlow" ref="dc/da5/a19363.html#aa19647802064296f8bf76cc12f10d243"/>
+<section title="read" ref="dc/da5/a19363.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+<section title="write" ref="dc/da5/a19363.html#af84b15d5a205a421a9877e2341714031"/>
+<section title="portnumber" ref="dc/da5/a19363.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="__attribute__" ref="d6/d23/a18435.html#a269f53904f53339ae2df626922b404b2"/>
+<section title="__attribute__" ref="d6/d23/a18435.html#a21c3ca5c318038eaed596c14fd2666ed"/>
+</section>
+</section>
+<section title="Namespace Members" ref="namespacemembers.html">
+<section title="All" ref="namespacemembers.html"/>
+<section title="Functions" ref="namespacemembers_func.html"/>
+<section title="Variables" ref="namespacemembers_vars.html"/>
+</section>
+</section>
+<section title="Classes" ref="annotated.html">
+<section title="Class List" ref="annotated.html">
+<section title="driver" ref="de/d62/a18433.html">
+<section title="Driver" ref="dc/d37/a19307.html">
+<section title="Driver" ref="dc/d37/a19307.html#a7de0c11fff1dc1f5d004b2a76e840840"/>
+<section title="~Driver" ref="dc/d37/a19307.html#aacc7524b989c2561147c5dd0b901381c"/>
+<section title="activate" ref="dc/d37/a19307.html#a8c86c1e52652d8b491d37a3b60b535b0"/>
+<section title="deactivate" ref="dc/d37/a19307.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1"/>
+<section title="reset" ref="dc/d37/a19307.html#a98d2e779c02364fc58c172d0d2a32bdd"/>
+</section>
+<section title="DriverManager" ref="d3/d37/a19311.html">
+<section title="DriverManager" ref="d3/d37/a19311.html#af3bed49a4b243c2f65d09c35db15158b"/>
+<section title="~DriverManager" ref="d3/d37/a19311.html#a29731c1f4b1215fd5c4ab27624ae6563"/>
+<section title="activateAll" ref="d3/d37/a19311.html#a05b071d8a8c12f2d284fb61f4ecd116e"/>
+<section title="addDriver" ref="d3/d37/a19311.html#ab8bd89b91ea49f343276c3c841153cd8"/>
+<section title="drivers" ref="d3/d37/a19311.html#acdf43f6340b26ad2d9b9c90d8974b370"/>
+<section title="numDrivers" ref="d3/d37/a19311.html#a347286da44d912bba3f720d8b0600946"/>
+</section>
+<section title="KeyboardDriver" ref="dc/d7c/a19319.html">
+<section title="KeyboardDriver" ref="dc/d7c/a19319.html#a63898e993f02352193db996d00179347"/>
+<section title="~KeyboardDriver" ref="dc/d7c/a19319.html#a77da196f3c04c549e1085ce5566e5df3"/>
+<section title="activate" ref="dc/d7c/a19319.html#a58553d39d7dcfe6b55e8ddb1e7b1d187"/>
+<section title="deactivate" ref="dc/d7c/a19319.html#aaa7e99b6214dc8439230a95dd57e617e"/>
+<section title="handleInterrupt" ref="dc/d7c/a19319.html#a248fa0da9acac54a3a8880c7b66b3f2b"/>
+<section title="handleInterrupt" ref="dc/d7c/a19319.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="reset" ref="dc/d7c/a19319.html#a22b7b080ab1c8b0f2ed4beba75b34691"/>
+<section title="caps_on" ref="dc/d7c/a19319.html#a8a63dbc25a08a75f62ae0674df1deb30"/>
+<section title="commandPort" ref="dc/d7c/a19319.html#a58fc9113701ffc04637996780c843ff0"/>
+<section title="dataPort" ref="dc/d7c/a19319.html#afd6cdddb62a2a2d2b31043eb32887b41"/>
+<section title="interrupt_manager" ref="dc/d7c/a19319.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="dc/d7c/a19319.html#afeede822d3e98957e76e627a54ec2f7a"/>
+<section title="keyboardEventHandler" ref="dc/d7c/a19319.html#a11ec84b7abf113ec270f124564776e1f"/>
+<section title="led_byte_to_send" ref="dc/d7c/a19319.html#aed7b5d279f6f1dffee10d5fb92ed6b1c"/>
+<section title="shift_pressed" ref="dc/d7c/a19319.html#afba07c783deebfb275c1437f7c23601d"/>
+<section title="waiting_for_led_ack" ref="dc/d7c/a19319.html#a703464394033a8f4f664d9289ae2e9f8"/>
+</section>
+<section title="KeyboardEventHandler" ref="d0/d72/a19315.html">
+<section title="KeyboardEventHandler" ref="d0/d72/a19315.html#a63ee0249476256e721e05e6375383317"/>
+<section title="~KeyboardEventHandler" ref="d0/d72/a19315.html#aed6531b818751f0f23b6b9836ac94aa0"/>
+<section title="onKeyDown" ref="d0/d72/a19315.html#ae2b923ef0eb58e29f57a155debadac6a"/>
+<section title="onKeyUp" ref="d0/d72/a19315.html#a28547100b7420e1f73b745df873cd411"/>
+</section>
+<section title="MouseDriver" ref="da/dea/a19327.html">
+<section title="MouseDriver" ref="da/dea/a19327.html#a639956c8ce11d62ee443825e9b9695af"/>
+<section title="~MouseDriver" ref="da/dea/a19327.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22"/>
+<section title="activate" ref="da/dea/a19327.html#a446769df0b3b537a525476c7c8be47bc"/>
+<section title="deactivate" ref="da/dea/a19327.html#a4329c1cdedc72adf0b95cb3911c4acf6"/>
+<section title="handleInterrupt" ref="da/dea/a19327.html#a1b2f08490b7954e5ca504cd8bb6862c0"/>
+<section title="handleInterrupt" ref="da/dea/a19327.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="mouse_block_video_mem_value" ref="da/dea/a19327.html#a1a2a455ca7146dea3148afa8cb6c9ed5"/>
+<section title="reset" ref="da/dea/a19327.html#aabe3740996bf70fda96f0a25228954a6"/>
+<section title="__mouse_x_" ref="da/dea/a19327.html#ac2077f6309c79d5f585fb966b57fe065"/>
+<section title="__mouse_y_" ref="da/dea/a19327.html#aa02009b37420687ef18db8a05ff9181f"/>
+<section title="buffer" ref="da/dea/a19327.html#aaa1d55d296d88995ac49a8a9a75a79d4"/>
+<section title="buttons" ref="da/dea/a19327.html#a7942997bd5ead2767e9627d91789dd70"/>
+<section title="commandPort" ref="da/dea/a19327.html#a2877a9f46dd83a5f05f17fd83a0a7725"/>
+<section title="dataPort" ref="da/dea/a19327.html#a8e30a6f6c5839fcf9c3ab63aa167d046"/>
+<section title="interrupt_manager" ref="da/dea/a19327.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="da/dea/a19327.html#afeede822d3e98957e76e627a54ec2f7a"/>
+<section title="mouseEventHandler" ref="da/dea/a19327.html#a804f5657a062e0a18f3b56781f884c66"/>
+<section title="offset" ref="da/dea/a19327.html#a313426dd9aa1af1540cbffc2e77c58c1"/>
+<section title="old_char_under_mouse_pointer" ref="da/dea/a19327.html#a4a671e7e2b235f6bec473cb960401bd6"/>
+</section>
+<section title="MouseEventHandler" ref="d5/d17/a19323.html">
+<section title="MouseEventHandler" ref="d5/d17/a19323.html#aa0fd3739c52bcd4d553cefaf41760a9b"/>
+<section title="~MouseEventHandler" ref="d5/d17/a19323.html#abbfe4a7ae2911f989513178530314211"/>
+<section title="onMouseDown" ref="d5/d17/a19323.html#a2f12c5f63356c3045fd6cb46fd89374f"/>
+<section title="onMouseMove" ref="d5/d17/a19323.html#a68f635b3b65f927d37d4e0835f7e0b30"/>
+<section title="onMouseUp" ref="d5/d17/a19323.html#a09b77fe86bfa79313b5c5b91d09eb514"/>
+</section>
+</section>
+<section title="essential" ref="d2/d7a/a18434.html">
+<section title="atexit_func_entry_t" ref="d7/d5c/a19339.html">
+<section title="destructor_func" ref="d7/d5c/a19339.html#a665175c477008154e9b40ef96a8d81c2"/>
+<section title="dso_handle" ref="d7/d5c/a19339.html#a98800f0ffd56e2dc77c46a741e1cf008"/>
+<section title="obj_ptr" ref="d7/d5c/a19339.html#a24ece443578ebec2449e72e998521a11"/>
+</section>
+<section title="GDT" ref="d3/d8c/a19335.html">
+<section title="GDT" ref="d3/d8c/a19335.html#aa061ecab5a20a3556413fbbde4fe89d7"/>
+<section title="~GDT" ref="d3/d8c/a19335.html#a9b61f75de7fa2ffe9589f43c3f6a6a6c"/>
+<section title="installTable" ref="d3/d8c/a19335.html#af8e3c1da270077eb7cc6551b35c0e5ca"/>
+<section title="kernel_CS_selector" ref="d3/d8c/a19335.html#a89a8d2c17e3c22e7200bff09252f46e1"/>
+<section title="kernel_DS_selector" ref="d3/d8c/a19335.html#a34661a528b1630bff806e25411ad6ec3"/>
+<section title="printLoadedTable" ref="d3/d8c/a19335.html#a9c89bddfdb21d5cc09c1d82411982de9"/>
+<section title="printLoadedTableHeader" ref="d3/d8c/a19335.html#a2ae998750fc1e18e6778e92774bd3574"/>
+<section title="user_CS_selector" ref="d3/d8c/a19335.html#a8806a14009c4f0432d4b7043d687be17"/>
+<section title="user_DS_selector" ref="d3/d8c/a19335.html#a90661f97e9cf214dd6d977b19c01f7fc"/>
+<section title="base" ref="d3/d8c/a19335.html#ad0a48a89930e6a6c4467c977f4e91269"/>
+<section title="kernel_CS" ref="d3/d8c/a19335.html#a20d7a6bb352e3f696c1c68bb394766d8"/>
+<section title="kernel_DS" ref="d3/d8c/a19335.html#ac8a5b4f6a3dc223e2eb6abebe19c9f08"/>
+<section title="limit" ref="d3/d8c/a19335.html#a4105a25a1ec71dc7e338639bb370c664"/>
+<section title="nullSegment" ref="d3/d8c/a19335.html#a154c2e2725809d873c8e7d5f19ea66c5"/>
+<section title="user_CS" ref="d3/d8c/a19335.html#a32508694f9db3188cd4aba126cbfb5bb"/>
+<section title="user_DS" ref="d3/d8c/a19335.html#a73463d83e2048869692d0adf1acac7a6"/>
+</section>
+<section title="GDT_row" ref="dd/da0/a19331.html">
+<section title="GDT_row" ref="dd/da0/a19331.html#a5692f86b7ebf4eefdeb78e48f281092b"/>
+<section title="GDT_row" ref="dd/da0/a19331.html#a27ff8d9a6bf6c2c98cf78a0257e4667e"/>
+<section title="~GDT_row" ref="dd/da0/a19331.html#a6eb69c55c0bd16040b2d766dd068df31"/>
+<section title="GDT" ref="dd/da0/a19331.html#a235097b2551abe03269f88341b4bdf87"/>
+<section title="access" ref="dd/da0/a19331.html#a7f01a0febd325787f1ff47d6a3b668a9"/>
+<section title="base_high" ref="dd/da0/a19331.html#a2cbd86d4258ecebf7b46cc9bb8611b5b"/>
+<section title="base_low" ref="dd/da0/a19331.html#a298d18522898ad48c1e05b79f1f4dff7"/>
+<section title="base_middle" ref="dd/da0/a19331.html#a8429e04bddc6a61c4e95b88901ae219d"/>
+<section title="granularity" ref="dd/da0/a19331.html#af180a640dbd5213b3f936ff7cf48deaf"/>
+<section title="limit_low" ref="dd/da0/a19331.html#a2bddbe405dfbbbd101c475bd1bd65112"/>
+</section>
+</section>
+<section title="hardware_communication" ref="d6/d23/a18435.html">
+<section title="IDT_row" ref="d7/d8c/a19347.html">
+<section title="IDT_row" ref="d7/d8c/a19347.html#a5149970639d0f251d529808a192b4b55"/>
+<section title="~IDT_row" ref="d7/d8c/a19347.html#a9cad760dfa1c1f76f98b6207365f7e2d"/>
+<section title="InterruptManager" ref="d7/d8c/a19347.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+<section title="access" ref="d7/d8c/a19347.html#afa706321cb5ba41a6035dbe1ec39c265"/>
+<section title="handlerAddressHighbits" ref="d7/d8c/a19347.html#af1a4bb042f75f10c5e2b08034e82aed3"/>
+<section title="handlerAddressLowbits" ref="d7/d8c/a19347.html#a3390e4d53e904d420187ecc0247e9289"/>
+<section title="kernelCodeSegmentSelector" ref="d7/d8c/a19347.html#a800309c99800063315cddf536a3d0d67"/>
+<section title="reserved" ref="d7/d8c/a19347.html#a96bce1ce9c6a7e9b5a20607f41a2e876"/>
+</section>
+<section title="InterruptHandler" ref="d0/dcf/a19343.html">
+<section title="InterruptHandler" ref="d0/dcf/a19343.html#a134c8931dff43e766f1ddc4d0f35cd48"/>
+<section title="~InterruptHandler" ref="d0/dcf/a19343.html#a5114528f0db9926365b345337e42af9b"/>
+<section title="handleInterrupt" ref="d0/dcf/a19343.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="interrupt_manager" ref="d0/dcf/a19343.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="d0/dcf/a19343.html#afeede822d3e98957e76e627a54ec2f7a"/>
+</section>
+<section title="InterruptManager" ref="d9/d99/a19351.html">
+<section title="InterruptManager" ref="d9/d99/a19351.html#aec70c703cac64ef1eec4b5a94d2e145c"/>
+<section title="~InterruptManager" ref="d9/d99/a19351.html#a65276f26b5d5197482a415b83a898560"/>
+<section title="activate" ref="d9/d99/a19351.html#a1ab5b6378071338ede295f0bffaf3d51"/>
+<section title="deactivate" ref="d9/d99/a19351.html#a9451566bf08617378ca2144505d394a6"/>
+<section title="handleInterrupt" ref="d9/d99/a19351.html#a2d3ef1656e1eaaf86be40a200a49a4b2"/>
+<section title="installTable" ref="d9/d99/a19351.html#a81d593116320da32f1aa4057087f1e11"/>
+<section title="printLoadedTable" ref="d9/d99/a19351.html#aac20f3a896bea512413568a60ad48c3d"/>
+<section title="printLoadedTableHeader" ref="d9/d99/a19351.html#ad8a6f694662a3a36ba9353197e20c1b1"/>
+<section title="setIDTEntry" ref="d9/d99/a19351.html#af448c0d55d2e226050b7f4efb6d4abe8"/>
+<section title="InterruptHandler" ref="d9/d99/a19351.html#a9aef4ea3434f8ddeaf9c32a63e6faf05"/>
+<section title="base" ref="d9/d99/a19351.html#ad94bd8e9c355fde3e814d4894bab0181"/>
+<section title="handlers" ref="d9/d99/a19351.html#ac8aba191e612ad605b8b188f78e65d3b"/>
+<section title="interruptDescriptorTable" ref="d9/d99/a19351.html#a7b6bb52a8072c51bfcb4f4877c3d0226"/>
+<section title="limit" ref="d9/d99/a19351.html#a1991d8428ff7c74b31f42d48bb49547a"/>
+<section title="picMasterCommand" ref="d9/d99/a19351.html#acb04723d03d6b34abbc5f7407cab0b33"/>
+<section title="picMasterData" ref="d9/d99/a19351.html#a5287e31a546f60708b085b387332a904"/>
+<section title="picSlaveCommand" ref="d9/d99/a19351.html#afed9d24b37c8f9386a71f4284b2502a4"/>
+<section title="picSlaveData" ref="d9/d99/a19351.html#ac1111b7cfbd27b37f03a0678ae5dbaf1"/>
+</section>
+<section title="Port" ref="d3/d5b/a19355.html">
+<section title="Port" ref="d3/d5b/a19355.html#ad001c21b67d4c138f65024f167030cca"/>
+<section title="~Port" ref="d3/d5b/a19355.html#a8b13c33da4911afcbdcb21c97768a72e"/>
+<section title="portnumber" ref="d3/d5b/a19355.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port16Bit" ref="dd/d6a/a19367.html">
+<section title="Port16Bit" ref="dd/d6a/a19367.html#a418bb2fc65b3bec91704d0e5e8957131"/>
+<section title="~Port16Bit" ref="dd/d6a/a19367.html#a78dfa215194c676583e1b7e2dab38608"/>
+<section title="read" ref="dd/d6a/a19367.html#a6b5df5669e802e31f27f0a4a0e62492a"/>
+<section title="write" ref="dd/d6a/a19367.html#ac5a46ce99a70874a8a4fcb090eb40575"/>
+<section title="portnumber" ref="dd/d6a/a19367.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port32Bit" ref="d8/d2a/a19371.html">
+<section title="Port32Bit" ref="d8/d2a/a19371.html#a507afa8607757baedf1789d73c2a173d"/>
+<section title="~Port32Bit" ref="d8/d2a/a19371.html#a3e87dc7d610b279e8e7e072a0d1ee78c"/>
+<section title="read" ref="d8/d2a/a19371.html#a41093c437a9508f984c90ae68e9c03bf"/>
+<section title="write" ref="d8/d2a/a19371.html#a64a16fe840224ef769ab2933770d1b21"/>
+<section title="portnumber" ref="d8/d2a/a19371.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port8Bit" ref="d9/d0b/a19359.html">
+<section title="Port8Bit" ref="d9/d0b/a19359.html#a057109ca3c28fbb9064c60ba5cdb1190"/>
+<section title="~Port8Bit" ref="d9/d0b/a19359.html#a475bc218672c5743a9f8425cc84eb630"/>
+<section title="read" ref="d9/d0b/a19359.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+<section title="write" ref="d9/d0b/a19359.html#a523b6a757b27418dc015ed13e74bef60"/>
+<section title="portnumber" ref="d9/d0b/a19359.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="Port8BitSlow" ref="dc/da5/a19363.html">
+<section title="Port8BitSlow" ref="dc/da5/a19363.html#aa830f1cf49e155af1033a8e611ecc6c1"/>
+<section title="~Port8BitSlow" ref="dc/da5/a19363.html#aa19647802064296f8bf76cc12f10d243"/>
+<section title="read" ref="dc/da5/a19363.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+<section title="write" ref="dc/da5/a19363.html#af84b15d5a205a421a9877e2341714031"/>
+<section title="portnumber" ref="dc/da5/a19363.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+</section>
+<section title="KeyboardEventHandler_for_kernel" ref="d4/d1e/a19251.html">
+<section title="KeyboardEventHandler_for_kernel" ref="d4/d1e/a19251.html#af9abf3fb85dea27db802a8f092c4a2fc"/>
+<section title="~KeyboardEventHandler_for_kernel" ref="d4/d1e/a19251.html#ab2b7f34603d9cdd36554a4f7f6dde585"/>
+<section title="onKeyDown" ref="d4/d1e/a19251.html#af82a0bd16f995dd285d4f7822117377c"/>
+<section title="onKeyUp" ref="d4/d1e/a19251.html#a0d74a48573c10174ac8bf836ac39f886"/>
+</section>
+<section title="MouseEventHandler_for_kernel" ref="d0/d04/a19255.html">
+<section title="MouseEventHandler_for_kernel" ref="d0/d04/a19255.html#a41f57ab9baa5850e39086362ce44b1cb"/>
+<section title="~MouseEventHandler_for_kernel" ref="d0/d04/a19255.html#aa96e9bf8dce2b60b7f86577c3a74455d"/>
+<section title="onMouseDown" ref="d0/d04/a19255.html#ae860a16e70322e5c4bb01e1108e50bb1"/>
+<section title="onMouseMove" ref="d0/d04/a19255.html#adbb4c4e2814b335579119c324313f652"/>
+<section title="onMouseUp" ref="d0/d04/a19255.html#afca536c2187a65da265daa2d2af75d4d"/>
+</section>
+<section title="multiboot_aout_symbol_table_t" ref="de/d0e/a18398.html#dc/d9c/a19263">
+<section title="addr" ref="de/d0e/a18398.html#af0a1d2238495093ad75f36e3a146c0c7"/>
+<section title="reserved" ref="de/d0e/a18398.html#a488f52dbb30b4de2ae2f42f0bdfda154"/>
+<section title="strsize" ref="de/d0e/a18398.html#a7ed0107153c88e6604e9a6105a4c7be0"/>
+<section title="tabsize" ref="de/d0e/a18398.html#afbdc23500d3d7a59486a0b8ff4066c1e"/>
+</section>
+<section title="multiboot_apm_info" ref="de/d0e/a18398.html#d7/d23/a19303">
+<section title="cseg" ref="de/d0e/a18398.html#a9eedcae62ee49310914e238d07094c4b"/>
+<section title="cseg_16" ref="de/d0e/a18398.html#a9abc154a9c3a0f3d9ae96cf2b5044b43"/>
+<section title="cseg_16_len" ref="de/d0e/a18398.html#a09573729600592739fe8f2480217a30d"/>
+<section title="cseg_len" ref="de/d0e/a18398.html#a95aa6b556019e1b9c526b190341cc531"/>
+<section title="dseg" ref="de/d0e/a18398.html#a98cd7da8760cf5d49ba55e1f9e76c6d4"/>
+<section title="dseg_len" ref="de/d0e/a18398.html#afee11d31183fe424af90546b10c9fac2"/>
+<section title="flags" ref="de/d0e/a18398.html#a55fb7837ae61f63d0310b65767a2505c"/>
+<section title="offset" ref="de/d0e/a18398.html#a97958b174fe0234cafab9019eb009b91"/>
+<section title="version" ref="de/d0e/a18398.html#ab06d9309bdc00fa4a8c37fdab639beb5"/>
+</section>
+<section title="multiboot_color" ref="de/d0e/a18398.html#d0/d19/a19291">
+<section title="blue" ref="de/d0e/a18398.html#a6f8d17b0f35ff4cbf9c51dcbc3ea7d01"/>
+<section title="green" ref="de/d0e/a18398.html#a08e1c8bc977b39015c9043645e79713d"/>
+<section title="red" ref="de/d0e/a18398.html#a4c8a91229f40c06c3c63b4c37e83d219"/>
+</section>
+<section title="multiboot_elf_section_header_table_t" ref="de/d0e/a18398.html#da/d01/a19267">
+<section title="addr" ref="de/d0e/a18398.html#aac90242e270ae9df01fc3bb784b858b6"/>
+<section title="num" ref="de/d0e/a18398.html#a6ed3ef34bb39d72a19533b11fe156e1f"/>
+<section title="shndx" ref="de/d0e/a18398.html#a45886444dce7cc10353528373f3e50c2"/>
+<section title="size" ref="de/d0e/a18398.html#ab2740d89d4139f93c9452cca2c676c5c"/>
+</section>
+<section title="multiboot_header" ref="de/d0e/a18398.html#d6/dbf/a19259">
+<section title="bss_end_addr" ref="de/d0e/a18398.html#ab4f2496ec9b0d1a95985929d281dfa19"/>
+<section title="checksum" ref="de/d0e/a18398.html#a17e73abddfe8264c254767a20099038d"/>
+<section title="depth" ref="de/d0e/a18398.html#aba85b53dc3af1bf99c71292a776e9dff"/>
+<section title="entry_addr" ref="de/d0e/a18398.html#ac3d807775a9d69730e6698dcdcf6491e"/>
+<section title="flags" ref="de/d0e/a18398.html#ab922f32c179ec7bde91519d19f27d95b"/>
+<section title="header_addr" ref="de/d0e/a18398.html#a9718b2fc6ce29a37e9a209f92ab856e3"/>
+<section title="height" ref="de/d0e/a18398.html#a055c5e6553ea032897ad50a12f998a17"/>
+<section title="load_addr" ref="de/d0e/a18398.html#a99de1cf326c46c76c6039f317b7a1ef2"/>
+<section title="load_end_addr" ref="de/d0e/a18398.html#ac9efc1a4c3cd18f286b2fd50ff052e31"/>
+<section title="magic" ref="de/d0e/a18398.html#a7fddee92e60ff58e159c6bf2c40bf29b"/>
+<section title="mode_type" ref="de/d0e/a18398.html#a4c90b7929342dd5aab7d08afa0906d28"/>
+<section title="width" ref="de/d0e/a18398.html#ad72a1a3dd608e73c818d0c27974def40"/>
+</section>
+<section title="multiboot_info_t" ref="de/d0e/a18398.html#da/d5f/a19271">
+<section title="apm_table" ref="de/d0e/a18398.html#ab340bc8f88281872676db0f52ebe7c0e"/>
+<section title="boot_device" ref="de/d0e/a18398.html#ae32646de911267c65892a286ef3d529e"/>
+<section title="boot_loader_name" ref="de/d0e/a18398.html#a4a3251d6b4cf85d935d989a0a369feed"/>
+<section title="cmdline" ref="de/d0e/a18398.html#a95a5e2cc69960e4d906abd585f91f210"/>
+<section title="config_table" ref="de/d0e/a18398.html#a94b06ab87dbfaf966822a39cf1d9e2d6"/>
+<section title="drives_addr" ref="de/d0e/a18398.html#a12916653d21ac1694b6d609a10d15332"/>
+<section title="drives_length" ref="de/d0e/a18398.html#a8bb6cc3d388a8abafecc7018744c14f3"/>
+<section title="flags" ref="de/d0e/a18398.html#a39f175b6fb4debca237d3ff93e960a25"/>
+<section title="framebuffer_addr" ref="de/d0e/a18398.html#a77a4d6e2b12fbd2b3e6e61d978ae5fc0"/>
+<section title="framebuffer_bpp" ref="de/d0e/a18398.html#ab7b460c75f0342dfb1e339d2b3a2a9da"/>
+<section title="framebuffer_height" ref="de/d0e/a18398.html#a0e8539780b79a018883d96bb444cd9c8"/>
+<section title="framebuffer_pitch" ref="de/d0e/a18398.html#ab0ecb8c7debe9ac1ac7910ae957367f6"/>
+<section title="framebuffer_type" ref="de/d0e/a18398.html#a540391adf02da7cb6876fe78d65a13d7"/>
+<section title="framebuffer_width" ref="de/d0e/a18398.html#a770273793bac06df17306c7fa136c58f"/>
+<section title="mem_lower" ref="de/d0e/a18398.html#a6b80f033d5a9151a4d1abd2d155942a7"/>
+<section title="mem_upper" ref="de/d0e/a18398.html#a1ea7d9e665d6fff00665d97e81207a8f"/>
+<section title="mmap_addr" ref="de/d0e/a18398.html#a19825c91eb6aa23fa61ee3851a6ce8da"/>
+<section title="mmap_length" ref="de/d0e/a18398.html#a3dd43c3204f821c0a1b5604686d9eae7"/>
+<section title="mods_addr" ref="de/d0e/a18398.html#a766e9dadbf4a845c12704c923cb13f02"/>
+<section title="mods_count" ref="de/d0e/a18398.html#a415feb83a215790e2e8f9e2e1e3df55c"/>
+<section title="u" ref="de/d0e/a18398.html#a0558f47498813865abaec2f6281c5f92"/>
+<section title="vbe_control_info" ref="de/d0e/a18398.html#a21c63bc2905c6fd19449eea6e8514856"/>
+<section title="vbe_interface_len" ref="de/d0e/a18398.html#a31ea288eaa679a7e3a4dafb91d833f78"/>
+<section title="vbe_interface_off" ref="de/d0e/a18398.html#a272d3a053e085dc513ba4dc4eb688816"/>
+<section title="vbe_interface_seg" ref="de/d0e/a18398.html#a6cd85049f18e6c157d173538b162d9a6"/>
+<section title="vbe_mode" ref="de/d0e/a18398.html#aec0fcaec97380658da787d4989f7b93f"/>
+<section title="vbe_mode_info" ref="de/d0e/a18398.html#ace25791339e03186c9364bb5f461f773"/>
+</section>
+<section title="multiboot_info.__unnamed2__" ref="de/d0e/a18398.html#dc/d1b/a19743">
+</section>
+<section title="multiboot_info.__unnamed2__.__unnamed4__" ref="de/d0e/a18398.html#d9/d3c/a19747">
+<section title="framebuffer_palette_addr" ref="de/d0e/a18398.html#ab4a160c025f0db5470ddced0d2c99de3"/>
+<section title="framebuffer_palette_num_colors" ref="de/d0e/a18398.html#a9ea6d9ae58149f37ee098ce870bf07f0"/>
+</section>
+<section title="multiboot_info.__unnamed2__.__unnamed6__" ref="de/d0e/a18398.html#d2/def/a19751">
+<section title="framebuffer_blue_field_position" ref="de/d0e/a18398.html#ace107d23f7f4af6fd8d969926c5c9d16"/>
+<section title="framebuffer_blue_mask_size" ref="de/d0e/a18398.html#aa8eaba7a0a6cf04509a014ac4bc937c0"/>
+<section title="framebuffer_green_field_position" ref="de/d0e/a18398.html#adfcdecf04630d77ee5e41006f47dc4d7"/>
+<section title="framebuffer_green_mask_size" ref="de/d0e/a18398.html#abc2579d314db9a050c48043a1b7f5ea9"/>
+<section title="framebuffer_red_field_position" ref="de/d0e/a18398.html#a4dd2fad32ee3a2ce5379d7bf0a23dabe"/>
+<section title="framebuffer_red_mask_size" ref="de/d0e/a18398.html#a0d868424e2b703471e3d73c0a72bc75c"/>
+</section>
+<section title="multiboot_info.u" ref="de/d0e/a18398.html#d3/d67/a19739">
+<section title="aout_sym" ref="de/d0e/a18398.html#adcc9d90eba827321c643ad06b62c7817"/>
+<section title="elf_sec" ref="de/d0e/a18398.html#af2b83453f34de71046f2bbb48051c1f4"/>
+</section>
+<section title="multiboot_memory_map_t" ref="de/d0e/a18398.html#d2/d08/a19295">
+<section title="addr" ref="de/d0e/a18398.html#a40e066ba79afd138308bd0db4b3f4f5b"/>
+<section title="len" ref="de/d0e/a18398.html#a0c5d40a87a63b01fc424bb3c15c89997"/>
+<section title="size" ref="de/d0e/a18398.html#a1b4b5157d5e972e92981177fd1eb6d67"/>
+<section title="type" ref="de/d0e/a18398.html#affc11fb6e6ece4860a1929b791073538"/>
+</section>
+<section title="multiboot_module_t" ref="de/d0e/a18398.html#d9/d7c/a19299">
+<section title="cmdline" ref="de/d0e/a18398.html#a3219140f9baf1a790a602db25e8597c7"/>
+<section title="mod_end" ref="de/d0e/a18398.html#aa2b5dda7d7d51a1f3fbd613adfa640b0"/>
+<section title="mod_start" ref="de/d0e/a18398.html#a3bcfca83ccb172cd79123a8341ed4cfb"/>
+<section title="pad" ref="de/d0e/a18398.html#aff552d4c321b0607d77cda0c2cdc5708"/>
+</section>
+</section>
+<section title="Class Index" ref="classes.html"/>
+<section title="Class Hierarchy" ref="hierarchy.html">
+<section title="driver::Driver" ref="dc/d37/a19307.html">
+<section title="driver::KeyboardDriver" ref="dc/d7c/a19319.html"/>
+<section title="driver::MouseDriver" ref="da/dea/a19327.html"/>
+</section>
+<section title="driver::DriverManager" ref="d3/d37/a19311.html"/>
+<section title="driver::KeyboardEventHandler" ref="d0/d72/a19315.html">
+<section title="KeyboardEventHandler_for_kernel" ref="d4/d1e/a19251.html"/>
+</section>
+<section title="driver::MouseEventHandler" ref="d5/d17/a19323.html">
+<section title="MouseEventHandler_for_kernel" ref="d0/d04/a19255.html"/>
+</section>
+<section title="essential::atexit_func_entry_t" ref="d7/d5c/a19339.html"/>
+<section title="essential::GDT" ref="d3/d8c/a19335.html"/>
+<section title="essential::GDT_row" ref="dd/da0/a19331.html"/>
+<section title="hardware_communication::IDT_row" ref="d7/d8c/a19347.html"/>
+<section title="hardware_communication::InterruptHandler" ref="d0/dcf/a19343.html">
+<section title="driver::KeyboardDriver" ref="dc/d7c/a19319.html"/>
+<section title="driver::MouseDriver" ref="da/dea/a19327.html"/>
+</section>
+<section title="hardware_communication::InterruptManager" ref="d9/d99/a19351.html"/>
+<section title="hardware_communication::Port" ref="d3/d5b/a19355.html">
+<section title="hardware_communication::Port16Bit" ref="dd/d6a/a19367.html"/>
+<section title="hardware_communication::Port32Bit" ref="d8/d2a/a19371.html"/>
+<section title="hardware_communication::Port8Bit" ref="d9/d0b/a19359.html">
+<section title="hardware_communication::Port8BitSlow" ref="dc/da5/a19363.html"/>
+</section>
+</section>
+<section title="multiboot_aout_symbol_table_t" ref="de/d0e/a18398.html#dc/d9c/a19263"/>
+<section title="multiboot_apm_info" ref="de/d0e/a18398.html#d7/d23/a19303"/>
+<section title="multiboot_color" ref="de/d0e/a18398.html#d0/d19/a19291"/>
+<section title="multiboot_elf_section_header_table_t" ref="de/d0e/a18398.html#da/d01/a19267"/>
+<section title="multiboot_header" ref="de/d0e/a18398.html#d6/dbf/a19259"/>
+<section title="multiboot_info_t" ref="de/d0e/a18398.html#da/d5f/a19271"/>
+<section title="multiboot_info.__unnamed2__" ref="de/d0e/a18398.html#dc/d1b/a19743"/>
+<section title="multiboot_info.__unnamed2__.__unnamed4__" ref="de/d0e/a18398.html#d9/d3c/a19747"/>
+<section title="multiboot_info.__unnamed2__.__unnamed6__" ref="de/d0e/a18398.html#d2/def/a19751"/>
+<section title="multiboot_info.u" ref="de/d0e/a18398.html#d3/d67/a19739"/>
+<section title="multiboot_memory_map_t" ref="de/d0e/a18398.html#d2/d08/a19295"/>
+<section title="multiboot_module_t" ref="de/d0e/a18398.html#d9/d7c/a19299"/>
+</section>
+<section title="Class Members" ref="functions.html">
+<section title="All" ref="functions.html">
+<section title="_" ref="functions.html"/>
+<section title="a" ref="functions_a.html"/>
+<section title="b" ref="functions_b.html"/>
+<section title="c" ref="functions_c.html"/>
+<section title="d" ref="functions_d.html"/>
+<section title="e" ref="functions_e.html"/>
+<section title="f" ref="functions_f.html"/>
+<section title="g" ref="functions_g.html"/>
+<section title="h" ref="functions_h.html"/>
+<section title="i" ref="functions_i.html"/>
+<section title="k" ref="functions_k.html"/>
+<section title="l" ref="functions_l.html"/>
+<section title="m" ref="functions_m.html"/>
+<section title="n" ref="functions_n.html"/>
+<section title="o" ref="functions_o.html"/>
+<section title="p" ref="functions_p.html"/>
+<section title="r" ref="functions_r.html"/>
+<section title="s" ref="functions_s.html"/>
+<section title="t" ref="functions_t.html"/>
+<section title="u" ref="functions_u.html"/>
+<section title="v" ref="functions_v.html"/>
+<section title="w" ref="functions_w.html"/>
+<section title="~" ref="functions_~.html"/>
+</section>
+<section title="Functions" ref="functions_func.html"/>
+<section title="Variables" ref="functions_vars.html"/>
+</section>
+</section>
+<section title="Files" ref="files.html">
+<section title="File List" ref="files.html">
+<section title="kernel_src" ref="dir_8d71b6a3da26db487d68cf8b27265d88.html">
+<section title="kernel.cpp" ref="d2/dba/a18362.html">
+<section title="KeyboardEventHandler_for_kernel" ref="d4/d1e/a19251.html">
+<section title="KeyboardEventHandler_for_kernel" ref="d4/d1e/a19251.html#af9abf3fb85dea27db802a8f092c4a2fc"/>
+<section title="~KeyboardEventHandler_for_kernel" ref="d4/d1e/a19251.html#ab2b7f34603d9cdd36554a4f7f6dde585"/>
+<section title="onKeyDown" ref="d4/d1e/a19251.html#af82a0bd16f995dd285d4f7822117377c"/>
+<section title="onKeyUp" ref="d4/d1e/a19251.html#a0d74a48573c10174ac8bf836ac39f886"/>
+</section>
+<section title="MouseEventHandler_for_kernel" ref="d0/d04/a19255.html">
+<section title="MouseEventHandler_for_kernel" ref="d0/d04/a19255.html#a41f57ab9baa5850e39086362ce44b1cb"/>
+<section title="~MouseEventHandler_for_kernel" ref="d0/d04/a19255.html#aa96e9bf8dce2b60b7f86577c3a74455d"/>
+<section title="onMouseDown" ref="d0/d04/a19255.html#ae860a16e70322e5c4bb01e1108e50bb1"/>
+<section title="onMouseMove" ref="d0/d04/a19255.html#adbb4c4e2814b335579119c324313f652"/>
+<section title="onMouseUp" ref="d0/d04/a19255.html#afca536c2187a65da265daa2d2af75d4d"/>
+</section>
+<section title="kernelMain" ref="d2/dba/a18362.html#abb4e4866092116b520310d61961bfe12"/>
+</section>
+</section>
+<section title="libk_header" ref="dir_72b26adc0987810216370bc6a776b23e.html">
+<section title="basic" ref="dir_531da62a4fcf97761a044fe35931416b.html">
+<section title="kiostream.hpp" ref="d3/d63/a18404.html">
+<section title="__clearScreen" ref="d3/d63/a18404.html#a02923caa95013ec5d9333c25d9cca1d6"/>
+<section title="disable_cursor" ref="d3/d63/a18404.html#a4b31902bf2cff8ff28405aa57d9f4575"/>
+<section title="enable_cursor" ref="d3/d63/a18404.html#a8ca6648639f335b207c748074dcf9f25"/>
+<section title="printf" ref="d3/d63/a18404.html#a45ee52b918a784ff0e96e7c8917a91d9"/>
+<section title="update_cursor" ref="d3/d63/a18404.html#a9d1f0f838e646660db6d9284725c2b4c"/>
+</section>
+<section title="kmemory.hpp" ref="d2/d7b/a18401.html">
+<section title="__printMemoryMap" ref="d2/d7b/a18401.html#a53c6425a55d9fb93998da01f2416f9ad"/>
+</section>
+<section title="multiboot.hpp" ref="de/d0e/a18398.html">
+<section title="multiboot_aout_symbol_table_t" ref="de/d0e/a18398.html#dc/d9c/a19263">
+<section title="addr" ref="de/d0e/a18398.html#af0a1d2238495093ad75f36e3a146c0c7"/>
+<section title="reserved" ref="de/d0e/a18398.html#a488f52dbb30b4de2ae2f42f0bdfda154"/>
+<section title="strsize" ref="de/d0e/a18398.html#a7ed0107153c88e6604e9a6105a4c7be0"/>
+<section title="tabsize" ref="de/d0e/a18398.html#afbdc23500d3d7a59486a0b8ff4066c1e"/>
+</section>
+<section title="multiboot_apm_info" ref="de/d0e/a18398.html#d7/d23/a19303">
+<section title="cseg" ref="de/d0e/a18398.html#a9eedcae62ee49310914e238d07094c4b"/>
+<section title="cseg_16" ref="de/d0e/a18398.html#a9abc154a9c3a0f3d9ae96cf2b5044b43"/>
+<section title="cseg_16_len" ref="de/d0e/a18398.html#a09573729600592739fe8f2480217a30d"/>
+<section title="cseg_len" ref="de/d0e/a18398.html#a95aa6b556019e1b9c526b190341cc531"/>
+<section title="dseg" ref="de/d0e/a18398.html#a98cd7da8760cf5d49ba55e1f9e76c6d4"/>
+<section title="dseg_len" ref="de/d0e/a18398.html#afee11d31183fe424af90546b10c9fac2"/>
+<section title="flags" ref="de/d0e/a18398.html#a55fb7837ae61f63d0310b65767a2505c"/>
+<section title="offset" ref="de/d0e/a18398.html#a97958b174fe0234cafab9019eb009b91"/>
+<section title="version" ref="de/d0e/a18398.html#ab06d9309bdc00fa4a8c37fdab639beb5"/>
+</section>
+<section title="multiboot_color" ref="de/d0e/a18398.html#d0/d19/a19291">
+<section title="blue" ref="de/d0e/a18398.html#a6f8d17b0f35ff4cbf9c51dcbc3ea7d01"/>
+<section title="green" ref="de/d0e/a18398.html#a08e1c8bc977b39015c9043645e79713d"/>
+<section title="red" ref="de/d0e/a18398.html#a4c8a91229f40c06c3c63b4c37e83d219"/>
+</section>
+<section title="multiboot_elf_section_header_table_t" ref="de/d0e/a18398.html#da/d01/a19267">
+<section title="addr" ref="de/d0e/a18398.html#aac90242e270ae9df01fc3bb784b858b6"/>
+<section title="num" ref="de/d0e/a18398.html#a6ed3ef34bb39d72a19533b11fe156e1f"/>
+<section title="shndx" ref="de/d0e/a18398.html#a45886444dce7cc10353528373f3e50c2"/>
+<section title="size" ref="de/d0e/a18398.html#ab2740d89d4139f93c9452cca2c676c5c"/>
+</section>
+<section title="multiboot_header" ref="de/d0e/a18398.html#d6/dbf/a19259">
+<section title="bss_end_addr" ref="de/d0e/a18398.html#ab4f2496ec9b0d1a95985929d281dfa19"/>
+<section title="checksum" ref="de/d0e/a18398.html#a17e73abddfe8264c254767a20099038d"/>
+<section title="depth" ref="de/d0e/a18398.html#aba85b53dc3af1bf99c71292a776e9dff"/>
+<section title="entry_addr" ref="de/d0e/a18398.html#ac3d807775a9d69730e6698dcdcf6491e"/>
+<section title="flags" ref="de/d0e/a18398.html#ab922f32c179ec7bde91519d19f27d95b"/>
+<section title="header_addr" ref="de/d0e/a18398.html#a9718b2fc6ce29a37e9a209f92ab856e3"/>
+<section title="height" ref="de/d0e/a18398.html#a055c5e6553ea032897ad50a12f998a17"/>
+<section title="load_addr" ref="de/d0e/a18398.html#a99de1cf326c46c76c6039f317b7a1ef2"/>
+<section title="load_end_addr" ref="de/d0e/a18398.html#ac9efc1a4c3cd18f286b2fd50ff052e31"/>
+<section title="magic" ref="de/d0e/a18398.html#a7fddee92e60ff58e159c6bf2c40bf29b"/>
+<section title="mode_type" ref="de/d0e/a18398.html#a4c90b7929342dd5aab7d08afa0906d28"/>
+<section title="width" ref="de/d0e/a18398.html#ad72a1a3dd608e73c818d0c27974def40"/>
+</section>
+<section title="multiboot_info_t" ref="de/d0e/a18398.html#da/d5f/a19271">
+<section title="apm_table" ref="de/d0e/a18398.html#ab340bc8f88281872676db0f52ebe7c0e"/>
+<section title="boot_device" ref="de/d0e/a18398.html#ae32646de911267c65892a286ef3d529e"/>
+<section title="boot_loader_name" ref="de/d0e/a18398.html#a4a3251d6b4cf85d935d989a0a369feed"/>
+<section title="cmdline" ref="de/d0e/a18398.html#a95a5e2cc69960e4d906abd585f91f210"/>
+<section title="config_table" ref="de/d0e/a18398.html#a94b06ab87dbfaf966822a39cf1d9e2d6"/>
+<section title="drives_addr" ref="de/d0e/a18398.html#a12916653d21ac1694b6d609a10d15332"/>
+<section title="drives_length" ref="de/d0e/a18398.html#a8bb6cc3d388a8abafecc7018744c14f3"/>
+<section title="flags" ref="de/d0e/a18398.html#a39f175b6fb4debca237d3ff93e960a25"/>
+<section title="framebuffer_addr" ref="de/d0e/a18398.html#a77a4d6e2b12fbd2b3e6e61d978ae5fc0"/>
+<section title="framebuffer_bpp" ref="de/d0e/a18398.html#ab7b460c75f0342dfb1e339d2b3a2a9da"/>
+<section title="framebuffer_height" ref="de/d0e/a18398.html#a0e8539780b79a018883d96bb444cd9c8"/>
+<section title="framebuffer_pitch" ref="de/d0e/a18398.html#ab0ecb8c7debe9ac1ac7910ae957367f6"/>
+<section title="framebuffer_type" ref="de/d0e/a18398.html#a540391adf02da7cb6876fe78d65a13d7"/>
+<section title="framebuffer_width" ref="de/d0e/a18398.html#a770273793bac06df17306c7fa136c58f"/>
+<section title="mem_lower" ref="de/d0e/a18398.html#a6b80f033d5a9151a4d1abd2d155942a7"/>
+<section title="mem_upper" ref="de/d0e/a18398.html#a1ea7d9e665d6fff00665d97e81207a8f"/>
+<section title="mmap_addr" ref="de/d0e/a18398.html#a19825c91eb6aa23fa61ee3851a6ce8da"/>
+<section title="mmap_length" ref="de/d0e/a18398.html#a3dd43c3204f821c0a1b5604686d9eae7"/>
+<section title="mods_addr" ref="de/d0e/a18398.html#a766e9dadbf4a845c12704c923cb13f02"/>
+<section title="mods_count" ref="de/d0e/a18398.html#a415feb83a215790e2e8f9e2e1e3df55c"/>
+<section title="u" ref="de/d0e/a18398.html#a0558f47498813865abaec2f6281c5f92"/>
+<section title="vbe_control_info" ref="de/d0e/a18398.html#a21c63bc2905c6fd19449eea6e8514856"/>
+<section title="vbe_interface_len" ref="de/d0e/a18398.html#a31ea288eaa679a7e3a4dafb91d833f78"/>
+<section title="vbe_interface_off" ref="de/d0e/a18398.html#a272d3a053e085dc513ba4dc4eb688816"/>
+<section title="vbe_interface_seg" ref="de/d0e/a18398.html#a6cd85049f18e6c157d173538b162d9a6"/>
+<section title="vbe_mode" ref="de/d0e/a18398.html#aec0fcaec97380658da787d4989f7b93f"/>
+<section title="vbe_mode_info" ref="de/d0e/a18398.html#ace25791339e03186c9364bb5f461f773"/>
+</section>
+<section title="multiboot_info.__unnamed2__" ref="de/d0e/a18398.html#dc/d1b/a19743">
+</section>
+<section title="multiboot_info.__unnamed2__.__unnamed4__" ref="de/d0e/a18398.html#d9/d3c/a19747">
+<section title="framebuffer_palette_addr" ref="de/d0e/a18398.html#ab4a160c025f0db5470ddced0d2c99de3"/>
+<section title="framebuffer_palette_num_colors" ref="de/d0e/a18398.html#a9ea6d9ae58149f37ee098ce870bf07f0"/>
+</section>
+<section title="multiboot_info.__unnamed2__.__unnamed6__" ref="de/d0e/a18398.html#d2/def/a19751">
+<section title="framebuffer_blue_field_position" ref="de/d0e/a18398.html#ace107d23f7f4af6fd8d969926c5c9d16"/>
+<section title="framebuffer_blue_mask_size" ref="de/d0e/a18398.html#aa8eaba7a0a6cf04509a014ac4bc937c0"/>
+<section title="framebuffer_green_field_position" ref="de/d0e/a18398.html#adfcdecf04630d77ee5e41006f47dc4d7"/>
+<section title="framebuffer_green_mask_size" ref="de/d0e/a18398.html#abc2579d314db9a050c48043a1b7f5ea9"/>
+<section title="framebuffer_red_field_position" ref="de/d0e/a18398.html#a4dd2fad32ee3a2ce5379d7bf0a23dabe"/>
+<section title="framebuffer_red_mask_size" ref="de/d0e/a18398.html#a0d868424e2b703471e3d73c0a72bc75c"/>
+</section>
+<section title="multiboot_info.u" ref="de/d0e/a18398.html#d3/d67/a19739">
+<section title="aout_sym" ref="de/d0e/a18398.html#adcc9d90eba827321c643ad06b62c7817"/>
+<section title="elf_sec" ref="de/d0e/a18398.html#af2b83453f34de71046f2bbb48051c1f4"/>
+</section>
+<section title="multiboot_memory_map_t" ref="de/d0e/a18398.html#d2/d08/a19295">
+<section title="addr" ref="de/d0e/a18398.html#a40e066ba79afd138308bd0db4b3f4f5b"/>
+<section title="len" ref="de/d0e/a18398.html#a0c5d40a87a63b01fc424bb3c15c89997"/>
+<section title="size" ref="de/d0e/a18398.html#a1b4b5157d5e972e92981177fd1eb6d67"/>
+<section title="type" ref="de/d0e/a18398.html#affc11fb6e6ece4860a1929b791073538"/>
+</section>
+<section title="multiboot_module_t" ref="de/d0e/a18398.html#d9/d7c/a19299">
+<section title="cmdline" ref="de/d0e/a18398.html#a3219140f9baf1a790a602db25e8597c7"/>
+<section title="mod_end" ref="de/d0e/a18398.html#aa2b5dda7d7d51a1f3fbd613adfa640b0"/>
+<section title="mod_start" ref="de/d0e/a18398.html#a3bcfca83ccb172cd79123a8341ed4cfb"/>
+<section title="pad" ref="de/d0e/a18398.html#aff552d4c321b0607d77cda0c2cdc5708"/>
+</section>
+<section title="MULTIBOOT_AOUT_KLUDGE" ref="de/d0e/a18398.html#a791f0c6a97c36de5388c990503ee4639"/>
+<section title="MULTIBOOT_BOOTLOADER_MAGIC" ref="de/d0e/a18398.html#aacd617f4e3daafd6eab95fb6215ccae4"/>
+<section title="MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT" ref="de/d0e/a18398.html#af6005f97267af2cb0ff37fb245284440"/>
+<section title="MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED" ref="de/d0e/a18398.html#a8e2af641ff42074bb807c3ec9e33b2e0"/>
+<section title="MULTIBOOT_FRAMEBUFFER_TYPE_RGB" ref="de/d0e/a18398.html#a34b2f01226ea42de22e06db7f652fbb1"/>
+<section title="MULTIBOOT_HEADER_ALIGN" ref="de/d0e/a18398.html#abc554da6e5184d34e039b551177434ba"/>
+<section title="MULTIBOOT_HEADER_MAGIC" ref="de/d0e/a18398.html#ab36ad4b4a42c58aac4ad1f2ba13054e9"/>
+<section title="MULTIBOOT_INFO_ALIGN" ref="de/d0e/a18398.html#a7f583196f43e30e93323f5e44554d726"/>
+<section title="MULTIBOOT_INFO_AOUT_SYMS" ref="de/d0e/a18398.html#a186ab9e55c5bc612b9fd7e10b4be5600"/>
+<section title="MULTIBOOT_INFO_APM_TABLE" ref="de/d0e/a18398.html#aab73446f0cee2e9dc91f43eb9a0c806b"/>
+<section title="MULTIBOOT_INFO_BOOT_LOADER_NAME" ref="de/d0e/a18398.html#a9743476d5f32c9ae22f6254a0e3ba11d"/>
+<section title="MULTIBOOT_INFO_BOOTDEV" ref="de/d0e/a18398.html#acfde5ffdd699c023dd8f4b89aa66556f"/>
+<section title="MULTIBOOT_INFO_CMDLINE" ref="de/d0e/a18398.html#ae75fb4f821b7ab405d46318d9b90a677"/>
+<section title="MULTIBOOT_INFO_CONFIG_TABLE" ref="de/d0e/a18398.html#ad60e5b72325f5752e955879f3fbb44c3"/>
+<section title="MULTIBOOT_INFO_DRIVE_INFO" ref="de/d0e/a18398.html#af2c5803d8cc6e1e8c00181ca546e68ab"/>
+<section title="MULTIBOOT_INFO_ELF_SHDR" ref="de/d0e/a18398.html#ad7d22ae99c11dc92152acdc8494a71f0"/>
+<section title="MULTIBOOT_INFO_FRAMEBUFFER_INFO" ref="de/d0e/a18398.html#a1c07b211ed2c374f5fbcf40c97bce2c0"/>
+<section title="MULTIBOOT_INFO_MEM_MAP" ref="de/d0e/a18398.html#a2d16dabdfdee01362c3457d06f0ff850"/>
+<section title="MULTIBOOT_INFO_MEMORY" ref="de/d0e/a18398.html#a1cb6047ede9a179b2958048573269d7a"/>
+<section title="MULTIBOOT_INFO_MODS" ref="de/d0e/a18398.html#a9a06a0175854cc6af54ddb6bd798c5bc"/>
+<section title="MULTIBOOT_INFO_VBE_INFO" ref="de/d0e/a18398.html#abf0a727e2e262407c77d54baf40d2f39"/>
+<section title="MULTIBOOT_MEMORY_ACPI_RECLAIMABLE" ref="de/d0e/a18398.html#af35be82586f332a561d00207c937ee57"/>
+<section title="MULTIBOOT_MEMORY_AVAILABLE" ref="de/d0e/a18398.html#a7fe141351ebcde0acbd6118ad0ea1a21"/>
+<section title="MULTIBOOT_MEMORY_BADRAM" ref="de/d0e/a18398.html#a1604ec18ac949d88dab993904b08c075"/>
+<section title="MULTIBOOT_MEMORY_INFO" ref="de/d0e/a18398.html#afdfca6bbbf4b7dca40e9d43e58201f55"/>
+<section title="MULTIBOOT_MEMORY_NVS" ref="de/d0e/a18398.html#a68f78286f7434d373a82f1b6f6473c72"/>
+<section title="MULTIBOOT_MEMORY_RESERVED" ref="de/d0e/a18398.html#a0299aedc71e1f6707181471bafb18e7c"/>
+<section title="MULTIBOOT_MOD_ALIGN" ref="de/d0e/a18398.html#ab3284a28549f2a2f1a2001ca023aaa1e"/>
+<section title="MULTIBOOT_PAGE_ALIGN" ref="de/d0e/a18398.html#aab5e5487e858de2a031cd3f1232f7b60"/>
+<section title="MULTIBOOT_SEARCH" ref="de/d0e/a18398.html#a0b53e2de91aa7498c4b476776b27e5f3"/>
+<section title="MULTIBOOT_VIDEO_MODE" ref="de/d0e/a18398.html#a74a1da9293ae3835241c60b2d9e65e8d"/>
+<section title="multiboot_uint16_t" ref="de/d0e/a18398.html#a3a11e3c2b5e0617736a05343aa5795b3"/>
+<section title="multiboot_uint32_t" ref="de/d0e/a18398.html#a009f355da41fed4badb8a52d432f5186"/>
+<section title="multiboot_uint64_t" ref="de/d0e/a18398.html#a8dfdd61648b48aa31845db590970e06a"/>
+<section title="multiboot_uint8_t" ref="de/d0e/a18398.html#a037f602538fccf97e90021c19fdfc047"/>
+<section title="__attribute__" ref="de/d0e/a18398.html#aa6b9a7218d544abc2be2bd335681b0a1"/>
+<section title="__attribute__" ref="de/d0e/a18398.html#a4bbf25084dee10ec29f4356cacced463"/>
+<section title="addr" ref="de/d0e/a18398.html#a8286ae6db03c34c4bb161accbfbfbbcd"/>
+<section title="len" ref="de/d0e/a18398.html#a6de3a6d27a7e07942958b912d39792e6"/>
+<section title="size" ref="de/d0e/a18398.html#a6d813a0f2b5281b18dea3f4cda696c33"/>
+<section title="type" ref="de/d0e/a18398.html#a8da1a8c7127a0371eec0810a29e30f3c"/>
+</section>
+</section>
+<section title="driver" ref="dir_1a23d90a90b116220e4c9c5e74cdbcbc.html">
+<section title="kdriver.hpp" ref="d1/d33/a18419.html">
+<section title="driver::Driver" ref="dc/d37/a19307.html">
+<section title="Driver" ref="dc/d37/a19307.html#a7de0c11fff1dc1f5d004b2a76e840840"/>
+<section title="~Driver" ref="dc/d37/a19307.html#aacc7524b989c2561147c5dd0b901381c"/>
+<section title="activate" ref="dc/d37/a19307.html#a8c86c1e52652d8b491d37a3b60b535b0"/>
+<section title="deactivate" ref="dc/d37/a19307.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1"/>
+<section title="reset" ref="dc/d37/a19307.html#a98d2e779c02364fc58c172d0d2a32bdd"/>
+</section>
+<section title="driver::DriverManager" ref="d3/d37/a19311.html">
+<section title="DriverManager" ref="d3/d37/a19311.html#af3bed49a4b243c2f65d09c35db15158b"/>
+<section title="~DriverManager" ref="d3/d37/a19311.html#a29731c1f4b1215fd5c4ab27624ae6563"/>
+<section title="activateAll" ref="d3/d37/a19311.html#a05b071d8a8c12f2d284fb61f4ecd116e"/>
+<section title="addDriver" ref="d3/d37/a19311.html#ab8bd89b91ea49f343276c3c841153cd8"/>
+<section title="drivers" ref="d3/d37/a19311.html#acdf43f6340b26ad2d9b9c90d8974b370"/>
+<section title="numDrivers" ref="d3/d37/a19311.html#a347286da44d912bba3f720d8b0600946"/>
+</section>
+<section title="MAX_NUMDRIVERS" ref="d1/d33/a18419.html#a14e1e30a5e2cbbd23a1fd111357f9076"/>
+</section>
+<section title="kkeyboard.hpp" ref="d4/d22/a18413.html">
+<section title="driver::KeyboardDriver" ref="dc/d7c/a19319.html">
+<section title="KeyboardDriver" ref="dc/d7c/a19319.html#a63898e993f02352193db996d00179347"/>
+<section title="~KeyboardDriver" ref="dc/d7c/a19319.html#a77da196f3c04c549e1085ce5566e5df3"/>
+<section title="activate" ref="dc/d7c/a19319.html#a58553d39d7dcfe6b55e8ddb1e7b1d187"/>
+<section title="deactivate" ref="dc/d7c/a19319.html#aaa7e99b6214dc8439230a95dd57e617e"/>
+<section title="handleInterrupt" ref="dc/d7c/a19319.html#a248fa0da9acac54a3a8880c7b66b3f2b"/>
+<section title="handleInterrupt" ref="dc/d7c/a19319.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="reset" ref="dc/d7c/a19319.html#a22b7b080ab1c8b0f2ed4beba75b34691"/>
+<section title="caps_on" ref="dc/d7c/a19319.html#a8a63dbc25a08a75f62ae0674df1deb30"/>
+<section title="commandPort" ref="dc/d7c/a19319.html#a58fc9113701ffc04637996780c843ff0"/>
+<section title="dataPort" ref="dc/d7c/a19319.html#afd6cdddb62a2a2d2b31043eb32887b41"/>
+<section title="interrupt_manager" ref="dc/d7c/a19319.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="dc/d7c/a19319.html#afeede822d3e98957e76e627a54ec2f7a"/>
+<section title="keyboardEventHandler" ref="dc/d7c/a19319.html#a11ec84b7abf113ec270f124564776e1f"/>
+<section title="led_byte_to_send" ref="dc/d7c/a19319.html#aed7b5d279f6f1dffee10d5fb92ed6b1c"/>
+<section title="shift_pressed" ref="dc/d7c/a19319.html#afba07c783deebfb275c1437f7c23601d"/>
+<section title="waiting_for_led_ack" ref="dc/d7c/a19319.html#a703464394033a8f4f664d9289ae2e9f8"/>
+</section>
+<section title="driver::KeyboardEventHandler" ref="d0/d72/a19315.html">
+<section title="KeyboardEventHandler" ref="d0/d72/a19315.html#a63ee0249476256e721e05e6375383317"/>
+<section title="~KeyboardEventHandler" ref="d0/d72/a19315.html#aed6531b818751f0f23b6b9836ac94aa0"/>
+<section title="onKeyDown" ref="d0/d72/a19315.html#ae2b923ef0eb58e29f57a155debadac6a"/>
+<section title="onKeyUp" ref="d0/d72/a19315.html#a28547100b7420e1f73b745df873cd411"/>
+</section>
+</section>
+<section title="kmouse.hpp" ref="d2/d18/a18416.html">
+<section title="driver::MouseDriver" ref="da/dea/a19327.html">
+<section title="MouseDriver" ref="da/dea/a19327.html#a639956c8ce11d62ee443825e9b9695af"/>
+<section title="~MouseDriver" ref="da/dea/a19327.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22"/>
+<section title="activate" ref="da/dea/a19327.html#a446769df0b3b537a525476c7c8be47bc"/>
+<section title="deactivate" ref="da/dea/a19327.html#a4329c1cdedc72adf0b95cb3911c4acf6"/>
+<section title="handleInterrupt" ref="da/dea/a19327.html#a1b2f08490b7954e5ca504cd8bb6862c0"/>
+<section title="handleInterrupt" ref="da/dea/a19327.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="mouse_block_video_mem_value" ref="da/dea/a19327.html#a1a2a455ca7146dea3148afa8cb6c9ed5"/>
+<section title="reset" ref="da/dea/a19327.html#aabe3740996bf70fda96f0a25228954a6"/>
+<section title="__mouse_x_" ref="da/dea/a19327.html#ac2077f6309c79d5f585fb966b57fe065"/>
+<section title="__mouse_y_" ref="da/dea/a19327.html#aa02009b37420687ef18db8a05ff9181f"/>
+<section title="buffer" ref="da/dea/a19327.html#aaa1d55d296d88995ac49a8a9a75a79d4"/>
+<section title="buttons" ref="da/dea/a19327.html#a7942997bd5ead2767e9627d91789dd70"/>
+<section title="commandPort" ref="da/dea/a19327.html#a2877a9f46dd83a5f05f17fd83a0a7725"/>
+<section title="dataPort" ref="da/dea/a19327.html#a8e30a6f6c5839fcf9c3ab63aa167d046"/>
+<section title="interrupt_manager" ref="da/dea/a19327.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="da/dea/a19327.html#afeede822d3e98957e76e627a54ec2f7a"/>
+<section title="mouseEventHandler" ref="da/dea/a19327.html#a804f5657a062e0a18f3b56781f884c66"/>
+<section title="offset" ref="da/dea/a19327.html#a313426dd9aa1af1540cbffc2e77c58c1"/>
+<section title="old_char_under_mouse_pointer" ref="da/dea/a19327.html#a4a671e7e2b235f6bec473cb960401bd6"/>
+</section>
+<section title="driver::MouseEventHandler" ref="d5/d17/a19323.html">
+<section title="MouseEventHandler" ref="d5/d17/a19323.html#aa0fd3739c52bcd4d553cefaf41760a9b"/>
+<section title="~MouseEventHandler" ref="d5/d17/a19323.html#abbfe4a7ae2911f989513178530314211"/>
+<section title="onMouseDown" ref="d5/d17/a19323.html#a2f12c5f63356c3045fd6cb46fd89374f"/>
+<section title="onMouseMove" ref="d5/d17/a19323.html#a68f635b3b65f927d37d4e0835f7e0b30"/>
+<section title="onMouseUp" ref="d5/d17/a19323.html#a09b77fe86bfa79313b5c5b91d09eb514"/>
+</section>
+<section title="KMOUSE_COLOR_BLACK" ref="d2/d18/a18416.html#ac9670c34ae4e43ca669484a7a317e968"/>
+<section title="KMOUSE_COLOR_BLUE" ref="d2/d18/a18416.html#a6d83e86a8c6b6046bae502774a4e9e83"/>
+<section title="KMOUSE_COLOR_BROWN" ref="d2/d18/a18416.html#a5bc124f24ecf7e9b0b06d181a6fd7a3e"/>
+<section title="KMOUSE_COLOR_CYAN" ref="d2/d18/a18416.html#a9660baab3bfc34866b252eff71da777d"/>
+<section title="KMOUSE_COLOR_DARK_GREY" ref="d2/d18/a18416.html#a804c656f97148c66dee375ad20d6326e"/>
+<section title="KMOUSE_COLOR_GREEN" ref="d2/d18/a18416.html#ae245d853ffcebef06bd052849e35471c"/>
+<section title="KMOUSE_COLOR_LIGHT_BLUE" ref="d2/d18/a18416.html#a5882f98f21668e74fbc61e9a3cc4d4c5"/>
+<section title="KMOUSE_COLOR_LIGHT_CYAN" ref="d2/d18/a18416.html#ac9391d6382197266f9d814ed3d21bac2"/>
+<section title="KMOUSE_COLOR_LIGHT_GREEN" ref="d2/d18/a18416.html#ac874f858f617e42a6376c7092940376c"/>
+<section title="KMOUSE_COLOR_LIGHT_GREY" ref="d2/d18/a18416.html#ab7f5f57837c11ae93f9a3c6ef0bba5a8"/>
+<section title="KMOUSE_COLOR_LIGHT_MAGENTA" ref="d2/d18/a18416.html#a5a90c65c80e669968e259e84b095c408"/>
+<section title="KMOUSE_COLOR_LIGHT_RED" ref="d2/d18/a18416.html#acb168549620efee2737255317c814059"/>
+<section title="KMOUSE_COLOR_MAGENTA" ref="d2/d18/a18416.html#abfe7fa11c53fb1ea1270f0ed00bb18b8"/>
+<section title="KMOUSE_COLOR_RED" ref="d2/d18/a18416.html#a1d9a56551248abc6954bf18c76ddcb74"/>
+<section title="KMOUSE_COLOR_WHITE" ref="d2/d18/a18416.html#abb30f17e5bf0289632c5abbd2d2dd99a"/>
+<section title="KMOUSE_COLOR_YELLOW" ref="d2/d18/a18416.html#abc652aa810e06ef28716a20cb70d51d4"/>
+<section title="MOUSE_POINTER_COLOR" ref="d2/d18/a18416.html#a637dd833f5f7af42afa1f42349a4d89e"/>
+</section>
+</section>
+<section title="essential" ref="dir_c2bb8e66a15659afc0e54f8e919ef455.html">
+<section title="kgdt.hpp" ref="d9/dc6/a18425.html">
+<section title="essential::GDT" ref="d3/d8c/a19335.html">
+<section title="GDT" ref="d3/d8c/a19335.html#aa061ecab5a20a3556413fbbde4fe89d7"/>
+<section title="~GDT" ref="d3/d8c/a19335.html#a9b61f75de7fa2ffe9589f43c3f6a6a6c"/>
+<section title="installTable" ref="d3/d8c/a19335.html#af8e3c1da270077eb7cc6551b35c0e5ca"/>
+<section title="kernel_CS_selector" ref="d3/d8c/a19335.html#a89a8d2c17e3c22e7200bff09252f46e1"/>
+<section title="kernel_DS_selector" ref="d3/d8c/a19335.html#a34661a528b1630bff806e25411ad6ec3"/>
+<section title="printLoadedTable" ref="d3/d8c/a19335.html#a9c89bddfdb21d5cc09c1d82411982de9"/>
+<section title="printLoadedTableHeader" ref="d3/d8c/a19335.html#a2ae998750fc1e18e6778e92774bd3574"/>
+<section title="user_CS_selector" ref="d3/d8c/a19335.html#a8806a14009c4f0432d4b7043d687be17"/>
+<section title="user_DS_selector" ref="d3/d8c/a19335.html#a90661f97e9cf214dd6d977b19c01f7fc"/>
+<section title="base" ref="d3/d8c/a19335.html#ad0a48a89930e6a6c4467c977f4e91269"/>
+<section title="kernel_CS" ref="d3/d8c/a19335.html#a20d7a6bb352e3f696c1c68bb394766d8"/>
+<section title="kernel_DS" ref="d3/d8c/a19335.html#ac8a5b4f6a3dc223e2eb6abebe19c9f08"/>
+<section title="limit" ref="d3/d8c/a19335.html#a4105a25a1ec71dc7e338639bb370c664"/>
+<section title="nullSegment" ref="d3/d8c/a19335.html#a154c2e2725809d873c8e7d5f19ea66c5"/>
+<section title="user_CS" ref="d3/d8c/a19335.html#a32508694f9db3188cd4aba126cbfb5bb"/>
+<section title="user_DS" ref="d3/d8c/a19335.html#a73463d83e2048869692d0adf1acac7a6"/>
+</section>
+<section title="essential::GDT_row" ref="dd/da0/a19331.html">
+<section title="GDT_row" ref="dd/da0/a19331.html#a5692f86b7ebf4eefdeb78e48f281092b"/>
+<section title="GDT_row" ref="dd/da0/a19331.html#a27ff8d9a6bf6c2c98cf78a0257e4667e"/>
+<section title="~GDT_row" ref="dd/da0/a19331.html#a6eb69c55c0bd16040b2d766dd068df31"/>
+<section title="GDT" ref="dd/da0/a19331.html#a235097b2551abe03269f88341b4bdf87"/>
+<section title="access" ref="dd/da0/a19331.html#a7f01a0febd325787f1ff47d6a3b668a9"/>
+<section title="base_high" ref="dd/da0/a19331.html#a2cbd86d4258ecebf7b46cc9bb8611b5b"/>
+<section title="base_low" ref="dd/da0/a19331.html#a298d18522898ad48c1e05b79f1f4dff7"/>
+<section title="base_middle" ref="dd/da0/a19331.html#a8429e04bddc6a61c4e95b88901ae219d"/>
+<section title="granularity" ref="dd/da0/a19331.html#af180a640dbd5213b3f936ff7cf48deaf"/>
+<section title="limit_low" ref="dd/da0/a19331.html#a2bddbe405dfbbbd101c475bd1bd65112"/>
+</section>
+<section title="GDT_ACCESS_CODE_PL0" ref="d9/dc6/a18425.html#ac4461ee84aade9ee824de64d4846ec98"/>
+<section title="GDT_ACCESS_CODE_PL3" ref="d9/dc6/a18425.html#a01d908c8637340b21274e0176b320c05"/>
+<section title="GDT_ACCESS_DATA_PL0" ref="d9/dc6/a18425.html#a1adfff1c72212b5c4e1df35485bb102a"/>
+<section title="GDT_ACCESS_DATA_PL3" ref="d9/dc6/a18425.html#ac7f57dcdd84028460100b6da75ad4938"/>
+<section title="GDT_GRAN_FLAGS" ref="d9/dc6/a18425.html#a4941c819dbbef299c391bf53c24caf8d"/>
+<section title="SEG_ACCESS_DESCTYPE" ref="d9/dc6/a18425.html#a0d47ea941c3bdfd06858a467d2e76d83"/>
+<section title="SEG_ACCESS_PRES" ref="d9/dc6/a18425.html#ab9e609c85bc4472f4f9b69697f2e5067"/>
+<section title="SEG_ACCESS_PRIV" ref="d9/dc6/a18425.html#a0cb0ae4ca069ed571a3b2db9190e12df"/>
+<section title="SEG_ACCESS_TYPE" ref="d9/dc6/a18425.html#a6c474d3015717ee1a2d99ae6a7b00ec3"/>
+<section title="SEG_CODE_EXRD" ref="d9/dc6/a18425.html#ae04daf26bdb792ae557ef1216021cc43"/>
+<section title="SEG_DATA_RDWR" ref="d9/dc6/a18425.html#add294548173871e30e54b92bf5da2758"/>
+<section title="SEG_GRAN_GRAN" ref="d9/dc6/a18425.html#ae86357f11d481de7242f3178629241b8"/>
+<section title="SEG_GRAN_LONG" ref="d9/dc6/a18425.html#a9759917f0cd67a1d7c87849e211a7993"/>
+<section title="SEG_GRAN_SAVL" ref="d9/dc6/a18425.html#a79a943b17e5929ca9e06fc7cc1cb0ccc"/>
+<section title="SEG_GRAN_SIZE" ref="d9/dc6/a18425.html#a7667e7c13f08890d3a6051346233691c"/>
+<section title="~GDT" ref="d9/dc6/a18425.html#ab808423f6529092dc90fcb7836fe024a"/>
+<section title="~GDT_row" ref="d9/dc6/a18425.html#a5322ab07a139d8ae6f9c518b288bde15"/>
+<section title="__attribute__" ref="d9/dc6/a18425.html#a52e3ec8c29cc4bb68f65445749f0bfdb"/>
+<section title="GDT_row" ref="d9/dc6/a18425.html#ad6539f5ca5082793a69451b8c1fc6523"/>
+<section title="GDT_row" ref="d9/dc6/a18425.html#a24693ad4185e3f70d2be14a964474436"/>
+<section title="installTable" ref="d9/dc6/a18425.html#a258db7c2f70fd1b20332ee3c00cd1d89"/>
+<section title="kernel_CS_selector" ref="d9/dc6/a18425.html#a169aef5ef99da67bb0047dfc3d6a22e4"/>
+<section title="kernel_DS_selector" ref="d9/dc6/a18425.html#aaa6fbf4816b6af649fc82186fe18b4e0"/>
+<section title="printLoadedTable" ref="d9/dc6/a18425.html#a0a72b35b5fcadccd545ee4c5ef7efdd3"/>
+<section title="printLoadedTableHeader" ref="d9/dc6/a18425.html#a6aba53071c94f3ffe96befc625602c9c"/>
+<section title="user_CS_selector" ref="d9/dc6/a18425.html#a6ef65886fcf664d696b4361309452c2c"/>
+<section title="user_DS_selector" ref="d9/dc6/a18425.html#a95dcc3ea7fb0310df8f2ab457deca483"/>
+<section title="access" ref="d9/dc6/a18425.html#a8b0d6200bc639dd37ff68847a0adde5f"/>
+<section title="base" ref="d9/dc6/a18425.html#ad516e6ff5b7dd7f6ce2946c527ddb8b9"/>
+<section title="base_high" ref="d9/dc6/a18425.html#a1a173457c7aa39c59c008fcc3332d2b3"/>
+<section title="base_low" ref="d9/dc6/a18425.html#a71e21ea67de59991e9a27666a1752a8f"/>
+<section title="base_middle" ref="d9/dc6/a18425.html#a6b67e86f6de9204d76adab79069aec29"/>
+<section title="granularity" ref="d9/dc6/a18425.html#acfea365f69e71368a2db03333d4afd6f"/>
+<section title="kernel_CS" ref="d9/dc6/a18425.html#a42e2af3e7b809f6f5e06ecfecdb504e0"/>
+<section title="kernel_DS" ref="d9/dc6/a18425.html#a1b73e3464fcb9312774f2347e1b7604e"/>
+<section title="limit" ref="d9/dc6/a18425.html#ab28e82ae69032cb4ad3ec3a0be3d7129"/>
+<section title="limit_low" ref="d9/dc6/a18425.html#aa7ae5b5a918e00776ff07fb1c58a348d"/>
+<section title="nullSegment" ref="d9/dc6/a18425.html#a4facd1fb9d9bd77b1dd234a062c8d9dd"/>
+<section title="user_CS" ref="d9/dc6/a18425.html#a8d89c16e869ec13a725c780925713916"/>
+<section title="user_DS" ref="d9/dc6/a18425.html#a137b4628cf352225e57720432f2db487"/>
+</section>
+<section title="kicxxabi.hpp" ref="dc/de4/a18422.html">
+<section title="essential::atexit_func_entry_t" ref="d7/d5c/a19339.html">
+<section title="destructor_func" ref="d7/d5c/a19339.html#a665175c477008154e9b40ef96a8d81c2"/>
+<section title="dso_handle" ref="d7/d5c/a19339.html#a98800f0ffd56e2dc77c46a741e1cf008"/>
+<section title="obj_ptr" ref="d7/d5c/a19339.html#a24ece443578ebec2449e72e998521a11"/>
+</section>
+<section title="ATEXIT_MAX_FUNCS" ref="dc/de4/a18422.html#ae07a9ad040d2fbefafcff363b77697ce"/>
+<section title="uarch_t" ref="dc/de4/a18422.html#a35fc01d4eba01f3f2ec636bd6b5ff34f"/>
+<section title="__callConstructors" ref="dc/de4/a18422.html#a433c3d2d19d89890b522ac26b05fa7aa"/>
+<section title="__cxa_finalize" ref="dc/de4/a18422.html#a098e7240e26e869c035075be004b4ee9"/>
+</section>
+</section>
+<section title="hardware_communication" ref="dir_53afcd4fba698aab0c6227766ed2d23a.html">
+<section title="kinterrupt.hpp" ref="d5/d65/a18407.html">
+<section title="hardware_communication::IDT_row" ref="d7/d8c/a19347.html">
+<section title="IDT_row" ref="d7/d8c/a19347.html#a5149970639d0f251d529808a192b4b55"/>
+<section title="~IDT_row" ref="d7/d8c/a19347.html#a9cad760dfa1c1f76f98b6207365f7e2d"/>
+<section title="InterruptManager" ref="d7/d8c/a19347.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+<section title="access" ref="d7/d8c/a19347.html#afa706321cb5ba41a6035dbe1ec39c265"/>
+<section title="handlerAddressHighbits" ref="d7/d8c/a19347.html#af1a4bb042f75f10c5e2b08034e82aed3"/>
+<section title="handlerAddressLowbits" ref="d7/d8c/a19347.html#a3390e4d53e904d420187ecc0247e9289"/>
+<section title="kernelCodeSegmentSelector" ref="d7/d8c/a19347.html#a800309c99800063315cddf536a3d0d67"/>
+<section title="reserved" ref="d7/d8c/a19347.html#a96bce1ce9c6a7e9b5a20607f41a2e876"/>
+</section>
+<section title="hardware_communication::InterruptHandler" ref="d0/dcf/a19343.html">
+<section title="InterruptHandler" ref="d0/dcf/a19343.html#a134c8931dff43e766f1ddc4d0f35cd48"/>
+<section title="~InterruptHandler" ref="d0/dcf/a19343.html#a5114528f0db9926365b345337e42af9b"/>
+<section title="handleInterrupt" ref="d0/dcf/a19343.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<section title="interrupt_manager" ref="d0/dcf/a19343.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<section title="interruptNumber" ref="d0/dcf/a19343.html#afeede822d3e98957e76e627a54ec2f7a"/>
+</section>
+<section title="hardware_communication::InterruptManager" ref="d9/d99/a19351.html">
+<section title="InterruptManager" ref="d9/d99/a19351.html#aec70c703cac64ef1eec4b5a94d2e145c"/>
+<section title="~InterruptManager" ref="d9/d99/a19351.html#a65276f26b5d5197482a415b83a898560"/>
+<section title="activate" ref="d9/d99/a19351.html#a1ab5b6378071338ede295f0bffaf3d51"/>
+<section title="deactivate" ref="d9/d99/a19351.html#a9451566bf08617378ca2144505d394a6"/>
+<section title="handleInterrupt" ref="d9/d99/a19351.html#a2d3ef1656e1eaaf86be40a200a49a4b2"/>
+<section title="installTable" ref="d9/d99/a19351.html#a81d593116320da32f1aa4057087f1e11"/>
+<section title="printLoadedTable" ref="d9/d99/a19351.html#aac20f3a896bea512413568a60ad48c3d"/>
+<section title="printLoadedTableHeader" ref="d9/d99/a19351.html#ad8a6f694662a3a36ba9353197e20c1b1"/>
+<section title="setIDTEntry" ref="d9/d99/a19351.html#af448c0d55d2e226050b7f4efb6d4abe8"/>
+<section title="InterruptHandler" ref="d9/d99/a19351.html#a9aef4ea3434f8ddeaf9c32a63e6faf05"/>
+<section title="base" ref="d9/d99/a19351.html#ad94bd8e9c355fde3e814d4894bab0181"/>
+<section title="handlers" ref="d9/d99/a19351.html#ac8aba191e612ad605b8b188f78e65d3b"/>
+<section title="interruptDescriptorTable" ref="d9/d99/a19351.html#a7b6bb52a8072c51bfcb4f4877c3d0226"/>
+<section title="limit" ref="d9/d99/a19351.html#a1991d8428ff7c74b31f42d48bb49547a"/>
+<section title="picMasterCommand" ref="d9/d99/a19351.html#acb04723d03d6b34abbc5f7407cab0b33"/>
+<section title="picMasterData" ref="d9/d99/a19351.html#a5287e31a546f60708b085b387332a904"/>
+<section title="picSlaveCommand" ref="d9/d99/a19351.html#afed9d24b37c8f9386a71f4284b2502a4"/>
+<section title="picSlaveData" ref="d9/d99/a19351.html#ac1111b7cfbd27b37f03a0678ae5dbaf1"/>
+</section>
+<section title="~IDT_row" ref="d5/d65/a18407.html#a3fe23003c5b71fa3b47543c074c38ac3"/>
+<section title="__attribute__" ref="d5/d65/a18407.html#a269f53904f53339ae2df626922b404b2"/>
+<section title="handleIRQ0x00" ref="d5/d65/a18407.html#adf60fad10b12cc19ad193c928d36445c"/>
+<section title="handleIRQ0x01" ref="d5/d65/a18407.html#a6498ed740318b424aaae4db1f223e558"/>
+<section title="handleIRQ0x0C" ref="d5/d65/a18407.html#a996c60cc7e88bb1c85505c19f6c35117"/>
+<section title="IDT_row" ref="d5/d65/a18407.html#ab2572e8a0d5fb3acf2373d28ba45ce25"/>
+<section title="ignoreInterrupt" ref="d5/d65/a18407.html#a07e074bde074261858311b014bc2b398"/>
+<section title="__attribute__" ref="d5/d65/a18407.html#a21c3ca5c318038eaed596c14fd2666ed"/>
+<section title="access" ref="d5/d65/a18407.html#a8b0d6200bc639dd37ff68847a0adde5f"/>
+<section title="handlerAddressHighbits" ref="d5/d65/a18407.html#a7884c02f32fe35058379ebdc96c5767c"/>
+<section title="handlerAddressLowbits" ref="d5/d65/a18407.html#adf5df650f7c6f6e7792d97ee2b851265"/>
+<section title="kernelCodeSegmentSelector" ref="d5/d65/a18407.html#acca378f87bf61c0de2befa4244846bfe"/>
+<section title="reserved" ref="d5/d65/a18407.html#acb7bc06bed6f6408d719334fc41698c7"/>
+</section>
+<section title="kport.hpp" ref="dc/d16/a18410.html">
+<section title="hardware_communication::Port" ref="d3/d5b/a19355.html">
+<section title="Port" ref="d3/d5b/a19355.html#ad001c21b67d4c138f65024f167030cca"/>
+<section title="~Port" ref="d3/d5b/a19355.html#a8b13c33da4911afcbdcb21c97768a72e"/>
+<section title="portnumber" ref="d3/d5b/a19355.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="hardware_communication::Port16Bit" ref="dd/d6a/a19367.html">
+<section title="Port16Bit" ref="dd/d6a/a19367.html#a418bb2fc65b3bec91704d0e5e8957131"/>
+<section title="~Port16Bit" ref="dd/d6a/a19367.html#a78dfa215194c676583e1b7e2dab38608"/>
+<section title="read" ref="dd/d6a/a19367.html#a6b5df5669e802e31f27f0a4a0e62492a"/>
+<section title="write" ref="dd/d6a/a19367.html#ac5a46ce99a70874a8a4fcb090eb40575"/>
+<section title="portnumber" ref="dd/d6a/a19367.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="hardware_communication::Port32Bit" ref="d8/d2a/a19371.html">
+<section title="Port32Bit" ref="d8/d2a/a19371.html#a507afa8607757baedf1789d73c2a173d"/>
+<section title="~Port32Bit" ref="d8/d2a/a19371.html#a3e87dc7d610b279e8e7e072a0d1ee78c"/>
+<section title="read" ref="d8/d2a/a19371.html#a41093c437a9508f984c90ae68e9c03bf"/>
+<section title="write" ref="d8/d2a/a19371.html#a64a16fe840224ef769ab2933770d1b21"/>
+<section title="portnumber" ref="d8/d2a/a19371.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="hardware_communication::Port8Bit" ref="d9/d0b/a19359.html">
+<section title="Port8Bit" ref="d9/d0b/a19359.html#a057109ca3c28fbb9064c60ba5cdb1190"/>
+<section title="~Port8Bit" ref="d9/d0b/a19359.html#a475bc218672c5743a9f8425cc84eb630"/>
+<section title="read" ref="d9/d0b/a19359.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+<section title="write" ref="d9/d0b/a19359.html#a523b6a757b27418dc015ed13e74bef60"/>
+<section title="portnumber" ref="d9/d0b/a19359.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+<section title="hardware_communication::Port8BitSlow" ref="dc/da5/a19363.html">
+<section title="Port8BitSlow" ref="dc/da5/a19363.html#aa830f1cf49e155af1033a8e611ecc6c1"/>
+<section title="~Port8BitSlow" ref="dc/da5/a19363.html#aa19647802064296f8bf76cc12f10d243"/>
+<section title="read" ref="dc/da5/a19363.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+<section title="write" ref="dc/da5/a19363.html#af84b15d5a205a421a9877e2341714031"/>
+<section title="portnumber" ref="dc/da5/a19363.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+</section>
+</section>
+</section>
+</section>
+<section title="libk_src" ref="dir_d52aa9bb707950f8d968213103b69dbf.html">
+<section title="basic" ref="dir_7e9b38ff86f40c049b6923d6e5368e6c.html">
+<section title="kiostream.cpp" ref="dc/df9/a18326.html">
+<section title="MAGIC_HEIGHT" ref="dc/df9/a18326.html#a887422301cbe9a94f8b96263415640cf"/>
+<section title="MAGIC_WIDTH" ref="dc/df9/a18326.html#a5be9493285a1f50a67d98b887537217d"/>
+<section title="TAB_WIDTH" ref="dc/df9/a18326.html#a49426d7a9b562958ad2ab7fbf134f368"/>
+<section title="doubleToString" ref="dc/df9/a18326.html#af382674e4c9fb57a14b178d4ee12273a"/>
+<section title="power" ref="dc/df9/a18326.html#a91bacd34c601c4cfe39f1ffa6c2a1385"/>
+<section title="printCharStr" ref="dc/df9/a18326.html#a6bd99ada5f7c46567ee0ceca6c369d47"/>
+<section title="printHex" ref="dc/df9/a18326.html#aab6eb585b409591414f84a1e3f606345"/>
+<section title="reverse" ref="dc/df9/a18326.html#a913f40d6652965fdd1e34a04ab7dba2d"/>
+<section title="ullToString" ref="dc/df9/a18326.html#a14bf754296559bf0266e127e677e8107"/>
+<section title="cursor_x_" ref="dc/df9/a18326.html#a133981c4ba48aed67a5b874f7b213583"/>
+<section title="cursor_y_" ref="dc/df9/a18326.html#a1bda227f31ddf346294cb531f7554ef3"/>
+<section title="vgaDataPort" ref="dc/df9/a18326.html#a32de8112c133d2f05cae84bde7d98239"/>
+<section title="vgaIndexPort" ref="dc/df9/a18326.html#a0cece8394c6a6dedd523238e9057125f"/>
+</section>
+<section title="kmemory.cpp" ref="db/d8c/a18323.html">
+<section title="operator delete" ref="db/d8c/a18323.html#afa145befcf5e7b83424408ca503c8637"/>
+<section title="operator delete" ref="db/d8c/a18323.html#af057efbdbcd21ea12954d49cd2d245c6"/>
+<section title="operator delete[]" ref="db/d8c/a18323.html#a22aea74a1155aa798d6032da46da2391"/>
+<section title="operator delete[]" ref="db/d8c/a18323.html#ab26fe706b29fdeb33d5f6ead76c05815"/>
+<section title="operator new" ref="db/d8c/a18323.html#a1a7f24760c8c7ad3bfcd54856d906fc2"/>
+<section title="operator new[]" ref="db/d8c/a18323.html#aa75472ab4b765cf6f6b5b0ebcd4a28c8"/>
+</section>
+</section>
+<section title="driver" ref="dir_2a16165def8352030967ba4cc3f6fbb5.html">
+<section title="kdriver.cpp" ref="da/df2/a18338.html"/>
+<section title="kkeyboard.cpp" ref="d4/d06/a18341.html"/>
+<section title="kmouse.cpp" ref="df/ded/a18344.html"/>
+</section>
+<section title="essential" ref="dir_505766543fcc8e90c13299eca156d2a2.html">
+<section title="kgdt.cpp" ref="d1/db0/a18347.html"/>
+<section title="kicxxabi.cpp" ref="dc/dcc/a18350.html">
+<section title="__cxa_atexit" ref="dc/dcc/a18350.html#a6870fb46accc462562647e3d99c0b7c7"/>
+<section title="__atexit_func_count" ref="dc/dcc/a18350.html#a0f75f529cf75cf0a9cd266f8d67675dc"/>
+<section title="__atexit_funcs" ref="dc/dcc/a18350.html#a05a64060e9039acf0ba3c311b2d981b7"/>
+<section title="__dso_handle" ref="dc/dcc/a18350.html#a19df960d2907e9c08a720ae7683e632c"/>
+<section title="ctors_end" ref="dc/dcc/a18350.html#a9a50b36f9886cd6bdbe05a5a6639cd95"/>
+<section title="ctors_start" ref="dc/dcc/a18350.html#a201d805094c80d48f8ee4e49ee85fb74"/>
+</section>
+</section>
+<section title="hardware_communication" ref="dir_307d8ab59745c14449bc3f31f9f132b2.html">
+<section title="kinterrupt.cpp" ref="dd/d22/a18335.html">
+<section title="installed_interrupt_manager" ref="dd/d22/a18335.html#a1df59a6c3578a3d5d96bfef4ffd8fbc8"/>
+</section>
+<section title="kport.cpp" ref="d0/dd0/a18332.html"/>
+</section>
+</section>
+</section>
+<section title="File Members" ref="globals.html">
+<section title="All" ref="globals.html"/>
+<section title="Functions" ref="globals_func.html"/>
+<section title="Variables" ref="globals_vars.html"/>
+<section title="Typedefs" ref="globals_type.html"/>
+<section title="Macros" ref="globals_defs.html"/>
+</section>
+</section>
+</section>
+</toc>
+<keywords>
+<keyword name="driver::Driver" id="driver::Driver_" ref="dc/d37/a19307.html"/>
+<keyword name="driver::DriverManager" id="driver::DriverManager_" ref="d3/d37/a19311.html"/>
+<keyword name="driver::KeyboardDriver" id="driver::KeyboardDriver_" ref="dc/d7c/a19319.html"/>
+<keyword name="driver::KeyboardEventHandler" id="driver::KeyboardEventHandler_" ref="d0/d72/a19315.html"/>
+<keyword name="driver::MouseDriver" id="driver::MouseDriver_" ref="da/dea/a19327.html"/>
+<keyword name="driver::MouseEventHandler" id="driver::MouseEventHandler_" ref="d5/d17/a19323.html"/>
+<keyword name="essential::atexit_func_entry_t" id="essential::atexit_func_entry_t_" ref="d7/d5c/a19339.html"/>
+<keyword name="essential::GDT" id="essential::GDT_" ref="d3/d8c/a19335.html"/>
+<keyword name="essential::GDT_row" id="essential::GDT_row_" ref="dd/da0/a19331.html"/>
+<keyword name="hardware_communication::IDT_row" id="hardware_communication::IDT_row_" ref="d7/d8c/a19347.html"/>
+<keyword name="hardware_communication::InterruptHandler" id="hardware_communication::InterruptHandler_" ref="d0/dcf/a19343.html"/>
+<keyword name="hardware_communication::InterruptManager" id="hardware_communication::InterruptManager_" ref="d9/d99/a19351.html"/>
+<keyword name="hardware_communication::Port" id="hardware_communication::Port_" ref="d3/d5b/a19355.html"/>
+<keyword name="hardware_communication::Port16Bit" id="hardware_communication::Port16Bit_" ref="dd/d6a/a19367.html"/>
+<keyword name="hardware_communication::Port32Bit" id="hardware_communication::Port32Bit_" ref="d8/d2a/a19371.html"/>
+<keyword name="hardware_communication::Port8Bit" id="hardware_communication::Port8Bit_" ref="d9/d0b/a19359.html"/>
+<keyword name="hardware_communication::Port8BitSlow" id="hardware_communication::Port8BitSlow_" ref="dc/da5/a19363.html"/>
+<keyword name="KeyboardEventHandler_for_kernel" id="KeyboardEventHandler_for_kernel_" ref="d4/d1e/a19251.html"/>
+<keyword name="MouseEventHandler_for_kernel" id="MouseEventHandler_for_kernel_" ref="d0/d04/a19255.html"/>
+<keyword name="multiboot_aout_symbol_table" id="multiboot_aout_symbol_table_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_apm_info" id="multiboot_apm_info_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_color" id="multiboot_color_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_elf_section_header_table" id="multiboot_elf_section_header_table_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_header" id="multiboot_header_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_info" id="multiboot_info_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_info.__unnamed2__" id="multiboot_info.__unnamed2___" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_info.__unnamed2__.__unnamed4__" id="multiboot_info.__unnamed2__.__unnamed4___" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_info.__unnamed2__.__unnamed6__" id="multiboot_info.__unnamed2__.__unnamed6___" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_info.u" id="multiboot_info.u_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_mmap_entry" id="multiboot_mmap_entry_" ref="de/d0e/a18398.html"/>
+<keyword name="multiboot_mod_list" id="multiboot_mod_list_" ref="de/d0e/a18398.html"/>
+<keyword name="basic" id="basic_" ref="d1/d22/a18432.html"/>
+<keyword name="driver" id="driver_" ref="de/d62/a18433.html"/>
+<keyword name="essential" id="essential_" ref="d2/d7a/a18434.html"/>
+<keyword name="hardware_communication" id="hardware_communication_" ref="d6/d23/a18435.html"/>
+<keyword name="__mouse_x_" id="driver::MouseDriver::__mouse_x__ac2077f6309c79d5f585fb966b57fe065" ref="da/dea/a19327.html#ac2077f6309c79d5f585fb966b57fe065"/>
+<keyword name="__mouse_y_" id="driver::MouseDriver::__mouse_y__aa02009b37420687ef18db8a05ff9181f" ref="da/dea/a19327.html#aa02009b37420687ef18db8a05ff9181f"/>
+<keyword name="access" id="essential::GDT_row::access_a7f01a0febd325787f1ff47d6a3b668a9" ref="dd/da0/a19331.html#a7f01a0febd325787f1ff47d6a3b668a9"/>
+<keyword name="access" id="hardware_communication::IDT_row::access_afa706321cb5ba41a6035dbe1ec39c265" ref="d7/d8c/a19347.html#afa706321cb5ba41a6035dbe1ec39c265"/>
+<keyword name="activate()=0" id="driver::Driver::activate_a8c86c1e52652d8b491d37a3b60b535b0" ref="dc/d37/a19307.html#a8c86c1e52652d8b491d37a3b60b535b0"/>
+<keyword name="activate() override" id="driver::KeyboardDriver::activate_a58553d39d7dcfe6b55e8ddb1e7b1d187" ref="dc/d7c/a19319.html#a58553d39d7dcfe6b55e8ddb1e7b1d187"/>
+<keyword name="activate() override" id="driver::MouseDriver::activate_a446769df0b3b537a525476c7c8be47bc" ref="da/dea/a19327.html#a446769df0b3b537a525476c7c8be47bc"/>
+<keyword name="activate()" id="hardware_communication::InterruptManager::activate_a1ab5b6378071338ede295f0bffaf3d51" ref="d9/d99/a19351.html#a1ab5b6378071338ede295f0bffaf3d51"/>
+<keyword name="activateAll()" id="driver::DriverManager::activateAll_a05b071d8a8c12f2d284fb61f4ecd116e" ref="d3/d37/a19311.html#a05b071d8a8c12f2d284fb61f4ecd116e"/>
+<keyword name="addDriver(Driver *)" id="driver::DriverManager::addDriver_ab8bd89b91ea49f343276c3c841153cd8" ref="d3/d37/a19311.html#ab8bd89b91ea49f343276c3c841153cd8"/>
+<keyword name="addr" id="multiboot_aout_symbol_table::addr_af0a1d2238495093ad75f36e3a146c0c7" ref="de/d0e/a18398.html#af0a1d2238495093ad75f36e3a146c0c7"/>
+<keyword name="addr" id="multiboot_elf_section_header_table::addr_aac90242e270ae9df01fc3bb784b858b6" ref="de/d0e/a18398.html#aac90242e270ae9df01fc3bb784b858b6"/>
+<keyword name="addr" id="multiboot_mmap_entry::addr_a40e066ba79afd138308bd0db4b3f4f5b" ref="de/d0e/a18398.html#a40e066ba79afd138308bd0db4b3f4f5b"/>
+<keyword name="aout_sym" id="multiboot_info.u::aout_sym_adcc9d90eba827321c643ad06b62c7817" ref="de/d0e/a18398.html#adcc9d90eba827321c643ad06b62c7817"/>
+<keyword name="apm_table" id="multiboot_info::apm_table_ab340bc8f88281872676db0f52ebe7c0e" ref="de/d0e/a18398.html#ab340bc8f88281872676db0f52ebe7c0e"/>
+<keyword name="base" id="essential::GDT::base_ad0a48a89930e6a6c4467c977f4e91269" ref="d3/d8c/a19335.html#ad0a48a89930e6a6c4467c977f4e91269"/>
+<keyword name="base" id="hardware_communication::InterruptManager::base_ad94bd8e9c355fde3e814d4894bab0181" ref="d9/d99/a19351.html#ad94bd8e9c355fde3e814d4894bab0181"/>
+<keyword name="base_high" id="essential::GDT_row::base_high_a2cbd86d4258ecebf7b46cc9bb8611b5b" ref="dd/da0/a19331.html#a2cbd86d4258ecebf7b46cc9bb8611b5b"/>
+<keyword name="base_low" id="essential::GDT_row::base_low_a298d18522898ad48c1e05b79f1f4dff7" ref="dd/da0/a19331.html#a298d18522898ad48c1e05b79f1f4dff7"/>
+<keyword name="base_middle" id="essential::GDT_row::base_middle_a8429e04bddc6a61c4e95b88901ae219d" ref="dd/da0/a19331.html#a8429e04bddc6a61c4e95b88901ae219d"/>
+<keyword name="blue" id="multiboot_color::blue_a6f8d17b0f35ff4cbf9c51dcbc3ea7d01" ref="de/d0e/a18398.html#a6f8d17b0f35ff4cbf9c51dcbc3ea7d01"/>
+<keyword name="boot_device" id="multiboot_info::boot_device_ae32646de911267c65892a286ef3d529e" ref="de/d0e/a18398.html#ae32646de911267c65892a286ef3d529e"/>
+<keyword name="boot_loader_name" id="multiboot_info::boot_loader_name_a4a3251d6b4cf85d935d989a0a369feed" ref="de/d0e/a18398.html#a4a3251d6b4cf85d935d989a0a369feed"/>
+<keyword name="bss_end_addr" id="multiboot_header::bss_end_addr_ab4f2496ec9b0d1a95985929d281dfa19" ref="de/d0e/a18398.html#ab4f2496ec9b0d1a95985929d281dfa19"/>
+<keyword name="buffer[3]" id="driver::MouseDriver::buffer_aaa1d55d296d88995ac49a8a9a75a79d4" ref="da/dea/a19327.html#aaa1d55d296d88995ac49a8a9a75a79d4"/>
+<keyword name="buttons" id="driver::MouseDriver::buttons_a7942997bd5ead2767e9627d91789dd70" ref="da/dea/a19327.html#a7942997bd5ead2767e9627d91789dd70"/>
+<keyword name="caps_on" id="driver::KeyboardDriver::caps_on_a8a63dbc25a08a75f62ae0674df1deb30" ref="dc/d7c/a19319.html#a8a63dbc25a08a75f62ae0674df1deb30"/>
+<keyword name="checksum" id="multiboot_header::checksum_a17e73abddfe8264c254767a20099038d" ref="de/d0e/a18398.html#a17e73abddfe8264c254767a20099038d"/>
+<keyword name="cmdline" id="multiboot_info::cmdline_a95a5e2cc69960e4d906abd585f91f210" ref="de/d0e/a18398.html#a95a5e2cc69960e4d906abd585f91f210"/>
+<keyword name="cmdline" id="multiboot_mod_list::cmdline_a3219140f9baf1a790a602db25e8597c7" ref="de/d0e/a18398.html#a3219140f9baf1a790a602db25e8597c7"/>
+<keyword name="commandPort" id="driver::KeyboardDriver::commandPort_a58fc9113701ffc04637996780c843ff0" ref="dc/d7c/a19319.html#a58fc9113701ffc04637996780c843ff0"/>
+<keyword name="commandPort" id="driver::MouseDriver::commandPort_a2877a9f46dd83a5f05f17fd83a0a7725" ref="da/dea/a19327.html#a2877a9f46dd83a5f05f17fd83a0a7725"/>
+<keyword name="config_table" id="multiboot_info::config_table_a94b06ab87dbfaf966822a39cf1d9e2d6" ref="de/d0e/a18398.html#a94b06ab87dbfaf966822a39cf1d9e2d6"/>
+<keyword name="cseg" id="multiboot_apm_info::cseg_a9eedcae62ee49310914e238d07094c4b" ref="de/d0e/a18398.html#a9eedcae62ee49310914e238d07094c4b"/>
+<keyword name="cseg_16" id="multiboot_apm_info::cseg_16_a9abc154a9c3a0f3d9ae96cf2b5044b43" ref="de/d0e/a18398.html#a9abc154a9c3a0f3d9ae96cf2b5044b43"/>
+<keyword name="cseg_16_len" id="multiboot_apm_info::cseg_16_len_a09573729600592739fe8f2480217a30d" ref="de/d0e/a18398.html#a09573729600592739fe8f2480217a30d"/>
+<keyword name="cseg_len" id="multiboot_apm_info::cseg_len_a95aa6b556019e1b9c526b190341cc531" ref="de/d0e/a18398.html#a95aa6b556019e1b9c526b190341cc531"/>
+<keyword name="dataPort" id="driver::KeyboardDriver::dataPort_afd6cdddb62a2a2d2b31043eb32887b41" ref="dc/d7c/a19319.html#afd6cdddb62a2a2d2b31043eb32887b41"/>
+<keyword name="dataPort" id="driver::MouseDriver::dataPort_a8e30a6f6c5839fcf9c3ab63aa167d046" ref="da/dea/a19327.html#a8e30a6f6c5839fcf9c3ab63aa167d046"/>
+<keyword name="deactivate()=0" id="driver::Driver::deactivate_a4b3b5e5a163c2c0e3cb58ea752ebcef1" ref="dc/d37/a19307.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1"/>
+<keyword name="deactivate() override" id="driver::KeyboardDriver::deactivate_aaa7e99b6214dc8439230a95dd57e617e" ref="dc/d7c/a19319.html#aaa7e99b6214dc8439230a95dd57e617e"/>
+<keyword name="deactivate() override" id="driver::MouseDriver::deactivate_a4329c1cdedc72adf0b95cb3911c4acf6" ref="da/dea/a19327.html#a4329c1cdedc72adf0b95cb3911c4acf6"/>
+<keyword name="deactivate()" id="hardware_communication::InterruptManager::deactivate_a9451566bf08617378ca2144505d394a6" ref="d9/d99/a19351.html#a9451566bf08617378ca2144505d394a6"/>
+<keyword name="depth" id="multiboot_header::depth_aba85b53dc3af1bf99c71292a776e9dff" ref="de/d0e/a18398.html#aba85b53dc3af1bf99c71292a776e9dff"/>
+<keyword name="destructor_func)(void *)" id="essential::atexit_func_entry_t::destructor_func_a665175c477008154e9b40ef96a8d81c2" ref="d7/d5c/a19339.html#a665175c477008154e9b40ef96a8d81c2"/>
+<keyword name="Driver()" id="driver::Driver::Driver_a7de0c11fff1dc1f5d004b2a76e840840" ref="dc/d37/a19307.html#a7de0c11fff1dc1f5d004b2a76e840840"/>
+<keyword name="DriverManager()" id="driver::DriverManager::DriverManager_af3bed49a4b243c2f65d09c35db15158b" ref="d3/d37/a19311.html#af3bed49a4b243c2f65d09c35db15158b"/>
+<keyword name="drivers[MAX_NUMDRIVERS]" id="driver::DriverManager::drivers_acdf43f6340b26ad2d9b9c90d8974b370" ref="d3/d37/a19311.html#acdf43f6340b26ad2d9b9c90d8974b370"/>
+<keyword name="drives_addr" id="multiboot_info::drives_addr_a12916653d21ac1694b6d609a10d15332" ref="de/d0e/a18398.html#a12916653d21ac1694b6d609a10d15332"/>
+<keyword name="drives_length" id="multiboot_info::drives_length_a8bb6cc3d388a8abafecc7018744c14f3" ref="de/d0e/a18398.html#a8bb6cc3d388a8abafecc7018744c14f3"/>
+<keyword name="dseg" id="multiboot_apm_info::dseg_a98cd7da8760cf5d49ba55e1f9e76c6d4" ref="de/d0e/a18398.html#a98cd7da8760cf5d49ba55e1f9e76c6d4"/>
+<keyword name="dseg_len" id="multiboot_apm_info::dseg_len_afee11d31183fe424af90546b10c9fac2" ref="de/d0e/a18398.html#afee11d31183fe424af90546b10c9fac2"/>
+<keyword name="dso_handle" id="essential::atexit_func_entry_t::dso_handle_a98800f0ffd56e2dc77c46a741e1cf008" ref="d7/d5c/a19339.html#a98800f0ffd56e2dc77c46a741e1cf008"/>
+<keyword name="elf_sec" id="multiboot_info.u::elf_sec_af2b83453f34de71046f2bbb48051c1f4" ref="de/d0e/a18398.html#af2b83453f34de71046f2bbb48051c1f4"/>
+<keyword name="entry_addr" id="multiboot_header::entry_addr_ac3d807775a9d69730e6698dcdcf6491e" ref="de/d0e/a18398.html#ac3d807775a9d69730e6698dcdcf6491e"/>
+<keyword name="flags" id="multiboot_header::flags_ab922f32c179ec7bde91519d19f27d95b" ref="de/d0e/a18398.html#ab922f32c179ec7bde91519d19f27d95b"/>
+<keyword name="flags" id="multiboot_info::flags_a39f175b6fb4debca237d3ff93e960a25" ref="de/d0e/a18398.html#a39f175b6fb4debca237d3ff93e960a25"/>
+<keyword name="flags" id="multiboot_apm_info::flags_a55fb7837ae61f63d0310b65767a2505c" ref="de/d0e/a18398.html#a55fb7837ae61f63d0310b65767a2505c"/>
+<keyword name="framebuffer_addr" id="multiboot_info::framebuffer_addr_a77a4d6e2b12fbd2b3e6e61d978ae5fc0" ref="de/d0e/a18398.html#a77a4d6e2b12fbd2b3e6e61d978ae5fc0"/>
+<keyword name="framebuffer_blue_field_position" id="multiboot_info.__unnamed2__.__unnamed6__::framebuffer_blue_field_position_ace107d23f7f4af6fd8d969926c5c9d16" ref="de/d0e/a18398.html#ace107d23f7f4af6fd8d969926c5c9d16"/>
+<keyword name="framebuffer_blue_mask_size" id="multiboot_info.__unnamed2__.__unnamed6__::framebuffer_blue_mask_size_aa8eaba7a0a6cf04509a014ac4bc937c0" ref="de/d0e/a18398.html#aa8eaba7a0a6cf04509a014ac4bc937c0"/>
+<keyword name="framebuffer_bpp" id="multiboot_info::framebuffer_bpp_ab7b460c75f0342dfb1e339d2b3a2a9da" ref="de/d0e/a18398.html#ab7b460c75f0342dfb1e339d2b3a2a9da"/>
+<keyword name="framebuffer_green_field_position" id="multiboot_info.__unnamed2__.__unnamed6__::framebuffer_green_field_position_adfcdecf04630d77ee5e41006f47dc4d7" ref="de/d0e/a18398.html#adfcdecf04630d77ee5e41006f47dc4d7"/>
+<keyword name="framebuffer_green_mask_size" id="multiboot_info.__unnamed2__.__unnamed6__::framebuffer_green_mask_size_abc2579d314db9a050c48043a1b7f5ea9" ref="de/d0e/a18398.html#abc2579d314db9a050c48043a1b7f5ea9"/>
+<keyword name="framebuffer_height" id="multiboot_info::framebuffer_height_a0e8539780b79a018883d96bb444cd9c8" ref="de/d0e/a18398.html#a0e8539780b79a018883d96bb444cd9c8"/>
+<keyword name="framebuffer_palette_addr" id="multiboot_info.__unnamed2__.__unnamed4__::framebuffer_palette_addr_ab4a160c025f0db5470ddced0d2c99de3" ref="de/d0e/a18398.html#ab4a160c025f0db5470ddced0d2c99de3"/>
+<keyword name="framebuffer_palette_num_colors" id="multiboot_info.__unnamed2__.__unnamed4__::framebuffer_palette_num_colors_a9ea6d9ae58149f37ee098ce870bf07f0" ref="de/d0e/a18398.html#a9ea6d9ae58149f37ee098ce870bf07f0"/>
+<keyword name="framebuffer_pitch" id="multiboot_info::framebuffer_pitch_ab0ecb8c7debe9ac1ac7910ae957367f6" ref="de/d0e/a18398.html#ab0ecb8c7debe9ac1ac7910ae957367f6"/>
+<keyword name="framebuffer_red_field_position" id="multiboot_info.__unnamed2__.__unnamed6__::framebuffer_red_field_position_a4dd2fad32ee3a2ce5379d7bf0a23dabe" ref="de/d0e/a18398.html#a4dd2fad32ee3a2ce5379d7bf0a23dabe"/>
+<keyword name="framebuffer_red_mask_size" id="multiboot_info.__unnamed2__.__unnamed6__::framebuffer_red_mask_size_a0d868424e2b703471e3d73c0a72bc75c" ref="de/d0e/a18398.html#a0d868424e2b703471e3d73c0a72bc75c"/>
+<keyword name="framebuffer_type" id="multiboot_info::framebuffer_type_a540391adf02da7cb6876fe78d65a13d7" ref="de/d0e/a18398.html#a540391adf02da7cb6876fe78d65a13d7"/>
+<keyword name="framebuffer_width" id="multiboot_info::framebuffer_width_a770273793bac06df17306c7fa136c58f" ref="de/d0e/a18398.html#a770273793bac06df17306c7fa136c58f"/>
+<keyword name="GDT" id="essential::GDT_row::GDT_a235097b2551abe03269f88341b4bdf87" ref="dd/da0/a19331.html#a235097b2551abe03269f88341b4bdf87"/>
+<keyword name="GDT()" id="essential::GDT::GDT_aa061ecab5a20a3556413fbbde4fe89d7" ref="d3/d8c/a19335.html#aa061ecab5a20a3556413fbbde4fe89d7"/>
+<keyword name="GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte)" id="essential::GDT_row::GDT_row_a5692f86b7ebf4eefdeb78e48f281092b" ref="dd/da0/a19331.html#a5692f86b7ebf4eefdeb78e48f281092b"/>
+<keyword name="GDT_row()" id="essential::GDT_row::GDT_row_a27ff8d9a6bf6c2c98cf78a0257e4667e" ref="dd/da0/a19331.html#a27ff8d9a6bf6c2c98cf78a0257e4667e"/>
+<keyword name="granularity" id="essential::GDT_row::granularity_af180a640dbd5213b3f936ff7cf48deaf" ref="dd/da0/a19331.html#af180a640dbd5213b3f936ff7cf48deaf"/>
+<keyword name="green" id="multiboot_color::green_a08e1c8bc977b39015c9043645e79713d" ref="de/d0e/a18398.html#a08e1c8bc977b39015c9043645e79713d"/>
+<keyword name="handleInterrupt(uint32_t esp) override" id="driver::KeyboardDriver::handleInterrupt_a248fa0da9acac54a3a8880c7b66b3f2b" ref="dc/d7c/a19319.html#a248fa0da9acac54a3a8880c7b66b3f2b"/>
+<keyword name="handleInterrupt(uint32_t esp) override" id="driver::MouseDriver::handleInterrupt_a1b2f08490b7954e5ca504cd8bb6862c0" ref="da/dea/a19327.html#a1b2f08490b7954e5ca504cd8bb6862c0"/>
+<keyword name="handleInterrupt(uintptr_t esp)=0" id="hardware_communication::InterruptHandler::handleInterrupt_aa89d41d69840cb4f1c8692fa6ded28f4" ref="d0/dcf/a19343.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+<keyword name="handleInterrupt(uint8_t interruptNumber, uintptr_t esp)" id="hardware_communication::InterruptManager::handleInterrupt_a2d3ef1656e1eaaf86be40a200a49a4b2" ref="d9/d99/a19351.html#a2d3ef1656e1eaaf86be40a200a49a4b2"/>
+<keyword name="handlerAddressHighbits" id="hardware_communication::IDT_row::handlerAddressHighbits_af1a4bb042f75f10c5e2b08034e82aed3" ref="d7/d8c/a19347.html#af1a4bb042f75f10c5e2b08034e82aed3"/>
+<keyword name="handlerAddressLowbits" id="hardware_communication::IDT_row::handlerAddressLowbits_a3390e4d53e904d420187ecc0247e9289" ref="d7/d8c/a19347.html#a3390e4d53e904d420187ecc0247e9289"/>
+<keyword name="handlers[256]" id="hardware_communication::InterruptManager::handlers_ac8aba191e612ad605b8b188f78e65d3b" ref="d9/d99/a19351.html#ac8aba191e612ad605b8b188f78e65d3b"/>
+<keyword name="header_addr" id="multiboot_header::header_addr_a9718b2fc6ce29a37e9a209f92ab856e3" ref="de/d0e/a18398.html#a9718b2fc6ce29a37e9a209f92ab856e3"/>
+<keyword name="height" id="multiboot_header::height_a055c5e6553ea032897ad50a12f998a17" ref="de/d0e/a18398.html#a055c5e6553ea032897ad50a12f998a17"/>
+<keyword name="IDT_row()" id="hardware_communication::IDT_row::IDT_row_a5149970639d0f251d529808a192b4b55" ref="d7/d8c/a19347.html#a5149970639d0f251d529808a192b4b55"/>
+<keyword name="installTable()" id="essential::GDT::installTable_af8e3c1da270077eb7cc6551b35c0e5ca" ref="d3/d8c/a19335.html#af8e3c1da270077eb7cc6551b35c0e5ca"/>
+<keyword name="installTable()" id="hardware_communication::InterruptManager::installTable_a81d593116320da32f1aa4057087f1e11" ref="d9/d99/a19351.html#a81d593116320da32f1aa4057087f1e11"/>
+<keyword name="interrupt_manager" id="hardware_communication::InterruptHandler::interrupt_manager_ae86f4eae0ce9272b2027d44bdfd71e33" ref="d0/dcf/a19343.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+<keyword name="interruptDescriptorTable[256]" id="hardware_communication::InterruptManager::interruptDescriptorTable_a7b6bb52a8072c51bfcb4f4877c3d0226" ref="d9/d99/a19351.html#a7b6bb52a8072c51bfcb4f4877c3d0226"/>
+<keyword name="InterruptHandler" id="hardware_communication::InterruptManager::InterruptHandler_a9aef4ea3434f8ddeaf9c32a63e6faf05" ref="d9/d99/a19351.html#a9aef4ea3434f8ddeaf9c32a63e6faf05"/>
+<keyword name="InterruptHandler(uint8_t interruptNumber, InterruptManager *interrupt_manager)" id="hardware_communication::InterruptHandler::InterruptHandler_a134c8931dff43e766f1ddc4d0f35cd48" ref="d0/dcf/a19343.html#a134c8931dff43e766f1ddc4d0f35cd48"/>
+<keyword name="InterruptManager" id="hardware_communication::IDT_row::InterruptManager_a6c5563315b1a2f5c67ae8b78d06e3c7f" ref="d7/d8c/a19347.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+<keyword name="InterruptManager(essential::GDT *gdt)" id="hardware_communication::InterruptManager::InterruptManager_aec70c703cac64ef1eec4b5a94d2e145c" ref="d9/d99/a19351.html#aec70c703cac64ef1eec4b5a94d2e145c"/>
+<keyword name="interruptNumber" id="hardware_communication::InterruptHandler::interruptNumber_afeede822d3e98957e76e627a54ec2f7a" ref="d0/dcf/a19343.html#afeede822d3e98957e76e627a54ec2f7a"/>
+<keyword name="kernel_CS" id="essential::GDT::kernel_CS_a20d7a6bb352e3f696c1c68bb394766d8" ref="d3/d8c/a19335.html#a20d7a6bb352e3f696c1c68bb394766d8"/>
+<keyword name="kernel_CS_selector()" id="essential::GDT::kernel_CS_selector_a89a8d2c17e3c22e7200bff09252f46e1" ref="d3/d8c/a19335.html#a89a8d2c17e3c22e7200bff09252f46e1"/>
+<keyword name="kernel_DS" id="essential::GDT::kernel_DS_ac8a5b4f6a3dc223e2eb6abebe19c9f08" ref="d3/d8c/a19335.html#ac8a5b4f6a3dc223e2eb6abebe19c9f08"/>
+<keyword name="kernel_DS_selector()" id="essential::GDT::kernel_DS_selector_a34661a528b1630bff806e25411ad6ec3" ref="d3/d8c/a19335.html#a34661a528b1630bff806e25411ad6ec3"/>
+<keyword name="kernelCodeSegmentSelector" id="hardware_communication::IDT_row::kernelCodeSegmentSelector_a800309c99800063315cddf536a3d0d67" ref="d7/d8c/a19347.html#a800309c99800063315cddf536a3d0d67"/>
+<keyword name="KeyboardDriver(hardware_communication::InterruptManager *interrupt_manager, KeyboardEventHandler *keyboardEventHandler)" id="driver::KeyboardDriver::KeyboardDriver_a63898e993f02352193db996d00179347" ref="dc/d7c/a19319.html#a63898e993f02352193db996d00179347"/>
+<keyword name="KeyboardEventHandler()" id="driver::KeyboardEventHandler::KeyboardEventHandler_a63ee0249476256e721e05e6375383317" ref="d0/d72/a19315.html#a63ee0249476256e721e05e6375383317"/>
+<keyword name="keyboardEventHandler" id="driver::KeyboardDriver::keyboardEventHandler_a11ec84b7abf113ec270f124564776e1f" ref="dc/d7c/a19319.html#a11ec84b7abf113ec270f124564776e1f"/>
+<keyword name="KeyboardEventHandler_for_kernel()" id="KeyboardEventHandler_for_kernel::KeyboardEventHandler_for_kernel_af9abf3fb85dea27db802a8f092c4a2fc" ref="d4/d1e/a19251.html#af9abf3fb85dea27db802a8f092c4a2fc"/>
+<keyword name="led_byte_to_send" id="driver::KeyboardDriver::led_byte_to_send_aed7b5d279f6f1dffee10d5fb92ed6b1c" ref="dc/d7c/a19319.html#aed7b5d279f6f1dffee10d5fb92ed6b1c"/>
+<keyword name="len" id="multiboot_mmap_entry::len_a0c5d40a87a63b01fc424bb3c15c89997" ref="de/d0e/a18398.html#a0c5d40a87a63b01fc424bb3c15c89997"/>
+<keyword name="limit" id="essential::GDT::limit_a4105a25a1ec71dc7e338639bb370c664" ref="d3/d8c/a19335.html#a4105a25a1ec71dc7e338639bb370c664"/>
+<keyword name="limit" id="hardware_communication::InterruptManager::limit_a1991d8428ff7c74b31f42d48bb49547a" ref="d9/d99/a19351.html#a1991d8428ff7c74b31f42d48bb49547a"/>
+<keyword name="limit_low" id="essential::GDT_row::limit_low_a2bddbe405dfbbbd101c475bd1bd65112" ref="dd/da0/a19331.html#a2bddbe405dfbbbd101c475bd1bd65112"/>
+<keyword name="load_addr" id="multiboot_header::load_addr_a99de1cf326c46c76c6039f317b7a1ef2" ref="de/d0e/a18398.html#a99de1cf326c46c76c6039f317b7a1ef2"/>
+<keyword name="load_end_addr" id="multiboot_header::load_end_addr_ac9efc1a4c3cd18f286b2fd50ff052e31" ref="de/d0e/a18398.html#ac9efc1a4c3cd18f286b2fd50ff052e31"/>
+<keyword name="magic" id="multiboot_header::magic_a7fddee92e60ff58e159c6bf2c40bf29b" ref="de/d0e/a18398.html#a7fddee92e60ff58e159c6bf2c40bf29b"/>
+<keyword name="mem_lower" id="multiboot_info::mem_lower_a6b80f033d5a9151a4d1abd2d155942a7" ref="de/d0e/a18398.html#a6b80f033d5a9151a4d1abd2d155942a7"/>
+<keyword name="mem_upper" id="multiboot_info::mem_upper_a1ea7d9e665d6fff00665d97e81207a8f" ref="de/d0e/a18398.html#a1ea7d9e665d6fff00665d97e81207a8f"/>
+<keyword name="mmap_addr" id="multiboot_info::mmap_addr_a19825c91eb6aa23fa61ee3851a6ce8da" ref="de/d0e/a18398.html#a19825c91eb6aa23fa61ee3851a6ce8da"/>
+<keyword name="mmap_length" id="multiboot_info::mmap_length_a3dd43c3204f821c0a1b5604686d9eae7" ref="de/d0e/a18398.html#a3dd43c3204f821c0a1b5604686d9eae7"/>
+<keyword name="mod_end" id="multiboot_mod_list::mod_end_aa2b5dda7d7d51a1f3fbd613adfa640b0" ref="de/d0e/a18398.html#aa2b5dda7d7d51a1f3fbd613adfa640b0"/>
+<keyword name="mod_start" id="multiboot_mod_list::mod_start_a3bcfca83ccb172cd79123a8341ed4cfb" ref="de/d0e/a18398.html#a3bcfca83ccb172cd79123a8341ed4cfb"/>
+<keyword name="mode_type" id="multiboot_header::mode_type_a4c90b7929342dd5aab7d08afa0906d28" ref="de/d0e/a18398.html#a4c90b7929342dd5aab7d08afa0906d28"/>
+<keyword name="mods_addr" id="multiboot_info::mods_addr_a766e9dadbf4a845c12704c923cb13f02" ref="de/d0e/a18398.html#a766e9dadbf4a845c12704c923cb13f02"/>
+<keyword name="mods_count" id="multiboot_info::mods_count_a415feb83a215790e2e8f9e2e1e3df55c" ref="de/d0e/a18398.html#a415feb83a215790e2e8f9e2e1e3df55c"/>
+<keyword name="mouse_block_video_mem_value(uint16_t old_char_under_mouse_pointer, uint8_t mouse_pointer_color)" id="driver::MouseDriver::mouse_block_video_mem_value_a1a2a455ca7146dea3148afa8cb6c9ed5" ref="da/dea/a19327.html#a1a2a455ca7146dea3148afa8cb6c9ed5"/>
+<keyword name="MouseDriver(hardware_communication::InterruptManager *interrupt_manager, MouseEventHandler *mouseEventHandler)" id="driver::MouseDriver::MouseDriver_a639956c8ce11d62ee443825e9b9695af" ref="da/dea/a19327.html#a639956c8ce11d62ee443825e9b9695af"/>
+<keyword name="MouseEventHandler()" id="driver::MouseEventHandler::MouseEventHandler_aa0fd3739c52bcd4d553cefaf41760a9b" ref="d5/d17/a19323.html#aa0fd3739c52bcd4d553cefaf41760a9b"/>
+<keyword name="mouseEventHandler" id="driver::MouseDriver::mouseEventHandler_a804f5657a062e0a18f3b56781f884c66" ref="da/dea/a19327.html#a804f5657a062e0a18f3b56781f884c66"/>
+<keyword name="MouseEventHandler_for_kernel()" id="MouseEventHandler_for_kernel::MouseEventHandler_for_kernel_a41f57ab9baa5850e39086362ce44b1cb" ref="d0/d04/a19255.html#a41f57ab9baa5850e39086362ce44b1cb"/>
+<keyword name="nullSegment" id="essential::GDT::nullSegment_a154c2e2725809d873c8e7d5f19ea66c5" ref="d3/d8c/a19335.html#a154c2e2725809d873c8e7d5f19ea66c5"/>
+<keyword name="num" id="multiboot_elf_section_header_table::num_a6ed3ef34bb39d72a19533b11fe156e1f" ref="de/d0e/a18398.html#a6ed3ef34bb39d72a19533b11fe156e1f"/>
+<keyword name="numDrivers" id="driver::DriverManager::numDrivers_a347286da44d912bba3f720d8b0600946" ref="d3/d37/a19311.html#a347286da44d912bba3f720d8b0600946"/>
+<keyword name="obj_ptr" id="essential::atexit_func_entry_t::obj_ptr_a24ece443578ebec2449e72e998521a11" ref="d7/d5c/a19339.html#a24ece443578ebec2449e72e998521a11"/>
+<keyword name="offset" id="multiboot_apm_info::offset_a97958b174fe0234cafab9019eb009b91" ref="de/d0e/a18398.html#a97958b174fe0234cafab9019eb009b91"/>
+<keyword name="offset" id="driver::MouseDriver::offset_a313426dd9aa1af1540cbffc2e77c58c1" ref="da/dea/a19327.html#a313426dd9aa1af1540cbffc2e77c58c1"/>
+<keyword name="old_char_under_mouse_pointer" id="driver::MouseDriver::old_char_under_mouse_pointer_a4a671e7e2b235f6bec473cb960401bd6" ref="da/dea/a19327.html#a4a671e7e2b235f6bec473cb960401bd6"/>
+<keyword name="onKeyDown(char ascii) override" id="KeyboardEventHandler_for_kernel::onKeyDown_af82a0bd16f995dd285d4f7822117377c" ref="d4/d1e/a19251.html#af82a0bd16f995dd285d4f7822117377c"/>
+<keyword name="onKeyDown(char ascii)=0" id="driver::KeyboardEventHandler::onKeyDown_ae2b923ef0eb58e29f57a155debadac6a" ref="d0/d72/a19315.html#ae2b923ef0eb58e29f57a155debadac6a"/>
+<keyword name="onKeyUp(char ascii) override" id="KeyboardEventHandler_for_kernel::onKeyUp_a0d74a48573c10174ac8bf836ac39f886" ref="d4/d1e/a19251.html#a0d74a48573c10174ac8bf836ac39f886"/>
+<keyword name="onKeyUp(char ascii)=0" id="driver::KeyboardEventHandler::onKeyUp_a28547100b7420e1f73b745df873cd411" ref="d0/d72/a19315.html#a28547100b7420e1f73b745df873cd411"/>
+<keyword name="onMouseDown(uint8_t button) override" id="MouseEventHandler_for_kernel::onMouseDown_ae860a16e70322e5c4bb01e1108e50bb1" ref="d0/d04/a19255.html#ae860a16e70322e5c4bb01e1108e50bb1"/>
+<keyword name="onMouseDown(uint8_t button)=0" id="driver::MouseEventHandler::onMouseDown_a2f12c5f63356c3045fd6cb46fd89374f" ref="d5/d17/a19323.html#a2f12c5f63356c3045fd6cb46fd89374f"/>
+<keyword name="onMouseMove(int8_t delta_x, int8_t delta_y) override" id="MouseEventHandler_for_kernel::onMouseMove_adbb4c4e2814b335579119c324313f652" ref="d0/d04/a19255.html#adbb4c4e2814b335579119c324313f652"/>
+<keyword name="onMouseMove(int8_t delta_x, int8_t delta_y)=0" id="driver::MouseEventHandler::onMouseMove_a68f635b3b65f927d37d4e0835f7e0b30" ref="d5/d17/a19323.html#a68f635b3b65f927d37d4e0835f7e0b30"/>
+<keyword name="onMouseUp(uint8_t button) override" id="MouseEventHandler_for_kernel::onMouseUp_afca536c2187a65da265daa2d2af75d4d" ref="d0/d04/a19255.html#afca536c2187a65da265daa2d2af75d4d"/>
+<keyword name="onMouseUp(uint8_t button)=0" id="driver::MouseEventHandler::onMouseUp_a09b77fe86bfa79313b5c5b91d09eb514" ref="d5/d17/a19323.html#a09b77fe86bfa79313b5c5b91d09eb514"/>
+<keyword name="pad" id="multiboot_mod_list::pad_aff552d4c321b0607d77cda0c2cdc5708" ref="de/d0e/a18398.html#aff552d4c321b0607d77cda0c2cdc5708"/>
+<keyword name="picMasterCommand" id="hardware_communication::InterruptManager::picMasterCommand_acb04723d03d6b34abbc5f7407cab0b33" ref="d9/d99/a19351.html#acb04723d03d6b34abbc5f7407cab0b33"/>
+<keyword name="picMasterData" id="hardware_communication::InterruptManager::picMasterData_a5287e31a546f60708b085b387332a904" ref="d9/d99/a19351.html#a5287e31a546f60708b085b387332a904"/>
+<keyword name="picSlaveCommand" id="hardware_communication::InterruptManager::picSlaveCommand_afed9d24b37c8f9386a71f4284b2502a4" ref="d9/d99/a19351.html#afed9d24b37c8f9386a71f4284b2502a4"/>
+<keyword name="picSlaveData" id="hardware_communication::InterruptManager::picSlaveData_ac1111b7cfbd27b37f03a0678ae5dbaf1" ref="d9/d99/a19351.html#ac1111b7cfbd27b37f03a0678ae5dbaf1"/>
+<keyword name="Port(uint16_t portnumber)" id="hardware_communication::Port::Port_ad001c21b67d4c138f65024f167030cca" ref="d3/d5b/a19355.html#ad001c21b67d4c138f65024f167030cca"/>
+<keyword name="Port16Bit(uint16_t portnumber)" id="hardware_communication::Port16Bit::Port16Bit_a418bb2fc65b3bec91704d0e5e8957131" ref="dd/d6a/a19367.html#a418bb2fc65b3bec91704d0e5e8957131"/>
+<keyword name="Port32Bit(uint16_t portnumber)" id="hardware_communication::Port32Bit::Port32Bit_a507afa8607757baedf1789d73c2a173d" ref="d8/d2a/a19371.html#a507afa8607757baedf1789d73c2a173d"/>
+<keyword name="Port8Bit(uint16_t portnumber)" id="hardware_communication::Port8Bit::Port8Bit_a057109ca3c28fbb9064c60ba5cdb1190" ref="d9/d0b/a19359.html#a057109ca3c28fbb9064c60ba5cdb1190"/>
+<keyword name="Port8BitSlow(uint16_t portnumber)" id="hardware_communication::Port8BitSlow::Port8BitSlow_aa830f1cf49e155af1033a8e611ecc6c1" ref="dc/da5/a19363.html#aa830f1cf49e155af1033a8e611ecc6c1"/>
+<keyword name="portnumber" id="hardware_communication::Port::portnumber_aab0c5c82b0190df88ddbb595bfac539a" ref="d3/d5b/a19355.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+<keyword name="printLoadedTable()" id="essential::GDT::printLoadedTable_a9c89bddfdb21d5cc09c1d82411982de9" ref="d3/d8c/a19335.html#a9c89bddfdb21d5cc09c1d82411982de9"/>
+<keyword name="printLoadedTable()" id="hardware_communication::InterruptManager::printLoadedTable_aac20f3a896bea512413568a60ad48c3d" ref="d9/d99/a19351.html#aac20f3a896bea512413568a60ad48c3d"/>
+<keyword name="printLoadedTableHeader()" id="essential::GDT::printLoadedTableHeader_a2ae998750fc1e18e6778e92774bd3574" ref="d3/d8c/a19335.html#a2ae998750fc1e18e6778e92774bd3574"/>
+<keyword name="printLoadedTableHeader()" id="hardware_communication::InterruptManager::printLoadedTableHeader_ad8a6f694662a3a36ba9353197e20c1b1" ref="d9/d99/a19351.html#ad8a6f694662a3a36ba9353197e20c1b1"/>
+<keyword name="read()" id="hardware_communication::Port8Bit::read_ae8688251b574c3fd335b99f7e93fff2d" ref="d9/d0b/a19359.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+<keyword name="read()" id="hardware_communication::Port16Bit::read_a6b5df5669e802e31f27f0a4a0e62492a" ref="dd/d6a/a19367.html#a6b5df5669e802e31f27f0a4a0e62492a"/>
+<keyword name="read()" id="hardware_communication::Port32Bit::read_a41093c437a9508f984c90ae68e9c03bf" ref="d8/d2a/a19371.html#a41093c437a9508f984c90ae68e9c03bf"/>
+<keyword name="red" id="multiboot_color::red_a4c8a91229f40c06c3c63b4c37e83d219" ref="de/d0e/a18398.html#a4c8a91229f40c06c3c63b4c37e83d219"/>
+<keyword name="reserved" id="multiboot_aout_symbol_table::reserved_a488f52dbb30b4de2ae2f42f0bdfda154" ref="de/d0e/a18398.html#a488f52dbb30b4de2ae2f42f0bdfda154"/>
+<keyword name="reserved" id="hardware_communication::IDT_row::reserved_a96bce1ce9c6a7e9b5a20607f41a2e876" ref="d7/d8c/a19347.html#a96bce1ce9c6a7e9b5a20607f41a2e876"/>
+<keyword name="reset()=0" id="driver::Driver::reset_a98d2e779c02364fc58c172d0d2a32bdd" ref="dc/d37/a19307.html#a98d2e779c02364fc58c172d0d2a32bdd"/>
+<keyword name="reset() override" id="driver::KeyboardDriver::reset_a22b7b080ab1c8b0f2ed4beba75b34691" ref="dc/d7c/a19319.html#a22b7b080ab1c8b0f2ed4beba75b34691"/>
+<keyword name="reset() override" id="driver::MouseDriver::reset_aabe3740996bf70fda96f0a25228954a6" ref="da/dea/a19327.html#aabe3740996bf70fda96f0a25228954a6"/>
+<keyword name="setIDTEntry(uint8_t interruptNumber, uint16_t codeSegmentSelectorOffset, void(*handler)(), uint8_t DescriptorPrivilegeLever, uint8_t DescriptorType)" id="hardware_communication::InterruptManager::setIDTEntry_af448c0d55d2e226050b7f4efb6d4abe8" ref="d9/d99/a19351.html#af448c0d55d2e226050b7f4efb6d4abe8"/>
+<keyword name="shift_pressed" id="driver::KeyboardDriver::shift_pressed_afba07c783deebfb275c1437f7c23601d" ref="dc/d7c/a19319.html#afba07c783deebfb275c1437f7c23601d"/>
+<keyword name="shndx" id="multiboot_elf_section_header_table::shndx_a45886444dce7cc10353528373f3e50c2" ref="de/d0e/a18398.html#a45886444dce7cc10353528373f3e50c2"/>
+<keyword name="size" id="multiboot_elf_section_header_table::size_ab2740d89d4139f93c9452cca2c676c5c" ref="de/d0e/a18398.html#ab2740d89d4139f93c9452cca2c676c5c"/>
+<keyword name="size" id="multiboot_mmap_entry::size_a1b4b5157d5e972e92981177fd1eb6d67" ref="de/d0e/a18398.html#a1b4b5157d5e972e92981177fd1eb6d67"/>
+<keyword name="strsize" id="multiboot_aout_symbol_table::strsize_a7ed0107153c88e6604e9a6105a4c7be0" ref="de/d0e/a18398.html#a7ed0107153c88e6604e9a6105a4c7be0"/>
+<keyword name="tabsize" id="multiboot_aout_symbol_table::tabsize_afbdc23500d3d7a59486a0b8ff4066c1e" ref="de/d0e/a18398.html#afbdc23500d3d7a59486a0b8ff4066c1e"/>
+<keyword name="type" id="multiboot_mmap_entry::type_affc11fb6e6ece4860a1929b791073538" ref="de/d0e/a18398.html#affc11fb6e6ece4860a1929b791073538"/>
+<keyword name="u" id="multiboot_info::u_a0558f47498813865abaec2f6281c5f92" ref="de/d0e/a18398.html#a0558f47498813865abaec2f6281c5f92"/>
+<keyword name="user_CS" id="essential::GDT::user_CS_a32508694f9db3188cd4aba126cbfb5bb" ref="d3/d8c/a19335.html#a32508694f9db3188cd4aba126cbfb5bb"/>
+<keyword name="user_CS_selector()" id="essential::GDT::user_CS_selector_a8806a14009c4f0432d4b7043d687be17" ref="d3/d8c/a19335.html#a8806a14009c4f0432d4b7043d687be17"/>
+<keyword name="user_DS" id="essential::GDT::user_DS_a73463d83e2048869692d0adf1acac7a6" ref="d3/d8c/a19335.html#a73463d83e2048869692d0adf1acac7a6"/>
+<keyword name="user_DS_selector()" id="essential::GDT::user_DS_selector_a90661f97e9cf214dd6d977b19c01f7fc" ref="d3/d8c/a19335.html#a90661f97e9cf214dd6d977b19c01f7fc"/>
+<keyword name="vbe_control_info" id="multiboot_info::vbe_control_info_a21c63bc2905c6fd19449eea6e8514856" ref="de/d0e/a18398.html#a21c63bc2905c6fd19449eea6e8514856"/>
+<keyword name="vbe_interface_len" id="multiboot_info::vbe_interface_len_a31ea288eaa679a7e3a4dafb91d833f78" ref="de/d0e/a18398.html#a31ea288eaa679a7e3a4dafb91d833f78"/>
+<keyword name="vbe_interface_off" id="multiboot_info::vbe_interface_off_a272d3a053e085dc513ba4dc4eb688816" ref="de/d0e/a18398.html#a272d3a053e085dc513ba4dc4eb688816"/>
+<keyword name="vbe_interface_seg" id="multiboot_info::vbe_interface_seg_a6cd85049f18e6c157d173538b162d9a6" ref="de/d0e/a18398.html#a6cd85049f18e6c157d173538b162d9a6"/>
+<keyword name="vbe_mode" id="multiboot_info::vbe_mode_aec0fcaec97380658da787d4989f7b93f" ref="de/d0e/a18398.html#aec0fcaec97380658da787d4989f7b93f"/>
+<keyword name="vbe_mode_info" id="multiboot_info::vbe_mode_info_ace25791339e03186c9364bb5f461f773" ref="de/d0e/a18398.html#ace25791339e03186c9364bb5f461f773"/>
+<keyword name="version" id="multiboot_apm_info::version_ab06d9309bdc00fa4a8c37fdab639beb5" ref="de/d0e/a18398.html#ab06d9309bdc00fa4a8c37fdab639beb5"/>
+<keyword name="waiting_for_led_ack" id="driver::KeyboardDriver::waiting_for_led_ack_a703464394033a8f4f664d9289ae2e9f8" ref="dc/d7c/a19319.html#a703464394033a8f4f664d9289ae2e9f8"/>
+<keyword name="width" id="multiboot_header::width_ad72a1a3dd608e73c818d0c27974def40" ref="de/d0e/a18398.html#ad72a1a3dd608e73c818d0c27974def40"/>
+<keyword name="write(uint8_t data)" id="hardware_communication::Port8Bit::write_a523b6a757b27418dc015ed13e74bef60" ref="d9/d0b/a19359.html#a523b6a757b27418dc015ed13e74bef60"/>
+<keyword name="write(uint8_t data) override" id="hardware_communication::Port8BitSlow::write_af84b15d5a205a421a9877e2341714031" ref="dc/da5/a19363.html#af84b15d5a205a421a9877e2341714031"/>
+<keyword name="write(uint16_t data)" id="hardware_communication::Port16Bit::write_ac5a46ce99a70874a8a4fcb090eb40575" ref="dd/d6a/a19367.html#ac5a46ce99a70874a8a4fcb090eb40575"/>
+<keyword name="write(uint32_t data)" id="hardware_communication::Port32Bit::write_a64a16fe840224ef769ab2933770d1b21" ref="d8/d2a/a19371.html#a64a16fe840224ef769ab2933770d1b21"/>
+<keyword name="~Driver()" id="driver::Driver::~Driver_aacc7524b989c2561147c5dd0b901381c" ref="dc/d37/a19307.html#aacc7524b989c2561147c5dd0b901381c"/>
+<keyword name="~DriverManager()" id="driver::DriverManager::~DriverManager_a29731c1f4b1215fd5c4ab27624ae6563" ref="d3/d37/a19311.html#a29731c1f4b1215fd5c4ab27624ae6563"/>
+<keyword name="~GDT()" id="essential::GDT::~GDT_a9b61f75de7fa2ffe9589f43c3f6a6a6c" ref="d3/d8c/a19335.html#a9b61f75de7fa2ffe9589f43c3f6a6a6c"/>
+<keyword name="~GDT_row()" id="essential::GDT_row::~GDT_row_a6eb69c55c0bd16040b2d766dd068df31" ref="dd/da0/a19331.html#a6eb69c55c0bd16040b2d766dd068df31"/>
+<keyword name="~IDT_row()" id="hardware_communication::IDT_row::~IDT_row_a9cad760dfa1c1f76f98b6207365f7e2d" ref="d7/d8c/a19347.html#a9cad760dfa1c1f76f98b6207365f7e2d"/>
+<keyword name="~InterruptHandler()" id="hardware_communication::InterruptHandler::~InterruptHandler_a5114528f0db9926365b345337e42af9b" ref="d0/dcf/a19343.html#a5114528f0db9926365b345337e42af9b"/>
+<keyword name="~InterruptManager()" id="hardware_communication::InterruptManager::~InterruptManager_a65276f26b5d5197482a415b83a898560" ref="d9/d99/a19351.html#a65276f26b5d5197482a415b83a898560"/>
+<keyword name="~KeyboardDriver()" id="driver::KeyboardDriver::~KeyboardDriver_a77da196f3c04c549e1085ce5566e5df3" ref="dc/d7c/a19319.html#a77da196f3c04c549e1085ce5566e5df3"/>
+<keyword name="~KeyboardEventHandler()" id="driver::KeyboardEventHandler::~KeyboardEventHandler_aed6531b818751f0f23b6b9836ac94aa0" ref="d0/d72/a19315.html#aed6531b818751f0f23b6b9836ac94aa0"/>
+<keyword name="~KeyboardEventHandler_for_kernel()" id="KeyboardEventHandler_for_kernel::~KeyboardEventHandler_for_kernel_ab2b7f34603d9cdd36554a4f7f6dde585" ref="d4/d1e/a19251.html#ab2b7f34603d9cdd36554a4f7f6dde585"/>
+<keyword name="~MouseDriver()" id="driver::MouseDriver::~MouseDriver_a8c25e4a4b42d1d39b332ba6d4cbd6a22" ref="da/dea/a19327.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22"/>
+<keyword name="~MouseEventHandler()" id="driver::MouseEventHandler::~MouseEventHandler_abbfe4a7ae2911f989513178530314211" ref="d5/d17/a19323.html#abbfe4a7ae2911f989513178530314211"/>
+<keyword name="~MouseEventHandler_for_kernel()" id="MouseEventHandler_for_kernel::~MouseEventHandler_for_kernel_aa96e9bf8dce2b60b7f86577c3a74455d" ref="d0/d04/a19255.html#aa96e9bf8dce2b60b7f86577c3a74455d"/>
+<keyword name="~Port()" id="hardware_communication::Port::~Port_a8b13c33da4911afcbdcb21c97768a72e" ref="d3/d5b/a19355.html#a8b13c33da4911afcbdcb21c97768a72e"/>
+<keyword name="~Port16Bit() override" id="hardware_communication::Port16Bit::~Port16Bit_a78dfa215194c676583e1b7e2dab38608" ref="dd/d6a/a19367.html#a78dfa215194c676583e1b7e2dab38608"/>
+<keyword name="~Port32Bit() override" id="hardware_communication::Port32Bit::~Port32Bit_a3e87dc7d610b279e8e7e072a0d1ee78c" ref="d8/d2a/a19371.html#a3e87dc7d610b279e8e7e072a0d1ee78c"/>
+<keyword name="~Port8Bit() override" id="hardware_communication::Port8Bit::~Port8Bit_a475bc218672c5743a9f8425cc84eb630" ref="d9/d0b/a19359.html#a475bc218672c5743a9f8425cc84eb630"/>
+<keyword name="~Port8BitSlow() override" id="hardware_communication::Port8BitSlow::~Port8BitSlow_aa19647802064296f8bf76cc12f10d243" ref="dc/da5/a19363.html#aa19647802064296f8bf76cc12f10d243"/>
+<keyword name="__atexit_func_count" id="kicxxabi.cpp::__atexit_func_count_a0f75f529cf75cf0a9cd266f8d67675dc" ref="dc/dcc/a18350.html#a0f75f529cf75cf0a9cd266f8d67675dc"/>
+<keyword name="__atexit_funcs[ATEXIT_MAX_FUNCS]" id="kicxxabi.cpp::__atexit_funcs_a05a64060e9039acf0ba3c311b2d981b7" ref="dc/dcc/a18350.html#a05a64060e9039acf0ba3c311b2d981b7"/>
+<keyword name="__attribute__" id="multiboot.hpp::__attribute___a4bbf25084dee10ec29f4356cacced463" ref="de/d0e/a18398.html#a4bbf25084dee10ec29f4356cacced463"/>
+<keyword name="__attribute__" id="hardware_communication::__attribute___a21c3ca5c318038eaed596c14fd2666ed" ref="d6/d23/a18435.html#a21c3ca5c318038eaed596c14fd2666ed"/>
+<keyword name="__attribute__((packed))" id="multiboot.hpp::__attribute___aa6b9a7218d544abc2be2bd335681b0a1" ref="de/d0e/a18398.html#aa6b9a7218d544abc2be2bd335681b0a1"/>
+<keyword name="__attribute__((packed))" id="essential::__attribute___a52e3ec8c29cc4bb68f65445749f0bfdb" ref="d2/d7a/a18434.html#a52e3ec8c29cc4bb68f65445749f0bfdb"/>
+<keyword name="__attribute__((packed))" id="hardware_communication::__attribute___a269f53904f53339ae2df626922b404b2" ref="d6/d23/a18435.html#a269f53904f53339ae2df626922b404b2"/>
+<keyword name="__callConstructors()" id="essential::__callConstructors_a433c3d2d19d89890b522ac26b05fa7aa" ref="d2/d7a/a18434.html#a433c3d2d19d89890b522ac26b05fa7aa"/>
+<keyword name="__clearScreen()" id="basic::__clearScreen_a02923caa95013ec5d9333c25d9cca1d6" ref="d1/d22/a18432.html#a02923caa95013ec5d9333c25d9cca1d6"/>
+<keyword name="__cxa_atexit(void(*f)(void *), void *objptr, void *dso)" id="kicxxabi.cpp::__cxa_atexit_a6870fb46accc462562647e3d99c0b7c7" ref="dc/dcc/a18350.html#a6870fb46accc462562647e3d99c0b7c7"/>
+<keyword name="__cxa_finalize(void *f)" id="essential::__cxa_finalize_a098e7240e26e869c035075be004b4ee9" ref="d2/d7a/a18434.html#a098e7240e26e869c035075be004b4ee9"/>
+<keyword name="__dso_handle" id="kicxxabi.cpp::__dso_handle_a19df960d2907e9c08a720ae7683e632c" ref="dc/dcc/a18350.html#a19df960d2907e9c08a720ae7683e632c"/>
+<keyword name="__printMemoryMap(multiboot_info_t *mbi)" id="basic::__printMemoryMap_a53c6425a55d9fb93998da01f2416f9ad" ref="d1/d22/a18432.html#a53c6425a55d9fb93998da01f2416f9ad"/>
+<keyword name="access" id="kgdt.hpp::access_a8b0d6200bc639dd37ff68847a0adde5f" ref="d9/dc6/a18425.html#a8b0d6200bc639dd37ff68847a0adde5f"/>
+<keyword name="access" id="kinterrupt.hpp::access_a8b0d6200bc639dd37ff68847a0adde5f" ref="d5/d65/a18407.html#a8b0d6200bc639dd37ff68847a0adde5f"/>
+<keyword name="addr" id="multiboot.hpp::addr_a8286ae6db03c34c4bb161accbfbfbbcd" ref="de/d0e/a18398.html#a8286ae6db03c34c4bb161accbfbfbbcd"/>
+<keyword name="ATEXIT_MAX_FUNCS" id="kicxxabi.hpp::ATEXIT_MAX_FUNCS_ae07a9ad040d2fbefafcff363b77697ce" ref="dc/de4/a18422.html#ae07a9ad040d2fbefafcff363b77697ce"/>
+<keyword name="base" id="kgdt.hpp::base_ad516e6ff5b7dd7f6ce2946c527ddb8b9" ref="d9/dc6/a18425.html#ad516e6ff5b7dd7f6ce2946c527ddb8b9"/>
+<keyword name="base_high" id="kgdt.hpp::base_high_a1a173457c7aa39c59c008fcc3332d2b3" ref="d9/dc6/a18425.html#a1a173457c7aa39c59c008fcc3332d2b3"/>
+<keyword name="base_low" id="kgdt.hpp::base_low_a71e21ea67de59991e9a27666a1752a8f" ref="d9/dc6/a18425.html#a71e21ea67de59991e9a27666a1752a8f"/>
+<keyword name="base_middle" id="kgdt.hpp::base_middle_a6b67e86f6de9204d76adab79069aec29" ref="d9/dc6/a18425.html#a6b67e86f6de9204d76adab79069aec29"/>
+<keyword name="ctors_end)()" id="kicxxabi.cpp::ctors_end_a9a50b36f9886cd6bdbe05a5a6639cd95" ref="dc/dcc/a18350.html#a9a50b36f9886cd6bdbe05a5a6639cd95"/>
+<keyword name="ctors_start)()" id="kicxxabi.cpp::ctors_start_a201d805094c80d48f8ee4e49ee85fb74" ref="dc/dcc/a18350.html#a201d805094c80d48f8ee4e49ee85fb74"/>
+<keyword name="cursor_x_" id="kiostream.cpp::cursor_x__a133981c4ba48aed67a5b874f7b213583" ref="dc/df9/a18326.html#a133981c4ba48aed67a5b874f7b213583"/>
+<keyword name="cursor_y_" id="kiostream.cpp::cursor_y__a1bda227f31ddf346294cb531f7554ef3" ref="dc/df9/a18326.html#a1bda227f31ddf346294cb531f7554ef3"/>
+<keyword name="disable_cursor()" id="basic::disable_cursor_a4b31902bf2cff8ff28405aa57d9f4575" ref="d1/d22/a18432.html#a4b31902bf2cff8ff28405aa57d9f4575"/>
+<keyword name="doubleToString(double d, char *buffer, int precision)" id="kiostream.cpp::doubleToString_af382674e4c9fb57a14b178d4ee12273a" ref="dc/df9/a18326.html#af382674e4c9fb57a14b178d4ee12273a"/>
+<keyword name="enable_cursor(uint8_t cursor_start, uint8_t cursor_end)" id="basic::enable_cursor_a8ca6648639f335b207c748074dcf9f25" ref="d1/d22/a18432.html#a8ca6648639f335b207c748074dcf9f25"/>
+<keyword name="GDT" id="kgdt.hpp::GDT_a2dda285f5ad6336a22f9ff1d2d098e60" ref="d9/dc6/a18425.html#a2dda285f5ad6336a22f9ff1d2d098e60"/>
+<keyword name="GDT_ACCESS_CODE_PL0" id="kgdt.hpp::GDT_ACCESS_CODE_PL0_ac4461ee84aade9ee824de64d4846ec98" ref="d9/dc6/a18425.html#ac4461ee84aade9ee824de64d4846ec98"/>
+<keyword name="GDT_ACCESS_CODE_PL3" id="kgdt.hpp::GDT_ACCESS_CODE_PL3_a01d908c8637340b21274e0176b320c05" ref="d9/dc6/a18425.html#a01d908c8637340b21274e0176b320c05"/>
+<keyword name="GDT_ACCESS_DATA_PL0" id="kgdt.hpp::GDT_ACCESS_DATA_PL0_a1adfff1c72212b5c4e1df35485bb102a" ref="d9/dc6/a18425.html#a1adfff1c72212b5c4e1df35485bb102a"/>
+<keyword name="GDT_ACCESS_DATA_PL3" id="kgdt.hpp::GDT_ACCESS_DATA_PL3_ac7f57dcdd84028460100b6da75ad4938" ref="d9/dc6/a18425.html#ac7f57dcdd84028460100b6da75ad4938"/>
+<keyword name="GDT_GRAN_FLAGS" id="kgdt.hpp::GDT_GRAN_FLAGS_a4941c819dbbef299c391bf53c24caf8d" ref="d9/dc6/a18425.html#a4941c819dbbef299c391bf53c24caf8d"/>
+<keyword name="GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte)" id="kgdt.hpp::GDT_row_a24693ad4185e3f70d2be14a964474436" ref="d9/dc6/a18425.html#a24693ad4185e3f70d2be14a964474436"/>
+<keyword name="GDT_row()" id="kgdt.hpp::GDT_row_ad6539f5ca5082793a69451b8c1fc6523" ref="d9/dc6/a18425.html#ad6539f5ca5082793a69451b8c1fc6523"/>
+<keyword name="granularity" id="kgdt.hpp::granularity_acfea365f69e71368a2db03333d4afd6f" ref="d9/dc6/a18425.html#acfea365f69e71368a2db03333d4afd6f"/>
+<keyword name="handleIRQ0x00()" id="kinterrupt.hpp::handleIRQ0x00_adf60fad10b12cc19ad193c928d36445c" ref="d5/d65/a18407.html#adf60fad10b12cc19ad193c928d36445c"/>
+<keyword name="handleIRQ0x01()" id="kinterrupt.hpp::handleIRQ0x01_a6498ed740318b424aaae4db1f223e558" ref="d5/d65/a18407.html#a6498ed740318b424aaae4db1f223e558"/>
+<keyword name="handleIRQ0x0C()" id="kinterrupt.hpp::handleIRQ0x0C_a996c60cc7e88bb1c85505c19f6c35117" ref="d5/d65/a18407.html#a996c60cc7e88bb1c85505c19f6c35117"/>
+<keyword name="handlerAddressHighbits" id="kinterrupt.hpp::handlerAddressHighbits_a7884c02f32fe35058379ebdc96c5767c" ref="d5/d65/a18407.html#a7884c02f32fe35058379ebdc96c5767c"/>
+<keyword name="handlerAddressLowbits" id="kinterrupt.hpp::handlerAddressLowbits_adf5df650f7c6f6e7792d97ee2b851265" ref="d5/d65/a18407.html#adf5df650f7c6f6e7792d97ee2b851265"/>
+<keyword name="IDT_row()" id="kinterrupt.hpp::IDT_row_ab2572e8a0d5fb3acf2373d28ba45ce25" ref="d5/d65/a18407.html#ab2572e8a0d5fb3acf2373d28ba45ce25"/>
+<keyword name="ignoreInterrupt()" id="kinterrupt.hpp::ignoreInterrupt_a07e074bde074261858311b014bc2b398" ref="d5/d65/a18407.html#a07e074bde074261858311b014bc2b398"/>
+<keyword name="installed_interrupt_manager" id="kinterrupt.cpp::installed_interrupt_manager_a1df59a6c3578a3d5d96bfef4ffd8fbc8" ref="dd/d22/a18335.html#a1df59a6c3578a3d5d96bfef4ffd8fbc8"/>
+<keyword name="installTable()" id="kgdt.hpp::installTable_a258db7c2f70fd1b20332ee3c00cd1d89" ref="d9/dc6/a18425.html#a258db7c2f70fd1b20332ee3c00cd1d89"/>
+<keyword name="InterruptManager" id="kinterrupt.hpp::InterruptManager_a6c5563315b1a2f5c67ae8b78d06e3c7f" ref="d5/d65/a18407.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+<keyword name="kernel_CS" id="kgdt.hpp::kernel_CS_a42e2af3e7b809f6f5e06ecfecdb504e0" ref="d9/dc6/a18425.html#a42e2af3e7b809f6f5e06ecfecdb504e0"/>
+<keyword name="kernel_CS_selector()" id="kgdt.hpp::kernel_CS_selector_a169aef5ef99da67bb0047dfc3d6a22e4" ref="d9/dc6/a18425.html#a169aef5ef99da67bb0047dfc3d6a22e4"/>
+<keyword name="kernel_DS" id="kgdt.hpp::kernel_DS_a1b73e3464fcb9312774f2347e1b7604e" ref="d9/dc6/a18425.html#a1b73e3464fcb9312774f2347e1b7604e"/>
+<keyword name="kernel_DS_selector()" id="kgdt.hpp::kernel_DS_selector_aaa6fbf4816b6af649fc82186fe18b4e0" ref="d9/dc6/a18425.html#aaa6fbf4816b6af649fc82186fe18b4e0"/>
+<keyword name="kernelCodeSegmentSelector" id="kinterrupt.hpp::kernelCodeSegmentSelector_acca378f87bf61c0de2befa4244846bfe" ref="d5/d65/a18407.html#acca378f87bf61c0de2befa4244846bfe"/>
+<keyword name="kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)" id="kernel.cpp::kernelMain_abb4e4866092116b520310d61961bfe12" ref="d2/dba/a18362.html#abb4e4866092116b520310d61961bfe12"/>
+<keyword name="KMOUSE_COLOR_BLACK" id="kmouse.hpp::KMOUSE_COLOR_BLACK_ac9670c34ae4e43ca669484a7a317e968" ref="d2/d18/a18416.html#ac9670c34ae4e43ca669484a7a317e968"/>
+<keyword name="KMOUSE_COLOR_BLUE" id="kmouse.hpp::KMOUSE_COLOR_BLUE_a6d83e86a8c6b6046bae502774a4e9e83" ref="d2/d18/a18416.html#a6d83e86a8c6b6046bae502774a4e9e83"/>
+<keyword name="KMOUSE_COLOR_BROWN" id="kmouse.hpp::KMOUSE_COLOR_BROWN_a5bc124f24ecf7e9b0b06d181a6fd7a3e" ref="d2/d18/a18416.html#a5bc124f24ecf7e9b0b06d181a6fd7a3e"/>
+<keyword name="KMOUSE_COLOR_CYAN" id="kmouse.hpp::KMOUSE_COLOR_CYAN_a9660baab3bfc34866b252eff71da777d" ref="d2/d18/a18416.html#a9660baab3bfc34866b252eff71da777d"/>
+<keyword name="KMOUSE_COLOR_DARK_GREY" id="kmouse.hpp::KMOUSE_COLOR_DARK_GREY_a804c656f97148c66dee375ad20d6326e" ref="d2/d18/a18416.html#a804c656f97148c66dee375ad20d6326e"/>
+<keyword name="KMOUSE_COLOR_GREEN" id="kmouse.hpp::KMOUSE_COLOR_GREEN_ae245d853ffcebef06bd052849e35471c" ref="d2/d18/a18416.html#ae245d853ffcebef06bd052849e35471c"/>
+<keyword name="KMOUSE_COLOR_LIGHT_BLUE" id="kmouse.hpp::KMOUSE_COLOR_LIGHT_BLUE_a5882f98f21668e74fbc61e9a3cc4d4c5" ref="d2/d18/a18416.html#a5882f98f21668e74fbc61e9a3cc4d4c5"/>
+<keyword name="KMOUSE_COLOR_LIGHT_CYAN" id="kmouse.hpp::KMOUSE_COLOR_LIGHT_CYAN_ac9391d6382197266f9d814ed3d21bac2" ref="d2/d18/a18416.html#ac9391d6382197266f9d814ed3d21bac2"/>
+<keyword name="KMOUSE_COLOR_LIGHT_GREEN" id="kmouse.hpp::KMOUSE_COLOR_LIGHT_GREEN_ac874f858f617e42a6376c7092940376c" ref="d2/d18/a18416.html#ac874f858f617e42a6376c7092940376c"/>
+<keyword name="KMOUSE_COLOR_LIGHT_GREY" id="kmouse.hpp::KMOUSE_COLOR_LIGHT_GREY_ab7f5f57837c11ae93f9a3c6ef0bba5a8" ref="d2/d18/a18416.html#ab7f5f57837c11ae93f9a3c6ef0bba5a8"/>
+<keyword name="KMOUSE_COLOR_LIGHT_MAGENTA" id="kmouse.hpp::KMOUSE_COLOR_LIGHT_MAGENTA_a5a90c65c80e669968e259e84b095c408" ref="d2/d18/a18416.html#a5a90c65c80e669968e259e84b095c408"/>
+<keyword name="KMOUSE_COLOR_LIGHT_RED" id="kmouse.hpp::KMOUSE_COLOR_LIGHT_RED_acb168549620efee2737255317c814059" ref="d2/d18/a18416.html#acb168549620efee2737255317c814059"/>
+<keyword name="KMOUSE_COLOR_MAGENTA" id="kmouse.hpp::KMOUSE_COLOR_MAGENTA_abfe7fa11c53fb1ea1270f0ed00bb18b8" ref="d2/d18/a18416.html#abfe7fa11c53fb1ea1270f0ed00bb18b8"/>
+<keyword name="KMOUSE_COLOR_RED" id="kmouse.hpp::KMOUSE_COLOR_RED_a1d9a56551248abc6954bf18c76ddcb74" ref="d2/d18/a18416.html#a1d9a56551248abc6954bf18c76ddcb74"/>
+<keyword name="KMOUSE_COLOR_WHITE" id="kmouse.hpp::KMOUSE_COLOR_WHITE_abb30f17e5bf0289632c5abbd2d2dd99a" ref="d2/d18/a18416.html#abb30f17e5bf0289632c5abbd2d2dd99a"/>
+<keyword name="KMOUSE_COLOR_YELLOW" id="kmouse.hpp::KMOUSE_COLOR_YELLOW_abc652aa810e06ef28716a20cb70d51d4" ref="d2/d18/a18416.html#abc652aa810e06ef28716a20cb70d51d4"/>
+<keyword name="len" id="multiboot.hpp::len_a6de3a6d27a7e07942958b912d39792e6" ref="de/d0e/a18398.html#a6de3a6d27a7e07942958b912d39792e6"/>
+<keyword name="limit" id="kgdt.hpp::limit_ab28e82ae69032cb4ad3ec3a0be3d7129" ref="d9/dc6/a18425.html#ab28e82ae69032cb4ad3ec3a0be3d7129"/>
+<keyword name="limit_low" id="kgdt.hpp::limit_low_aa7ae5b5a918e00776ff07fb1c58a348d" ref="d9/dc6/a18425.html#aa7ae5b5a918e00776ff07fb1c58a348d"/>
+<keyword name="MAGIC_HEIGHT" id="kiostream.cpp::MAGIC_HEIGHT_a887422301cbe9a94f8b96263415640cf" ref="dc/df9/a18326.html#a887422301cbe9a94f8b96263415640cf"/>
+<keyword name="MAGIC_WIDTH" id="kiostream.cpp::MAGIC_WIDTH_a5be9493285a1f50a67d98b887537217d" ref="dc/df9/a18326.html#a5be9493285a1f50a67d98b887537217d"/>
+<keyword name="MAX_NUMDRIVERS" id="kdriver.hpp::MAX_NUMDRIVERS_a14e1e30a5e2cbbd23a1fd111357f9076" ref="d1/d33/a18419.html#a14e1e30a5e2cbbd23a1fd111357f9076"/>
+<keyword name="MOUSE_POINTER_COLOR" id="kmouse.hpp::MOUSE_POINTER_COLOR_a637dd833f5f7af42afa1f42349a4d89e" ref="d2/d18/a18416.html#a637dd833f5f7af42afa1f42349a4d89e"/>
+<keyword name="MULTIBOOT_AOUT_KLUDGE" id="multiboot.hpp::MULTIBOOT_AOUT_KLUDGE_a791f0c6a97c36de5388c990503ee4639" ref="de/d0e/a18398.html#a791f0c6a97c36de5388c990503ee4639"/>
+<keyword name="MULTIBOOT_BOOTLOADER_MAGIC" id="multiboot.hpp::MULTIBOOT_BOOTLOADER_MAGIC_aacd617f4e3daafd6eab95fb6215ccae4" ref="de/d0e/a18398.html#aacd617f4e3daafd6eab95fb6215ccae4"/>
+<keyword name="MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT" id="multiboot.hpp::MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT_af6005f97267af2cb0ff37fb245284440" ref="de/d0e/a18398.html#af6005f97267af2cb0ff37fb245284440"/>
+<keyword name="MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED" id="multiboot.hpp::MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED_a8e2af641ff42074bb807c3ec9e33b2e0" ref="de/d0e/a18398.html#a8e2af641ff42074bb807c3ec9e33b2e0"/>
+<keyword name="MULTIBOOT_FRAMEBUFFER_TYPE_RGB" id="multiboot.hpp::MULTIBOOT_FRAMEBUFFER_TYPE_RGB_a34b2f01226ea42de22e06db7f652fbb1" ref="de/d0e/a18398.html#a34b2f01226ea42de22e06db7f652fbb1"/>
+<keyword name="MULTIBOOT_HEADER_ALIGN" id="multiboot.hpp::MULTIBOOT_HEADER_ALIGN_abc554da6e5184d34e039b551177434ba" ref="de/d0e/a18398.html#abc554da6e5184d34e039b551177434ba"/>
+<keyword name="MULTIBOOT_HEADER_MAGIC" id="multiboot.hpp::MULTIBOOT_HEADER_MAGIC_ab36ad4b4a42c58aac4ad1f2ba13054e9" ref="de/d0e/a18398.html#ab36ad4b4a42c58aac4ad1f2ba13054e9"/>
+<keyword name="MULTIBOOT_INFO_ALIGN" id="multiboot.hpp::MULTIBOOT_INFO_ALIGN_a7f583196f43e30e93323f5e44554d726" ref="de/d0e/a18398.html#a7f583196f43e30e93323f5e44554d726"/>
+<keyword name="MULTIBOOT_INFO_AOUT_SYMS" id="multiboot.hpp::MULTIBOOT_INFO_AOUT_SYMS_a186ab9e55c5bc612b9fd7e10b4be5600" ref="de/d0e/a18398.html#a186ab9e55c5bc612b9fd7e10b4be5600"/>
+<keyword name="MULTIBOOT_INFO_APM_TABLE" id="multiboot.hpp::MULTIBOOT_INFO_APM_TABLE_aab73446f0cee2e9dc91f43eb9a0c806b" ref="de/d0e/a18398.html#aab73446f0cee2e9dc91f43eb9a0c806b"/>
+<keyword name="MULTIBOOT_INFO_BOOT_LOADER_NAME" id="multiboot.hpp::MULTIBOOT_INFO_BOOT_LOADER_NAME_a9743476d5f32c9ae22f6254a0e3ba11d" ref="de/d0e/a18398.html#a9743476d5f32c9ae22f6254a0e3ba11d"/>
+<keyword name="MULTIBOOT_INFO_BOOTDEV" id="multiboot.hpp::MULTIBOOT_INFO_BOOTDEV_acfde5ffdd699c023dd8f4b89aa66556f" ref="de/d0e/a18398.html#acfde5ffdd699c023dd8f4b89aa66556f"/>
+<keyword name="MULTIBOOT_INFO_CMDLINE" id="multiboot.hpp::MULTIBOOT_INFO_CMDLINE_ae75fb4f821b7ab405d46318d9b90a677" ref="de/d0e/a18398.html#ae75fb4f821b7ab405d46318d9b90a677"/>
+<keyword name="MULTIBOOT_INFO_CONFIG_TABLE" id="multiboot.hpp::MULTIBOOT_INFO_CONFIG_TABLE_ad60e5b72325f5752e955879f3fbb44c3" ref="de/d0e/a18398.html#ad60e5b72325f5752e955879f3fbb44c3"/>
+<keyword name="MULTIBOOT_INFO_DRIVE_INFO" id="multiboot.hpp::MULTIBOOT_INFO_DRIVE_INFO_af2c5803d8cc6e1e8c00181ca546e68ab" ref="de/d0e/a18398.html#af2c5803d8cc6e1e8c00181ca546e68ab"/>
+<keyword name="MULTIBOOT_INFO_ELF_SHDR" id="multiboot.hpp::MULTIBOOT_INFO_ELF_SHDR_ad7d22ae99c11dc92152acdc8494a71f0" ref="de/d0e/a18398.html#ad7d22ae99c11dc92152acdc8494a71f0"/>
+<keyword name="MULTIBOOT_INFO_FRAMEBUFFER_INFO" id="multiboot.hpp::MULTIBOOT_INFO_FRAMEBUFFER_INFO_a1c07b211ed2c374f5fbcf40c97bce2c0" ref="de/d0e/a18398.html#a1c07b211ed2c374f5fbcf40c97bce2c0"/>
+<keyword name="MULTIBOOT_INFO_MEM_MAP" id="multiboot.hpp::MULTIBOOT_INFO_MEM_MAP_a2d16dabdfdee01362c3457d06f0ff850" ref="de/d0e/a18398.html#a2d16dabdfdee01362c3457d06f0ff850"/>
+<keyword name="MULTIBOOT_INFO_MEMORY" id="multiboot.hpp::MULTIBOOT_INFO_MEMORY_a1cb6047ede9a179b2958048573269d7a" ref="de/d0e/a18398.html#a1cb6047ede9a179b2958048573269d7a"/>
+<keyword name="MULTIBOOT_INFO_MODS" id="multiboot.hpp::MULTIBOOT_INFO_MODS_a9a06a0175854cc6af54ddb6bd798c5bc" ref="de/d0e/a18398.html#a9a06a0175854cc6af54ddb6bd798c5bc"/>
+<keyword name="MULTIBOOT_INFO_VBE_INFO" id="multiboot.hpp::MULTIBOOT_INFO_VBE_INFO_abf0a727e2e262407c77d54baf40d2f39" ref="de/d0e/a18398.html#abf0a727e2e262407c77d54baf40d2f39"/>
+<keyword name="MULTIBOOT_MEMORY_ACPI_RECLAIMABLE" id="multiboot.hpp::MULTIBOOT_MEMORY_ACPI_RECLAIMABLE_af35be82586f332a561d00207c937ee57" ref="de/d0e/a18398.html#af35be82586f332a561d00207c937ee57"/>
+<keyword name="MULTIBOOT_MEMORY_AVAILABLE" id="multiboot.hpp::MULTIBOOT_MEMORY_AVAILABLE_a7fe141351ebcde0acbd6118ad0ea1a21" ref="de/d0e/a18398.html#a7fe141351ebcde0acbd6118ad0ea1a21"/>
+<keyword name="MULTIBOOT_MEMORY_BADRAM" id="multiboot.hpp::MULTIBOOT_MEMORY_BADRAM_a1604ec18ac949d88dab993904b08c075" ref="de/d0e/a18398.html#a1604ec18ac949d88dab993904b08c075"/>
+<keyword name="MULTIBOOT_MEMORY_INFO" id="multiboot.hpp::MULTIBOOT_MEMORY_INFO_afdfca6bbbf4b7dca40e9d43e58201f55" ref="de/d0e/a18398.html#afdfca6bbbf4b7dca40e9d43e58201f55"/>
+<keyword name="MULTIBOOT_MEMORY_NVS" id="multiboot.hpp::MULTIBOOT_MEMORY_NVS_a68f78286f7434d373a82f1b6f6473c72" ref="de/d0e/a18398.html#a68f78286f7434d373a82f1b6f6473c72"/>
+<keyword name="MULTIBOOT_MEMORY_RESERVED" id="multiboot.hpp::MULTIBOOT_MEMORY_RESERVED_a0299aedc71e1f6707181471bafb18e7c" ref="de/d0e/a18398.html#a0299aedc71e1f6707181471bafb18e7c"/>
+<keyword name="MULTIBOOT_MOD_ALIGN" id="multiboot.hpp::MULTIBOOT_MOD_ALIGN_ab3284a28549f2a2f1a2001ca023aaa1e" ref="de/d0e/a18398.html#ab3284a28549f2a2f1a2001ca023aaa1e"/>
+<keyword name="MULTIBOOT_PAGE_ALIGN" id="multiboot.hpp::MULTIBOOT_PAGE_ALIGN_aab5e5487e858de2a031cd3f1232f7b60" ref="de/d0e/a18398.html#aab5e5487e858de2a031cd3f1232f7b60"/>
+<keyword name="MULTIBOOT_SEARCH" id="multiboot.hpp::MULTIBOOT_SEARCH_a0b53e2de91aa7498c4b476776b27e5f3" ref="de/d0e/a18398.html#a0b53e2de91aa7498c4b476776b27e5f3"/>
+<keyword name="multiboot_uint16_t" id="multiboot.hpp::multiboot_uint16_t_a3a11e3c2b5e0617736a05343aa5795b3" ref="de/d0e/a18398.html#a3a11e3c2b5e0617736a05343aa5795b3"/>
+<keyword name="multiboot_uint32_t" id="multiboot.hpp::multiboot_uint32_t_a009f355da41fed4badb8a52d432f5186" ref="de/d0e/a18398.html#a009f355da41fed4badb8a52d432f5186"/>
+<keyword name="multiboot_uint64_t" id="multiboot.hpp::multiboot_uint64_t_a8dfdd61648b48aa31845db590970e06a" ref="de/d0e/a18398.html#a8dfdd61648b48aa31845db590970e06a"/>
+<keyword name="multiboot_uint8_t" id="multiboot.hpp::multiboot_uint8_t_a037f602538fccf97e90021c19fdfc047" ref="de/d0e/a18398.html#a037f602538fccf97e90021c19fdfc047"/>
+<keyword name="MULTIBOOT_VIDEO_MODE" id="multiboot.hpp::MULTIBOOT_VIDEO_MODE_a74a1da9293ae3835241c60b2d9e65e8d" ref="de/d0e/a18398.html#a74a1da9293ae3835241c60b2d9e65e8d"/>
+<keyword name="nullSegment" id="kgdt.hpp::nullSegment_a4facd1fb9d9bd77b1dd234a062c8d9dd" ref="d9/dc6/a18425.html#a4facd1fb9d9bd77b1dd234a062c8d9dd"/>
+<keyword name="operator delete(void *ptr) noexcept" id="kmemory.cpp::operator delete_afa145befcf5e7b83424408ca503c8637" ref="db/d8c/a18323.html#afa145befcf5e7b83424408ca503c8637"/>
+<keyword name="operator delete(void *ptr, size_t size) noexcept" id="kmemory.cpp::operator delete_af057efbdbcd21ea12954d49cd2d245c6" ref="db/d8c/a18323.html#af057efbdbcd21ea12954d49cd2d245c6"/>
+<keyword name="operator delete[](void *ptr) noexcept" id="kmemory.cpp::operator delete[]_a22aea74a1155aa798d6032da46da2391" ref="db/d8c/a18323.html#a22aea74a1155aa798d6032da46da2391"/>
+<keyword name="operator delete[](void *ptr, size_t size) noexcept" id="kmemory.cpp::operator delete[]_ab26fe706b29fdeb33d5f6ead76c05815" ref="db/d8c/a18323.html#ab26fe706b29fdeb33d5f6ead76c05815"/>
+<keyword name="operator new(size_t size) noexcept" id="kmemory.cpp::operator new_a1a7f24760c8c7ad3bfcd54856d906fc2" ref="db/d8c/a18323.html#a1a7f24760c8c7ad3bfcd54856d906fc2"/>
+<keyword name="operator new[](size_t size) noexcept" id="kmemory.cpp::operator new[]_aa75472ab4b765cf6f6b5b0ebcd4a28c8" ref="db/d8c/a18323.html#aa75472ab4b765cf6f6b5b0ebcd4a28c8"/>
+<keyword name="power(double base, int exp)" id="kiostream.cpp::power_a91bacd34c601c4cfe39f1ffa6c2a1385" ref="dc/df9/a18326.html#a91bacd34c601c4cfe39f1ffa6c2a1385"/>
+<keyword name="printCharStr(const char *str)" id="kiostream.cpp::printCharStr_a6bd99ada5f7c46567ee0ceca6c369d47" ref="dc/df9/a18326.html#a6bd99ada5f7c46567ee0ceca6c369d47"/>
+<keyword name="printf(const char *format,...)" id="basic::printf_a45ee52b918a784ff0e96e7c8917a91d9" ref="d1/d22/a18432.html#a45ee52b918a784ff0e96e7c8917a91d9"/>
+<keyword name="printHex(uintptr_t n, int digits)" id="kiostream.cpp::printHex_aab6eb585b409591414f84a1e3f606345" ref="dc/df9/a18326.html#aab6eb585b409591414f84a1e3f606345"/>
+<keyword name="printLoadedTable()" id="kgdt.hpp::printLoadedTable_a0a72b35b5fcadccd545ee4c5ef7efdd3" ref="d9/dc6/a18425.html#a0a72b35b5fcadccd545ee4c5ef7efdd3"/>
+<keyword name="printLoadedTableHeader()" id="kgdt.hpp::printLoadedTableHeader_a6aba53071c94f3ffe96befc625602c9c" ref="d9/dc6/a18425.html#a6aba53071c94f3ffe96befc625602c9c"/>
+<keyword name="reserved" id="kinterrupt.hpp::reserved_acb7bc06bed6f6408d719334fc41698c7" ref="d5/d65/a18407.html#acb7bc06bed6f6408d719334fc41698c7"/>
+<keyword name="reverse(char *str, int length)" id="kiostream.cpp::reverse_a913f40d6652965fdd1e34a04ab7dba2d" ref="dc/df9/a18326.html#a913f40d6652965fdd1e34a04ab7dba2d"/>
+<keyword name="SEG_ACCESS_DESCTYPE(x)" id="kgdt.hpp::SEG_ACCESS_DESCTYPE_a0d47ea941c3bdfd06858a467d2e76d83" ref="d9/dc6/a18425.html#a0d47ea941c3bdfd06858a467d2e76d83"/>
+<keyword name="SEG_ACCESS_PRES(x)" id="kgdt.hpp::SEG_ACCESS_PRES_ab9e609c85bc4472f4f9b69697f2e5067" ref="d9/dc6/a18425.html#ab9e609c85bc4472f4f9b69697f2e5067"/>
+<keyword name="SEG_ACCESS_PRIV(x)" id="kgdt.hpp::SEG_ACCESS_PRIV_a0cb0ae4ca069ed571a3b2db9190e12df" ref="d9/dc6/a18425.html#a0cb0ae4ca069ed571a3b2db9190e12df"/>
+<keyword name="SEG_ACCESS_TYPE(x)" id="kgdt.hpp::SEG_ACCESS_TYPE_a6c474d3015717ee1a2d99ae6a7b00ec3" ref="d9/dc6/a18425.html#a6c474d3015717ee1a2d99ae6a7b00ec3"/>
+<keyword name="SEG_CODE_EXRD" id="kgdt.hpp::SEG_CODE_EXRD_ae04daf26bdb792ae557ef1216021cc43" ref="d9/dc6/a18425.html#ae04daf26bdb792ae557ef1216021cc43"/>
+<keyword name="SEG_DATA_RDWR" id="kgdt.hpp::SEG_DATA_RDWR_add294548173871e30e54b92bf5da2758" ref="d9/dc6/a18425.html#add294548173871e30e54b92bf5da2758"/>
+<keyword name="SEG_GRAN_GRAN(x)" id="kgdt.hpp::SEG_GRAN_GRAN_ae86357f11d481de7242f3178629241b8" ref="d9/dc6/a18425.html#ae86357f11d481de7242f3178629241b8"/>
+<keyword name="SEG_GRAN_LONG(x)" id="kgdt.hpp::SEG_GRAN_LONG_a9759917f0cd67a1d7c87849e211a7993" ref="d9/dc6/a18425.html#a9759917f0cd67a1d7c87849e211a7993"/>
+<keyword name="SEG_GRAN_SAVL(x)" id="kgdt.hpp::SEG_GRAN_SAVL_a79a943b17e5929ca9e06fc7cc1cb0ccc" ref="d9/dc6/a18425.html#a79a943b17e5929ca9e06fc7cc1cb0ccc"/>
+<keyword name="SEG_GRAN_SIZE(x)" id="kgdt.hpp::SEG_GRAN_SIZE_a7667e7c13f08890d3a6051346233691c" ref="d9/dc6/a18425.html#a7667e7c13f08890d3a6051346233691c"/>
+<keyword name="size" id="multiboot.hpp::size_a6d813a0f2b5281b18dea3f4cda696c33" ref="de/d0e/a18398.html#a6d813a0f2b5281b18dea3f4cda696c33"/>
+<keyword name="TAB_WIDTH" id="kiostream.cpp::TAB_WIDTH_a49426d7a9b562958ad2ab7fbf134f368" ref="dc/df9/a18326.html#a49426d7a9b562958ad2ab7fbf134f368"/>
+<keyword name="type" id="multiboot.hpp::type_a8da1a8c7127a0371eec0810a29e30f3c" ref="de/d0e/a18398.html#a8da1a8c7127a0371eec0810a29e30f3c"/>
+<keyword name="uarch_t" id="kicxxabi.hpp::uarch_t_a35fc01d4eba01f3f2ec636bd6b5ff34f" ref="dc/de4/a18422.html#a35fc01d4eba01f3f2ec636bd6b5ff34f"/>
+<keyword name="ullToString(unsigned long long n, char *buffer, int base, int is_signed, int uppercase)" id="kiostream.cpp::ullToString_a14bf754296559bf0266e127e677e8107" ref="dc/df9/a18326.html#a14bf754296559bf0266e127e677e8107"/>
+<keyword name="update_cursor(int x, int y)" id="basic::update_cursor_a9d1f0f838e646660db6d9284725c2b4c" ref="d1/d22/a18432.html#a9d1f0f838e646660db6d9284725c2b4c"/>
+<keyword name="user_CS" id="kgdt.hpp::user_CS_a8d89c16e869ec13a725c780925713916" ref="d9/dc6/a18425.html#a8d89c16e869ec13a725c780925713916"/>
+<keyword name="user_CS_selector()" id="kgdt.hpp::user_CS_selector_a6ef65886fcf664d696b4361309452c2c" ref="d9/dc6/a18425.html#a6ef65886fcf664d696b4361309452c2c"/>
+<keyword name="user_DS" id="kgdt.hpp::user_DS_a137b4628cf352225e57720432f2db487" ref="d9/dc6/a18425.html#a137b4628cf352225e57720432f2db487"/>
+<keyword name="user_DS_selector()" id="kgdt.hpp::user_DS_selector_a95dcc3ea7fb0310df8f2ab457deca483" ref="d9/dc6/a18425.html#a95dcc3ea7fb0310df8f2ab457deca483"/>
+<keyword name="vgaDataPort(0x3D5)" id="kiostream.cpp::vgaDataPort_a32de8112c133d2f05cae84bde7d98239" ref="dc/df9/a18326.html#a32de8112c133d2f05cae84bde7d98239"/>
+<keyword name="vgaIndexPort(0x3D4)" id="kiostream.cpp::vgaIndexPort_a0cece8394c6a6dedd523238e9057125f" ref="dc/df9/a18326.html#a0cece8394c6a6dedd523238e9057125f"/>
+<keyword name="~GDT()" id="kgdt.hpp::~GDT_ab808423f6529092dc90fcb7836fe024a" ref="d9/dc6/a18425.html#ab808423f6529092dc90fcb7836fe024a"/>
+<keyword name="~GDT_row()" id="kgdt.hpp::~GDT_row_a5322ab07a139d8ae6f9c518b288bde15" ref="d9/dc6/a18425.html#a5322ab07a139d8ae6f9c518b288bde15"/>
+<keyword name="~IDT_row()" id="kinterrupt.hpp::~IDT_row_a3fe23003c5b71fa3b47543c074c38ac3" ref="d5/d65/a18407.html#a3fe23003c5b71fa3b47543c074c38ac3"/>
+</keywords>
+<files>
+<file>annotated.html</file>
+<file>bc_s.png</file>
+<file>bc_sd.png</file>
+<file>classes.html</file>
+<file>closed.png</file>
+<file>d0/d04/a19255.html</file>
+<file>d0/d04/a19255_adbb4c4e2814b335579119c324313f652_cgraph.png</file>
+<file>d0/d04/a19255_ae860a16e70322e5c4bb01e1108e50bb1_cgraph.png</file>
+<file>d0/d06/a18402.pdf</file>
+<file>d0/d06/a18402.png</file>
+<file>d0/d43/a18411.pdf</file>
+<file>d0/d43/a18411.png</file>
+<file>d0/d4e/a19250.pdf</file>
+<file>d0/d4e/a19250.png</file>
+<file>d0/d56/a19348.html</file>
+<file>d0/d72/a19315.html</file>
+<file>d0/d72/a19315_a28547100b7420e1f73b745df873cd411_icgraph.png</file>
+<file>d0/d87/a19308.html</file>
+<file>d0/d95/a19356.html</file>
+<file>d0/db0/a19332.html</file>
+<file>d0/dcf/a19316.html</file>
+<file>d0/dcf/a19343.html</file>
+<file>d0/dcf/a19343_aa89d41d69840cb4f1c8692fa6ded28f4_icgraph.png</file>
+<file>d0/dd0/a18332.html</file>
+<file>d0/dd0/a18332_source.html</file>
+<file>d1/d20/a18412.pdf</file>
+<file>d1/d20/a18412.png</file>
+<file>d1/d22/a18432.html</file>
+<file>d1/d22/a18432_a02923caa95013ec5d9333c25d9cca1d6_icgraph.png</file>
+<file>d1/d22/a18432_a45ee52b918a784ff0e96e7c8917a91d9_cgraph.png</file>
+<file>d1/d22/a18432_a45ee52b918a784ff0e96e7c8917a91d9_icgraph.png</file>
+<file>d1/d22/a18432_a4b31902bf2cff8ff28405aa57d9f4575_cgraph.png</file>
+<file>d1/d22/a18432_a4b31902bf2cff8ff28405aa57d9f4575_icgraph.png</file>
+<file>d1/d22/a18432_a53c6425a55d9fb93998da01f2416f9ad_cgraph.png</file>
+<file>d1/d22/a18432_a8ca6648639f335b207c748074dcf9f25_cgraph.png</file>
+<file>d1/d22/a18432_a8ca6648639f335b207c748074dcf9f25_icgraph.png</file>
+<file>d1/d22/a18432_a9d1f0f838e646660db6d9284725c2b4c_cgraph.png</file>
+<file>d1/d22/a18432_a9d1f0f838e646660db6d9284725c2b4c_icgraph.png</file>
+<file>d1/d33/a18419.html</file>
+<file>d1/d33/a18419_source.html</file>
+<file>d1/d5c/a19358.pdf</file>
+<file>d1/d5c/a19358.png</file>
+<file>d1/d67/a19261.pdf</file>
+<file>d1/d67/a19261.png</file>
+<file>d1/d6f/a19349.pdf</file>
+<file>d1/d6f/a19349.png</file>
+<file>d1/d88/a19337.pdf</file>
+<file>d1/d88/a19337.png</file>
+<file>d1/d8f/a19293.pdf</file>
+<file>d1/d8f/a19293.png</file>
+<file>d1/db0/a18347.html</file>
+<file>d1/db0/a18347_source.html</file>
+<file>d1/dcc/a19354.pdf</file>
+<file>d1/dcc/a19354.png</file>
+<file>d1/df9/a18363.pdf</file>
+<file>d1/df9/a18363.png</file>
+<file>d2/d03/a19340.html</file>
+<file>d2/d18/a18416.html</file>
+<file>d2/d18/a18416_source.html</file>
+<file>d2/d7a/a18434.html</file>
+<file>d2/d7a/a18434_a098e7240e26e869c035075be004b4ee9_icgraph.png</file>
+<file>d2/d7a/a18434_a433c3d2d19d89890b522ac26b05fa7aa_icgraph.png</file>
+<file>d2/d7b/a18401.html</file>
+<file>d2/d7b/a18401_source.html</file>
+<file>d2/d83/a18324.pdf</file>
+<file>d2/d83/a18324.png</file>
+<file>d2/dba/a18362.html</file>
+<file>d2/dba/a18362_abb4e4866092116b520310d61961bfe12_cgraph.png</file>
+<file>d2/dba/a18362_source.html</file>
+<file>d2/df0/a19737.pdf</file>
+<file>d2/df0/a19737.png</file>
+<file>d3/d0a/a19325.pdf</file>
+<file>d3/d0a/a19325.png</file>
+<file>d3/d1d/a18427.pdf</file>
+<file>d3/d1d/a18427.png</file>
+<file>d3/d36/a19357.pdf</file>
+<file>d3/d36/a19357.png</file>
+<file>d3/d37/a19311.html</file>
+<file>d3/d37/a19311_a05b071d8a8c12f2d284fb61f4ecd116e_icgraph.png</file>
+<file>d3/d37/a19311_ab8bd89b91ea49f343276c3c841153cd8_icgraph.png</file>
+<file>d3/d48/a19336.html</file>
+<file>d3/d5b/a19355.html</file>
+<file>d3/d5d/a18333.pdf</file>
+<file>d3/d5d/a18333.png</file>
+<file>d3/d63/a18404.html</file>
+<file>d3/d63/a18404_source.html</file>
+<file>d3/d8c/a19335.html</file>
+<file>d3/d8c/a19335_a2ae998750fc1e18e6778e92774bd3574_cgraph.png</file>
+<file>d3/d8c/a19335_a2ae998750fc1e18e6778e92774bd3574_icgraph.png</file>
+<file>d3/d8c/a19335_a89a8d2c17e3c22e7200bff09252f46e1_icgraph.png</file>
+<file>d3/d8c/a19335_a9c89bddfdb21d5cc09c1d82411982de9_cgraph.png</file>
+<file>d3/d8c/a19335_af8e3c1da270077eb7cc6551b35c0e5ca_cgraph.png</file>
+<file>d3/d8c/a19335_af8e3c1da270077eb7cc6551b35c0e5ca_icgraph.png</file>
+<file>d3/d9f/a19269.pdf</file>
+<file>d3/d9f/a19269.png</file>
+<file>d3/ded/a18348.pdf</file>
+<file>d3/ded/a18348.png</file>
+<file>d4/d06/a18341.html</file>
+<file>d4/d06/a18341_source.html</file>
+<file>d4/d0a/a19745.pdf</file>
+<file>d4/d0a/a19745.png</file>
+<file>d4/d1e/a19251.html</file>
+<file>d4/d1e/a19251_af82a0bd16f995dd285d4f7822117377c_cgraph.png</file>
+<file>d4/d22/a18413.html</file>
+<file>d4/d22/a18413_source.html</file>
+<file>d4/df6/a19253.pdf</file>
+<file>d4/df6/a19253.png</file>
+<file>d5/d17/a19323.html</file>
+<file>d5/d17/a19323_a68f635b3b65f927d37d4e0835f7e0b30_icgraph.png</file>
+<file>d5/d65/a18407.html</file>
+<file>d5/d65/a18407_a07e074bde074261858311b014bc2b398_icgraph.png</file>
+<file>d5/d65/a18407_a6498ed740318b424aaae4db1f223e558_icgraph.png</file>
+<file>d5/d65/a18407_a996c60cc7e88bb1c85505c19f6c35117_icgraph.png</file>
+<file>d5/d65/a18407_adf60fad10b12cc19ad193c928d36445c_icgraph.png</file>
+<file>d5/d65/a18407_source.html</file>
+<file>d5/db7/a18414.pdf</file>
+<file>d5/db7/a18414.png</file>
+<file>d5/db9/a19326.pdf</file>
+<file>d5/db9/a19326.png</file>
+<file>d5/dca/a19362.pdf</file>
+<file>d5/dca/a19362.png</file>
+<file>d5/dd9/a18408.pdf</file>
+<file>d5/dd9/a18408.png</file>
+<file>d6/d23/a18435.html</file>
+<file>d6/d50/a18423.pdf</file>
+<file>d6/d50/a18423.png</file>
+<file>d6/d68/a19360.html</file>
+<file>d6/d71/a19345.pdf</file>
+<file>d6/d71/a19345.png</file>
+<file>d6/dad/a19305.pdf</file>
+<file>d6/dad/a19305.png</file>
+<file>d6/dbf/a18417.pdf</file>
+<file>d6/dbf/a18417.png</file>
+<file>d6/de7/a18418.pdf</file>
+<file>d6/de7/a18418.png</file>
+<file>d6/df7/a19329.pdf</file>
+<file>d6/df7/a19329.png</file>
+<file>d7/d2b/a19265.pdf</file>
+<file>d7/d2b/a19265.png</file>
+<file>d7/d5c/a19339.html</file>
+<file>d7/d8c/a19347.html</file>
+<file>d7/d92/a19304.html</file>
+<file>d7/d96/a18400.pdf</file>
+<file>d7/d96/a18400.png</file>
+<file>d8/d0c/a19321.pdf</file>
+<file>d8/d0c/a19321.png</file>
+<file>d8/d2a/a18351.pdf</file>
+<file>d8/d2a/a18351.png</file>
+<file>d8/d2a/a19371.html</file>
+<file>d8/d2a/a19749.pdf</file>
+<file>d8/d2a/a19749.png</file>
+<file>d8/d68/a19341.pdf</file>
+<file>d8/d68/a19341.png</file>
+<file>d8/d76/a18421.pdf</file>
+<file>d8/d76/a18421.png</file>
+<file>d8/d85/a19309.pdf</file>
+<file>d8/d85/a19309.png</file>
+<file>d8/da8/a18342.pdf</file>
+<file>d8/da8/a18342.png</file>
+<file>d8/daa/a19320.html</file>
+<file>d8/dca/a19289.pdf</file>
+<file>d8/dca/a19289.png</file>
+<file>d8/dd1/a18409.pdf</file>
+<file>d8/dd1/a18409.png</file>
+<file>d8/ddb/a18424.pdf</file>
+<file>d8/ddb/a18424.png</file>
+<file>d8/dec/a19328.html</file>
+<file>d8/dfd/a18406.pdf</file>
+<file>d8/dfd/a18406.png</file>
+<file>d9/d0b/a19359.html</file>
+<file>d9/d0b/a19359_a523b6a757b27418dc015ed13e74bef60_icgraph.png</file>
+<file>d9/d0b/a19359_ae8688251b574c3fd335b99f7e93fff2d_icgraph.png</file>
+<file>d9/d0e/a19318.pdf</file>
+<file>d9/d0e/a19318.png</file>
+<file>d9/d32/a19741.pdf</file>
+<file>d9/d32/a19741.png</file>
+<file>d9/d8f/a18415.pdf</file>
+<file>d9/d8f/a18415.png</file>
+<file>d9/d99/a19351.html</file>
+<file>d9/d99/a19351_a1ab5b6378071338ede295f0bffaf3d51_cgraph.png</file>
+<file>d9/d99/a19351_a1ab5b6378071338ede295f0bffaf3d51_icgraph.png</file>
+<file>d9/d99/a19351_a2d3ef1656e1eaaf86be40a200a49a4b2_cgraph.png</file>
+<file>d9/d99/a19351_a81d593116320da32f1aa4057087f1e11_cgraph.png</file>
+<file>d9/d99/a19351_a81d593116320da32f1aa4057087f1e11_icgraph.png</file>
+<file>d9/d99/a19351_a9451566bf08617378ca2144505d394a6_cgraph.png</file>
+<file>d9/d99/a19351_aac20f3a896bea512413568a60ad48c3d_cgraph.png</file>
+<file>d9/d99/a19351_ad8a6f694662a3a36ba9353197e20c1b1_cgraph.png</file>
+<file>d9/d99/a19351_ad8a6f694662a3a36ba9353197e20c1b1_icgraph.png</file>
+<file>d9/d99/a19351_aec70c703cac64ef1eec4b5a94d2e145c_cgraph.png</file>
+<file>d9/dc6/a18425.html</file>
+<file>d9/dc6/a18425_source.html</file>
+<file>d9/ddb/a19313.pdf</file>
+<file>d9/ddb/a19313.png</file>
+<file>d9/df6/a18405.pdf</file>
+<file>d9/df6/a18405.png</file>
+<file>da/d00/a19368.html</file>
+<file>da/d3c/a19324.html</file>
+<file>da/da4/a19369.pdf</file>
+<file>da/da4/a19369.png</file>
+<file>da/dae/a19312.html</file>
+<file>da/dea/a19327.html</file>
+<file>da/dea/a19327_a1a2a455ca7146dea3148afa8cb6c9ed5_icgraph.png</file>
+<file>da/dea/a19327_a1b2f08490b7954e5ca504cd8bb6862c0_cgraph.png</file>
+<file>da/dea/a19327_a446769df0b3b537a525476c7c8be47bc_cgraph.png</file>
+<file>da/df2/a18338.html</file>
+<file>da/df2/a18338_source.html</file>
+<file>darkmode_toggle.js</file>
+<file>db/d57/a19254.pdf</file>
+<file>db/d57/a19254.png</file>
+<file>db/d8a/a18327.pdf</file>
+<file>db/d8a/a18327.png</file>
+<file>db/d8c/a18323.html</file>
+<file>db/d8c/a18323_source.html</file>
+<file>db/d9c/a18345.pdf</file>
+<file>db/d9c/a18345.png</file>
+<file>db/daa/a19344.html</file>
+<file>dc/d06/a19314.pdf</file>
+<file>dc/d06/a19314.png</file>
+<file>dc/d16/a18410.html</file>
+<file>dc/d16/a18410_source.html</file>
+<file>dc/d1b/a19248.html</file>
+<file>dc/d37/a19307.html</file>
+<file>dc/d7c/a19319.html</file>
+<file>dc/d7c/a19319_a248fa0da9acac54a3a8880c7b66b3f2b_cgraph.png</file>
+<file>dc/d7c/a19319_a58553d39d7dcfe6b55e8ddb1e7b1d187_cgraph.png</file>
+<file>dc/da5/a19363.html</file>
+<file>dc/dcc/a18350.html</file>
+<file>dc/dcc/a18350_source.html</file>
+<file>dc/de4/a18422.html</file>
+<file>dc/de4/a18422_source.html</file>
+<file>dc/dea/a19317.pdf</file>
+<file>dc/dea/a19317.png</file>
+<file>dc/df9/a18326.html</file>
+<file>dc/df9/a18326_a14bf754296559bf0266e127e677e8107_cgraph.png</file>
+<file>dc/df9/a18326_a14bf754296559bf0266e127e677e8107_icgraph.png</file>
+<file>dc/df9/a18326_a6bd99ada5f7c46567ee0ceca6c369d47_cgraph.png</file>
+<file>dc/df9/a18326_a6bd99ada5f7c46567ee0ceca6c369d47_icgraph.png</file>
+<file>dc/df9/a18326_a913f40d6652965fdd1e34a04ab7dba2d_icgraph.png</file>
+<file>dc/df9/a18326_a91bacd34c601c4cfe39f1ffa6c2a1385_icgraph.png</file>
+<file>dc/df9/a18326_aab6eb585b409591414f84a1e3f606345_cgraph.png</file>
+<file>dc/df9/a18326_aab6eb585b409591414f84a1e3f606345_icgraph.png</file>
+<file>dc/df9/a18326_af382674e4c9fb57a14b178d4ee12273a_cgraph.png</file>
+<file>dc/df9/a18326_af382674e4c9fb57a14b178d4ee12273a_icgraph.png</file>
+<file>dc/df9/a18326_source.html</file>
+<file>dd/d0c/a18353.html</file>
+<file>dd/d22/a18335.html</file>
+<file>dd/d22/a18335_source.html</file>
+<file>dd/d59/a19252.html</file>
+<file>dd/d6a/a19367.html</file>
+<file>dd/d85/a19370.pdf</file>
+<file>dd/d85/a19370.png</file>
+<file>dd/da0/a19331.html</file>
+<file>dd/db8/a19297.pdf</file>
+<file>dd/db8/a19297.png</file>
+<file>dd/dba/a19322.pdf</file>
+<file>dd/dba/a19322.png</file>
+<file>dd/dbd/a19353.pdf</file>
+<file>dd/dbd/a19353.png</file>
+<file>dd/dbf/a19352.html</file>
+<file>dd/dd1/a18339.pdf</file>
+<file>dd/dd1/a18339.png</file>
+<file>dd/dd2/a19365.pdf</file>
+<file>dd/dd2/a19365.png</file>
+<file>dd/dd9/a19361.pdf</file>
+<file>dd/dd9/a19361.png</file>
+<file>de/d0e/a18398.html</file>
+<file>de/d0e/a18398_source.html</file>
+<file>de/d1b/a19306.pdf</file>
+<file>de/d1b/a19306.png</file>
+<file>de/d23/a19366.pdf</file>
+<file>de/d23/a19366.png</file>
+<file>de/d4d/a19364.html</file>
+<file>de/d62/a18433.html</file>
+<file>de/d7b/a19301.pdf</file>
+<file>de/d7b/a19301.png</file>
+<file>de/d7c/a19249.pdf</file>
+<file>de/d7c/a19249.png</file>
+<file>de/d7e/a19333.pdf</file>
+<file>de/d7e/a19333.png</file>
+<file>de/d94/a18403.pdf</file>
+<file>de/d94/a18403.png</file>
+<file>de/d9a/a18426.pdf</file>
+<file>de/d9a/a18426.png</file>
+<file>df/d41/a19342.pdf</file>
+<file>df/d41/a19342.png</file>
+<file>df/d80/a19257.pdf</file>
+<file>df/d80/a19257.png</file>
+<file>df/dbe/a18336.pdf</file>
+<file>df/dbe/a18336.png</file>
+<file>df/ded/a18344.html</file>
+<file>df/ded/a18344_source.html</file>
+<file>dir_000000_000006.html</file>
+<file>dir_000001_000009.html</file>
+<file>dir_000002_000000.html</file>
+<file>dir_000002_000006.html</file>
+<file>dir_000003_000009.html</file>
+<file>dir_000004_000000.html</file>
+<file>dir_000005_000009.html</file>
+<file>dir_000006_000000.html</file>
+<file>dir_000006_000004.html</file>
+<file>dir_000007_000009.html</file>
+<file>dir_000008_000009.html</file>
+<file>dir_1a23d90a90b116220e4c9c5e74cdbcbc.html</file>
+<file>dir_1a23d90a90b116220e4c9c5e74cdbcbc_dep.pdf</file>
+<file>dir_1a23d90a90b116220e4c9c5e74cdbcbc_dep.png</file>
+<file>dir_2a16165def8352030967ba4cc3f6fbb5.html</file>
+<file>dir_2a16165def8352030967ba4cc3f6fbb5_dep.pdf</file>
+<file>dir_2a16165def8352030967ba4cc3f6fbb5_dep.png</file>
+<file>dir_307d8ab59745c14449bc3f31f9f132b2.html</file>
+<file>dir_307d8ab59745c14449bc3f31f9f132b2_dep.pdf</file>
+<file>dir_307d8ab59745c14449bc3f31f9f132b2_dep.png</file>
+<file>dir_505766543fcc8e90c13299eca156d2a2.html</file>
+<file>dir_505766543fcc8e90c13299eca156d2a2_dep.pdf</file>
+<file>dir_505766543fcc8e90c13299eca156d2a2_dep.png</file>
+<file>dir_531da62a4fcf97761a044fe35931416b.html</file>
+<file>dir_531da62a4fcf97761a044fe35931416b_dep.pdf</file>
+<file>dir_531da62a4fcf97761a044fe35931416b_dep.png</file>
+<file>dir_53afcd4fba698aab0c6227766ed2d23a.html</file>
+<file>dir_53afcd4fba698aab0c6227766ed2d23a_dep.pdf</file>
+<file>dir_53afcd4fba698aab0c6227766ed2d23a_dep.png</file>
+<file>dir_72b26adc0987810216370bc6a776b23e.html</file>
+<file>dir_72b26adc0987810216370bc6a776b23e_dep.pdf</file>
+<file>dir_72b26adc0987810216370bc6a776b23e_dep.png</file>
+<file>dir_7e9b38ff86f40c049b6923d6e5368e6c.html</file>
+<file>dir_7e9b38ff86f40c049b6923d6e5368e6c_dep.pdf</file>
+<file>dir_7e9b38ff86f40c049b6923d6e5368e6c_dep.png</file>
+<file>dir_8d71b6a3da26db487d68cf8b27265d88.html</file>
+<file>dir_8d71b6a3da26db487d68cf8b27265d88_dep.pdf</file>
+<file>dir_8d71b6a3da26db487d68cf8b27265d88_dep.png</file>
+<file>dir_c2bb8e66a15659afc0e54f8e919ef455.html</file>
+<file>dir_c2bb8e66a15659afc0e54f8e919ef455_dep.pdf</file>
+<file>dir_c2bb8e66a15659afc0e54f8e919ef455_dep.png</file>
+<file>dir_d52aa9bb707950f8d968213103b69dbf.html</file>
+<file>dir_d52aa9bb707950f8d968213103b69dbf_dep.pdf</file>
+<file>dir_d52aa9bb707950f8d968213103b69dbf_dep.png</file>
+<file>doxygen.css</file>
+<file>doxygen.svg</file>
+<file>dynsections.js</file>
+<file>files.html</file>
+<file>functions.html</file>
+<file>functions_a.html</file>
+<file>functions_b.html</file>
+<file>functions_c.html</file>
+<file>functions_d.html</file>
+<file>functions_e.html</file>
+<file>functions_f.html</file>
+<file>functions_func.html</file>
+<file>functions_g.html</file>
+<file>functions_h.html</file>
+<file>functions_i.html</file>
+<file>functions_k.html</file>
+<file>functions_l.html</file>
+<file>functions_m.html</file>
+<file>functions_n.html</file>
+<file>functions_o.html</file>
+<file>functions_p.html</file>
+<file>functions_r.html</file>
+<file>functions_s.html</file>
+<file>functions_t.html</file>
+<file>functions_u.html</file>
+<file>functions_v.html</file>
+<file>functions_vars.html</file>
+<file>functions_w.html</file>
+<file>functions_~.html</file>
+<file>globals.html</file>
+<file>globals_defs.html</file>
+<file>globals_func.html</file>
+<file>globals_type.html</file>
+<file>globals_vars.html</file>
+<file>graph_legend.html</file>
+<file>graph_legend.png</file>
+<file>hierarchy.html</file>
+<file>index.html</file>
+<file>inherit_graph_0.png</file>
+<file>inherit_graph_1.png</file>
+<file>inherit_graph_10.png</file>
+<file>inherit_graph_11.png</file>
+<file>inherit_graph_12.png</file>
+<file>inherit_graph_13.png</file>
+<file>inherit_graph_14.png</file>
+<file>inherit_graph_15.png</file>
+<file>inherit_graph_16.png</file>
+<file>inherit_graph_17.png</file>
+<file>inherit_graph_18.png</file>
+<file>inherit_graph_19.png</file>
+<file>inherit_graph_2.png</file>
+<file>inherit_graph_20.png</file>
+<file>inherit_graph_21.png</file>
+<file>inherit_graph_3.png</file>
+<file>inherit_graph_4.png</file>
+<file>inherit_graph_5.png</file>
+<file>inherit_graph_6.png</file>
+<file>inherit_graph_7.png</file>
+<file>inherit_graph_8.png</file>
+<file>inherit_graph_9.png</file>
+<file>inherits.html</file>
+<file>jquery.js</file>
+<file>mainpage.html</file>
+<file>namespacemembers.html</file>
+<file>namespacemembers_func.html</file>
+<file>namespacemembers_vars.html</file>
+<file>namespaces.html</file>
+<file>nav_f.png</file>
+<file>nav_fd.png</file>
+<file>nav_g.png</file>
+<file>nav_h.png</file>
+<file>nav_hd.png</file>
+<file>open.png</file>
+<file>search/close.svg</file>
+<file>search/mag.svg</file>
+<file>search/mag_d.svg</file>
+<file>search/mag_sel.svg</file>
+<file>search/mag_seld.svg</file>
+<file>search/search.css</file>
+<file>splitbar.png</file>
+<file>splitbard.png</file>
+<file>sync_off.png</file>
+<file>sync_on.png</file>
+<file>tab_a.png</file>
+<file>tab_ad.png</file>
+<file>tab_b.png</file>
+<file>tab_bd.png</file>
+<file>tab_h.png</file>
+<file>tab_hd.png</file>
+<file>tab_s.png</file>
+<file>tab_sd.png</file>
+<file>tabs.css</file>
+</files>
+</filterSection>
+</QtHelpProject>

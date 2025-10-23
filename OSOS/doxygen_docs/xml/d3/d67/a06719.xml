@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d3/d67/a06719" kind="namespace" language="C++">
+    <compoundname>essential</compoundname>
+    <innerclass refid="d0/ddf/a07624" prot="public">essential::atexit_func_entry_t</innerclass>
+    <innerclass refid="d1/d36/a07620" prot="public">essential::GDT</innerclass>
+    <innerclass refid="d7/d0d/a07616" prot="public">essential::GDT_row</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d3/d67/a06719_1a52e3ec8c29cc4bb68f65445749f0bfdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="d7/d0d/a07616" kindref="compound">essential::GDT_row</ref></type>
+        <definition>class essential::GDT essential::__attribute__</definition>
+        <argsstring>((packed))</argsstring>
+        <name>__attribute__</name>
+        <qualifiedname>essential::__attribute__</qualifiedname>
+        <param>
+          <type>(packed)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/essential/kgdt.hpp" line="1" column="0" declfile="libk_header/essential/kgdt.hpp" declline="1" declcolumn="0"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d67/a06719_1a433c3d2d19d89890b522ac26b05fa7aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void essential::__callConstructors</definition>
+        <argsstring>()</argsstring>
+        <name>__callConstructors</name>
+        <qualifiedname>essential::__callConstructors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/essential/kicxxabi.hpp" line="19" column="14" bodyfile="libk_src/essential/kicxxabi.cpp" bodystart="6" bodyend="11" declfile="libk_header/essential/kicxxabi.hpp" declline="19" declcolumn="14"/>
+        <references refid="db/deb/a06635_1a9a50b36f9886cd6bdbe05a5a6639cd95" compoundref="db/deb/a06635" startline="5">ctors_end</references>
+        <references refid="db/deb/a06635_1a201d805094c80d48f8ee4e49ee85fb74" compoundref="db/deb/a06635" startline="4">ctors_start</references>
+        <referencedby refid="d8/d17/a06647_1abb4e4866092116b520310d61961bfe12" compoundref="d8/d17/a06647" startline="85" endline="122">kernelMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/d67/a06719_1a098e7240e26e869c035075be004b4ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void essential::__cxa_finalize</definition>
+        <argsstring>(void *f)</argsstring>
+        <name>__cxa_finalize</name>
+        <qualifiedname>essential::__cxa_finalize</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/essential/kicxxabi.hpp" line="18" column="14" bodyfile="libk_src/essential/kicxxabi.cpp" bodystart="40" bodyend="117" declfile="libk_header/essential/kicxxabi.hpp" declline="18" declcolumn="14"/>
+        <references refid="db/deb/a06635_1a0f75f529cf75cf0a9cd266f8d67675dc" compoundref="db/deb/a06635" startline="25">__atexit_func_count</references>
+        <references refid="db/deb/a06635_1a05a64060e9039acf0ba3c311b2d981b7" compoundref="db/deb/a06635" startline="24">__atexit_funcs</references>
+        <references refid="d0/ddf/a07624_1a665175c477008154e9b40ef96a8d81c2" compoundref="d3/d06/a06707" startline="14">essential::atexit_func_entry_t::destructor_func</references>
+        <referencedby refid="d8/d17/a06647_1abb4e4866092116b520310d61961bfe12" compoundref="d8/d17/a06647" startline="85" endline="122">kernelMain</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libk_header/essential/kgdt.hpp" line="33" column="5"/>
+  </compounddef>
+</doxygen>

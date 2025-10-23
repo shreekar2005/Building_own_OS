@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dd/dc2/a16941" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>driver::MouseEventHandler</compoundname>
+    <derivedcompoundref refid="df/d9a/a16873" prot="public" virt="non-virtual">MouseEventHandler_for_kernel</derivedcompoundref>
+    <includes refid="d5/d77/a16034" local="yes">kmouse.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/dc2/a16941_1aa0fd3739c52bcd4d553cefaf41760a9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::MouseEventHandler::MouseEventHandler</definition>
+        <argsstring>()</argsstring>
+        <name>MouseEventHandler</name>
+        <qualifiedname>driver::MouseEventHandler::MouseEventHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="31" column="17" bodyfile="libk_src/driver/kmouse.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc2/a16941_1abbfe4a7ae2911f989513178530314211" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>driver::MouseEventHandler::~MouseEventHandler</definition>
+        <argsstring>()</argsstring>
+        <name>~MouseEventHandler</name>
+        <qualifiedname>driver::MouseEventHandler::~MouseEventHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="32" column="25" bodyfile="libk_src/driver/kmouse.cpp" bodystart="6" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc2/a16941_1a2f12c5f63356c3045fd6cb46fd89374f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void driver::MouseEventHandler::onMouseDown</definition>
+        <argsstring>(uint8_t button)=0</argsstring>
+        <name>onMouseDown</name>
+        <qualifiedname>driver::MouseEventHandler::onMouseDown</qualifiedname>
+        <reimplementedby refid="df/d9a/a16873_1ae860a16e70322e5c4bb01e1108e50bb1">onMouseDown</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="33" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc2/a16941_1a68f635b3b65f927d37d4e0835f7e0b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void driver::MouseEventHandler::onMouseMove</definition>
+        <argsstring>(int8_t delta_x, int8_t delta_y)=0</argsstring>
+        <name>onMouseMove</name>
+        <qualifiedname>driver::MouseEventHandler::onMouseMove</qualifiedname>
+        <reimplementedby refid="df/d9a/a16873_1adbb4c4e2814b335579119c324313f652">onMouseMove</reimplementedby>
+        <param>
+          <type>int8_t</type>
+          <declname>delta_x</declname>
+        </param>
+        <param>
+          <type>int8_t</type>
+          <declname>delta_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="36" column="30"/>
+        <referencedby refid="d7/d0c/a16945_1a1b2f08490b7954e5ca504cd8bb6862c0" compoundref="db/d87/a15992" startline="32" endline="68">driver::MouseDriver::handleInterrupt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/dc2/a16941_1a09b77fe86bfa79313b5c5b91d09eb514" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void driver::MouseEventHandler::onMouseUp</definition>
+        <argsstring>(uint8_t button)=0</argsstring>
+        <name>onMouseUp</name>
+        <qualifiedname>driver::MouseEventHandler::onMouseUp</qualifiedname>
+        <reimplementedby refid="df/d9a/a16873_1afca536c2187a65da265daa2d2af75d4d">onMouseUp</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kmouse.hpp" line="35" column="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MouseEventHandler_for_kernel</label>
+        <link refid="df/d9a/a16873"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>driver::MouseEventHandler</label>
+        <link refid="dd/dc2/a16941"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>driver::MouseEventHandler</label>
+        <link refid="dd/dc2/a16941"/>
+      </node>
+    </collaborationgraph>
+    <location file="libk_header/driver/kmouse.hpp" line="29" column="9" bodyfile="libk_header/driver/kmouse.hpp" bodystart="29" bodyend="37"/>
+    <listofallmembers>
+      <member refid="dd/dc2/a16941_1aa0fd3739c52bcd4d553cefaf41760a9b" prot="public" virt="non-virtual"><scope>driver::MouseEventHandler</scope><name>MouseEventHandler</name></member>
+      <member refid="dd/dc2/a16941_1a2f12c5f63356c3045fd6cb46fd89374f" prot="public" virt="pure-virtual"><scope>driver::MouseEventHandler</scope><name>onMouseDown</name></member>
+      <member refid="dd/dc2/a16941_1a68f635b3b65f927d37d4e0835f7e0b30" prot="public" virt="pure-virtual"><scope>driver::MouseEventHandler</scope><name>onMouseMove</name></member>
+      <member refid="dd/dc2/a16941_1a09b77fe86bfa79313b5c5b91d09eb514" prot="public" virt="pure-virtual"><scope>driver::MouseEventHandler</scope><name>onMouseUp</name></member>
+      <member refid="dd/dc2/a16941_1abbfe4a7ae2911f989513178530314211" prot="public" virt="virtual"><scope>driver::MouseEventHandler</scope><name>~MouseEventHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

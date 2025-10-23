@@ -1,4 +1,4 @@
-#include "hardware_communication/kinterrupt"
+#include "hardware_communication/kinterrupt.hpp"
 
 // Global pointer to the active interrupt manager instance
 // This allows our static C-style handlers to access the C++ object.

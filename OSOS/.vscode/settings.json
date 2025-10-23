@@ -3,8 +3,5 @@
     "code-runner.cwd": "${workspaceFolder}",
     "code-runner.executorMap": {
         "cpp": "make clear && make qemu_elf"
-    },
-    "files.associations": {
-        "multiboot": "cpp"
     }
 }

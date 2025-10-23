@@ -1,0 +1,1073 @@
+<toc label="OSOS - 32-bit Operating System" topic="index.html">
+  <topic label="OSOS - 32-bit Operating System Documentation" href="index.html"/>
+  <topic label="Namespaces" href="namespaces.html">
+    <topic label="Namespace List" href="namespaces.html">
+      <topic label="basic" href="d1/d22/a18432.html">
+        <topic label="__clearScreen" href="d1/d22/a18432.html#a02923caa95013ec5d9333c25d9cca1d6"/>
+        <topic label="__printMemoryMap" href="d1/d22/a18432.html#a53c6425a55d9fb93998da01f2416f9ad"/>
+        <topic label="disable_cursor" href="d1/d22/a18432.html#a4b31902bf2cff8ff28405aa57d9f4575"/>
+        <topic label="enable_cursor" href="d1/d22/a18432.html#a8ca6648639f335b207c748074dcf9f25"/>
+        <topic label="printf" href="d1/d22/a18432.html#a45ee52b918a784ff0e96e7c8917a91d9"/>
+        <topic label="update_cursor" href="d1/d22/a18432.html#a9d1f0f838e646660db6d9284725c2b4c"/>
+      </topic>
+      <topic label="driver" href="de/d62/a18433.html">
+        <topic label="Driver" href="dc/d37/a19307.html">
+          <topic label="Driver" href="dc/d37/a19307.html#a7de0c11fff1dc1f5d004b2a76e840840"/>
+          <topic label="~Driver" href="dc/d37/a19307.html#aacc7524b989c2561147c5dd0b901381c"/>
+          <topic label="activate" href="dc/d37/a19307.html#a8c86c1e52652d8b491d37a3b60b535b0"/>
+          <topic label="deactivate" href="dc/d37/a19307.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1"/>
+          <topic label="reset" href="dc/d37/a19307.html#a98d2e779c02364fc58c172d0d2a32bdd"/>
+        </topic>
+        <topic label="DriverManager" href="d3/d37/a19311.html">
+          <topic label="DriverManager" href="d3/d37/a19311.html#af3bed49a4b243c2f65d09c35db15158b"/>
+          <topic label="~DriverManager" href="d3/d37/a19311.html#a29731c1f4b1215fd5c4ab27624ae6563"/>
+          <topic label="activateAll" href="d3/d37/a19311.html#a05b071d8a8c12f2d284fb61f4ecd116e"/>
+          <topic label="addDriver" href="d3/d37/a19311.html#ab8bd89b91ea49f343276c3c841153cd8"/>
+          <topic label="drivers" href="d3/d37/a19311.html#acdf43f6340b26ad2d9b9c90d8974b370"/>
+          <topic label="numDrivers" href="d3/d37/a19311.html#a347286da44d912bba3f720d8b0600946"/>
+        </topic>
+        <topic label="KeyboardDriver" href="dc/d7c/a19319.html">
+          <topic label="KeyboardDriver" href="dc/d7c/a19319.html#a63898e993f02352193db996d00179347"/>
+          <topic label="~KeyboardDriver" href="dc/d7c/a19319.html#a77da196f3c04c549e1085ce5566e5df3"/>
+          <topic label="activate" href="dc/d7c/a19319.html#a58553d39d7dcfe6b55e8ddb1e7b1d187"/>
+          <topic label="deactivate" href="dc/d7c/a19319.html#aaa7e99b6214dc8439230a95dd57e617e"/>
+          <topic label="handleInterrupt" href="dc/d7c/a19319.html#a248fa0da9acac54a3a8880c7b66b3f2b"/>
+          <topic label="handleInterrupt" href="dc/d7c/a19319.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+          <topic label="reset" href="dc/d7c/a19319.html#a22b7b080ab1c8b0f2ed4beba75b34691"/>
+          <topic label="caps_on" href="dc/d7c/a19319.html#a8a63dbc25a08a75f62ae0674df1deb30"/>
+          <topic label="commandPort" href="dc/d7c/a19319.html#a58fc9113701ffc04637996780c843ff0"/>
+          <topic label="dataPort" href="dc/d7c/a19319.html#afd6cdddb62a2a2d2b31043eb32887b41"/>
+          <topic label="interrupt_manager" href="dc/d7c/a19319.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+          <topic label="interruptNumber" href="dc/d7c/a19319.html#afeede822d3e98957e76e627a54ec2f7a"/>
+          <topic label="keyboardEventHandler" href="dc/d7c/a19319.html#a11ec84b7abf113ec270f124564776e1f"/>
+          <topic label="led_byte_to_send" href="dc/d7c/a19319.html#aed7b5d279f6f1dffee10d5fb92ed6b1c"/>
+          <topic label="shift_pressed" href="dc/d7c/a19319.html#afba07c783deebfb275c1437f7c23601d"/>
+          <topic label="waiting_for_led_ack" href="dc/d7c/a19319.html#a703464394033a8f4f664d9289ae2e9f8"/>
+        </topic>
+        <topic label="KeyboardEventHandler" href="d0/d72/a19315.html">
+          <topic label="KeyboardEventHandler" href="d0/d72/a19315.html#a63ee0249476256e721e05e6375383317"/>
+          <topic label="~KeyboardEventHandler" href="d0/d72/a19315.html#aed6531b818751f0f23b6b9836ac94aa0"/>
+          <topic label="onKeyDown" href="d0/d72/a19315.html#ae2b923ef0eb58e29f57a155debadac6a"/>
+          <topic label="onKeyUp" href="d0/d72/a19315.html#a28547100b7420e1f73b745df873cd411"/>
+        </topic>
+        <topic label="MouseDriver" href="da/dea/a19327.html">
+          <topic label="MouseDriver" href="da/dea/a19327.html#a639956c8ce11d62ee443825e9b9695af"/>
+          <topic label="~MouseDriver" href="da/dea/a19327.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22"/>
+          <topic label="activate" href="da/dea/a19327.html#a446769df0b3b537a525476c7c8be47bc"/>
+          <topic label="deactivate" href="da/dea/a19327.html#a4329c1cdedc72adf0b95cb3911c4acf6"/>
+          <topic label="handleInterrupt" href="da/dea/a19327.html#a1b2f08490b7954e5ca504cd8bb6862c0"/>
+          <topic label="handleInterrupt" href="da/dea/a19327.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+          <topic label="mouse_block_video_mem_value" href="da/dea/a19327.html#a1a2a455ca7146dea3148afa8cb6c9ed5"/>
+          <topic label="reset" href="da/dea/a19327.html#aabe3740996bf70fda96f0a25228954a6"/>
+          <topic label="__mouse_x_" href="da/dea/a19327.html#ac2077f6309c79d5f585fb966b57fe065"/>
+          <topic label="__mouse_y_" href="da/dea/a19327.html#aa02009b37420687ef18db8a05ff9181f"/>
+          <topic label="buffer" href="da/dea/a19327.html#aaa1d55d296d88995ac49a8a9a75a79d4"/>
+          <topic label="buttons" href="da/dea/a19327.html#a7942997bd5ead2767e9627d91789dd70"/>
+          <topic label="commandPort" href="da/dea/a19327.html#a2877a9f46dd83a5f05f17fd83a0a7725"/>
+          <topic label="dataPort" href="da/dea/a19327.html#a8e30a6f6c5839fcf9c3ab63aa167d046"/>
+          <topic label="interrupt_manager" href="da/dea/a19327.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+          <topic label="interruptNumber" href="da/dea/a19327.html#afeede822d3e98957e76e627a54ec2f7a"/>
+          <topic label="mouseEventHandler" href="da/dea/a19327.html#a804f5657a062e0a18f3b56781f884c66"/>
+          <topic label="offset" href="da/dea/a19327.html#a313426dd9aa1af1540cbffc2e77c58c1"/>
+          <topic label="old_char_under_mouse_pointer" href="da/dea/a19327.html#a4a671e7e2b235f6bec473cb960401bd6"/>
+        </topic>
+        <topic label="MouseEventHandler" href="d5/d17/a19323.html">
+          <topic label="MouseEventHandler" href="d5/d17/a19323.html#aa0fd3739c52bcd4d553cefaf41760a9b"/>
+          <topic label="~MouseEventHandler" href="d5/d17/a19323.html#abbfe4a7ae2911f989513178530314211"/>
+          <topic label="onMouseDown" href="d5/d17/a19323.html#a2f12c5f63356c3045fd6cb46fd89374f"/>
+          <topic label="onMouseMove" href="d5/d17/a19323.html#a68f635b3b65f927d37d4e0835f7e0b30"/>
+          <topic label="onMouseUp" href="d5/d17/a19323.html#a09b77fe86bfa79313b5c5b91d09eb514"/>
+        </topic>
+      </topic>
+      <topic label="essential" href="d2/d7a/a18434.html">
+        <topic label="atexit_func_entry_t" href="d7/d5c/a19339.html">
+          <topic label="destructor_func" href="d7/d5c/a19339.html#a665175c477008154e9b40ef96a8d81c2"/>
+          <topic label="dso_handle" href="d7/d5c/a19339.html#a98800f0ffd56e2dc77c46a741e1cf008"/>
+          <topic label="obj_ptr" href="d7/d5c/a19339.html#a24ece443578ebec2449e72e998521a11"/>
+        </topic>
+        <topic label="GDT" href="d3/d8c/a19335.html">
+          <topic label="GDT" href="d3/d8c/a19335.html#aa061ecab5a20a3556413fbbde4fe89d7"/>
+          <topic label="~GDT" href="d3/d8c/a19335.html#a9b61f75de7fa2ffe9589f43c3f6a6a6c"/>
+          <topic label="installTable" href="d3/d8c/a19335.html#af8e3c1da270077eb7cc6551b35c0e5ca"/>
+          <topic label="kernel_CS_selector" href="d3/d8c/a19335.html#a89a8d2c17e3c22e7200bff09252f46e1"/>
+          <topic label="kernel_DS_selector" href="d3/d8c/a19335.html#a34661a528b1630bff806e25411ad6ec3"/>
+          <topic label="printLoadedTable" href="d3/d8c/a19335.html#a9c89bddfdb21d5cc09c1d82411982de9"/>
+          <topic label="printLoadedTableHeader" href="d3/d8c/a19335.html#a2ae998750fc1e18e6778e92774bd3574"/>
+          <topic label="user_CS_selector" href="d3/d8c/a19335.html#a8806a14009c4f0432d4b7043d687be17"/>
+          <topic label="user_DS_selector" href="d3/d8c/a19335.html#a90661f97e9cf214dd6d977b19c01f7fc"/>
+          <topic label="base" href="d3/d8c/a19335.html#ad0a48a89930e6a6c4467c977f4e91269"/>
+          <topic label="kernel_CS" href="d3/d8c/a19335.html#a20d7a6bb352e3f696c1c68bb394766d8"/>
+          <topic label="kernel_DS" href="d3/d8c/a19335.html#ac8a5b4f6a3dc223e2eb6abebe19c9f08"/>
+          <topic label="limit" href="d3/d8c/a19335.html#a4105a25a1ec71dc7e338639bb370c664"/>
+          <topic label="nullSegment" href="d3/d8c/a19335.html#a154c2e2725809d873c8e7d5f19ea66c5"/>
+          <topic label="user_CS" href="d3/d8c/a19335.html#a32508694f9db3188cd4aba126cbfb5bb"/>
+          <topic label="user_DS" href="d3/d8c/a19335.html#a73463d83e2048869692d0adf1acac7a6"/>
+        </topic>
+        <topic label="GDT_row" href="dd/da0/a19331.html">
+          <topic label="GDT_row" href="dd/da0/a19331.html#a5692f86b7ebf4eefdeb78e48f281092b"/>
+          <topic label="GDT_row" href="dd/da0/a19331.html#a27ff8d9a6bf6c2c98cf78a0257e4667e"/>
+          <topic label="~GDT_row" href="dd/da0/a19331.html#a6eb69c55c0bd16040b2d766dd068df31"/>
+          <topic label="GDT" href="dd/da0/a19331.html#a235097b2551abe03269f88341b4bdf87"/>
+          <topic label="access" href="dd/da0/a19331.html#a7f01a0febd325787f1ff47d6a3b668a9"/>
+          <topic label="base_high" href="dd/da0/a19331.html#a2cbd86d4258ecebf7b46cc9bb8611b5b"/>
+          <topic label="base_low" href="dd/da0/a19331.html#a298d18522898ad48c1e05b79f1f4dff7"/>
+          <topic label="base_middle" href="dd/da0/a19331.html#a8429e04bddc6a61c4e95b88901ae219d"/>
+          <topic label="granularity" href="dd/da0/a19331.html#af180a640dbd5213b3f936ff7cf48deaf"/>
+          <topic label="limit_low" href="dd/da0/a19331.html#a2bddbe405dfbbbd101c475bd1bd65112"/>
+        </topic>
+        <topic label="__attribute__" href="d2/d7a/a18434.html#a52e3ec8c29cc4bb68f65445749f0bfdb"/>
+        <topic label="__callConstructors" href="d2/d7a/a18434.html#a433c3d2d19d89890b522ac26b05fa7aa"/>
+        <topic label="__cxa_finalize" href="d2/d7a/a18434.html#a098e7240e26e869c035075be004b4ee9"/>
+      </topic>
+      <topic label="hardware_communication" href="d6/d23/a18435.html">
+        <topic label="IDT_row" href="d7/d8c/a19347.html">
+          <topic label="IDT_row" href="d7/d8c/a19347.html#a5149970639d0f251d529808a192b4b55"/>
+          <topic label="~IDT_row" href="d7/d8c/a19347.html#a9cad760dfa1c1f76f98b6207365f7e2d"/>
+          <topic label="InterruptManager" href="d7/d8c/a19347.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+          <topic label="access" href="d7/d8c/a19347.html#afa706321cb5ba41a6035dbe1ec39c265"/>
+          <topic label="handlerAddressHighbits" href="d7/d8c/a19347.html#af1a4bb042f75f10c5e2b08034e82aed3"/>
+          <topic label="handlerAddressLowbits" href="d7/d8c/a19347.html#a3390e4d53e904d420187ecc0247e9289"/>
+          <topic label="kernelCodeSegmentSelector" href="d7/d8c/a19347.html#a800309c99800063315cddf536a3d0d67"/>
+          <topic label="reserved" href="d7/d8c/a19347.html#a96bce1ce9c6a7e9b5a20607f41a2e876"/>
+        </topic>
+        <topic label="InterruptHandler" href="d0/dcf/a19343.html">
+          <topic label="InterruptHandler" href="d0/dcf/a19343.html#a134c8931dff43e766f1ddc4d0f35cd48"/>
+          <topic label="~InterruptHandler" href="d0/dcf/a19343.html#a5114528f0db9926365b345337e42af9b"/>
+          <topic label="handleInterrupt" href="d0/dcf/a19343.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+          <topic label="interrupt_manager" href="d0/dcf/a19343.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+          <topic label="interruptNumber" href="d0/dcf/a19343.html#afeede822d3e98957e76e627a54ec2f7a"/>
+        </topic>
+        <topic label="InterruptManager" href="d9/d99/a19351.html">
+          <topic label="InterruptManager" href="d9/d99/a19351.html#aec70c703cac64ef1eec4b5a94d2e145c"/>
+          <topic label="~InterruptManager" href="d9/d99/a19351.html#a65276f26b5d5197482a415b83a898560"/>
+          <topic label="activate" href="d9/d99/a19351.html#a1ab5b6378071338ede295f0bffaf3d51"/>
+          <topic label="deactivate" href="d9/d99/a19351.html#a9451566bf08617378ca2144505d394a6"/>
+          <topic label="handleInterrupt" href="d9/d99/a19351.html#a2d3ef1656e1eaaf86be40a200a49a4b2"/>
+          <topic label="installTable" href="d9/d99/a19351.html#a81d593116320da32f1aa4057087f1e11"/>
+          <topic label="printLoadedTable" href="d9/d99/a19351.html#aac20f3a896bea512413568a60ad48c3d"/>
+          <topic label="printLoadedTableHeader" href="d9/d99/a19351.html#ad8a6f694662a3a36ba9353197e20c1b1"/>
+          <topic label="setIDTEntry" href="d9/d99/a19351.html#af448c0d55d2e226050b7f4efb6d4abe8"/>
+          <topic label="InterruptHandler" href="d9/d99/a19351.html#a9aef4ea3434f8ddeaf9c32a63e6faf05"/>
+          <topic label="base" href="d9/d99/a19351.html#ad94bd8e9c355fde3e814d4894bab0181"/>
+          <topic label="handlers" href="d9/d99/a19351.html#ac8aba191e612ad605b8b188f78e65d3b"/>
+          <topic label="interruptDescriptorTable" href="d9/d99/a19351.html#a7b6bb52a8072c51bfcb4f4877c3d0226"/>
+          <topic label="limit" href="d9/d99/a19351.html#a1991d8428ff7c74b31f42d48bb49547a"/>
+          <topic label="picMasterCommand" href="d9/d99/a19351.html#acb04723d03d6b34abbc5f7407cab0b33"/>
+          <topic label="picMasterData" href="d9/d99/a19351.html#a5287e31a546f60708b085b387332a904"/>
+          <topic label="picSlaveCommand" href="d9/d99/a19351.html#afed9d24b37c8f9386a71f4284b2502a4"/>
+          <topic label="picSlaveData" href="d9/d99/a19351.html#ac1111b7cfbd27b37f03a0678ae5dbaf1"/>
+        </topic>
+        <topic label="Port" href="d3/d5b/a19355.html">
+          <topic label="Port" href="d3/d5b/a19355.html#ad001c21b67d4c138f65024f167030cca"/>
+          <topic label="~Port" href="d3/d5b/a19355.html#a8b13c33da4911afcbdcb21c97768a72e"/>
+          <topic label="portnumber" href="d3/d5b/a19355.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port16Bit" href="dd/d6a/a19367.html">
+          <topic label="Port16Bit" href="dd/d6a/a19367.html#a418bb2fc65b3bec91704d0e5e8957131"/>
+          <topic label="~Port16Bit" href="dd/d6a/a19367.html#a78dfa215194c676583e1b7e2dab38608"/>
+          <topic label="read" href="dd/d6a/a19367.html#a6b5df5669e802e31f27f0a4a0e62492a"/>
+          <topic label="write" href="dd/d6a/a19367.html#ac5a46ce99a70874a8a4fcb090eb40575"/>
+          <topic label="portnumber" href="dd/d6a/a19367.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port32Bit" href="d8/d2a/a19371.html">
+          <topic label="Port32Bit" href="d8/d2a/a19371.html#a507afa8607757baedf1789d73c2a173d"/>
+          <topic label="~Port32Bit" href="d8/d2a/a19371.html#a3e87dc7d610b279e8e7e072a0d1ee78c"/>
+          <topic label="read" href="d8/d2a/a19371.html#a41093c437a9508f984c90ae68e9c03bf"/>
+          <topic label="write" href="d8/d2a/a19371.html#a64a16fe840224ef769ab2933770d1b21"/>
+          <topic label="portnumber" href="d8/d2a/a19371.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port8Bit" href="d9/d0b/a19359.html">
+          <topic label="Port8Bit" href="d9/d0b/a19359.html#a057109ca3c28fbb9064c60ba5cdb1190"/>
+          <topic label="~Port8Bit" href="d9/d0b/a19359.html#a475bc218672c5743a9f8425cc84eb630"/>
+          <topic label="read" href="d9/d0b/a19359.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+          <topic label="write" href="d9/d0b/a19359.html#a523b6a757b27418dc015ed13e74bef60"/>
+          <topic label="portnumber" href="d9/d0b/a19359.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port8BitSlow" href="dc/da5/a19363.html">
+          <topic label="Port8BitSlow" href="dc/da5/a19363.html#aa830f1cf49e155af1033a8e611ecc6c1"/>
+          <topic label="~Port8BitSlow" href="dc/da5/a19363.html#aa19647802064296f8bf76cc12f10d243"/>
+          <topic label="read" href="dc/da5/a19363.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+          <topic label="write" href="dc/da5/a19363.html#af84b15d5a205a421a9877e2341714031"/>
+          <topic label="portnumber" href="dc/da5/a19363.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="__attribute__" href="d6/d23/a18435.html#a269f53904f53339ae2df626922b404b2"/>
+        <topic label="__attribute__" href="d6/d23/a18435.html#a21c3ca5c318038eaed596c14fd2666ed"/>
+      </topic>
+    </topic>
+    <topic label="Namespace Members" href="namespacemembers.html">
+      <topic label="All" href="namespacemembers.html"/>
+      <topic label="Functions" href="namespacemembers_func.html"/>
+      <topic label="Variables" href="namespacemembers_vars.html"/>
+    </topic>
+  </topic>
+  <topic label="Classes" href="annotated.html">
+    <topic label="Class List" href="annotated.html">
+      <topic label="driver" href="de/d62/a18433.html">
+        <topic label="Driver" href="dc/d37/a19307.html">
+          <topic label="Driver" href="dc/d37/a19307.html#a7de0c11fff1dc1f5d004b2a76e840840"/>
+          <topic label="~Driver" href="dc/d37/a19307.html#aacc7524b989c2561147c5dd0b901381c"/>
+          <topic label="activate" href="dc/d37/a19307.html#a8c86c1e52652d8b491d37a3b60b535b0"/>
+          <topic label="deactivate" href="dc/d37/a19307.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1"/>
+          <topic label="reset" href="dc/d37/a19307.html#a98d2e779c02364fc58c172d0d2a32bdd"/>
+        </topic>
+        <topic label="DriverManager" href="d3/d37/a19311.html">
+          <topic label="DriverManager" href="d3/d37/a19311.html#af3bed49a4b243c2f65d09c35db15158b"/>
+          <topic label="~DriverManager" href="d3/d37/a19311.html#a29731c1f4b1215fd5c4ab27624ae6563"/>
+          <topic label="activateAll" href="d3/d37/a19311.html#a05b071d8a8c12f2d284fb61f4ecd116e"/>
+          <topic label="addDriver" href="d3/d37/a19311.html#ab8bd89b91ea49f343276c3c841153cd8"/>
+          <topic label="drivers" href="d3/d37/a19311.html#acdf43f6340b26ad2d9b9c90d8974b370"/>
+          <topic label="numDrivers" href="d3/d37/a19311.html#a347286da44d912bba3f720d8b0600946"/>
+        </topic>
+        <topic label="KeyboardDriver" href="dc/d7c/a19319.html">
+          <topic label="KeyboardDriver" href="dc/d7c/a19319.html#a63898e993f02352193db996d00179347"/>
+          <topic label="~KeyboardDriver" href="dc/d7c/a19319.html#a77da196f3c04c549e1085ce5566e5df3"/>
+          <topic label="activate" href="dc/d7c/a19319.html#a58553d39d7dcfe6b55e8ddb1e7b1d187"/>
+          <topic label="deactivate" href="dc/d7c/a19319.html#aaa7e99b6214dc8439230a95dd57e617e"/>
+          <topic label="handleInterrupt" href="dc/d7c/a19319.html#a248fa0da9acac54a3a8880c7b66b3f2b"/>
+          <topic label="handleInterrupt" href="dc/d7c/a19319.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+          <topic label="reset" href="dc/d7c/a19319.html#a22b7b080ab1c8b0f2ed4beba75b34691"/>
+          <topic label="caps_on" href="dc/d7c/a19319.html#a8a63dbc25a08a75f62ae0674df1deb30"/>
+          <topic label="commandPort" href="dc/d7c/a19319.html#a58fc9113701ffc04637996780c843ff0"/>
+          <topic label="dataPort" href="dc/d7c/a19319.html#afd6cdddb62a2a2d2b31043eb32887b41"/>
+          <topic label="interrupt_manager" href="dc/d7c/a19319.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+          <topic label="interruptNumber" href="dc/d7c/a19319.html#afeede822d3e98957e76e627a54ec2f7a"/>
+          <topic label="keyboardEventHandler" href="dc/d7c/a19319.html#a11ec84b7abf113ec270f124564776e1f"/>
+          <topic label="led_byte_to_send" href="dc/d7c/a19319.html#aed7b5d279f6f1dffee10d5fb92ed6b1c"/>
+          <topic label="shift_pressed" href="dc/d7c/a19319.html#afba07c783deebfb275c1437f7c23601d"/>
+          <topic label="waiting_for_led_ack" href="dc/d7c/a19319.html#a703464394033a8f4f664d9289ae2e9f8"/>
+        </topic>
+        <topic label="KeyboardEventHandler" href="d0/d72/a19315.html">
+          <topic label="KeyboardEventHandler" href="d0/d72/a19315.html#a63ee0249476256e721e05e6375383317"/>
+          <topic label="~KeyboardEventHandler" href="d0/d72/a19315.html#aed6531b818751f0f23b6b9836ac94aa0"/>
+          <topic label="onKeyDown" href="d0/d72/a19315.html#ae2b923ef0eb58e29f57a155debadac6a"/>
+          <topic label="onKeyUp" href="d0/d72/a19315.html#a28547100b7420e1f73b745df873cd411"/>
+        </topic>
+        <topic label="MouseDriver" href="da/dea/a19327.html">
+          <topic label="MouseDriver" href="da/dea/a19327.html#a639956c8ce11d62ee443825e9b9695af"/>
+          <topic label="~MouseDriver" href="da/dea/a19327.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22"/>
+          <topic label="activate" href="da/dea/a19327.html#a446769df0b3b537a525476c7c8be47bc"/>
+          <topic label="deactivate" href="da/dea/a19327.html#a4329c1cdedc72adf0b95cb3911c4acf6"/>
+          <topic label="handleInterrupt" href="da/dea/a19327.html#a1b2f08490b7954e5ca504cd8bb6862c0"/>
+          <topic label="handleInterrupt" href="da/dea/a19327.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+          <topic label="mouse_block_video_mem_value" href="da/dea/a19327.html#a1a2a455ca7146dea3148afa8cb6c9ed5"/>
+          <topic label="reset" href="da/dea/a19327.html#aabe3740996bf70fda96f0a25228954a6"/>
+          <topic label="__mouse_x_" href="da/dea/a19327.html#ac2077f6309c79d5f585fb966b57fe065"/>
+          <topic label="__mouse_y_" href="da/dea/a19327.html#aa02009b37420687ef18db8a05ff9181f"/>
+          <topic label="buffer" href="da/dea/a19327.html#aaa1d55d296d88995ac49a8a9a75a79d4"/>
+          <topic label="buttons" href="da/dea/a19327.html#a7942997bd5ead2767e9627d91789dd70"/>
+          <topic label="commandPort" href="da/dea/a19327.html#a2877a9f46dd83a5f05f17fd83a0a7725"/>
+          <topic label="dataPort" href="da/dea/a19327.html#a8e30a6f6c5839fcf9c3ab63aa167d046"/>
+          <topic label="interrupt_manager" href="da/dea/a19327.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+          <topic label="interruptNumber" href="da/dea/a19327.html#afeede822d3e98957e76e627a54ec2f7a"/>
+          <topic label="mouseEventHandler" href="da/dea/a19327.html#a804f5657a062e0a18f3b56781f884c66"/>
+          <topic label="offset" href="da/dea/a19327.html#a313426dd9aa1af1540cbffc2e77c58c1"/>
+          <topic label="old_char_under_mouse_pointer" href="da/dea/a19327.html#a4a671e7e2b235f6bec473cb960401bd6"/>
+        </topic>
+        <topic label="MouseEventHandler" href="d5/d17/a19323.html">
+          <topic label="MouseEventHandler" href="d5/d17/a19323.html#aa0fd3739c52bcd4d553cefaf41760a9b"/>
+          <topic label="~MouseEventHandler" href="d5/d17/a19323.html#abbfe4a7ae2911f989513178530314211"/>
+          <topic label="onMouseDown" href="d5/d17/a19323.html#a2f12c5f63356c3045fd6cb46fd89374f"/>
+          <topic label="onMouseMove" href="d5/d17/a19323.html#a68f635b3b65f927d37d4e0835f7e0b30"/>
+          <topic label="onMouseUp" href="d5/d17/a19323.html#a09b77fe86bfa79313b5c5b91d09eb514"/>
+        </topic>
+      </topic>
+      <topic label="essential" href="d2/d7a/a18434.html">
+        <topic label="atexit_func_entry_t" href="d7/d5c/a19339.html">
+          <topic label="destructor_func" href="d7/d5c/a19339.html#a665175c477008154e9b40ef96a8d81c2"/>
+          <topic label="dso_handle" href="d7/d5c/a19339.html#a98800f0ffd56e2dc77c46a741e1cf008"/>
+          <topic label="obj_ptr" href="d7/d5c/a19339.html#a24ece443578ebec2449e72e998521a11"/>
+        </topic>
+        <topic label="GDT" href="d3/d8c/a19335.html">
+          <topic label="GDT" href="d3/d8c/a19335.html#aa061ecab5a20a3556413fbbde4fe89d7"/>
+          <topic label="~GDT" href="d3/d8c/a19335.html#a9b61f75de7fa2ffe9589f43c3f6a6a6c"/>
+          <topic label="installTable" href="d3/d8c/a19335.html#af8e3c1da270077eb7cc6551b35c0e5ca"/>
+          <topic label="kernel_CS_selector" href="d3/d8c/a19335.html#a89a8d2c17e3c22e7200bff09252f46e1"/>
+          <topic label="kernel_DS_selector" href="d3/d8c/a19335.html#a34661a528b1630bff806e25411ad6ec3"/>
+          <topic label="printLoadedTable" href="d3/d8c/a19335.html#a9c89bddfdb21d5cc09c1d82411982de9"/>
+          <topic label="printLoadedTableHeader" href="d3/d8c/a19335.html#a2ae998750fc1e18e6778e92774bd3574"/>
+          <topic label="user_CS_selector" href="d3/d8c/a19335.html#a8806a14009c4f0432d4b7043d687be17"/>
+          <topic label="user_DS_selector" href="d3/d8c/a19335.html#a90661f97e9cf214dd6d977b19c01f7fc"/>
+          <topic label="base" href="d3/d8c/a19335.html#ad0a48a89930e6a6c4467c977f4e91269"/>
+          <topic label="kernel_CS" href="d3/d8c/a19335.html#a20d7a6bb352e3f696c1c68bb394766d8"/>
+          <topic label="kernel_DS" href="d3/d8c/a19335.html#ac8a5b4f6a3dc223e2eb6abebe19c9f08"/>
+          <topic label="limit" href="d3/d8c/a19335.html#a4105a25a1ec71dc7e338639bb370c664"/>
+          <topic label="nullSegment" href="d3/d8c/a19335.html#a154c2e2725809d873c8e7d5f19ea66c5"/>
+          <topic label="user_CS" href="d3/d8c/a19335.html#a32508694f9db3188cd4aba126cbfb5bb"/>
+          <topic label="user_DS" href="d3/d8c/a19335.html#a73463d83e2048869692d0adf1acac7a6"/>
+        </topic>
+        <topic label="GDT_row" href="dd/da0/a19331.html">
+          <topic label="GDT_row" href="dd/da0/a19331.html#a5692f86b7ebf4eefdeb78e48f281092b"/>
+          <topic label="GDT_row" href="dd/da0/a19331.html#a27ff8d9a6bf6c2c98cf78a0257e4667e"/>
+          <topic label="~GDT_row" href="dd/da0/a19331.html#a6eb69c55c0bd16040b2d766dd068df31"/>
+          <topic label="GDT" href="dd/da0/a19331.html#a235097b2551abe03269f88341b4bdf87"/>
+          <topic label="access" href="dd/da0/a19331.html#a7f01a0febd325787f1ff47d6a3b668a9"/>
+          <topic label="base_high" href="dd/da0/a19331.html#a2cbd86d4258ecebf7b46cc9bb8611b5b"/>
+          <topic label="base_low" href="dd/da0/a19331.html#a298d18522898ad48c1e05b79f1f4dff7"/>
+          <topic label="base_middle" href="dd/da0/a19331.html#a8429e04bddc6a61c4e95b88901ae219d"/>
+          <topic label="granularity" href="dd/da0/a19331.html#af180a640dbd5213b3f936ff7cf48deaf"/>
+          <topic label="limit_low" href="dd/da0/a19331.html#a2bddbe405dfbbbd101c475bd1bd65112"/>
+        </topic>
+      </topic>
+      <topic label="hardware_communication" href="d6/d23/a18435.html">
+        <topic label="IDT_row" href="d7/d8c/a19347.html">
+          <topic label="IDT_row" href="d7/d8c/a19347.html#a5149970639d0f251d529808a192b4b55"/>
+          <topic label="~IDT_row" href="d7/d8c/a19347.html#a9cad760dfa1c1f76f98b6207365f7e2d"/>
+          <topic label="InterruptManager" href="d7/d8c/a19347.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+          <topic label="access" href="d7/d8c/a19347.html#afa706321cb5ba41a6035dbe1ec39c265"/>
+          <topic label="handlerAddressHighbits" href="d7/d8c/a19347.html#af1a4bb042f75f10c5e2b08034e82aed3"/>
+          <topic label="handlerAddressLowbits" href="d7/d8c/a19347.html#a3390e4d53e904d420187ecc0247e9289"/>
+          <topic label="kernelCodeSegmentSelector" href="d7/d8c/a19347.html#a800309c99800063315cddf536a3d0d67"/>
+          <topic label="reserved" href="d7/d8c/a19347.html#a96bce1ce9c6a7e9b5a20607f41a2e876"/>
+        </topic>
+        <topic label="InterruptHandler" href="d0/dcf/a19343.html">
+          <topic label="InterruptHandler" href="d0/dcf/a19343.html#a134c8931dff43e766f1ddc4d0f35cd48"/>
+          <topic label="~InterruptHandler" href="d0/dcf/a19343.html#a5114528f0db9926365b345337e42af9b"/>
+          <topic label="handleInterrupt" href="d0/dcf/a19343.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+          <topic label="interrupt_manager" href="d0/dcf/a19343.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+          <topic label="interruptNumber" href="d0/dcf/a19343.html#afeede822d3e98957e76e627a54ec2f7a"/>
+        </topic>
+        <topic label="InterruptManager" href="d9/d99/a19351.html">
+          <topic label="InterruptManager" href="d9/d99/a19351.html#aec70c703cac64ef1eec4b5a94d2e145c"/>
+          <topic label="~InterruptManager" href="d9/d99/a19351.html#a65276f26b5d5197482a415b83a898560"/>
+          <topic label="activate" href="d9/d99/a19351.html#a1ab5b6378071338ede295f0bffaf3d51"/>
+          <topic label="deactivate" href="d9/d99/a19351.html#a9451566bf08617378ca2144505d394a6"/>
+          <topic label="handleInterrupt" href="d9/d99/a19351.html#a2d3ef1656e1eaaf86be40a200a49a4b2"/>
+          <topic label="installTable" href="d9/d99/a19351.html#a81d593116320da32f1aa4057087f1e11"/>
+          <topic label="printLoadedTable" href="d9/d99/a19351.html#aac20f3a896bea512413568a60ad48c3d"/>
+          <topic label="printLoadedTableHeader" href="d9/d99/a19351.html#ad8a6f694662a3a36ba9353197e20c1b1"/>
+          <topic label="setIDTEntry" href="d9/d99/a19351.html#af448c0d55d2e226050b7f4efb6d4abe8"/>
+          <topic label="InterruptHandler" href="d9/d99/a19351.html#a9aef4ea3434f8ddeaf9c32a63e6faf05"/>
+          <topic label="base" href="d9/d99/a19351.html#ad94bd8e9c355fde3e814d4894bab0181"/>
+          <topic label="handlers" href="d9/d99/a19351.html#ac8aba191e612ad605b8b188f78e65d3b"/>
+          <topic label="interruptDescriptorTable" href="d9/d99/a19351.html#a7b6bb52a8072c51bfcb4f4877c3d0226"/>
+          <topic label="limit" href="d9/d99/a19351.html#a1991d8428ff7c74b31f42d48bb49547a"/>
+          <topic label="picMasterCommand" href="d9/d99/a19351.html#acb04723d03d6b34abbc5f7407cab0b33"/>
+          <topic label="picMasterData" href="d9/d99/a19351.html#a5287e31a546f60708b085b387332a904"/>
+          <topic label="picSlaveCommand" href="d9/d99/a19351.html#afed9d24b37c8f9386a71f4284b2502a4"/>
+          <topic label="picSlaveData" href="d9/d99/a19351.html#ac1111b7cfbd27b37f03a0678ae5dbaf1"/>
+        </topic>
+        <topic label="Port" href="d3/d5b/a19355.html">
+          <topic label="Port" href="d3/d5b/a19355.html#ad001c21b67d4c138f65024f167030cca"/>
+          <topic label="~Port" href="d3/d5b/a19355.html#a8b13c33da4911afcbdcb21c97768a72e"/>
+          <topic label="portnumber" href="d3/d5b/a19355.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port16Bit" href="dd/d6a/a19367.html">
+          <topic label="Port16Bit" href="dd/d6a/a19367.html#a418bb2fc65b3bec91704d0e5e8957131"/>
+          <topic label="~Port16Bit" href="dd/d6a/a19367.html#a78dfa215194c676583e1b7e2dab38608"/>
+          <topic label="read" href="dd/d6a/a19367.html#a6b5df5669e802e31f27f0a4a0e62492a"/>
+          <topic label="write" href="dd/d6a/a19367.html#ac5a46ce99a70874a8a4fcb090eb40575"/>
+          <topic label="portnumber" href="dd/d6a/a19367.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port32Bit" href="d8/d2a/a19371.html">
+          <topic label="Port32Bit" href="d8/d2a/a19371.html#a507afa8607757baedf1789d73c2a173d"/>
+          <topic label="~Port32Bit" href="d8/d2a/a19371.html#a3e87dc7d610b279e8e7e072a0d1ee78c"/>
+          <topic label="read" href="d8/d2a/a19371.html#a41093c437a9508f984c90ae68e9c03bf"/>
+          <topic label="write" href="d8/d2a/a19371.html#a64a16fe840224ef769ab2933770d1b21"/>
+          <topic label="portnumber" href="d8/d2a/a19371.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port8Bit" href="d9/d0b/a19359.html">
+          <topic label="Port8Bit" href="d9/d0b/a19359.html#a057109ca3c28fbb9064c60ba5cdb1190"/>
+          <topic label="~Port8Bit" href="d9/d0b/a19359.html#a475bc218672c5743a9f8425cc84eb630"/>
+          <topic label="read" href="d9/d0b/a19359.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+          <topic label="write" href="d9/d0b/a19359.html#a523b6a757b27418dc015ed13e74bef60"/>
+          <topic label="portnumber" href="d9/d0b/a19359.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+        <topic label="Port8BitSlow" href="dc/da5/a19363.html">
+          <topic label="Port8BitSlow" href="dc/da5/a19363.html#aa830f1cf49e155af1033a8e611ecc6c1"/>
+          <topic label="~Port8BitSlow" href="dc/da5/a19363.html#aa19647802064296f8bf76cc12f10d243"/>
+          <topic label="read" href="dc/da5/a19363.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+          <topic label="write" href="dc/da5/a19363.html#af84b15d5a205a421a9877e2341714031"/>
+          <topic label="portnumber" href="dc/da5/a19363.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+        </topic>
+      </topic>
+      <topic label="KeyboardEventHandler_for_kernel" href="d4/d1e/a19251.html">
+        <topic label="KeyboardEventHandler_for_kernel" href="d4/d1e/a19251.html#af9abf3fb85dea27db802a8f092c4a2fc"/>
+        <topic label="~KeyboardEventHandler_for_kernel" href="d4/d1e/a19251.html#ab2b7f34603d9cdd36554a4f7f6dde585"/>
+        <topic label="onKeyDown" href="d4/d1e/a19251.html#af82a0bd16f995dd285d4f7822117377c"/>
+        <topic label="onKeyUp" href="d4/d1e/a19251.html#a0d74a48573c10174ac8bf836ac39f886"/>
+      </topic>
+      <topic label="MouseEventHandler_for_kernel" href="d0/d04/a19255.html">
+        <topic label="MouseEventHandler_for_kernel" href="d0/d04/a19255.html#a41f57ab9baa5850e39086362ce44b1cb"/>
+        <topic label="~MouseEventHandler_for_kernel" href="d0/d04/a19255.html#aa96e9bf8dce2b60b7f86577c3a74455d"/>
+        <topic label="onMouseDown" href="d0/d04/a19255.html#ae860a16e70322e5c4bb01e1108e50bb1"/>
+        <topic label="onMouseMove" href="d0/d04/a19255.html#adbb4c4e2814b335579119c324313f652"/>
+        <topic label="onMouseUp" href="d0/d04/a19255.html#afca536c2187a65da265daa2d2af75d4d"/>
+      </topic>
+      <topic label="multiboot_aout_symbol_table_t" href="de/d0e/a18398.html#dc/d9c/a19263">
+        <topic label="addr" href="de/d0e/a18398.html#af0a1d2238495093ad75f36e3a146c0c7"/>
+        <topic label="reserved" href="de/d0e/a18398.html#a488f52dbb30b4de2ae2f42f0bdfda154"/>
+        <topic label="strsize" href="de/d0e/a18398.html#a7ed0107153c88e6604e9a6105a4c7be0"/>
+        <topic label="tabsize" href="de/d0e/a18398.html#afbdc23500d3d7a59486a0b8ff4066c1e"/>
+      </topic>
+      <topic label="multiboot_apm_info" href="de/d0e/a18398.html#d7/d23/a19303">
+        <topic label="cseg" href="de/d0e/a18398.html#a9eedcae62ee49310914e238d07094c4b"/>
+        <topic label="cseg_16" href="de/d0e/a18398.html#a9abc154a9c3a0f3d9ae96cf2b5044b43"/>
+        <topic label="cseg_16_len" href="de/d0e/a18398.html#a09573729600592739fe8f2480217a30d"/>
+        <topic label="cseg_len" href="de/d0e/a18398.html#a95aa6b556019e1b9c526b190341cc531"/>
+        <topic label="dseg" href="de/d0e/a18398.html#a98cd7da8760cf5d49ba55e1f9e76c6d4"/>
+        <topic label="dseg_len" href="de/d0e/a18398.html#afee11d31183fe424af90546b10c9fac2"/>
+        <topic label="flags" href="de/d0e/a18398.html#a55fb7837ae61f63d0310b65767a2505c"/>
+        <topic label="offset" href="de/d0e/a18398.html#a97958b174fe0234cafab9019eb009b91"/>
+        <topic label="version" href="de/d0e/a18398.html#ab06d9309bdc00fa4a8c37fdab639beb5"/>
+      </topic>
+      <topic label="multiboot_color" href="de/d0e/a18398.html#d0/d19/a19291">
+        <topic label="blue" href="de/d0e/a18398.html#a6f8d17b0f35ff4cbf9c51dcbc3ea7d01"/>
+        <topic label="green" href="de/d0e/a18398.html#a08e1c8bc977b39015c9043645e79713d"/>
+        <topic label="red" href="de/d0e/a18398.html#a4c8a91229f40c06c3c63b4c37e83d219"/>
+      </topic>
+      <topic label="multiboot_elf_section_header_table_t" href="de/d0e/a18398.html#da/d01/a19267">
+        <topic label="addr" href="de/d0e/a18398.html#aac90242e270ae9df01fc3bb784b858b6"/>
+        <topic label="num" href="de/d0e/a18398.html#a6ed3ef34bb39d72a19533b11fe156e1f"/>
+        <topic label="shndx" href="de/d0e/a18398.html#a45886444dce7cc10353528373f3e50c2"/>
+        <topic label="size" href="de/d0e/a18398.html#ab2740d89d4139f93c9452cca2c676c5c"/>
+      </topic>
+      <topic label="multiboot_header" href="de/d0e/a18398.html#d6/dbf/a19259">
+        <topic label="bss_end_addr" href="de/d0e/a18398.html#ab4f2496ec9b0d1a95985929d281dfa19"/>
+        <topic label="checksum" href="de/d0e/a18398.html#a17e73abddfe8264c254767a20099038d"/>
+        <topic label="depth" href="de/d0e/a18398.html#aba85b53dc3af1bf99c71292a776e9dff"/>
+        <topic label="entry_addr" href="de/d0e/a18398.html#ac3d807775a9d69730e6698dcdcf6491e"/>
+        <topic label="flags" href="de/d0e/a18398.html#ab922f32c179ec7bde91519d19f27d95b"/>
+        <topic label="header_addr" href="de/d0e/a18398.html#a9718b2fc6ce29a37e9a209f92ab856e3"/>
+        <topic label="height" href="de/d0e/a18398.html#a055c5e6553ea032897ad50a12f998a17"/>
+        <topic label="load_addr" href="de/d0e/a18398.html#a99de1cf326c46c76c6039f317b7a1ef2"/>
+        <topic label="load_end_addr" href="de/d0e/a18398.html#ac9efc1a4c3cd18f286b2fd50ff052e31"/>
+        <topic label="magic" href="de/d0e/a18398.html#a7fddee92e60ff58e159c6bf2c40bf29b"/>
+        <topic label="mode_type" href="de/d0e/a18398.html#a4c90b7929342dd5aab7d08afa0906d28"/>
+        <topic label="width" href="de/d0e/a18398.html#ad72a1a3dd608e73c818d0c27974def40"/>
+      </topic>
+      <topic label="multiboot_info_t" href="de/d0e/a18398.html#da/d5f/a19271">
+        <topic label="apm_table" href="de/d0e/a18398.html#ab340bc8f88281872676db0f52ebe7c0e"/>
+        <topic label="boot_device" href="de/d0e/a18398.html#ae32646de911267c65892a286ef3d529e"/>
+        <topic label="boot_loader_name" href="de/d0e/a18398.html#a4a3251d6b4cf85d935d989a0a369feed"/>
+        <topic label="cmdline" href="de/d0e/a18398.html#a95a5e2cc69960e4d906abd585f91f210"/>
+        <topic label="config_table" href="de/d0e/a18398.html#a94b06ab87dbfaf966822a39cf1d9e2d6"/>
+        <topic label="drives_addr" href="de/d0e/a18398.html#a12916653d21ac1694b6d609a10d15332"/>
+        <topic label="drives_length" href="de/d0e/a18398.html#a8bb6cc3d388a8abafecc7018744c14f3"/>
+        <topic label="flags" href="de/d0e/a18398.html#a39f175b6fb4debca237d3ff93e960a25"/>
+        <topic label="framebuffer_addr" href="de/d0e/a18398.html#a77a4d6e2b12fbd2b3e6e61d978ae5fc0"/>
+        <topic label="framebuffer_bpp" href="de/d0e/a18398.html#ab7b460c75f0342dfb1e339d2b3a2a9da"/>
+        <topic label="framebuffer_height" href="de/d0e/a18398.html#a0e8539780b79a018883d96bb444cd9c8"/>
+        <topic label="framebuffer_pitch" href="de/d0e/a18398.html#ab0ecb8c7debe9ac1ac7910ae957367f6"/>
+        <topic label="framebuffer_type" href="de/d0e/a18398.html#a540391adf02da7cb6876fe78d65a13d7"/>
+        <topic label="framebuffer_width" href="de/d0e/a18398.html#a770273793bac06df17306c7fa136c58f"/>
+        <topic label="mem_lower" href="de/d0e/a18398.html#a6b80f033d5a9151a4d1abd2d155942a7"/>
+        <topic label="mem_upper" href="de/d0e/a18398.html#a1ea7d9e665d6fff00665d97e81207a8f"/>
+        <topic label="mmap_addr" href="de/d0e/a18398.html#a19825c91eb6aa23fa61ee3851a6ce8da"/>
+        <topic label="mmap_length" href="de/d0e/a18398.html#a3dd43c3204f821c0a1b5604686d9eae7"/>
+        <topic label="mods_addr" href="de/d0e/a18398.html#a766e9dadbf4a845c12704c923cb13f02"/>
+        <topic label="mods_count" href="de/d0e/a18398.html#a415feb83a215790e2e8f9e2e1e3df55c"/>
+        <topic label="u" href="de/d0e/a18398.html#a0558f47498813865abaec2f6281c5f92"/>
+        <topic label="vbe_control_info" href="de/d0e/a18398.html#a21c63bc2905c6fd19449eea6e8514856"/>
+        <topic label="vbe_interface_len" href="de/d0e/a18398.html#a31ea288eaa679a7e3a4dafb91d833f78"/>
+        <topic label="vbe_interface_off" href="de/d0e/a18398.html#a272d3a053e085dc513ba4dc4eb688816"/>
+        <topic label="vbe_interface_seg" href="de/d0e/a18398.html#a6cd85049f18e6c157d173538b162d9a6"/>
+        <topic label="vbe_mode" href="de/d0e/a18398.html#aec0fcaec97380658da787d4989f7b93f"/>
+        <topic label="vbe_mode_info" href="de/d0e/a18398.html#ace25791339e03186c9364bb5f461f773"/>
+      </topic>
+      <topic label="multiboot_info.__unnamed2__" href="de/d0e/a18398.html#dc/d1b/a19743">
+      </topic>
+      <topic label="multiboot_info.__unnamed2__.__unnamed4__" href="de/d0e/a18398.html#d9/d3c/a19747">
+        <topic label="framebuffer_palette_addr" href="de/d0e/a18398.html#ab4a160c025f0db5470ddced0d2c99de3"/>
+        <topic label="framebuffer_palette_num_colors" href="de/d0e/a18398.html#a9ea6d9ae58149f37ee098ce870bf07f0"/>
+      </topic>
+      <topic label="multiboot_info.__unnamed2__.__unnamed6__" href="de/d0e/a18398.html#d2/def/a19751">
+        <topic label="framebuffer_blue_field_position" href="de/d0e/a18398.html#ace107d23f7f4af6fd8d969926c5c9d16"/>
+        <topic label="framebuffer_blue_mask_size" href="de/d0e/a18398.html#aa8eaba7a0a6cf04509a014ac4bc937c0"/>
+        <topic label="framebuffer_green_field_position" href="de/d0e/a18398.html#adfcdecf04630d77ee5e41006f47dc4d7"/>
+        <topic label="framebuffer_green_mask_size" href="de/d0e/a18398.html#abc2579d314db9a050c48043a1b7f5ea9"/>
+        <topic label="framebuffer_red_field_position" href="de/d0e/a18398.html#a4dd2fad32ee3a2ce5379d7bf0a23dabe"/>
+        <topic label="framebuffer_red_mask_size" href="de/d0e/a18398.html#a0d868424e2b703471e3d73c0a72bc75c"/>
+      </topic>
+      <topic label="multiboot_info.u" href="de/d0e/a18398.html#d3/d67/a19739">
+        <topic label="aout_sym" href="de/d0e/a18398.html#adcc9d90eba827321c643ad06b62c7817"/>
+        <topic label="elf_sec" href="de/d0e/a18398.html#af2b83453f34de71046f2bbb48051c1f4"/>
+      </topic>
+      <topic label="multiboot_memory_map_t" href="de/d0e/a18398.html#d2/d08/a19295">
+        <topic label="addr" href="de/d0e/a18398.html#a40e066ba79afd138308bd0db4b3f4f5b"/>
+        <topic label="len" href="de/d0e/a18398.html#a0c5d40a87a63b01fc424bb3c15c89997"/>
+        <topic label="size" href="de/d0e/a18398.html#a1b4b5157d5e972e92981177fd1eb6d67"/>
+        <topic label="type" href="de/d0e/a18398.html#affc11fb6e6ece4860a1929b791073538"/>
+      </topic>
+      <topic label="multiboot_module_t" href="de/d0e/a18398.html#d9/d7c/a19299">
+        <topic label="cmdline" href="de/d0e/a18398.html#a3219140f9baf1a790a602db25e8597c7"/>
+        <topic label="mod_end" href="de/d0e/a18398.html#aa2b5dda7d7d51a1f3fbd613adfa640b0"/>
+        <topic label="mod_start" href="de/d0e/a18398.html#a3bcfca83ccb172cd79123a8341ed4cfb"/>
+        <topic label="pad" href="de/d0e/a18398.html#aff552d4c321b0607d77cda0c2cdc5708"/>
+      </topic>
+    </topic>
+    <topic label="Class Index" href="classes.html"/>
+    <topic label="Class Hierarchy" href="hierarchy.html">
+      <topic label="driver::Driver" href="dc/d37/a19307.html">
+        <topic label="driver::KeyboardDriver" href="dc/d7c/a19319.html"/>
+        <topic label="driver::MouseDriver" href="da/dea/a19327.html"/>
+      </topic>
+      <topic label="driver::DriverManager" href="d3/d37/a19311.html"/>
+      <topic label="driver::KeyboardEventHandler" href="d0/d72/a19315.html">
+        <topic label="KeyboardEventHandler_for_kernel" href="d4/d1e/a19251.html"/>
+      </topic>
+      <topic label="driver::MouseEventHandler" href="d5/d17/a19323.html">
+        <topic label="MouseEventHandler_for_kernel" href="d0/d04/a19255.html"/>
+      </topic>
+      <topic label="essential::atexit_func_entry_t" href="d7/d5c/a19339.html"/>
+      <topic label="essential::GDT" href="d3/d8c/a19335.html"/>
+      <topic label="essential::GDT_row" href="dd/da0/a19331.html"/>
+      <topic label="hardware_communication::IDT_row" href="d7/d8c/a19347.html"/>
+      <topic label="hardware_communication::InterruptHandler" href="d0/dcf/a19343.html">
+        <topic label="driver::KeyboardDriver" href="dc/d7c/a19319.html"/>
+        <topic label="driver::MouseDriver" href="da/dea/a19327.html"/>
+      </topic>
+      <topic label="hardware_communication::InterruptManager" href="d9/d99/a19351.html"/>
+      <topic label="hardware_communication::Port" href="d3/d5b/a19355.html">
+        <topic label="hardware_communication::Port16Bit" href="dd/d6a/a19367.html"/>
+        <topic label="hardware_communication::Port32Bit" href="d8/d2a/a19371.html"/>
+        <topic label="hardware_communication::Port8Bit" href="d9/d0b/a19359.html">
+          <topic label="hardware_communication::Port8BitSlow" href="dc/da5/a19363.html"/>
+        </topic>
+      </topic>
+      <topic label="multiboot_aout_symbol_table_t" href="de/d0e/a18398.html#dc/d9c/a19263"/>
+      <topic label="multiboot_apm_info" href="de/d0e/a18398.html#d7/d23/a19303"/>
+      <topic label="multiboot_color" href="de/d0e/a18398.html#d0/d19/a19291"/>
+      <topic label="multiboot_elf_section_header_table_t" href="de/d0e/a18398.html#da/d01/a19267"/>
+      <topic label="multiboot_header" href="de/d0e/a18398.html#d6/dbf/a19259"/>
+      <topic label="multiboot_info_t" href="de/d0e/a18398.html#da/d5f/a19271"/>
+      <topic label="multiboot_info.__unnamed2__" href="de/d0e/a18398.html#dc/d1b/a19743"/>
+      <topic label="multiboot_info.__unnamed2__.__unnamed4__" href="de/d0e/a18398.html#d9/d3c/a19747"/>
+      <topic label="multiboot_info.__unnamed2__.__unnamed6__" href="de/d0e/a18398.html#d2/def/a19751"/>
+      <topic label="multiboot_info.u" href="de/d0e/a18398.html#d3/d67/a19739"/>
+      <topic label="multiboot_memory_map_t" href="de/d0e/a18398.html#d2/d08/a19295"/>
+      <topic label="multiboot_module_t" href="de/d0e/a18398.html#d9/d7c/a19299"/>
+    </topic>
+    <topic label="Class Members" href="functions.html">
+      <topic label="All" href="functions.html">
+        <topic label="_" href="functions.html"/>
+        <topic label="a" href="functions_a.html"/>
+        <topic label="b" href="functions_b.html"/>
+        <topic label="c" href="functions_c.html"/>
+        <topic label="d" href="functions_d.html"/>
+        <topic label="e" href="functions_e.html"/>
+        <topic label="f" href="functions_f.html"/>
+        <topic label="g" href="functions_g.html"/>
+        <topic label="h" href="functions_h.html"/>
+        <topic label="i" href="functions_i.html"/>
+        <topic label="k" href="functions_k.html"/>
+        <topic label="l" href="functions_l.html"/>
+        <topic label="m" href="functions_m.html"/>
+        <topic label="n" href="functions_n.html"/>
+        <topic label="o" href="functions_o.html"/>
+        <topic label="p" href="functions_p.html"/>
+        <topic label="r" href="functions_r.html"/>
+        <topic label="s" href="functions_s.html"/>
+        <topic label="t" href="functions_t.html"/>
+        <topic label="u" href="functions_u.html"/>
+        <topic label="v" href="functions_v.html"/>
+        <topic label="w" href="functions_w.html"/>
+        <topic label="~" href="functions_~.html"/>
+      </topic>
+      <topic label="Functions" href="functions_func.html"/>
+      <topic label="Variables" href="functions_vars.html"/>
+    </topic>
+  </topic>
+  <topic label="Files" href="files.html">
+    <topic label="File List" href="files.html">
+      <topic label="kernel_src" href="dir_8d71b6a3da26db487d68cf8b27265d88.html">
+        <topic label="kernel.cpp" href="d2/dba/a18362.html">
+          <topic label="KeyboardEventHandler_for_kernel" href="d4/d1e/a19251.html">
+            <topic label="KeyboardEventHandler_for_kernel" href="d4/d1e/a19251.html#af9abf3fb85dea27db802a8f092c4a2fc"/>
+            <topic label="~KeyboardEventHandler_for_kernel" href="d4/d1e/a19251.html#ab2b7f34603d9cdd36554a4f7f6dde585"/>
+            <topic label="onKeyDown" href="d4/d1e/a19251.html#af82a0bd16f995dd285d4f7822117377c"/>
+            <topic label="onKeyUp" href="d4/d1e/a19251.html#a0d74a48573c10174ac8bf836ac39f886"/>
+          </topic>
+          <topic label="MouseEventHandler_for_kernel" href="d0/d04/a19255.html">
+            <topic label="MouseEventHandler_for_kernel" href="d0/d04/a19255.html#a41f57ab9baa5850e39086362ce44b1cb"/>
+            <topic label="~MouseEventHandler_for_kernel" href="d0/d04/a19255.html#aa96e9bf8dce2b60b7f86577c3a74455d"/>
+            <topic label="onMouseDown" href="d0/d04/a19255.html#ae860a16e70322e5c4bb01e1108e50bb1"/>
+            <topic label="onMouseMove" href="d0/d04/a19255.html#adbb4c4e2814b335579119c324313f652"/>
+            <topic label="onMouseUp" href="d0/d04/a19255.html#afca536c2187a65da265daa2d2af75d4d"/>
+          </topic>
+          <topic label="kernelMain" href="d2/dba/a18362.html#abb4e4866092116b520310d61961bfe12"/>
+        </topic>
+      </topic>
+      <topic label="libk_header" href="dir_72b26adc0987810216370bc6a776b23e.html">
+        <topic label="basic" href="dir_531da62a4fcf97761a044fe35931416b.html">
+          <topic label="kiostream.hpp" href="d3/d63/a18404.html">
+            <topic label="__clearScreen" href="d3/d63/a18404.html#a02923caa95013ec5d9333c25d9cca1d6"/>
+            <topic label="disable_cursor" href="d3/d63/a18404.html#a4b31902bf2cff8ff28405aa57d9f4575"/>
+            <topic label="enable_cursor" href="d3/d63/a18404.html#a8ca6648639f335b207c748074dcf9f25"/>
+            <topic label="printf" href="d3/d63/a18404.html#a45ee52b918a784ff0e96e7c8917a91d9"/>
+            <topic label="update_cursor" href="d3/d63/a18404.html#a9d1f0f838e646660db6d9284725c2b4c"/>
+          </topic>
+          <topic label="kmemory.hpp" href="d2/d7b/a18401.html">
+            <topic label="__printMemoryMap" href="d2/d7b/a18401.html#a53c6425a55d9fb93998da01f2416f9ad"/>
+          </topic>
+          <topic label="multiboot.hpp" href="de/d0e/a18398.html">
+            <topic label="multiboot_aout_symbol_table_t" href="de/d0e/a18398.html#dc/d9c/a19263">
+              <topic label="addr" href="de/d0e/a18398.html#af0a1d2238495093ad75f36e3a146c0c7"/>
+              <topic label="reserved" href="de/d0e/a18398.html#a488f52dbb30b4de2ae2f42f0bdfda154"/>
+              <topic label="strsize" href="de/d0e/a18398.html#a7ed0107153c88e6604e9a6105a4c7be0"/>
+              <topic label="tabsize" href="de/d0e/a18398.html#afbdc23500d3d7a59486a0b8ff4066c1e"/>
+            </topic>
+            <topic label="multiboot_apm_info" href="de/d0e/a18398.html#d7/d23/a19303">
+              <topic label="cseg" href="de/d0e/a18398.html#a9eedcae62ee49310914e238d07094c4b"/>
+              <topic label="cseg_16" href="de/d0e/a18398.html#a9abc154a9c3a0f3d9ae96cf2b5044b43"/>
+              <topic label="cseg_16_len" href="de/d0e/a18398.html#a09573729600592739fe8f2480217a30d"/>
+              <topic label="cseg_len" href="de/d0e/a18398.html#a95aa6b556019e1b9c526b190341cc531"/>
+              <topic label="dseg" href="de/d0e/a18398.html#a98cd7da8760cf5d49ba55e1f9e76c6d4"/>
+              <topic label="dseg_len" href="de/d0e/a18398.html#afee11d31183fe424af90546b10c9fac2"/>
+              <topic label="flags" href="de/d0e/a18398.html#a55fb7837ae61f63d0310b65767a2505c"/>
+              <topic label="offset" href="de/d0e/a18398.html#a97958b174fe0234cafab9019eb009b91"/>
+              <topic label="version" href="de/d0e/a18398.html#ab06d9309bdc00fa4a8c37fdab639beb5"/>
+            </topic>
+            <topic label="multiboot_color" href="de/d0e/a18398.html#d0/d19/a19291">
+              <topic label="blue" href="de/d0e/a18398.html#a6f8d17b0f35ff4cbf9c51dcbc3ea7d01"/>
+              <topic label="green" href="de/d0e/a18398.html#a08e1c8bc977b39015c9043645e79713d"/>
+              <topic label="red" href="de/d0e/a18398.html#a4c8a91229f40c06c3c63b4c37e83d219"/>
+            </topic>
+            <topic label="multiboot_elf_section_header_table_t" href="de/d0e/a18398.html#da/d01/a19267">
+              <topic label="addr" href="de/d0e/a18398.html#aac90242e270ae9df01fc3bb784b858b6"/>
+              <topic label="num" href="de/d0e/a18398.html#a6ed3ef34bb39d72a19533b11fe156e1f"/>
+              <topic label="shndx" href="de/d0e/a18398.html#a45886444dce7cc10353528373f3e50c2"/>
+              <topic label="size" href="de/d0e/a18398.html#ab2740d89d4139f93c9452cca2c676c5c"/>
+            </topic>
+            <topic label="multiboot_header" href="de/d0e/a18398.html#d6/dbf/a19259">
+              <topic label="bss_end_addr" href="de/d0e/a18398.html#ab4f2496ec9b0d1a95985929d281dfa19"/>
+              <topic label="checksum" href="de/d0e/a18398.html#a17e73abddfe8264c254767a20099038d"/>
+              <topic label="depth" href="de/d0e/a18398.html#aba85b53dc3af1bf99c71292a776e9dff"/>
+              <topic label="entry_addr" href="de/d0e/a18398.html#ac3d807775a9d69730e6698dcdcf6491e"/>
+              <topic label="flags" href="de/d0e/a18398.html#ab922f32c179ec7bde91519d19f27d95b"/>
+              <topic label="header_addr" href="de/d0e/a18398.html#a9718b2fc6ce29a37e9a209f92ab856e3"/>
+              <topic label="height" href="de/d0e/a18398.html#a055c5e6553ea032897ad50a12f998a17"/>
+              <topic label="load_addr" href="de/d0e/a18398.html#a99de1cf326c46c76c6039f317b7a1ef2"/>
+              <topic label="load_end_addr" href="de/d0e/a18398.html#ac9efc1a4c3cd18f286b2fd50ff052e31"/>
+              <topic label="magic" href="de/d0e/a18398.html#a7fddee92e60ff58e159c6bf2c40bf29b"/>
+              <topic label="mode_type" href="de/d0e/a18398.html#a4c90b7929342dd5aab7d08afa0906d28"/>
+              <topic label="width" href="de/d0e/a18398.html#ad72a1a3dd608e73c818d0c27974def40"/>
+            </topic>
+            <topic label="multiboot_info_t" href="de/d0e/a18398.html#da/d5f/a19271">
+              <topic label="apm_table" href="de/d0e/a18398.html#ab340bc8f88281872676db0f52ebe7c0e"/>
+              <topic label="boot_device" href="de/d0e/a18398.html#ae32646de911267c65892a286ef3d529e"/>
+              <topic label="boot_loader_name" href="de/d0e/a18398.html#a4a3251d6b4cf85d935d989a0a369feed"/>
+              <topic label="cmdline" href="de/d0e/a18398.html#a95a5e2cc69960e4d906abd585f91f210"/>
+              <topic label="config_table" href="de/d0e/a18398.html#a94b06ab87dbfaf966822a39cf1d9e2d6"/>
+              <topic label="drives_addr" href="de/d0e/a18398.html#a12916653d21ac1694b6d609a10d15332"/>
+              <topic label="drives_length" href="de/d0e/a18398.html#a8bb6cc3d388a8abafecc7018744c14f3"/>
+              <topic label="flags" href="de/d0e/a18398.html#a39f175b6fb4debca237d3ff93e960a25"/>
+              <topic label="framebuffer_addr" href="de/d0e/a18398.html#a77a4d6e2b12fbd2b3e6e61d978ae5fc0"/>
+              <topic label="framebuffer_bpp" href="de/d0e/a18398.html#ab7b460c75f0342dfb1e339d2b3a2a9da"/>
+              <topic label="framebuffer_height" href="de/d0e/a18398.html#a0e8539780b79a018883d96bb444cd9c8"/>
+              <topic label="framebuffer_pitch" href="de/d0e/a18398.html#ab0ecb8c7debe9ac1ac7910ae957367f6"/>
+              <topic label="framebuffer_type" href="de/d0e/a18398.html#a540391adf02da7cb6876fe78d65a13d7"/>
+              <topic label="framebuffer_width" href="de/d0e/a18398.html#a770273793bac06df17306c7fa136c58f"/>
+              <topic label="mem_lower" href="de/d0e/a18398.html#a6b80f033d5a9151a4d1abd2d155942a7"/>
+              <topic label="mem_upper" href="de/d0e/a18398.html#a1ea7d9e665d6fff00665d97e81207a8f"/>
+              <topic label="mmap_addr" href="de/d0e/a18398.html#a19825c91eb6aa23fa61ee3851a6ce8da"/>
+              <topic label="mmap_length" href="de/d0e/a18398.html#a3dd43c3204f821c0a1b5604686d9eae7"/>
+              <topic label="mods_addr" href="de/d0e/a18398.html#a766e9dadbf4a845c12704c923cb13f02"/>
+              <topic label="mods_count" href="de/d0e/a18398.html#a415feb83a215790e2e8f9e2e1e3df55c"/>
+              <topic label="u" href="de/d0e/a18398.html#a0558f47498813865abaec2f6281c5f92"/>
+              <topic label="vbe_control_info" href="de/d0e/a18398.html#a21c63bc2905c6fd19449eea6e8514856"/>
+              <topic label="vbe_interface_len" href="de/d0e/a18398.html#a31ea288eaa679a7e3a4dafb91d833f78"/>
+              <topic label="vbe_interface_off" href="de/d0e/a18398.html#a272d3a053e085dc513ba4dc4eb688816"/>
+              <topic label="vbe_interface_seg" href="de/d0e/a18398.html#a6cd85049f18e6c157d173538b162d9a6"/>
+              <topic label="vbe_mode" href="de/d0e/a18398.html#aec0fcaec97380658da787d4989f7b93f"/>
+              <topic label="vbe_mode_info" href="de/d0e/a18398.html#ace25791339e03186c9364bb5f461f773"/>
+            </topic>
+            <topic label="multiboot_info.__unnamed2__" href="de/d0e/a18398.html#dc/d1b/a19743">
+            </topic>
+            <topic label="multiboot_info.__unnamed2__.__unnamed4__" href="de/d0e/a18398.html#d9/d3c/a19747">
+              <topic label="framebuffer_palette_addr" href="de/d0e/a18398.html#ab4a160c025f0db5470ddced0d2c99de3"/>
+              <topic label="framebuffer_palette_num_colors" href="de/d0e/a18398.html#a9ea6d9ae58149f37ee098ce870bf07f0"/>
+            </topic>
+            <topic label="multiboot_info.__unnamed2__.__unnamed6__" href="de/d0e/a18398.html#d2/def/a19751">
+              <topic label="framebuffer_blue_field_position" href="de/d0e/a18398.html#ace107d23f7f4af6fd8d969926c5c9d16"/>
+              <topic label="framebuffer_blue_mask_size" href="de/d0e/a18398.html#aa8eaba7a0a6cf04509a014ac4bc937c0"/>
+              <topic label="framebuffer_green_field_position" href="de/d0e/a18398.html#adfcdecf04630d77ee5e41006f47dc4d7"/>
+              <topic label="framebuffer_green_mask_size" href="de/d0e/a18398.html#abc2579d314db9a050c48043a1b7f5ea9"/>
+              <topic label="framebuffer_red_field_position" href="de/d0e/a18398.html#a4dd2fad32ee3a2ce5379d7bf0a23dabe"/>
+              <topic label="framebuffer_red_mask_size" href="de/d0e/a18398.html#a0d868424e2b703471e3d73c0a72bc75c"/>
+            </topic>
+            <topic label="multiboot_info.u" href="de/d0e/a18398.html#d3/d67/a19739">
+              <topic label="aout_sym" href="de/d0e/a18398.html#adcc9d90eba827321c643ad06b62c7817"/>
+              <topic label="elf_sec" href="de/d0e/a18398.html#af2b83453f34de71046f2bbb48051c1f4"/>
+            </topic>
+            <topic label="multiboot_memory_map_t" href="de/d0e/a18398.html#d2/d08/a19295">
+              <topic label="addr" href="de/d0e/a18398.html#a40e066ba79afd138308bd0db4b3f4f5b"/>
+              <topic label="len" href="de/d0e/a18398.html#a0c5d40a87a63b01fc424bb3c15c89997"/>
+              <topic label="size" href="de/d0e/a18398.html#a1b4b5157d5e972e92981177fd1eb6d67"/>
+              <topic label="type" href="de/d0e/a18398.html#affc11fb6e6ece4860a1929b791073538"/>
+            </topic>
+            <topic label="multiboot_module_t" href="de/d0e/a18398.html#d9/d7c/a19299">
+              <topic label="cmdline" href="de/d0e/a18398.html#a3219140f9baf1a790a602db25e8597c7"/>
+              <topic label="mod_end" href="de/d0e/a18398.html#aa2b5dda7d7d51a1f3fbd613adfa640b0"/>
+              <topic label="mod_start" href="de/d0e/a18398.html#a3bcfca83ccb172cd79123a8341ed4cfb"/>
+              <topic label="pad" href="de/d0e/a18398.html#aff552d4c321b0607d77cda0c2cdc5708"/>
+            </topic>
+            <topic label="MULTIBOOT_AOUT_KLUDGE" href="de/d0e/a18398.html#a791f0c6a97c36de5388c990503ee4639"/>
+            <topic label="MULTIBOOT_BOOTLOADER_MAGIC" href="de/d0e/a18398.html#aacd617f4e3daafd6eab95fb6215ccae4"/>
+            <topic label="MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT" href="de/d0e/a18398.html#af6005f97267af2cb0ff37fb245284440"/>
+            <topic label="MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED" href="de/d0e/a18398.html#a8e2af641ff42074bb807c3ec9e33b2e0"/>
+            <topic label="MULTIBOOT_FRAMEBUFFER_TYPE_RGB" href="de/d0e/a18398.html#a34b2f01226ea42de22e06db7f652fbb1"/>
+            <topic label="MULTIBOOT_HEADER_ALIGN" href="de/d0e/a18398.html#abc554da6e5184d34e039b551177434ba"/>
+            <topic label="MULTIBOOT_HEADER_MAGIC" href="de/d0e/a18398.html#ab36ad4b4a42c58aac4ad1f2ba13054e9"/>
+            <topic label="MULTIBOOT_INFO_ALIGN" href="de/d0e/a18398.html#a7f583196f43e30e93323f5e44554d726"/>
+            <topic label="MULTIBOOT_INFO_AOUT_SYMS" href="de/d0e/a18398.html#a186ab9e55c5bc612b9fd7e10b4be5600"/>
+            <topic label="MULTIBOOT_INFO_APM_TABLE" href="de/d0e/a18398.html#aab73446f0cee2e9dc91f43eb9a0c806b"/>
+            <topic label="MULTIBOOT_INFO_BOOT_LOADER_NAME" href="de/d0e/a18398.html#a9743476d5f32c9ae22f6254a0e3ba11d"/>
+            <topic label="MULTIBOOT_INFO_BOOTDEV" href="de/d0e/a18398.html#acfde5ffdd699c023dd8f4b89aa66556f"/>
+            <topic label="MULTIBOOT_INFO_CMDLINE" href="de/d0e/a18398.html#ae75fb4f821b7ab405d46318d9b90a677"/>
+            <topic label="MULTIBOOT_INFO_CONFIG_TABLE" href="de/d0e/a18398.html#ad60e5b72325f5752e955879f3fbb44c3"/>
+            <topic label="MULTIBOOT_INFO_DRIVE_INFO" href="de/d0e/a18398.html#af2c5803d8cc6e1e8c00181ca546e68ab"/>
+            <topic label="MULTIBOOT_INFO_ELF_SHDR" href="de/d0e/a18398.html#ad7d22ae99c11dc92152acdc8494a71f0"/>
+            <topic label="MULTIBOOT_INFO_FRAMEBUFFER_INFO" href="de/d0e/a18398.html#a1c07b211ed2c374f5fbcf40c97bce2c0"/>
+            <topic label="MULTIBOOT_INFO_MEM_MAP" href="de/d0e/a18398.html#a2d16dabdfdee01362c3457d06f0ff850"/>
+            <topic label="MULTIBOOT_INFO_MEMORY" href="de/d0e/a18398.html#a1cb6047ede9a179b2958048573269d7a"/>
+            <topic label="MULTIBOOT_INFO_MODS" href="de/d0e/a18398.html#a9a06a0175854cc6af54ddb6bd798c5bc"/>
+            <topic label="MULTIBOOT_INFO_VBE_INFO" href="de/d0e/a18398.html#abf0a727e2e262407c77d54baf40d2f39"/>
+            <topic label="MULTIBOOT_MEMORY_ACPI_RECLAIMABLE" href="de/d0e/a18398.html#af35be82586f332a561d00207c937ee57"/>
+            <topic label="MULTIBOOT_MEMORY_AVAILABLE" href="de/d0e/a18398.html#a7fe141351ebcde0acbd6118ad0ea1a21"/>
+            <topic label="MULTIBOOT_MEMORY_BADRAM" href="de/d0e/a18398.html#a1604ec18ac949d88dab993904b08c075"/>
+            <topic label="MULTIBOOT_MEMORY_INFO" href="de/d0e/a18398.html#afdfca6bbbf4b7dca40e9d43e58201f55"/>
+            <topic label="MULTIBOOT_MEMORY_NVS" href="de/d0e/a18398.html#a68f78286f7434d373a82f1b6f6473c72"/>
+            <topic label="MULTIBOOT_MEMORY_RESERVED" href="de/d0e/a18398.html#a0299aedc71e1f6707181471bafb18e7c"/>
+            <topic label="MULTIBOOT_MOD_ALIGN" href="de/d0e/a18398.html#ab3284a28549f2a2f1a2001ca023aaa1e"/>
+            <topic label="MULTIBOOT_PAGE_ALIGN" href="de/d0e/a18398.html#aab5e5487e858de2a031cd3f1232f7b60"/>
+            <topic label="MULTIBOOT_SEARCH" href="de/d0e/a18398.html#a0b53e2de91aa7498c4b476776b27e5f3"/>
+            <topic label="MULTIBOOT_VIDEO_MODE" href="de/d0e/a18398.html#a74a1da9293ae3835241c60b2d9e65e8d"/>
+            <topic label="multiboot_uint16_t" href="de/d0e/a18398.html#a3a11e3c2b5e0617736a05343aa5795b3"/>
+            <topic label="multiboot_uint32_t" href="de/d0e/a18398.html#a009f355da41fed4badb8a52d432f5186"/>
+            <topic label="multiboot_uint64_t" href="de/d0e/a18398.html#a8dfdd61648b48aa31845db590970e06a"/>
+            <topic label="multiboot_uint8_t" href="de/d0e/a18398.html#a037f602538fccf97e90021c19fdfc047"/>
+            <topic label="__attribute__" href="de/d0e/a18398.html#aa6b9a7218d544abc2be2bd335681b0a1"/>
+            <topic label="__attribute__" href="de/d0e/a18398.html#a4bbf25084dee10ec29f4356cacced463"/>
+            <topic label="addr" href="de/d0e/a18398.html#a8286ae6db03c34c4bb161accbfbfbbcd"/>
+            <topic label="len" href="de/d0e/a18398.html#a6de3a6d27a7e07942958b912d39792e6"/>
+            <topic label="size" href="de/d0e/a18398.html#a6d813a0f2b5281b18dea3f4cda696c33"/>
+            <topic label="type" href="de/d0e/a18398.html#a8da1a8c7127a0371eec0810a29e30f3c"/>
+          </topic>
+        </topic>
+        <topic label="driver" href="dir_1a23d90a90b116220e4c9c5e74cdbcbc.html">
+          <topic label="kdriver.hpp" href="d1/d33/a18419.html">
+            <topic label="driver::Driver" href="dc/d37/a19307.html">
+              <topic label="Driver" href="dc/d37/a19307.html#a7de0c11fff1dc1f5d004b2a76e840840"/>
+              <topic label="~Driver" href="dc/d37/a19307.html#aacc7524b989c2561147c5dd0b901381c"/>
+              <topic label="activate" href="dc/d37/a19307.html#a8c86c1e52652d8b491d37a3b60b535b0"/>
+              <topic label="deactivate" href="dc/d37/a19307.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1"/>
+              <topic label="reset" href="dc/d37/a19307.html#a98d2e779c02364fc58c172d0d2a32bdd"/>
+            </topic>
+            <topic label="driver::DriverManager" href="d3/d37/a19311.html">
+              <topic label="DriverManager" href="d3/d37/a19311.html#af3bed49a4b243c2f65d09c35db15158b"/>
+              <topic label="~DriverManager" href="d3/d37/a19311.html#a29731c1f4b1215fd5c4ab27624ae6563"/>
+              <topic label="activateAll" href="d3/d37/a19311.html#a05b071d8a8c12f2d284fb61f4ecd116e"/>
+              <topic label="addDriver" href="d3/d37/a19311.html#ab8bd89b91ea49f343276c3c841153cd8"/>
+              <topic label="drivers" href="d3/d37/a19311.html#acdf43f6340b26ad2d9b9c90d8974b370"/>
+              <topic label="numDrivers" href="d3/d37/a19311.html#a347286da44d912bba3f720d8b0600946"/>
+            </topic>
+            <topic label="MAX_NUMDRIVERS" href="d1/d33/a18419.html#a14e1e30a5e2cbbd23a1fd111357f9076"/>
+          </topic>
+          <topic label="kkeyboard.hpp" href="d4/d22/a18413.html">
+            <topic label="driver::KeyboardDriver" href="dc/d7c/a19319.html">
+              <topic label="KeyboardDriver" href="dc/d7c/a19319.html#a63898e993f02352193db996d00179347"/>
+              <topic label="~KeyboardDriver" href="dc/d7c/a19319.html#a77da196f3c04c549e1085ce5566e5df3"/>
+              <topic label="activate" href="dc/d7c/a19319.html#a58553d39d7dcfe6b55e8ddb1e7b1d187"/>
+              <topic label="deactivate" href="dc/d7c/a19319.html#aaa7e99b6214dc8439230a95dd57e617e"/>
+              <topic label="handleInterrupt" href="dc/d7c/a19319.html#a248fa0da9acac54a3a8880c7b66b3f2b"/>
+              <topic label="handleInterrupt" href="dc/d7c/a19319.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+              <topic label="reset" href="dc/d7c/a19319.html#a22b7b080ab1c8b0f2ed4beba75b34691"/>
+              <topic label="caps_on" href="dc/d7c/a19319.html#a8a63dbc25a08a75f62ae0674df1deb30"/>
+              <topic label="commandPort" href="dc/d7c/a19319.html#a58fc9113701ffc04637996780c843ff0"/>
+              <topic label="dataPort" href="dc/d7c/a19319.html#afd6cdddb62a2a2d2b31043eb32887b41"/>
+              <topic label="interrupt_manager" href="dc/d7c/a19319.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+              <topic label="interruptNumber" href="dc/d7c/a19319.html#afeede822d3e98957e76e627a54ec2f7a"/>
+              <topic label="keyboardEventHandler" href="dc/d7c/a19319.html#a11ec84b7abf113ec270f124564776e1f"/>
+              <topic label="led_byte_to_send" href="dc/d7c/a19319.html#aed7b5d279f6f1dffee10d5fb92ed6b1c"/>
+              <topic label="shift_pressed" href="dc/d7c/a19319.html#afba07c783deebfb275c1437f7c23601d"/>
+              <topic label="waiting_for_led_ack" href="dc/d7c/a19319.html#a703464394033a8f4f664d9289ae2e9f8"/>
+            </topic>
+            <topic label="driver::KeyboardEventHandler" href="d0/d72/a19315.html">
+              <topic label="KeyboardEventHandler" href="d0/d72/a19315.html#a63ee0249476256e721e05e6375383317"/>
+              <topic label="~KeyboardEventHandler" href="d0/d72/a19315.html#aed6531b818751f0f23b6b9836ac94aa0"/>
+              <topic label="onKeyDown" href="d0/d72/a19315.html#ae2b923ef0eb58e29f57a155debadac6a"/>
+              <topic label="onKeyUp" href="d0/d72/a19315.html#a28547100b7420e1f73b745df873cd411"/>
+            </topic>
+          </topic>
+          <topic label="kmouse.hpp" href="d2/d18/a18416.html">
+            <topic label="driver::MouseDriver" href="da/dea/a19327.html">
+              <topic label="MouseDriver" href="da/dea/a19327.html#a639956c8ce11d62ee443825e9b9695af"/>
+              <topic label="~MouseDriver" href="da/dea/a19327.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22"/>
+              <topic label="activate" href="da/dea/a19327.html#a446769df0b3b537a525476c7c8be47bc"/>
+              <topic label="deactivate" href="da/dea/a19327.html#a4329c1cdedc72adf0b95cb3911c4acf6"/>
+              <topic label="handleInterrupt" href="da/dea/a19327.html#a1b2f08490b7954e5ca504cd8bb6862c0"/>
+              <topic label="handleInterrupt" href="da/dea/a19327.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+              <topic label="mouse_block_video_mem_value" href="da/dea/a19327.html#a1a2a455ca7146dea3148afa8cb6c9ed5"/>
+              <topic label="reset" href="da/dea/a19327.html#aabe3740996bf70fda96f0a25228954a6"/>
+              <topic label="__mouse_x_" href="da/dea/a19327.html#ac2077f6309c79d5f585fb966b57fe065"/>
+              <topic label="__mouse_y_" href="da/dea/a19327.html#aa02009b37420687ef18db8a05ff9181f"/>
+              <topic label="buffer" href="da/dea/a19327.html#aaa1d55d296d88995ac49a8a9a75a79d4"/>
+              <topic label="buttons" href="da/dea/a19327.html#a7942997bd5ead2767e9627d91789dd70"/>
+              <topic label="commandPort" href="da/dea/a19327.html#a2877a9f46dd83a5f05f17fd83a0a7725"/>
+              <topic label="dataPort" href="da/dea/a19327.html#a8e30a6f6c5839fcf9c3ab63aa167d046"/>
+              <topic label="interrupt_manager" href="da/dea/a19327.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+              <topic label="interruptNumber" href="da/dea/a19327.html#afeede822d3e98957e76e627a54ec2f7a"/>
+              <topic label="mouseEventHandler" href="da/dea/a19327.html#a804f5657a062e0a18f3b56781f884c66"/>
+              <topic label="offset" href="da/dea/a19327.html#a313426dd9aa1af1540cbffc2e77c58c1"/>
+              <topic label="old_char_under_mouse_pointer" href="da/dea/a19327.html#a4a671e7e2b235f6bec473cb960401bd6"/>
+            </topic>
+            <topic label="driver::MouseEventHandler" href="d5/d17/a19323.html">
+              <topic label="MouseEventHandler" href="d5/d17/a19323.html#aa0fd3739c52bcd4d553cefaf41760a9b"/>
+              <topic label="~MouseEventHandler" href="d5/d17/a19323.html#abbfe4a7ae2911f989513178530314211"/>
+              <topic label="onMouseDown" href="d5/d17/a19323.html#a2f12c5f63356c3045fd6cb46fd89374f"/>
+              <topic label="onMouseMove" href="d5/d17/a19323.html#a68f635b3b65f927d37d4e0835f7e0b30"/>
+              <topic label="onMouseUp" href="d5/d17/a19323.html#a09b77fe86bfa79313b5c5b91d09eb514"/>
+            </topic>
+            <topic label="KMOUSE_COLOR_BLACK" href="d2/d18/a18416.html#ac9670c34ae4e43ca669484a7a317e968"/>
+            <topic label="KMOUSE_COLOR_BLUE" href="d2/d18/a18416.html#a6d83e86a8c6b6046bae502774a4e9e83"/>
+            <topic label="KMOUSE_COLOR_BROWN" href="d2/d18/a18416.html#a5bc124f24ecf7e9b0b06d181a6fd7a3e"/>
+            <topic label="KMOUSE_COLOR_CYAN" href="d2/d18/a18416.html#a9660baab3bfc34866b252eff71da777d"/>
+            <topic label="KMOUSE_COLOR_DARK_GREY" href="d2/d18/a18416.html#a804c656f97148c66dee375ad20d6326e"/>
+            <topic label="KMOUSE_COLOR_GREEN" href="d2/d18/a18416.html#ae245d853ffcebef06bd052849e35471c"/>
+            <topic label="KMOUSE_COLOR_LIGHT_BLUE" href="d2/d18/a18416.html#a5882f98f21668e74fbc61e9a3cc4d4c5"/>
+            <topic label="KMOUSE_COLOR_LIGHT_CYAN" href="d2/d18/a18416.html#ac9391d6382197266f9d814ed3d21bac2"/>
+            <topic label="KMOUSE_COLOR_LIGHT_GREEN" href="d2/d18/a18416.html#ac874f858f617e42a6376c7092940376c"/>
+            <topic label="KMOUSE_COLOR_LIGHT_GREY" href="d2/d18/a18416.html#ab7f5f57837c11ae93f9a3c6ef0bba5a8"/>
+            <topic label="KMOUSE_COLOR_LIGHT_MAGENTA" href="d2/d18/a18416.html#a5a90c65c80e669968e259e84b095c408"/>
+            <topic label="KMOUSE_COLOR_LIGHT_RED" href="d2/d18/a18416.html#acb168549620efee2737255317c814059"/>
+            <topic label="KMOUSE_COLOR_MAGENTA" href="d2/d18/a18416.html#abfe7fa11c53fb1ea1270f0ed00bb18b8"/>
+            <topic label="KMOUSE_COLOR_RED" href="d2/d18/a18416.html#a1d9a56551248abc6954bf18c76ddcb74"/>
+            <topic label="KMOUSE_COLOR_WHITE" href="d2/d18/a18416.html#abb30f17e5bf0289632c5abbd2d2dd99a"/>
+            <topic label="KMOUSE_COLOR_YELLOW" href="d2/d18/a18416.html#abc652aa810e06ef28716a20cb70d51d4"/>
+            <topic label="MOUSE_POINTER_COLOR" href="d2/d18/a18416.html#a637dd833f5f7af42afa1f42349a4d89e"/>
+          </topic>
+        </topic>
+        <topic label="essential" href="dir_c2bb8e66a15659afc0e54f8e919ef455.html">
+          <topic label="kgdt.hpp" href="d9/dc6/a18425.html">
+            <topic label="essential::GDT" href="d3/d8c/a19335.html">
+              <topic label="GDT" href="d3/d8c/a19335.html#aa061ecab5a20a3556413fbbde4fe89d7"/>
+              <topic label="~GDT" href="d3/d8c/a19335.html#a9b61f75de7fa2ffe9589f43c3f6a6a6c"/>
+              <topic label="installTable" href="d3/d8c/a19335.html#af8e3c1da270077eb7cc6551b35c0e5ca"/>
+              <topic label="kernel_CS_selector" href="d3/d8c/a19335.html#a89a8d2c17e3c22e7200bff09252f46e1"/>
+              <topic label="kernel_DS_selector" href="d3/d8c/a19335.html#a34661a528b1630bff806e25411ad6ec3"/>
+              <topic label="printLoadedTable" href="d3/d8c/a19335.html#a9c89bddfdb21d5cc09c1d82411982de9"/>
+              <topic label="printLoadedTableHeader" href="d3/d8c/a19335.html#a2ae998750fc1e18e6778e92774bd3574"/>
+              <topic label="user_CS_selector" href="d3/d8c/a19335.html#a8806a14009c4f0432d4b7043d687be17"/>
+              <topic label="user_DS_selector" href="d3/d8c/a19335.html#a90661f97e9cf214dd6d977b19c01f7fc"/>
+              <topic label="base" href="d3/d8c/a19335.html#ad0a48a89930e6a6c4467c977f4e91269"/>
+              <topic label="kernel_CS" href="d3/d8c/a19335.html#a20d7a6bb352e3f696c1c68bb394766d8"/>
+              <topic label="kernel_DS" href="d3/d8c/a19335.html#ac8a5b4f6a3dc223e2eb6abebe19c9f08"/>
+              <topic label="limit" href="d3/d8c/a19335.html#a4105a25a1ec71dc7e338639bb370c664"/>
+              <topic label="nullSegment" href="d3/d8c/a19335.html#a154c2e2725809d873c8e7d5f19ea66c5"/>
+              <topic label="user_CS" href="d3/d8c/a19335.html#a32508694f9db3188cd4aba126cbfb5bb"/>
+              <topic label="user_DS" href="d3/d8c/a19335.html#a73463d83e2048869692d0adf1acac7a6"/>
+            </topic>
+            <topic label="essential::GDT_row" href="dd/da0/a19331.html">
+              <topic label="GDT_row" href="dd/da0/a19331.html#a5692f86b7ebf4eefdeb78e48f281092b"/>
+              <topic label="GDT_row" href="dd/da0/a19331.html#a27ff8d9a6bf6c2c98cf78a0257e4667e"/>
+              <topic label="~GDT_row" href="dd/da0/a19331.html#a6eb69c55c0bd16040b2d766dd068df31"/>
+              <topic label="GDT" href="dd/da0/a19331.html#a235097b2551abe03269f88341b4bdf87"/>
+              <topic label="access" href="dd/da0/a19331.html#a7f01a0febd325787f1ff47d6a3b668a9"/>
+              <topic label="base_high" href="dd/da0/a19331.html#a2cbd86d4258ecebf7b46cc9bb8611b5b"/>
+              <topic label="base_low" href="dd/da0/a19331.html#a298d18522898ad48c1e05b79f1f4dff7"/>
+              <topic label="base_middle" href="dd/da0/a19331.html#a8429e04bddc6a61c4e95b88901ae219d"/>
+              <topic label="granularity" href="dd/da0/a19331.html#af180a640dbd5213b3f936ff7cf48deaf"/>
+              <topic label="limit_low" href="dd/da0/a19331.html#a2bddbe405dfbbbd101c475bd1bd65112"/>
+            </topic>
+            <topic label="GDT_ACCESS_CODE_PL0" href="d9/dc6/a18425.html#ac4461ee84aade9ee824de64d4846ec98"/>
+            <topic label="GDT_ACCESS_CODE_PL3" href="d9/dc6/a18425.html#a01d908c8637340b21274e0176b320c05"/>
+            <topic label="GDT_ACCESS_DATA_PL0" href="d9/dc6/a18425.html#a1adfff1c72212b5c4e1df35485bb102a"/>
+            <topic label="GDT_ACCESS_DATA_PL3" href="d9/dc6/a18425.html#ac7f57dcdd84028460100b6da75ad4938"/>
+            <topic label="GDT_GRAN_FLAGS" href="d9/dc6/a18425.html#a4941c819dbbef299c391bf53c24caf8d"/>
+            <topic label="SEG_ACCESS_DESCTYPE" href="d9/dc6/a18425.html#a0d47ea941c3bdfd06858a467d2e76d83"/>
+            <topic label="SEG_ACCESS_PRES" href="d9/dc6/a18425.html#ab9e609c85bc4472f4f9b69697f2e5067"/>
+            <topic label="SEG_ACCESS_PRIV" href="d9/dc6/a18425.html#a0cb0ae4ca069ed571a3b2db9190e12df"/>
+            <topic label="SEG_ACCESS_TYPE" href="d9/dc6/a18425.html#a6c474d3015717ee1a2d99ae6a7b00ec3"/>
+            <topic label="SEG_CODE_EXRD" href="d9/dc6/a18425.html#ae04daf26bdb792ae557ef1216021cc43"/>
+            <topic label="SEG_DATA_RDWR" href="d9/dc6/a18425.html#add294548173871e30e54b92bf5da2758"/>
+            <topic label="SEG_GRAN_GRAN" href="d9/dc6/a18425.html#ae86357f11d481de7242f3178629241b8"/>
+            <topic label="SEG_GRAN_LONG" href="d9/dc6/a18425.html#a9759917f0cd67a1d7c87849e211a7993"/>
+            <topic label="SEG_GRAN_SAVL" href="d9/dc6/a18425.html#a79a943b17e5929ca9e06fc7cc1cb0ccc"/>
+            <topic label="SEG_GRAN_SIZE" href="d9/dc6/a18425.html#a7667e7c13f08890d3a6051346233691c"/>
+            <topic label="~GDT" href="d9/dc6/a18425.html#ab808423f6529092dc90fcb7836fe024a"/>
+            <topic label="~GDT_row" href="d9/dc6/a18425.html#a5322ab07a139d8ae6f9c518b288bde15"/>
+            <topic label="__attribute__" href="d9/dc6/a18425.html#a52e3ec8c29cc4bb68f65445749f0bfdb"/>
+            <topic label="GDT_row" href="d9/dc6/a18425.html#ad6539f5ca5082793a69451b8c1fc6523"/>
+            <topic label="GDT_row" href="d9/dc6/a18425.html#a24693ad4185e3f70d2be14a964474436"/>
+            <topic label="installTable" href="d9/dc6/a18425.html#a258db7c2f70fd1b20332ee3c00cd1d89"/>
+            <topic label="kernel_CS_selector" href="d9/dc6/a18425.html#a169aef5ef99da67bb0047dfc3d6a22e4"/>
+            <topic label="kernel_DS_selector" href="d9/dc6/a18425.html#aaa6fbf4816b6af649fc82186fe18b4e0"/>
+            <topic label="printLoadedTable" href="d9/dc6/a18425.html#a0a72b35b5fcadccd545ee4c5ef7efdd3"/>
+            <topic label="printLoadedTableHeader" href="d9/dc6/a18425.html#a6aba53071c94f3ffe96befc625602c9c"/>
+            <topic label="user_CS_selector" href="d9/dc6/a18425.html#a6ef65886fcf664d696b4361309452c2c"/>
+            <topic label="user_DS_selector" href="d9/dc6/a18425.html#a95dcc3ea7fb0310df8f2ab457deca483"/>
+            <topic label="access" href="d9/dc6/a18425.html#a8b0d6200bc639dd37ff68847a0adde5f"/>
+            <topic label="base" href="d9/dc6/a18425.html#ad516e6ff5b7dd7f6ce2946c527ddb8b9"/>
+            <topic label="base_high" href="d9/dc6/a18425.html#a1a173457c7aa39c59c008fcc3332d2b3"/>
+            <topic label="base_low" href="d9/dc6/a18425.html#a71e21ea67de59991e9a27666a1752a8f"/>
+            <topic label="base_middle" href="d9/dc6/a18425.html#a6b67e86f6de9204d76adab79069aec29"/>
+            <topic label="granularity" href="d9/dc6/a18425.html#acfea365f69e71368a2db03333d4afd6f"/>
+            <topic label="kernel_CS" href="d9/dc6/a18425.html#a42e2af3e7b809f6f5e06ecfecdb504e0"/>
+            <topic label="kernel_DS" href="d9/dc6/a18425.html#a1b73e3464fcb9312774f2347e1b7604e"/>
+            <topic label="limit" href="d9/dc6/a18425.html#ab28e82ae69032cb4ad3ec3a0be3d7129"/>
+            <topic label="limit_low" href="d9/dc6/a18425.html#aa7ae5b5a918e00776ff07fb1c58a348d"/>
+            <topic label="nullSegment" href="d9/dc6/a18425.html#a4facd1fb9d9bd77b1dd234a062c8d9dd"/>
+            <topic label="user_CS" href="d9/dc6/a18425.html#a8d89c16e869ec13a725c780925713916"/>
+            <topic label="user_DS" href="d9/dc6/a18425.html#a137b4628cf352225e57720432f2db487"/>
+          </topic>
+          <topic label="kicxxabi.hpp" href="dc/de4/a18422.html">
+            <topic label="essential::atexit_func_entry_t" href="d7/d5c/a19339.html">
+              <topic label="destructor_func" href="d7/d5c/a19339.html#a665175c477008154e9b40ef96a8d81c2"/>
+              <topic label="dso_handle" href="d7/d5c/a19339.html#a98800f0ffd56e2dc77c46a741e1cf008"/>
+              <topic label="obj_ptr" href="d7/d5c/a19339.html#a24ece443578ebec2449e72e998521a11"/>
+            </topic>
+            <topic label="ATEXIT_MAX_FUNCS" href="dc/de4/a18422.html#ae07a9ad040d2fbefafcff363b77697ce"/>
+            <topic label="uarch_t" href="dc/de4/a18422.html#a35fc01d4eba01f3f2ec636bd6b5ff34f"/>
+            <topic label="__callConstructors" href="dc/de4/a18422.html#a433c3d2d19d89890b522ac26b05fa7aa"/>
+            <topic label="__cxa_finalize" href="dc/de4/a18422.html#a098e7240e26e869c035075be004b4ee9"/>
+          </topic>
+        </topic>
+        <topic label="hardware_communication" href="dir_53afcd4fba698aab0c6227766ed2d23a.html">
+          <topic label="kinterrupt.hpp" href="d5/d65/a18407.html">
+            <topic label="hardware_communication::IDT_row" href="d7/d8c/a19347.html">
+              <topic label="IDT_row" href="d7/d8c/a19347.html#a5149970639d0f251d529808a192b4b55"/>
+              <topic label="~IDT_row" href="d7/d8c/a19347.html#a9cad760dfa1c1f76f98b6207365f7e2d"/>
+              <topic label="InterruptManager" href="d7/d8c/a19347.html#a6c5563315b1a2f5c67ae8b78d06e3c7f"/>
+              <topic label="access" href="d7/d8c/a19347.html#afa706321cb5ba41a6035dbe1ec39c265"/>
+              <topic label="handlerAddressHighbits" href="d7/d8c/a19347.html#af1a4bb042f75f10c5e2b08034e82aed3"/>
+              <topic label="handlerAddressLowbits" href="d7/d8c/a19347.html#a3390e4d53e904d420187ecc0247e9289"/>
+              <topic label="kernelCodeSegmentSelector" href="d7/d8c/a19347.html#a800309c99800063315cddf536a3d0d67"/>
+              <topic label="reserved" href="d7/d8c/a19347.html#a96bce1ce9c6a7e9b5a20607f41a2e876"/>
+            </topic>
+            <topic label="hardware_communication::InterruptHandler" href="d0/dcf/a19343.html">
+              <topic label="InterruptHandler" href="d0/dcf/a19343.html#a134c8931dff43e766f1ddc4d0f35cd48"/>
+              <topic label="~InterruptHandler" href="d0/dcf/a19343.html#a5114528f0db9926365b345337e42af9b"/>
+              <topic label="handleInterrupt" href="d0/dcf/a19343.html#aa89d41d69840cb4f1c8692fa6ded28f4"/>
+              <topic label="interrupt_manager" href="d0/dcf/a19343.html#ae86f4eae0ce9272b2027d44bdfd71e33"/>
+              <topic label="interruptNumber" href="d0/dcf/a19343.html#afeede822d3e98957e76e627a54ec2f7a"/>
+            </topic>
+            <topic label="hardware_communication::InterruptManager" href="d9/d99/a19351.html">
+              <topic label="InterruptManager" href="d9/d99/a19351.html#aec70c703cac64ef1eec4b5a94d2e145c"/>
+              <topic label="~InterruptManager" href="d9/d99/a19351.html#a65276f26b5d5197482a415b83a898560"/>
+              <topic label="activate" href="d9/d99/a19351.html#a1ab5b6378071338ede295f0bffaf3d51"/>
+              <topic label="deactivate" href="d9/d99/a19351.html#a9451566bf08617378ca2144505d394a6"/>
+              <topic label="handleInterrupt" href="d9/d99/a19351.html#a2d3ef1656e1eaaf86be40a200a49a4b2"/>
+              <topic label="installTable" href="d9/d99/a19351.html#a81d593116320da32f1aa4057087f1e11"/>
+              <topic label="printLoadedTable" href="d9/d99/a19351.html#aac20f3a896bea512413568a60ad48c3d"/>
+              <topic label="printLoadedTableHeader" href="d9/d99/a19351.html#ad8a6f694662a3a36ba9353197e20c1b1"/>
+              <topic label="setIDTEntry" href="d9/d99/a19351.html#af448c0d55d2e226050b7f4efb6d4abe8"/>
+              <topic label="InterruptHandler" href="d9/d99/a19351.html#a9aef4ea3434f8ddeaf9c32a63e6faf05"/>
+              <topic label="base" href="d9/d99/a19351.html#ad94bd8e9c355fde3e814d4894bab0181"/>
+              <topic label="handlers" href="d9/d99/a19351.html#ac8aba191e612ad605b8b188f78e65d3b"/>
+              <topic label="interruptDescriptorTable" href="d9/d99/a19351.html#a7b6bb52a8072c51bfcb4f4877c3d0226"/>
+              <topic label="limit" href="d9/d99/a19351.html#a1991d8428ff7c74b31f42d48bb49547a"/>
+              <topic label="picMasterCommand" href="d9/d99/a19351.html#acb04723d03d6b34abbc5f7407cab0b33"/>
+              <topic label="picMasterData" href="d9/d99/a19351.html#a5287e31a546f60708b085b387332a904"/>
+              <topic label="picSlaveCommand" href="d9/d99/a19351.html#afed9d24b37c8f9386a71f4284b2502a4"/>
+              <topic label="picSlaveData" href="d9/d99/a19351.html#ac1111b7cfbd27b37f03a0678ae5dbaf1"/>
+            </topic>
+            <topic label="~IDT_row" href="d5/d65/a18407.html#a3fe23003c5b71fa3b47543c074c38ac3"/>
+            <topic label="__attribute__" href="d5/d65/a18407.html#a269f53904f53339ae2df626922b404b2"/>
+            <topic label="handleIRQ0x00" href="d5/d65/a18407.html#adf60fad10b12cc19ad193c928d36445c"/>
+            <topic label="handleIRQ0x01" href="d5/d65/a18407.html#a6498ed740318b424aaae4db1f223e558"/>
+            <topic label="handleIRQ0x0C" href="d5/d65/a18407.html#a996c60cc7e88bb1c85505c19f6c35117"/>
+            <topic label="IDT_row" href="d5/d65/a18407.html#ab2572e8a0d5fb3acf2373d28ba45ce25"/>
+            <topic label="ignoreInterrupt" href="d5/d65/a18407.html#a07e074bde074261858311b014bc2b398"/>
+            <topic label="__attribute__" href="d5/d65/a18407.html#a21c3ca5c318038eaed596c14fd2666ed"/>
+            <topic label="access" href="d5/d65/a18407.html#a8b0d6200bc639dd37ff68847a0adde5f"/>
+            <topic label="handlerAddressHighbits" href="d5/d65/a18407.html#a7884c02f32fe35058379ebdc96c5767c"/>
+            <topic label="handlerAddressLowbits" href="d5/d65/a18407.html#adf5df650f7c6f6e7792d97ee2b851265"/>
+            <topic label="kernelCodeSegmentSelector" href="d5/d65/a18407.html#acca378f87bf61c0de2befa4244846bfe"/>
+            <topic label="reserved" href="d5/d65/a18407.html#acb7bc06bed6f6408d719334fc41698c7"/>
+          </topic>
+          <topic label="kport.hpp" href="dc/d16/a18410.html">
+            <topic label="hardware_communication::Port" href="d3/d5b/a19355.html">
+              <topic label="Port" href="d3/d5b/a19355.html#ad001c21b67d4c138f65024f167030cca"/>
+              <topic label="~Port" href="d3/d5b/a19355.html#a8b13c33da4911afcbdcb21c97768a72e"/>
+              <topic label="portnumber" href="d3/d5b/a19355.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+            </topic>
+            <topic label="hardware_communication::Port16Bit" href="dd/d6a/a19367.html">
+              <topic label="Port16Bit" href="dd/d6a/a19367.html#a418bb2fc65b3bec91704d0e5e8957131"/>
+              <topic label="~Port16Bit" href="dd/d6a/a19367.html#a78dfa215194c676583e1b7e2dab38608"/>
+              <topic label="read" href="dd/d6a/a19367.html#a6b5df5669e802e31f27f0a4a0e62492a"/>
+              <topic label="write" href="dd/d6a/a19367.html#ac5a46ce99a70874a8a4fcb090eb40575"/>
+              <topic label="portnumber" href="dd/d6a/a19367.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+            </topic>
+            <topic label="hardware_communication::Port32Bit" href="d8/d2a/a19371.html">
+              <topic label="Port32Bit" href="d8/d2a/a19371.html#a507afa8607757baedf1789d73c2a173d"/>
+              <topic label="~Port32Bit" href="d8/d2a/a19371.html#a3e87dc7d610b279e8e7e072a0d1ee78c"/>
+              <topic label="read" href="d8/d2a/a19371.html#a41093c437a9508f984c90ae68e9c03bf"/>
+              <topic label="write" href="d8/d2a/a19371.html#a64a16fe840224ef769ab2933770d1b21"/>
+              <topic label="portnumber" href="d8/d2a/a19371.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+            </topic>
+            <topic label="hardware_communication::Port8Bit" href="d9/d0b/a19359.html">
+              <topic label="Port8Bit" href="d9/d0b/a19359.html#a057109ca3c28fbb9064c60ba5cdb1190"/>
+              <topic label="~Port8Bit" href="d9/d0b/a19359.html#a475bc218672c5743a9f8425cc84eb630"/>
+              <topic label="read" href="d9/d0b/a19359.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+              <topic label="write" href="d9/d0b/a19359.html#a523b6a757b27418dc015ed13e74bef60"/>
+              <topic label="portnumber" href="d9/d0b/a19359.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+            </topic>
+            <topic label="hardware_communication::Port8BitSlow" href="dc/da5/a19363.html">
+              <topic label="Port8BitSlow" href="dc/da5/a19363.html#aa830f1cf49e155af1033a8e611ecc6c1"/>
+              <topic label="~Port8BitSlow" href="dc/da5/a19363.html#aa19647802064296f8bf76cc12f10d243"/>
+              <topic label="read" href="dc/da5/a19363.html#ae8688251b574c3fd335b99f7e93fff2d"/>
+              <topic label="write" href="dc/da5/a19363.html#af84b15d5a205a421a9877e2341714031"/>
+              <topic label="portnumber" href="dc/da5/a19363.html#aab0c5c82b0190df88ddbb595bfac539a"/>
+            </topic>
+          </topic>
+        </topic>
+      </topic>
+      <topic label="libk_src" href="dir_d52aa9bb707950f8d968213103b69dbf.html">
+        <topic label="basic" href="dir_7e9b38ff86f40c049b6923d6e5368e6c.html">
+          <topic label="kiostream.cpp" href="dc/df9/a18326.html">
+            <topic label="MAGIC_HEIGHT" href="dc/df9/a18326.html#a887422301cbe9a94f8b96263415640cf"/>
+            <topic label="MAGIC_WIDTH" href="dc/df9/a18326.html#a5be9493285a1f50a67d98b887537217d"/>
+            <topic label="TAB_WIDTH" href="dc/df9/a18326.html#a49426d7a9b562958ad2ab7fbf134f368"/>
+            <topic label="doubleToString" href="dc/df9/a18326.html#af382674e4c9fb57a14b178d4ee12273a"/>
+            <topic label="power" href="dc/df9/a18326.html#a91bacd34c601c4cfe39f1ffa6c2a1385"/>
+            <topic label="printCharStr" href="dc/df9/a18326.html#a6bd99ada5f7c46567ee0ceca6c369d47"/>
+            <topic label="printHex" href="dc/df9/a18326.html#aab6eb585b409591414f84a1e3f606345"/>
+            <topic label="reverse" href="dc/df9/a18326.html#a913f40d6652965fdd1e34a04ab7dba2d"/>
+            <topic label="ullToString" href="dc/df9/a18326.html#a14bf754296559bf0266e127e677e8107"/>
+            <topic label="cursor_x_" href="dc/df9/a18326.html#a133981c4ba48aed67a5b874f7b213583"/>
+            <topic label="cursor_y_" href="dc/df9/a18326.html#a1bda227f31ddf346294cb531f7554ef3"/>
+            <topic label="vgaDataPort" href="dc/df9/a18326.html#a32de8112c133d2f05cae84bde7d98239"/>
+            <topic label="vgaIndexPort" href="dc/df9/a18326.html#a0cece8394c6a6dedd523238e9057125f"/>
+          </topic>
+          <topic label="kmemory.cpp" href="db/d8c/a18323.html">
+            <topic label="operator delete" href="db/d8c/a18323.html#afa145befcf5e7b83424408ca503c8637"/>
+            <topic label="operator delete" href="db/d8c/a18323.html#af057efbdbcd21ea12954d49cd2d245c6"/>
+            <topic label="operator delete[]" href="db/d8c/a18323.html#a22aea74a1155aa798d6032da46da2391"/>
+            <topic label="operator delete[]" href="db/d8c/a18323.html#ab26fe706b29fdeb33d5f6ead76c05815"/>
+            <topic label="operator new" href="db/d8c/a18323.html#a1a7f24760c8c7ad3bfcd54856d906fc2"/>
+            <topic label="operator new[]" href="db/d8c/a18323.html#aa75472ab4b765cf6f6b5b0ebcd4a28c8"/>
+          </topic>
+        </topic>
+        <topic label="driver" href="dir_2a16165def8352030967ba4cc3f6fbb5.html">
+          <topic label="kdriver.cpp" href="da/df2/a18338.html"/>
+          <topic label="kkeyboard.cpp" href="d4/d06/a18341.html"/>
+          <topic label="kmouse.cpp" href="df/ded/a18344.html"/>
+        </topic>
+        <topic label="essential" href="dir_505766543fcc8e90c13299eca156d2a2.html">
+          <topic label="kgdt.cpp" href="d1/db0/a18347.html"/>
+          <topic label="kicxxabi.cpp" href="dc/dcc/a18350.html">
+            <topic label="__cxa_atexit" href="dc/dcc/a18350.html#a6870fb46accc462562647e3d99c0b7c7"/>
+            <topic label="__atexit_func_count" href="dc/dcc/a18350.html#a0f75f529cf75cf0a9cd266f8d67675dc"/>
+            <topic label="__atexit_funcs" href="dc/dcc/a18350.html#a05a64060e9039acf0ba3c311b2d981b7"/>
+            <topic label="__dso_handle" href="dc/dcc/a18350.html#a19df960d2907e9c08a720ae7683e632c"/>
+            <topic label="ctors_end" href="dc/dcc/a18350.html#a9a50b36f9886cd6bdbe05a5a6639cd95"/>
+            <topic label="ctors_start" href="dc/dcc/a18350.html#a201d805094c80d48f8ee4e49ee85fb74"/>
+          </topic>
+        </topic>
+        <topic label="hardware_communication" href="dir_307d8ab59745c14449bc3f31f9f132b2.html">
+          <topic label="kinterrupt.cpp" href="dd/d22/a18335.html">
+            <topic label="installed_interrupt_manager" href="dd/d22/a18335.html#a1df59a6c3578a3d5d96bfef4ffd8fbc8"/>
+          </topic>
+          <topic label="kport.cpp" href="d0/dd0/a18332.html"/>
+        </topic>
+      </topic>
+    </topic>
+    <topic label="File Members" href="globals.html">
+      <topic label="All" href="globals.html"/>
+      <topic label="Functions" href="globals_func.html"/>
+      <topic label="Variables" href="globals_vars.html"/>
+      <topic label="Typedefs" href="globals_type.html"/>
+      <topic label="Macros" href="globals_defs.html"/>
+    </topic>
+  </topic>
+</toc>

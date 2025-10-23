@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a06683_source" xml:lang="en-US">
+<title>multiboot.hpp</title>
+<indexterm><primary>libk_header/basic/multiboot.hpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_a06683_source_1l00001"/><link linkend="_a06683_1a8286ae6db03c34c4bb161accbfbfbbcd">00001</link> <emphasis role="comment">/*&#32;&#32;multiboot.h&#32;-&#32;Multiboot&#32;header&#32;file.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00002"/><link linkend="_a06683_1a6de3a6d27a7e07942958b912d39792e6">00002</link> <emphasis role="comment">/*&#32;&#32;Copyright&#32;(C)&#32;1999,2003,2007,2008,2009,2010&#32;&#32;Free&#32;Software&#32;Foundation,&#32;Inc.</emphasis>
+<anchor xml:id="_a06683_source_1l00003"/>00003 <emphasis role="comment">&#32;*</emphasis>
+<anchor xml:id="_a06683_source_1l00004"/>00004 <emphasis role="comment">&#32;*&#32;&#32;Permission&#32;is&#32;hereby&#32;granted,&#32;free&#32;of&#32;charge,&#32;to&#32;any&#32;person&#32;obtaining&#32;a&#32;copy</emphasis>
+<anchor xml:id="_a06683_source_1l00005"/>00005 <emphasis role="comment">&#32;*&#32;&#32;of&#32;this&#32;software&#32;and&#32;associated&#32;documentation&#32;files&#32;(the&#32;&quot;Software&quot;),&#32;to</emphasis>
+<anchor xml:id="_a06683_source_1l00006"/>00006 <emphasis role="comment">&#32;*&#32;&#32;deal&#32;in&#32;the&#32;Software&#32;without&#32;restriction,&#32;including&#32;without&#32;limitation&#32;the</emphasis>
+<anchor xml:id="_a06683_source_1l00007"/>00007 <emphasis role="comment">&#32;*&#32;&#32;rights&#32;to&#32;use,&#32;copy,&#32;modify,&#32;merge,&#32;publish,&#32;distribute,&#32;sublicense,&#32;and/or</emphasis>
+<anchor xml:id="_a06683_source_1l00008"/><link linkend="_a06683_1a8da1a8c7127a0371eec0810a29e30f3c">00008</link> <emphasis role="comment">&#32;*&#32;&#32;sell&#32;copies&#32;of&#32;the&#32;Software,&#32;and&#32;to&#32;permit&#32;persons&#32;to&#32;whom&#32;the&#32;Software&#32;is</emphasis>
+<anchor xml:id="_a06683_source_1l00009"/>00009 <emphasis role="comment">&#32;*&#32;&#32;furnished&#32;to&#32;do&#32;so,&#32;subject&#32;to&#32;the&#32;following&#32;conditions:</emphasis>
+<anchor xml:id="_a06683_source_1l00010"/>00010 <emphasis role="comment">&#32;*</emphasis>
+<anchor xml:id="_a06683_source_1l00011"/>00011 <emphasis role="comment">&#32;*&#32;&#32;The&#32;above&#32;copyright&#32;notice&#32;and&#32;this&#32;permission&#32;notice&#32;shall&#32;be&#32;included&#32;in</emphasis>
+<anchor xml:id="_a06683_source_1l00012"/>00012 <emphasis role="comment">&#32;*&#32;&#32;all&#32;copies&#32;or&#32;substantial&#32;portions&#32;of&#32;the&#32;Software.</emphasis>
+<anchor xml:id="_a06683_source_1l00013"/>00013 <emphasis role="comment">&#32;*</emphasis>
+<anchor xml:id="_a06683_source_1l00014"/>00014 <emphasis role="comment">&#32;*&#32;&#32;THE&#32;SOFTWARE&#32;IS&#32;PROVIDED&#32;&quot;AS&#32;IS&quot;,&#32;WITHOUT&#32;WARRANTY&#32;OF&#32;ANY&#32;KIND,&#32;EXPRESS&#32;OR</emphasis>
+<anchor xml:id="_a06683_source_1l00015"/>00015 <emphasis role="comment">&#32;*&#32;&#32;IMPLIED,&#32;INCLUDING&#32;BUT&#32;NOT&#32;LIMITED&#32;TO&#32;THE&#32;WARRANTIES&#32;OF&#32;MERCHANTABILITY,</emphasis>
+<anchor xml:id="_a06683_source_1l00016"/>00016 <emphasis role="comment">&#32;*&#32;&#32;FITNESS&#32;FOR&#32;A&#32;PARTICULAR&#32;PURPOSE&#32;AND&#32;NONINFRINGEMENT.&#32;&#32;IN&#32;NO&#32;EVENT&#32;SHALL&#32;ANY</emphasis>
+<anchor xml:id="_a06683_source_1l00017"/>00017 <emphasis role="comment">&#32;*&#32;&#32;DEVELOPER&#32;OR&#32;DISTRIBUTOR&#32;BE&#32;LIABLE&#32;FOR&#32;ANY&#32;CLAIM,&#32;DAMAGES&#32;OR&#32;OTHER&#32;LIABILITY,</emphasis>
+<anchor xml:id="_a06683_source_1l00018"/>00018 <emphasis role="comment">&#32;*&#32;&#32;WHETHER&#32;IN&#32;AN&#32;ACTION&#32;OF&#32;CONTRACT,&#32;TORT&#32;OR&#32;OTHERWISE,&#32;ARISING&#32;FROM,&#32;OUT&#32;OF&#32;OR</emphasis>
+<anchor xml:id="_a06683_source_1l00019"/>00019 <emphasis role="comment">&#32;*&#32;&#32;IN&#32;CONNECTION&#32;WITH&#32;THE&#32;SOFTWARE&#32;OR&#32;THE&#32;USE&#32;OR&#32;OTHER&#32;DEALINGS&#32;IN&#32;THE&#32;SOFTWARE.</emphasis>
+<anchor xml:id="_a06683_source_1l00020"/>00020 <emphasis role="comment">&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00021"/>00021 
+<anchor xml:id="_a06683_source_1l00022"/>00022 <emphasis role="comment">//&#32;header&#32;src&#32;link&#32;:&#32;&#32;https://cgit.git.savannah.gnu.org/cgit/grub.git/tree/doc/multiboot.h?h=multiboot</emphasis>
+<anchor xml:id="_a06683_source_1l00023"/>00023 
+<anchor xml:id="_a06683_source_1l00024"/>00024 <emphasis role="preprocessor">#ifndef&#32;OSOS_BASIC_MULTIBOOT_HEADER</emphasis>
+<anchor xml:id="_a06683_source_1l00025"/>00025 <emphasis role="preprocessor">#define&#32;OSOS_BASIC_MULTIBOOT_HEADER&#32;1</emphasis>
+<anchor xml:id="_a06683_source_1l00026"/>00026 
+<anchor xml:id="_a06683_source_1l00027"/>00027 <emphasis role="comment">/*&#32;How&#32;many&#32;bytes&#32;from&#32;the&#32;start&#32;of&#32;the&#32;file&#32;we&#32;search&#32;for&#32;the&#32;header.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00028"/><link linkend="_a06683_1a0b53e2de91aa7498c4b476776b27e5f3">00028</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_SEARCH&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;8192</emphasis>
+<anchor xml:id="_a06683_source_1l00029"/><link linkend="_a06683_1abc554da6e5184d34e039b551177434ba">00029</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_HEADER_ALIGN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;4</emphasis>
+<anchor xml:id="_a06683_source_1l00030"/>00030 
+<anchor xml:id="_a06683_source_1l00031"/>00031 <emphasis role="comment">/*&#32;The&#32;magic&#32;field&#32;should&#32;contain&#32;this.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00032"/><link linkend="_a06683_1ab36ad4b4a42c58aac4ad1f2ba13054e9">00032</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_HEADER_MAGIC&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x1BADB002</emphasis>
+<anchor xml:id="_a06683_source_1l00033"/>00033 
+<anchor xml:id="_a06683_source_1l00034"/>00034 <emphasis role="comment">/*&#32;This&#32;should&#32;be&#32;in&#32;%eax.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00035"/><link linkend="_a06683_1aacd617f4e3daafd6eab95fb6215ccae4">00035</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_BOOTLOADER_MAGIC&#32;&#32;&#32;&#32;&#32;&#32;0x2BADB002</emphasis>
+<anchor xml:id="_a06683_source_1l00036"/>00036 
+<anchor xml:id="_a06683_source_1l00037"/>00037 <emphasis role="comment">/*&#32;Alignment&#32;of&#32;multiboot&#32;modules.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00038"/><link linkend="_a06683_1ab3284a28549f2a2f1a2001ca023aaa1e">00038</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_MOD_ALIGN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00001000</emphasis>
+<anchor xml:id="_a06683_source_1l00039"/>00039 
+<anchor xml:id="_a06683_source_1l00040"/>00040 <emphasis role="comment">/*&#32;Alignment&#32;of&#32;the&#32;multiboot&#32;info&#32;structure.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00041"/><link linkend="_a06683_1a7f583196f43e30e93323f5e44554d726">00041</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_ALIGN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000004</emphasis>
+<anchor xml:id="_a06683_source_1l00042"/>00042 
+<anchor xml:id="_a06683_source_1l00043"/>00043 <emphasis role="comment">/*&#32;Flags&#32;set&#32;in&#32;the&#32;&apos;flags&apos;&#32;member&#32;of&#32;the&#32;multiboot&#32;header.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00044"/>00044 
+<anchor xml:id="_a06683_source_1l00045"/>00045 <emphasis role="comment">/*&#32;Align&#32;all&#32;boot&#32;modules&#32;on&#32;i386&#32;page&#32;(4KB)&#32;boundaries.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00046"/><link linkend="_a06683_1aab5e5487e858de2a031cd3f1232f7b60">00046</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_PAGE_ALIGN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000001</emphasis>
+<anchor xml:id="_a06683_source_1l00047"/>00047 
+<anchor xml:id="_a06683_source_1l00048"/>00048 <emphasis role="comment">/*&#32;Must&#32;pass&#32;memory&#32;information&#32;to&#32;OS.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00049"/><link linkend="_a06683_1afdfca6bbbf4b7dca40e9d43e58201f55">00049</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_MEMORY_INFO&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000002</emphasis>
+<anchor xml:id="_a06683_source_1l00050"/>00050 
+<anchor xml:id="_a06683_source_1l00051"/>00051 <emphasis role="comment">/*&#32;Must&#32;pass&#32;video&#32;information&#32;to&#32;OS.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00052"/><link linkend="_a06683_1a74a1da9293ae3835241c60b2d9e65e8d">00052</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_VIDEO_MODE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000004</emphasis>
+<anchor xml:id="_a06683_source_1l00053"/>00053 
+<anchor xml:id="_a06683_source_1l00054"/>00054 <emphasis role="comment">/*&#32;This&#32;flag&#32;indicates&#32;the&#32;use&#32;of&#32;the&#32;address&#32;fields&#32;in&#32;the&#32;header.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00055"/><link linkend="_a06683_1a791f0c6a97c36de5388c990503ee4639">00055</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_AOUT_KLUDGE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00010000</emphasis>
+<anchor xml:id="_a06683_source_1l00056"/>00056 
+<anchor xml:id="_a06683_source_1l00057"/>00057 <emphasis role="comment">/*&#32;Flags&#32;to&#32;be&#32;set&#32;in&#32;the&#32;&apos;flags&apos;&#32;member&#32;of&#32;the&#32;multiboot&#32;info&#32;structure.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00058"/>00058 
+<anchor xml:id="_a06683_source_1l00059"/>00059 <emphasis role="comment">/*&#32;is&#32;there&#32;basic&#32;lower/upper&#32;memory&#32;information?&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00060"/><link linkend="_a06683_1a1cb6047ede9a179b2958048573269d7a">00060</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_MEMORY&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000001</emphasis>
+<anchor xml:id="_a06683_source_1l00061"/>00061 <emphasis role="comment">/*&#32;is&#32;there&#32;a&#32;boot&#32;device&#32;set?&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00062"/><link linkend="_a06683_1acfde5ffdd699c023dd8f4b89aa66556f">00062</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_BOOTDEV&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000002</emphasis>
+<anchor xml:id="_a06683_source_1l00063"/>00063 <emphasis role="comment">/*&#32;is&#32;the&#32;command-line&#32;defined?&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00064"/><link linkend="_a06683_1ae75fb4f821b7ab405d46318d9b90a677">00064</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_CMDLINE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000004</emphasis>
+<anchor xml:id="_a06683_source_1l00065"/>00065 <emphasis role="comment">/*&#32;are&#32;there&#32;modules&#32;to&#32;do&#32;something&#32;with?&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00066"/><link linkend="_a06683_1a9a06a0175854cc6af54ddb6bd798c5bc">00066</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_MODS&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000008</emphasis>
+<anchor xml:id="_a06683_source_1l00067"/>00067 
+<anchor xml:id="_a06683_source_1l00068"/>00068 <emphasis role="comment">/*&#32;These&#32;next&#32;two&#32;are&#32;mutually&#32;exclusive&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00069"/>00069 
+<anchor xml:id="_a06683_source_1l00070"/>00070 <emphasis role="comment">/*&#32;is&#32;there&#32;a&#32;symbol&#32;table&#32;loaded?&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00071"/><link linkend="_a06683_1a186ab9e55c5bc612b9fd7e10b4be5600">00071</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_AOUT_SYMS&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000010</emphasis>
+<anchor xml:id="_a06683_source_1l00072"/>00072 <emphasis role="comment">/*&#32;is&#32;there&#32;an&#32;ELF&#32;section&#32;header&#32;table?&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00073"/><link linkend="_a06683_1ad7d22ae99c11dc92152acdc8494a71f0">00073</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_ELF_SHDR&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0X00000020</emphasis>
+<anchor xml:id="_a06683_source_1l00074"/>00074 
+<anchor xml:id="_a06683_source_1l00075"/>00075 <emphasis role="comment">/*&#32;is&#32;there&#32;a&#32;full&#32;memory&#32;map?&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00076"/><link linkend="_a06683_1a2d16dabdfdee01362c3457d06f0ff850">00076</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_MEM_MAP&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000040</emphasis>
+<anchor xml:id="_a06683_source_1l00077"/>00077 
+<anchor xml:id="_a06683_source_1l00078"/>00078 <emphasis role="comment">/*&#32;Is&#32;there&#32;drive&#32;info?&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00079"/><link linkend="_a06683_1af2c5803d8cc6e1e8c00181ca546e68ab">00079</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_DRIVE_INFO&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000080</emphasis>
+<anchor xml:id="_a06683_source_1l00080"/>00080 
+<anchor xml:id="_a06683_source_1l00081"/>00081 <emphasis role="comment">/*&#32;Is&#32;there&#32;a&#32;config&#32;table?&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00082"/><link linkend="_a06683_1ad60e5b72325f5752e955879f3fbb44c3">00082</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_CONFIG_TABLE&#32;&#32;&#32;&#32;&#32;0x00000100</emphasis>
+<anchor xml:id="_a06683_source_1l00083"/>00083 
+<anchor xml:id="_a06683_source_1l00084"/>00084 <emphasis role="comment">/*&#32;Is&#32;there&#32;a&#32;boot&#32;loader&#32;name?&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00085"/><link linkend="_a06683_1a9743476d5f32c9ae22f6254a0e3ba11d">00085</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_BOOT_LOADER_NAME&#32;&#32;&#32;&#32;&#32;0x00000200</emphasis>
+<anchor xml:id="_a06683_source_1l00086"/>00086 
+<anchor xml:id="_a06683_source_1l00087"/>00087 <emphasis role="comment">/*&#32;Is&#32;there&#32;a&#32;APM&#32;table?&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00088"/><link linkend="_a06683_1aab73446f0cee2e9dc91f43eb9a0c806b">00088</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_APM_TABLE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000400</emphasis>
+<anchor xml:id="_a06683_source_1l00089"/>00089 
+<anchor xml:id="_a06683_source_1l00090"/>00090 <emphasis role="comment">/*&#32;Is&#32;there&#32;video&#32;information?&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00091"/><link linkend="_a06683_1abf0a727e2e262407c77d54baf40d2f39">00091</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_VBE_INFO&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000800</emphasis>
+<anchor xml:id="_a06683_source_1l00092"/><link linkend="_a06683_1a1c07b211ed2c374f5fbcf40c97bce2c0">00092</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_INFO_FRAMEBUFFER_INFO&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00001000</emphasis>
+<anchor xml:id="_a06683_source_1l00093"/>00093 
+<anchor xml:id="_a06683_source_1l00094"/>00094 <emphasis role="preprocessor">#ifndef&#32;ASM_FILE</emphasis>
+<anchor xml:id="_a06683_source_1l00095"/>00095 
+<anchor xml:id="_a06683_source_1l00096"/><link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">00096</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>;
+<anchor xml:id="_a06683_source_1l00097"/><link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">00097</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>;
+<anchor xml:id="_a06683_source_1l00098"/><link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">00098</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>;
+<anchor xml:id="_a06683_source_1l00099"/><link linkend="_a06683_1a8dfdd61648b48aa31845db590970e06a">00099</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;&#32;<link linkend="_a06683_1a8dfdd61648b48aa31845db590970e06a">multiboot_uint64_t</link>;
+<anchor xml:id="_a06683_source_1l00100"/>00100 
+<anchor xml:id="_a06683_source_1l00101"/><link linkend="_a06683">00101</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d0/d94/a07544">multiboot_header</link>
+<anchor xml:id="_a06683_source_1l00102"/>00102 {
+<anchor xml:id="_a06683_source_1l00103"/>00103 &#32;&#32;<emphasis role="comment">/*&#32;Must&#32;be&#32;MULTIBOOT_MAGIC&#32;-&#32;see&#32;above.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00104"/><link linkend="_a06683_1a7fddee92e60ff58e159c6bf2c40bf29b">00104</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a7fddee92e60ff58e159c6bf2c40bf29b">magic</link>;
+<anchor xml:id="_a06683_source_1l00105"/>00105 
+<anchor xml:id="_a06683_source_1l00106"/>00106 &#32;&#32;<emphasis role="comment">/*&#32;Feature&#32;flags.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00107"/><link linkend="_a06683_1ab922f32c179ec7bde91519d19f27d95b">00107</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ab922f32c179ec7bde91519d19f27d95b">flags</link>;
+<anchor xml:id="_a06683_source_1l00108"/>00108 
+<anchor xml:id="_a06683_source_1l00109"/>00109 &#32;&#32;<emphasis role="comment">/*&#32;The&#32;above&#32;fields&#32;plus&#32;this&#32;one&#32;must&#32;equal&#32;0&#32;mod&#32;2^32.&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00110"/><link linkend="_a06683_1a17e73abddfe8264c254767a20099038d">00110</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a17e73abddfe8264c254767a20099038d">checksum</link>;
+<anchor xml:id="_a06683_source_1l00111"/>00111 
+<anchor xml:id="_a06683_source_1l00112"/>00112 &#32;&#32;<emphasis role="comment">/*&#32;These&#32;are&#32;only&#32;valid&#32;if&#32;MULTIBOOT_AOUT_KLUDGE&#32;is&#32;set.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00113"/><link linkend="_a06683_1a9718b2fc6ce29a37e9a209f92ab856e3">00113</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a9718b2fc6ce29a37e9a209f92ab856e3">header_addr</link>;
+<anchor xml:id="_a06683_source_1l00114"/><link linkend="_a06683_1a99de1cf326c46c76c6039f317b7a1ef2">00114</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a99de1cf326c46c76c6039f317b7a1ef2">load_addr</link>;
+<anchor xml:id="_a06683_source_1l00115"/><link linkend="_a06683_1ac9efc1a4c3cd18f286b2fd50ff052e31">00115</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ac9efc1a4c3cd18f286b2fd50ff052e31">load_end_addr</link>;
+<anchor xml:id="_a06683_source_1l00116"/><link linkend="_a06683_1ab4f2496ec9b0d1a95985929d281dfa19">00116</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ab4f2496ec9b0d1a95985929d281dfa19">bss_end_addr</link>;
+<anchor xml:id="_a06683_source_1l00117"/><link linkend="_a06683_1ac3d807775a9d69730e6698dcdcf6491e">00117</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ac3d807775a9d69730e6698dcdcf6491e">entry_addr</link>;
+<anchor xml:id="_a06683_source_1l00118"/>00118 
+<anchor xml:id="_a06683_source_1l00119"/>00119 &#32;&#32;<emphasis role="comment">/*&#32;These&#32;are&#32;only&#32;valid&#32;if&#32;MULTIBOOT_VIDEO_MODE&#32;is&#32;set.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00120"/><link linkend="_a06683_1a4c90b7929342dd5aab7d08afa0906d28">00120</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a4c90b7929342dd5aab7d08afa0906d28">mode_type</link>;
+<anchor xml:id="_a06683_source_1l00121"/><link linkend="_a06683_1ad72a1a3dd608e73c818d0c27974def40">00121</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ad72a1a3dd608e73c818d0c27974def40">width</link>;
+<anchor xml:id="_a06683_source_1l00122"/><link linkend="_a06683_1a055c5e6553ea032897ad50a12f998a17">00122</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a055c5e6553ea032897ad50a12f998a17">height</link>;
+<anchor xml:id="_a06683_source_1l00123"/><link linkend="_a06683_1aba85b53dc3af1bf99c71292a776e9dff">00123</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1aba85b53dc3af1bf99c71292a776e9dff">depth</link>;
+<anchor xml:id="_a06683_source_1l00124"/>00124 };
+<anchor xml:id="_a06683_source_1l00125"/>00125 
+<anchor xml:id="_a06683_source_1l00126"/>00126 <emphasis role="comment">/*&#32;The&#32;symbol&#32;table&#32;for&#32;a.out.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00127"/><link linkend="_a06683">00127</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d4/d81/a07548">multiboot_aout_symbol_table</link>
+<anchor xml:id="_a06683_source_1l00128"/>00128 {
+<anchor xml:id="_a06683_source_1l00129"/><link linkend="_a06683_1afbdc23500d3d7a59486a0b8ff4066c1e">00129</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1afbdc23500d3d7a59486a0b8ff4066c1e">tabsize</link>;
+<anchor xml:id="_a06683_source_1l00130"/><link linkend="_a06683_1a7ed0107153c88e6604e9a6105a4c7be0">00130</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a7ed0107153c88e6604e9a6105a4c7be0">strsize</link>;
+<anchor xml:id="_a06683_source_1l00131"/><link linkend="_a06683_1af0a1d2238495093ad75f36e3a146c0c7">00131</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1af0a1d2238495093ad75f36e3a146c0c7">addr</link>;
+<anchor xml:id="_a06683_source_1l00132"/><link linkend="_a06683_1a488f52dbb30b4de2ae2f42f0bdfda154">00132</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a488f52dbb30b4de2ae2f42f0bdfda154">reserved</link>;
+<anchor xml:id="_a06683_source_1l00133"/>00133 };
+<anchor xml:id="_a06683_source_1l00134"/>00134 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d4/d81/a07548">multiboot_aout_symbol_table</link>&#32;multiboot_aout_symbol_table_t;
+<anchor xml:id="_a06683_source_1l00135"/>00135 
+<anchor xml:id="_a06683_source_1l00136"/>00136 <emphasis role="comment">/*&#32;The&#32;section&#32;header&#32;table&#32;for&#32;ELF.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00137"/><link linkend="_a06683">00137</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d6/d61/a07552">multiboot_elf_section_header_table</link>
+<anchor xml:id="_a06683_source_1l00138"/>00138 {
+<anchor xml:id="_a06683_source_1l00139"/><link linkend="_a06683_1a6ed3ef34bb39d72a19533b11fe156e1f">00139</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a6ed3ef34bb39d72a19533b11fe156e1f">num</link>;
+<anchor xml:id="_a06683_source_1l00140"/><link linkend="_a06683_1ab2740d89d4139f93c9452cca2c676c5c">00140</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ab2740d89d4139f93c9452cca2c676c5c">size</link>;
+<anchor xml:id="_a06683_source_1l00141"/><link linkend="_a06683_1aac90242e270ae9df01fc3bb784b858b6">00141</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1aac90242e270ae9df01fc3bb784b858b6">addr</link>;
+<anchor xml:id="_a06683_source_1l00142"/><link linkend="_a06683_1a45886444dce7cc10353528373f3e50c2">00142</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a45886444dce7cc10353528373f3e50c2">shndx</link>;
+<anchor xml:id="_a06683_source_1l00143"/>00143 };
+<anchor xml:id="_a06683_source_1l00144"/>00144 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d6/d61/a07552">multiboot_elf_section_header_table</link>&#32;multiboot_elf_section_header_table_t;
+<anchor xml:id="_a06683_source_1l00145"/>00145 
+<anchor xml:id="_a06683_source_1l00146"/><link linkend="_a06683">00146</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1da/d8f/a07556">multiboot_info</link>
+<anchor xml:id="_a06683_source_1l00147"/>00147 {
+<anchor xml:id="_a06683_source_1l00148"/>00148 &#32;&#32;<emphasis role="comment">/*&#32;Multiboot&#32;info&#32;version&#32;number&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00149"/><link linkend="_a06683_1a39f175b6fb4debca237d3ff93e960a25">00149</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a39f175b6fb4debca237d3ff93e960a25">flags</link>;
+<anchor xml:id="_a06683_source_1l00150"/>00150 
+<anchor xml:id="_a06683_source_1l00151"/>00151 &#32;&#32;<emphasis role="comment">/*&#32;Available&#32;memory&#32;from&#32;BIOS&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00152"/><link linkend="_a06683_1a6b80f033d5a9151a4d1abd2d155942a7">00152</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a6b80f033d5a9151a4d1abd2d155942a7">mem_lower</link>;
+<anchor xml:id="_a06683_source_1l00153"/><link linkend="_a06683_1a1ea7d9e665d6fff00665d97e81207a8f">00153</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a1ea7d9e665d6fff00665d97e81207a8f">mem_upper</link>;
+<anchor xml:id="_a06683_source_1l00154"/>00154 
+<anchor xml:id="_a06683_source_1l00155"/>00155 &#32;&#32;<emphasis role="comment">/*&#32;&quot;root&quot;&#32;partition&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00156"/><link linkend="_a06683_1ae32646de911267c65892a286ef3d529e">00156</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ae32646de911267c65892a286ef3d529e">boot_device</link>;
+<anchor xml:id="_a06683_source_1l00157"/>00157 
+<anchor xml:id="_a06683_source_1l00158"/>00158 &#32;&#32;<emphasis role="comment">/*&#32;Kernel&#32;command&#32;line&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00159"/><link linkend="_a06683_1a95a5e2cc69960e4d906abd585f91f210">00159</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a95a5e2cc69960e4d906abd585f91f210">cmdline</link>;
+<anchor xml:id="_a06683_source_1l00160"/>00160 
+<anchor xml:id="_a06683_source_1l00161"/>00161 &#32;&#32;<emphasis role="comment">/*&#32;Boot-Module&#32;list&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00162"/><link linkend="_a06683_1a415feb83a215790e2e8f9e2e1e3df55c">00162</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a415feb83a215790e2e8f9e2e1e3df55c">mods_count</link>;
+<anchor xml:id="_a06683_source_1l00163"/><link linkend="_a06683_1a766e9dadbf4a845c12704c923cb13f02">00163</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a766e9dadbf4a845c12704c923cb13f02">mods_addr</link>;
+<anchor xml:id="_a06683_source_1l00164"/>00164 
+<anchor xml:id="_a06683_source_1l00165"/><link linkend="_a06683">00165</link> &#32;&#32;<emphasis role="keyword">union</emphasis>
+<anchor xml:id="_a06683_source_1l00166"/>00166 &#32;&#32;{
+<anchor xml:id="_a06683_source_1l00167"/>00167 &#32;&#32;&#32;&#32;multiboot_aout_symbol_table_t&#32;aout_sym;
+<anchor xml:id="_a06683_source_1l00168"/>00168 &#32;&#32;&#32;&#32;multiboot_elf_section_header_table_t&#32;elf_sec;
+<anchor xml:id="_a06683_source_1l00169"/><link linkend="_a06683_1a0558f47498813865abaec2f6281c5f92">00169</link> &#32;&#32;}&#32;<link linkend="_a06683_1a0558f47498813865abaec2f6281c5f92">u</link>;
+<anchor xml:id="_a06683_source_1l00170"/>00170 
+<anchor xml:id="_a06683_source_1l00171"/>00171 &#32;&#32;<emphasis role="comment">/*&#32;Memory&#32;Mapping&#32;buffer&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00172"/><link linkend="_a06683_1a3dd43c3204f821c0a1b5604686d9eae7">00172</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a3dd43c3204f821c0a1b5604686d9eae7">mmap_length</link>;
+<anchor xml:id="_a06683_source_1l00173"/><link linkend="_a06683_1a19825c91eb6aa23fa61ee3851a6ce8da">00173</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a19825c91eb6aa23fa61ee3851a6ce8da">mmap_addr</link>;
+<anchor xml:id="_a06683_source_1l00174"/>00174 
+<anchor xml:id="_a06683_source_1l00175"/>00175 &#32;&#32;<emphasis role="comment">/*&#32;Drive&#32;Info&#32;buffer&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00176"/><link linkend="_a06683_1a8bb6cc3d388a8abafecc7018744c14f3">00176</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a8bb6cc3d388a8abafecc7018744c14f3">drives_length</link>;
+<anchor xml:id="_a06683_source_1l00177"/><link linkend="_a06683_1a12916653d21ac1694b6d609a10d15332">00177</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a12916653d21ac1694b6d609a10d15332">drives_addr</link>;
+<anchor xml:id="_a06683_source_1l00178"/>00178 
+<anchor xml:id="_a06683_source_1l00179"/>00179 &#32;&#32;<emphasis role="comment">/*&#32;ROM&#32;configuration&#32;table&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00180"/><link linkend="_a06683_1a94b06ab87dbfaf966822a39cf1d9e2d6">00180</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a94b06ab87dbfaf966822a39cf1d9e2d6">config_table</link>;
+<anchor xml:id="_a06683_source_1l00181"/>00181 
+<anchor xml:id="_a06683_source_1l00182"/>00182 &#32;&#32;<emphasis role="comment">/*&#32;Boot&#32;Loader&#32;Name&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00183"/><link linkend="_a06683_1a4a3251d6b4cf85d935d989a0a369feed">00183</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a4a3251d6b4cf85d935d989a0a369feed">boot_loader_name</link>;
+<anchor xml:id="_a06683_source_1l00184"/>00184 
+<anchor xml:id="_a06683_source_1l00185"/>00185 &#32;&#32;<emphasis role="comment">/*&#32;APM&#32;table&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00186"/><link linkend="_a06683_1ab340bc8f88281872676db0f52ebe7c0e">00186</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ab340bc8f88281872676db0f52ebe7c0e">apm_table</link>;
+<anchor xml:id="_a06683_source_1l00187"/>00187 
+<anchor xml:id="_a06683_source_1l00188"/>00188 &#32;&#32;<emphasis role="comment">/*&#32;Video&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00189"/><link linkend="_a06683_1a21c63bc2905c6fd19449eea6e8514856">00189</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a21c63bc2905c6fd19449eea6e8514856">vbe_control_info</link>;
+<anchor xml:id="_a06683_source_1l00190"/><link linkend="_a06683_1ace25791339e03186c9364bb5f461f773">00190</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ace25791339e03186c9364bb5f461f773">vbe_mode_info</link>;
+<anchor xml:id="_a06683_source_1l00191"/><link linkend="_a06683_1aec0fcaec97380658da787d4989f7b93f">00191</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1aec0fcaec97380658da787d4989f7b93f">vbe_mode</link>;
+<anchor xml:id="_a06683_source_1l00192"/><link linkend="_a06683_1a6cd85049f18e6c157d173538b162d9a6">00192</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a6cd85049f18e6c157d173538b162d9a6">vbe_interface_seg</link>;
+<anchor xml:id="_a06683_source_1l00193"/><link linkend="_a06683_1a272d3a053e085dc513ba4dc4eb688816">00193</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a272d3a053e085dc513ba4dc4eb688816">vbe_interface_off</link>;
+<anchor xml:id="_a06683_source_1l00194"/><link linkend="_a06683_1a31ea288eaa679a7e3a4dafb91d833f78">00194</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a31ea288eaa679a7e3a4dafb91d833f78">vbe_interface_len</link>;
+<anchor xml:id="_a06683_source_1l00195"/>00195 
+<anchor xml:id="_a06683_source_1l00196"/><link linkend="_a06683_1a77a4d6e2b12fbd2b3e6e61d978ae5fc0">00196</link> &#32;&#32;<link linkend="_a06683_1a8dfdd61648b48aa31845db590970e06a">multiboot_uint64_t</link>&#32;<link linkend="_a06683_1a77a4d6e2b12fbd2b3e6e61d978ae5fc0">framebuffer_addr</link>;
+<anchor xml:id="_a06683_source_1l00197"/><link linkend="_a06683_1ab0ecb8c7debe9ac1ac7910ae957367f6">00197</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1ab0ecb8c7debe9ac1ac7910ae957367f6">framebuffer_pitch</link>;
+<anchor xml:id="_a06683_source_1l00198"/><link linkend="_a06683_1a770273793bac06df17306c7fa136c58f">00198</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a770273793bac06df17306c7fa136c58f">framebuffer_width</link>;
+<anchor xml:id="_a06683_source_1l00199"/><link linkend="_a06683_1a0e8539780b79a018883d96bb444cd9c8">00199</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a0e8539780b79a018883d96bb444cd9c8">framebuffer_height</link>;
+<anchor xml:id="_a06683_source_1l00200"/><link linkend="_a06683_1ab7b460c75f0342dfb1e339d2b3a2a9da">00200</link> &#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;<link linkend="_a06683_1ab7b460c75f0342dfb1e339d2b3a2a9da">framebuffer_bpp</link>;
+<anchor xml:id="_a06683_source_1l00201"/><link linkend="_a06683_1a8e2af641ff42074bb807c3ec9e33b2e0">00201</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED&#32;0</emphasis>
+<anchor xml:id="_a06683_source_1l00202"/><link linkend="_a06683_1a34b2f01226ea42de22e06db7f652fbb1">00202</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_FRAMEBUFFER_TYPE_RGB&#32;&#32;&#32;&#32;&#32;1</emphasis>
+<anchor xml:id="_a06683_source_1l00203"/><link linkend="_a06683_1af6005f97267af2cb0ff37fb245284440">00203</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT&#32;2</emphasis>
+<anchor xml:id="_a06683_source_1l00204"/><link linkend="_a06683_1a540391adf02da7cb6876fe78d65a13d7">00204</link> &#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;<link linkend="_a06683_1a540391adf02da7cb6876fe78d65a13d7">framebuffer_type</link>;
+<anchor xml:id="_a06683_source_1l00205"/><link linkend="_a06683">00205</link> &#32;&#32;<emphasis role="keyword">union</emphasis>
+<anchor xml:id="_a06683_source_1l00206"/>00206 &#32;&#32;{
+<anchor xml:id="_a06683_source_1l00207"/><link linkend="_a06683">00207</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+<anchor xml:id="_a06683_source_1l00208"/>00208 &#32;&#32;&#32;&#32;{
+<anchor xml:id="_a06683_source_1l00209"/>00209 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;framebuffer_palette_addr;
+<anchor xml:id="_a06683_source_1l00210"/>00210 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;framebuffer_palette_num_colors;
+<anchor xml:id="_a06683_source_1l00211"/>00211 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_a06683_source_1l00212"/><link linkend="_a06683">00212</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+<anchor xml:id="_a06683_source_1l00213"/>00213 &#32;&#32;&#32;&#32;{
+<anchor xml:id="_a06683_source_1l00214"/>00214 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;framebuffer_red_field_position;
+<anchor xml:id="_a06683_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;framebuffer_red_mask_size;
+<anchor xml:id="_a06683_source_1l00216"/>00216 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;framebuffer_green_field_position;
+<anchor xml:id="_a06683_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;framebuffer_green_mask_size;
+<anchor xml:id="_a06683_source_1l00218"/>00218 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;framebuffer_blue_field_position;
+<anchor xml:id="_a06683_source_1l00219"/>00219 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;framebuffer_blue_mask_size;
+<anchor xml:id="_a06683_source_1l00220"/>00220 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_a06683_source_1l00221"/>00221 &#32;&#32;};
+<anchor xml:id="_a06683_source_1l00222"/>00222 };
+<anchor xml:id="_a06683_source_1l00223"/><link linkend="_a06683_1aa6b9a7218d544abc2be2bd335681b0a1">00223</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1da/d8f/a07556">multiboot_info</link>&#32;multiboot_info_t;
+<anchor xml:id="_a06683_source_1l00224"/>00224 
+<anchor xml:id="_a06683_source_1l00225"/><link linkend="_a06683">00225</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d1/d4b/a07576">multiboot_color</link>
+<anchor xml:id="_a06683_source_1l00226"/>00226 {
+<anchor xml:id="_a06683_source_1l00227"/><link linkend="_a06683_1a4c8a91229f40c06c3c63b4c37e83d219">00227</link> &#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;<link linkend="_a06683_1a4c8a91229f40c06c3c63b4c37e83d219">red</link>;
+<anchor xml:id="_a06683_source_1l00228"/><link linkend="_a06683_1a08e1c8bc977b39015c9043645e79713d">00228</link> &#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;<link linkend="_a06683_1a08e1c8bc977b39015c9043645e79713d">green</link>;
+<anchor xml:id="_a06683_source_1l00229"/><link linkend="_a06683_1a6f8d17b0f35ff4cbf9c51dcbc3ea7d01">00229</link> &#32;&#32;<link linkend="_a06683_1a037f602538fccf97e90021c19fdfc047">multiboot_uint8_t</link>&#32;<link linkend="_a06683_1a6f8d17b0f35ff4cbf9c51dcbc3ea7d01">blue</link>;
+<anchor xml:id="_a06683_source_1l00230"/>00230 };
+<anchor xml:id="_a06683_source_1l00231"/>00231 
+<anchor xml:id="_a06683_source_1l00232"/><link linkend="_a06683">00232</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d5/d70/a07580">multiboot_mmap_entry</link>
+<anchor xml:id="_a06683_source_1l00233"/>00233 {
+<anchor xml:id="_a06683_source_1l00234"/><link linkend="_a06683_1a1b4b5157d5e972e92981177fd1eb6d67">00234</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a1b4b5157d5e972e92981177fd1eb6d67">size</link>;
+<anchor xml:id="_a06683_source_1l00235"/><link linkend="_a06683_1a40e066ba79afd138308bd0db4b3f4f5b">00235</link> &#32;&#32;<link linkend="_a06683_1a8dfdd61648b48aa31845db590970e06a">multiboot_uint64_t</link>&#32;<link linkend="_a06683_1a40e066ba79afd138308bd0db4b3f4f5b">addr</link>;
+<anchor xml:id="_a06683_source_1l00236"/><link linkend="_a06683_1a0c5d40a87a63b01fc424bb3c15c89997">00236</link> &#32;&#32;<link linkend="_a06683_1a8dfdd61648b48aa31845db590970e06a">multiboot_uint64_t</link>&#32;<link linkend="_a06683_1a0c5d40a87a63b01fc424bb3c15c89997">len</link>;
+<anchor xml:id="_a06683_source_1l00237"/><link linkend="_a06683_1a7fe141351ebcde0acbd6118ad0ea1a21">00237</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_MEMORY_AVAILABLE&#32;&#32;&#32;&#32;&#32;&#32;1</emphasis>
+<anchor xml:id="_a06683_source_1l00238"/><link linkend="_a06683_1a0299aedc71e1f6707181471bafb18e7c">00238</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_MEMORY_RESERVED&#32;&#32;&#32;&#32;&#32;&#32;&#32;2</emphasis>
+<anchor xml:id="_a06683_source_1l00239"/><link linkend="_a06683_1af35be82586f332a561d00207c937ee57">00239</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_MEMORY_ACPI_RECLAIMABLE&#32;&#32;&#32;&#32;&#32;&#32;&#32;3</emphasis>
+<anchor xml:id="_a06683_source_1l00240"/><link linkend="_a06683_1a68f78286f7434d373a82f1b6f6473c72">00240</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_MEMORY_NVS&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;4</emphasis>
+<anchor xml:id="_a06683_source_1l00241"/><link linkend="_a06683_1a1604ec18ac949d88dab993904b08c075">00241</link> <emphasis role="preprocessor">#define&#32;MULTIBOOT_MEMORY_BADRAM&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;5</emphasis>
+<anchor xml:id="_a06683_source_1l00242"/><link linkend="_a06683_1affc11fb6e6ece4860a1929b791073538">00242</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1affc11fb6e6ece4860a1929b791073538">type</link>;
+<anchor xml:id="_a06683_source_1l00243"/>00243 }&#32;<link linkend="_a06683_1a4bbf25084dee10ec29f4356cacced463">__attribute__</link>((packed));
+<anchor xml:id="_a06683_source_1l00244"/>00244 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1d5/d70/a07580">multiboot_mmap_entry</link>&#32;multiboot_memory_map_t;
+<anchor xml:id="_a06683_source_1l00245"/>00245 
+<anchor xml:id="_a06683_source_1l00246"/><link linkend="_a06683">00246</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1dc/d86/a07584">multiboot_mod_list</link>
+<anchor xml:id="_a06683_source_1l00247"/>00247 {
+<anchor xml:id="_a06683_source_1l00248"/>00248 &#32;&#32;<emphasis role="comment">/*&#32;the&#32;memory&#32;used&#32;goes&#32;from&#32;bytes&#32;&apos;mod_start&apos;&#32;to&#32;&apos;mod_end-1&apos;&#32;inclusive&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00249"/><link linkend="_a06683_1a3bcfca83ccb172cd79123a8341ed4cfb">00249</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a3bcfca83ccb172cd79123a8341ed4cfb">mod_start</link>;
+<anchor xml:id="_a06683_source_1l00250"/><link linkend="_a06683_1aa2b5dda7d7d51a1f3fbd613adfa640b0">00250</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1aa2b5dda7d7d51a1f3fbd613adfa640b0">mod_end</link>;
+<anchor xml:id="_a06683_source_1l00251"/>00251 
+<anchor xml:id="_a06683_source_1l00252"/>00252 &#32;&#32;<emphasis role="comment">/*&#32;Module&#32;command&#32;line&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00253"/><link linkend="_a06683_1a3219140f9baf1a790a602db25e8597c7">00253</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a3219140f9baf1a790a602db25e8597c7">cmdline</link>;
+<anchor xml:id="_a06683_source_1l00254"/>00254 
+<anchor xml:id="_a06683_source_1l00255"/>00255 &#32;&#32;<emphasis role="comment">/*&#32;padding&#32;to&#32;take&#32;it&#32;to&#32;16&#32;bytes&#32;(must&#32;be&#32;zero)&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00256"/><link linkend="_a06683_1aff552d4c321b0607d77cda0c2cdc5708">00256</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1aff552d4c321b0607d77cda0c2cdc5708">pad</link>;
+<anchor xml:id="_a06683_source_1l00257"/><link linkend="_a06683_1a4bbf25084dee10ec29f4356cacced463">00257</link> };
+<anchor xml:id="_a06683_source_1l00258"/>00258 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1dc/d86/a07584">multiboot_mod_list</link>&#32;multiboot_module_t;
+<anchor xml:id="_a06683_source_1l00259"/>00259 
+<anchor xml:id="_a06683_source_1l00260"/>00260 <emphasis role="comment">/*&#32;APM&#32;BIOS&#32;info.&#32;&#32;*/</emphasis>
+<anchor xml:id="_a06683_source_1l00261"/><link linkend="_a06683">00261</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_a06683_1dc/dc4/a07588">multiboot_apm_info</link>
+<anchor xml:id="_a06683_source_1l00262"/>00262 {
+<anchor xml:id="_a06683_source_1l00263"/><link linkend="_a06683_1ab06d9309bdc00fa4a8c37fdab639beb5">00263</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1ab06d9309bdc00fa4a8c37fdab639beb5">version</link>;
+<anchor xml:id="_a06683_source_1l00264"/><link linkend="_a06683_1a9eedcae62ee49310914e238d07094c4b">00264</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a9eedcae62ee49310914e238d07094c4b">cseg</link>;
+<anchor xml:id="_a06683_source_1l00265"/><link linkend="_a06683_1a97958b174fe0234cafab9019eb009b91">00265</link> &#32;&#32;<link linkend="_a06683_1a009f355da41fed4badb8a52d432f5186">multiboot_uint32_t</link>&#32;<link linkend="_a06683_1a97958b174fe0234cafab9019eb009b91">offset</link>;
+<anchor xml:id="_a06683_source_1l00266"/><link linkend="_a06683_1a9abc154a9c3a0f3d9ae96cf2b5044b43">00266</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a9abc154a9c3a0f3d9ae96cf2b5044b43">cseg_16</link>;
+<anchor xml:id="_a06683_source_1l00267"/><link linkend="_a06683_1a98cd7da8760cf5d49ba55e1f9e76c6d4">00267</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a98cd7da8760cf5d49ba55e1f9e76c6d4">dseg</link>;
+<anchor xml:id="_a06683_source_1l00268"/><link linkend="_a06683_1a55fb7837ae61f63d0310b65767a2505c">00268</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a55fb7837ae61f63d0310b65767a2505c">flags</link>;
+<anchor xml:id="_a06683_source_1l00269"/><link linkend="_a06683_1a95aa6b556019e1b9c526b190341cc531">00269</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a95aa6b556019e1b9c526b190341cc531">cseg_len</link>;
+<anchor xml:id="_a06683_source_1l00270"/><link linkend="_a06683_1a09573729600592739fe8f2480217a30d">00270</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1a09573729600592739fe8f2480217a30d">cseg_16_len</link>;
+<anchor xml:id="_a06683_source_1l00271"/><link linkend="_a06683_1afee11d31183fe424af90546b10c9fac2">00271</link> &#32;&#32;<link linkend="_a06683_1a3a11e3c2b5e0617736a05343aa5795b3">multiboot_uint16_t</link>&#32;<link linkend="_a06683_1afee11d31183fe424af90546b10c9fac2">dseg_len</link>;
+<anchor xml:id="_a06683_source_1l00272"/>00272 };
+<anchor xml:id="_a06683_source_1l00273"/>00273 
+<anchor xml:id="_a06683_source_1l00274"/>00274 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;!&#32;ASM_FILE&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+<anchor xml:id="_a06683_source_1l00275"/>00275 
+<anchor xml:id="_a06683_source_1l00276"/>00276 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;!&#32;OSOS_BASIC_MULTIBOOT_HEADER&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

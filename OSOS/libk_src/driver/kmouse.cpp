@@ -1,4 +1,4 @@
-#include "driver/kmouse"
+#include "driver/kmouse.hpp"
 
 // --- MouseEventHandler ---
 

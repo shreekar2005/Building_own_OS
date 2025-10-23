@@ -1,0 +1,471 @@
+\doxysubsection{essential\+::GDT}
+\hypertarget{a05277}{}\label{a05277}\index{essential::GDT@{essential::GDT}}
+
+
+{\ttfamily \#include "{}kgdt.\+hpp"{}}
+
+
+
+Collaboration diagram for essential\+::GDT\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d1/dd1/a05275}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a05277_aa061ecab5a20a3556413fbbde4fe89d7}{GDT}} ()
+\item 
+\mbox{\hyperlink{a05277_a9b61f75de7fa2ffe9589f43c3f6a6a6c}{\texorpdfstring{$\sim$}{\string~}\+GDT}} ()
+\item 
+void \mbox{\hyperlink{a05277_af8e3c1da270077eb7cc6551b35c0e5ca}{install\+Table}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a05277_a89a8d2c17e3c22e7200bff09252f46e1}{kernel\+\_\+\+CS\+\_\+selector}} ()
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a05277_a34661a528b1630bff806e25411ad6ec3}{kernel\+\_\+\+DS\+\_\+selector}} ()
+\item 
+static void \mbox{\hyperlink{a05277_a9c89bddfdb21d5cc09c1d82411982de9}{print\+Loaded\+Table}} ()
+\begin{DoxyCompactList}\small\item\em (Static) Prints the currently loaded \doxylink{a05277}{GDT} by reading the GDTR. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a05277_a2ae998750fc1e18e6778e92774bd3574}{print\+Loaded\+Table\+Header}} ()
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a05277_a8806a14009c4f0432d4b7043d687be17}{user\+\_\+\+CS\+\_\+selector}} ()
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{a05277_a90661f97e9cf214dd6d977b19c01f7fc}{user\+\_\+\+DS\+\_\+selector}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uintptr\+\_\+t \mbox{\hyperlink{a05277_ad0a48a89930e6a6c4467c977f4e91269}{base}}
+\item 
+\mbox{\hyperlink{a05273}{GDT\+\_\+row}} \mbox{\hyperlink{a05277_a20d7a6bb352e3f696c1c68bb394766d8}{kernel\+\_\+\+CS}}
+\item 
+\mbox{\hyperlink{a05273}{GDT\+\_\+row}} \mbox{\hyperlink{a05277_ac8a5b4f6a3dc223e2eb6abebe19c9f08}{kernel\+\_\+\+DS}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{a05277_a4105a25a1ec71dc7e338639bb370c664}{limit}}
+\item 
+\mbox{\hyperlink{a05273}{GDT\+\_\+row}} \mbox{\hyperlink{a05277_a154c2e2725809d873c8e7d5f19ea66c5}{null\+Segment}}
+\item 
+\mbox{\hyperlink{a05273}{GDT\+\_\+row}} \mbox{\hyperlink{a05277_a32508694f9db3188cd4aba126cbfb5bb}{user\+\_\+\+CS}}
+\item 
+\mbox{\hyperlink{a05273}{GDT\+\_\+row}} \mbox{\hyperlink{a05277_a73463d83e2048869692d0adf1acac7a6}{user\+\_\+\+DS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00054}{54}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a05277_aa061ecab5a20a3556413fbbde4fe89d7}\label{a05277_aa061ecab5a20a3556413fbbde4fe89d7} 
+\index{essential::GDT@{essential::GDT}!GDT@{GDT}}
+\index{GDT@{GDT}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{GDT()}{GDT()}}
+{\footnotesize\ttfamily essential\+::\+GDT\+::\+GDT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00026}{26}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ :\ \mbox{\hyperlink{a05277_a154c2e2725809d873c8e7d5f19ea66c5}{nullSegment}}(),\ \textcolor{comment}{//\ First\ entry\ must\ be\ a\ null\ descriptor.}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \mbox{\hyperlink{a05277_a20d7a6bb352e3f696c1c68bb394766d8}{kernel\_CS}}(0,\ 0xFFFFFFFF,\ \mbox{\hyperlink{a04367_ac4461ee84aade9ee824de64d4846ec98}{GDT\_ACCESS\_CODE\_PL0}},\ \mbox{\hyperlink{a04367_a4941c819dbbef299c391bf53c24caf8d}{GDT\_GRAN\_FLAGS}}),}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \mbox{\hyperlink{a05277_ac8a5b4f6a3dc223e2eb6abebe19c9f08}{kernel\_DS}}(0,\ 0xFFFFFFFF,\ \mbox{\hyperlink{a04367_a1adfff1c72212b5c4e1df35485bb102a}{GDT\_ACCESS\_DATA\_PL0}},\ \mbox{\hyperlink{a04367_a4941c819dbbef299c391bf53c24caf8d}{GDT\_GRAN\_FLAGS}}),}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{a05277_a32508694f9db3188cd4aba126cbfb5bb}{user\_CS}}(0,\ 0xFFFFFFFF,\ \mbox{\hyperlink{a04367_a01d908c8637340b21274e0176b320c05}{GDT\_ACCESS\_CODE\_PL3}},\ \mbox{\hyperlink{a04367_a4941c819dbbef299c391bf53c24caf8d}{GDT\_GRAN\_FLAGS}}),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{a05277_a73463d83e2048869692d0adf1acac7a6}{user\_DS}}(0,\ 0xFFFFFFFF,\ \mbox{\hyperlink{a04367_ac7f57dcdd84028460100b6da75ad4938}{GDT\_ACCESS\_DATA\_PL3}},\ \mbox{\hyperlink{a04367_a4941c819dbbef299c391bf53c24caf8d}{GDT\_GRAN\_FLAGS}})}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ The\ GDT\ limit\ is\ its\ total\ size\ in\ bytes\ minus\ 1.}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ 5\ entries\ *\ 8\ bytes/entry\ =\ 40\ bytes.\ Limit\ =\ 39\ (0x27).}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{a05277_a4105a25a1ec71dc7e338639bb370c664}{limit}}\ =\ (\textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}})\ *\ 5)\ -\/\ 1;}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ The\ base\ address\ is\ the\ address\ of\ the\ first\ entry\ in\ our\ table.}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{a05277_ad0a48a89930e6a6c4467c977f4e91269}{base}}\ =\ (uintptr\_t)\&this-\/>\mbox{\hyperlink{a05277_a154c2e2725809d873c8e7d5f19ea66c5}{nullSegment}};}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a04367_source_l00057}{base}}, \mbox{\hyperlink{a04367_source_l00056}{limit}}, and \mbox{\hyperlink{a04367_source_l00058}{null\+Segment}}.
+
+\Hypertarget{a05277_a9b61f75de7fa2ffe9589f43c3f6a6a6c}\label{a05277_a9b61f75de7fa2ffe9589f43c3f6a6a6c} 
+\index{essential::GDT@{essential::GDT}!````~GDT@{\texorpdfstring{$\sim$}{\string~}GDT}}
+\index{````~GDT@{\texorpdfstring{$\sim$}{\string~}GDT}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GDT()}{\string~GDT()}}
+{\footnotesize\ttfamily essential\+::\+GDT\+::\texorpdfstring{$\sim$}{\string~}\+GDT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00042}{42}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a05277_af8e3c1da270077eb7cc6551b35c0e5ca}\label{a05277_af8e3c1da270077eb7cc6551b35c0e5ca} 
+\index{essential::GDT@{essential::GDT}!installTable@{installTable}}
+\index{installTable@{installTable}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{installTable()}{installTable()}}
+{\footnotesize\ttfamily void essential\+::\+GDT\+::install\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00046}{46}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ A\ structure\ that\ matches\ the\ 6-\/byte\ format\ required\ by\ the\ 'lgdt'\ instruction.}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{struct\ }GDT\_Pointer\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a04367_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a04367_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};\ \textcolor{comment}{//\ Use\ uint32\_t\ for\ our\ i686\ (32-\/bit)\ target}}
+\DoxyCodeLine{00051\ \ \ \ \ \}\ \mbox{\hyperlink{a04340_a4bbf25084dee10ec29f4356cacced463}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ GDT\_Pointer\ gdt\_ptr;}
+\DoxyCodeLine{00054\ \ \ \ \ gdt\_ptr.limit\ =\ this-\/>\mbox{\hyperlink{a05277_a4105a25a1ec71dc7e338639bb370c664}{limit}};}
+\DoxyCodeLine{00055\ \ \ \ \ gdt\_ptr.base\ =\ this-\/>\mbox{\hyperlink{a05277_ad0a48a89930e6a6c4467c977f4e91269}{base}};}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{asm}\ \textcolor{keyword}{volatile}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Load\ the\ address\ of\ our\ GDT\_Pointer\ structure\ into\ the\ GDTR.}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}lgdt\ (\%0)\(\backslash\)n\(\backslash\)t"{}}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reload\ all\ data\ segment\ registers\ with\ the\ kernel\ data\ selector.}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mov\ \$0x10,\ \%\%ax\(\backslash\)n\(\backslash\)t"{}}\ \ \ \textcolor{comment}{//\ 0x10\ is\ the\ selector\ for\ kernel\_DS}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mov\ \%\%ax,\ \%\%ds\(\backslash\)n\(\backslash\)t"{}}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mov\ \%\%ax,\ \%\%es\(\backslash\)n\(\backslash\)t"{}}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mov\ \%\%ax,\ \%\%fs\(\backslash\)n\(\backslash\)t"{}}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mov\ \%\%ax,\ \%\%gs\(\backslash\)n\(\backslash\)t"{}}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mov\ \%\%ax,\ \%\%ss\(\backslash\)n\(\backslash\)t"{}}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Perform\ a\ 32-\/bit\ far\ jump\ to\ reload\ the\ CS\ register\ and\ flush\ the\ CPU\ pipeline.}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}jmp\ \$0x08,\ \$flush\_cs\(\backslash\)n\(\backslash\)t"{}}\ \textcolor{comment}{//\ 0x08\ is\ the\ selector\ for\ kernel\_CS}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}flush\_cs:\(\backslash\)n\(\backslash\)t"{}}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ :\ \textcolor{comment}{//\ No\ output\ operands}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}r"{}}(\&gdt\_ptr)\ \textcolor{comment}{//\ Input:\ address\ of\ our\ GDT\_Pointer}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}memory"{}},\ \textcolor{stringliteral}{"{}eax"{}}\ \textcolor{comment}{//\ Clobbered\ registers}}
+\DoxyCodeLine{00075\ \ \ \ \ );}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}GDT\ Installed\(\backslash\)n"{}});}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a04340_a4bbf25084dee10ec29f4356cacced463}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}, \mbox{\hyperlink{a04367_source_l00002}{base}}, \mbox{\hyperlink{a04367_source_l00001}{limit}}, and \mbox{\hyperlink{a04268_source_l00276}{basic\+::printf()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a04304_source_l00085}{kernel\+Main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d63/a05277_af8e3c1da270077eb7cc6551b35c0e5ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{db/d63/a05277_af8e3c1da270077eb7cc6551b35c0e5ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a05277_a89a8d2c17e3c22e7200bff09252f46e1}\label{a05277_a89a8d2c17e3c22e7200bff09252f46e1} 
+\index{essential::GDT@{essential::GDT}!kernel\_CS\_selector@{kernel\_CS\_selector}}
+\index{kernel\_CS\_selector@{kernel\_CS\_selector}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{kernel\_CS\_selector()}{kernel\_CS\_selector()}}
+{\footnotesize\ttfamily uint16\+\_\+t essential\+::\+GDT\+::kernel\+\_\+\+CS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00140}{140}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}})\ *\ 1;\ \}\ \textcolor{comment}{//\ Selector\ 0x08}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{a04277_source_l00032}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::\+Interrupt\+Manager()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d63/a05277_a89a8d2c17e3c22e7200bff09252f46e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a05277_a34661a528b1630bff806e25411ad6ec3}\label{a05277_a34661a528b1630bff806e25411ad6ec3} 
+\index{essential::GDT@{essential::GDT}!kernel\_DS\_selector@{kernel\_DS\_selector}}
+\index{kernel\_DS\_selector@{kernel\_DS\_selector}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{kernel\_DS\_selector()}{kernel\_DS\_selector()}}
+{\footnotesize\ttfamily uint16\+\_\+t essential\+::\+GDT\+::kernel\+\_\+\+DS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00141}{141}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}})\ *\ 2;\ \}\ \textcolor{comment}{//\ Selector\ 0x10}}
+
+\end{DoxyCode}
+\Hypertarget{a05277_a9c89bddfdb21d5cc09c1d82411982de9}\label{a05277_a9c89bddfdb21d5cc09c1d82411982de9} 
+\index{essential::GDT@{essential::GDT}!printLoadedTable@{printLoadedTable}}
+\index{printLoadedTable@{printLoadedTable}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{printLoadedTable()}{printLoadedTable()}}
+{\footnotesize\ttfamily void essential\+::\+GDT\+::print\+Loaded\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+(Static) Prints the currently loaded \doxylink{a05277}{GDT} by reading the GDTR. 
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00082}{82}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{struct\ }GDT\_Pointer\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a04367_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a04367_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00086\ \ \ \ \ \}\ \mbox{\hyperlink{a04340_a4bbf25084dee10ec29f4356cacced463}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ GDT\_Pointer\ gdtr;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Store\ the\ current\ GDT\ register\ contents\ into\ our\ struct.}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{asm}\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}sgdt\ \%0"{}}\ :\ \textcolor{stringliteral}{"{}=m"{}}(gdtr));}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}INFO\ about\ :\ Currently\ Loaded\ GDT\(\backslash\)n"{}});}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Base\ Address:\ \%\#x\(\backslash\)n"{}},\ gdtr.base);}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Limit:\ \%\#x\ (\%d\ bytes)\(\backslash\)n"{}},\ gdtr.limit,\ gdtr.limit);}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Entries:\ \%d\(\backslash\)n"{}},\ (gdtr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}}));}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{a05273}{essential::GDT\_row}}*\ gdt\_entries\ =\ (\mbox{\hyperlink{a05273}{essential::GDT\_row}}*)gdtr.base;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_entries\ =\ (gdtr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}});}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_entries;\ i++)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a05273}{essential::GDT\_row}}\ entry\ =\ gdt\_entries[i];}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reconstruct\ the\ base\ and\ limit\ from\ the\ scattered\ fields.}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a05277_ad0a48a89930e6a6c4467c977f4e91269}{base}}\ =\ entry.\mbox{\hyperlink{a05273_a2cbd86d4258ecebf7b46cc9bb8611b5b}{base\_high}}\ <<\ 24\ |\ entry.\mbox{\hyperlink{a05273_a8429e04bddc6a61c4e95b88901ae219d}{base\_middle}}\ <<\ 16\ |\ entry.\mbox{\hyperlink{a05273_a298d18522898ad48c1e05b79f1f4dff7}{base\_low}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a05277_a4105a25a1ec71dc7e338639bb370c664}{limit}}\ =\ (entry.\mbox{\hyperlink{a05273_af180a640dbd5213b3f936ff7cf48deaf}{granularity}}\ \&\ 0x0F)\ <<\ 16\ |\ entry.\mbox{\hyperlink{a05273_a2bddbe405dfbbbd101c475bd1bd65112}{limit\_low}};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ granularity\ bit\ is\ set,\ the\ limit\ is\ in\ 4\ KiB\ pages.}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((entry.granularity\ \&\ 0x80)\ !=\ 0)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a05277_a4105a25a1ec71dc7e338639bb370c664}{limit}}\ =\ (\mbox{\hyperlink{a05277_a4105a25a1ec71dc7e338639bb370c664}{limit}}\ <<\ 12)\ |\ 0xFFF;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}GDT\ Entry\ \%d:\ Base=\%p,\ Limit=\%\#x,\ Access=\%\#x,\ Granularity=\%\#x\(\backslash\)n"{}},}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,\ (\textcolor{keywordtype}{void}*)(uintptr\_t)\mbox{\hyperlink{a05277_ad0a48a89930e6a6c4467c977f4e91269}{base}},\ \mbox{\hyperlink{a05277_a4105a25a1ec71dc7e338639bb370c664}{limit}},\ entry.access,\ entry.granularity);}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a04340_a4bbf25084dee10ec29f4356cacced463}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}, \mbox{\hyperlink{a04367_source_l00039}{essential\+::\+GDT\+\_\+row\+::access}}, \mbox{\hyperlink{a04367_source_l00002}{base}}, \mbox{\hyperlink{a04367_source_l00041}{essential\+::\+GDT\+\_\+row\+::base\+\_\+high}}, \mbox{\hyperlink{a04367_source_l00037}{essential\+::\+GDT\+\_\+row\+::base\+\_\+low}}, \mbox{\hyperlink{a04367_source_l00038}{essential\+::\+GDT\+\_\+row\+::base\+\_\+middle}}, \mbox{\hyperlink{a04367_source_l00040}{essential\+::\+GDT\+\_\+row\+::granularity}}, \mbox{\hyperlink{a04367_source_l00001}{limit}}, \mbox{\hyperlink{a04367_source_l00036}{essential\+::\+GDT\+\_\+row\+::limit\+\_\+low}}, and \mbox{\hyperlink{a04268_source_l00276}{basic\+::printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d63/a05277_a9c89bddfdb21d5cc09c1d82411982de9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a05277_a2ae998750fc1e18e6778e92774bd3574}\label{a05277_a2ae998750fc1e18e6778e92774bd3574} 
+\index{essential::GDT@{essential::GDT}!printLoadedTableHeader@{printLoadedTableHeader}}
+\index{printLoadedTableHeader@{printLoadedTableHeader}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{printLoadedTableHeader()}{printLoadedTableHeader()}}
+{\footnotesize\ttfamily void essential\+::\+GDT\+::print\+Loaded\+Table\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00120}{120}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{struct\ }GDT\_Pointer\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a04367_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a04367_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00124\ \ \ \ \ \}\ \mbox{\hyperlink{a04340_a4bbf25084dee10ec29f4356cacced463}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ GDT\_Pointer\ gdtr;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ Store\ the\ current\ GDT\ register\ contents\ into\ our\ struct.}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{asm}\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}sgdt\ \%0"{}}\ :\ \textcolor{stringliteral}{"{}=m"{}}(gdtr));}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}INFO\ about\ :\ Currently\ Loaded\ GDT\(\backslash\)n"{}});}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Base\ Address:\ \%\#x\(\backslash\)n"{}},\ gdtr.base);}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Limit:\ \%\#x\ (\%d\ bytes)\(\backslash\)n"{}},\ gdtr.limit,\ gdtr.limit);}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Entries:\ \%d\(\backslash\)n"{}},\ (gdtr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}}));}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{a04374_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00136\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a04340_a4bbf25084dee10ec29f4356cacced463}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}, \mbox{\hyperlink{a04367_source_l00002}{base}}, \mbox{\hyperlink{a04367_source_l00001}{limit}}, and \mbox{\hyperlink{a04268_source_l00276}{basic\+::printf()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a04304_source_l00085}{kernel\+Main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d63/a05277_a2ae998750fc1e18e6778e92774bd3574_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{db/d63/a05277_a2ae998750fc1e18e6778e92774bd3574_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a05277_a8806a14009c4f0432d4b7043d687be17}\label{a05277_a8806a14009c4f0432d4b7043d687be17} 
+\index{essential::GDT@{essential::GDT}!user\_CS\_selector@{user\_CS\_selector}}
+\index{user\_CS\_selector@{user\_CS\_selector}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{user\_CS\_selector()}{user\_CS\_selector()}}
+{\footnotesize\ttfamily uint16\+\_\+t essential\+::\+GDT\+::user\+\_\+\+CS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00142}{142}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}})\ *\ 3;\ \}\ \textcolor{comment}{//\ Selector\ 0x18}}
+
+\end{DoxyCode}
+\Hypertarget{a05277_a90661f97e9cf214dd6d977b19c01f7fc}\label{a05277_a90661f97e9cf214dd6d977b19c01f7fc} 
+\index{essential::GDT@{essential::GDT}!user\_DS\_selector@{user\_DS\_selector}}
+\index{user\_DS\_selector@{user\_DS\_selector}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{user\_DS\_selector()}{user\_DS\_selector()}}
+{\footnotesize\ttfamily uint16\+\_\+t essential\+::\+GDT\+::user\+\_\+\+DS\+\_\+selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04289_source_l00143}{143}} of file \mbox{\hyperlink{a04289_source}{kgdt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a05273}{essential::GDT\_row}})\ *\ 4;\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{a05277_ad0a48a89930e6a6c4467c977f4e91269}\label{a05277_ad0a48a89930e6a6c4467c977f4e91269} 
+\index{essential::GDT@{essential::GDT}!base@{base}}
+\index{base@{base}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily uintptr\+\_\+t essential\+::\+GDT\+::base\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00057}{57}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a04289_source_l00026}{GDT()}}.
+
+\Hypertarget{a05277_a20d7a6bb352e3f696c1c68bb394766d8}\label{a05277_a20d7a6bb352e3f696c1c68bb394766d8} 
+\index{essential::GDT@{essential::GDT}!kernel\_CS@{kernel\_CS}}
+\index{kernel\_CS@{kernel\_CS}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{kernel\_CS}{kernel\_CS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a05273}{GDT\+\_\+row}} essential\+::\+GDT\+::kernel\+\_\+\+CS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00059}{59}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a05277_ac8a5b4f6a3dc223e2eb6abebe19c9f08}\label{a05277_ac8a5b4f6a3dc223e2eb6abebe19c9f08} 
+\index{essential::GDT@{essential::GDT}!kernel\_DS@{kernel\_DS}}
+\index{kernel\_DS@{kernel\_DS}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{kernel\_DS}{kernel\_DS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a05273}{GDT\+\_\+row}} essential\+::\+GDT\+::kernel\+\_\+\+DS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00060}{60}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a05277_a4105a25a1ec71dc7e338639bb370c664}\label{a05277_a4105a25a1ec71dc7e338639bb370c664} 
+\index{essential::GDT@{essential::GDT}!limit@{limit}}
+\index{limit@{limit}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{limit}{limit}}
+{\footnotesize\ttfamily uint16\+\_\+t essential\+::\+GDT\+::limit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00056}{56}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a04289_source_l00026}{GDT()}}.
+
+\Hypertarget{a05277_a154c2e2725809d873c8e7d5f19ea66c5}\label{a05277_a154c2e2725809d873c8e7d5f19ea66c5} 
+\index{essential::GDT@{essential::GDT}!nullSegment@{nullSegment}}
+\index{nullSegment@{nullSegment}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{nullSegment}{nullSegment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a05273}{GDT\+\_\+row}} essential\+::\+GDT\+::null\+Segment\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00058}{58}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a04289_source_l00026}{GDT()}}.
+
+\Hypertarget{a05277_a32508694f9db3188cd4aba126cbfb5bb}\label{a05277_a32508694f9db3188cd4aba126cbfb5bb} 
+\index{essential::GDT@{essential::GDT}!user\_CS@{user\_CS}}
+\index{user\_CS@{user\_CS}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{user\_CS}{user\_CS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a05273}{GDT\+\_\+row}} essential\+::\+GDT\+::user\+\_\+\+CS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00061}{61}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+\Hypertarget{a05277_a73463d83e2048869692d0adf1acac7a6}\label{a05277_a73463d83e2048869692d0adf1acac7a6} 
+\index{essential::GDT@{essential::GDT}!user\_DS@{user\_DS}}
+\index{user\_DS@{user\_DS}!essential::GDT@{essential::GDT}}
+\doxyparagraph{\texorpdfstring{user\_DS}{user\_DS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a05273}{GDT\+\_\+row}} essential\+::\+GDT\+::user\+\_\+\+DS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a04367_source_l00062}{62}} of file \mbox{\hyperlink{a04367_source}{kgdt.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libk\+\_\+header/essential/\mbox{\hyperlink{a04367}{kgdt.\+hpp}}\item 
+libk\+\_\+src/essential/\mbox{\hyperlink{a04289}{kgdt.\+cpp}}\end{DoxyCompactItemize}

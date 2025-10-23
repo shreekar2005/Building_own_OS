@@ -1,0 +1,88 @@
+\doxysubsection{kinterrupt.\+hpp}
+\hypertarget{a16025_source}{}\label{a16025_source}\index{libk\_header/hardware\_communication/kinterrupt.hpp@{libk\_header/hardware\_communication/kinterrupt.hpp}}
+\mbox{\hyperlink{a16025}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00001}\mbox{\hyperlink{a16025_adf5df650f7c6f6e7792d97ee2b851265}{00001}}\ \textcolor{preprocessor}{\#ifndef\ \_OSOS\_HARDWARE\_COMMUNICATION\_KINTERRUPT\_H}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00002}\mbox{\hyperlink{a16025_acca378f87bf61c0de2befa4244846bfe}{00002}}\ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00003}\mbox{\hyperlink{a16025_acb7bc06bed6f6408d719334fc41698c7}{00003}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_OSOS\_HARDWARE\_COMMUNICATION\_KINTERRUPT\_H}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00004}\mbox{\hyperlink{a16025_a8b0d6200bc639dd37ff68847a0adde5f}{00004}}\ \textcolor{preprocessor}{\ \ \ \ \#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00005}\mbox{\hyperlink{a16025_a7884c02f32fe35058379ebdc96c5767c}{00005}}\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{a16022}{basic/kiostream.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00006}00006\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{a16028}{hardware\_communication/kport.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00007}\mbox{\hyperlink{a16025_ab2572e8a0d5fb3acf2373d28ba45ce25}{00007}}\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{a16043}{essential/kgdt.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00008}\mbox{\hyperlink{a16025_a3fe23003c5b71fa3b47543c074c38ac3}{00008}}\ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00009}\mbox{\hyperlink{a16025_a6c5563315b1a2f5c67ae8b78d06e3c7f}{00009}}\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ following\ functions\ are\ defined\ in\ kinterruptstub.s}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00011}\mbox{\hyperlink{a16025_a07e074bde074261858311b014bc2b398}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16025_a07e074bde074261858311b014bc2b398}{ignoreInterrupt}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00012}\mbox{\hyperlink{a16025_adf60fad10b12cc19ad193c928d36445c}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16025_adf60fad10b12cc19ad193c928d36445c}{handleIRQ0x00}}();\ \textcolor{comment}{//\ Timer}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00013}\mbox{\hyperlink{a16025_a6498ed740318b424aaae4db1f223e558}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16025_a6498ed740318b424aaae4db1f223e558}{handleIRQ0x01}}();\ \textcolor{comment}{//\ Keyboard}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00014}\mbox{\hyperlink{a16053_a269f53904f53339ae2df626922b404b2}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16025_a996c60cc7e88bb1c85505c19f6c35117}{handleIRQ0x0C}}();\ \textcolor{comment}{//\ PS/2\ Mouse\ }}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00017}\mbox{\hyperlink{a16053}{00017}}\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a16053}{hardware\_communication}}\{}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Class\ structures\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00019}00019\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//making\ forward\ definition\ for\ this\ class\ (needed\ in\ InterruptHandler)}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a16969}{InterruptManager}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Interrupthandler\ is\ an\ INTERFACE}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00023}\mbox{\hyperlink{a16961}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a16961}{InterruptHandler}}\{}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00025}\mbox{\hyperlink{a16961_afeede822d3e98957e76e627a54ec2f7a}{00025}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{a16961_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00026}\mbox{\hyperlink{a16961_ae86f4eae0ce9272b2027d44bdfd71e33}{00026}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16969}{InterruptManager}}*\ \mbox{\hyperlink{a16961_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16961}{InterruptHandler}}(uint8\_t\ \mbox{\hyperlink{a16961_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}},\ \mbox{\hyperlink{a16969}{InterruptManager}}*\ \mbox{\hyperlink{a16961_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}});}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16961_a5114528f0db9926365b345337e42af9b}{\string~InterruptHandler}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00030}\mbox{\hyperlink{a16961_aa89d41d69840cb4f1c8692fa6ded28f4}{00030}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ uintptr\_t\ \mbox{\hyperlink{a16961_aa89d41d69840cb4f1c8692fa6ded28f4}{handleInterrupt}}(uintptr\_t\ esp)=0;\ \textcolor{comment}{//pure\ virtual\ function}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00031}00031\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00033}\mbox{\hyperlink{a16965}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a16965}{IDT\_row}}\{}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00035}\mbox{\hyperlink{a16965_a3390e4d53e904d420187ecc0247e9289}{00035}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a16965_a3390e4d53e904d420187ecc0247e9289}{handlerAddressLowbits}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00036}\mbox{\hyperlink{a16965_a800309c99800063315cddf536a3d0d67}{00036}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a16965_a800309c99800063315cddf536a3d0d67}{kernelCodeSegmentSelector}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00037}\mbox{\hyperlink{a16965_a96bce1ce9c6a7e9b5a20607f41a2e876}{00037}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{a16965_a96bce1ce9c6a7e9b5a20607f41a2e876}{reserved}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00038}\mbox{\hyperlink{a16965_afa706321cb5ba41a6035dbe1ec39c265}{00038}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{a16965_afa706321cb5ba41a6035dbe1ec39c265}{access}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00039}\mbox{\hyperlink{a16965_af1a4bb042f75f10c5e2b08034e82aed3}{00039}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a16965_af1a4bb042f75f10c5e2b08034e82aed3}{handlerAddressHighbits}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16965_a5149970639d0f251d529808a192b4b55}{IDT\_row}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16965_a9cad760dfa1c1f76f98b6207365f7e2d}{\string~IDT\_row}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00043}\mbox{\hyperlink{a16965_a6c5563315b1a2f5c67ae8b78d06e3c7f}{00043}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a16969}{InterruptManager}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00044}00044\ \ \ \ \ \ \ \ \ \}\mbox{\hyperlink{a16053_a21c3ca5c318038eaed596c14fd2666ed}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00045}00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00046}\mbox{\hyperlink{a16969}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a16969}{InterruptManager}}\{}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00048}\mbox{\hyperlink{a16969_a9aef4ea3434f8ddeaf9c32a63e6faf05}{00048}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a16961}{InterruptHandler}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ public\ :}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00051}\mbox{\hyperlink{a16969_a1991d8428ff7c74b31f42d48bb49547a}{00051}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a16969_a1991d8428ff7c74b31f42d48bb49547a}{limit}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00052}\mbox{\hyperlink{a16969_ad94bd8e9c355fde3e814d4894bab0181}{00052}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a16969_ad94bd8e9c355fde3e814d4894bab0181}{base}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00054}\mbox{\hyperlink{a16969_a7b6bb52a8072c51bfcb4f4877c3d0226}{00054}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16965}{IDT\_row}}\ \mbox{\hyperlink{a16969_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}}[256];}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//handlers\ are\ actually\ object\ of\ corresponding\ drivers\ (e.g.\ keyboard-\/driver\ object\ which\ have\ handleInterrupt\ method)}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00056}\mbox{\hyperlink{a16969_ac8aba191e612ad605b8b188f78e65d3b}{00056}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16961}{InterruptHandler}}*\ \mbox{\hyperlink{a16969_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[256];}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16969_af448c0d55d2e226050b7f4efb6d4abe8}{setIDTEntry}}(}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ interruptNumber,}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ codeSegmentSelectorOffset,}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ (*handler)(),}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ DescriptorPrivilegeLever,}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ DescriptorType);}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00064}\mbox{\hyperlink{a16969_acb04723d03d6b34abbc5f7407cab0b33}{00064}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a16981}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a16969_acb04723d03d6b34abbc5f7407cab0b33}{picMasterCommand}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00065}\mbox{\hyperlink{a16969_a5287e31a546f60708b085b387332a904}{00065}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a16981}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a16969_a5287e31a546f60708b085b387332a904}{picMasterData}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00066}\mbox{\hyperlink{a16969_afed9d24b37c8f9386a71f4284b2502a4}{00066}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a16981}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a16969_afed9d24b37c8f9386a71f4284b2502a4}{picSlaveCommand}};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00067}\mbox{\hyperlink{a16969_ac1111b7cfbd27b37f03a0678ae5dbaf1}{00067}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a16981}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a16969_ac1111b7cfbd27b37f03a0678ae5dbaf1}{picSlaveData}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00068}00068\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16025_a6c5563315b1a2f5c67ae8b78d06e3c7f}{InterruptManager}}(\mbox{\hyperlink{a16953}{essential::GDT}}*\ gdt);}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a16969_a65276f26b5d5197482a415b83a898560}{\string~InterruptManager}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16969_a81d593116320da32f1aa4057087f1e11}{installTable}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16969_a1ab5b6378071338ede295f0bffaf3d51}{activate}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16969_a9451566bf08617378ca2144505d394a6}{deactivate}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16969_aac20f3a896bea512413568a60ad48c3d}{printLoadedTable}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a16969_ad8a6f694662a3a36ba9353197e20c1b1}{printLoadedTableHeader}}();}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ uintptr\_t\ \mbox{\hyperlink{a16969_a2d3ef1656e1eaaf86be40a200a49a4b2}{handleInterrupt}}(uint8\_t\ interruptNumber,\ uintptr\_t\ esp);}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00079}\mbox{\hyperlink{a16053_a21c3ca5c318038eaed596c14fd2666ed}{00079}}\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a16025_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{a16025_source_l00082}00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

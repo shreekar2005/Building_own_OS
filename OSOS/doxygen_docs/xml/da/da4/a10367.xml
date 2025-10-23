@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="da/da4/a10367" kind="union" language="C++" prot="public">
+    <compoundname>multiboot_info.u</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="da/da4/a10367_1adcc9d90eba827321c643ad06b62c7817" prot="public" static="no" mutable="no">
+        <type>multiboot_aout_symbol_table_t</type>
+        <definition></definition>
+        <argsstring></argsstring>
+        <name>aout_sym</name>
+        <qualifiedname>multiboot_info.u::aout_sym</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="167" column="35"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da4/a10367_1af2b83453f34de71046f2bbb48051c1f4" prot="public" static="no" mutable="no">
+        <type>multiboot_elf_section_header_table_t</type>
+        <definition></definition>
+        <argsstring></argsstring>
+        <name>elf_sec</name>
+        <qualifiedname>multiboot_info.u::elf_sec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="168" column="42"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>multiboot_info.u</label>
+        <link refid="da/da4/a10367"/>
+      </node>
+    </collaborationgraph>
+    <location file="libk_header/basic/multiboot.hpp" line="165" column="3" bodyfile="libk_header/basic/multiboot.hpp" bodystart="166" bodyend="169"/>
+    <listofallmembers>
+      <member refid="da/da4/a10367_1adcc9d90eba827321c643ad06b62c7817" prot="public" virt="non-virtual"><scope>multiboot_info.u</scope><name>aout_sym</name></member>
+      <member refid="da/da4/a10367_1af2b83453f34de71046f2bbb48051c1f4" prot="public" virt="non-virtual"><scope>multiboot_info.u</scope><name>elf_sec</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

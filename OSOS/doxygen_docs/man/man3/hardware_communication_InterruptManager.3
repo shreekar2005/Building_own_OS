@@ -1,0 +1,354 @@
+.TH "hardware_communication::InterruptManager" 3 "Thu Oct 23 2025 23:53:37" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hardware_communication::InterruptManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'kinterrupt\&.hpp'\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInterruptManager\fP (\fBessential::GDT\fP *gdt)"
+.br
+.ti -1c
+.RI "\fB~InterruptManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBinstallTable\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBactivate\fP ()"
+.br
+.ti -1c
+.RI "static void \fBdeactivate\fP ()"
+.br
+.ti -1c
+.RI "static uintptr_t \fBhandleInterrupt\fP (uint8_t interruptNumber, uintptr_t esp)"
+.br
+.ti -1c
+.RI "static void \fBprintLoadedTable\fP ()"
+.br
+.ti -1c
+.RI "static void \fBprintLoadedTableHeader\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBbase\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBlimit\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetIDTEntry\fP (uint8_t interruptNumber, uint16_t codeSegmentSelectorOffset, void(*handler)(), uint8_t DescriptorPrivilegeLever, uint8_t DescriptorType)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBInterruptHandler\fP * \fBhandlers\fP [256]"
+.br
+.ti -1c
+.RI "\fBIDT_row\fP \fBinterruptDescriptorTable\fP [256]"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBhardware_communication::Port8BitSlow\fP \fBpicMasterCommand\fP"
+.br
+.ti -1c
+.RI "static \fBhardware_communication::Port8BitSlow\fP \fBpicMasterData\fP"
+.br
+.ti -1c
+.RI "static \fBhardware_communication::Port8BitSlow\fP \fBpicSlaveCommand\fP"
+.br
+.ti -1c
+.RI "static \fBhardware_communication::Port8BitSlow\fP \fBpicSlaveData\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB46\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "hardware_communication::InterruptManager::InterruptManager (\fBessential::GDT\fP * gdt)"
+
+.PP
+Definition at line \fB32\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+32                                                                          {
+33     // ICW1: Start Initialization Sequence\&. Both PICs are told to listen for 3 more bytes of config data\&.
+34     picMasterCommand\&.write(0x11);
+35     picSlaveCommand\&.write(0x11);
+36 
+37     // ICW2: Vector Remapping\&.
+38     // Master is told to remap its IRQs (0\-7) to CPU vectors 0x20\-0x27\&.
+39     picMasterData\&.write(0x20);
+40     // Slave is told to remap its IRQs (8\-15) to CPU vectors 0x28\-0x2F\&.
+41     picSlaveData\&.write(0x28);
+42 
+43     // ICW3: Chaining Configuration\&.
+44     // Master is told a slave is connected on its IRQ 2 line (0x04 = bit 2 set)\&.
+45     picMasterData\&.write(0x04);
+46     // Slave is told its identity is 2\&.
+47     picSlaveData\&.write(0x02);
+48 
+49     // ICW4: Environment Information\&.
+50     // Both are told to operate in standard "8086/88" mode\&.
+51     picMasterData\&.write(0x01);
+52     picSlaveData\&.write(0x01);
+53 
+54     // OCW1: Interrupt Masking\&.
+55     // This is the final step, enabling all interrupts by writing a mask of all zeros\&.
+56     picMasterData\&.write(0x00);
+57     picSlaveData\&.write(0x00);
+58 
+59     base=(uintptr_t)&interruptDescriptorTable;
+60     limit = sizeof(interruptDescriptorTable) \- 1;
+61 
+62     uint16_t kernelCSselectorOffset = gdt\->kernel_CS_selector();
+63     uint8_t IDT_INTERRUPT_GATE=0xE;
+64     for(int i=0; i<256; i++){
+65         setIDTEntry(i, kernelCSselectorOffset, &ignoreInterrupt, 0, IDT_INTERRUPT_GATE);
+66     }
+67 
+68     // Set handlers for hardware interrupts
+69     setIDTEntry(0x20, kernelCSselectorOffset, &handleIRQ0x00, 0, IDT_INTERRUPT_GATE); // Timer
+70     setIDTEntry(0x21, kernelCSselectorOffset, &handleIRQ0x01, 0, IDT_INTERRUPT_GATE); // Keyboard
+71     setIDTEntry(0x2C, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // PS/2 Mouse
+72 }
+.fi
+
+.PP
+References \fBbase\fP, \fBhandleIRQ0x00()\fP, \fBhandleIRQ0x01()\fP, \fBhandleIRQ0x0C()\fP, \fBignoreInterrupt()\fP, \fBessential::GDT::kernel_CS_selector()\fP, and \fBlimit\fP\&.
+.SS "hardware_communication::InterruptManager::~InterruptManager ()"
+
+.PP
+Definition at line \fB74\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+74 {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void hardware_communication::InterruptManager::activate ()\fC [static]\fP"
+
+.PP
+Definition at line \fB108\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+108                                                      {
+109     __asm__ volatile ("sti");
+110     basic::printf("Interrupts Activated\\n");
+111 }
+.fi
+
+.PP
+References \fBbasic::printf()\fP\&.
+.PP
+Referenced by \fBkernelMain()\fP\&.
+.SS "void hardware_communication::InterruptManager::deactivate ()\fC [static]\fP"
+
+.PP
+Definition at line \fB112\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+112                                                        {
+113     __asm__ volatile ("cli");
+114     basic::printf("Interrupts Deactivated\\n");
+115 }
+.fi
+
+.PP
+References \fBbasic::printf()\fP\&.
+.SS "uintptr_t hardware_communication::InterruptManager::handleInterrupt (uint8_t interruptNumber, uintptr_t esp)\fC [static]\fP"
+
+.PP
+Definition at line \fB169\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+169                                                                                                        {
+170     // Use the global pointer "installed_interrupt_manager" to access the current interrupt manager
+171     if(installed_interrupt_manager\->handlers[interruptNumber]!=nullptr){
+172         esp = installed_interrupt_manager\->handlers[interruptNumber]\->handleInterrupt(esp);
+173     }
+174 
+175     else if(interruptNumber!=0x20){ //0x20 is Hardware Timer Interrupt
+176         basic::printf("UNHANDLED INTERRUPT %#hx\\n",interruptNumber);
+177     }
+178 
+179     // Hardware interrupts must still be acknowledged to the PIC
+180     if (0x20 <=interruptNumber && interruptNumber <= 0x2F) {
+181         picMasterCommand\&.write(0x20);
+182         if (0x28 <= interruptNumber) picSlaveCommand\&.write(0x20);
+183     }
+184     
+185     return esp;
+186 }
+.fi
+
+.PP
+References \fBhardware_communication::InterruptHandler::handleInterrupt()\fP, \fBhandlers\fP, \fBinstalled_interrupt_manager\fP, and \fBbasic::printf()\fP\&.
+.SS "void hardware_communication::InterruptManager::installTable ()"
+
+.PP
+Definition at line \fB91\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+91                                                          {
+92     installed_interrupt_manager=this;
+93     struct IDT_Pointer {
+94         uint16_t limit;
+95         uint32_t base;
+96     } __attribute__((packed));
+97 
+98     IDT_Pointer idt_ptr;
+99     idt_ptr\&.limit = this\->limit;
+100     idt_ptr\&.base = this\->base;
+101 
+102     __asm__ volatile ("lidt %0" : : "m"(idt_ptr));
+103     basic::printf("IDT Installed\\n");
+104 }
+.fi
+
+.PP
+References \fBhardware_communication::__attribute__\fP, \fBbase\fP, \fBinstalled_interrupt_manager\fP, \fBlimit\fP, and \fBbasic::printf()\fP\&.
+.PP
+Referenced by \fBkernelMain()\fP\&.
+.SS "void hardware_communication::InterruptManager::printLoadedTable ()\fC [static]\fP"
+
+.PP
+Definition at line \fB117\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+117                                                               {
+118     struct IDT_Pointer {
+119         uint16_t limit;
+120         uint32_t base;
+121     } __attribute__((packed));
+122 
+123     IDT_Pointer idt_ptr;
+124     __asm__ volatile ("sidt %0" : "=m"(idt_ptr));
+125 
+126     basic::printf("\-\-\-\\n");
+127     basic::printf("INFO about : Currently Loaded IDT\\n");
+128     basic::printf("Base Address: %#x\\n", idt_ptr\&.base);
+129     basic::printf("Limit: %#x (%d bytes)\\n", idt_ptr\&.limit, idt_ptr\&.limit);
+130     basic::printf("Entries: %d\\n", (idt_ptr\&.limit + 1) / sizeof(hardware_communication::IDT_row));
+131     basic::printf("\-\-\-\\n");
+132 
+133     basic::printf(" Idx | Handler Address | Selector | Access Flags\\n");
+134     hardware_communication::IDT_row* current_idt = (hardware_communication::IDT_row*)idt_ptr\&.base;
+135     uint32_t num_entries = (idt_ptr\&.limit + 1) / sizeof(hardware_communication::IDT_row);
+136     for (uint32_t i = 0; i < num_entries; i++) {
+137         uint32_t handler_address = (current_idt[i]\&.handlerAddressHighbits << 16) | current_idt[i]\&.handlerAddressLowbits;
+138 
+139         if (handler_address != 0) {
+140             basic::printf(" %3d | %#015x | %#08x | %#012x\\n", 
+141                    i, 
+142                    handler_address, 
+143                    current_idt[i]\&.kernelCodeSegmentSelector,
+144                    current_idt[i]\&.access
+145             );
+146         }
+147     }
+148     basic::printf("\-\-\-\\n");
+149 }
+.fi
+
+.PP
+References \fBhardware_communication::__attribute__\fP, \fBaccess\fP, \fBbase\fP, \fBhardware_communication::IDT_row::handlerAddressHighbits\fP, \fBhandlerAddressLowbits\fP, \fBkernelCodeSegmentSelector\fP, \fBlimit\fP, and \fBbasic::printf()\fP\&.
+.SS "void hardware_communication::InterruptManager::printLoadedTableHeader ()\fC [static]\fP"
+
+.PP
+Definition at line \fB151\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+151                                                                    {
+152 
+153     struct IDT_Pointer {
+154         uint16_t limit;
+155         uint32_t base;
+156     } __attribute__((packed));
+157 
+158     IDT_Pointer idt_ptr;
+159     __asm__ volatile ("sidt %0" : "=m"(idt_ptr));
+160     basic::printf("\-\-\-\\n");
+161     basic::printf("INFO about : Currently Loaded IDT\\n");
+162     basic::printf("Base Address: %#x\\n", idt_ptr\&.base);
+163     basic::printf("Limit: %#x (%d bytes)\\n", idt_ptr\&.limit, idt_ptr\&.limit);
+164     basic::printf("Entries: %d\\n", (idt_ptr\&.limit + 1) / sizeof(hardware_communication::IDT_row));
+165     basic::printf("\-\-\-\\n");
+166 }
+.fi
+
+.PP
+References \fBhardware_communication::__attribute__\fP, \fBbase\fP, \fBlimit\fP, and \fBbasic::printf()\fP\&.
+.PP
+Referenced by \fBkernelMain()\fP\&.
+.SS "void hardware_communication::InterruptManager::setIDTEntry (uint8_t interruptNumber, uint16_t codeSegmentSelectorOffset, void(*)() handler, uint8_t DescriptorPrivilegeLever, uint8_t DescriptorType)\fC [protected]\fP"
+
+.PP
+Definition at line \fB76\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+81                            {
+82         const uint8_t IDT_DESC_PRESET= 0x80;
+83         interruptDescriptorTable[interruptNumber]\&.handlerAddressLowbits=(uint32_t)handler & 0xFFFF;
+84         interruptDescriptorTable[interruptNumber]\&.handlerAddressHighbits=((uint32_t)handler >> 16) & 0xFFFF;
+85         interruptDescriptorTable[interruptNumber]\&.reserved=0;
+86         interruptDescriptorTable[interruptNumber]\&.access=IDT_DESC_PRESET | DescriptorType | ((DescriptorPrivilegeLever & 3) << 5);
+87         interruptDescriptorTable[interruptNumber]\&.kernelCodeSegmentSelector=codeSegmentSelectorOffset;
+88 }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "uint32_t hardware_communication::InterruptManager::base"
+
+.PP
+Definition at line \fB52\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SS "\fBInterruptHandler\fP* hardware_communication::InterruptManager::handlers[256]\fC [protected]\fP"
+
+.PP
+Definition at line \fB56\fP of file \fBkinterrupt\&.hpp\fP\&.
+.PP
+Referenced by \fBhardware_communication::InterruptHandler::InterruptHandler()\fP, and \fBhandleInterrupt()\fP\&.
+.SS "\fBIDT_row\fP hardware_communication::InterruptManager::interruptDescriptorTable[256]\fC [protected]\fP"
+
+.PP
+Definition at line \fB54\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SS "uint16_t hardware_communication::InterruptManager::limit"
+
+.PP
+Definition at line \fB51\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SS "\fBhardware_communication::Port8BitSlow\fP hardware_communication::InterruptManager::picMasterCommand\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB64\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SS "\fBhardware_communication::Port8BitSlow\fP hardware_communication::InterruptManager::picMasterData\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB65\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SS "\fBhardware_communication::Port8BitSlow\fP hardware_communication::InterruptManager::picSlaveCommand\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB66\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SS "\fBhardware_communication::Port8BitSlow\fP hardware_communication::InterruptManager::picSlaveData\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB67\fP of file \fBkinterrupt\&.hpp\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

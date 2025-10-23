@@ -1,13 +1,13 @@
 #include <cstdint>
-#include "essential/kicxxabi"
-#include "basic/multiboot" // header for handling multiboot info (provided by grub)
-#include "basic/kiostream"  // header to use video memory : e.g. printf, keyboard_input_by_polling
-#include "basic/kmemory" // for using printMemoryMap()
-#include "essential/kgdt" // for global discripter table
-#include "hardware_communication/kinterrupt"
-#include "driver/kkeyboard"
-#include "driver/kmouse"
-#include "driver/kdriver"
+#include "basic/multiboot.hpp" // header for handling multiboot info (provided by grub)
+#include "essential/kicxxabi.hpp"
+#include "basic/kiostream.hpp"  // header to use video memory : e.g. printf, keyboard_input_by_polling
+#include "basic/kmemory.hpp" // for using printMemoryMap()
+#include "essential/kgdt.hpp" // for global discripter table
+#include "hardware_communication/kinterrupt.hpp"
+#include "driver/kkeyboard.hpp"
+#include "driver/kmouse.hpp"
+#include "driver/kdriver.hpp"
 
 
 class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler{

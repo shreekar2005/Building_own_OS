@@ -1,0 +1,38 @@
+<h1>OSOS - 32-bit Operating System Documentation</h1>
+
+<p>Welcome to the official documentation for OSOS, a 32-bit kernel written from scratch in C++.</p>
+<p>This site provides a detailed look at the internal structure of the OSOS kernel, generated automatically by Doxygen. You can use the navigation panel to explore all classes, namespaces, and files, complete with inheritance diagrams and dependency graphs.</p>
+
+<hr>
+
+<h2>Core Features &amp; Modules</h2>
+<p>The following features are implemented in the kernel. You can find their full documentation by exploring the <a href="namespaces.html">Namespaces</a> and <a href="annotated.html">Classes</a> sections.</p>
+<ul>
+    <li><p><b>Custom Kernel Library (<code>libk</code>):</b></p>
+        <ul>
+            <li><b><code>basic</code>:</b> Provides <code>kiostream</code> (for <code>printf</code>, screen control) and <code>kmemory</code> (for custom <code>new</code>/<code>delete</code>).</li>
+            <li><b><code>driver</code>:</b> Includes the <code>DriverManager</code> and drivers for the <code>kkeyboard</code> and <code>kmouse</code>.</li>
+            <li><b><code>essential</code>:</b> Contains the <code>GDT</code> (Global Descriptor Table) setup and <code>kicxxabi</code> for global constructor/destructor support.</li>
+            <li><b><code>hardware_communication</code>:</b> Provides <code>kport</code> (for low-level I/O port access) and the <code>InterruptManager</code> (for handling the IDT and ISRs).</li>
+        </ul>
+    </li>
+    <li><p><b>Global Constructor/Destructor Support:</b> C++ global objects are correctly constructed before <code>kernelMain</code> is called, using <code>essential/kicxxabi</code>.</p></li>
+    <li><p><b>Hardware Initialization:</b></p>
+        <ul>
+            <li><b>Global Descriptor Table (GDT)</b></li>
+            <li><b>Interrupt Descriptor Table (IDT)</b></li>
+        </ul>
+    </li>
+    <li><p><b>Interrupt Handling:</b> Manages hardware interrupts from the Keyboard and Mouse via registered ISRs.</p></li>
+</ul>
+
+<hr>
+
+<h2>Code Structure &amp; Namespaces</h2>
+<p>The kernel's code is divided into several key namespaces to keep it organized. These namespaces form the basis of the documentation's structure:</p>
+<ul>
+    <li><b><code>basic</code>:</b> Core functions like I/O and memory.</li>
+    <li><b><code>driver</code>:</b> Device drivers (Keyboard, Mouse).</li>
+    <li><b><code>essential</code>:</b> Critical boot-time setup code (GDT, C++ ABI support).</li>
+    <li><b><code>hardware_communication</code>:</b> Low-level port I/O and interrupt management.</li>
+</ul>

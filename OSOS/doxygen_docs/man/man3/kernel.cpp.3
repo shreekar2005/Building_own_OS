@@ -1,0 +1,97 @@
+.TH "kernel_src/kernel.cpp" 3 "Thu Oct 23 2025 23:53:37" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+kernel_src/kernel.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdint>\fP
+.br
+\fC#include 'basic/multiboot\&.hpp'\fP
+.br
+\fC#include 'essential/kicxxabi\&.hpp'\fP
+.br
+\fC#include 'basic/kiostream\&.hpp'\fP
+.br
+\fC#include 'basic/kmemory\&.hpp'\fP
+.br
+\fC#include 'essential/kgdt\&.hpp'\fP
+.br
+\fC#include 'hardware_communication/kinterrupt\&.hpp'\fP
+.br
+\fC#include 'driver/kkeyboard\&.hpp'\fP
+.br
+\fC#include 'driver/kmouse\&.hpp'\fP
+.br
+\fC#include 'driver/kdriver\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBKeyboardEventHandler_for_kernel\fP"
+.br
+.ti -1c
+.RI "class \fBMouseEventHandler_for_kernel\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBkernelMain\fP (multiboot_info_t *mbi, uint32_t magicnumber)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void kernelMain (multiboot_info_t * mbi, uint32_t magicnumber)"
+
+.PP
+Definition at line \fB85\fP of file \fBkernel\&.cpp\fP\&..PP
+.nf
+86 {
+87     // int a=1/0;
+88     essential::__callConstructors();
+89     basic::enable_cursor(0,15); // (0,15) is for blinking block
+90     basic::__clearScreen();
+91     //\-\-\-\-\-\-\-\-\-\-\-\-\-Global Descriptor Table \-\-\-\-\-\-\-\-\-\-\-\-\-
+92     essential::GDT osos_GDT;
+93     osos_GDT\&.installTable();
+94     //\-\-\-\-\-\-\-\-\-\-\-\-Interrupt Descriptor Table and Drivers \-\-\-\-\-\-\-\-\-\-\-\-\-
+95     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
+96     osos_InterruptManager\&.installTable();
+97     
+98     //\-\-\-\-\-\-\-\-\-\-\-\-Creating object of drivers so that they will handle their corresponding Interrupts\-\-\-\-\-\-\-\-\-\-\-\-
+99     driver::DriverManager driverManager;
+100 
+101         KeyboardEventHandler_for_kernel keyboardEventHandler_for_kernel;
+102         driver::KeyboardDriver keyboard(&osos_InterruptManager,&keyboardEventHandler_for_kernel);
+103         driverManager\&.addDriver(&keyboard);
+104 
+105         MouseEventHandler_for_kernel mouseEventHandler_for_kernel;
+106         driver::MouseDriver mouse(&osos_InterruptManager, &mouseEventHandler_for_kernel);
+107         driverManager\&.addDriver(&mouse);
+108 
+109     driverManager\&.activateAll();
+110 
+111     hardware_communication::InterruptManager::activate();
+112     
+113     essential::GDT::printLoadedTableHeader();
+114     hardware_communication::InterruptManager::printLoadedTableHeader();
+115     basic::printf("HELLO FROM OSOS :)\\n");
+116     while (true){};
+117 
+118     basic::disable_cursor();
+119     essential::__cxa_finalize(0);
+120     (void)mbi;
+121     (void)magicnumber;
+122 }
+.fi
+
+.PP
+References \fBessential::__callConstructors()\fP, \fBbasic::__clearScreen()\fP, \fBessential::__cxa_finalize()\fP, \fBhardware_communication::InterruptManager::activate()\fP, \fBdriver::DriverManager::activateAll()\fP, \fBdriver::DriverManager::addDriver()\fP, \fBbasic::disable_cursor()\fP, \fBbasic::enable_cursor()\fP, \fBessential::GDT::installTable()\fP, \fBhardware_communication::InterruptManager::installTable()\fP, \fBbasic::printf()\fP, \fBessential::GDT::printLoadedTableHeader()\fP, and \fBhardware_communication::InterruptManager::printLoadedTableHeader()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

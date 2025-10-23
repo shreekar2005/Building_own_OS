@@ -1,0 +1,192 @@
+\doxysubsection{kinterrupt.\+cpp}
+\hypertarget{a13640_source}{}\label{a13640_source}\index{libk\_src/hardware\_communication/kinterrupt.cpp@{libk\_src/hardware\_communication/kinterrupt.cpp}}
+\mbox{\hyperlink{a13640}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a13682}{hardware\_communication/kinterrupt.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00003}00003\ \textcolor{comment}{//\ Global\ pointer\ to\ the\ active\ interrupt\ manager\ instance}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00004}00004\ \textcolor{comment}{//\ This\ allows\ our\ static\ C-\/style\ handlers\ to\ access\ the\ C++\ object.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00006}00006\ \textcolor{comment}{//\ forward\ definitions\ of\ handlers\ (which\ are\ made\ .global\ in\ interruptstubs.s)}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00007}00007\ \textcolor{comment}{//\ These\ need\ to\ be\ declared\ extern\ "{}C"{}\ to\ prevent\ C++\ name\ mangling,}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00008}00008\ \textcolor{comment}{//\ ensuring\ the\ linker\ can\ find\ the\ simple\ names\ defined\ in\ assembly.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00011}\mbox{\hyperlink{a14618_a134c8931dff43e766f1ddc4d0f35cd48}{00011}}\ \mbox{\hyperlink{a14618_a134c8931dff43e766f1ddc4d0f35cd48}{hardware\_communication::InterruptHandler::InterruptHandler}}(uint8\_t\ interruptNumber,\ \mbox{\hyperlink{a14626}{hardware\_communication::InterruptManager}}*\ interrupt\_manager)\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00012}00012\ \ \ \ \ this-\/>interruptNumber=\mbox{\hyperlink{a14618_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00013}00013\ \ \ \ \ this-\/>interrupt\_manager=\mbox{\hyperlink{a14618_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{a14618_ae86f4eae0ce9272b2027d44bdfd71e33}{interrupt\_manager}}-\/>\mbox{\hyperlink{a14626_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[\mbox{\hyperlink{a14618_afeede822d3e98957e76e627a54ec2f7a}{interruptNumber}}]=\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00016}\mbox{\hyperlink{a14618_a5114528f0db9926365b345337e42af9b}{00016}}\ \mbox{\hyperlink{a14618_a5114528f0db9926365b345337e42af9b}{hardware\_communication::InterruptHandler::\string~InterruptHandler}}()\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}(interrupt\_manager-\/>handlers[interruptNumber]==\textcolor{keyword}{this})\ interrupt\_manager-\/>handlers[interruptNumber]=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00019}00019\ \textcolor{comment}{//\ uintptr\_t\ InterruptHandler::handleInterrupt(uintptr\_t\ esp)\{}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00020}00020\ \textcolor{comment}{//\ \ \ \ \ return\ esp;}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00021}00021\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00024}\mbox{\hyperlink{a14622_a5149970639d0f251d529808a192b4b55}{00024}}\ \mbox{\hyperlink{a14622_a5149970639d0f251d529808a192b4b55}{hardware\_communication::IDT\_row::IDT\_row}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00025}\mbox{\hyperlink{a14622_a9cad760dfa1c1f76f98b6207365f7e2d}{00025}}\ \mbox{\hyperlink{a14622_a9cad760dfa1c1f76f98b6207365f7e2d}{hardware\_communication::IDT\_row::\string~IDT\_row}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00027}00027\ \mbox{\hyperlink{a14638}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a14626_acb04723d03d6b34abbc5f7407cab0b33}{hardware\_communication::InterruptManager::picMasterCommand}}(0x20);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00028}00028\ \mbox{\hyperlink{a14638}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a14626_a5287e31a546f60708b085b387332a904}{hardware\_communication::InterruptManager::picMasterData}}(0x21);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00029}00029\ \mbox{\hyperlink{a14638}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a14626_afed9d24b37c8f9386a71f4284b2502a4}{hardware\_communication::InterruptManager::picSlaveCommand}}(0xA0);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00030}00030\ \mbox{\hyperlink{a14638}{hardware\_communication::Port8BitSlow}}\ \mbox{\hyperlink{a14626_ac1111b7cfbd27b37f03a0678ae5dbaf1}{hardware\_communication::InterruptManager::picSlaveData}}(0xA1);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00032}\mbox{\hyperlink{a14626_aec70c703cac64ef1eec4b5a94d2e145c}{00032}}\ \mbox{\hyperlink{a14626_aec70c703cac64ef1eec4b5a94d2e145c}{hardware\_communication::InterruptManager::InterruptManager}}(\mbox{\hyperlink{a14610}{essential::GDT}}*\ gdt)\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ ICW1:\ Start\ Initialization\ Sequence.\ Both\ PICs\ are\ told\ to\ listen\ for\ 3\ more\ bytes\ of\ config\ data.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00034}00034\ \ \ \ \ picMasterCommand.write(0x11);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00035}00035\ \ \ \ \ picSlaveCommand.write(0x11);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ ICW2:\ Vector\ Remapping.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Master\ is\ told\ to\ remap\ its\ IRQs\ (0-\/7)\ to\ CPU\ vectors\ 0x20-\/0x27.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00039}00039\ \ \ \ \ picMasterData.write(0x20);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Slave\ is\ told\ to\ remap\ its\ IRQs\ (8-\/15)\ to\ CPU\ vectors\ 0x28-\/0x2F.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00041}00041\ \ \ \ \ picSlaveData.write(0x28);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ ICW3:\ Chaining\ Configuration.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Master\ is\ told\ a\ slave\ is\ connected\ on\ its\ IRQ\ 2\ line\ (0x04\ =\ bit\ 2\ set).}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00045}00045\ \ \ \ \ picMasterData.write(0x04);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Slave\ is\ told\ its\ identity\ is\ 2.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00047}00047\ \ \ \ \ picSlaveData.write(0x02);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ ICW4:\ Environment\ Information.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Both\ are\ told\ to\ operate\ in\ standard\ "{}8086/88"{}\ mode.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00051}00051\ \ \ \ \ picMasterData.write(0x01);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00052}00052\ \ \ \ \ picSlaveData.write(0x01);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ OCW1:\ Interrupt\ Masking.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ final\ step,\ enabling\ all\ interrupts\ by\ writing\ a\ mask\ of\ all\ zeros.}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00056}00056\ \ \ \ \ picMasterData.write(0x00);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00057}00057\ \ \ \ \ picSlaveData.write(0x00);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{a13700_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}=(uintptr\_t)\&interruptDescriptorTable;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{a13700_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}}\ =\ \textcolor{keyword}{sizeof}(interruptDescriptorTable)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00062}00062\ \ \ \ \ uint16\_t\ kernelCSselectorOffset\ =\ gdt-\/>\mbox{\hyperlink{a14610_a89a8d2c17e3c22e7200bff09252f46e1}{kernel\_CS\_selector}}();}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00063}00063\ \ \ \ \ uint8\_t\ IDT\_INTERRUPT\_GATE=0xE;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<256;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00065}00065\ \ \ \ \ \ \ \ \ setIDTEntry(i,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a13682_a07e074bde074261858311b014bc2b398}{ignoreInterrupt}},\ 0,\ IDT\_INTERRUPT\_GATE);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ Set\ handlers\ for\ hardware\ interrupts}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00069}00069\ \ \ \ \ setIDTEntry(0x20,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a13682_adf60fad10b12cc19ad193c928d36445c}{handleIRQ0x00}},\ 0,\ IDT\_INTERRUPT\_GATE);\ \textcolor{comment}{//\ Timer}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00070}00070\ \ \ \ \ setIDTEntry(0x21,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a13682_a6498ed740318b424aaae4db1f223e558}{handleIRQ0x01}},\ 0,\ IDT\_INTERRUPT\_GATE);\ \textcolor{comment}{//\ Keyboard}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00071}00071\ \ \ \ \ setIDTEntry(0x2C,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a13682_a996c60cc7e88bb1c85505c19f6c35117}{handleIRQ0x0C}},\ 0,\ IDT\_INTERRUPT\_GATE);\ \textcolor{comment}{//\ PS/2\ Mouse}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00074}\mbox{\hyperlink{a14626_a65276f26b5d5197482a415b83a898560}{00074}}\ \mbox{\hyperlink{a14626_a65276f26b5d5197482a415b83a898560}{hardware\_communication::InterruptManager::\string~InterruptManager}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00076}\mbox{\hyperlink{a14626_af448c0d55d2e226050b7f4efb6d4abe8}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14626_af448c0d55d2e226050b7f4efb6d4abe8}{hardware\_communication::InterruptManager::setIDTEntry}}(}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00077}00077\ \ \ \ \ uint8\_t\ interruptNumber,}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00078}00078\ \ \ \ \ uint16\_t\ codeSegmentSelectorOffset,}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{void}\ (*handler)(),}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00080}00080\ \ \ \ \ uint8\_t\ DescriptorPrivilegeLever,}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00081}00081\ \ \ \ \ uint8\_t\ DescriptorType)\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ IDT\_DESC\_PRESET=\ 0x80;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00083}00083\ \ \ \ \ \ \ \ \ interruptDescriptorTable[interruptNumber].handlerAddressLowbits=(uint32\_t)handler\ \&\ 0xFFFF;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00084}00084\ \ \ \ \ \ \ \ \ interruptDescriptorTable[interruptNumber].handlerAddressHighbits=((uint32\_t)handler\ >>\ 16)\ \&\ 0xFFFF;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00085}00085\ \ \ \ \ \ \ \ \ interruptDescriptorTable[interruptNumber].reserved=0;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00086}00086\ \ \ \ \ \ \ \ \ interruptDescriptorTable[interruptNumber].access=IDT\_DESC\_PRESET\ |\ DescriptorType\ |\ ((DescriptorPrivilegeLever\ \&\ 3)\ <<\ 5);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00087}00087\ \ \ \ \ \ \ \ \ interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00090}\mbox{\hyperlink{a13640_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{00090}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{a14626}{hardware\_communication::InterruptManager}}*\ \mbox{\hyperlink{a13640_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{installed\_interrupt\_manager}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00091}\mbox{\hyperlink{a14626_a81d593116320da32f1aa4057087f1e11}{00091}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14626_a81d593116320da32f1aa4057087f1e11}{hardware\_communication::InterruptManager::installTable}}()\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{a13640_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{installed\_interrupt\_manager}}=\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{struct\ }IDT\_Pointer\ \{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00094}00094\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a13700_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00095}00095\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a13700_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00096}00096\ \ \ \ \ \}\ \mbox{\hyperlink{a13710_a21c3ca5c318038eaed596c14fd2666ed}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00098}00098\ \ \ \ \ IDT\_Pointer\ idt\_ptr;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00099}00099\ \ \ \ \ idt\_ptr.limit\ =\ this-\/>\mbox{\hyperlink{a13700_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00100}00100\ \ \ \ \ idt\_ptr.base\ =\ this-\/>\mbox{\hyperlink{a13700_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00102}00102\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}lidt\ \%0"{}}\ :\ :\ \textcolor{stringliteral}{"{}m"{}}(idt\_ptr));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}IDT\ Installed\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00108}\mbox{\hyperlink{a14626_a1ab5b6378071338ede295f0bffaf3d51}{00108}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14626_a1ab5b6378071338ede295f0bffaf3d51}{hardware\_communication::InterruptManager::activate}}()\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00109}00109\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}sti"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Interrupts\ Activated\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00112}\mbox{\hyperlink{a14626_a9451566bf08617378ca2144505d394a6}{00112}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14626_a9451566bf08617378ca2144505d394a6}{hardware\_communication::InterruptManager::deactivate}}()\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00113}00113\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}cli"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Interrupts\ Deactivated\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00117}\mbox{\hyperlink{a14626_aac20f3a896bea512413568a60ad48c3d}{00117}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14626_aac20f3a896bea512413568a60ad48c3d}{hardware\_communication::InterruptManager::printLoadedTable}}()\ \{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00118}00118\ \ \ \ \ \textcolor{keyword}{struct\ }IDT\_Pointer\ \{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00119}00119\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a13700_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00120}00120\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a13700_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00121}00121\ \ \ \ \ \}\ \mbox{\hyperlink{a13710_a21c3ca5c318038eaed596c14fd2666ed}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00123}00123\ \ \ \ \ IDT\_Pointer\ idt\_ptr;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00124}00124\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}sidt\ \%0"{}}\ :\ \textcolor{stringliteral}{"{}=m"{}}(idt\_ptr));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}INFO\ about\ :\ Currently\ Loaded\ IDT\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Base\ Address:\ \%\#x\(\backslash\)n"{}},\ idt\_ptr.base);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Limit:\ \%\#x\ (\%d\ bytes)\(\backslash\)n"{}},\ idt\_ptr.limit,\ idt\_ptr.limit);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00130}00130\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Entries:\ \%d\(\backslash\)n"{}},\ (idt\_ptr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a14622}{hardware\_communication::IDT\_row}}));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00133}00133\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\ Idx\ |\ Handler\ Address\ |\ Selector\ |\ Access\ Flags\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00134}00134\ \ \ \ \ \mbox{\hyperlink{a14622}{hardware\_communication::IDT\_row}}*\ current\_idt\ =\ (\mbox{\hyperlink{a14622}{hardware\_communication::IDT\_row}}*)idt\_ptr.base;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00135}00135\ \ \ \ \ uint32\_t\ num\_entries\ =\ (idt\_ptr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a14622}{hardware\_communication::IDT\_row}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ num\_entries;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00137}00137\ \ \ \ \ \ \ \ \ uint32\_t\ handler\_address\ =\ (current\_idt[i].\mbox{\hyperlink{a14622_af1a4bb042f75f10c5e2b08034e82aed3}{handlerAddressHighbits}}\ <<\ 16)\ |\ current\_idt[i].\mbox{\hyperlink{a13682_adf5df650f7c6f6e7792d97ee2b851265}{handlerAddressLowbits}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handler\_address\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\ \%3d\ |\ \%\#015x\ |\ \%\#08x\ |\ \%\#012x\(\backslash\)n"{}},\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler\_address,\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_idt[i].\mbox{\hyperlink{a13682_acca378f87bf61c0de2befa4244846bfe}{kernelCodeSegmentSelector}},}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_idt[i].\mbox{\hyperlink{a13700_a8b0d6200bc639dd37ff68847a0adde5f}{access}}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00151}\mbox{\hyperlink{a14626_ad8a6f694662a3a36ba9353197e20c1b1}{00151}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a14626_ad8a6f694662a3a36ba9353197e20c1b1}{hardware\_communication::InterruptManager::printLoadedTableHeader}}()\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00153}00153\ \ \ \ \ \textcolor{keyword}{struct\ }IDT\_Pointer\ \{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00154}00154\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a13700_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00155}00155\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a13700_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00156}00156\ \ \ \ \ \}\ \mbox{\hyperlink{a13710_a21c3ca5c318038eaed596c14fd2666ed}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00158}00158\ \ \ \ \ IDT\_Pointer\ idt\_ptr;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00159}00159\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}sidt\ \%0"{}}\ :\ \textcolor{stringliteral}{"{}=m"{}}(idt\_ptr));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00160}00160\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00161}00161\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}INFO\ about\ :\ Currently\ Loaded\ IDT\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00162}00162\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Base\ Address:\ \%\#x\(\backslash\)n"{}},\ idt\_ptr.base);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00163}00163\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Limit:\ \%\#x\ (\%d\ bytes)\(\backslash\)n"{}},\ idt\_ptr.limit,\ idt\_ptr.limit);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00164}00164\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Entries:\ \%d\(\backslash\)n"{}},\ (idt\_ptr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a14622}{hardware\_communication::IDT\_row}}));}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00165}00165\ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00166}00166\ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00169}\mbox{\hyperlink{a14626_a2d3ef1656e1eaaf86be40a200a49a4b2}{00169}}\ uintptr\_t\ \mbox{\hyperlink{a14626_a2d3ef1656e1eaaf86be40a200a49a4b2}{hardware\_communication::InterruptManager::handleInterrupt}}(uint8\_t\ interruptNumber,\ uintptr\_t\ esp)\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00170}00170\ \ \ \ \ \textcolor{comment}{//\ Use\ the\ global\ pointer\ "{}installed\_interrupt\_manager"{}\ to\ access\ the\ current\ interrupt\ manager}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a13640_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{installed\_interrupt\_manager}}-\/>\mbox{\hyperlink{a14626_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[interruptNumber]!=\textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00172}00172\ \ \ \ \ \ \ \ \ esp\ =\ \mbox{\hyperlink{a13640_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{installed\_interrupt\_manager}}-\/>\mbox{\hyperlink{a14626_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[interruptNumber]-\/>\mbox{\hyperlink{a14618_aa89d41d69840cb4f1c8692fa6ded28f4}{handleInterrupt}}(esp);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(interruptNumber!=0x20)\{\ \textcolor{comment}{//0x20\ is\ Hardware\ Timer\ Interrupt}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00176}00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a13707_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}UNHANDLED\ INTERRUPT\ \%\#hx\(\backslash\)n"{}},interruptNumber);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00177}00177\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00179}00179\ \ \ \ \ \textcolor{comment}{//\ Hardware\ interrupts\ must\ still\ be\ acknowledged\ to\ the\ PIC}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{if}\ (0x20\ <=interruptNumber\ \&\&\ interruptNumber\ <=\ 0x2F)\ \{}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00181}00181\ \ \ \ \ \ \ \ \ picMasterCommand.write(0x20);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0x28\ <=\ interruptNumber)\ picSlaveCommand.write(0x20);}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00184}00184\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{a13640_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{return}\ esp;}
+\DoxyCodeLine{\Hypertarget{a13640_source_l00186}00186\ \}}
+
+\end{DoxyCode}

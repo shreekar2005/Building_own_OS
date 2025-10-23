@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d4/d90/a05253" kind="class" language="C++" prot="public">
+    <compoundname>driver::DriverManager</compoundname>
+    <includes refid="d1/d04/a04361" local="yes">kdriver.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d90/a05253_1acdf43f6340b26ad2d9b9c90d8974b370" prot="private" static="no" mutable="no">
+        <type><ref refid="dc/d42/a05249" kindref="compound">Driver</ref> *</type>
+        <definition>Driver* driver::DriverManager::drivers[MAX_NUMDRIVERS]</definition>
+        <argsstring>[MAX_NUMDRIVERS]</argsstring>
+        <name>drivers</name>
+        <qualifiedname>driver::DriverManager::drivers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kdriver.hpp" line="19" column="24" bodyfile="libk_header/driver/kdriver.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d90/a05253_1a347286da44d912bba3f720d8b0600946" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int driver::DriverManager::numDrivers</definition>
+        <argsstring></argsstring>
+        <name>numDrivers</name>
+        <qualifiedname>driver::DriverManager::numDrivers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kdriver.hpp" line="20" column="21" bodyfile="libk_header/driver/kdriver.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d90/a05253_1af3bed49a4b243c2f65d09c35db15158b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::DriverManager::DriverManager</definition>
+        <argsstring>()</argsstring>
+        <name>DriverManager</name>
+        <qualifiedname>driver::DriverManager::DriverManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kdriver.hpp" line="22" column="17" bodyfile="libk_src/driver/kdriver.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d90/a05253_1a29731c1f4b1215fd5c4ab27624ae6563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>driver::DriverManager::~DriverManager</definition>
+        <argsstring>()</argsstring>
+        <name>~DriverManager</name>
+        <qualifiedname>driver::DriverManager::~DriverManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kdriver.hpp" line="23" column="17" bodyfile="libk_src/driver/kdriver.cpp" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d90/a05253_1a05b071d8a8c12f2d284fb61f4ecd116e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void driver::DriverManager::activateAll</definition>
+        <argsstring>()</argsstring>
+        <name>activateAll</name>
+        <qualifiedname>driver::DriverManager::activateAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kdriver.hpp" line="25" column="22" bodyfile="libk_src/driver/kdriver.cpp" bodystart="17" bodyend="21"/>
+        <referencedby refid="dd/deb/a04304_1abb4e4866092116b520310d61961bfe12" compoundref="dd/deb/a04304" startline="85" endline="122">kernelMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d90/a05253_1ab8bd89b91ea49f343276c3c841153cd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void driver::DriverManager::addDriver</definition>
+        <argsstring>(Driver *)</argsstring>
+        <name>addDriver</name>
+        <qualifiedname>driver::DriverManager::addDriver</qualifiedname>
+        <param>
+          <type><ref refid="dc/d42/a05249" kindref="compound">Driver</ref> *</type>
+          <defname>driver</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kdriver.hpp" line="24" column="22" bodyfile="libk_src/driver/kdriver.cpp" bodystart="12" bodyend="15"/>
+        <referencedby refid="dd/deb/a04304_1abb4e4866092116b520310d61961bfe12" compoundref="dd/deb/a04304" startline="85" endline="122">kernelMain</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>driver::Driver</label>
+        <link refid="dc/d42/a05249"/>
+      </node>
+      <node id="1">
+        <label>driver::DriverManager</label>
+        <link refid="d4/d90/a05253"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-drivers</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-numDrivers</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>int</label>
+      </node>
+    </collaborationgraph>
+    <location file="libk_header/driver/kdriver.hpp" line="17" column="9" bodyfile="libk_header/driver/kdriver.hpp" bodystart="17" bodyend="26"/>
+    <listofallmembers>
+      <member refid="d4/d90/a05253_1a05b071d8a8c12f2d284fb61f4ecd116e" prot="public" virt="non-virtual"><scope>driver::DriverManager</scope><name>activateAll</name></member>
+      <member refid="d4/d90/a05253_1ab8bd89b91ea49f343276c3c841153cd8" prot="public" virt="non-virtual"><scope>driver::DriverManager</scope><name>addDriver</name></member>
+      <member refid="d4/d90/a05253_1af3bed49a4b243c2f65d09c35db15158b" prot="public" virt="non-virtual"><scope>driver::DriverManager</scope><name>DriverManager</name></member>
+      <member refid="d4/d90/a05253_1acdf43f6340b26ad2d9b9c90d8974b370" prot="private" virt="non-virtual"><scope>driver::DriverManager</scope><name>drivers</name></member>
+      <member refid="d4/d90/a05253_1a347286da44d912bba3f720d8b0600946" prot="private" virt="non-virtual"><scope>driver::DriverManager</scope><name>numDrivers</name></member>
+      <member refid="d4/d90/a05253_1a29731c1f4b1215fd5c4ab27624ae6563" prot="public" virt="non-virtual"><scope>driver::DriverManager</scope><name>~DriverManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

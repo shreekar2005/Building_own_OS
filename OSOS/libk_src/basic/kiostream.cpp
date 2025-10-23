@@ -1,5 +1,5 @@
-#include "basic/kiostream"
-#include "driver/kmouse"
+#include "basic/kiostream.hpp"
+#include "driver/kmouse.hpp"
 
 static int cursor_x_ = 0;
 static int cursor_y_ = 0;

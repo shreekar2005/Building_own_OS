@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a07656" xml:lang="en-US">
+<title>hardware_communication::Port32Bit</title>
+<indexterm><primary>hardware_communication::Port32Bit</primary></indexterm>
+<para>
+<computeroutput>#include &quot;kport.hpp&quot;</computeroutput>
+</para>
+Inheritance diagram for hardware_communication::Port32Bit:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../da/d9a/a07655.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for hardware_communication::Port32Bit:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/d4d/a07654.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a07656_1a507afa8607757baedf1789d73c2a173d">Port32Bit</link> (uint16_t <link linkend="_a07640_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_a07656_1a3e87dc7d610b279e8e7e072a0d1ee78c">~Port32Bit</link> () override</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_a07656_1a41093c437a9508f984c90ae68e9c03bf">read</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_a07656_1a64a16fe840224ef769ab2933770d1b21">write</link> (uint32_t data)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_a07640_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_a06695_source_1l00080">80</link> of file <link linkend="_a06695_source">kport.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a07656_1a507afa8607757baedf1789d73c2a173d"/><section>
+    <title>Port32Bit()</title>
+<indexterm><primary>Port32Bit</primary><secondary>hardware_communication::Port32Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port32Bit</primary><secondary>Port32Bit</secondary></indexterm>
+<para><computeroutput>hardware_communication::Port32Bit::Port32Bit (uint16_t portnumber)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06617_source_1l00047">47</link> of file <link linkend="_a06617_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00047 :<link linkend="_a07640_1ad001c21b67d4c138f65024f167030cca">Port</link>(<link linkend="_a07640_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>){}&#32;
+</programlisting></section>
+<anchor xml:id="_a07656_1a3e87dc7d610b279e8e7e072a0d1ee78c"/><section>
+    <title>~Port32Bit()</title>
+<indexterm><primary>~Port32Bit</primary><secondary>hardware_communication::Port32Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port32Bit</primary><secondary>~Port32Bit</secondary></indexterm>
+<para><computeroutput>hardware_communication::Port32Bit::~Port32Bit ( )<computeroutput>[override]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06617_source_1l00048">48</link> of file <link linkend="_a06617_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00048 {}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a07656_1a41093c437a9508f984c90ae68e9c03bf"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>hardware_communication::Port32Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port32Bit</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>uint32_t hardware_communication::Port32Bit::read ( )</computeroutput></para><para>
+Definition at line <link linkend="_a06617_source_1l00053">53</link> of file <link linkend="_a06617_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00054 &#32;&#32;&#32;&#32;uint32_t&#32;result;
+00055 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>(<emphasis role="stringliteral">&quot;inl&#32;%1,&#32;%0&quot;</emphasis>&#32;:<emphasis role="stringliteral">&quot;=a&quot;</emphasis>(result)&#32;:&#32;<emphasis role="stringliteral">&quot;Nd&quot;</emphasis>(<link linkend="_a07640_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>));
+00056 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+00057 }
+</programlisting></section>
+<anchor xml:id="_a07656_1a64a16fe840224ef769ab2933770d1b21"/><section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>hardware_communication::Port32Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port32Bit</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void hardware_communication::Port32Bit::write (uint32_t data)</computeroutput></para><para>
+Definition at line <link linkend="_a06617_source_1l00050">50</link> of file <link linkend="_a06617_source">kport.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00051 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>(<emphasis role="stringliteral">&quot;outl&#32;%0,&#32;%1&quot;</emphasis>&#32;:&#32;:&#32;<emphasis role="stringliteral">&quot;a&quot;</emphasis>(data),&#32;<emphasis role="stringliteral">&quot;Nd&quot;</emphasis>(<link linkend="_a07640_1aab0c5c82b0190df88ddbb595bfac539a">portnumber</link>));
+00052 }
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a07640_1aab0c5c82b0190df88ddbb595bfac539a"/><section>
+    <title>portnumber</title>
+<indexterm><primary>portnumber</primary><secondary>hardware_communication::Port32Bit</secondary></indexterm>
+<indexterm><primary>hardware_communication::Port32Bit</primary><secondary>portnumber</secondary></indexterm>
+<para><computeroutput>uint16_t hardware_communication::Port::portnumber<computeroutput>[protected]</computeroutput>, <computeroutput>[inherited]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06695_source_1l00013">13</link> of file <link linkend="_a06695_source">kport.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a06617_source_1l00003">hardware_communication::Port::Port()</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+libk_header/hardware_communication/<link linkend="_a06695">kport.hpp</link>libk_src/hardware_communication/<link linkend="_a06617">kport.cpp</link></section>
+</section>

@@ -1,0 +1,820 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="df/d07/a11369" kind="file" language="C++">
+    <compoundname>multiboot.hpp</compoundname>
+    <includedby refid="d8/dd1/a11333" local="yes">kernel_src/kernel.cpp</includedby>
+    <includedby refid="dc/d4e/a11372" local="yes">libk_header/basic/kmemory.hpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>kernel_src/kernel.cpp</label>
+        <link refid="d8/dd1/a11333"/>
+      </node>
+      <node id="3">
+        <label>libk_header/basic/kmemory.hpp</label>
+        <link refid="dc/d4e/a11372"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>libk_header/basic/multiboot.hpp</label>
+        <link refid="df/d07/a11369"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>libk_src/basic/kmemory.cpp</label>
+        <link refid="d0/d74/a11294"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="df/d52/a12234" prot="public">multiboot_aout_symbol_table</innerclass>
+    <innerclass refid="d5/d3c/a12274" prot="public">multiboot_apm_info</innerclass>
+    <innerclass refid="da/d0a/a12262" prot="public">multiboot_color</innerclass>
+    <innerclass refid="d2/db7/a12238" prot="public">multiboot_elf_section_header_table</innerclass>
+    <innerclass refid="d6/da0/a12230" prot="public">multiboot_header</innerclass>
+    <innerclass refid="d4/d18/a12242" prot="public">multiboot_info</innerclass>
+    <innerclass refid="df/d93/a12714" prot="public">multiboot_info.__unnamed2__</innerclass>
+    <innerclass refid="da/d4f/a12718" prot="public">multiboot_info.__unnamed2__.__unnamed4__</innerclass>
+    <innerclass refid="d0/d87/a12722" prot="public">multiboot_info.__unnamed2__.__unnamed6__</innerclass>
+    <innerclass refid="de/d2e/a12710" prot="public">multiboot_info.u</innerclass>
+    <innerclass refid="d0/d10/a12266" prot="public">multiboot_mmap_entry</innerclass>
+    <innerclass refid="dd/dec/a12270" prot="public">multiboot_mod_list</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="df/d07/a11369_1a791f0c6a97c36de5388c990503ee4639" prot="public" static="no">
+        <name>MULTIBOOT_AOUT_KLUDGE</name>
+        <initializer>0x00010000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="55" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1aacd617f4e3daafd6eab95fb6215ccae4" prot="public" static="no">
+        <name>MULTIBOOT_BOOTLOADER_MAGIC</name>
+        <initializer>0x2BADB002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="35" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1af6005f97267af2cb0ff37fb245284440" prot="public" static="no">
+        <name>MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="203" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a8e2af641ff42074bb807c3ec9e33b2e0" prot="public" static="no">
+        <name>MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="201" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a34b2f01226ea42de22e06db7f652fbb1" prot="public" static="no">
+        <name>MULTIBOOT_FRAMEBUFFER_TYPE_RGB</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="202" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1abc554da6e5184d34e039b551177434ba" prot="public" static="no">
+        <name>MULTIBOOT_HEADER_ALIGN</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="29" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1ab36ad4b4a42c58aac4ad1f2ba13054e9" prot="public" static="no">
+        <name>MULTIBOOT_HEADER_MAGIC</name>
+        <initializer>0x1BADB002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="32" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a7f583196f43e30e93323f5e44554d726" prot="public" static="no">
+        <name>MULTIBOOT_INFO_ALIGN</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="41" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a186ab9e55c5bc612b9fd7e10b4be5600" prot="public" static="no">
+        <name>MULTIBOOT_INFO_AOUT_SYMS</name>
+        <initializer>0x00000010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="71" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1aab73446f0cee2e9dc91f43eb9a0c806b" prot="public" static="no">
+        <name>MULTIBOOT_INFO_APM_TABLE</name>
+        <initializer>0x00000400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="88" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a9743476d5f32c9ae22f6254a0e3ba11d" prot="public" static="no">
+        <name>MULTIBOOT_INFO_BOOT_LOADER_NAME</name>
+        <initializer>0x00000200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="85" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1acfde5ffdd699c023dd8f4b89aa66556f" prot="public" static="no">
+        <name>MULTIBOOT_INFO_BOOTDEV</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="62" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1ae75fb4f821b7ab405d46318d9b90a677" prot="public" static="no">
+        <name>MULTIBOOT_INFO_CMDLINE</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="64" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1ad60e5b72325f5752e955879f3fbb44c3" prot="public" static="no">
+        <name>MULTIBOOT_INFO_CONFIG_TABLE</name>
+        <initializer>0x00000100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="82" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1af2c5803d8cc6e1e8c00181ca546e68ab" prot="public" static="no">
+        <name>MULTIBOOT_INFO_DRIVE_INFO</name>
+        <initializer>0x00000080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="79" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1ad7d22ae99c11dc92152acdc8494a71f0" prot="public" static="no">
+        <name>MULTIBOOT_INFO_ELF_SHDR</name>
+        <initializer>0X00000020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="73" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a1c07b211ed2c374f5fbcf40c97bce2c0" prot="public" static="no">
+        <name>MULTIBOOT_INFO_FRAMEBUFFER_INFO</name>
+        <initializer>0x00001000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="92" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a2d16dabdfdee01362c3457d06f0ff850" prot="public" static="no">
+        <name>MULTIBOOT_INFO_MEM_MAP</name>
+        <initializer>0x00000040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="76" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a1cb6047ede9a179b2958048573269d7a" prot="public" static="no">
+        <name>MULTIBOOT_INFO_MEMORY</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="60" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a9a06a0175854cc6af54ddb6bd798c5bc" prot="public" static="no">
+        <name>MULTIBOOT_INFO_MODS</name>
+        <initializer>0x00000008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="66" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1abf0a727e2e262407c77d54baf40d2f39" prot="public" static="no">
+        <name>MULTIBOOT_INFO_VBE_INFO</name>
+        <initializer>0x00000800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="91" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1af35be82586f332a561d00207c937ee57" prot="public" static="no">
+        <name>MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="239" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a7fe141351ebcde0acbd6118ad0ea1a21" prot="public" static="no">
+        <name>MULTIBOOT_MEMORY_AVAILABLE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="237" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a1604ec18ac949d88dab993904b08c075" prot="public" static="no">
+        <name>MULTIBOOT_MEMORY_BADRAM</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="241" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1afdfca6bbbf4b7dca40e9d43e58201f55" prot="public" static="no">
+        <name>MULTIBOOT_MEMORY_INFO</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="49" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a68f78286f7434d373a82f1b6f6473c72" prot="public" static="no">
+        <name>MULTIBOOT_MEMORY_NVS</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="240" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a0299aedc71e1f6707181471bafb18e7c" prot="public" static="no">
+        <name>MULTIBOOT_MEMORY_RESERVED</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="238" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1ab3284a28549f2a2f1a2001ca023aaa1e" prot="public" static="no">
+        <name>MULTIBOOT_MOD_ALIGN</name>
+        <initializer>0x00001000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="38" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1aab5e5487e858de2a031cd3f1232f7b60" prot="public" static="no">
+        <name>MULTIBOOT_PAGE_ALIGN</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="46" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a0b53e2de91aa7498c4b476776b27e5f3" prot="public" static="no">
+        <name>MULTIBOOT_SEARCH</name>
+        <initializer>8192</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="28" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="df/d07/a11369_1a74a1da9293ae3835241c60b2d9e65e8d" prot="public" static="no">
+        <name>MULTIBOOT_VIDEO_MODE</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="52" column="9" bodyfile="libk_header/basic/multiboot.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" prot="public" static="no">
+        <type>unsigned short</type>
+        <definition>typedef unsigned short multiboot_uint16_t</definition>
+        <argsstring></argsstring>
+        <name>multiboot_uint16_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="97" column="23" bodyfile="libk_header/basic/multiboot.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>typedef unsigned int multiboot_uint32_t</definition>
+        <argsstring></argsstring>
+        <name>multiboot_uint32_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="98" column="21" bodyfile="libk_header/basic/multiboot.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" prot="public" static="no">
+        <type>unsigned long long</type>
+        <definition>typedef unsigned long long multiboot_uint64_t</definition>
+        <argsstring></argsstring>
+        <name>multiboot_uint64_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="99" column="27" bodyfile="libk_header/basic/multiboot.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char multiboot_uint8_t</definition>
+        <argsstring></argsstring>
+        <name>multiboot_uint8_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="96" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="df/d07/a11369_1a4bbf25084dee10ec29f4356cacced463" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="dd/dec/a12270" kindref="compound">multiboot_mod_list</ref></type>
+        <definition>struct multiboot_mod_list __attribute__</definition>
+        <argsstring></argsstring>
+        <name>__attribute__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="257" column="1"/>
+        <referencedby refid="d4/d9f/a12306_1af8e3c1da270077eb7cc6551b35c0e5ca" compoundref="d5/d08/a11318" startline="46" endline="77">essential::GDT::installTable</referencedby>
+        <referencedby refid="d4/d9f/a12306_1a9c89bddfdb21d5cc09c1d82411982de9" compoundref="d5/d08/a11318" startline="82" endline="118">essential::GDT::printLoadedTable</referencedby>
+        <referencedby refid="d4/d9f/a12306_1a2ae998750fc1e18e6778e92774bd3574" compoundref="d5/d08/a11318" startline="120" endline="136">essential::GDT::printLoadedTableHeader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="df/d07/a11369_1a8286ae6db03c34c4bb161accbfbfbbcd" prot="public" static="no" mutable="no">
+        <type><ref refid="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" kindref="member">multiboot_uint64_t</ref></type>
+        <definition>multiboot_uint64_t addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="1" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d07/a11369_1a6de3a6d27a7e07942958b912d39792e6" prot="public" static="no" mutable="no">
+        <type><ref refid="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" kindref="member">multiboot_uint64_t</ref></type>
+        <definition>multiboot_uint64_t len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="2" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="2" bodyend="-1"/>
+        <referencedby refid="d0/dbd/a11403_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="df/db3/a11297" startline="276" endline="472">basic::printf</referencedby>
+        <referencedby refid="df/db3/a11297_1aab6eb585b409591414f84a1e3f606345" compoundref="df/db3/a11297" startline="227" endline="240">printHex</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="df/d07/a11369_1a6d813a0f2b5281b18dea3f4cda696c33" prot="public" static="no" mutable="no">
+        <type><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="0" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="0" bodyend="-1"/>
+        <referencedby refid="d0/d74/a11294_1af057efbdbcd21ea12954d49cd2d245c6" compoundref="d0/d74/a11294" startline="79" endline="82">operator delete</referencedby>
+        <referencedby refid="d0/d74/a11294_1ab26fe706b29fdeb33d5f6ead76c05815" compoundref="d0/d74/a11294" startline="88" endline="91">operator delete[]</referencedby>
+        <referencedby refid="d0/d74/a11294_1a1a7f24760c8c7ad3bfcd54856d906fc2" compoundref="d0/d74/a11294" startline="65" endline="68">operator new</referencedby>
+        <referencedby refid="d0/d74/a11294_1aa75472ab4b765cf6f6b5b0ebcd4a28c8" compoundref="d0/d74/a11294" startline="70" endline="73">operator new[]</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="df/d07/a11369_1a8da1a8c7127a0371eec0810a29e30f3c" prot="public" static="no" mutable="no">
+        <type><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="8" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="df/d07/a11369_1aa6b9a7218d544abc2be2bd335681b0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="d0/d10/a12266" kindref="compound">multiboot_mmap_entry</ref></type>
+        <definition>struct multiboot_mmap_entry __attribute__</definition>
+        <argsstring>((packed))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(packed)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="223" column="29" declfile="libk_header/basic/multiboot.hpp" declline="223" declcolumn="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="df/d07/a11369_1a8286ae6db03c34c4bb161accbfbfbbcd" refkind="member"><highlight class="comment">/*<sp/><sp/>multiboot.h<sp/>-<sp/>Multiboot<sp/>header<sp/>file.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="df/d07/a11369_1a6de3a6d27a7e07942958b912d39792e6" refkind="member"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>(C)<sp/>1999,2003,2007,2008,2009,2010<sp/><sp/>Free<sp/>Software<sp/>Foundation,<sp/>Inc.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or</highlight></codeline>
+<codeline lineno="8" refid="df/d07/a11369_1a8da1a8c7127a0371eec0810a29e30f3c" refkind="member"><highlight class="comment"><sp/>*<sp/><sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>ANY</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/>DEVELOPER<sp/>OR<sp/>DISTRIBUTOR<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>header<sp/>src<sp/>link<sp/>:<sp/><sp/>https://cgit.git.savannah.gnu.org/cgit/grub.git/tree/doc/multiboot.h?h=multiboot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OSOS_BASIC_MULTIBOOT_HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSOS_BASIC_MULTIBOOT_HEADER<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>How<sp/>many<sp/>bytes<sp/>from<sp/>the<sp/>start<sp/>of<sp/>the<sp/>file<sp/>we<sp/>search<sp/>for<sp/>the<sp/>header.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="df/d07/a11369_1a0b53e2de91aa7498c4b476776b27e5f3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_SEARCH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8192</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="df/d07/a11369_1abc554da6e5184d34e039b551177434ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_HEADER_ALIGN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>magic<sp/>field<sp/>should<sp/>contain<sp/>this.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="df/d07/a11369_1ab36ad4b4a42c58aac4ad1f2ba13054e9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_HEADER_MAGIC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1BADB002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>should<sp/>be<sp/>in<sp/>%eax.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="df/d07/a11369_1aacd617f4e3daafd6eab95fb6215ccae4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_BOOTLOADER_MAGIC<sp/><sp/><sp/><sp/><sp/><sp/>0x2BADB002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Alignment<sp/>of<sp/>multiboot<sp/>modules.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="df/d07/a11369_1ab3284a28549f2a2f1a2001ca023aaa1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_MOD_ALIGN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00001000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Alignment<sp/>of<sp/>the<sp/>multiboot<sp/>info<sp/>structure.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="df/d07/a11369_1a7f583196f43e30e93323f5e44554d726" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_ALIGN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Flags<sp/>set<sp/>in<sp/>the<sp/>&apos;flags&apos;<sp/>member<sp/>of<sp/>the<sp/>multiboot<sp/>header.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Align<sp/>all<sp/>boot<sp/>modules<sp/>on<sp/>i386<sp/>page<sp/>(4KB)<sp/>boundaries.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="df/d07/a11369_1aab5e5487e858de2a031cd3f1232f7b60" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_PAGE_ALIGN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Must<sp/>pass<sp/>memory<sp/>information<sp/>to<sp/>OS.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="df/d07/a11369_1afdfca6bbbf4b7dca40e9d43e58201f55" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_MEMORY_INFO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Must<sp/>pass<sp/>video<sp/>information<sp/>to<sp/>OS.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="df/d07/a11369_1a74a1da9293ae3835241c60b2d9e65e8d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_VIDEO_MODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>flag<sp/>indicates<sp/>the<sp/>use<sp/>of<sp/>the<sp/>address<sp/>fields<sp/>in<sp/>the<sp/>header.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="df/d07/a11369_1a791f0c6a97c36de5388c990503ee4639" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_AOUT_KLUDGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00010000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Flags<sp/>to<sp/>be<sp/>set<sp/>in<sp/>the<sp/>&apos;flags&apos;<sp/>member<sp/>of<sp/>the<sp/>multiboot<sp/>info<sp/>structure.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>is<sp/>there<sp/>basic<sp/>lower/upper<sp/>memory<sp/>information?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="df/d07/a11369_1a1cb6047ede9a179b2958048573269d7a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_MEMORY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>is<sp/>there<sp/>a<sp/>boot<sp/>device<sp/>set?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="df/d07/a11369_1acfde5ffdd699c023dd8f4b89aa66556f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_BOOTDEV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>is<sp/>the<sp/>command-line<sp/>defined?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="df/d07/a11369_1ae75fb4f821b7ab405d46318d9b90a677" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_CMDLINE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000004</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>are<sp/>there<sp/>modules<sp/>to<sp/>do<sp/>something<sp/>with?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="df/d07/a11369_1a9a06a0175854cc6af54ddb6bd798c5bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_MODS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>These<sp/>next<sp/>two<sp/>are<sp/>mutually<sp/>exclusive<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>is<sp/>there<sp/>a<sp/>symbol<sp/>table<sp/>loaded?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="df/d07/a11369_1a186ab9e55c5bc612b9fd7e10b4be5600" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_AOUT_SYMS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>is<sp/>there<sp/>an<sp/>ELF<sp/>section<sp/>header<sp/>table?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="df/d07/a11369_1ad7d22ae99c11dc92152acdc8494a71f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_ELF_SHDR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0X00000020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>is<sp/>there<sp/>a<sp/>full<sp/>memory<sp/>map?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="df/d07/a11369_1a2d16dabdfdee01362c3457d06f0ff850" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_MEM_MAP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Is<sp/>there<sp/>drive<sp/>info?<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="df/d07/a11369_1af2c5803d8cc6e1e8c00181ca546e68ab" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_DRIVE_INFO<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000080</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Is<sp/>there<sp/>a<sp/>config<sp/>table?<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="df/d07/a11369_1ad60e5b72325f5752e955879f3fbb44c3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_CONFIG_TABLE<sp/><sp/><sp/><sp/><sp/>0x00000100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Is<sp/>there<sp/>a<sp/>boot<sp/>loader<sp/>name?<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="df/d07/a11369_1a9743476d5f32c9ae22f6254a0e3ba11d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_BOOT_LOADER_NAME<sp/><sp/><sp/><sp/><sp/>0x00000200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Is<sp/>there<sp/>a<sp/>APM<sp/>table?<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="df/d07/a11369_1aab73446f0cee2e9dc91f43eb9a0c806b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_APM_TABLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Is<sp/>there<sp/>video<sp/>information?<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="df/d07/a11369_1abf0a727e2e262407c77d54baf40d2f39" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_VBE_INFO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="df/d07/a11369_1a1c07b211ed2c374f5fbcf40c97bce2c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_INFO_FRAMEBUFFER_INFO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00001000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ASM_FILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref>;</highlight></codeline>
+<codeline lineno="97" refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref>;</highlight></codeline>
+<codeline lineno="98" refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref>;</highlight></codeline>
+<codeline lineno="99" refid="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" kindref="member">multiboot_uint64_t</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="d6/da0/a12230" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d6/da0/a12230" kindref="compound">multiboot_header</ref></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Must<sp/>be<sp/>MULTIBOOT_MAGIC<sp/>-<sp/>see<sp/>above.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="d6/da0/a12230_1a7fddee92e60ff58e159c6bf2c40bf29b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1a7fddee92e60ff58e159c6bf2c40bf29b" kindref="member">magic</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Feature<sp/>flags.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="d6/da0/a12230_1ab922f32c179ec7bde91519d19f27d95b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1ab922f32c179ec7bde91519d19f27d95b" kindref="member">flags</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>above<sp/>fields<sp/>plus<sp/>this<sp/>one<sp/>must<sp/>equal<sp/>0<sp/>mod<sp/>2^32.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="d6/da0/a12230_1a17e73abddfe8264c254767a20099038d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1a17e73abddfe8264c254767a20099038d" kindref="member">checksum</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>only<sp/>valid<sp/>if<sp/>MULTIBOOT_AOUT_KLUDGE<sp/>is<sp/>set.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="d6/da0/a12230_1a9718b2fc6ce29a37e9a209f92ab856e3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1a9718b2fc6ce29a37e9a209f92ab856e3" kindref="member">header_addr</ref>;</highlight></codeline>
+<codeline lineno="114" refid="d6/da0/a12230_1a99de1cf326c46c76c6039f317b7a1ef2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1a99de1cf326c46c76c6039f317b7a1ef2" kindref="member">load_addr</ref>;</highlight></codeline>
+<codeline lineno="115" refid="d6/da0/a12230_1ac9efc1a4c3cd18f286b2fd50ff052e31" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1ac9efc1a4c3cd18f286b2fd50ff052e31" kindref="member">load_end_addr</ref>;</highlight></codeline>
+<codeline lineno="116" refid="d6/da0/a12230_1ab4f2496ec9b0d1a95985929d281dfa19" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1ab4f2496ec9b0d1a95985929d281dfa19" kindref="member">bss_end_addr</ref>;</highlight></codeline>
+<codeline lineno="117" refid="d6/da0/a12230_1ac3d807775a9d69730e6698dcdcf6491e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1ac3d807775a9d69730e6698dcdcf6491e" kindref="member">entry_addr</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>only<sp/>valid<sp/>if<sp/>MULTIBOOT_VIDEO_MODE<sp/>is<sp/>set.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="d6/da0/a12230_1a4c90b7929342dd5aab7d08afa0906d28" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1a4c90b7929342dd5aab7d08afa0906d28" kindref="member">mode_type</ref>;</highlight></codeline>
+<codeline lineno="121" refid="d6/da0/a12230_1ad72a1a3dd608e73c818d0c27974def40" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1ad72a1a3dd608e73c818d0c27974def40" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="122" refid="d6/da0/a12230_1a055c5e6553ea032897ad50a12f998a17" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1a055c5e6553ea032897ad50a12f998a17" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="123" refid="d6/da0/a12230_1aba85b53dc3af1bf99c71292a776e9dff" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d6/da0/a12230_1aba85b53dc3af1bf99c71292a776e9dff" kindref="member">depth</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>symbol<sp/>table<sp/>for<sp/>a.out.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="df/d52/a12234" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="df/d52/a12234" kindref="compound">multiboot_aout_symbol_table</ref></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129" refid="df/d52/a12234_1afbdc23500d3d7a59486a0b8ff4066c1e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="df/d52/a12234_1afbdc23500d3d7a59486a0b8ff4066c1e" kindref="member">tabsize</ref>;</highlight></codeline>
+<codeline lineno="130" refid="df/d52/a12234_1a7ed0107153c88e6604e9a6105a4c7be0" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="df/d52/a12234_1a7ed0107153c88e6604e9a6105a4c7be0" kindref="member">strsize</ref>;</highlight></codeline>
+<codeline lineno="131" refid="df/d52/a12234_1af0a1d2238495093ad75f36e3a146c0c7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="df/d52/a12234_1af0a1d2238495093ad75f36e3a146c0c7" kindref="member">addr</ref>;</highlight></codeline>
+<codeline lineno="132" refid="df/d52/a12234_1a488f52dbb30b4de2ae2f42f0bdfda154" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="df/d52/a12234_1a488f52dbb30b4de2ae2f42f0bdfda154" kindref="member">reserved</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="df/d52/a12234" kindref="compound">multiboot_aout_symbol_table</ref><sp/>multiboot_aout_symbol_table_t;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>section<sp/>header<sp/>table<sp/>for<sp/>ELF.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="d2/db7/a12238" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d2/db7/a12238" kindref="compound">multiboot_elf_section_header_table</ref></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139" refid="d2/db7/a12238_1a6ed3ef34bb39d72a19533b11fe156e1f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d2/db7/a12238_1a6ed3ef34bb39d72a19533b11fe156e1f" kindref="member">num</ref>;</highlight></codeline>
+<codeline lineno="140" refid="d2/db7/a12238_1ab2740d89d4139f93c9452cca2c676c5c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d2/db7/a12238_1ab2740d89d4139f93c9452cca2c676c5c" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="141" refid="d2/db7/a12238_1aac90242e270ae9df01fc3bb784b858b6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d2/db7/a12238_1aac90242e270ae9df01fc3bb784b858b6" kindref="member">addr</ref>;</highlight></codeline>
+<codeline lineno="142" refid="d2/db7/a12238_1a45886444dce7cc10353528373f3e50c2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d2/db7/a12238_1a45886444dce7cc10353528373f3e50c2" kindref="member">shndx</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d2/db7/a12238" kindref="compound">multiboot_elf_section_header_table</ref><sp/>multiboot_elf_section_header_table_t;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="d4/d18/a12242" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d4/d18/a12242" kindref="compound">multiboot_info</ref></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Multiboot<sp/>info<sp/>version<sp/>number<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="d4/d18/a12242_1a39f175b6fb4debca237d3ff93e960a25" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a39f175b6fb4debca237d3ff93e960a25" kindref="member">flags</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Available<sp/>memory<sp/>from<sp/>BIOS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="d4/d18/a12242_1a6b80f033d5a9151a4d1abd2d155942a7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a6b80f033d5a9151a4d1abd2d155942a7" kindref="member">mem_lower</ref>;</highlight></codeline>
+<codeline lineno="153" refid="d4/d18/a12242_1a1ea7d9e665d6fff00665d97e81207a8f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a1ea7d9e665d6fff00665d97e81207a8f" kindref="member">mem_upper</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&quot;root&quot;<sp/>partition<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="d4/d18/a12242_1ae32646de911267c65892a286ef3d529e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1ae32646de911267c65892a286ef3d529e" kindref="member">boot_device</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>command<sp/>line<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="d4/d18/a12242_1a95a5e2cc69960e4d906abd585f91f210" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a95a5e2cc69960e4d906abd585f91f210" kindref="member">cmdline</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Boot-Module<sp/>list<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="d4/d18/a12242_1a415feb83a215790e2e8f9e2e1e3df55c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a415feb83a215790e2e8f9e2e1e3df55c" kindref="member">mods_count</ref>;</highlight></codeline>
+<codeline lineno="163" refid="d4/d18/a12242_1a766e9dadbf4a845c12704c923cb13f02" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a766e9dadbf4a845c12704c923cb13f02" kindref="member">mods_addr</ref>;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="de/d2e/a12710" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>multiboot_aout_symbol_table_t<sp/>aout_sym;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>multiboot_elf_section_header_table_t<sp/>elf_sec;</highlight></codeline>
+<codeline lineno="169" refid="d4/d18/a12242_1a0558f47498813865abaec2f6281c5f92" refkind="member"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="d4/d18/a12242_1a0558f47498813865abaec2f6281c5f92" kindref="member">u</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Memory<sp/>Mapping<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="d4/d18/a12242_1a3dd43c3204f821c0a1b5604686d9eae7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a3dd43c3204f821c0a1b5604686d9eae7" kindref="member">mmap_length</ref>;</highlight></codeline>
+<codeline lineno="173" refid="d4/d18/a12242_1a19825c91eb6aa23fa61ee3851a6ce8da" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a19825c91eb6aa23fa61ee3851a6ce8da" kindref="member">mmap_addr</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Drive<sp/>Info<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="d4/d18/a12242_1a8bb6cc3d388a8abafecc7018744c14f3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a8bb6cc3d388a8abafecc7018744c14f3" kindref="member">drives_length</ref>;</highlight></codeline>
+<codeline lineno="177" refid="d4/d18/a12242_1a12916653d21ac1694b6d609a10d15332" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a12916653d21ac1694b6d609a10d15332" kindref="member">drives_addr</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>ROM<sp/>configuration<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="d4/d18/a12242_1a94b06ab87dbfaf966822a39cf1d9e2d6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a94b06ab87dbfaf966822a39cf1d9e2d6" kindref="member">config_table</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Boot<sp/>Loader<sp/>Name<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="d4/d18/a12242_1a4a3251d6b4cf85d935d989a0a369feed" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a4a3251d6b4cf85d935d989a0a369feed" kindref="member">boot_loader_name</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>APM<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="d4/d18/a12242_1ab340bc8f88281872676db0f52ebe7c0e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1ab340bc8f88281872676db0f52ebe7c0e" kindref="member">apm_table</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Video<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="d4/d18/a12242_1a21c63bc2905c6fd19449eea6e8514856" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a21c63bc2905c6fd19449eea6e8514856" kindref="member">vbe_control_info</ref>;</highlight></codeline>
+<codeline lineno="190" refid="d4/d18/a12242_1ace25791339e03186c9364bb5f461f773" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1ace25791339e03186c9364bb5f461f773" kindref="member">vbe_mode_info</ref>;</highlight></codeline>
+<codeline lineno="191" refid="d4/d18/a12242_1aec0fcaec97380658da787d4989f7b93f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d4/d18/a12242_1aec0fcaec97380658da787d4989f7b93f" kindref="member">vbe_mode</ref>;</highlight></codeline>
+<codeline lineno="192" refid="d4/d18/a12242_1a6cd85049f18e6c157d173538b162d9a6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d4/d18/a12242_1a6cd85049f18e6c157d173538b162d9a6" kindref="member">vbe_interface_seg</ref>;</highlight></codeline>
+<codeline lineno="193" refid="d4/d18/a12242_1a272d3a053e085dc513ba4dc4eb688816" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d4/d18/a12242_1a272d3a053e085dc513ba4dc4eb688816" kindref="member">vbe_interface_off</ref>;</highlight></codeline>
+<codeline lineno="194" refid="d4/d18/a12242_1a31ea288eaa679a7e3a4dafb91d833f78" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d4/d18/a12242_1a31ea288eaa679a7e3a4dafb91d833f78" kindref="member">vbe_interface_len</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="d4/d18/a12242_1a77a4d6e2b12fbd2b3e6e61d978ae5fc0" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" kindref="member">multiboot_uint64_t</ref><sp/><ref refid="d4/d18/a12242_1a77a4d6e2b12fbd2b3e6e61d978ae5fc0" kindref="member">framebuffer_addr</ref>;</highlight></codeline>
+<codeline lineno="197" refid="d4/d18/a12242_1ab0ecb8c7debe9ac1ac7910ae957367f6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1ab0ecb8c7debe9ac1ac7910ae957367f6" kindref="member">framebuffer_pitch</ref>;</highlight></codeline>
+<codeline lineno="198" refid="d4/d18/a12242_1a770273793bac06df17306c7fa136c58f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a770273793bac06df17306c7fa136c58f" kindref="member">framebuffer_width</ref>;</highlight></codeline>
+<codeline lineno="199" refid="d4/d18/a12242_1a0e8539780b79a018883d96bb444cd9c8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d4/d18/a12242_1a0e8539780b79a018883d96bb444cd9c8" kindref="member">framebuffer_height</ref>;</highlight></codeline>
+<codeline lineno="200" refid="d4/d18/a12242_1ab7b460c75f0342dfb1e339d2b3a2a9da" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/><ref refid="d4/d18/a12242_1ab7b460c75f0342dfb1e339d2b3a2a9da" kindref="member">framebuffer_bpp</ref>;</highlight></codeline>
+<codeline lineno="201" refid="df/d07/a11369_1a8e2af641ff42074bb807c3ec9e33b2e0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="df/d07/a11369_1a34b2f01226ea42de22e06db7f652fbb1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_FRAMEBUFFER_TYPE_RGB<sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="df/d07/a11369_1af6005f97267af2cb0ff37fb245284440" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="d4/d18/a12242_1a540391adf02da7cb6876fe78d65a13d7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/><ref refid="d4/d18/a12242_1a540391adf02da7cb6876fe78d65a13d7" kindref="member">framebuffer_type</ref>;</highlight></codeline>
+<codeline lineno="205" refid="df/d93/a12714" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="207" refid="da/d4f/a12718" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/>framebuffer_palette_addr;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/>framebuffer_palette_num_colors;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="212" refid="d0/d87/a12722" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/>framebuffer_red_field_position;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/>framebuffer_red_mask_size;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/>framebuffer_green_field_position;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/>framebuffer_green_mask_size;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/>framebuffer_blue_field_position;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/>framebuffer_blue_mask_size;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="223" refid="df/d07/a11369_1aa6b9a7218d544abc2be2bd335681b0a1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d4/d18/a12242" kindref="compound">multiboot_info</ref><sp/>multiboot_info_t;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="da/d0a/a12262" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="da/d0a/a12262" kindref="compound">multiboot_color</ref></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="227" refid="da/d0a/a12262_1a4c8a91229f40c06c3c63b4c37e83d219" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/><ref refid="da/d0a/a12262_1a4c8a91229f40c06c3c63b4c37e83d219" kindref="member">red</ref>;</highlight></codeline>
+<codeline lineno="228" refid="da/d0a/a12262_1a08e1c8bc977b39015c9043645e79713d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/><ref refid="da/d0a/a12262_1a08e1c8bc977b39015c9043645e79713d" kindref="member">green</ref>;</highlight></codeline>
+<codeline lineno="229" refid="da/d0a/a12262_1a6f8d17b0f35ff4cbf9c51dcbc3ea7d01" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref><sp/><ref refid="da/d0a/a12262_1a6f8d17b0f35ff4cbf9c51dcbc3ea7d01" kindref="member">blue</ref>;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="d0/d10/a12266" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/d10/a12266" kindref="compound">multiboot_mmap_entry</ref></highlight></codeline>
+<codeline lineno="233"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="234" refid="d0/d10/a12266_1a1b4b5157d5e972e92981177fd1eb6d67" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d0/d10/a12266_1a1b4b5157d5e972e92981177fd1eb6d67" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="235" refid="d0/d10/a12266_1a40e066ba79afd138308bd0db4b3f4f5b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" kindref="member">multiboot_uint64_t</ref><sp/><ref refid="d0/d10/a12266_1a40e066ba79afd138308bd0db4b3f4f5b" kindref="member">addr</ref>;</highlight></codeline>
+<codeline lineno="236" refid="d0/d10/a12266_1a0c5d40a87a63b01fc424bb3c15c89997" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a8dfdd61648b48aa31845db590970e06a" kindref="member">multiboot_uint64_t</ref><sp/><ref refid="d0/d10/a12266_1a0c5d40a87a63b01fc424bb3c15c89997" kindref="member">len</ref>;</highlight></codeline>
+<codeline lineno="237" refid="df/d07/a11369_1a7fe141351ebcde0acbd6118ad0ea1a21" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_MEMORY_AVAILABLE<sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="df/d07/a11369_1a0299aedc71e1f6707181471bafb18e7c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_MEMORY_RESERVED<sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="df/d07/a11369_1af35be82586f332a561d00207c937ee57" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_MEMORY_ACPI_RECLAIMABLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="df/d07/a11369_1a68f78286f7434d373a82f1b6f6473c72" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_MEMORY_NVS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241" refid="df/d07/a11369_1a1604ec18ac949d88dab993904b08c075" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MULTIBOOT_MEMORY_BADRAM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="d0/d10/a12266_1affc11fb6e6ece4860a1929b791073538" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d0/d10/a12266_1affc11fb6e6ece4860a1929b791073538" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">}<sp/><ref refid="df/d07/a11369_1a4bbf25084dee10ec29f4356cacced463" kindref="member">__attribute__</ref>((packed));</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d0/d10/a12266" kindref="compound">multiboot_mmap_entry</ref><sp/>multiboot_memory_map_t;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="dd/dec/a12270" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dd/dec/a12270" kindref="compound">multiboot_mod_list</ref></highlight></codeline>
+<codeline lineno="247"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>memory<sp/>used<sp/>goes<sp/>from<sp/>bytes<sp/>&apos;mod_start&apos;<sp/>to<sp/>&apos;mod_end-1&apos;<sp/>inclusive<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="dd/dec/a12270_1a3bcfca83ccb172cd79123a8341ed4cfb" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="dd/dec/a12270_1a3bcfca83ccb172cd79123a8341ed4cfb" kindref="member">mod_start</ref>;</highlight></codeline>
+<codeline lineno="250" refid="dd/dec/a12270_1aa2b5dda7d7d51a1f3fbd613adfa640b0" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="dd/dec/a12270_1aa2b5dda7d7d51a1f3fbd613adfa640b0" kindref="member">mod_end</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Module<sp/>command<sp/>line<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="dd/dec/a12270_1a3219140f9baf1a790a602db25e8597c7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="dd/dec/a12270_1a3219140f9baf1a790a602db25e8597c7" kindref="member">cmdline</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>padding<sp/>to<sp/>take<sp/>it<sp/>to<sp/>16<sp/>bytes<sp/>(must<sp/>be<sp/>zero)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="dd/dec/a12270_1aff552d4c321b0607d77cda0c2cdc5708" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="dd/dec/a12270_1aff552d4c321b0607d77cda0c2cdc5708" kindref="member">pad</ref>;</highlight></codeline>
+<codeline lineno="257" refid="df/d07/a11369_1a4bbf25084dee10ec29f4356cacced463" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dd/dec/a12270" kindref="compound">multiboot_mod_list</ref><sp/>multiboot_module_t;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>APM<sp/>BIOS<sp/>info.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="d5/d3c/a12274" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d5/d3c/a12274" kindref="compound">multiboot_apm_info</ref></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263" refid="d5/d3c/a12274_1ab06d9309bdc00fa4a8c37fdab639beb5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1ab06d9309bdc00fa4a8c37fdab639beb5" kindref="member">version</ref>;</highlight></codeline>
+<codeline lineno="264" refid="d5/d3c/a12274_1a9eedcae62ee49310914e238d07094c4b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1a9eedcae62ee49310914e238d07094c4b" kindref="member">cseg</ref>;</highlight></codeline>
+<codeline lineno="265" refid="d5/d3c/a12274_1a97958b174fe0234cafab9019eb009b91" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref><sp/><ref refid="d5/d3c/a12274_1a97958b174fe0234cafab9019eb009b91" kindref="member">offset</ref>;</highlight></codeline>
+<codeline lineno="266" refid="d5/d3c/a12274_1a9abc154a9c3a0f3d9ae96cf2b5044b43" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1a9abc154a9c3a0f3d9ae96cf2b5044b43" kindref="member">cseg_16</ref>;</highlight></codeline>
+<codeline lineno="267" refid="d5/d3c/a12274_1a98cd7da8760cf5d49ba55e1f9e76c6d4" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1a98cd7da8760cf5d49ba55e1f9e76c6d4" kindref="member">dseg</ref>;</highlight></codeline>
+<codeline lineno="268" refid="d5/d3c/a12274_1a55fb7837ae61f63d0310b65767a2505c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1a55fb7837ae61f63d0310b65767a2505c" kindref="member">flags</ref>;</highlight></codeline>
+<codeline lineno="269" refid="d5/d3c/a12274_1a95aa6b556019e1b9c526b190341cc531" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1a95aa6b556019e1b9c526b190341cc531" kindref="member">cseg_len</ref>;</highlight></codeline>
+<codeline lineno="270" refid="d5/d3c/a12274_1a09573729600592739fe8f2480217a30d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1a09573729600592739fe8f2480217a30d" kindref="member">cseg_16_len</ref>;</highlight></codeline>
+<codeline lineno="271" refid="d5/d3c/a12274_1afee11d31183fe424af90546b10c9fac2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="df/d07/a11369_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref><sp/><ref refid="d5/d3c/a12274_1afee11d31183fe424af90546b10c9fac2" kindref="member">dseg_len</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!<sp/>ASM_FILE<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!<sp/>OSOS_BASIC_MULTIBOOT_HEADER<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="libk_header/basic/multiboot.hpp"/>
+  </compounddef>
+</doxygen>

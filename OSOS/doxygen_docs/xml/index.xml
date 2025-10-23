@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="dc/d37/a19307" kind="class"><name>driver::Driver</name>
+    <member refid="dc/d37/a19307_1a7de0c11fff1dc1f5d004b2a76e840840" kind="function"><name>Driver</name></member>
+    <member refid="dc/d37/a19307_1aacc7524b989c2561147c5dd0b901381c" kind="function"><name>~Driver</name></member>
+    <member refid="dc/d37/a19307_1a8c86c1e52652d8b491d37a3b60b535b0" kind="function"><name>activate</name></member>
+    <member refid="dc/d37/a19307_1a4b3b5e5a163c2c0e3cb58ea752ebcef1" kind="function"><name>deactivate</name></member>
+    <member refid="dc/d37/a19307_1a98d2e779c02364fc58c172d0d2a32bdd" kind="function"><name>reset</name></member>
+  </compound>
+  <compound refid="d3/d37/a19311" kind="class"><name>driver::DriverManager</name>
+    <member refid="d3/d37/a19311_1acdf43f6340b26ad2d9b9c90d8974b370" kind="variable"><name>drivers</name></member>
+    <member refid="d3/d37/a19311_1a347286da44d912bba3f720d8b0600946" kind="variable"><name>numDrivers</name></member>
+    <member refid="d3/d37/a19311_1af3bed49a4b243c2f65d09c35db15158b" kind="function"><name>DriverManager</name></member>
+    <member refid="d3/d37/a19311_1a29731c1f4b1215fd5c4ab27624ae6563" kind="function"><name>~DriverManager</name></member>
+    <member refid="d3/d37/a19311_1a05b071d8a8c12f2d284fb61f4ecd116e" kind="function"><name>activateAll</name></member>
+    <member refid="d3/d37/a19311_1ab8bd89b91ea49f343276c3c841153cd8" kind="function"><name>addDriver</name></member>
+  </compound>
+  <compound refid="dc/d7c/a19319" kind="class"><name>driver::KeyboardDriver</name>
+    <member refid="dc/d7c/a19319_1a8a63dbc25a08a75f62ae0674df1deb30" kind="variable"><name>caps_on</name></member>
+    <member refid="dc/d7c/a19319_1a58fc9113701ffc04637996780c843ff0" kind="variable"><name>commandPort</name></member>
+    <member refid="dc/d7c/a19319_1afd6cdddb62a2a2d2b31043eb32887b41" kind="variable"><name>dataPort</name></member>
+    <member refid="dc/d7c/a19319_1a11ec84b7abf113ec270f124564776e1f" kind="variable"><name>keyboardEventHandler</name></member>
+    <member refid="dc/d7c/a19319_1aed7b5d279f6f1dffee10d5fb92ed6b1c" kind="variable"><name>led_byte_to_send</name></member>
+    <member refid="dc/d7c/a19319_1afba07c783deebfb275c1437f7c23601d" kind="variable"><name>shift_pressed</name></member>
+    <member refid="dc/d7c/a19319_1a703464394033a8f4f664d9289ae2e9f8" kind="variable"><name>waiting_for_led_ack</name></member>
+    <member refid="dc/d7c/a19319_1a63898e993f02352193db996d00179347" kind="function"><name>KeyboardDriver</name></member>
+    <member refid="dc/d7c/a19319_1a77da196f3c04c549e1085ce5566e5df3" kind="function"><name>~KeyboardDriver</name></member>
+    <member refid="dc/d7c/a19319_1a58553d39d7dcfe6b55e8ddb1e7b1d187" kind="function"><name>activate</name></member>
+    <member refid="dc/d7c/a19319_1aaa7e99b6214dc8439230a95dd57e617e" kind="function"><name>deactivate</name></member>
+    <member refid="dc/d7c/a19319_1a248fa0da9acac54a3a8880c7b66b3f2b" kind="function"><name>handleInterrupt</name></member>
+    <member refid="d0/dcf/a19343_1aa89d41d69840cb4f1c8692fa6ded28f4" kind="function"><name>handleInterrupt</name></member>
+    <member refid="dc/d7c/a19319_1a22b7b080ab1c8b0f2ed4beba75b34691" kind="function"><name>reset</name></member>
+    <member refid="d0/dcf/a19343_1ae86f4eae0ce9272b2027d44bdfd71e33" kind="variable"><name>interrupt_manager</name></member>
+    <member refid="d0/dcf/a19343_1afeede822d3e98957e76e627a54ec2f7a" kind="variable"><name>interruptNumber</name></member>
+  </compound>
+  <compound refid="d0/d72/a19315" kind="class"><name>driver::KeyboardEventHandler</name>
+    <member refid="d0/d72/a19315_1a63ee0249476256e721e05e6375383317" kind="function"><name>KeyboardEventHandler</name></member>
+    <member refid="d0/d72/a19315_1aed6531b818751f0f23b6b9836ac94aa0" kind="function"><name>~KeyboardEventHandler</name></member>
+    <member refid="d0/d72/a19315_1ae2b923ef0eb58e29f57a155debadac6a" kind="function"><name>onKeyDown</name></member>
+    <member refid="d0/d72/a19315_1a28547100b7420e1f73b745df873cd411" kind="function"><name>onKeyUp</name></member>
+  </compound>
+  <compound refid="da/dea/a19327" kind="class"><name>driver::MouseDriver</name>
+    <member refid="da/dea/a19327_1aaa1d55d296d88995ac49a8a9a75a79d4" kind="variable"><name>buffer</name></member>
+    <member refid="da/dea/a19327_1a7942997bd5ead2767e9627d91789dd70" kind="variable"><name>buttons</name></member>
+    <member refid="da/dea/a19327_1a2877a9f46dd83a5f05f17fd83a0a7725" kind="variable"><name>commandPort</name></member>
+    <member refid="da/dea/a19327_1a8e30a6f6c5839fcf9c3ab63aa167d046" kind="variable"><name>dataPort</name></member>
+    <member refid="da/dea/a19327_1a804f5657a062e0a18f3b56781f884c66" kind="variable"><name>mouseEventHandler</name></member>
+    <member refid="da/dea/a19327_1a313426dd9aa1af1540cbffc2e77c58c1" kind="variable"><name>offset</name></member>
+    <member refid="da/dea/a19327_1ac2077f6309c79d5f585fb966b57fe065" kind="variable"><name>__mouse_x_</name></member>
+    <member refid="da/dea/a19327_1aa02009b37420687ef18db8a05ff9181f" kind="variable"><name>__mouse_y_</name></member>
+    <member refid="da/dea/a19327_1a4a671e7e2b235f6bec473cb960401bd6" kind="variable"><name>old_char_under_mouse_pointer</name></member>
+    <member refid="da/dea/a19327_1a1a2a455ca7146dea3148afa8cb6c9ed5" kind="function"><name>mouse_block_video_mem_value</name></member>
+    <member refid="da/dea/a19327_1a639956c8ce11d62ee443825e9b9695af" kind="function"><name>MouseDriver</name></member>
+    <member refid="da/dea/a19327_1a8c25e4a4b42d1d39b332ba6d4cbd6a22" kind="function"><name>~MouseDriver</name></member>
+    <member refid="da/dea/a19327_1a446769df0b3b537a525476c7c8be47bc" kind="function"><name>activate</name></member>
+    <member refid="da/dea/a19327_1a4329c1cdedc72adf0b95cb3911c4acf6" kind="function"><name>deactivate</name></member>
+    <member refid="da/dea/a19327_1a1b2f08490b7954e5ca504cd8bb6862c0" kind="function"><name>handleInterrupt</name></member>
+    <member refid="d0/dcf/a19343_1aa89d41d69840cb4f1c8692fa6ded28f4" kind="function"><name>handleInterrupt</name></member>
+    <member refid="da/dea/a19327_1aabe3740996bf70fda96f0a25228954a6" kind="function"><name>reset</name></member>
+    <member refid="d0/dcf/a19343_1ae86f4eae0ce9272b2027d44bdfd71e33" kind="variable"><name>interrupt_manager</name></member>
+    <member refid="d0/dcf/a19343_1afeede822d3e98957e76e627a54ec2f7a" kind="variable"><name>interruptNumber</name></member>
+  </compound>
+  <compound refid="d5/d17/a19323" kind="class"><name>driver::MouseEventHandler</name>
+    <member refid="d5/d17/a19323_1aa0fd3739c52bcd4d553cefaf41760a9b" kind="function"><name>MouseEventHandler</name></member>
+    <member refid="d5/d17/a19323_1abbfe4a7ae2911f989513178530314211" kind="function"><name>~MouseEventHandler</name></member>
+    <member refid="d5/d17/a19323_1a2f12c5f63356c3045fd6cb46fd89374f" kind="function"><name>onMouseDown</name></member>
+    <member refid="d5/d17/a19323_1a68f635b3b65f927d37d4e0835f7e0b30" kind="function"><name>onMouseMove</name></member>
+    <member refid="d5/d17/a19323_1a09b77fe86bfa79313b5c5b91d09eb514" kind="function"><name>onMouseUp</name></member>
+  </compound>
+  <compound refid="d7/d5c/a19339" kind="struct"><name>essential::atexit_func_entry_t</name>
+    <member refid="d7/d5c/a19339_1a665175c477008154e9b40ef96a8d81c2" kind="variable"><name>destructor_func</name></member>
+    <member refid="d7/d5c/a19339_1a98800f0ffd56e2dc77c46a741e1cf008" kind="variable"><name>dso_handle</name></member>
+    <member refid="d7/d5c/a19339_1a24ece443578ebec2449e72e998521a11" kind="variable"><name>obj_ptr</name></member>
+  </compound>
+  <compound refid="d3/d8c/a19335" kind="class"><name>essential::GDT</name>
+    <member refid="d3/d8c/a19335_1ad0a48a89930e6a6c4467c977f4e91269" kind="variable"><name>base</name></member>
+    <member refid="d3/d8c/a19335_1a20d7a6bb352e3f696c1c68bb394766d8" kind="variable"><name>kernel_CS</name></member>
+    <member refid="d3/d8c/a19335_1ac8a5b4f6a3dc223e2eb6abebe19c9f08" kind="variable"><name>kernel_DS</name></member>
+    <member refid="d3/d8c/a19335_1a4105a25a1ec71dc7e338639bb370c664" kind="variable"><name>limit</name></member>
+    <member refid="d3/d8c/a19335_1a154c2e2725809d873c8e7d5f19ea66c5" kind="variable"><name>nullSegment</name></member>
+    <member refid="d3/d8c/a19335_1a32508694f9db3188cd4aba126cbfb5bb" kind="variable"><name>user_CS</name></member>
+    <member refid="d3/d8c/a19335_1a73463d83e2048869692d0adf1acac7a6" kind="variable"><name>user_DS</name></member>
+    <member refid="d3/d8c/a19335_1aa061ecab5a20a3556413fbbde4fe89d7" kind="function"><name>GDT</name></member>
+    <member refid="d3/d8c/a19335_1a9b61f75de7fa2ffe9589f43c3f6a6a6c" kind="function"><name>~GDT</name></member>
+    <member refid="d3/d8c/a19335_1af8e3c1da270077eb7cc6551b35c0e5ca" kind="function"><name>installTable</name></member>
+    <member refid="d3/d8c/a19335_1a89a8d2c17e3c22e7200bff09252f46e1" kind="function"><name>kernel_CS_selector</name></member>
+    <member refid="d3/d8c/a19335_1a34661a528b1630bff806e25411ad6ec3" kind="function"><name>kernel_DS_selector</name></member>
+    <member refid="d3/d8c/a19335_1a9c89bddfdb21d5cc09c1d82411982de9" kind="function"><name>printLoadedTable</name></member>
+    <member refid="d3/d8c/a19335_1a2ae998750fc1e18e6778e92774bd3574" kind="function"><name>printLoadedTableHeader</name></member>
+    <member refid="d3/d8c/a19335_1a8806a14009c4f0432d4b7043d687be17" kind="function"><name>user_CS_selector</name></member>
+    <member refid="d3/d8c/a19335_1a90661f97e9cf214dd6d977b19c01f7fc" kind="function"><name>user_DS_selector</name></member>
+  </compound>
+  <compound refid="dd/da0/a19331" kind="class"><name>essential::GDT_row</name>
+    <member refid="dd/da0/a19331_1a7f01a0febd325787f1ff47d6a3b668a9" kind="variable"><name>access</name></member>
+    <member refid="dd/da0/a19331_1a2cbd86d4258ecebf7b46cc9bb8611b5b" kind="variable"><name>base_high</name></member>
+    <member refid="dd/da0/a19331_1a298d18522898ad48c1e05b79f1f4dff7" kind="variable"><name>base_low</name></member>
+    <member refid="dd/da0/a19331_1a8429e04bddc6a61c4e95b88901ae219d" kind="variable"><name>base_middle</name></member>
+    <member refid="dd/da0/a19331_1af180a640dbd5213b3f936ff7cf48deaf" kind="variable"><name>granularity</name></member>
+    <member refid="dd/da0/a19331_1a2bddbe405dfbbbd101c475bd1bd65112" kind="variable"><name>limit_low</name></member>
+    <member refid="dd/da0/a19331_1a235097b2551abe03269f88341b4bdf87" kind="friend"><name>GDT</name></member>
+    <member refid="dd/da0/a19331_1a27ff8d9a6bf6c2c98cf78a0257e4667e" kind="function"><name>GDT_row</name></member>
+    <member refid="dd/da0/a19331_1a5692f86b7ebf4eefdeb78e48f281092b" kind="function"><name>GDT_row</name></member>
+    <member refid="dd/da0/a19331_1a6eb69c55c0bd16040b2d766dd068df31" kind="function"><name>~GDT_row</name></member>
+  </compound>
+  <compound refid="d7/d8c/a19347" kind="class"><name>hardware_communication::IDT_row</name>
+    <member refid="d7/d8c/a19347_1afa706321cb5ba41a6035dbe1ec39c265" kind="variable"><name>access</name></member>
+    <member refid="d7/d8c/a19347_1af1a4bb042f75f10c5e2b08034e82aed3" kind="variable"><name>handlerAddressHighbits</name></member>
+    <member refid="d7/d8c/a19347_1a3390e4d53e904d420187ecc0247e9289" kind="variable"><name>handlerAddressLowbits</name></member>
+    <member refid="d7/d8c/a19347_1a800309c99800063315cddf536a3d0d67" kind="variable"><name>kernelCodeSegmentSelector</name></member>
+    <member refid="d7/d8c/a19347_1a96bce1ce9c6a7e9b5a20607f41a2e876" kind="variable"><name>reserved</name></member>
+    <member refid="d7/d8c/a19347_1a6c5563315b1a2f5c67ae8b78d06e3c7f" kind="friend"><name>InterruptManager</name></member>
+    <member refid="d7/d8c/a19347_1a5149970639d0f251d529808a192b4b55" kind="function"><name>IDT_row</name></member>
+    <member refid="d7/d8c/a19347_1a9cad760dfa1c1f76f98b6207365f7e2d" kind="function"><name>~IDT_row</name></member>
+  </compound>
+  <compound refid="d0/dcf/a19343" kind="class"><name>hardware_communication::InterruptHandler</name>
+    <member refid="d0/dcf/a19343_1ae86f4eae0ce9272b2027d44bdfd71e33" kind="variable"><name>interrupt_manager</name></member>
+    <member refid="d0/dcf/a19343_1afeede822d3e98957e76e627a54ec2f7a" kind="variable"><name>interruptNumber</name></member>
+    <member refid="d0/dcf/a19343_1a134c8931dff43e766f1ddc4d0f35cd48" kind="function"><name>InterruptHandler</name></member>
+    <member refid="d0/dcf/a19343_1a5114528f0db9926365b345337e42af9b" kind="function"><name>~InterruptHandler</name></member>
+    <member refid="d0/dcf/a19343_1aa89d41d69840cb4f1c8692fa6ded28f4" kind="function"><name>handleInterrupt</name></member>
+  </compound>
+  <compound refid="d9/d99/a19351" kind="class"><name>hardware_communication::InterruptManager</name>
+    <member refid="d9/d99/a19351_1a9aef4ea3434f8ddeaf9c32a63e6faf05" kind="friend"><name>InterruptHandler</name></member>
+    <member refid="d9/d99/a19351_1ad94bd8e9c355fde3e814d4894bab0181" kind="variable"><name>base</name></member>
+    <member refid="d9/d99/a19351_1a1991d8428ff7c74b31f42d48bb49547a" kind="variable"><name>limit</name></member>
+    <member refid="d9/d99/a19351_1ac8aba191e612ad605b8b188f78e65d3b" kind="variable"><name>handlers</name></member>
+    <member refid="d9/d99/a19351_1a7b6bb52a8072c51bfcb4f4877c3d0226" kind="variable"><name>interruptDescriptorTable</name></member>
+    <member refid="d9/d99/a19351_1acb04723d03d6b34abbc5f7407cab0b33" kind="variable"><name>picMasterCommand</name></member>
+    <member refid="d9/d99/a19351_1a5287e31a546f60708b085b387332a904" kind="variable"><name>picMasterData</name></member>
+    <member refid="d9/d99/a19351_1afed9d24b37c8f9386a71f4284b2502a4" kind="variable"><name>picSlaveCommand</name></member>
+    <member refid="d9/d99/a19351_1ac1111b7cfbd27b37f03a0678ae5dbaf1" kind="variable"><name>picSlaveData</name></member>
+    <member refid="d9/d99/a19351_1af448c0d55d2e226050b7f4efb6d4abe8" kind="function"><name>setIDTEntry</name></member>
+    <member refid="d9/d99/a19351_1aec70c703cac64ef1eec4b5a94d2e145c" kind="function"><name>InterruptManager</name></member>
+    <member refid="d9/d99/a19351_1a65276f26b5d5197482a415b83a898560" kind="function"><name>~InterruptManager</name></member>
+    <member refid="d9/d99/a19351_1a81d593116320da32f1aa4057087f1e11" kind="function"><name>installTable</name></member>
+    <member refid="d9/d99/a19351_1a1ab5b6378071338ede295f0bffaf3d51" kind="function"><name>activate</name></member>
+    <member refid="d9/d99/a19351_1a9451566bf08617378ca2144505d394a6" kind="function"><name>deactivate</name></member>
+    <member refid="d9/d99/a19351_1a2d3ef1656e1eaaf86be40a200a49a4b2" kind="function"><name>handleInterrupt</name></member>
+    <member refid="d9/d99/a19351_1aac20f3a896bea512413568a60ad48c3d" kind="function"><name>printLoadedTable</name></member>
+    <member refid="d9/d99/a19351_1ad8a6f694662a3a36ba9353197e20c1b1" kind="function"><name>printLoadedTableHeader</name></member>
+  </compound>
+  <compound refid="d3/d5b/a19355" kind="class"><name>hardware_communication::Port</name>
+    <member refid="d3/d5b/a19355_1aab0c5c82b0190df88ddbb595bfac539a" kind="variable"><name>portnumber</name></member>
+    <member refid="d3/d5b/a19355_1ad001c21b67d4c138f65024f167030cca" kind="function"><name>Port</name></member>
+    <member refid="d3/d5b/a19355_1a8b13c33da4911afcbdcb21c97768a72e" kind="function"><name>~Port</name></member>
+  </compound>
+  <compound refid="dd/d6a/a19367" kind="class"><name>hardware_communication::Port16Bit</name>
+    <member refid="dd/d6a/a19367_1a418bb2fc65b3bec91704d0e5e8957131" kind="function"><name>Port16Bit</name></member>
+    <member refid="dd/d6a/a19367_1a78dfa215194c676583e1b7e2dab38608" kind="function"><name>~Port16Bit</name></member>
+    <member refid="dd/d6a/a19367_1a6b5df5669e802e31f27f0a4a0e62492a" kind="function"><name>read</name></member>
+    <member refid="dd/d6a/a19367_1ac5a46ce99a70874a8a4fcb090eb40575" kind="function"><name>write</name></member>
+    <member refid="d3/d5b/a19355_1aab0c5c82b0190df88ddbb595bfac539a" kind="variable"><name>portnumber</name></member>
+  </compound>
+  <compound refid="d8/d2a/a19371" kind="class"><name>hardware_communication::Port32Bit</name>
+    <member refid="d8/d2a/a19371_1a507afa8607757baedf1789d73c2a173d" kind="function"><name>Port32Bit</name></member>
+    <member refid="d8/d2a/a19371_1a3e87dc7d610b279e8e7e072a0d1ee78c" kind="function"><name>~Port32Bit</name></member>
+    <member refid="d8/d2a/a19371_1a41093c437a9508f984c90ae68e9c03bf" kind="function"><name>read</name></member>
+    <member refid="d8/d2a/a19371_1a64a16fe840224ef769ab2933770d1b21" kind="function"><name>write</name></member>
+    <member refid="d3/d5b/a19355_1aab0c5c82b0190df88ddbb595bfac539a" kind="variable"><name>portnumber</name></member>
+  </compound>
+  <compound refid="d9/d0b/a19359" kind="class"><name>hardware_communication::Port8Bit</name>
+    <member refid="d9/d0b/a19359_1a057109ca3c28fbb9064c60ba5cdb1190" kind="function"><name>Port8Bit</name></member>
+    <member refid="d9/d0b/a19359_1a475bc218672c5743a9f8425cc84eb630" kind="function"><name>~Port8Bit</name></member>
+    <member refid="d9/d0b/a19359_1ae8688251b574c3fd335b99f7e93fff2d" kind="function"><name>read</name></member>
+    <member refid="d9/d0b/a19359_1a523b6a757b27418dc015ed13e74bef60" kind="function"><name>write</name></member>
+    <member refid="d3/d5b/a19355_1aab0c5c82b0190df88ddbb595bfac539a" kind="variable"><name>portnumber</name></member>
+  </compound>
+  <compound refid="dc/da5/a19363" kind="class"><name>hardware_communication::Port8BitSlow</name>
+    <member refid="dc/da5/a19363_1aa830f1cf49e155af1033a8e611ecc6c1" kind="function"><name>Port8BitSlow</name></member>
+    <member refid="dc/da5/a19363_1aa19647802064296f8bf76cc12f10d243" kind="function"><name>~Port8BitSlow</name></member>
+    <member refid="d9/d0b/a19359_1ae8688251b574c3fd335b99f7e93fff2d" kind="function"><name>read</name></member>
+    <member refid="dc/da5/a19363_1af84b15d5a205a421a9877e2341714031" kind="function"><name>write</name></member>
+    <member refid="d3/d5b/a19355_1aab0c5c82b0190df88ddbb595bfac539a" kind="variable"><name>portnumber</name></member>
+  </compound>
+  <compound refid="d4/d1e/a19251" kind="class"><name>KeyboardEventHandler_for_kernel</name>
+    <member refid="d4/d1e/a19251_1af9abf3fb85dea27db802a8f092c4a2fc" kind="function"><name>KeyboardEventHandler_for_kernel</name></member>
+    <member refid="d4/d1e/a19251_1ab2b7f34603d9cdd36554a4f7f6dde585" kind="function"><name>~KeyboardEventHandler_for_kernel</name></member>
+    <member refid="d4/d1e/a19251_1af82a0bd16f995dd285d4f7822117377c" kind="function"><name>onKeyDown</name></member>
+    <member refid="d4/d1e/a19251_1a0d74a48573c10174ac8bf836ac39f886" kind="function"><name>onKeyUp</name></member>
+  </compound>
+  <compound refid="d0/d04/a19255" kind="class"><name>MouseEventHandler_for_kernel</name>
+    <member refid="d0/d04/a19255_1a41f57ab9baa5850e39086362ce44b1cb" kind="function"><name>MouseEventHandler_for_kernel</name></member>
+    <member refid="d0/d04/a19255_1aa96e9bf8dce2b60b7f86577c3a74455d" kind="function"><name>~MouseEventHandler_for_kernel</name></member>
+    <member refid="d0/d04/a19255_1ae860a16e70322e5c4bb01e1108e50bb1" kind="function"><name>onMouseDown</name></member>
+    <member refid="d0/d04/a19255_1adbb4c4e2814b335579119c324313f652" kind="function"><name>onMouseMove</name></member>
+    <member refid="d0/d04/a19255_1afca536c2187a65da265daa2d2af75d4d" kind="function"><name>onMouseUp</name></member>
+  </compound>
+  <compound refid="dc/d9c/a19263" kind="struct"><name>multiboot_aout_symbol_table</name>
+    <member refid="dc/d9c/a19263_1af0a1d2238495093ad75f36e3a146c0c7" kind="variable"><name>addr</name></member>
+    <member refid="dc/d9c/a19263_1a488f52dbb30b4de2ae2f42f0bdfda154" kind="variable"><name>reserved</name></member>
+    <member refid="dc/d9c/a19263_1a7ed0107153c88e6604e9a6105a4c7be0" kind="variable"><name>strsize</name></member>
+    <member refid="dc/d9c/a19263_1afbdc23500d3d7a59486a0b8ff4066c1e" kind="variable"><name>tabsize</name></member>
+  </compound>
+  <compound refid="d7/d23/a19303" kind="struct"><name>multiboot_apm_info</name>
+    <member refid="d7/d23/a19303_1a9eedcae62ee49310914e238d07094c4b" kind="variable"><name>cseg</name></member>
+    <member refid="d7/d23/a19303_1a9abc154a9c3a0f3d9ae96cf2b5044b43" kind="variable"><name>cseg_16</name></member>
+    <member refid="d7/d23/a19303_1a09573729600592739fe8f2480217a30d" kind="variable"><name>cseg_16_len</name></member>
+    <member refid="d7/d23/a19303_1a95aa6b556019e1b9c526b190341cc531" kind="variable"><name>cseg_len</name></member>
+    <member refid="d7/d23/a19303_1a98cd7da8760cf5d49ba55e1f9e76c6d4" kind="variable"><name>dseg</name></member>
+    <member refid="d7/d23/a19303_1afee11d31183fe424af90546b10c9fac2" kind="variable"><name>dseg_len</name></member>
+    <member refid="d7/d23/a19303_1a55fb7837ae61f63d0310b65767a2505c" kind="variable"><name>flags</name></member>
+    <member refid="d7/d23/a19303_1a97958b174fe0234cafab9019eb009b91" kind="variable"><name>offset</name></member>
+    <member refid="d7/d23/a19303_1ab06d9309bdc00fa4a8c37fdab639beb5" kind="variable"><name>version</name></member>
+  </compound>
+  <compound refid="d0/d19/a19291" kind="struct"><name>multiboot_color</name>
+    <member refid="d0/d19/a19291_1a6f8d17b0f35ff4cbf9c51dcbc3ea7d01" kind="variable"><name>blue</name></member>
+    <member refid="d0/d19/a19291_1a08e1c8bc977b39015c9043645e79713d" kind="variable"><name>green</name></member>
+    <member refid="d0/d19/a19291_1a4c8a91229f40c06c3c63b4c37e83d219" kind="variable"><name>red</name></member>
+  </compound>
+  <compound refid="da/d01/a19267" kind="struct"><name>multiboot_elf_section_header_table</name>
+    <member refid="da/d01/a19267_1aac90242e270ae9df01fc3bb784b858b6" kind="variable"><name>addr</name></member>
+    <member refid="da/d01/a19267_1a6ed3ef34bb39d72a19533b11fe156e1f" kind="variable"><name>num</name></member>
+    <member refid="da/d01/a19267_1a45886444dce7cc10353528373f3e50c2" kind="variable"><name>shndx</name></member>
+    <member refid="da/d01/a19267_1ab2740d89d4139f93c9452cca2c676c5c" kind="variable"><name>size</name></member>
+  </compound>
+  <compound refid="d6/dbf/a19259" kind="struct"><name>multiboot_header</name>
+    <member refid="d6/dbf/a19259_1ab4f2496ec9b0d1a95985929d281dfa19" kind="variable"><name>bss_end_addr</name></member>
+    <member refid="d6/dbf/a19259_1a17e73abddfe8264c254767a20099038d" kind="variable"><name>checksum</name></member>
+    <member refid="d6/dbf/a19259_1aba85b53dc3af1bf99c71292a776e9dff" kind="variable"><name>depth</name></member>
+    <member refid="d6/dbf/a19259_1ac3d807775a9d69730e6698dcdcf6491e" kind="variable"><name>entry_addr</name></member>
+    <member refid="d6/dbf/a19259_1ab922f32c179ec7bde91519d19f27d95b" kind="variable"><name>flags</name></member>
+    <member refid="d6/dbf/a19259_1a9718b2fc6ce29a37e9a209f92ab856e3" kind="variable"><name>header_addr</name></member>
+    <member refid="d6/dbf/a19259_1a055c5e6553ea032897ad50a12f998a17" kind="variable"><name>height</name></member>
+    <member refid="d6/dbf/a19259_1a99de1cf326c46c76c6039f317b7a1ef2" kind="variable"><name>load_addr</name></member>
+    <member refid="d6/dbf/a19259_1ac9efc1a4c3cd18f286b2fd50ff052e31" kind="variable"><name>load_end_addr</name></member>
+    <member refid="d6/dbf/a19259_1a7fddee92e60ff58e159c6bf2c40bf29b" kind="variable"><name>magic</name></member>
+    <member refid="d6/dbf/a19259_1a4c90b7929342dd5aab7d08afa0906d28" kind="variable"><name>mode_type</name></member>
+    <member refid="d6/dbf/a19259_1ad72a1a3dd608e73c818d0c27974def40" kind="variable"><name>width</name></member>
+  </compound>
+  <compound refid="da/d5f/a19271" kind="struct"><name>multiboot_info</name>
+    <member refid="da/d5f/a19271_1a949c07914ae1ba8624fbb6b0dc7b0af6" kind="variable"><name></name></member>
+    <member refid="da/d5f/a19271_1ab340bc8f88281872676db0f52ebe7c0e" kind="variable"><name>apm_table</name></member>
+    <member refid="da/d5f/a19271_1ae32646de911267c65892a286ef3d529e" kind="variable"><name>boot_device</name></member>
+    <member refid="da/d5f/a19271_1a4a3251d6b4cf85d935d989a0a369feed" kind="variable"><name>boot_loader_name</name></member>
+    <member refid="da/d5f/a19271_1a95a5e2cc69960e4d906abd585f91f210" kind="variable"><name>cmdline</name></member>
+    <member refid="da/d5f/a19271_1a94b06ab87dbfaf966822a39cf1d9e2d6" kind="variable"><name>config_table</name></member>
+    <member refid="da/d5f/a19271_1a12916653d21ac1694b6d609a10d15332" kind="variable"><name>drives_addr</name></member>
+    <member refid="da/d5f/a19271_1a8bb6cc3d388a8abafecc7018744c14f3" kind="variable"><name>drives_length</name></member>
+    <member refid="da/d5f/a19271_1a39f175b6fb4debca237d3ff93e960a25" kind="variable"><name>flags</name></member>
+    <member refid="da/d5f/a19271_1a77a4d6e2b12fbd2b3e6e61d978ae5fc0" kind="variable"><name>framebuffer_addr</name></member>
+    <member refid="da/d5f/a19271_1ab7b460c75f0342dfb1e339d2b3a2a9da" kind="variable"><name>framebuffer_bpp</name></member>
+    <member refid="da/d5f/a19271_1a0e8539780b79a018883d96bb444cd9c8" kind="variable"><name>framebuffer_height</name></member>
+    <member refid="da/d5f/a19271_1ab0ecb8c7debe9ac1ac7910ae957367f6" kind="variable"><name>framebuffer_pitch</name></member>
+    <member refid="da/d5f/a19271_1a540391adf02da7cb6876fe78d65a13d7" kind="variable"><name>framebuffer_type</name></member>
+    <member refid="da/d5f/a19271_1a770273793bac06df17306c7fa136c58f" kind="variable"><name>framebuffer_width</name></member>
+    <member refid="da/d5f/a19271_1a6b80f033d5a9151a4d1abd2d155942a7" kind="variable"><name>mem_lower</name></member>
+    <member refid="da/d5f/a19271_1a1ea7d9e665d6fff00665d97e81207a8f" kind="variable"><name>mem_upper</name></member>
+    <member refid="da/d5f/a19271_1a19825c91eb6aa23fa61ee3851a6ce8da" kind="variable"><name>mmap_addr</name></member>
+    <member refid="da/d5f/a19271_1a3dd43c3204f821c0a1b5604686d9eae7" kind="variable"><name>mmap_length</name></member>
+    <member refid="da/d5f/a19271_1a766e9dadbf4a845c12704c923cb13f02" kind="variable"><name>mods_addr</name></member>
+    <member refid="da/d5f/a19271_1a415feb83a215790e2e8f9e2e1e3df55c" kind="variable"><name>mods_count</name></member>
+    <member refid="da/d5f/a19271_1a0558f47498813865abaec2f6281c5f92" kind="variable"><name>u</name></member>
+    <member refid="da/d5f/a19271_1a21c63bc2905c6fd19449eea6e8514856" kind="variable"><name>vbe_control_info</name></member>
+    <member refid="da/d5f/a19271_1a31ea288eaa679a7e3a4dafb91d833f78" kind="variable"><name>vbe_interface_len</name></member>
+    <member refid="da/d5f/a19271_1a272d3a053e085dc513ba4dc4eb688816" kind="variable"><name>vbe_interface_off</name></member>
+    <member refid="da/d5f/a19271_1a6cd85049f18e6c157d173538b162d9a6" kind="variable"><name>vbe_interface_seg</name></member>
+    <member refid="da/d5f/a19271_1aec0fcaec97380658da787d4989f7b93f" kind="variable"><name>vbe_mode</name></member>
+    <member refid="da/d5f/a19271_1ace25791339e03186c9364bb5f461f773" kind="variable"><name>vbe_mode_info</name></member>
+  </compound>
+  <compound refid="dc/d1b/a19743" kind="union"><name>multiboot_info.__unnamed2__</name>
+    <member refid="dc/d1b/a19743_1aa4d79cb252987ad7f099770543e601a1" kind="variable"><name></name></member>
+    <member refid="dc/d1b/a19743_1a21945c50944818f4cf3b6aef8608f9ce" kind="variable"><name></name></member>
+  </compound>
+  <compound refid="d9/d3c/a19747" kind="struct"><name>multiboot_info.__unnamed2__.__unnamed4__</name>
+    <member refid="d9/d3c/a19747_1ab4a160c025f0db5470ddced0d2c99de3" kind="variable"><name>framebuffer_palette_addr</name></member>
+    <member refid="d9/d3c/a19747_1a9ea6d9ae58149f37ee098ce870bf07f0" kind="variable"><name>framebuffer_palette_num_colors</name></member>
+  </compound>
+  <compound refid="d2/def/a19751" kind="struct"><name>multiboot_info.__unnamed2__.__unnamed6__</name>
+    <member refid="d2/def/a19751_1ace107d23f7f4af6fd8d969926c5c9d16" kind="variable"><name>framebuffer_blue_field_position</name></member>
+    <member refid="d2/def/a19751_1aa8eaba7a0a6cf04509a014ac4bc937c0" kind="variable"><name>framebuffer_blue_mask_size</name></member>
+    <member refid="d2/def/a19751_1adfcdecf04630d77ee5e41006f47dc4d7" kind="variable"><name>framebuffer_green_field_position</name></member>
+    <member refid="d2/def/a19751_1abc2579d314db9a050c48043a1b7f5ea9" kind="variable"><name>framebuffer_green_mask_size</name></member>
+    <member refid="d2/def/a19751_1a4dd2fad32ee3a2ce5379d7bf0a23dabe" kind="variable"><name>framebuffer_red_field_position</name></member>
+    <member refid="d2/def/a19751_1a0d868424e2b703471e3d73c0a72bc75c" kind="variable"><name>framebuffer_red_mask_size</name></member>
+  </compound>
+  <compound refid="d3/d67/a19739" kind="union"><name>multiboot_info.u</name>
+    <member refid="d3/d67/a19739_1adcc9d90eba827321c643ad06b62c7817" kind="variable"><name>aout_sym</name></member>
+    <member refid="d3/d67/a19739_1af2b83453f34de71046f2bbb48051c1f4" kind="variable"><name>elf_sec</name></member>
+  </compound>
+  <compound refid="d2/d08/a19295" kind="struct"><name>multiboot_mmap_entry</name>
+    <member refid="d2/d08/a19295_1a40e066ba79afd138308bd0db4b3f4f5b" kind="variable"><name>addr</name></member>
+    <member refid="d2/d08/a19295_1a0c5d40a87a63b01fc424bb3c15c89997" kind="variable"><name>len</name></member>
+    <member refid="d2/d08/a19295_1a1b4b5157d5e972e92981177fd1eb6d67" kind="variable"><name>size</name></member>
+    <member refid="d2/d08/a19295_1affc11fb6e6ece4860a1929b791073538" kind="variable"><name>type</name></member>
+  </compound>
+  <compound refid="d9/d7c/a19299" kind="struct"><name>multiboot_mod_list</name>
+    <member refid="d9/d7c/a19299_1a3219140f9baf1a790a602db25e8597c7" kind="variable"><name>cmdline</name></member>
+    <member refid="d9/d7c/a19299_1aa2b5dda7d7d51a1f3fbd613adfa640b0" kind="variable"><name>mod_end</name></member>
+    <member refid="d9/d7c/a19299_1a3bcfca83ccb172cd79123a8341ed4cfb" kind="variable"><name>mod_start</name></member>
+    <member refid="d9/d7c/a19299_1aff552d4c321b0607d77cda0c2cdc5708" kind="variable"><name>pad</name></member>
+  </compound>
+  <compound refid="d1/d22/a18432" kind="namespace"><name>basic</name>
+    <member refid="d1/d22/a18432_1a02923caa95013ec5d9333c25d9cca1d6" kind="function"><name>__clearScreen</name></member>
+    <member refid="d1/d22/a18432_1a53c6425a55d9fb93998da01f2416f9ad" kind="function"><name>__printMemoryMap</name></member>
+    <member refid="d1/d22/a18432_1a4b31902bf2cff8ff28405aa57d9f4575" kind="function"><name>disable_cursor</name></member>
+    <member refid="d1/d22/a18432_1a8ca6648639f335b207c748074dcf9f25" kind="function"><name>enable_cursor</name></member>
+    <member refid="d1/d22/a18432_1a45ee52b918a784ff0e96e7c8917a91d9" kind="function"><name>printf</name></member>
+    <member refid="d1/d22/a18432_1a9d1f0f838e646660db6d9284725c2b4c" kind="function"><name>update_cursor</name></member>
+  </compound>
+  <compound refid="de/d62/a18433" kind="namespace"><name>driver</name>
+  </compound>
+  <compound refid="d2/d7a/a18434" kind="namespace"><name>essential</name>
+    <member refid="d2/d7a/a18434_1a52e3ec8c29cc4bb68f65445749f0bfdb" kind="function"><name>__attribute__</name></member>
+    <member refid="d2/d7a/a18434_1a433c3d2d19d89890b522ac26b05fa7aa" kind="function"><name>__callConstructors</name></member>
+    <member refid="d2/d7a/a18434_1a098e7240e26e869c035075be004b4ee9" kind="function"><name>__cxa_finalize</name></member>
+  </compound>
+  <compound refid="d6/d23/a18435" kind="namespace"><name>hardware_communication</name>
+    <member refid="d6/d23/a18435_1a21c3ca5c318038eaed596c14fd2666ed" kind="variable"><name>__attribute__</name></member>
+    <member refid="d6/d23/a18435_1a269f53904f53339ae2df626922b404b2" kind="function"><name>__attribute__</name></member>
+  </compound>
+  <compound refid="db/df3/a18431" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="d2/dba/a18362" kind="file"><name>kernel.cpp</name>
+    <member refid="d2/dba/a18362_1abb4e4866092116b520310d61961bfe12" kind="function"><name>kernelMain</name></member>
+  </compound>
+  <compound refid="d3/d63/a18404" kind="file"><name>kiostream.hpp</name>
+    <member refid="d1/d22/a18432_1a02923caa95013ec5d9333c25d9cca1d6" kind="function"><name>__clearScreen</name></member>
+    <member refid="d1/d22/a18432_1a4b31902bf2cff8ff28405aa57d9f4575" kind="function"><name>disable_cursor</name></member>
+    <member refid="d1/d22/a18432_1a8ca6648639f335b207c748074dcf9f25" kind="function"><name>enable_cursor</name></member>
+    <member refid="d1/d22/a18432_1a45ee52b918a784ff0e96e7c8917a91d9" kind="function"><name>printf</name></member>
+    <member refid="d1/d22/a18432_1a9d1f0f838e646660db6d9284725c2b4c" kind="function"><name>update_cursor</name></member>
+  </compound>
+  <compound refid="d2/d7b/a18401" kind="file"><name>kmemory.hpp</name>
+    <member refid="d1/d22/a18432_1a53c6425a55d9fb93998da01f2416f9ad" kind="function"><name>__printMemoryMap</name></member>
+  </compound>
+  <compound refid="de/d0e/a18398" kind="file"><name>multiboot.hpp</name>
+    <member refid="de/d0e/a18398_1a791f0c6a97c36de5388c990503ee4639" kind="define"><name>MULTIBOOT_AOUT_KLUDGE</name></member>
+    <member refid="de/d0e/a18398_1aacd617f4e3daafd6eab95fb6215ccae4" kind="define"><name>MULTIBOOT_BOOTLOADER_MAGIC</name></member>
+    <member refid="de/d0e/a18398_1af6005f97267af2cb0ff37fb245284440" kind="define"><name>MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT</name></member>
+    <member refid="de/d0e/a18398_1a8e2af641ff42074bb807c3ec9e33b2e0" kind="define"><name>MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED</name></member>
+    <member refid="de/d0e/a18398_1a34b2f01226ea42de22e06db7f652fbb1" kind="define"><name>MULTIBOOT_FRAMEBUFFER_TYPE_RGB</name></member>
+    <member refid="de/d0e/a18398_1abc554da6e5184d34e039b551177434ba" kind="define"><name>MULTIBOOT_HEADER_ALIGN</name></member>
+    <member refid="de/d0e/a18398_1ab36ad4b4a42c58aac4ad1f2ba13054e9" kind="define"><name>MULTIBOOT_HEADER_MAGIC</name></member>
+    <member refid="de/d0e/a18398_1a7f583196f43e30e93323f5e44554d726" kind="define"><name>MULTIBOOT_INFO_ALIGN</name></member>
+    <member refid="de/d0e/a18398_1a186ab9e55c5bc612b9fd7e10b4be5600" kind="define"><name>MULTIBOOT_INFO_AOUT_SYMS</name></member>
+    <member refid="de/d0e/a18398_1aab73446f0cee2e9dc91f43eb9a0c806b" kind="define"><name>MULTIBOOT_INFO_APM_TABLE</name></member>
+    <member refid="de/d0e/a18398_1a9743476d5f32c9ae22f6254a0e3ba11d" kind="define"><name>MULTIBOOT_INFO_BOOT_LOADER_NAME</name></member>
+    <member refid="de/d0e/a18398_1acfde5ffdd699c023dd8f4b89aa66556f" kind="define"><name>MULTIBOOT_INFO_BOOTDEV</name></member>
+    <member refid="de/d0e/a18398_1ae75fb4f821b7ab405d46318d9b90a677" kind="define"><name>MULTIBOOT_INFO_CMDLINE</name></member>
+    <member refid="de/d0e/a18398_1ad60e5b72325f5752e955879f3fbb44c3" kind="define"><name>MULTIBOOT_INFO_CONFIG_TABLE</name></member>
+    <member refid="de/d0e/a18398_1af2c5803d8cc6e1e8c00181ca546e68ab" kind="define"><name>MULTIBOOT_INFO_DRIVE_INFO</name></member>
+    <member refid="de/d0e/a18398_1ad7d22ae99c11dc92152acdc8494a71f0" kind="define"><name>MULTIBOOT_INFO_ELF_SHDR</name></member>
+    <member refid="de/d0e/a18398_1a1c07b211ed2c374f5fbcf40c97bce2c0" kind="define"><name>MULTIBOOT_INFO_FRAMEBUFFER_INFO</name></member>
+    <member refid="de/d0e/a18398_1a2d16dabdfdee01362c3457d06f0ff850" kind="define"><name>MULTIBOOT_INFO_MEM_MAP</name></member>
+    <member refid="de/d0e/a18398_1a1cb6047ede9a179b2958048573269d7a" kind="define"><name>MULTIBOOT_INFO_MEMORY</name></member>
+    <member refid="de/d0e/a18398_1a9a06a0175854cc6af54ddb6bd798c5bc" kind="define"><name>MULTIBOOT_INFO_MODS</name></member>
+    <member refid="de/d0e/a18398_1abf0a727e2e262407c77d54baf40d2f39" kind="define"><name>MULTIBOOT_INFO_VBE_INFO</name></member>
+    <member refid="de/d0e/a18398_1af35be82586f332a561d00207c937ee57" kind="define"><name>MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</name></member>
+    <member refid="de/d0e/a18398_1a7fe141351ebcde0acbd6118ad0ea1a21" kind="define"><name>MULTIBOOT_MEMORY_AVAILABLE</name></member>
+    <member refid="de/d0e/a18398_1a1604ec18ac949d88dab993904b08c075" kind="define"><name>MULTIBOOT_MEMORY_BADRAM</name></member>
+    <member refid="de/d0e/a18398_1afdfca6bbbf4b7dca40e9d43e58201f55" kind="define"><name>MULTIBOOT_MEMORY_INFO</name></member>
+    <member refid="de/d0e/a18398_1a68f78286f7434d373a82f1b6f6473c72" kind="define"><name>MULTIBOOT_MEMORY_NVS</name></member>
+    <member refid="de/d0e/a18398_1a0299aedc71e1f6707181471bafb18e7c" kind="define"><name>MULTIBOOT_MEMORY_RESERVED</name></member>
+    <member refid="de/d0e/a18398_1ab3284a28549f2a2f1a2001ca023aaa1e" kind="define"><name>MULTIBOOT_MOD_ALIGN</name></member>
+    <member refid="de/d0e/a18398_1aab5e5487e858de2a031cd3f1232f7b60" kind="define"><name>MULTIBOOT_PAGE_ALIGN</name></member>
+    <member refid="de/d0e/a18398_1a0b53e2de91aa7498c4b476776b27e5f3" kind="define"><name>MULTIBOOT_SEARCH</name></member>
+    <member refid="de/d0e/a18398_1a74a1da9293ae3835241c60b2d9e65e8d" kind="define"><name>MULTIBOOT_VIDEO_MODE</name></member>
+    <member refid="de/d0e/a18398_1a3a11e3c2b5e0617736a05343aa5795b3" kind="typedef"><name>multiboot_uint16_t</name></member>
+    <member refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kind="typedef"><name>multiboot_uint32_t</name></member>
+    <member refid="de/d0e/a18398_1a8dfdd61648b48aa31845db590970e06a" kind="typedef"><name>multiboot_uint64_t</name></member>
+    <member refid="de/d0e/a18398_1a037f602538fccf97e90021c19fdfc047" kind="typedef"><name>multiboot_uint8_t</name></member>
+    <member refid="de/d0e/a18398_1a4bbf25084dee10ec29f4356cacced463" kind="variable"><name>__attribute__</name></member>
+    <member refid="de/d0e/a18398_1a8286ae6db03c34c4bb161accbfbfbbcd" kind="variable"><name>addr</name></member>
+    <member refid="de/d0e/a18398_1a6de3a6d27a7e07942958b912d39792e6" kind="variable"><name>len</name></member>
+    <member refid="de/d0e/a18398_1a6d813a0f2b5281b18dea3f4cda696c33" kind="variable"><name>size</name></member>
+    <member refid="de/d0e/a18398_1a8da1a8c7127a0371eec0810a29e30f3c" kind="variable"><name>type</name></member>
+    <member refid="de/d0e/a18398_1aa6b9a7218d544abc2be2bd335681b0a1" kind="function"><name>__attribute__</name></member>
+  </compound>
+  <compound refid="d1/d33/a18419" kind="file"><name>kdriver.hpp</name>
+    <member refid="d1/d33/a18419_1a14e1e30a5e2cbbd23a1fd111357f9076" kind="define"><name>MAX_NUMDRIVERS</name></member>
+  </compound>
+  <compound refid="d4/d22/a18413" kind="file"><name>kkeyboard.hpp</name>
+  </compound>
+  <compound refid="d2/d18/a18416" kind="file"><name>kmouse.hpp</name>
+    <member refid="d2/d18/a18416_1ac9670c34ae4e43ca669484a7a317e968" kind="define"><name>KMOUSE_COLOR_BLACK</name></member>
+    <member refid="d2/d18/a18416_1a6d83e86a8c6b6046bae502774a4e9e83" kind="define"><name>KMOUSE_COLOR_BLUE</name></member>
+    <member refid="d2/d18/a18416_1a5bc124f24ecf7e9b0b06d181a6fd7a3e" kind="define"><name>KMOUSE_COLOR_BROWN</name></member>
+    <member refid="d2/d18/a18416_1a9660baab3bfc34866b252eff71da777d" kind="define"><name>KMOUSE_COLOR_CYAN</name></member>
+    <member refid="d2/d18/a18416_1a804c656f97148c66dee375ad20d6326e" kind="define"><name>KMOUSE_COLOR_DARK_GREY</name></member>
+    <member refid="d2/d18/a18416_1ae245d853ffcebef06bd052849e35471c" kind="define"><name>KMOUSE_COLOR_GREEN</name></member>
+    <member refid="d2/d18/a18416_1a5882f98f21668e74fbc61e9a3cc4d4c5" kind="define"><name>KMOUSE_COLOR_LIGHT_BLUE</name></member>
+    <member refid="d2/d18/a18416_1ac9391d6382197266f9d814ed3d21bac2" kind="define"><name>KMOUSE_COLOR_LIGHT_CYAN</name></member>
+    <member refid="d2/d18/a18416_1ac874f858f617e42a6376c7092940376c" kind="define"><name>KMOUSE_COLOR_LIGHT_GREEN</name></member>
+    <member refid="d2/d18/a18416_1ab7f5f57837c11ae93f9a3c6ef0bba5a8" kind="define"><name>KMOUSE_COLOR_LIGHT_GREY</name></member>
+    <member refid="d2/d18/a18416_1a5a90c65c80e669968e259e84b095c408" kind="define"><name>KMOUSE_COLOR_LIGHT_MAGENTA</name></member>
+    <member refid="d2/d18/a18416_1acb168549620efee2737255317c814059" kind="define"><name>KMOUSE_COLOR_LIGHT_RED</name></member>
+    <member refid="d2/d18/a18416_1abfe7fa11c53fb1ea1270f0ed00bb18b8" kind="define"><name>KMOUSE_COLOR_MAGENTA</name></member>
+    <member refid="d2/d18/a18416_1a1d9a56551248abc6954bf18c76ddcb74" kind="define"><name>KMOUSE_COLOR_RED</name></member>
+    <member refid="d2/d18/a18416_1abb30f17e5bf0289632c5abbd2d2dd99a" kind="define"><name>KMOUSE_COLOR_WHITE</name></member>
+    <member refid="d2/d18/a18416_1abc652aa810e06ef28716a20cb70d51d4" kind="define"><name>KMOUSE_COLOR_YELLOW</name></member>
+    <member refid="d2/d18/a18416_1a637dd833f5f7af42afa1f42349a4d89e" kind="define"><name>MOUSE_POINTER_COLOR</name></member>
+  </compound>
+  <compound refid="d9/dc6/a18425" kind="file"><name>kgdt.hpp</name>
+    <member refid="d9/dc6/a18425_1ac4461ee84aade9ee824de64d4846ec98" kind="define"><name>GDT_ACCESS_CODE_PL0</name></member>
+    <member refid="d9/dc6/a18425_1a01d908c8637340b21274e0176b320c05" kind="define"><name>GDT_ACCESS_CODE_PL3</name></member>
+    <member refid="d9/dc6/a18425_1a1adfff1c72212b5c4e1df35485bb102a" kind="define"><name>GDT_ACCESS_DATA_PL0</name></member>
+    <member refid="d9/dc6/a18425_1ac7f57dcdd84028460100b6da75ad4938" kind="define"><name>GDT_ACCESS_DATA_PL3</name></member>
+    <member refid="d9/dc6/a18425_1a4941c819dbbef299c391bf53c24caf8d" kind="define"><name>GDT_GRAN_FLAGS</name></member>
+    <member refid="d9/dc6/a18425_1a0d47ea941c3bdfd06858a467d2e76d83" kind="define"><name>SEG_ACCESS_DESCTYPE</name></member>
+    <member refid="d9/dc6/a18425_1ab9e609c85bc4472f4f9b69697f2e5067" kind="define"><name>SEG_ACCESS_PRES</name></member>
+    <member refid="d9/dc6/a18425_1a0cb0ae4ca069ed571a3b2db9190e12df" kind="define"><name>SEG_ACCESS_PRIV</name></member>
+    <member refid="d9/dc6/a18425_1a6c474d3015717ee1a2d99ae6a7b00ec3" kind="define"><name>SEG_ACCESS_TYPE</name></member>
+    <member refid="d9/dc6/a18425_1ae04daf26bdb792ae557ef1216021cc43" kind="define"><name>SEG_CODE_EXRD</name></member>
+    <member refid="d9/dc6/a18425_1add294548173871e30e54b92bf5da2758" kind="define"><name>SEG_DATA_RDWR</name></member>
+    <member refid="d9/dc6/a18425_1ae86357f11d481de7242f3178629241b8" kind="define"><name>SEG_GRAN_GRAN</name></member>
+    <member refid="d9/dc6/a18425_1a9759917f0cd67a1d7c87849e211a7993" kind="define"><name>SEG_GRAN_LONG</name></member>
+    <member refid="d9/dc6/a18425_1a79a943b17e5929ca9e06fc7cc1cb0ccc" kind="define"><name>SEG_GRAN_SAVL</name></member>
+    <member refid="d9/dc6/a18425_1a7667e7c13f08890d3a6051346233691c" kind="define"><name>SEG_GRAN_SIZE</name></member>
+    <member refid="d9/dc6/a18425_1a8b0d6200bc639dd37ff68847a0adde5f" kind="variable"><name>access</name></member>
+    <member refid="d9/dc6/a18425_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kind="variable"><name>base</name></member>
+    <member refid="d9/dc6/a18425_1a1a173457c7aa39c59c008fcc3332d2b3" kind="variable"><name>base_high</name></member>
+    <member refid="d9/dc6/a18425_1a71e21ea67de59991e9a27666a1752a8f" kind="variable"><name>base_low</name></member>
+    <member refid="d9/dc6/a18425_1a6b67e86f6de9204d76adab79069aec29" kind="variable"><name>base_middle</name></member>
+    <member refid="d9/dc6/a18425_1acfea365f69e71368a2db03333d4afd6f" kind="variable"><name>granularity</name></member>
+    <member refid="d9/dc6/a18425_1a42e2af3e7b809f6f5e06ecfecdb504e0" kind="variable"><name>kernel_CS</name></member>
+    <member refid="d9/dc6/a18425_1a1b73e3464fcb9312774f2347e1b7604e" kind="variable"><name>kernel_DS</name></member>
+    <member refid="d9/dc6/a18425_1ab28e82ae69032cb4ad3ec3a0be3d7129" kind="variable"><name>limit</name></member>
+    <member refid="d9/dc6/a18425_1aa7ae5b5a918e00776ff07fb1c58a348d" kind="variable"><name>limit_low</name></member>
+    <member refid="d9/dc6/a18425_1a4facd1fb9d9bd77b1dd234a062c8d9dd" kind="variable"><name>nullSegment</name></member>
+    <member refid="d9/dc6/a18425_1a8d89c16e869ec13a725c780925713916" kind="variable"><name>user_CS</name></member>
+    <member refid="d9/dc6/a18425_1a137b4628cf352225e57720432f2db487" kind="variable"><name>user_DS</name></member>
+    <member refid="d9/dc6/a18425_1ab808423f6529092dc90fcb7836fe024a" kind="function"><name>~GDT</name></member>
+    <member refid="d9/dc6/a18425_1a5322ab07a139d8ae6f9c518b288bde15" kind="function"><name>~GDT_row</name></member>
+    <member refid="d2/d7a/a18434_1a52e3ec8c29cc4bb68f65445749f0bfdb" kind="function"><name>__attribute__</name></member>
+    <member refid="d9/dc6/a18425_1ad6539f5ca5082793a69451b8c1fc6523" kind="function"><name>GDT_row</name></member>
+    <member refid="d9/dc6/a18425_1a24693ad4185e3f70d2be14a964474436" kind="function"><name>GDT_row</name></member>
+    <member refid="d9/dc6/a18425_1a258db7c2f70fd1b20332ee3c00cd1d89" kind="function"><name>installTable</name></member>
+    <member refid="d9/dc6/a18425_1a169aef5ef99da67bb0047dfc3d6a22e4" kind="function"><name>kernel_CS_selector</name></member>
+    <member refid="d9/dc6/a18425_1aaa6fbf4816b6af649fc82186fe18b4e0" kind="function"><name>kernel_DS_selector</name></member>
+    <member refid="d9/dc6/a18425_1a0a72b35b5fcadccd545ee4c5ef7efdd3" kind="function"><name>printLoadedTable</name></member>
+    <member refid="d9/dc6/a18425_1a6aba53071c94f3ffe96befc625602c9c" kind="function"><name>printLoadedTableHeader</name></member>
+    <member refid="d9/dc6/a18425_1a6ef65886fcf664d696b4361309452c2c" kind="function"><name>user_CS_selector</name></member>
+    <member refid="d9/dc6/a18425_1a95dcc3ea7fb0310df8f2ab457deca483" kind="function"><name>user_DS_selector</name></member>
+  </compound>
+  <compound refid="dc/de4/a18422" kind="file"><name>kicxxabi.hpp</name>
+    <member refid="dc/de4/a18422_1ae07a9ad040d2fbefafcff363b77697ce" kind="define"><name>ATEXIT_MAX_FUNCS</name></member>
+    <member refid="dc/de4/a18422_1a35fc01d4eba01f3f2ec636bd6b5ff34f" kind="typedef"><name>uarch_t</name></member>
+    <member refid="d2/d7a/a18434_1a433c3d2d19d89890b522ac26b05fa7aa" kind="function"><name>__callConstructors</name></member>
+    <member refid="d2/d7a/a18434_1a098e7240e26e869c035075be004b4ee9" kind="function"><name>__cxa_finalize</name></member>
+  </compound>
+  <compound refid="d5/d65/a18407" kind="file"><name>kinterrupt.hpp</name>
+    <member refid="d6/d23/a18435_1a21c3ca5c318038eaed596c14fd2666ed" kind="variable"><name>__attribute__</name></member>
+    <member refid="d5/d65/a18407_1a8b0d6200bc639dd37ff68847a0adde5f" kind="variable"><name>access</name></member>
+    <member refid="d5/d65/a18407_1a7884c02f32fe35058379ebdc96c5767c" kind="variable"><name>handlerAddressHighbits</name></member>
+    <member refid="d5/d65/a18407_1adf5df650f7c6f6e7792d97ee2b851265" kind="variable"><name>handlerAddressLowbits</name></member>
+    <member refid="d5/d65/a18407_1acca378f87bf61c0de2befa4244846bfe" kind="variable"><name>kernelCodeSegmentSelector</name></member>
+    <member refid="d5/d65/a18407_1acb7bc06bed6f6408d719334fc41698c7" kind="variable"><name>reserved</name></member>
+    <member refid="d5/d65/a18407_1a3fe23003c5b71fa3b47543c074c38ac3" kind="function"><name>~IDT_row</name></member>
+    <member refid="d6/d23/a18435_1a269f53904f53339ae2df626922b404b2" kind="function"><name>__attribute__</name></member>
+    <member refid="d5/d65/a18407_1adf60fad10b12cc19ad193c928d36445c" kind="function"><name>handleIRQ0x00</name></member>
+    <member refid="d5/d65/a18407_1a6498ed740318b424aaae4db1f223e558" kind="function"><name>handleIRQ0x01</name></member>
+    <member refid="d5/d65/a18407_1a996c60cc7e88bb1c85505c19f6c35117" kind="function"><name>handleIRQ0x0C</name></member>
+    <member refid="d5/d65/a18407_1ab2572e8a0d5fb3acf2373d28ba45ce25" kind="function"><name>IDT_row</name></member>
+    <member refid="d5/d65/a18407_1a07e074bde074261858311b014bc2b398" kind="function"><name>ignoreInterrupt</name></member>
+  </compound>
+  <compound refid="dc/d16/a18410" kind="file"><name>kport.hpp</name>
+  </compound>
+  <compound refid="dc/df9/a18326" kind="file"><name>kiostream.cpp</name>
+    <member refid="dc/df9/a18326_1a887422301cbe9a94f8b96263415640cf" kind="define"><name>MAGIC_HEIGHT</name></member>
+    <member refid="dc/df9/a18326_1a5be9493285a1f50a67d98b887537217d" kind="define"><name>MAGIC_WIDTH</name></member>
+    <member refid="dc/df9/a18326_1a49426d7a9b562958ad2ab7fbf134f368" kind="define"><name>TAB_WIDTH</name></member>
+    <member refid="dc/df9/a18326_1a133981c4ba48aed67a5b874f7b213583" kind="variable"><name>cursor_x_</name></member>
+    <member refid="dc/df9/a18326_1a1bda227f31ddf346294cb531f7554ef3" kind="variable"><name>cursor_y_</name></member>
+    <member refid="dc/df9/a18326_1a32de8112c133d2f05cae84bde7d98239" kind="variable"><name>vgaDataPort</name></member>
+    <member refid="dc/df9/a18326_1a0cece8394c6a6dedd523238e9057125f" kind="variable"><name>vgaIndexPort</name></member>
+    <member refid="dc/df9/a18326_1af382674e4c9fb57a14b178d4ee12273a" kind="function"><name>doubleToString</name></member>
+    <member refid="dc/df9/a18326_1a91bacd34c601c4cfe39f1ffa6c2a1385" kind="function"><name>power</name></member>
+    <member refid="dc/df9/a18326_1a6bd99ada5f7c46567ee0ceca6c369d47" kind="function"><name>printCharStr</name></member>
+    <member refid="dc/df9/a18326_1aab6eb585b409591414f84a1e3f606345" kind="function"><name>printHex</name></member>
+    <member refid="dc/df9/a18326_1a913f40d6652965fdd1e34a04ab7dba2d" kind="function"><name>reverse</name></member>
+    <member refid="dc/df9/a18326_1a14bf754296559bf0266e127e677e8107" kind="function"><name>ullToString</name></member>
+  </compound>
+  <compound refid="db/d8c/a18323" kind="file"><name>kmemory.cpp</name>
+    <member refid="db/d8c/a18323_1afa145befcf5e7b83424408ca503c8637" kind="function"><name>operator delete</name></member>
+    <member refid="db/d8c/a18323_1af057efbdbcd21ea12954d49cd2d245c6" kind="function"><name>operator delete</name></member>
+    <member refid="db/d8c/a18323_1a22aea74a1155aa798d6032da46da2391" kind="function"><name>operator delete[]</name></member>
+    <member refid="db/d8c/a18323_1ab26fe706b29fdeb33d5f6ead76c05815" kind="function"><name>operator delete[]</name></member>
+    <member refid="db/d8c/a18323_1a1a7f24760c8c7ad3bfcd54856d906fc2" kind="function"><name>operator new</name></member>
+    <member refid="db/d8c/a18323_1aa75472ab4b765cf6f6b5b0ebcd4a28c8" kind="function"><name>operator new[]</name></member>
+  </compound>
+  <compound refid="da/df2/a18338" kind="file"><name>kdriver.cpp</name>
+  </compound>
+  <compound refid="d4/d06/a18341" kind="file"><name>kkeyboard.cpp</name>
+  </compound>
+  <compound refid="df/ded/a18344" kind="file"><name>kmouse.cpp</name>
+  </compound>
+  <compound refid="d1/db0/a18347" kind="file"><name>kgdt.cpp</name>
+  </compound>
+  <compound refid="dc/dcc/a18350" kind="file"><name>kicxxabi.cpp</name>
+    <member refid="dc/dcc/a18350_1a0f75f529cf75cf0a9cd266f8d67675dc" kind="variable"><name>__atexit_func_count</name></member>
+    <member refid="dc/dcc/a18350_1a05a64060e9039acf0ba3c311b2d981b7" kind="variable"><name>__atexit_funcs</name></member>
+    <member refid="dc/dcc/a18350_1a19df960d2907e9c08a720ae7683e632c" kind="variable"><name>__dso_handle</name></member>
+    <member refid="dc/dcc/a18350_1a9a50b36f9886cd6bdbe05a5a6639cd95" kind="variable"><name>ctors_end</name></member>
+    <member refid="dc/dcc/a18350_1a201d805094c80d48f8ee4e49ee85fb74" kind="variable"><name>ctors_start</name></member>
+    <member refid="dc/dcc/a18350_1a6870fb46accc462562647e3d99c0b7c7" kind="function"><name>__cxa_atexit</name></member>
+  </compound>
+  <compound refid="dd/d22/a18335" kind="file"><name>kinterrupt.cpp</name>
+    <member refid="dd/d22/a18335_1a1df59a6c3578a3d5d96bfef4ffd8fbc8" kind="variable"><name>installed_interrupt_manager</name></member>
+  </compound>
+  <compound refid="d0/dd0/a18332" kind="file"><name>kport.cpp</name>
+  </compound>
+  <compound refid="dd/d0c/a18353" kind="file"><name>mainpage.dox</name>
+  </compound>
+  <compound refid="dir_531da62a4fcf97761a044fe35931416b" kind="dir"><name>libk_header/basic</name>
+  </compound>
+  <compound refid="dir_7e9b38ff86f40c049b6923d6e5368e6c" kind="dir"><name>libk_src/basic</name>
+  </compound>
+  <compound refid="dir_1a23d90a90b116220e4c9c5e74cdbcbc" kind="dir"><name>libk_header/driver</name>
+  </compound>
+  <compound refid="dir_2a16165def8352030967ba4cc3f6fbb5" kind="dir"><name>libk_src/driver</name>
+  </compound>
+  <compound refid="dir_c2bb8e66a15659afc0e54f8e919ef455" kind="dir"><name>libk_header/essential</name>
+  </compound>
+  <compound refid="dir_505766543fcc8e90c13299eca156d2a2" kind="dir"><name>libk_src/essential</name>
+  </compound>
+  <compound refid="dir_53afcd4fba698aab0c6227766ed2d23a" kind="dir"><name>libk_header/hardware_communication</name>
+  </compound>
+  <compound refid="dir_307d8ab59745c14449bc3f31f9f132b2" kind="dir"><name>libk_src/hardware_communication</name>
+  </compound>
+  <compound refid="dir_8d71b6a3da26db487d68cf8b27265d88" kind="dir"><name>kernel_src</name>
+  </compound>
+  <compound refid="dir_72b26adc0987810216370bc6a776b23e" kind="dir"><name>libk_header</name>
+  </compound>
+  <compound refid="dir_d52aa9bb707950f8d968213103b69dbf" kind="dir"><name>libk_src</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

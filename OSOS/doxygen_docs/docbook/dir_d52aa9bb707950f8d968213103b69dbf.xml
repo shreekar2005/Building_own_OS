@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_d52aa9bb707950f8d968213103b69dbf" xml:lang="en-US">
+<title>libk_src Directory Reference</title>
+<indexterm><primary>libk_src Directory Reference</primary></indexterm>
+Directory dependency graph for libk_src:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_d52aa9bb707950f8d968213103b69dbf_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_7e9b38ff86f40c049b6923d6e5368e6c">basic</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_2a16165def8352030967ba4cc3f6fbb5">driver</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_505766543fcc8e90c13299eca156d2a2">essential</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_307d8ab59745c14449bc3f31f9f132b2">hardware_communication</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

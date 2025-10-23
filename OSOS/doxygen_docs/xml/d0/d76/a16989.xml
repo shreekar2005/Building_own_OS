@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d0/d76/a16989" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>hardware_communication::Port32Bit</compoundname>
+    <basecompoundref refid="da/de0/a16973" prot="public" virt="non-virtual">hardware_communication::Port</basecompoundref>
+    <includes refid="d2/d8b/a16028" local="yes">kport.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d76/a16989_1a507afa8607757baedf1789d73c2a173d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::Port32Bit::Port32Bit</definition>
+        <argsstring>(uint16_t portnumber)</argsstring>
+        <name>Port32Bit</name>
+        <qualifiedname>hardware_communication::Port32Bit::Port32Bit</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>portnumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kport.hpp" line="82" column="22" bodyfile="libk_src/hardware_communication/kport.cpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d76/a16989_1a3e87dc7d610b279e8e7e072a0d1ee78c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::Port32Bit::~Port32Bit</definition>
+        <argsstring>() override</argsstring>
+        <name>~Port32Bit</name>
+        <qualifiedname>hardware_communication::Port32Bit::~Port32Bit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kport.hpp" line="83" column="13" bodyfile="libk_src/hardware_communication/kport.cpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d76/a16989_1a41093c437a9508f984c90ae68e9c03bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t hardware_communication::Port32Bit::read</definition>
+        <argsstring>()</argsstring>
+        <name>read</name>
+        <qualifiedname>hardware_communication::Port32Bit::read</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kport.hpp" line="86" column="22" bodyfile="libk_src/hardware_communication/kport.cpp" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d76/a16989_1a64a16fe840224ef769ab2933770d1b21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::Port32Bit::write</definition>
+        <argsstring>(uint32_t data)</argsstring>
+        <name>write</name>
+        <qualifiedname>hardware_communication::Port32Bit::write</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kport.hpp" line="85" column="18" bodyfile="libk_src/hardware_communication/kport.cpp" bodystart="50" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="da/de0/a16973_1aab0c5c82b0190df88ddbb595bfac539a" prot="protected" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hardware_communication::Port::portnumber</definition>
+        <argsstring></argsstring>
+        <name>portnumber</name>
+        <qualifiedname>hardware_communication::Port::portnumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/hardware_communication/kport.hpp" line="13" column="22" bodyfile="libk_header/hardware_communication/kport.hpp" bodystart="13" bodyend="-1"/>
+        <referencedby refid="da/de0/a16973_1ad001c21b67d4c138f65024f167030cca" compoundref="d0/de1/a15980" startline="3" endline="5">hardware_communication::Port::Port</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>hardware_communication::Port</label>
+        <link refid="da/de0/a16973"/>
+      </node>
+      <node id="1">
+        <label>hardware_communication::Port32Bit</label>
+        <link refid="d0/d76/a16989"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>hardware_communication::Port</label>
+        <link refid="da/de0/a16973"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#portnumber</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>hardware_communication::Port32Bit</label>
+        <link refid="d0/d76/a16989"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>uint16_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="libk_header/hardware_communication/kport.hpp" line="80" column="9" bodyfile="libk_header/hardware_communication/kport.hpp" bodystart="80" bodyend="87"/>
+    <listofallmembers>
+      <member refid="da/de0/a16973_1ad001c21b67d4c138f65024f167030cca" prot="protected" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>Port</name></member>
+      <member refid="d0/d76/a16989_1a507afa8607757baedf1789d73c2a173d" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>Port32Bit</name></member>
+      <member refid="da/de0/a16973_1aab0c5c82b0190df88ddbb595bfac539a" prot="protected" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>portnumber</name></member>
+      <member refid="d0/d76/a16989_1a41093c437a9508f984c90ae68e9c03bf" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>read</name></member>
+      <member refid="d0/d76/a16989_1a64a16fe840224ef769ab2933770d1b21" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>write</name></member>
+      <member refid="da/de0/a16973_1a8b13c33da4911afcbdcb21c97768a72e" prot="public" virt="virtual"><scope>hardware_communication::Port32Bit</scope><name>~Port</name></member>
+      <member refid="d0/d76/a16989_1a3e87dc7d610b279e8e7e072a0d1ee78c" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>~Port32Bit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

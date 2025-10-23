@@ -1,0 +1,96 @@
+.TH "hardware_communication::Port8BitSlow" 3 "Thu Oct 23 2025 23:53:37" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hardware_communication::Port8BitSlow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'kport\&.hpp'\fP
+.PP
+Inherits \fBhardware_communication::Port8Bit\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPort8BitSlow\fP (uint16_t \fBportnumber\fP)"
+.br
+.ti -1c
+.RI "\fB~Port8BitSlow\fP () override"
+.br
+.ti -1c
+.RI "uint8_t \fBread\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (uint8_t data) override"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBportnumber\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB45\fP of file \fBkport\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "hardware_communication::Port8BitSlow::Port8BitSlow (uint16_t portnumber)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB24\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+24 :hardware_communication::Port8Bit(portnumber){} 
+.fi
+
+.SS "hardware_communication::Port8BitSlow::~Port8BitSlow ()\fC [override]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+25 {}
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "uint8_t hardware_communication::Port8Bit::read ()\fC [inherited]\fP"
+
+.PP
+Definition at line \fB16\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+16                                             {
+17     uint8_t result;
+18     __asm__ volatile("inb %1, %0" :"=a"(result) : "Nd"(portnumber));
+19     return result;
+20 }
+.fi
+
+.PP
+Referenced by \fBbasic::enable_cursor()\fP\&.
+.SS "void hardware_communication::Port8BitSlow::write (uint8_t data)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBhardware_communication::Port8Bit\fP\&.
+.PP
+Definition at line \fB27\fP of file \fBkport\&.cpp\fP\&..PP
+.nf
+27                                                           {
+28     __asm__ volatile("outb %0, %1 \\n jmp 1f \\n 1: jmp 1f\\n 1:" : : "a"(data), "Nd"(portnumber));
+29 }
+.fi
+
+.SH "Member Data Documentation"
+.PP 
+.SS "uint16_t hardware_communication::Port::portnumber\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line \fB13\fP of file \fBkport\&.hpp\fP\&.
+.PP
+Referenced by \fBhardware_communication::Port::Port()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

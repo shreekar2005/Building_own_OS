@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="db/dd5/a16877" kind="struct" language="C++" prot="public">
+    <compoundname>multiboot_header</compoundname>
+    <includes refid="d5/d7c/a16016" local="yes">multiboot.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/dd5/a16877_1ab4f2496ec9b0d1a95985929d281dfa19" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::bss_end_addr</definition>
+        <argsstring></argsstring>
+        <name>bss_end_addr</name>
+        <qualifiedname>multiboot_header::bss_end_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="116" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1a17e73abddfe8264c254767a20099038d" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::checksum</definition>
+        <argsstring></argsstring>
+        <name>checksum</name>
+        <qualifiedname>multiboot_header::checksum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="110" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1aba85b53dc3af1bf99c71292a776e9dff" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::depth</definition>
+        <argsstring></argsstring>
+        <name>depth</name>
+        <qualifiedname>multiboot_header::depth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="123" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1ac3d807775a9d69730e6698dcdcf6491e" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::entry_addr</definition>
+        <argsstring></argsstring>
+        <name>entry_addr</name>
+        <qualifiedname>multiboot_header::entry_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="117" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1ab922f32c179ec7bde91519d19f27d95b" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <qualifiedname>multiboot_header::flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="107" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1a9718b2fc6ce29a37e9a209f92ab856e3" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::header_addr</definition>
+        <argsstring></argsstring>
+        <name>header_addr</name>
+        <qualifiedname>multiboot_header::header_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="113" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1a055c5e6553ea032897ad50a12f998a17" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>multiboot_header::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="122" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1a99de1cf326c46c76c6039f317b7a1ef2" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::load_addr</definition>
+        <argsstring></argsstring>
+        <name>load_addr</name>
+        <qualifiedname>multiboot_header::load_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="114" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1ac9efc1a4c3cd18f286b2fd50ff052e31" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::load_end_addr</definition>
+        <argsstring></argsstring>
+        <name>load_end_addr</name>
+        <qualifiedname>multiboot_header::load_end_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="115" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1a7fddee92e60ff58e159c6bf2c40bf29b" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::magic</definition>
+        <argsstring></argsstring>
+        <name>magic</name>
+        <qualifiedname>multiboot_header::magic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="104" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1a4c90b7929342dd5aab7d08afa0906d28" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::mode_type</definition>
+        <argsstring></argsstring>
+        <name>mode_type</name>
+        <qualifiedname>multiboot_header::mode_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="120" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dd5/a16877_1ad72a1a3dd608e73c818d0c27974def40" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d7c/a16016_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_header::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>multiboot_header::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="121" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>int</label>
+      </node>
+      <node id="1">
+        <label>multiboot_header</label>
+        <link refid="db/dd5/a16877"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+bss_end_addr</edgelabel>
+          <edgelabel>+checksum</edgelabel>
+          <edgelabel>+depth</edgelabel>
+          <edgelabel>+entry_addr</edgelabel>
+          <edgelabel>+flags</edgelabel>
+          <edgelabel>+header_addr</edgelabel>
+          <edgelabel>+height</edgelabel>
+          <edgelabel>+load_addr</edgelabel>
+          <edgelabel>+load_end_addr</edgelabel>
+          <edgelabel>+magic</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libk_header/basic/multiboot.hpp" line="101" column="1" bodyfile="libk_header/basic/multiboot.hpp" bodystart="102" bodyend="124"/>
+    <listofallmembers>
+      <member refid="db/dd5/a16877_1ab4f2496ec9b0d1a95985929d281dfa19" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>bss_end_addr</name></member>
+      <member refid="db/dd5/a16877_1a17e73abddfe8264c254767a20099038d" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>checksum</name></member>
+      <member refid="db/dd5/a16877_1aba85b53dc3af1bf99c71292a776e9dff" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>depth</name></member>
+      <member refid="db/dd5/a16877_1ac3d807775a9d69730e6698dcdcf6491e" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>entry_addr</name></member>
+      <member refid="db/dd5/a16877_1ab922f32c179ec7bde91519d19f27d95b" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>flags</name></member>
+      <member refid="db/dd5/a16877_1a9718b2fc6ce29a37e9a209f92ab856e3" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>header_addr</name></member>
+      <member refid="db/dd5/a16877_1a055c5e6553ea032897ad50a12f998a17" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>height</name></member>
+      <member refid="db/dd5/a16877_1a99de1cf326c46c76c6039f317b7a1ef2" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>load_addr</name></member>
+      <member refid="db/dd5/a16877_1ac9efc1a4c3cd18f286b2fd50ff052e31" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>load_end_addr</name></member>
+      <member refid="db/dd5/a16877_1a7fddee92e60ff58e159c6bf2c40bf29b" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>magic</name></member>
+      <member refid="db/dd5/a16877_1a4c90b7929342dd5aab7d08afa0906d28" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>mode_type</name></member>
+      <member refid="db/dd5/a16877_1ad72a1a3dd608e73c818d0c27974def40" prot="public" virt="non-virtual"><scope>multiboot_header</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

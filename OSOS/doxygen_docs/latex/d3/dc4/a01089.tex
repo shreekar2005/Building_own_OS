@@ -1,0 +1,172 @@
+\doxysubsection{hardware\+\_\+communication\+::Port8\+Bit}
+\hypertarget{a01089}{}\label{a01089}\index{hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}}
+
+
+{\ttfamily \#include "{}kport.\+hpp"{}}
+
+
+
+Inheritance diagram for hardware\+\_\+communication\+::Port8\+Bit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{da/db7/a01088}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for hardware\+\_\+communication\+::Port8\+Bit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{d0/d1f/a01087}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01089_a057109ca3c28fbb9064c60ba5cdb1190}{Port8\+Bit}} (uint16\+\_\+t \mbox{\hyperlink{a01085_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}})
+\item 
+virtual \mbox{\hyperlink{a01089_a475bc218672c5743a9f8425cc84eb630}{\texorpdfstring{$\sim$}{\string~}\+Port8\+Bit}} () override
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a01089_ae8688251b574c3fd335b99f7e93fff2d}{read}} ()
+\item 
+virtual void \mbox{\hyperlink{a01089_a523b6a757b27418dc015ed13e74bef60}{write}} (uint8\+\_\+t data)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{a01085_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{a00137_source_l00030}{30}} of file \mbox{\hyperlink{a00137_source}{kport.\+hpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01089_a057109ca3c28fbb9064c60ba5cdb1190}\label{a01089_a057109ca3c28fbb9064c60ba5cdb1190} 
+\index{hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}!Port8Bit@{Port8Bit}}
+\index{Port8Bit@{Port8Bit}!hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}}
+\doxyparagraph{\texorpdfstring{Port8Bit()}{Port8Bit()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Port8\+Bit\+::\+Port8\+Bit (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{portnumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00059_source_l00010}{10}} of file \mbox{\hyperlink{a00059_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ :\mbox{\hyperlink{a01085_ad001c21b67d4c138f65024f167030cca}{Port}}(\mbox{\hyperlink{a01085_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}})\{\}\ }
+
+\end{DoxyCode}
+\Hypertarget{a01089_a475bc218672c5743a9f8425cc84eb630}\label{a01089_a475bc218672c5743a9f8425cc84eb630} 
+\index{hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}!````~Port8Bit@{\texorpdfstring{$\sim$}{\string~}Port8Bit}}
+\index{````~Port8Bit@{\texorpdfstring{$\sim$}{\string~}Port8Bit}!hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Port8Bit()}{\string~Port8Bit()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Port8\+Bit\+::\texorpdfstring{$\sim$}{\string~}\+Port8\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00059_source_l00011}{11}} of file \mbox{\hyperlink{a00059_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a01089_ae8688251b574c3fd335b99f7e93fff2d}\label{a01089_ae8688251b574c3fd335b99f7e93fff2d} 
+\index{hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}!read@{read}}
+\index{read@{read}!hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}}
+\doxyparagraph{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily uint8\+\_\+t hardware\+\_\+communication\+::\+Port8\+Bit\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a00059_source_l00016}{16}} of file \mbox{\hyperlink{a00059_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ uint8\_t\ result;}
+\DoxyCodeLine{00018\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}inb\ \%1,\ \%0"{}}\ :\textcolor{stringliteral}{"{}=a"{}}(result)\ :\ \textcolor{stringliteral}{"{}Nd"{}}(\mbox{\hyperlink{a01085_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}}));}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00017}{basic\+::enable\+\_\+cursor()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dc4/a01089_ae8688251b574c3fd335b99f7e93fff2d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a01089_a523b6a757b27418dc015ed13e74bef60}\label{a01089_a523b6a757b27418dc015ed13e74bef60} 
+\index{hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}!write@{write}}
+\index{write@{write}!hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}}
+\doxyparagraph{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Port8\+Bit\+::write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{a01093_af84b15d5a205a421a9877e2341714031}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}}.
+
+
+
+Definition at line \mbox{\hyperlink{a00059_source_l00013}{13}} of file \mbox{\hyperlink{a00059_source}{kport.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}outb\ \%0,\ \%1"{}}\ :\ :\ \textcolor{stringliteral}{"{}a"{}}(data),\ \textcolor{stringliteral}{"{}Nd"{}}(\mbox{\hyperlink{a01085_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}}));}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{a00053_source_l00035}{basic\+::disable\+\_\+cursor()}}, \mbox{\hyperlink{a00053_source_l00017}{basic\+::enable\+\_\+cursor()}}, and \mbox{\hyperlink{a00053_source_l00025}{basic\+::update\+\_\+cursor()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dc4/a01089_a523b6a757b27418dc015ed13e74bef60_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{a01085_aab0c5c82b0190df88ddbb595bfac539a}\label{a01085_aab0c5c82b0190df88ddbb595bfac539a} 
+\index{hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}!portnumber@{portnumber}}
+\index{portnumber@{portnumber}!hardware\_communication::Port8Bit@{hardware\_communication::Port8Bit}}
+\doxyparagraph{\texorpdfstring{portnumber}{portnumber}}
+{\footnotesize\ttfamily uint16\+\_\+t hardware\+\_\+communication\+::\+Port\+::portnumber\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{a00137_source_l00013}{13}} of file \mbox{\hyperlink{a00137_source}{kport.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00059_source_l00003}{hardware\+\_\+communication\+::\+Port\+::\+Port()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libk\+\_\+header/hardware\+\_\+communication/\mbox{\hyperlink{a00137}{kport.\+hpp}}\item 
+libk\+\_\+src/hardware\+\_\+communication/\mbox{\hyperlink{a00059}{kport.\+cpp}}\end{DoxyCompactItemize}

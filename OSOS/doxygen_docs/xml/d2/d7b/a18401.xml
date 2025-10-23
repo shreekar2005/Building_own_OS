@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d2/d7b/a18401" kind="file" language="C++">
+    <compoundname>kmemory.hpp</compoundname>
+    <includes refid="d3/d63/a18404" local="yes">basic/kiostream.hpp</includes>
+    <includes refid="de/d0e/a18398" local="yes">basic/multiboot.hpp</includes>
+    <includes local="no">cstddef</includes>
+    <includedby refid="d2/dba/a18362" local="yes">kernel_src/kernel.cpp</includedby>
+    <includedby refid="db/d8c/a18323" local="yes">libk_src/basic/kmemory.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>basic/kiostream.hpp</label>
+        <link refid="d3/d63/a18404"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>libk_header/basic/kmemory.hpp</label>
+        <link refid="d2/d7b/a18401"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>basic/multiboot.hpp</label>
+        <link refid="de/d0e/a18398"/>
+      </node>
+      <node id="5">
+        <label>hardware_communication/kport.hpp</label>
+        <link refid="dc/d16/a18410"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstdarg</label>
+      </node>
+      <node id="7">
+        <label>cstddef</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kernel_src/kernel.cpp</label>
+        <link refid="d2/dba/a18362"/>
+      </node>
+      <node id="1">
+        <label>libk_header/basic/kmemory.hpp</label>
+        <link refid="d2/d7b/a18401"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>libk_src/basic/kmemory.cpp</label>
+        <link refid="db/d8c/a18323"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="d1/d22/a18432">basic</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d1/d22/a18432_1a53c6425a55d9fb93998da01f2416f9ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void basic::__printMemoryMap</definition>
+        <argsstring>(multiboot_info_t *mbi)</argsstring>
+        <name>__printMemoryMap</name>
+        <qualifiedname>basic::__printMemoryMap</qualifiedname>
+        <param>
+          <type>multiboot_info_t *</type>
+          <declname>mbi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/kmemory.hpp" line="7" column="14" bodyfile="libk_src/basic/kmemory.cpp" bodystart="3" bodyend="55" declfile="libk_header/basic/kmemory.hpp" declline="7" declcolumn="14"/>
+        <references refid="de/d0e/a18398_1af35be82586f332a561d00207c937ee57" compoundref="de/d0e/a18398" startline="239">MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</references>
+        <references refid="de/d0e/a18398_1a7fe141351ebcde0acbd6118ad0ea1a21" compoundref="de/d0e/a18398" startline="237">MULTIBOOT_MEMORY_AVAILABLE</references>
+        <references refid="de/d0e/a18398_1a1604ec18ac949d88dab993904b08c075" compoundref="de/d0e/a18398" startline="241">MULTIBOOT_MEMORY_BADRAM</references>
+        <references refid="de/d0e/a18398_1a68f78286f7434d373a82f1b6f6473c72" compoundref="de/d0e/a18398" startline="240">MULTIBOOT_MEMORY_NVS</references>
+        <references refid="de/d0e/a18398_1a0299aedc71e1f6707181471bafb18e7c" compoundref="de/d0e/a18398" startline="238">MULTIBOOT_MEMORY_RESERVED</references>
+        <references refid="d1/d22/a18432_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="dc/df9/a18326" startline="276" endline="472">basic::printf</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_OSOS_BASIC_KMEMORY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_OSOS_BASIC_KMEMORY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="d3/d63/a18404" kindref="compound">basic/kiostream.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="de/d0e/a18398" kindref="compound">basic/multiboot.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d1/d22/a18432" kindref="compound">basic</ref>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d22/a18432_1a53c6425a55d9fb93998da01f2416f9ad" kindref="member">__printMemoryMap</ref>(multiboot_info_t<sp/>*mbi);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="libk_header/basic/kmemory.hpp"/>
+  </compounddef>
+</doxygen>

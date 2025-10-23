@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a04304" xml:lang="en-US">
+<title>kernel_src/kernel.cpp File Reference</title>
+<indexterm><primary>kernel_src/kernel.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;cstdint&gt;<?linebreak?>#include &quot;basic/multiboot.hpp&quot;<?linebreak?>#include &quot;essential/kicxxabi.hpp&quot;<?linebreak?>#include &quot;basic/kiostream.hpp&quot;<?linebreak?>#include &quot;basic/kmemory.hpp&quot;<?linebreak?>#include &quot;essential/kgdt.hpp&quot;<?linebreak?>#include &quot;hardware_communication/kinterrupt.hpp&quot;<?linebreak?>#include &quot;driver/kkeyboard.hpp&quot;<?linebreak?>#include &quot;driver/kmouse.hpp&quot;<?linebreak?>#include &quot;driver/kdriver.hpp&quot;<?linebreak?></programlisting>Include dependency graph for kernel.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/df8/a04305.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a05193">KeyboardEventHandler_for_kernel</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_a05197">MouseEventHandler_for_kernel</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a04304_1abb4e4866092116b520310d61961bfe12">kernelMain</link> (multiboot_info_t *mbi, uint32_t magicnumber)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a04304_1abb4e4866092116b520310d61961bfe12"/><section>
+    <title>kernelMain()</title>
+<indexterm><primary>kernelMain</primary><secondary>kernel.cpp</secondary></indexterm>
+<indexterm><primary>kernel.cpp</primary><secondary>kernelMain</secondary></indexterm>
+<para><computeroutput>void kernelMain (multiboot_info_t * mbi, uint32_t magicnumber)</computeroutput></para><para>
+Definition at line <link linkend="_a04304_source_1l00085">85</link> of file <link linkend="_a04304_source">kernel.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00086 {
+00087 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;int&#32;a=1/0;</emphasis>
+00088 &#32;&#32;&#32;&#32;<link linkend="_a04376_1a433c3d2d19d89890b522ac26b05fa7aa">essential::__callConstructors</link>();
+00089 &#32;&#32;&#32;&#32;<link linkend="_a04374_1a8ca6648639f335b207c748074dcf9f25">basic::enable_cursor</link>(0,15);&#32;<emphasis role="comment">//&#32;(0,15)&#32;is&#32;for&#32;blinking&#32;block</emphasis>
+00090 &#32;&#32;&#32;&#32;<link linkend="_a04374_1a02923caa95013ec5d9333c25d9cca1d6">basic::__clearScreen</link>();
+00091 &#32;&#32;&#32;&#32;<emphasis role="comment">//-------------Global&#32;Descriptor&#32;Table&#32;-------------</emphasis>
+00092 &#32;&#32;&#32;&#32;<link linkend="_a05277">essential::GDT</link>&#32;osos_GDT;
+00093 &#32;&#32;&#32;&#32;osos_GDT.<link linkend="_a05277_1af8e3c1da270077eb7cc6551b35c0e5ca">installTable</link>();
+00094 &#32;&#32;&#32;&#32;<emphasis role="comment">//------------Interrupt&#32;Descriptor&#32;Table&#32;and&#32;Drivers&#32;-------------</emphasis>
+00095 &#32;&#32;&#32;&#32;<link linkend="_a05293">hardware_communication::InterruptManager</link>&#32;osos_InterruptManager(&amp;osos_GDT);
+00096 &#32;&#32;&#32;&#32;osos_InterruptManager.installTable();
+00097 &#32;&#32;&#32;&#32;
+00098 &#32;&#32;&#32;&#32;<emphasis role="comment">//------------Creating&#32;object&#32;of&#32;drivers&#32;so&#32;that&#32;they&#32;will&#32;handle&#32;their&#32;corresponding&#32;Interrupts------------</emphasis>
+00099 &#32;&#32;&#32;&#32;<link linkend="_a05253">driver::DriverManager</link>&#32;driverManager;
+00100 
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a05193">KeyboardEventHandler_for_kernel</link>&#32;keyboardEventHandler_for_kernel;
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a05261">driver::KeyboardDriver</link>&#32;keyboard(&amp;osos_InterruptManager,&amp;keyboardEventHandler_for_kernel);
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;driverManager.<link linkend="_a05253_1ab8bd89b91ea49f343276c3c841153cd8">addDriver</link>(&amp;keyboard);
+00104 
+00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a05197">MouseEventHandler_for_kernel</link>&#32;mouseEventHandler_for_kernel;
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a05269">driver::MouseDriver</link>&#32;mouse(&amp;osos_InterruptManager,&#32;&amp;mouseEventHandler_for_kernel);
+00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;driverManager.<link linkend="_a05253_1ab8bd89b91ea49f343276c3c841153cd8">addDriver</link>(&amp;mouse);
+00108 
+00109 &#32;&#32;&#32;&#32;driverManager.<link linkend="_a05253_1a05b071d8a8c12f2d284fb61f4ecd116e">activateAll</link>();
+00110 
+00111 &#32;&#32;&#32;&#32;<link linkend="_a05293_1a1ab5b6378071338ede295f0bffaf3d51">hardware_communication::InterruptManager::activate</link>();
+00112 &#32;&#32;&#32;&#32;
+00113 &#32;&#32;&#32;&#32;<link linkend="_a05277_1a2ae998750fc1e18e6778e92774bd3574">essential::GDT::printLoadedTableHeader</link>();
+00114 &#32;&#32;&#32;&#32;<link linkend="_a05293_1ad8a6f694662a3a36ba9353197e20c1b1">hardware_communication::InterruptManager::printLoadedTableHeader</link>();
+00115 &#32;&#32;&#32;&#32;<link linkend="_a04374_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;HELLO&#32;FROM&#32;OSOS&#32;:)\n&quot;</emphasis>);
+00116 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(<emphasis role="keyword">true</emphasis>){};
+00117 
+00118 &#32;&#32;&#32;&#32;<link linkend="_a04374_1a4b31902bf2cff8ff28405aa57d9f4575">basic::disable_cursor</link>();
+00119 &#32;&#32;&#32;&#32;<link linkend="_a04376_1a098e7240e26e869c035075be004b4ee9">essential::__cxa_finalize</link>(0);
+00120 &#32;&#32;&#32;&#32;(void)mbi;
+00121 &#32;&#32;&#32;&#32;(void)magicnumber;
+00122 }
+</programlisting><para>
+References <link linkend="_a04292_source_1l00006">essential::__callConstructors()</link>, <link linkend="_a04268_source_1l00118">basic::__clearScreen()</link>, <link linkend="_a04292_source_1l00040">essential::__cxa_finalize()</link>, <link linkend="_a04277_source_1l00108">hardware_communication::InterruptManager::activate()</link>, <link linkend="_a04280_source_1l00017">driver::DriverManager::activateAll()</link>, <link linkend="_a04280_source_1l00012">driver::DriverManager::addDriver()</link>, <link linkend="_a04268_source_1l00035">basic::disable_cursor()</link>, <link linkend="_a04268_source_1l00017">basic::enable_cursor()</link>, <link linkend="_a04289_source_1l00046">essential::GDT::installTable()</link>, <link linkend="_a04277_source_1l00091">hardware_communication::InterruptManager::installTable()</link>, <link linkend="_a04268_source_1l00276">basic::printf()</link>, <link linkend="_a04289_source_1l00120">essential::GDT::printLoadedTableHeader()</link>, and <link linkend="_a04277_source_1l00151">hardware_communication::InterruptManager::printLoadedTableHeader()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dd/deb/a04304_abb4e4866092116b520310d61961bfe12_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

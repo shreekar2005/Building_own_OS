@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a07608" xml:lang="en-US">
+<title>driver::MouseEventHandler</title>
+<indexterm><primary>driver::MouseEventHandler</primary></indexterm>
+<para>
+<computeroutput>#include &quot;kmouse.hpp&quot;</computeroutput>
+</para>
+Inheritance diagram for driver::MouseEventHandler:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d2/d08/a07607.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for driver::MouseEventHandler:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/dd4/a07606.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a07608_1aa0fd3739c52bcd4d553cefaf41760a9b">MouseEventHandler</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_a07608_1abbfe4a7ae2911f989513178530314211">~MouseEventHandler</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a07608_1a2f12c5f63356c3045fd6cb46fd89374f">onMouseDown</link> (uint8_t button)=0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a07608_1a68f635b3b65f927d37d4e0835f7e0b30">onMouseMove</link> (int8_t delta_x, int8_t delta_y)=0</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_a07608_1a09b77fe86bfa79313b5c5b91d09eb514">onMouseUp</link> (uint8_t button)=0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_a06701_source_1l00029">29</link> of file <link linkend="_a06701_source">kmouse.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a07608_1aa0fd3739c52bcd4d553cefaf41760a9b"/><section>
+    <title>MouseEventHandler()</title>
+<indexterm><primary>MouseEventHandler</primary><secondary>driver::MouseEventHandler</secondary></indexterm>
+<indexterm><primary>driver::MouseEventHandler</primary><secondary>MouseEventHandler</secondary></indexterm>
+<para><computeroutput>driver::MouseEventHandler::MouseEventHandler ( )</computeroutput></para><para>
+Definition at line <link linkend="_a06629_source_1l00005">5</link> of file <link linkend="_a06629_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00005 {}
+</programlisting></section>
+<anchor xml:id="_a07608_1abbfe4a7ae2911f989513178530314211"/><section>
+    <title>~MouseEventHandler()</title>
+<indexterm><primary>~MouseEventHandler</primary><secondary>driver::MouseEventHandler</secondary></indexterm>
+<indexterm><primary>driver::MouseEventHandler</primary><secondary>~MouseEventHandler</secondary></indexterm>
+<para><computeroutput>driver::MouseEventHandler::~MouseEventHandler ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06629_source_1l00006">6</link> of file <link linkend="_a06629_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00006 {}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a07608_1a2f12c5f63356c3045fd6cb46fd89374f"/><section>
+    <title>onMouseDown()</title>
+<indexterm><primary>onMouseDown</primary><secondary>driver::MouseEventHandler</secondary></indexterm>
+<indexterm><primary>driver::MouseEventHandler</primary><secondary>onMouseDown</secondary></indexterm>
+<para><computeroutput>virtual void driver::MouseEventHandler::onMouseDown (uint8_t button)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a07540_1ae860a16e70322e5c4bb01e1108e50bb1">MouseEventHandler_for_kernel</link>.</para>
+</section>
+<anchor xml:id="_a07608_1a68f635b3b65f927d37d4e0835f7e0b30"/><section>
+    <title>onMouseMove()</title>
+<indexterm><primary>onMouseMove</primary><secondary>driver::MouseEventHandler</secondary></indexterm>
+<indexterm><primary>driver::MouseEventHandler</primary><secondary>onMouseMove</secondary></indexterm>
+<para><computeroutput>virtual void driver::MouseEventHandler::onMouseMove (int8_t delta_x, int8_t delta_y)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a07540_1adbb4c4e2814b335579119c324313f652">MouseEventHandler_for_kernel</link>.</para>
+<para>
+Referenced by <link linkend="_a06629_source_1l00032">driver::MouseDriver::handleInterrupt()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d5f/a07608_a68f635b3b65f927d37d4e0835f7e0b30_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a07608_1a09b77fe86bfa79313b5c5b91d09eb514"/><section>
+    <title>onMouseUp()</title>
+<indexterm><primary>onMouseUp</primary><secondary>driver::MouseEventHandler</secondary></indexterm>
+<indexterm><primary>driver::MouseEventHandler</primary><secondary>onMouseUp</secondary></indexterm>
+<para><computeroutput>virtual void driver::MouseEventHandler::onMouseUp (uint8_t button)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+Implemented in <link linkend="_a07540_1afca536c2187a65da265daa2d2af75d4d">MouseEventHandler_for_kernel</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+libk_header/driver/<link linkend="_a06701">kmouse.hpp</link>libk_src/driver/<link linkend="_a06629">kmouse.cpp</link></section>
+</section>

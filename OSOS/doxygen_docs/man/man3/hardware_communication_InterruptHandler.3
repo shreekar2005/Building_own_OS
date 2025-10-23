@@ -1,0 +1,92 @@
+.TH "hardware_communication::InterruptHandler" 3 "Thu Oct 23 2025 23:53:37" "OSOS - 32-bit Operating System" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hardware_communication::InterruptHandler
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'kinterrupt\&.hpp'\fP
+.PP
+Inherited by \fBdriver::KeyboardDriver\fP, and \fBdriver::MouseDriver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual uintptr_t \fBhandleInterrupt\fP (uintptr_t esp)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInterruptHandler\fP (uint8_t \fBinterruptNumber\fP, \fBInterruptManager\fP *\fBinterrupt_manager\fP)"
+.br
+.ti -1c
+.RI "\fB~InterruptHandler\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBInterruptManager\fP * \fBinterrupt_manager\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBinterruptNumber\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB23\fP of file \fBkinterrupt\&.hpp\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "hardware_communication::InterruptHandler::InterruptHandler (uint8_t interruptNumber, \fBhardware_communication::InterruptManager\fP * interrupt_manager)\fC [protected]\fP"
+
+.PP
+Definition at line \fB11\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+11                                                                                                                                           {
+12     this\->interruptNumber=interruptNumber;
+13     this\->interrupt_manager=interrupt_manager;
+14     interrupt_manager\->handlers[interruptNumber]=this;
+15 }
+.fi
+
+.PP
+References \fBhardware_communication::InterruptManager::handlers\fP, \fBinterrupt_manager\fP, and \fBinterruptNumber\fP\&.
+.SS "hardware_communication::InterruptHandler::~InterruptHandler ()\fC [protected]\fP"
+
+.PP
+Definition at line \fB16\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+.nf
+16                                                          {
+17     if(interrupt_manager\->handlers[interruptNumber]==this) interrupt_manager\->handlers[interruptNumber]=nullptr;
+18 }
+.fi
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual uintptr_t hardware_communication::InterruptHandler::handleInterrupt (uintptr_t esp)\fC [pure virtual]\fP"
+
+.PP
+Referenced by \fBhardware_communication::InterruptManager::handleInterrupt()\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBInterruptManager\fP* hardware_communication::InterruptHandler::interrupt_manager\fC [protected]\fP"
+
+.PP
+Definition at line \fB26\fP of file \fBkinterrupt\&.hpp\fP\&.
+.PP
+Referenced by \fBInterruptHandler()\fP\&.
+.SS "uint8_t hardware_communication::InterruptHandler::interruptNumber\fC [protected]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBkinterrupt\&.hpp\fP\&.
+.PP
+Referenced by \fBInterruptHandler()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OSOS - 32-bit Operating System from the source code\&.

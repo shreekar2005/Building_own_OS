@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d9/d4f/a11390" kind="file" language="C++">
+    <compoundname>kdriver.hpp</compoundname>
+    <includedby refid="d8/dd1/a11333" local="yes">kernel_src/kernel.cpp</includedby>
+    <includedby refid="df/dc6/a11384" local="yes">libk_header/driver/kkeyboard.hpp</includedby>
+    <includedby refid="d1/d5b/a11387" local="yes">libk_header/driver/kmouse.hpp</includedby>
+    <includedby refid="d8/dce/a11309" local="yes">libk_src/driver/kdriver.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>kernel_src/kernel.cpp</label>
+        <link refid="d8/dd1/a11333"/>
+      </node>
+      <node id="1">
+        <label>libk_header/driver/kdriver.hpp</label>
+        <link refid="d9/d4f/a11390"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>libk_header/driver/kkeyboard.hpp</label>
+        <link refid="df/dc6/a11384"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>libk_header/driver/kmouse.hpp</label>
+        <link refid="d1/d5b/a11387"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>libk_src/basic/kiostream.cpp</label>
+        <link refid="df/db3/a11297"/>
+      </node>
+      <node id="8">
+        <label>libk_src/driver/kdriver.cpp</label>
+        <link refid="d8/dce/a11309"/>
+      </node>
+      <node id="4">
+        <label>libk_src/driver/kkeyboard.cpp</label>
+        <link refid="d6/dfb/a11312"/>
+      </node>
+      <node id="7">
+        <label>libk_src/driver/kmouse.cpp</label>
+        <link refid="d1/de3/a11315"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d0/d48/a12278" prot="public">driver::Driver</innerclass>
+    <innerclass refid="de/db5/a12282" prot="public">driver::DriverManager</innerclass>
+    <innernamespace refid="de/d22/a11404">driver</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="d9/d4f/a11390_1a14e1e30a5e2cbbd23a1fd111357f9076" prot="public" static="no">
+        <name>MAX_NUMDRIVERS</name>
+        <initializer>265</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/driver/kdriver.hpp" line="3" column="25" bodyfile="libk_header/driver/kdriver.hpp" bodystart="3" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_OSOS_DRIVER_KDRIVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_OSOS_DRIVER_KDRIVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="d9/d4f/a11390_1a14e1e30a5e2cbbd23a1fd111357f9076" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MAX_NUMDRIVERS<sp/>265</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="de/d22/a11404" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="de/d22/a11404" kindref="compound">driver</ref>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Driver<sp/>is<sp/>an<sp/>INTERFACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="d0/d48/a12278" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d0/d48/a12278" kindref="compound">Driver</ref>{<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/d48/a12278_1a7de0c11fff1dc1f5d004b2a76e840840" kindref="member">Driver</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d0/d48/a12278_1aacc7524b989c2561147c5dd0b901381c" kindref="member">~Driver</ref>();</highlight></codeline>
+<codeline lineno="12" refid="d0/d48/a12278_1a8c86c1e52652d8b491d37a3b60b535b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/d48/a12278_1a8c86c1e52652d8b491d37a3b60b535b0" kindref="member">activate</ref>()=0;</highlight></codeline>
+<codeline lineno="13" refid="d0/d48/a12278_1a98d2e779c02364fc58c172d0d2a32bdd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d0/d48/a12278_1a98d2e779c02364fc58c172d0d2a32bdd" kindref="member">reset</ref>()=0;</highlight></codeline>
+<codeline lineno="14" refid="d0/d48/a12278_1a4b3b5e5a163c2c0e3cb58ea752ebcef1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/d48/a12278_1a4b3b5e5a163c2c0e3cb58ea752ebcef1" kindref="member">deactivate</ref>()=0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="de/db5/a12282" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/db5/a12282" kindref="compound">DriverManager</ref>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19" refid="de/db5/a12282_1acdf43f6340b26ad2d9b9c90d8974b370" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/d48/a12278" kindref="compound">Driver</ref>*<sp/><ref refid="de/db5/a12282_1acdf43f6340b26ad2d9b9c90d8974b370" kindref="member">drivers</ref>[<ref refid="d9/d4f/a11390_1a14e1e30a5e2cbbd23a1fd111357f9076" kindref="member">MAX_NUMDRIVERS</ref>];</highlight></codeline>
+<codeline lineno="20" refid="de/db5/a12282_1a347286da44d912bba3f720d8b0600946" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="de/db5/a12282_1a347286da44d912bba3f720d8b0600946" kindref="member">numDrivers</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/db5/a12282_1af3bed49a4b243c2f65d09c35db15158b" kindref="member">DriverManager</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/db5/a12282_1a29731c1f4b1215fd5c4ab27624ae6563" kindref="member">~DriverManager</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/db5/a12282_1ab8bd89b91ea49f343276c3c841153cd8" kindref="member">addDriver</ref>(<ref refid="d0/d48/a12278" kindref="compound">Driver</ref>*);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/db5/a12282_1a05b071d8a8c12f2d284fb61f4ecd116e" kindref="member">activateAll</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="libk_header/driver/kdriver.hpp"/>
+  </compounddef>
+</doxygen>

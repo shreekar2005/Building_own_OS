@@ -1,0 +1,137 @@
+\doxysubsection{Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel}
+\hypertarget{a07536}{}\label{a07536}\index{KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}}
+
+
+Inheritance diagram for Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{dc/d39/a07535}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{d1/dd6/a07534}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a07536_af9abf3fb85dea27db802a8f092c4a2fc}{Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel}} ()
+\item 
+\mbox{\hyperlink{a07536_ab2b7f34603d9cdd36554a4f7f6dde585}{\texorpdfstring{$\sim$}{\string~}\+Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel}} ()
+\item 
+void \mbox{\hyperlink{a07536_af82a0bd16f995dd285d4f7822117377c}{on\+Key\+Down}} (char ascii) override
+\item 
+void \mbox{\hyperlink{a07536_a0d74a48573c10174ac8bf836ac39f886}{on\+Key\+Up}} (char ascii) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{a06647_source_l00013}{13}} of file \mbox{\hyperlink{a06647_source}{kernel.\+cpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a07536_af9abf3fb85dea27db802a8f092c4a2fc}\label{a07536_af9abf3fb85dea27db802a8f092c4a2fc} 
+\index{KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}!KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}}
+\index{KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}!KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}}
+\doxyparagraph{\texorpdfstring{KeyboardEventHandler\_for\_kernel()}{KeyboardEventHandler\_for\_kernel()}}
+{\footnotesize\ttfamily Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel\+::\+Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{a06647_source_l00015}{15}} of file \mbox{\hyperlink{a06647_source}{kernel.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{a07536_ab2b7f34603d9cdd36554a4f7f6dde585}\label{a07536_ab2b7f34603d9cdd36554a4f7f6dde585} 
+\index{KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}!````~KeyboardEventHandler\_for\_kernel@{\texorpdfstring{$\sim$}{\string~}KeyboardEventHandler\_for\_kernel}}
+\index{````~KeyboardEventHandler\_for\_kernel@{\texorpdfstring{$\sim$}{\string~}KeyboardEventHandler\_for\_kernel}!KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}KeyboardEventHandler\_for\_kernel()}{\string~KeyboardEventHandler\_for\_kernel()}}
+{\footnotesize\ttfamily Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel\+::\texorpdfstring{$\sim$}{\string~}\+Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{a06647_source_l00016}{16}} of file \mbox{\hyperlink{a06647_source}{kernel.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a07536_af82a0bd16f995dd285d4f7822117377c}\label{a07536_af82a0bd16f995dd285d4f7822117377c} 
+\index{KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}!onKeyDown@{onKeyDown}}
+\index{onKeyDown@{onKeyDown}!KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}}
+\doxyparagraph{\texorpdfstring{onKeyDown()}{onKeyDown()}}
+{\footnotesize\ttfamily void Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel\+::on\+Key\+Down (\begin{DoxyParamCaption}\item[{char}]{ascii }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a07600_ae2b923ef0eb58e29f57a155debadac6a}{driver\+::\+Keyboard\+Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{a06647_source_l00017}{17}} of file \mbox{\hyperlink{a06647_source}{kernel.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ascii\ !=\ 0)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a06717_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\%c"{}},\ ascii);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a06611_source_l00276}{basic\+::printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d88/a07536_af82a0bd16f995dd285d4f7822117377c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a07536_a0d74a48573c10174ac8bf836ac39f886}\label{a07536_a0d74a48573c10174ac8bf836ac39f886} 
+\index{KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}!onKeyUp@{onKeyUp}}
+\index{onKeyUp@{onKeyUp}!KeyboardEventHandler\_for\_kernel@{KeyboardEventHandler\_for\_kernel}}
+\doxyparagraph{\texorpdfstring{onKeyUp()}{onKeyUp()}}
+{\footnotesize\ttfamily void Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel\+::on\+Key\+Up (\begin{DoxyParamCaption}\item[{char}]{ascii }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a07600_a28547100b7420e1f73b745df873cd411}{driver\+::\+Keyboard\+Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{a06647_source_l00022}{22}} of file \mbox{\hyperlink{a06647_source}{kernel.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ ascii;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+kernel\+\_\+src/\mbox{\hyperlink{a06647}{kernel.\+cpp}}\end{DoxyCompactItemize}

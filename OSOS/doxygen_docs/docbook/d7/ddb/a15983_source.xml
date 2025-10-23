@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a15983_source" xml:lang="en-US">
+<title>kinterrupt.cpp</title>
+<indexterm><primary>libk_src/hardware_communication/kinterrupt.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_a15983_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_a16025">hardware_communication/kinterrupt.hpp</link>&quot;</emphasis>
+<anchor xml:id="_a15983_source_1l00002"/>00002 
+<anchor xml:id="_a15983_source_1l00003"/>00003 <emphasis role="comment">//&#32;Global&#32;pointer&#32;to&#32;the&#32;active&#32;interrupt&#32;manager&#32;instance</emphasis>
+<anchor xml:id="_a15983_source_1l00004"/>00004 <emphasis role="comment">//&#32;This&#32;allows&#32;our&#32;static&#32;C-style&#32;handlers&#32;to&#32;access&#32;the&#32;C++&#32;object.</emphasis>
+<anchor xml:id="_a15983_source_1l00005"/>00005 
+<anchor xml:id="_a15983_source_1l00006"/>00006 <emphasis role="comment">//&#32;forward&#32;definitions&#32;of&#32;handlers&#32;(which&#32;are&#32;made&#32;.global&#32;in&#32;interruptstubs.s)</emphasis>
+<anchor xml:id="_a15983_source_1l00007"/>00007 <emphasis role="comment">//&#32;These&#32;need&#32;to&#32;be&#32;declared&#32;extern&#32;&quot;C&quot;&#32;to&#32;prevent&#32;C++&#32;name&#32;mangling,</emphasis>
+<anchor xml:id="_a15983_source_1l00008"/>00008 <emphasis role="comment">//&#32;ensuring&#32;the&#32;linker&#32;can&#32;find&#32;the&#32;simple&#32;names&#32;defined&#32;in&#32;assembly.</emphasis>
+<anchor xml:id="_a15983_source_1l00009"/>00009 
+<anchor xml:id="_a15983_source_1l00010"/>00010 
+<anchor xml:id="_a15983_source_1l00011"/><link linkend="_a16961_1a134c8931dff43e766f1ddc4d0f35cd48">00011</link> <link linkend="_a16961_1a134c8931dff43e766f1ddc4d0f35cd48">hardware_communication::InterruptHandler::InterruptHandler</link>(uint8_t&#32;interruptNumber,&#32;<link linkend="_a16969">hardware_communication::InterruptManager</link>*&#32;interrupt_manager){
+<anchor xml:id="_a15983_source_1l00012"/>00012 &#32;&#32;&#32;&#32;this-&gt;interruptNumber=<link linkend="_a16961_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>;
+<anchor xml:id="_a15983_source_1l00013"/>00013 &#32;&#32;&#32;&#32;this-&gt;interrupt_manager=<link linkend="_a16961_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>;
+<anchor xml:id="_a15983_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<link linkend="_a16961_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>-&gt;<link linkend="_a16969_1ac8aba191e612ad605b8b188f78e65d3b">handlers</link>[<link linkend="_a16961_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link>]=<emphasis role="keyword">this</emphasis>;
+<anchor xml:id="_a15983_source_1l00015"/>00015 }
+<anchor xml:id="_a15983_source_1l00016"/><link linkend="_a16961_1a5114528f0db9926365b345337e42af9b">00016</link> <link linkend="_a16961_1a5114528f0db9926365b345337e42af9b">hardware_communication::InterruptHandler::~InterruptHandler</link>(){
+<anchor xml:id="_a15983_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(interrupt_manager-&gt;handlers[interruptNumber]==<emphasis role="keyword">this</emphasis>)&#32;interrupt_manager-&gt;handlers[interruptNumber]=<emphasis role="keyword">nullptr</emphasis>;
+<anchor xml:id="_a15983_source_1l00018"/>00018 }
+<anchor xml:id="_a15983_source_1l00019"/>00019 <emphasis role="comment">//&#32;uintptr_t&#32;InterruptHandler::handleInterrupt(uintptr_t&#32;esp){</emphasis>
+<anchor xml:id="_a15983_source_1l00020"/>00020 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;return&#32;esp;</emphasis>
+<anchor xml:id="_a15983_source_1l00021"/>00021 <emphasis role="comment">//&#32;}</emphasis>
+<anchor xml:id="_a15983_source_1l00022"/>00022 
+<anchor xml:id="_a15983_source_1l00023"/>00023 
+<anchor xml:id="_a15983_source_1l00024"/><link linkend="_a16965_1a5149970639d0f251d529808a192b4b55">00024</link> <link linkend="_a16965_1a5149970639d0f251d529808a192b4b55">hardware_communication::IDT_row::IDT_row</link>(){}
+<anchor xml:id="_a15983_source_1l00025"/><link linkend="_a16965_1a9cad760dfa1c1f76f98b6207365f7e2d">00025</link> <link linkend="_a16965_1a9cad760dfa1c1f76f98b6207365f7e2d">hardware_communication::IDT_row::~IDT_row</link>(){}
+<anchor xml:id="_a15983_source_1l00026"/>00026 
+<anchor xml:id="_a15983_source_1l00027"/>00027 <link linkend="_a16981">hardware_communication::Port8BitSlow</link>&#32;<link linkend="_a16969_1acb04723d03d6b34abbc5f7407cab0b33">hardware_communication::InterruptManager::picMasterCommand</link>(0x20);
+<anchor xml:id="_a15983_source_1l00028"/>00028 <link linkend="_a16981">hardware_communication::Port8BitSlow</link>&#32;<link linkend="_a16969_1a5287e31a546f60708b085b387332a904">hardware_communication::InterruptManager::picMasterData</link>(0x21);
+<anchor xml:id="_a15983_source_1l00029"/>00029 <link linkend="_a16981">hardware_communication::Port8BitSlow</link>&#32;<link linkend="_a16969_1afed9d24b37c8f9386a71f4284b2502a4">hardware_communication::InterruptManager::picSlaveCommand</link>(0xA0);
+<anchor xml:id="_a15983_source_1l00030"/>00030 <link linkend="_a16981">hardware_communication::Port8BitSlow</link>&#32;<link linkend="_a16969_1ac1111b7cfbd27b37f03a0678ae5dbaf1">hardware_communication::InterruptManager::picSlaveData</link>(0xA1);
+<anchor xml:id="_a15983_source_1l00031"/>00031 
+<anchor xml:id="_a15983_source_1l00032"/><link linkend="_a16969_1aec70c703cac64ef1eec4b5a94d2e145c">00032</link> <link linkend="_a16969_1aec70c703cac64ef1eec4b5a94d2e145c">hardware_communication::InterruptManager::InterruptManager</link>(<link linkend="_a16953">essential::GDT</link>*&#32;gdt){
+<anchor xml:id="_a15983_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ICW1:&#32;Start&#32;Initialization&#32;Sequence.&#32;Both&#32;PICs&#32;are&#32;told&#32;to&#32;listen&#32;for&#32;3&#32;more&#32;bytes&#32;of&#32;config&#32;data.</emphasis>
+<anchor xml:id="_a15983_source_1l00034"/>00034 &#32;&#32;&#32;&#32;picMasterCommand.write(0x11);
+<anchor xml:id="_a15983_source_1l00035"/>00035 &#32;&#32;&#32;&#32;picSlaveCommand.write(0x11);
+<anchor xml:id="_a15983_source_1l00036"/>00036 
+<anchor xml:id="_a15983_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ICW2:&#32;Vector&#32;Remapping.</emphasis>
+<anchor xml:id="_a15983_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Master&#32;is&#32;told&#32;to&#32;remap&#32;its&#32;IRQs&#32;(0-7)&#32;to&#32;CPU&#32;vectors&#32;0x20-0x27.</emphasis>
+<anchor xml:id="_a15983_source_1l00039"/>00039 &#32;&#32;&#32;&#32;picMasterData.write(0x20);
+<anchor xml:id="_a15983_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Slave&#32;is&#32;told&#32;to&#32;remap&#32;its&#32;IRQs&#32;(8-15)&#32;to&#32;CPU&#32;vectors&#32;0x28-0x2F.</emphasis>
+<anchor xml:id="_a15983_source_1l00041"/>00041 &#32;&#32;&#32;&#32;picSlaveData.write(0x28);
+<anchor xml:id="_a15983_source_1l00042"/>00042 
+<anchor xml:id="_a15983_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ICW3:&#32;Chaining&#32;Configuration.</emphasis>
+<anchor xml:id="_a15983_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Master&#32;is&#32;told&#32;a&#32;slave&#32;is&#32;connected&#32;on&#32;its&#32;IRQ&#32;2&#32;line&#32;(0x04&#32;=&#32;bit&#32;2&#32;set).</emphasis>
+<anchor xml:id="_a15983_source_1l00045"/>00045 &#32;&#32;&#32;&#32;picMasterData.write(0x04);
+<anchor xml:id="_a15983_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Slave&#32;is&#32;told&#32;its&#32;identity&#32;is&#32;2.</emphasis>
+<anchor xml:id="_a15983_source_1l00047"/>00047 &#32;&#32;&#32;&#32;picSlaveData.write(0x02);
+<anchor xml:id="_a15983_source_1l00048"/>00048 
+<anchor xml:id="_a15983_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ICW4:&#32;Environment&#32;Information.</emphasis>
+<anchor xml:id="_a15983_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Both&#32;are&#32;told&#32;to&#32;operate&#32;in&#32;standard&#32;&quot;8086/88&quot;&#32;mode.</emphasis>
+<anchor xml:id="_a15983_source_1l00051"/>00051 &#32;&#32;&#32;&#32;picMasterData.write(0x01);
+<anchor xml:id="_a15983_source_1l00052"/>00052 &#32;&#32;&#32;&#32;picSlaveData.write(0x01);
+<anchor xml:id="_a15983_source_1l00053"/>00053 
+<anchor xml:id="_a15983_source_1l00054"/>00054 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;OCW1:&#32;Interrupt&#32;Masking.</emphasis>
+<anchor xml:id="_a15983_source_1l00055"/>00055 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;This&#32;is&#32;the&#32;final&#32;step,&#32;enabling&#32;all&#32;interrupts&#32;by&#32;writing&#32;a&#32;mask&#32;of&#32;all&#32;zeros.</emphasis>
+<anchor xml:id="_a15983_source_1l00056"/>00056 &#32;&#32;&#32;&#32;picMasterData.write(0x00);
+<anchor xml:id="_a15983_source_1l00057"/>00057 &#32;&#32;&#32;&#32;picSlaveData.write(0x00);
+<anchor xml:id="_a15983_source_1l00058"/>00058 
+<anchor xml:id="_a15983_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<link linkend="_a16043_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>=(uintptr_t)&amp;interruptDescriptorTable;
+<anchor xml:id="_a15983_source_1l00060"/>00060 &#32;&#32;&#32;&#32;<link linkend="_a16043_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>&#32;=&#32;<emphasis role="keyword">sizeof</emphasis>(interruptDescriptorTable)&#32;-&#32;1;
+<anchor xml:id="_a15983_source_1l00061"/>00061 
+<anchor xml:id="_a15983_source_1l00062"/>00062 &#32;&#32;&#32;&#32;uint16_t&#32;kernelCSselectorOffset&#32;=&#32;gdt-&gt;<link linkend="_a16953_1a89a8d2c17e3c22e7200bff09252f46e1">kernel_CS_selector</link>();
+<anchor xml:id="_a15983_source_1l00063"/>00063 &#32;&#32;&#32;&#32;uint8_t&#32;IDT_INTERRUPT_GATE=0xE;
+<anchor xml:id="_a15983_source_1l00064"/>00064 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;256;&#32;i++){
+<anchor xml:id="_a15983_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;setIDTEntry(i,&#32;kernelCSselectorOffset,&#32;&amp;<link linkend="_a16025_1a07e074bde074261858311b014bc2b398">ignoreInterrupt</link>,&#32;0,&#32;IDT_INTERRUPT_GATE);
+<anchor xml:id="_a15983_source_1l00066"/>00066 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a15983_source_1l00067"/>00067 
+<anchor xml:id="_a15983_source_1l00068"/>00068 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;handlers&#32;for&#32;hardware&#32;interrupts</emphasis>
+<anchor xml:id="_a15983_source_1l00069"/>00069 &#32;&#32;&#32;&#32;setIDTEntry(0x20,&#32;kernelCSselectorOffset,&#32;&amp;<link linkend="_a16025_1adf60fad10b12cc19ad193c928d36445c">handleIRQ0x00</link>,&#32;0,&#32;IDT_INTERRUPT_GATE);&#32;<emphasis role="comment">//&#32;Timer</emphasis>
+<anchor xml:id="_a15983_source_1l00070"/>00070 &#32;&#32;&#32;&#32;setIDTEntry(0x21,&#32;kernelCSselectorOffset,&#32;&amp;<link linkend="_a16025_1a6498ed740318b424aaae4db1f223e558">handleIRQ0x01</link>,&#32;0,&#32;IDT_INTERRUPT_GATE);&#32;<emphasis role="comment">//&#32;Keyboard</emphasis>
+<anchor xml:id="_a15983_source_1l00071"/>00071 &#32;&#32;&#32;&#32;setIDTEntry(0x2C,&#32;kernelCSselectorOffset,&#32;&amp;<link linkend="_a16025_1a996c60cc7e88bb1c85505c19f6c35117">handleIRQ0x0C</link>,&#32;0,&#32;IDT_INTERRUPT_GATE);&#32;<emphasis role="comment">//&#32;PS/2&#32;Mouse</emphasis>
+<anchor xml:id="_a15983_source_1l00072"/>00072 }
+<anchor xml:id="_a15983_source_1l00073"/>00073 
+<anchor xml:id="_a15983_source_1l00074"/><link linkend="_a16969_1a65276f26b5d5197482a415b83a898560">00074</link> <link linkend="_a16969_1a65276f26b5d5197482a415b83a898560">hardware_communication::InterruptManager::~InterruptManager</link>(){}
+<anchor xml:id="_a15983_source_1l00075"/>00075 
+<anchor xml:id="_a15983_source_1l00076"/><link linkend="_a16969_1af448c0d55d2e226050b7f4efb6d4abe8">00076</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a16969_1af448c0d55d2e226050b7f4efb6d4abe8">hardware_communication::InterruptManager::setIDTEntry</link>(
+<anchor xml:id="_a15983_source_1l00077"/>00077 &#32;&#32;&#32;&#32;uint8_t&#32;interruptNumber,
+<anchor xml:id="_a15983_source_1l00078"/>00078 &#32;&#32;&#32;&#32;uint16_t&#32;codeSegmentSelectorOffset,
+<anchor xml:id="_a15983_source_1l00079"/>00079 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*handler)(),
+<anchor xml:id="_a15983_source_1l00080"/>00080 &#32;&#32;&#32;&#32;uint8_t&#32;DescriptorPrivilegeLever,
+<anchor xml:id="_a15983_source_1l00081"/>00081 &#32;&#32;&#32;&#32;uint8_t&#32;DescriptorType){
+<anchor xml:id="_a15983_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;IDT_DESC_PRESET=&#32;0x80;
+<anchor xml:id="_a15983_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;interruptDescriptorTable[interruptNumber].handlerAddressLowbits=(uint32_t)handler&#32;&amp;&#32;0xFFFF;
+<anchor xml:id="_a15983_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;interruptDescriptorTable[interruptNumber].handlerAddressHighbits=((uint32_t)handler&#32;&gt;&gt;&#32;16)&#32;&amp;&#32;0xFFFF;
+<anchor xml:id="_a15983_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;interruptDescriptorTable[interruptNumber].reserved=0;
+<anchor xml:id="_a15983_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;interruptDescriptorTable[interruptNumber].access=IDT_DESC_PRESET&#32;|&#32;DescriptorType&#32;|&#32;((DescriptorPrivilegeLever&#32;&amp;&#32;3)&#32;&lt;&lt;&#32;5);
+<anchor xml:id="_a15983_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;
+<anchor xml:id="_a15983_source_1l00088"/>00088 }
+<anchor xml:id="_a15983_source_1l00089"/>00089 
+<anchor xml:id="_a15983_source_1l00090"/><link linkend="_a15983_1a1df59a6c3578a3d5d96bfef4ffd8fbc8">00090</link> <emphasis role="keyword">static</emphasis>&#32;<link linkend="_a16969">hardware_communication::InterruptManager</link>*&#32;<link linkend="_a15983_1a1df59a6c3578a3d5d96bfef4ffd8fbc8">installed_interrupt_manager</link>=<emphasis role="keyword">nullptr</emphasis>;
+<anchor xml:id="_a15983_source_1l00091"/><link linkend="_a16969_1a81d593116320da32f1aa4057087f1e11">00091</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a16969_1a81d593116320da32f1aa4057087f1e11">hardware_communication::InterruptManager::installTable</link>(){
+<anchor xml:id="_a15983_source_1l00092"/>00092 &#32;&#32;&#32;&#32;<link linkend="_a15983_1a1df59a6c3578a3d5d96bfef4ffd8fbc8">installed_interrupt_manager</link>=<emphasis role="keyword">this</emphasis>;
+<anchor xml:id="_a15983_source_1l00093"/>00093 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>IDT_Pointer&#32;{
+<anchor xml:id="_a15983_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a16043_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>;
+<anchor xml:id="_a15983_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a16043_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>;
+<anchor xml:id="_a15983_source_1l00096"/>00096 &#32;&#32;&#32;&#32;}&#32;<link linkend="_a16053_1a21c3ca5c318038eaed596c14fd2666ed">__attribute__</link>((packed));
+<anchor xml:id="_a15983_source_1l00097"/>00097 
+<anchor xml:id="_a15983_source_1l00098"/>00098 &#32;&#32;&#32;&#32;IDT_Pointer&#32;idt_ptr;
+<anchor xml:id="_a15983_source_1l00099"/>00099 &#32;&#32;&#32;&#32;idt_ptr.limit&#32;=&#32;this-&gt;<link linkend="_a16043_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>;
+<anchor xml:id="_a15983_source_1l00100"/>00100 &#32;&#32;&#32;&#32;idt_ptr.base&#32;=&#32;this-&gt;<link linkend="_a16043_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>;
+<anchor xml:id="_a15983_source_1l00101"/>00101 
+<anchor xml:id="_a15983_source_1l00102"/>00102 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>&#32;(<emphasis role="stringliteral">&quot;lidt&#32;%0&quot;</emphasis>&#32;:&#32;:&#32;<emphasis role="stringliteral">&quot;m&quot;</emphasis>(idt_ptr));
+<anchor xml:id="_a15983_source_1l00103"/>00103 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;IDT&#32;Installed\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00104"/>00104 }
+<anchor xml:id="_a15983_source_1l00105"/>00105 
+<anchor xml:id="_a15983_source_1l00106"/>00106 
+<anchor xml:id="_a15983_source_1l00107"/>00107 
+<anchor xml:id="_a15983_source_1l00108"/><link linkend="_a16969_1a1ab5b6378071338ede295f0bffaf3d51">00108</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a16969_1a1ab5b6378071338ede295f0bffaf3d51">hardware_communication::InterruptManager::activate</link>(){
+<anchor xml:id="_a15983_source_1l00109"/>00109 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>&#32;(<emphasis role="stringliteral">&quot;sti&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00110"/>00110 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Interrupts&#32;Activated\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00111"/>00111 }
+<anchor xml:id="_a15983_source_1l00112"/><link linkend="_a16969_1a9451566bf08617378ca2144505d394a6">00112</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a16969_1a9451566bf08617378ca2144505d394a6">hardware_communication::InterruptManager::deactivate</link>(){
+<anchor xml:id="_a15983_source_1l00113"/>00113 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>&#32;(<emphasis role="stringliteral">&quot;cli&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00114"/>00114 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Interrupts&#32;Deactivated\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00115"/>00115 }
+<anchor xml:id="_a15983_source_1l00116"/>00116 
+<anchor xml:id="_a15983_source_1l00117"/><link linkend="_a16969_1aac20f3a896bea512413568a60ad48c3d">00117</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a16969_1aac20f3a896bea512413568a60ad48c3d">hardware_communication::InterruptManager::printLoadedTable</link>()&#32;{
+<anchor xml:id="_a15983_source_1l00118"/>00118 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>IDT_Pointer&#32;{
+<anchor xml:id="_a15983_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a16043_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>;
+<anchor xml:id="_a15983_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a16043_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>;
+<anchor xml:id="_a15983_source_1l00121"/>00121 &#32;&#32;&#32;&#32;}&#32;<link linkend="_a16053_1a21c3ca5c318038eaed596c14fd2666ed">__attribute__</link>((packed));
+<anchor xml:id="_a15983_source_1l00122"/>00122 
+<anchor xml:id="_a15983_source_1l00123"/>00123 &#32;&#32;&#32;&#32;IDT_Pointer&#32;idt_ptr;
+<anchor xml:id="_a15983_source_1l00124"/>00124 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>&#32;(<emphasis role="stringliteral">&quot;sidt&#32;%0&quot;</emphasis>&#32;:&#32;<emphasis role="stringliteral">&quot;=m&quot;</emphasis>(idt_ptr));
+<anchor xml:id="_a15983_source_1l00125"/>00125 
+<anchor xml:id="_a15983_source_1l00126"/>00126 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00127"/>00127 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;INFO&#32;about&#32;:&#32;Currently&#32;Loaded&#32;IDT\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00128"/>00128 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Base&#32;Address:&#32;%#x\n&quot;</emphasis>,&#32;idt_ptr.base);
+<anchor xml:id="_a15983_source_1l00129"/>00129 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Limit:&#32;%#x&#32;(%d&#32;bytes)\n&quot;</emphasis>,&#32;idt_ptr.limit,&#32;idt_ptr.limit);
+<anchor xml:id="_a15983_source_1l00130"/>00130 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Entries:&#32;%d\n&quot;</emphasis>,&#32;(idt_ptr.limit&#32;+&#32;1)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a16965">hardware_communication::IDT_row</link>));
+<anchor xml:id="_a15983_source_1l00131"/>00131 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00132"/>00132 
+<anchor xml:id="_a15983_source_1l00133"/>00133 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;&#32;Idx&#32;|&#32;Handler&#32;Address&#32;|&#32;Selector&#32;|&#32;Access&#32;Flags\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00134"/>00134 &#32;&#32;&#32;&#32;<link linkend="_a16965">hardware_communication::IDT_row</link>*&#32;current_idt&#32;=&#32;(<link linkend="_a16965">hardware_communication::IDT_row</link>*)idt_ptr.base;
+<anchor xml:id="_a15983_source_1l00135"/>00135 &#32;&#32;&#32;&#32;uint32_t&#32;num_entries&#32;=&#32;(idt_ptr.limit&#32;+&#32;1)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a16965">hardware_communication::IDT_row</link>);
+<anchor xml:id="_a15983_source_1l00136"/>00136 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(uint32_t&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;num_entries;&#32;i++)&#32;{
+<anchor xml:id="_a15983_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;handler_address&#32;=&#32;(current_idt[i].<link linkend="_a16965_1af1a4bb042f75f10c5e2b08034e82aed3">handlerAddressHighbits</link>&#32;&lt;&lt;&#32;16)&#32;|&#32;current_idt[i].<link linkend="_a16025_1adf5df650f7c6f6e7792d97ee2b851265">handlerAddressLowbits</link>;
+<anchor xml:id="_a15983_source_1l00138"/>00138 
+<anchor xml:id="_a15983_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(handler_address&#32;!=&#32;0)&#32;{
+<anchor xml:id="_a15983_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;&#32;%3d&#32;|&#32;%#015x&#32;|&#32;%#08x&#32;|&#32;%#012x\n&quot;</emphasis>,&#32;
+<anchor xml:id="_a15983_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i,&#32;
+<anchor xml:id="_a15983_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;handler_address,&#32;
+<anchor xml:id="_a15983_source_1l00143"/>00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_idt[i].<link linkend="_a16025_1acca378f87bf61c0de2befa4244846bfe">kernelCodeSegmentSelector</link>,
+<anchor xml:id="_a15983_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_idt[i].<link linkend="_a16043_1a8b0d6200bc639dd37ff68847a0adde5f">access</link>
+<anchor xml:id="_a15983_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;);
+<anchor xml:id="_a15983_source_1l00146"/>00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_a15983_source_1l00147"/>00147 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a15983_source_1l00148"/>00148 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00149"/>00149 }
+<anchor xml:id="_a15983_source_1l00150"/>00150 
+<anchor xml:id="_a15983_source_1l00151"/><link linkend="_a16969_1ad8a6f694662a3a36ba9353197e20c1b1">00151</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a16969_1ad8a6f694662a3a36ba9353197e20c1b1">hardware_communication::InterruptManager::printLoadedTableHeader</link>(){
+<anchor xml:id="_a15983_source_1l00152"/>00152 
+<anchor xml:id="_a15983_source_1l00153"/>00153 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>IDT_Pointer&#32;{
+<anchor xml:id="_a15983_source_1l00154"/>00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_a16043_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>;
+<anchor xml:id="_a15983_source_1l00155"/>00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_a16043_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>;
+<anchor xml:id="_a15983_source_1l00156"/>00156 &#32;&#32;&#32;&#32;}&#32;<link linkend="_a16053_1a21c3ca5c318038eaed596c14fd2666ed">__attribute__</link>((packed));
+<anchor xml:id="_a15983_source_1l00157"/>00157 
+<anchor xml:id="_a15983_source_1l00158"/>00158 &#32;&#32;&#32;&#32;IDT_Pointer&#32;idt_ptr;
+<anchor xml:id="_a15983_source_1l00159"/>00159 &#32;&#32;&#32;&#32;__asm__&#32;<emphasis role="keyword">volatile</emphasis>&#32;(<emphasis role="stringliteral">&quot;sidt&#32;%0&quot;</emphasis>&#32;:&#32;<emphasis role="stringliteral">&quot;=m&quot;</emphasis>(idt_ptr));
+<anchor xml:id="_a15983_source_1l00160"/>00160 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00161"/>00161 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;INFO&#32;about&#32;:&#32;Currently&#32;Loaded&#32;IDT\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00162"/>00162 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Base&#32;Address:&#32;%#x\n&quot;</emphasis>,&#32;idt_ptr.base);
+<anchor xml:id="_a15983_source_1l00163"/>00163 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Limit:&#32;%#x&#32;(%d&#32;bytes)\n&quot;</emphasis>,&#32;idt_ptr.limit,&#32;idt_ptr.limit);
+<anchor xml:id="_a15983_source_1l00164"/>00164 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Entries:&#32;%d\n&quot;</emphasis>,&#32;(idt_ptr.limit&#32;+&#32;1)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_a16965">hardware_communication::IDT_row</link>));
+<anchor xml:id="_a15983_source_1l00165"/>00165 &#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;---\n&quot;</emphasis>);
+<anchor xml:id="_a15983_source_1l00166"/>00166 }
+<anchor xml:id="_a15983_source_1l00167"/>00167 
+<anchor xml:id="_a15983_source_1l00168"/>00168 
+<anchor xml:id="_a15983_source_1l00169"/><link linkend="_a16969_1a2d3ef1656e1eaaf86be40a200a49a4b2">00169</link> uintptr_t&#32;<link linkend="_a16969_1a2d3ef1656e1eaaf86be40a200a49a4b2">hardware_communication::InterruptManager::handleInterrupt</link>(uint8_t&#32;interruptNumber,&#32;uintptr_t&#32;esp){
+<anchor xml:id="_a15983_source_1l00170"/>00170 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;the&#32;global&#32;pointer&#32;&quot;installed_interrupt_manager&quot;&#32;to&#32;access&#32;the&#32;current&#32;interrupt&#32;manager</emphasis>
+<anchor xml:id="_a15983_source_1l00171"/>00171 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_a15983_1a1df59a6c3578a3d5d96bfef4ffd8fbc8">installed_interrupt_manager</link>-&gt;<link linkend="_a16969_1ac8aba191e612ad605b8b188f78e65d3b">handlers</link>[interruptNumber]!=<emphasis role="keyword">nullptr</emphasis>){
+<anchor xml:id="_a15983_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;esp&#32;=&#32;<link linkend="_a15983_1a1df59a6c3578a3d5d96bfef4ffd8fbc8">installed_interrupt_manager</link>-&gt;<link linkend="_a16969_1ac8aba191e612ad605b8b188f78e65d3b">handlers</link>[interruptNumber]-&gt;<link linkend="_a16961_1aa89d41d69840cb4f1c8692fa6ded28f4">handleInterrupt</link>(esp);
+<anchor xml:id="_a15983_source_1l00173"/>00173 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a15983_source_1l00174"/>00174 
+<anchor xml:id="_a15983_source_1l00175"/>00175 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(interruptNumber!=0x20){&#32;<emphasis role="comment">//0x20&#32;is&#32;Hardware&#32;Timer&#32;Interrupt</emphasis>
+<anchor xml:id="_a15983_source_1l00176"/>00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a16050_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;UNHANDLED&#32;INTERRUPT&#32;%#hx\n&quot;</emphasis>,interruptNumber);
+<anchor xml:id="_a15983_source_1l00177"/>00177 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a15983_source_1l00178"/>00178 
+<anchor xml:id="_a15983_source_1l00179"/>00179 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Hardware&#32;interrupts&#32;must&#32;still&#32;be&#32;acknowledged&#32;to&#32;the&#32;PIC</emphasis>
+<anchor xml:id="_a15983_source_1l00180"/>00180 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(0x20&#32;&lt;=interruptNumber&#32;&amp;&amp;&#32;interruptNumber&#32;&lt;=&#32;0x2F)&#32;{
+<anchor xml:id="_a15983_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;picMasterCommand.write(0x20);
+<anchor xml:id="_a15983_source_1l00182"/>00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(0x28&#32;&lt;=&#32;interruptNumber)&#32;picSlaveCommand.write(0x20);
+<anchor xml:id="_a15983_source_1l00183"/>00183 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a15983_source_1l00184"/>00184 &#32;&#32;&#32;&#32;
+<anchor xml:id="_a15983_source_1l00185"/>00185 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;esp;
+<anchor xml:id="_a15983_source_1l00186"/>00186 }
+</programlisting></section>

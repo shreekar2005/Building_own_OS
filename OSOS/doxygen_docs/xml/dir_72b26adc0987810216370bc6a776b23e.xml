@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_72b26adc0987810216370bc6a776b23e" kind="dir">
+    <compoundname>libk_header</compoundname>
+    <innerdir refid="dir_531da62a4fcf97761a044fe35931416b">libk_header/basic</innerdir>
+    <innerdir refid="dir_1a23d90a90b116220e4c9c5e74cdbcbc">libk_header/driver</innerdir>
+    <innerdir refid="dir_c2bb8e66a15659afc0e54f8e919ef455">libk_header/essential</innerdir>
+    <innerdir refid="dir_53afcd4fba698aab0c6227766ed2d23a">libk_header/hardware_communication</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libk_header/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,169 @@
+\doxysubsection{driver\+::Driver\+Manager}
+\hypertarget{a12282}{}\label{a12282}\index{driver::DriverManager@{driver::DriverManager}}
+
+
+{\ttfamily \#include "{}kdriver.\+hpp"{}}
+
+
+
+Collaboration diagram for driver\+::Driver\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{db/d89/a12280}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a12282_af3bed49a4b243c2f65d09c35db15158b}{Driver\+Manager}} ()
+\item 
+\mbox{\hyperlink{a12282_a29731c1f4b1215fd5c4ab27624ae6563}{\texorpdfstring{$\sim$}{\string~}\+Driver\+Manager}} ()
+\item 
+void \mbox{\hyperlink{a12282_a05b071d8a8c12f2d284fb61f4ecd116e}{activate\+All}} ()
+\item 
+void \mbox{\hyperlink{a12282_ab8bd89b91ea49f343276c3c841153cd8}{add\+Driver}} (\mbox{\hyperlink{a12278}{Driver}} \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a12278}{Driver}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a12282_acdf43f6340b26ad2d9b9c90d8974b370}{drivers}} \mbox{[}\mbox{\hyperlink{a11390_a14e1e30a5e2cbbd23a1fd111357f9076}{MAX\+\_\+\+NUMDRIVERS}}\mbox{]}
+\item 
+int \mbox{\hyperlink{a12282_a347286da44d912bba3f720d8b0600946}{num\+Drivers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{a11390_source_l00017}{17}} of file \mbox{\hyperlink{a11390_source}{kdriver.\+hpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a12282_af3bed49a4b243c2f65d09c35db15158b}\label{a12282_af3bed49a4b243c2f65d09c35db15158b} 
+\index{driver::DriverManager@{driver::DriverManager}!DriverManager@{DriverManager}}
+\index{DriverManager@{DriverManager}!driver::DriverManager@{driver::DriverManager}}
+\doxyparagraph{\texorpdfstring{DriverManager()}{DriverManager()}}
+{\footnotesize\ttfamily driver\+::\+Driver\+Manager\+::\+Driver\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a11309_source_l00007}{7}} of file \mbox{\hyperlink{a11309_source}{kdriver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{a12282_a347286da44d912bba3f720d8b0600946}{numDrivers}}=0;}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+\Hypertarget{a12282_a29731c1f4b1215fd5c4ab27624ae6563}\label{a12282_a29731c1f4b1215fd5c4ab27624ae6563} 
+\index{driver::DriverManager@{driver::DriverManager}!````~DriverManager@{\texorpdfstring{$\sim$}{\string~}DriverManager}}
+\index{````~DriverManager@{\texorpdfstring{$\sim$}{\string~}DriverManager}!driver::DriverManager@{driver::DriverManager}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DriverManager()}{\string~DriverManager()}}
+{\footnotesize\ttfamily driver\+::\+Driver\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Driver\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a11309_source_l00010}{10}} of file \mbox{\hyperlink{a11309_source}{kdriver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a12282_a05b071d8a8c12f2d284fb61f4ecd116e}\label{a12282_a05b071d8a8c12f2d284fb61f4ecd116e} 
+\index{driver::DriverManager@{driver::DriverManager}!activateAll@{activateAll}}
+\index{activateAll@{activateAll}!driver::DriverManager@{driver::DriverManager}}
+\doxyparagraph{\texorpdfstring{activateAll()}{activateAll()}}
+{\footnotesize\ttfamily void driver\+::\+Driver\+Manager\+::activate\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a11309_source_l00017}{17}} of file \mbox{\hyperlink{a11309_source}{kdriver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<\mbox{\hyperlink{a12282_a347286da44d912bba3f720d8b0600946}{numDrivers}};\ i++)\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a12282_acdf43f6340b26ad2d9b9c90d8974b370}{drivers}}[i]-\/>\mbox{\hyperlink{a12278_a8c86c1e52652d8b491d37a3b60b535b0}{activate}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{a11333_source_l00085}{kernel\+Main()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{de/db5/a12282_a05b071d8a8c12f2d284fb61f4ecd116e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a12282_ab8bd89b91ea49f343276c3c841153cd8}\label{a12282_ab8bd89b91ea49f343276c3c841153cd8} 
+\index{driver::DriverManager@{driver::DriverManager}!addDriver@{addDriver}}
+\index{addDriver@{addDriver}!driver::DriverManager@{driver::DriverManager}}
+\doxyparagraph{\texorpdfstring{addDriver()}{addDriver()}}
+{\footnotesize\ttfamily void driver\+::\+Driver\+Manager\+::add\+Driver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a12278}{driver\+::\+Driver}} \texorpdfstring{$\ast$}{*}}]{driver }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a11309_source_l00012}{12}} of file \mbox{\hyperlink{a11309_source}{kdriver.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{a12282_acdf43f6340b26ad2d9b9c90d8974b370}{drivers}}[\mbox{\hyperlink{a12282_a347286da44d912bba3f720d8b0600946}{numDrivers}}]=\mbox{\hyperlink{a11404}{driver}};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{a12282_a347286da44d912bba3f720d8b0600946}{numDrivers}}++;}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{a11333_source_l00085}{kernel\+Main()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{de/db5/a12282_ab8bd89b91ea49f343276c3c841153cd8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{a12282_acdf43f6340b26ad2d9b9c90d8974b370}\label{a12282_acdf43f6340b26ad2d9b9c90d8974b370} 
+\index{driver::DriverManager@{driver::DriverManager}!drivers@{drivers}}
+\index{drivers@{drivers}!driver::DriverManager@{driver::DriverManager}}
+\doxyparagraph{\texorpdfstring{drivers}{drivers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a12278}{Driver}}\texorpdfstring{$\ast$}{*} driver\+::\+Driver\+Manager\+::drivers\mbox{[}\mbox{\hyperlink{a11390_a14e1e30a5e2cbbd23a1fd111357f9076}{MAX\+\_\+\+NUMDRIVERS}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a11390_source_l00019}{19}} of file \mbox{\hyperlink{a11390_source}{kdriver.\+hpp}}.
+
+\Hypertarget{a12282_a347286da44d912bba3f720d8b0600946}\label{a12282_a347286da44d912bba3f720d8b0600946} 
+\index{driver::DriverManager@{driver::DriverManager}!numDrivers@{numDrivers}}
+\index{numDrivers@{numDrivers}!driver::DriverManager@{driver::DriverManager}}
+\doxyparagraph{\texorpdfstring{numDrivers}{numDrivers}}
+{\footnotesize\ttfamily int driver\+::\+Driver\+Manager\+::num\+Drivers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{a11390_source_l00020}{20}} of file \mbox{\hyperlink{a11390_source}{kdriver.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libk\+\_\+header/driver/\mbox{\hyperlink{a11390}{kdriver.\+hpp}}\item 
+libk\+\_\+src/driver/\mbox{\hyperlink{a11309}{kdriver.\+cpp}}\end{DoxyCompactItemize}

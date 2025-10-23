@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="da/d5f/a19271" kind="struct" language="C++" prot="public">
+    <compoundname>multiboot_info</compoundname>
+    <includes refid="de/d0e/a18398" local="yes">multiboot.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="da/d5f/a19271_1a949c07914ae1ba8624fbb6b0dc7b0af6" prot="public" static="no" mutable="no">
+        <type>union <ref refid="da/d5f/a19271" kindref="compound">multiboot_info</ref></type>
+        <definition>union multiboot_info multiboot_info_t</definition>
+        <argsstring></argsstring>
+        <name></name>
+        <qualifiedname>multiboot_info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="221" column="3"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1ab340bc8f88281872676db0f52ebe7c0e" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::apm_table</definition>
+        <argsstring></argsstring>
+        <name>apm_table</name>
+        <qualifiedname>multiboot_info::apm_table</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="186" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1ae32646de911267c65892a286ef3d529e" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::boot_device</definition>
+        <argsstring></argsstring>
+        <name>boot_device</name>
+        <qualifiedname>multiboot_info::boot_device</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="156" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a4a3251d6b4cf85d935d989a0a369feed" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::boot_loader_name</definition>
+        <argsstring></argsstring>
+        <name>boot_loader_name</name>
+        <qualifiedname>multiboot_info::boot_loader_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="183" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a95a5e2cc69960e4d906abd585f91f210" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::cmdline</definition>
+        <argsstring></argsstring>
+        <name>cmdline</name>
+        <qualifiedname>multiboot_info::cmdline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="159" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a94b06ab87dbfaf966822a39cf1d9e2d6" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::config_table</definition>
+        <argsstring></argsstring>
+        <name>config_table</name>
+        <qualifiedname>multiboot_info::config_table</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="180" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a12916653d21ac1694b6d609a10d15332" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::drives_addr</definition>
+        <argsstring></argsstring>
+        <name>drives_addr</name>
+        <qualifiedname>multiboot_info::drives_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="177" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a8bb6cc3d388a8abafecc7018744c14f3" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::drives_length</definition>
+        <argsstring></argsstring>
+        <name>drives_length</name>
+        <qualifiedname>multiboot_info::drives_length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="176" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a39f175b6fb4debca237d3ff93e960a25" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <qualifiedname>multiboot_info::flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="149" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a77a4d6e2b12fbd2b3e6e61d978ae5fc0" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a8dfdd61648b48aa31845db590970e06a" kindref="member">multiboot_uint64_t</ref></type>
+        <definition>multiboot_uint64_t multiboot_info_t::framebuffer_addr</definition>
+        <argsstring></argsstring>
+        <name>framebuffer_addr</name>
+        <qualifiedname>multiboot_info::framebuffer_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="196" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1ab7b460c75f0342dfb1e339d2b3a2a9da" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref></type>
+        <definition>multiboot_uint8_t multiboot_info_t::framebuffer_bpp</definition>
+        <argsstring></argsstring>
+        <name>framebuffer_bpp</name>
+        <qualifiedname>multiboot_info::framebuffer_bpp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="200" column="21" bodyfile="libk_header/basic/multiboot.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a0e8539780b79a018883d96bb444cd9c8" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::framebuffer_height</definition>
+        <argsstring></argsstring>
+        <name>framebuffer_height</name>
+        <qualifiedname>multiboot_info::framebuffer_height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="199" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1ab0ecb8c7debe9ac1ac7910ae957367f6" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::framebuffer_pitch</definition>
+        <argsstring></argsstring>
+        <name>framebuffer_pitch</name>
+        <qualifiedname>multiboot_info::framebuffer_pitch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="197" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a540391adf02da7cb6876fe78d65a13d7" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a037f602538fccf97e90021c19fdfc047" kindref="member">multiboot_uint8_t</ref></type>
+        <definition>multiboot_uint8_t multiboot_info_t::framebuffer_type</definition>
+        <argsstring></argsstring>
+        <name>framebuffer_type</name>
+        <qualifiedname>multiboot_info::framebuffer_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="204" column="21" bodyfile="libk_header/basic/multiboot.hpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a770273793bac06df17306c7fa136c58f" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::framebuffer_width</definition>
+        <argsstring></argsstring>
+        <name>framebuffer_width</name>
+        <qualifiedname>multiboot_info::framebuffer_width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="198" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a6b80f033d5a9151a4d1abd2d155942a7" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::mem_lower</definition>
+        <argsstring></argsstring>
+        <name>mem_lower</name>
+        <qualifiedname>multiboot_info::mem_lower</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="152" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a1ea7d9e665d6fff00665d97e81207a8f" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::mem_upper</definition>
+        <argsstring></argsstring>
+        <name>mem_upper</name>
+        <qualifiedname>multiboot_info::mem_upper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="153" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a19825c91eb6aa23fa61ee3851a6ce8da" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::mmap_addr</definition>
+        <argsstring></argsstring>
+        <name>mmap_addr</name>
+        <qualifiedname>multiboot_info::mmap_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="173" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a3dd43c3204f821c0a1b5604686d9eae7" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::mmap_length</definition>
+        <argsstring></argsstring>
+        <name>mmap_length</name>
+        <qualifiedname>multiboot_info::mmap_length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="172" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a766e9dadbf4a845c12704c923cb13f02" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::mods_addr</definition>
+        <argsstring></argsstring>
+        <name>mods_addr</name>
+        <qualifiedname>multiboot_info::mods_addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="163" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a415feb83a215790e2e8f9e2e1e3df55c" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::mods_count</definition>
+        <argsstring></argsstring>
+        <name>mods_count</name>
+        <qualifiedname>multiboot_info::mods_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="162" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a0558f47498813865abaec2f6281c5f92" prot="public" static="no" mutable="no">
+        <type>union <ref refid="da/d5f/a19271" kindref="compound">multiboot_info</ref></type>
+        <definition>union multiboot_info multiboot_info_t::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <qualifiedname>multiboot_info::u</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="169" column="5"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a21c63bc2905c6fd19449eea6e8514856" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::vbe_control_info</definition>
+        <argsstring></argsstring>
+        <name>vbe_control_info</name>
+        <qualifiedname>multiboot_info::vbe_control_info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="189" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a31ea288eaa679a7e3a4dafb91d833f78" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref></type>
+        <definition>multiboot_uint16_t multiboot_info_t::vbe_interface_len</definition>
+        <argsstring></argsstring>
+        <name>vbe_interface_len</name>
+        <qualifiedname>multiboot_info::vbe_interface_len</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="194" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a272d3a053e085dc513ba4dc4eb688816" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref></type>
+        <definition>multiboot_uint16_t multiboot_info_t::vbe_interface_off</definition>
+        <argsstring></argsstring>
+        <name>vbe_interface_off</name>
+        <qualifiedname>multiboot_info::vbe_interface_off</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="193" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1a6cd85049f18e6c157d173538b162d9a6" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref></type>
+        <definition>multiboot_uint16_t multiboot_info_t::vbe_interface_seg</definition>
+        <argsstring></argsstring>
+        <name>vbe_interface_seg</name>
+        <qualifiedname>multiboot_info::vbe_interface_seg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="192" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1aec0fcaec97380658da787d4989f7b93f" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a3a11e3c2b5e0617736a05343aa5795b3" kindref="member">multiboot_uint16_t</ref></type>
+        <definition>multiboot_uint16_t multiboot_info_t::vbe_mode</definition>
+        <argsstring></argsstring>
+        <name>vbe_mode</name>
+        <qualifiedname>multiboot_info::vbe_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="191" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/a19271_1ace25791339e03186c9364bb5f461f773" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d0e/a18398_1a009f355da41fed4badb8a52d432f5186" kindref="member">multiboot_uint32_t</ref></type>
+        <definition>multiboot_uint32_t multiboot_info_t::vbe_mode_info</definition>
+        <argsstring></argsstring>
+        <name>vbe_mode_info</name>
+        <qualifiedname>multiboot_info::vbe_mode_info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libk_header/basic/multiboot.hpp" line="190" column="22" bodyfile="libk_header/basic/multiboot.hpp" bodystart="190" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>anonymous:+@2</label>
+      </node>
+      <node id="3">
+        <label>anonymous:+u</label>
+      </node>
+      <node id="2">
+        <label>int</label>
+      </node>
+      <node id="1">
+        <label>multiboot_info_t</label>
+        <link refid="da/d5f/a19271"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+apm_table</edgelabel>
+          <edgelabel>+boot_device</edgelabel>
+          <edgelabel>+boot_loader_name</edgelabel>
+          <edgelabel>+cmdline</edgelabel>
+          <edgelabel>+config_table</edgelabel>
+          <edgelabel>+drives_addr</edgelabel>
+          <edgelabel>+drives_length</edgelabel>
+          <edgelabel>+flags</edgelabel>
+          <edgelabel>+framebuffer_height</edgelabel>
+          <edgelabel>+framebuffer_pitch</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+u</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+vbe_interface_len</edgelabel>
+          <edgelabel>+vbe_interface_off</edgelabel>
+          <edgelabel>+vbe_interface_seg</edgelabel>
+          <edgelabel>+vbe_mode</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+framebuffer_addr</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+framebuffer_bpp</edgelabel>
+          <edgelabel>+framebuffer_type</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+@2</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>unsigned char</label>
+      </node>
+      <node id="5">
+        <label>unsigned long long</label>
+      </node>
+      <node id="4">
+        <label>unsigned short</label>
+      </node>
+    </collaborationgraph>
+    <location file="libk_header/basic/multiboot.hpp" line="146" column="1" bodyfile="libk_header/basic/multiboot.hpp" bodystart="147" bodyend="222"/>
+    <listofallmembers>
+      <member refid="da/d5f/a19271_1ab340bc8f88281872676db0f52ebe7c0e" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>apm_table</name></member>
+      <member refid="da/d5f/a19271_1ae32646de911267c65892a286ef3d529e" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>boot_device</name></member>
+      <member refid="da/d5f/a19271_1a4a3251d6b4cf85d935d989a0a369feed" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>boot_loader_name</name></member>
+      <member refid="da/d5f/a19271_1a95a5e2cc69960e4d906abd585f91f210" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>cmdline</name></member>
+      <member refid="da/d5f/a19271_1a94b06ab87dbfaf966822a39cf1d9e2d6" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>config_table</name></member>
+      <member refid="da/d5f/a19271_1a12916653d21ac1694b6d609a10d15332" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>drives_addr</name></member>
+      <member refid="da/d5f/a19271_1a8bb6cc3d388a8abafecc7018744c14f3" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>drives_length</name></member>
+      <member refid="da/d5f/a19271_1a39f175b6fb4debca237d3ff93e960a25" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>flags</name></member>
+      <member refid="da/d5f/a19271_1a77a4d6e2b12fbd2b3e6e61d978ae5fc0" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>framebuffer_addr</name></member>
+      <member refid="da/d5f/a19271_1ab7b460c75f0342dfb1e339d2b3a2a9da" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>framebuffer_bpp</name></member>
+      <member refid="da/d5f/a19271_1a0e8539780b79a018883d96bb444cd9c8" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>framebuffer_height</name></member>
+      <member refid="da/d5f/a19271_1ab0ecb8c7debe9ac1ac7910ae957367f6" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>framebuffer_pitch</name></member>
+      <member refid="da/d5f/a19271_1a540391adf02da7cb6876fe78d65a13d7" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>framebuffer_type</name></member>
+      <member refid="da/d5f/a19271_1a770273793bac06df17306c7fa136c58f" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>framebuffer_width</name></member>
+      <member refid="da/d5f/a19271_1a6b80f033d5a9151a4d1abd2d155942a7" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>mem_lower</name></member>
+      <member refid="da/d5f/a19271_1a1ea7d9e665d6fff00665d97e81207a8f" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>mem_upper</name></member>
+      <member refid="da/d5f/a19271_1a19825c91eb6aa23fa61ee3851a6ce8da" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>mmap_addr</name></member>
+      <member refid="da/d5f/a19271_1a3dd43c3204f821c0a1b5604686d9eae7" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>mmap_length</name></member>
+      <member refid="da/d5f/a19271_1a766e9dadbf4a845c12704c923cb13f02" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>mods_addr</name></member>
+      <member refid="da/d5f/a19271_1a415feb83a215790e2e8f9e2e1e3df55c" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>mods_count</name></member>
+      <member refid="da/d5f/a19271_1a0558f47498813865abaec2f6281c5f92" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>u</name></member>
+      <member refid="da/d5f/a19271_1a21c63bc2905c6fd19449eea6e8514856" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>vbe_control_info</name></member>
+      <member refid="da/d5f/a19271_1a31ea288eaa679a7e3a4dafb91d833f78" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>vbe_interface_len</name></member>
+      <member refid="da/d5f/a19271_1a272d3a053e085dc513ba4dc4eb688816" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>vbe_interface_off</name></member>
+      <member refid="da/d5f/a19271_1a6cd85049f18e6c157d173538b162d9a6" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>vbe_interface_seg</name></member>
+      <member refid="da/d5f/a19271_1aec0fcaec97380658da787d4989f7b93f" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>vbe_mode</name></member>
+      <member refid="da/d5f/a19271_1ace25791339e03186c9364bb5f461f773" prot="public" virt="non-virtual"><scope>multiboot_info</scope><name>vbe_mode_info</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_53afcd4fba698aab0c6227766ed2d23a" kind="dir">
+    <compoundname>libk_header/hardware_communication</compoundname>
+    <innerfile refid="d5/d65/a18407">kinterrupt.hpp</innerfile>
+    <innerfile refid="dc/d16/a18410">kport.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libk_header/hardware_communication/"/>
+  </compounddef>
+</doxygen>

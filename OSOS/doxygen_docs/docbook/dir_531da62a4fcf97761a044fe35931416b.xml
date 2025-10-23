@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_531da62a4fcf97761a044fe35931416b" xml:lang="en-US">
+<title>libk_header/basic Directory Reference</title>
+<indexterm><primary>libk_header/basic Directory Reference</primary></indexterm>
+Directory dependency graph for basic:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_531da62a4fcf97761a044fe35931416b_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_a18404">kiostream.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a18401">kmemory.hpp</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_a18398">multiboot.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

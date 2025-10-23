@@ -1,0 +1,537 @@
+\doxysubsection{basic Namespace Reference}
+\hypertarget{a09060}{}\label{a09060}\index{basic@{basic}}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a09060_a02923caa95013ec5d9333c25d9cca1d6}{\+\_\+\+\_\+clear\+Screen}} ()
+\item 
+void \mbox{\hyperlink{a09060_a53c6425a55d9fb93998da01f2416f9ad}{\+\_\+\+\_\+print\+Memory\+Map}} (multiboot\+\_\+info\+\_\+t \texorpdfstring{$\ast$}{*}mbi)
+\item 
+void \mbox{\hyperlink{a09060_a4b31902bf2cff8ff28405aa57d9f4575}{disable\+\_\+cursor}} ()
+\item 
+void \mbox{\hyperlink{a09060_a8ca6648639f335b207c748074dcf9f25}{enable\+\_\+cursor}} (uint8\+\_\+t cursor\+\_\+start, uint8\+\_\+t cursor\+\_\+end)
+\item 
+int \mbox{\hyperlink{a09060_a45ee52b918a784ff0e96e7c8917a91d9}{printf}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\begin{DoxyCompactList}\small\item\em A custom implementation of the standard printf function for writing to VGA text mode memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a09060_a9d1f0f838e646660db6d9284725c2b4c}{update\+\_\+cursor}} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{a09060_a02923caa95013ec5d9333c25d9cca1d6}\label{a09060_a02923caa95013ec5d9333c25d9cca1d6} 
+\index{basic@{basic}!\_\_clearScreen@{\_\_clearScreen}}
+\index{\_\_clearScreen@{\_\_clearScreen}!basic@{basic}}
+\doxyparagraph{\texorpdfstring{\_\_clearScreen()}{\_\_clearScreen()}}
+{\footnotesize\ttfamily void basic\+::\+\_\+\+\_\+clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a08954_source_l00118}{118}} of file \mbox{\hyperlink{a08954_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ *video\_memory\ =\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ *)0xb8000;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ blank\ =\ (0x07\ <<\ 8)\ |\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ screenSize\ =\ \mbox{\hyperlink{a08954_a5be9493285a1f50a67d98b887537217d}{MAGIC\_WIDTH}}\ *\ \mbox{\hyperlink{a08954_a887422301cbe9a94f8b96263415640cf}{MAGIC\_HEIGHT}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ screenSize;\ i++)}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ video\_memory[i]\ =\ blank;}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{a08954_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}\ =\ 0;}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{a08954_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}\ =\ 0;}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a08954_source_l00004}{cursor\+\_\+x\+\_\+}}, \mbox{\hyperlink{a08954_source_l00005}{cursor\+\_\+y\+\_\+}}, \mbox{\hyperlink{a08954_source_l00008}{MAGIC\+\_\+\+HEIGHT}}, and \mbox{\hyperlink{a08954_source_l00007}{MAGIC\+\_\+\+WIDTH}}.
+
+
+
+Referenced by \mbox{\hyperlink{a08990_source_l00085}{kernel\+Main()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{d4/df7/a09060_a02923caa95013ec5d9333c25d9cca1d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a09060_a53c6425a55d9fb93998da01f2416f9ad}\label{a09060_a53c6425a55d9fb93998da01f2416f9ad} 
+\index{basic@{basic}!\_\_printMemoryMap@{\_\_printMemoryMap}}
+\index{\_\_printMemoryMap@{\_\_printMemoryMap}!basic@{basic}}
+\doxyparagraph{\texorpdfstring{\_\_printMemoryMap()}{\_\_printMemoryMap()}}
+{\footnotesize\ttfamily void basic\+::\+\_\+\+\_\+print\+Memory\+Map (\begin{DoxyParamCaption}\item[{multiboot\+\_\+info\+\_\+t \texorpdfstring{$\ast$}{*}}]{mbi }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a08951_source_l00003}{3}} of file \mbox{\hyperlink{a08951_source}{kmemory.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ memory\ map\ flag\ is\ set\ (bit\ 6)}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mbi-\/>flags\ \&\ (1\ <<\ 6)))\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a09060_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\(\backslash\)nError:\ Memory\ map\ not\ provided\ by\ bootloader.\(\backslash\)n"{}});}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00009\ \ \ \ \ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{a09060_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ System\ Memory\ Map\ -\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00012\ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Use\ uint64\_t\ to\ correctly\ accumulate\ total\ memory\ size}}
+\DoxyCodeLine{00014\ \ \ \ \ uint64\_t\ total\_available\_bytes\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Use\ uintptr\_t\ for\ pointer\ arithmetic\ to\ ensure\ portability}}
+\DoxyCodeLine{00017\ \ \ \ \ uintptr\_t\ mmap\_start\ =\ mbi-\/>mmap\_addr;}
+\DoxyCodeLine{00018\ \ \ \ \ uintptr\_t\ mmap\_end\ =\ mbi-\/>mmap\_addr\ +\ mbi-\/>mmap\_length;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (multiboot\_memory\_map\_t\ *mmap\ =\ (multiboot\_memory\_map\_t\ *)mmap\_start;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ (uintptr\_t)mmap\ <\ mmap\_end;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ mmap\ =\ (multiboot\_memory\_map\_t\ *)((uintptr\_t)mmap\ +\ mmap-\/>size\ +\ \textcolor{keyword}{sizeof}(mmap-\/>size)))}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *type\_str;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (mmap-\/>type)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a09026_a7fe141351ebcde0acbd6118ad0ea1a21}{MULTIBOOT\_MEMORY\_AVAILABLE}}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}Available"{}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ total\_available\_bytes\ +=\ mmap-\/>len;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a09026_a0299aedc71e1f6707181471bafb18e7c}{MULTIBOOT\_MEMORY\_RESERVED}}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}Reserved"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a09026_af35be82586f332a561d00207c937ee57}{MULTIBOOT\_MEMORY\_ACPI\_RECLAIMABLE}}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}ACPI\ Reclaimable"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a09026_a68f78286f7434d373a82f1b6f6473c72}{MULTIBOOT\_MEMORY\_NVS}}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}NVS"{}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a09026_a1604ec18ac949d88dab993904b08c075}{MULTIBOOT\_MEMORY\_BADRAM}}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}Bad\ RAM"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ type\_str\ =\ \textcolor{stringliteral}{"{}Unknown"{}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ \%\#llx\ for\ 64-\/bit\ hex\ values\ (address\ and\ length)}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a09060_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Addr:\ \%\#llx\ |\ Len:\ \%.2fKB\ |\ Type:\ \%s\(\backslash\)n"{}},\ mmap-\/>addr,\ mmap-\/>len/1024.0,\ type\_str);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Use\ floating\ point\ for\ the\ final\ calculation\ and\ display}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{double}\ total\_mb\ =\ total\_available\_bytes\ /\ 1024.0;}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{a09060_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Total\ available\ memory:\ \%.2f\ KB\(\backslash\)n\(\backslash\)n"{}},\ total\_mb);}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a09026_source_l00239}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+ACPI\+\_\+\+RECLAIMABLE}}, \mbox{\hyperlink{a09026_source_l00237}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+AVAILABLE}}, \mbox{\hyperlink{a09026_source_l00241}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+BADRAM}}, \mbox{\hyperlink{a09026_source_l00240}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+NVS}}, \mbox{\hyperlink{a09026_source_l00238}{MULTIBOOT\+\_\+\+MEMORY\+\_\+\+RESERVED}}, and \mbox{\hyperlink{a08954_source_l00276}{printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df7/a09060_a53c6425a55d9fb93998da01f2416f9ad_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a09060_a4b31902bf2cff8ff28405aa57d9f4575}\label{a09060_a4b31902bf2cff8ff28405aa57d9f4575} 
+\index{basic@{basic}!disable\_cursor@{disable\_cursor}}
+\index{disable\_cursor@{disable\_cursor}!basic@{basic}}
+\doxyparagraph{\texorpdfstring{disable\_cursor()}{disable\_cursor()}}
+{\footnotesize\ttfamily void basic\+::disable\+\_\+cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a08954_source_l00035}{35}} of file \mbox{\hyperlink{a08954_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vgaIndexPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}(0x0A);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vgaDataPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}(0x20);}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vga\+Data\+Port}}, \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vga\+Index\+Port}}, and \mbox{\hyperlink{a08960_source_l00013}{hardware\+\_\+communication\+::\+Port8\+Bit\+::write()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a08990_source_l00085}{kernel\+Main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df7/a09060_a4b31902bf2cff8ff28405aa57d9f4575_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{d4/df7/a09060_a4b31902bf2cff8ff28405aa57d9f4575_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a09060_a8ca6648639f335b207c748074dcf9f25}\label{a09060_a8ca6648639f335b207c748074dcf9f25} 
+\index{basic@{basic}!enable\_cursor@{enable\_cursor}}
+\index{enable\_cursor@{enable\_cursor}!basic@{basic}}
+\doxyparagraph{\texorpdfstring{enable\_cursor()}{enable\_cursor()}}
+{\footnotesize\ttfamily void basic\+::enable\+\_\+cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cursor\+\_\+start,  }\item[{uint8\+\_\+t}]{cursor\+\_\+end }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a08954_source_l00017}{17}} of file \mbox{\hyperlink{a08954_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vgaIndexPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}(0x0A);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vgaDataPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}((\mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vgaDataPort}}.\mbox{\hyperlink{a09987_ae8688251b574c3fd335b99f7e93fff2d}{read}}()\ \&\ 0xC0)\ |\ cursor\_start);}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vgaIndexPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}(0x0B);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vgaDataPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}((\mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vgaDataPort}}.\mbox{\hyperlink{a09987_ae8688251b574c3fd335b99f7e93fff2d}{read}}()\ \&\ 0xE0)\ |\ cursor\_end);}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a08960_source_l00016}{hardware\+\_\+communication\+::\+Port8\+Bit\+::read()}}, \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vga\+Data\+Port}}, \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vga\+Index\+Port}}, and \mbox{\hyperlink{a08960_source_l00013}{hardware\+\_\+communication\+::\+Port8\+Bit\+::write()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a08990_source_l00085}{kernel\+Main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df7/a09060_a8ca6648639f335b207c748074dcf9f25_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{d4/df7/a09060_a8ca6648639f335b207c748074dcf9f25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a09060_a45ee52b918a784ff0e96e7c8917a91d9}\label{a09060_a45ee52b918a784ff0e96e7c8917a91d9} 
+\index{basic@{basic}!printf@{printf}}
+\index{printf@{printf}!basic@{basic}}
+\doxyparagraph{\texorpdfstring{printf()}{printf()}}
+{\footnotesize\ttfamily int basic\+::printf (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+A custom implementation of the standard printf function for writing to VGA text mode memory. 
+
+
+\begin{DoxyItemize}
+\item This function formats a string and prints it to the screen, handling various format specifiers, flags, width, precision, and length modifiers. It returns the total number of characters written.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em format} & The format string. \\
+\hline
+{\em ...} & Variable arguments corresponding to the format specifiers.\\
+\hline
+\end{DoxyParams}
+
+\item \begin{DoxyReturn}{Returns}
+The total number of characters written to the screen.
+\end{DoxyReturn}
+
+\item 
+\end{DoxyItemize}
+
+Supported Format Specifiers\+: c -\/ Character s -\/ String d, i -\/ Signed decimal integer u -\/ Unsigned decimal integer f -\/ Floating point number (double) x -\/ Unsigned hexadecimal integer (lowercase) X -\/ Unsigned hexadecimal integer (uppercase) b -\/ Unsigned binary integer o -\/ Unsigned octal integer p -\/ Pointer address \%\% -\/ A literal \textquotesingle{}\textquotesingle{} character
+\begin{DoxyItemize}
+\item Supported Flags\+: \textquotesingle{}\#\textquotesingle{} -\/ Alternative form (e.\+g., 0x for hex, 0 for octal). \textquotesingle{}0\textquotesingle{} -\/ Zero-\/padding for width.
+\item Supported Width\+: A number after \textquotesingle{}\textquotesingle{} specifies the minimum field width (e.\+g., \%10d).
+\item Supported Precision\+: A period followed by a number specifies precision (e.\+g., \%.4f, \%.8X). For integers, this specifies the minimum number of digits to print.
+\item Supported Length Modifiers\+: h -\/ short int (for d, i, u, x, X, o, b) hh -\/ signed/unsigned char (for d, i, u, x, X, o, b) l -\/ long int ll -\/ long long int 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{a08954_source_l00276}{276}} of file \mbox{\hyperlink{a08954_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00277\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{int}\ chars\_written\ =\ 0;}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ va\_list\ args;}
+\DoxyCodeLine{00281\ \ \ \ \ va\_start(args,\ format);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[128];}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{char}\ char\_str[2]\ =\ \{0,\ 0\};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ format[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++)}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'\%'})}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ use\_alternative\_form\ =\ 0;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ zero\_pad\ =\ 0;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 0;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ precision\ =\ -\/1;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ Flags}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ boolean\ is\ clearer\ than\ using\ a\ while\ loop\ here}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'\#'})\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ use\_alternative\_form\ =\ 1;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'0'})\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zero\_pad\ =\ 1;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ Width}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (format[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ format[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width\ =\ width\ *\ 10\ +\ (format[i]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Precision}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'.'})\ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision\ =\ 0;}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (format[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ format[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision\ =\ precision\ *\ 10\ +\ (format[i]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zero\_pad\ =\ 0;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4.\ Length\ Modifiers}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ is\_long\ =\ 0,\ is\_long\_long\ =\ 0,\ is\_short\ =\ 0,\ is\_char\ =\ 0;}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'l'})\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\_long\ =\ 1;\ i++;}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'l'})\ \{\ is\_long\_long\ =\ 1;\ is\_long\ =\ 0;\ i++;\ \}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'h'})\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\_short\ =\ 1;\ i++;}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'h'})\ \{\ is\_char\ =\ 1;\ is\_short\ =\ 0;\ i++;\ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Handle\ Specifiers\ -\/-\/-\/}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (format[i])}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'c'}:}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ char\_str[0]\ =\ (char)va\_arg(args,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(char\_str);}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written++;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'s'}:}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str\ =\ va\_arg(args,\ \textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ \textcolor{stringliteral}{"{}(null)"{}};}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}}\ =\ 0;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (str[\mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}}])\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}}++;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(str);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written\ +=\ \mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}};}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'f'}:}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_af382674e4c9fb57a14b178d4ee12273a}{doubleToString}}(va\_arg(args,\ \textcolor{keywordtype}{double}),\ buffer,\ precision);}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}}\ =\ 0;}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(buffer[\mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}}])\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}}++;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(buffer);}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written\ +=\ \mbox{\hyperlink{a09026_a6de3a6d27a7e07942958b912d39792e6}{len}};}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'d'}:\ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'i'}:\ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'u'}:\ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'x'}:\ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'X'}:\ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'b'}:\ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'o'}:}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ val;}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a09053_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}\ =\ 10;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uppercase\ =\ 0;}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ sign\_char\ =\ 0;}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format[i]\ ==\ \textcolor{charliteral}{'d'}\ ||\ format[i]\ ==\ \textcolor{charliteral}{'i'})\ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ signed\_val;}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_long\_long)\ signed\_val\ =\ va\_arg(args,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_long)\ signed\_val\ =\ va\_arg(args,\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_char)\ signed\_val\ =\ (\textcolor{keywordtype}{signed}\ char)va\_arg(args,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_short)\ signed\_val\ =\ (short)va\_arg(args,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ signed\_val\ =\ va\_arg(args,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (signed\_val\ <\ 0)\ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sign\_char\ =\ \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ -\/signed\_val;}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ val\ =\ signed\_val;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_long\_long)\ val\ =\ va\_arg(args,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_long)\ val\ =\ va\_arg(args,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_char)\ val\ =\ (\textcolor{keywordtype}{unsigned}\ char)va\_arg(args,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_short)\ val\ =\ (\textcolor{keywordtype}{unsigned}\ short)va\_arg(args,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ val\ =\ va\_arg(args,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(format[i])\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'x'}:\ \mbox{\hyperlink{a09053_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}\ =\ 16;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'X'}:\ \mbox{\hyperlink{a09053_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}\ =\ 16;\ uppercase\ =\ 1;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'b'}:\ \mbox{\hyperlink{a09053_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}\ =\ 2;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'o'}:\ \mbox{\hyperlink{a09053_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}}\ =\ 8;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a14bf754296559bf0266e127e677e8107}{ullToString}}(val,\ buffer,\ \mbox{\hyperlink{a09053_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}},\ 0,\ uppercase);}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ prefix\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (use\_alternative\_form\ \&\&\ val\ !=\ 0)\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(format[i])\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'x'}:\ prefix\ =\ \textcolor{stringliteral}{"{}0x"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'X'}:\ prefix\ =\ \textcolor{stringliteral}{"{}0X"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'b'}:\ prefix\ =\ \textcolor{stringliteral}{"{}0b"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'o'}:\ prefix\ =\ \textcolor{stringliteral}{"{}0"{}};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ num\_len\ =\ 0;\ \textcolor{keywordflow}{while}(buffer[num\_len])\ num\_len++;}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ prefix\_len\ =\ 0;\ \textcolor{keywordflow}{while}(prefix[prefix\_len])\ prefix\_len++;}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ precision\_pads\ =\ (precision\ >\ num\_len)\ ?\ (precision\ -\/\ num\_len)\ :\ 0;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ total\_len\ =\ num\_len\ +\ (sign\_char\ ?\ 1\ :\ 0)\ +\ prefix\_len\ +\ precision\_pads;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\_pads\ =\ (width\ >\ total\_len)\ ?\ (width\ -\/\ total\_len)\ :\ 0;}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written\ +=\ width\_pads\ +\ total\_len;}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!zero\_pad\ \&\&\ width\_pads\ >\ 0)\ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ width\_pads;\ j++)\ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(\textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sign\_char)\ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ char\_str[0]\ =\ sign\_char;\ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(char\_str);}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (prefix\_len\ >\ 0)\ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(prefix);}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zero\_pad\ \&\&\ width\_pads\ >\ 0)\ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ width\_pads;\ j++)\ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(\textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (precision\_pads\ >\ 0)\ \{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ precision\_pads;\ j++)\ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(\textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(buffer);}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'p'}:}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(\textcolor{stringliteral}{"{}0x"{}});}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hex\_digits\ =\ \textcolor{keyword}{sizeof}(uintptr\_t)\ *\ 2;}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_aab6eb585b409591414f84a1e3f606345}{printHex}}((uintptr\_t)va\_arg(args,\ \textcolor{keywordtype}{void}\ *),\ hex\_digits);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written\ +=\ 2\ +\ hex\_digits;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\%'}:}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(\textcolor{stringliteral}{"{}\%"{}});}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written++;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(\textcolor{stringliteral}{"{}\%"{}});}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ char\_str[0]\ =\ format[i];}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(char\_str);}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written\ +=\ 2;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ char\_str[0]\ =\ format[i];}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a08954_a6bd99ada5f7c46567ee0ceca6c369d47}{printCharStr}}(char\_str);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ chars\_written++;}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00468\ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{00470\ \ \ \ \ \mbox{\hyperlink{a09060_a9d1f0f838e646660db6d9284725c2b4c}{update\_cursor}}(\mbox{\hyperlink{a08954_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}},\ \mbox{\hyperlink{a08954_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}});}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordflow}{return}\ chars\_written;}
+\DoxyCodeLine{00472\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a09053_source_l00002}{base}}, \mbox{\hyperlink{a08954_source_l00004}{cursor\+\_\+x\+\_\+}}, \mbox{\hyperlink{a08954_source_l00005}{cursor\+\_\+y\+\_\+}}, \mbox{\hyperlink{a08954_source_l00189}{double\+To\+String()}}, \mbox{\hyperlink{a09026_source_l00002}{len}}, \mbox{\hyperlink{a08954_source_l00041}{print\+Char\+Str()}}, \mbox{\hyperlink{a08954_source_l00227}{print\+Hex()}}, \mbox{\hyperlink{a08954_source_l00147}{ull\+To\+String()}}, and \mbox{\hyperlink{a08954_source_l00025}{update\+\_\+cursor()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a08951_source_l00003}{\+\_\+\+\_\+print\+Memory\+Map()}}, \mbox{\hyperlink{a08963_source_l00108}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::activate()}}, \mbox{\hyperlink{a08969_source_l00167}{driver\+::\+Keyboard\+Driver\+::activate()}}, \mbox{\hyperlink{a08972_source_l00074}{driver\+::\+Mouse\+Driver\+::activate()}}, \mbox{\hyperlink{a08963_source_l00112}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::deactivate()}}, \mbox{\hyperlink{a08963_source_l00169}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::handle\+Interrupt()}}, \mbox{\hyperlink{a08975_source_l00046}{essential\+::\+GDT\+::install\+Table()}}, \mbox{\hyperlink{a08963_source_l00091}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::install\+Table()}}, \mbox{\hyperlink{a08990_source_l00085}{kernel\+Main()}}, \mbox{\hyperlink{a08990_source_l00017}{Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel\+::on\+Key\+Down()}}, \mbox{\hyperlink{a08975_source_l00082}{essential\+::\+GDT\+::print\+Loaded\+Table()}}, \mbox{\hyperlink{a08963_source_l00117}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table()}}, \mbox{\hyperlink{a08975_source_l00120}{essential\+::\+GDT\+::print\+Loaded\+Table\+Header()}}, and \mbox{\hyperlink{a08963_source_l00151}{hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table\+Header()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df7/a09060_a45ee52b918a784ff0e96e7c8917a91d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df7/a09060_a45ee52b918a784ff0e96e7c8917a91d9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a09060_a9d1f0f838e646660db6d9284725c2b4c}\label{a09060_a9d1f0f838e646660db6d9284725c2b4c} 
+\index{basic@{basic}!update\_cursor@{update\_cursor}}
+\index{update\_cursor@{update\_cursor}!basic@{basic}}
+\doxyparagraph{\texorpdfstring{update\_cursor()}{update\_cursor()}}
+{\footnotesize\ttfamily void basic\+::update\+\_\+cursor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a08954_source_l00025}{25}} of file \mbox{\hyperlink{a08954_source}{kiostream.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{a08954_a133981c4ba48aed67a5b874f7b213583}{cursor\_x\_}}=x;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{a08954_a1bda227f31ddf346294cb531f7554ef3}{cursor\_y\_}}=y;}
+\DoxyCodeLine{00028\ \ \ \ \ uint16\_t\ pos\ =\ y\ *\ 80\ +\ x;}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vgaIndexPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}(0x0F);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vgaDataPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}((uint8\_t)(pos\ \&\ 0xFF));}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vgaIndexPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}(0x0E);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vgaDataPort}}.\mbox{\hyperlink{a09987_a523b6a757b27418dc015ed13e74bef60}{write}}((uint8\_t)((pos\ >>\ 8)\ \&\ 0xFF));}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a08954_source_l00004}{cursor\+\_\+x\+\_\+}}, \mbox{\hyperlink{a08954_source_l00005}{cursor\+\_\+y\+\_\+}}, \mbox{\hyperlink{a08954_a32de8112c133d2f05cae84bde7d98239}{vga\+Data\+Port}}, \mbox{\hyperlink{a08954_a0cece8394c6a6dedd523238e9057125f}{vga\+Index\+Port}}, and \mbox{\hyperlink{a08960_source_l00013}{hardware\+\_\+communication\+::\+Port8\+Bit\+::write()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a08990_source_l00032}{Mouse\+Event\+Handler\+\_\+for\+\_\+kernel\+::on\+Mouse\+Down()}}, and \mbox{\hyperlink{a08954_source_l00276}{printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df7/a09060_a9d1f0f838e646660db6d9284725c2b4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/df7/a09060_a9d1f0f838e646660db6d9284725c2b4c_icgraph}
+\end{center}
+\end{figure}

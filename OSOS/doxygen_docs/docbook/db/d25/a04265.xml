@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a04265" xml:lang="en-US">
+<title>libk_src/basic/kmemory.cpp File Reference</title>
+<indexterm><primary>libk_src/basic/kmemory.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;basic/kmemory.hpp&quot;<?linebreak?></programlisting>Include dependency graph for kmemory.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d6/db4/a04266.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a04265_1afa145befcf5e7b83424408ca503c8637">operator delete</link> (void *ptr) noexcept</para>
+</listitem>
+            <listitem><para>void <link linkend="_a04265_1af057efbdbcd21ea12954d49cd2d245c6">operator delete</link> (void *ptr, size_t <link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+</listitem>
+            <listitem><para>void <link linkend="_a04265_1a22aea74a1155aa798d6032da46da2391">operator delete[]</link> (void *ptr) noexcept</para>
+</listitem>
+            <listitem><para>void <link linkend="_a04265_1ab26fe706b29fdeb33d5f6ead76c05815">operator delete[]</link> (void *ptr, size_t <link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+</listitem>
+            <listitem><para>void * <link linkend="_a04265_1a1a7f24760c8c7ad3bfcd54856d906fc2">operator new</link> (size_t <link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+
+<para>The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors. </para>
+</listitem>
+            <listitem><para>void * <link linkend="_a04265_1aa75472ab4b765cf6f6b5b0ebcd4a28c8">operator new[]</link> (size_t <link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a04265_1afa145befcf5e7b83424408ca503c8637"/><section>
+    <title>operator delete()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator delete</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete</secondary></indexterm>
+<para><computeroutput>void operator delete (void * ptr)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a04265_source_1l00075">75</link> of file <link linkend="_a04265_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00076 &#32;&#32;&#32;&#32;(void)ptr;
+00077 }
+</programlisting></section>
+<anchor xml:id="_a04265_1af057efbdbcd21ea12954d49cd2d245c6"/><section>
+    <title>operator delete()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator delete</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete</secondary></indexterm>
+<para><computeroutput>void operator delete (void * ptr, size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a04265_source_1l00079">79</link> of file <link linkend="_a04265_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00080 &#32;&#32;&#32;&#32;(void)ptr;
+00081 &#32;&#32;&#32;&#32;(void)<link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00082 }
+</programlisting><para>
+References <link linkend="_a04340_source_1l00000">size</link>.</para>
+</section>
+<anchor xml:id="_a04265_1a22aea74a1155aa798d6032da46da2391"/><section>
+    <title>operator delete[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator delete[]</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete[]</secondary></indexterm>
+<para><computeroutput>void operator delete[] (void * ptr)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a04265_source_1l00084">84</link> of file <link linkend="_a04265_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00085 &#32;&#32;&#32;&#32;(void)ptr;
+00086 }
+</programlisting></section>
+<anchor xml:id="_a04265_1ab26fe706b29fdeb33d5f6ead76c05815"/><section>
+    <title>operator delete[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator delete[]</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete[]</secondary></indexterm>
+<para><computeroutput>void operator delete[] (void * ptr, size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a04265_source_1l00088">88</link> of file <link linkend="_a04265_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00089 &#32;&#32;&#32;&#32;(void)ptr;
+00090 &#32;&#32;&#32;&#32;(void)<link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00091 }
+</programlisting><para>
+References <link linkend="_a04340_source_1l00000">size</link>.</para>
+</section>
+<anchor xml:id="_a04265_1a1a7f24760c8c7ad3bfcd54856d906fc2"/><section>
+    <title>operator new()</title>
+<indexterm><primary>operator new</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator new</secondary></indexterm>
+<para><computeroutput>void * operator new (size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors. </para>
+</para>
+
+<para>Since we are not linking the standard library, we must provide our own. For now, they don&apos;t have to do anything. </para>
+<para>
+Definition at line <link linkend="_a04265_source_1l00065">65</link> of file <link linkend="_a04265_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00066 &#32;&#32;&#32;&#32;(void)<link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00067 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">nullptr</emphasis>;
+00068 }
+</programlisting><para>
+References <link linkend="_a04340_source_1l00000">size</link>.</para>
+</section>
+<anchor xml:id="_a04265_1aa75472ab4b765cf6f6b5b0ebcd4a28c8"/><section>
+    <title>operator new[]()</title>
+<indexterm><primary>operator new[]</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator new[]</secondary></indexterm>
+<para><computeroutput>void * operator new[] (size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a04265_source_1l00070">70</link> of file <link linkend="_a04265_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00071 &#32;&#32;&#32;&#32;(void)<link linkend="_a04340_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00072 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">nullptr</emphasis>;
+00073 }
+</programlisting><para>
+References <link linkend="_a04340_source_1l00000">size</link>.</para>
+</section>
+</section>
+</section>

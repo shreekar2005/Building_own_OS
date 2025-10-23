@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>OSOS - 32-bit Operating System Documentation</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><htmlonly>&lt;h1&gt;OSOS - 32-bit Operating System Documentation&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the official documentation for OSOS, a 32-bit kernel written from scratch in C++.&lt;/p&gt;
+&lt;p&gt;This site provides a detailed look at the internal structure of the OSOS kernel, generated automatically by Doxygen. You can use the navigation panel to explore all classes, namespaces, and files, complete with inheritance diagrams and dependency graphs.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Core Features &amp;amp; Modules&lt;/h2&gt;
+&lt;p&gt;The following features are implemented in the kernel. You can find their full documentation by exploring the &lt;a href=&quot;namespaces.html&quot;&gt;Namespaces&lt;/a&gt; and &lt;a href=&quot;annotated.html&quot;&gt;Classes&lt;/a&gt; sections.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;p&gt;&lt;b&gt;Custom Kernel Library (&lt;code&gt;libk&lt;/code&gt;):&lt;/b&gt;&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;b&gt;&lt;code&gt;basic&lt;/code&gt;:&lt;/b&gt; Provides &lt;code&gt;kiostream&lt;/code&gt; (for &lt;code&gt;printf&lt;/code&gt;, screen control) and &lt;code&gt;kmemory&lt;/code&gt; (for custom &lt;code&gt;new&lt;/code&gt;/&lt;code&gt;delete&lt;/code&gt;).&lt;/li&gt;
+            &lt;li&gt;&lt;b&gt;&lt;code&gt;driver&lt;/code&gt;:&lt;/b&gt; Includes the &lt;code&gt;DriverManager&lt;/code&gt; and drivers for the &lt;code&gt;kkeyboard&lt;/code&gt; and &lt;code&gt;kmouse&lt;/code&gt;.&lt;/li&gt;
+            &lt;li&gt;&lt;b&gt;&lt;code&gt;essential&lt;/code&gt;:&lt;/b&gt; Contains the &lt;code&gt;GDT&lt;/code&gt; (Global Descriptor Table) setup and &lt;code&gt;kicxxabi&lt;/code&gt; for global constructor/destructor support.&lt;/li&gt;
+            &lt;li&gt;&lt;b&gt;&lt;code&gt;hardware_communication&lt;/code&gt;:&lt;/b&gt; Provides &lt;code&gt;kport&lt;/code&gt; (for low-level I/O port access) and the &lt;code&gt;InterruptManager&lt;/code&gt; (for handling the IDT and ISRs).&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;&lt;b&gt;Global Constructor/Destructor Support:&lt;/b&gt; C++ global objects are correctly constructed before &lt;code&gt;kernelMain&lt;/code&gt; is called, using &lt;code&gt;essential/kicxxabi&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;&lt;b&gt;Hardware Initialization:&lt;/b&gt;&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;b&gt;Global Descriptor Table (GDT)&lt;/b&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;b&gt;Interrupt Descriptor Table (IDT)&lt;/b&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;&lt;b&gt;Interrupt Handling:&lt;/b&gt; Manages hardware interrupts from the Keyboard and Mouse via registered ISRs.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Code Structure &amp;amp; Namespaces&lt;/h2&gt;
+&lt;p&gt;The kernel&apos;s code is divided into several key namespaces to keep it organized. These namespaces form the basis of the documentation&apos;s structure:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;&lt;code&gt;basic&lt;/code&gt;:&lt;/b&gt; Core functions like I/O and memory.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;&lt;code&gt;driver&lt;/code&gt;:&lt;/b&gt; Device drivers (Keyboard, Mouse).&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;&lt;code&gt;essential&lt;/code&gt;:&lt;/b&gt; Critical boot-time setup code (GDT, C++ ABI support).&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;&lt;code&gt;hardware_communication&lt;/code&gt;:&lt;/b&gt; Low-level port I/O and interrupt management.&lt;/li&gt;
+&lt;/ul&gt;</htmlonly> </para>
+    </detaileddescription>
+    <location file="mainpage.dox"/>
+  </compounddef>
+</doxygen>

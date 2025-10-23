@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a07616" xml:lang="en-US">
+<title>essential::GDT_row</title>
+<indexterm><primary>essential::GDT_row</primary></indexterm>
+<para>
+<computeroutput>#include &quot;kgdt.hpp&quot;</computeroutput>
+</para>
+Collaboration diagram for essential::GDT_row:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d7/d52/a07614.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a07616_1a27ff8d9a6bf6c2c98cf78a0257e4667e">GDT_row</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_a07616_1a5692f86b7ebf4eefdeb78e48f281092b">GDT_row</link> (uint32_t <link linkend="_a06710_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>, uint32_t <link linkend="_a06710_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>, uint8_t access_byte, uint8_t gran_byte)</para>
+</listitem>
+            <listitem><para><link linkend="_a07616_1a6eb69c55c0bd16040b2d766dd068df31">~GDT_row</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_a07616_1a7f01a0febd325787f1ff47d6a3b668a9">access</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a07616_1a2cbd86d4258ecebf7b46cc9bb8611b5b">base_high</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a07616_1a298d18522898ad48c1e05b79f1f4dff7">base_low</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a07616_1a8429e04bddc6a61c4e95b88901ae219d">base_middle</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a07616_1af180a640dbd5213b3f936ff7cf48deaf">granularity</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a07616_1a2bddbe405dfbbbd101c475bd1bd65112">limit_low</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_a06710_source_1l00034">34</link> of file <link linkend="_a06710_source">kgdt.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a07616_1a5692f86b7ebf4eefdeb78e48f281092b"/><section>
+    <title>GDT_row()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>GDT_row</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>GDT_row</secondary></indexterm>
+<para><computeroutput>essential::GDT_row::GDT_row (uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte)</computeroutput></para><para>
+Definition at line <link linkend="_a06632_source_1l00008">8</link> of file <link linkend="_a06632_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00009 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a07616_1a2bddbe405dfbbbd101c475bd1bd65112">limit_low</link>&#32;&#32;&#32;=&#32;(<link linkend="_a06710_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>&#32;&amp;&#32;0xFFFF);
+00010 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a07616_1a298d18522898ad48c1e05b79f1f4dff7">base_low</link>&#32;&#32;&#32;&#32;=&#32;(<link linkend="_a06710_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;&amp;&#32;0xFFFF);
+00011 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a07616_1a8429e04bddc6a61c4e95b88901ae219d">base_middle</link>&#32;=&#32;(<link linkend="_a06710_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;&gt;&gt;&#32;16)&#32;&amp;&#32;0xFF;
+00012 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a07616_1a2cbd86d4258ecebf7b46cc9bb8611b5b">base_high</link>&#32;&#32;&#32;=&#32;(<link linkend="_a06710_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;&gt;&gt;&#32;24)&#32;&amp;&#32;0xFF;
+00013 
+00014 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;upper&#32;4&#32;bits&#32;of&#32;the&#32;20-bit&#32;limit&#32;go&#32;into&#32;the&#32;lower&#32;4&#32;bits&#32;of&#32;the&#32;granularity&#32;byte.</emphasis>
+00015 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a07616_1af180a640dbd5213b3f936ff7cf48deaf">granularity</link>&#32;=&#32;((<link linkend="_a06710_1ab28e82ae69032cb4ad3ec3a0be3d7129">limit</link>&#32;&gt;&gt;&#32;16)&#32;&amp;&#32;0x0F);
+00016 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;granularity&#32;flags&#32;(G,&#32;D/B,&#32;L,&#32;AVL)&#32;go&#32;into&#32;the&#32;upper&#32;4&#32;bits.</emphasis>
+00017 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a07616_1af180a640dbd5213b3f936ff7cf48deaf">granularity</link>&#32;|=&#32;(gran_byte&#32;&amp;&#32;0xF0);
+00018 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;access&#32;flags&#32;for&#32;this&#32;segment.</emphasis>
+00019 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_a07616_1a7f01a0febd325787f1ff47d6a3b668a9">access</link>&#32;=&#32;access_byte;
+00020 }
+</programlisting><para>
+References <link linkend="_a06710_source_1l00004">access</link>, <link linkend="_a06710_source_1l00006">base_high</link>, <link linkend="_a06710_source_1l00002">base_low</link>, <link linkend="_a06710_source_1l00003">base_middle</link>, <link linkend="_a06710_source_1l00005">granularity</link>, and <link linkend="_a06710_source_1l00001">limit_low</link>.</para>
+</section>
+<anchor xml:id="_a07616_1a27ff8d9a6bf6c2c98cf78a0257e4667e"/><section>
+    <title>GDT_row()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>GDT_row</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>GDT_row</secondary></indexterm>
+<para><computeroutput>essential::GDT_row::GDT_row ( )</computeroutput></para><para>
+Definition at line <link linkend="_a06632_source_1l00006">6</link> of file <link linkend="_a06632_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00006 :&#32;<link linkend="_a07616_1a2bddbe405dfbbbd101c475bd1bd65112">limit_low</link>(0),&#32;<link linkend="_a07616_1a298d18522898ad48c1e05b79f1f4dff7">base_low</link>(0),&#32;<link linkend="_a07616_1a8429e04bddc6a61c4e95b88901ae219d">base_middle</link>(0),&#32;<link linkend="_a07616_1a7f01a0febd325787f1ff47d6a3b668a9">access</link>(0),&#32;<link linkend="_a07616_1af180a640dbd5213b3f936ff7cf48deaf">granularity</link>(0),&#32;<link linkend="_a07616_1a2cbd86d4258ecebf7b46cc9bb8611b5b">base_high</link>(0)&#32;{}
+</programlisting></section>
+<anchor xml:id="_a07616_1a6eb69c55c0bd16040b2d766dd068df31"/><section>
+    <title>~GDT_row()</title>
+<indexterm><primary>~GDT_row</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>~GDT_row</secondary></indexterm>
+<para><computeroutput>essential::GDT_row::~GDT_row ( )</computeroutput></para><para>
+Definition at line <link linkend="_a06632_source_1l00022">22</link> of file <link linkend="_a06632_source">kgdt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00022 {}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a07616_1a7f01a0febd325787f1ff47d6a3b668a9"/><section>
+    <title>access</title>
+<indexterm><primary>access</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>access</secondary></indexterm>
+<para><computeroutput>uint8_t essential::GDT_row::access<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06710_source_1l00039">39</link> of file <link linkend="_a06710_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a06632_source_1l00082">essential::GDT::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a07616_1a2cbd86d4258ecebf7b46cc9bb8611b5b"/><section>
+    <title>base_high</title>
+<indexterm><primary>base_high</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>base_high</secondary></indexterm>
+<para><computeroutput>uint8_t essential::GDT_row::base_high<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06710_source_1l00041">41</link> of file <link linkend="_a06710_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a06632_source_1l00082">essential::GDT::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a07616_1a298d18522898ad48c1e05b79f1f4dff7"/><section>
+    <title>base_low</title>
+<indexterm><primary>base_low</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>base_low</secondary></indexterm>
+<para><computeroutput>uint16_t essential::GDT_row::base_low<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06710_source_1l00037">37</link> of file <link linkend="_a06710_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a06632_source_1l00082">essential::GDT::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a07616_1a8429e04bddc6a61c4e95b88901ae219d"/><section>
+    <title>base_middle</title>
+<indexterm><primary>base_middle</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>base_middle</secondary></indexterm>
+<para><computeroutput>uint8_t essential::GDT_row::base_middle<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06710_source_1l00038">38</link> of file <link linkend="_a06710_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a06632_source_1l00082">essential::GDT::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a07616_1af180a640dbd5213b3f936ff7cf48deaf"/><section>
+    <title>granularity</title>
+<indexterm><primary>granularity</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>granularity</secondary></indexterm>
+<para><computeroutput>uint8_t essential::GDT_row::granularity<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06710_source_1l00040">40</link> of file <link linkend="_a06710_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a06632_source_1l00082">essential::GDT::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a07616_1a2bddbe405dfbbbd101c475bd1bd65112"/><section>
+    <title>limit_low</title>
+<indexterm><primary>limit_low</primary><secondary>essential::GDT_row</secondary></indexterm>
+<indexterm><primary>essential::GDT_row</primary><secondary>limit_low</secondary></indexterm>
+<para><computeroutput>uint16_t essential::GDT_row::limit_low<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a06710_source_1l00036">36</link> of file <link linkend="_a06710_source">kgdt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a06632_source_1l00082">essential::GDT::printLoadedTable()</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+libk_header/essential/<link linkend="_a06710">kgdt.hpp</link>libk_src/essential/<link linkend="_a06632">kgdt.cpp</link></section>
+</section>

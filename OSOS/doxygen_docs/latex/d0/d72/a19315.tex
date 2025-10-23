@@ -1,0 +1,118 @@
+\doxysubsection{driver\+::Keyboard\+Event\+Handler}
+\hypertarget{a19315}{}\label{a19315}\index{driver::KeyboardEventHandler@{driver::KeyboardEventHandler}}
+
+
+{\ttfamily \#include "{}kkeyboard.\+hpp"{}}
+
+
+
+Inheritance diagram for driver\+::Keyboard\+Event\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{dc/d06/a19314}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for driver\+::Keyboard\+Event\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{d9/ddb/a19313}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a19315_a63ee0249476256e721e05e6375383317}{Keyboard\+Event\+Handler}} ()
+\item 
+virtual \mbox{\hyperlink{a19315_aed6531b818751f0f23b6b9836ac94aa0}{\texorpdfstring{$\sim$}{\string~}\+Keyboard\+Event\+Handler}} ()
+\item 
+virtual void \mbox{\hyperlink{a19315_ae2b923ef0eb58e29f57a155debadac6a}{on\+Key\+Down}} (char ascii)=0
+\item 
+virtual void \mbox{\hyperlink{a19315_a28547100b7420e1f73b745df873cd411}{on\+Key\+Up}} (char ascii)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{a18413_source_l00009}{9}} of file \mbox{\hyperlink{a18413_source}{kkeyboard.\+hpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a19315_a63ee0249476256e721e05e6375383317}\label{a19315_a63ee0249476256e721e05e6375383317} 
+\index{driver::KeyboardEventHandler@{driver::KeyboardEventHandler}!KeyboardEventHandler@{KeyboardEventHandler}}
+\index{KeyboardEventHandler@{KeyboardEventHandler}!driver::KeyboardEventHandler@{driver::KeyboardEventHandler}}
+\doxyparagraph{\texorpdfstring{KeyboardEventHandler()}{KeyboardEventHandler()}}
+{\footnotesize\ttfamily driver\+::\+Keyboard\+Event\+Handler\+::\+Keyboard\+Event\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{a18341_source_l00006}{6}} of file \mbox{\hyperlink{a18341_source}{kkeyboard.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{a19315_aed6531b818751f0f23b6b9836ac94aa0}\label{a19315_aed6531b818751f0f23b6b9836ac94aa0} 
+\index{driver::KeyboardEventHandler@{driver::KeyboardEventHandler}!````~KeyboardEventHandler@{\texorpdfstring{$\sim$}{\string~}KeyboardEventHandler}}
+\index{````~KeyboardEventHandler@{\texorpdfstring{$\sim$}{\string~}KeyboardEventHandler}!driver::KeyboardEventHandler@{driver::KeyboardEventHandler}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}KeyboardEventHandler()}{\string~KeyboardEventHandler()}}
+{\footnotesize\ttfamily driver\+::\+Keyboard\+Event\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Keyboard\+Event\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{a18341_source_l00007}{7}} of file \mbox{\hyperlink{a18341_source}{kkeyboard.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a19315_ae2b923ef0eb58e29f57a155debadac6a}\label{a19315_ae2b923ef0eb58e29f57a155debadac6a} 
+\index{driver::KeyboardEventHandler@{driver::KeyboardEventHandler}!onKeyDown@{onKeyDown}}
+\index{onKeyDown@{onKeyDown}!driver::KeyboardEventHandler@{driver::KeyboardEventHandler}}
+\doxyparagraph{\texorpdfstring{onKeyDown()}{onKeyDown()}}
+{\footnotesize\ttfamily virtual void driver\+::\+Keyboard\+Event\+Handler\+::on\+Key\+Down (\begin{DoxyParamCaption}\item[{char}]{ascii }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a19251_af82a0bd16f995dd285d4f7822117377c}{Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel}}.
+
+\Hypertarget{a19315_a28547100b7420e1f73b745df873cd411}\label{a19315_a28547100b7420e1f73b745df873cd411} 
+\index{driver::KeyboardEventHandler@{driver::KeyboardEventHandler}!onKeyUp@{onKeyUp}}
+\index{onKeyUp@{onKeyUp}!driver::KeyboardEventHandler@{driver::KeyboardEventHandler}}
+\doxyparagraph{\texorpdfstring{onKeyUp()}{onKeyUp()}}
+{\footnotesize\ttfamily virtual void driver\+::\+Keyboard\+Event\+Handler\+::on\+Key\+Up (\begin{DoxyParamCaption}\item[{char}]{ascii }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a19251_a0d74a48573c10174ac8bf836ac39f886}{Keyboard\+Event\+Handler\+\_\+for\+\_\+kernel}}.
+
+
+
+Referenced by \mbox{\hyperlink{a18341_source_l00025}{driver\+::\+Keyboard\+Driver\+::handle\+Interrupt()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d72/a19315_a28547100b7420e1f73b745df873cd411_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libk\+\_\+header/driver/\mbox{\hyperlink{a18413}{kkeyboard.\+hpp}}\item 
+libk\+\_\+src/driver/\mbox{\hyperlink{a18341}{kkeyboard.\+cpp}}\end{DoxyCompactItemize}
