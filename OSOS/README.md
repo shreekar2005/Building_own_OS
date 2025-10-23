@@ -3,6 +3,7 @@
 
 ---
 ---
+## Documentation for OSOS development : [HTML page for OSOS](https://shreekar2005.github.io/Building_own_OS/)
 
 ### I am using Ubuntu24.04 to develop OSOS
 ## Requirements (be sure that you dont have conflicting installations e.g. VirtualBox downloaded from oracle website)
