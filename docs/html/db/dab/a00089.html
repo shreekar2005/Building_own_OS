@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: libk_header/driver/kmouse.hpp File Reference</title>
+<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential/kicxxabi.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -44,7 +44,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">OSOS - Documentation
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development by Shreekar</div>
+   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -86,390 +86,212 @@ $(document).ready(function(){initNavTree('db/dab/a00089.html','../../'); initRes
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">kmouse.hpp File Reference</div></div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">kicxxabi.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../da/dec/a00080_source.html">hardware_communication/kinterrupt.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d2/d1f/a00083_source.html">hardware_communication/kport.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/d09/a00077_source.html">basic/kiostream.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/dc1/a00092_source.html">driver/kdriver.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/d8b/a00059_source.html">essential/kicxxabi.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kmouse.hpp:</div>
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kicxxabi.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d9/dec/a00090.png" border="0" usemap="#alibk__header_2driver_2kmouse_8hpp" alt=""/></div>
-<map name="alibk__header_2driver_2kmouse_8hpp" id="alibk__header_2driver_2kmouse_8hpp">
-<area shape="rect" title=" " alt="" coords="333,5,473,45"/>
-<area shape="rect" title=" " alt="" coords="131,416,197,441"/>
-<area shape="poly" title=" " alt="" coords="333,29,234,36,179,45,127,60,80,81,42,110,28,127,17,146,10,168,8,193,8,268,11,292,20,315,33,335,50,353,88,385,127,407,124,412,85,389,46,357,29,338,15,317,6,294,3,269,3,193,5,167,12,144,24,124,39,106,77,77,125,55,178,40,233,31,332,23"/>
-<area shape="rect" href="../../da/dec/a00080.html" title=" " alt="" coords="174,93,365,133"/>
-<area shape="poly" title=" " alt="" coords="375,48,312,88,309,84,372,43"/>
-<area shape="rect" href="../../d1/d09/a00077.html" title=" " alt="" coords="201,255,356,280"/>
-<area shape="poly" title=" " alt="" coords="403,46,395,87,380,134,362,167,341,197,301,246,297,243,337,194,357,164,375,132,390,86,398,45"/>
-<area shape="rect" href="../../d2/d1f/a00083.html" title=" " alt="" coords="347,328,538,368"/>
-<area shape="poly" title=" " alt="" coords="408,45,441,314,436,314,402,46"/>
-<area shape="rect" href="../../d1/dc1/a00092.html" title=" " alt="" coords="491,101,629,126"/>
-<area shape="poly" title=" " alt="" coords="438,43,528,92,526,96,436,48"/>
-<area shape="poly" title=" " alt="" coords="258,135,224,188,192,256,181,295,174,335,167,402,162,402,169,334,176,294,187,254,219,185,253,132"/>
-<area shape="poly" title=" " alt="" coords="273,134,280,241,274,241,268,134"/>
-<area shape="poly" title=" " alt="" coords="286,132,422,315,418,318,281,135"/>
-<area shape="rect" href="../../d1/d44/a00098.html" title=" " alt="" coords="43,181,186,207"/>
-<area shape="poly" title=" " alt="" coords="233,136,151,177,148,173,231,131"/>
-<area shape="poly" title=" " alt="" coords="273,282,183,406,178,403,268,279"/>
-<area shape="rect" title=" " alt="" coords="253,335,323,361"/>
-<area shape="poly" title=" " alt="" coords="283,280,288,321,282,322,277,280"/>
-<area shape="poly" title=" " alt="" coords="297,278,384,320,382,325,295,283"/>
-<area shape="poly" title=" " alt="" coords="377,371,212,417,210,412,375,365"/>
-<area shape="poly" title=" " alt="" coords="410,330,320,288,322,283,412,325"/>
-<area shape="poly" title=" " alt="" coords="119,206,129,275,148,367,158,402,153,403,143,369,124,276,114,207"/>
-<area shape="poly" title=" " alt="" coords="142,204,241,247,238,252,140,209"/>
-</map>
-</div>
-</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../da/d82/a00091.png" border="0" usemap="#alibk__header_2driver_2kmouse_8hppdep" alt=""/></div>
-<map name="alibk__header_2driver_2kmouse_8hppdep" id="alibk__header_2driver_2kmouse_8hppdep">
-<area shape="rect" title=" " alt="" coords="339,5,479,45"/>
-<area shape="rect" href="../../df/d03/a00062.html" title=" " alt="" coords="5,93,164,119"/>
-<area shape="poly" title=" " alt="" coords="326,49,132,96,131,91,325,44"/>
-<area shape="rect" href="../../d6/d5b/a00026.html" title=" " alt="" coords="188,93,395,119"/>
-<area shape="poly" title=" " alt="" coords="370,55,310,95,307,91,367,51"/>
-<area shape="rect" href="../../dd/d32/a00041.html" title=" " alt="" coords="419,93,633,119"/>
-<area shape="poly" title=" " alt="" coords="450,51,510,91,507,95,447,55"/>
-<area shape="rect" href="../../d5/df9/a00044.html" title=" " alt="" coords="657,93,854,119"/>
-<area shape="poly" title=" " alt="" coords="493,43,706,91,704,96,492,48"/>
+<div class="center"><img src="../../d9/dec/a00090.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__src_2essential_2kicxxabi_8cpp" alt=""/></div>
+<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__src_2essential_2kicxxabi_8cpp" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__src_2essential_2kicxxabi_8cpp">
+<area shape="rect" title=" " alt="" coords="25,5,250,60"/>
+<area shape="rect" href="../../d3/d8b/a00059.html" title=" " alt="" coords="54,108,222,133"/>
+<area shape="poly" title=" " alt="" coords="140,60,140,94,135,94,135,60"/>
+<area shape="rect" href="../../dd/d32/a00041.html" title=" " alt="" coords="60,181,215,207"/>
+<area shape="poly" title=" " alt="" coords="140,134,140,168,135,168,135,134"/>
+<area shape="rect" title=" " alt="" coords="67,343,134,368"/>
+<area shape="poly" title=" " alt="" coords="84,209,45,227,28,240,14,256,8,274,15,293,34,317,59,334,56,338,30,321,10,296,3,274,10,253,24,236,42,222,82,204"/>
+<area shape="rect" title=" " alt="" coords="25,262,96,287"/>
+<area shape="poly" title=" " alt="" coords="128,209,83,254,79,250,124,205"/>
+<area shape="rect" href="../../d6/d2d/a00047.html" title=" " alt="" coords="120,255,310,295"/>
+<area shape="poly" title=" " alt="" coords="144,205,180,243,176,247,140,209"/>
+<area shape="poly" title=" " alt="" coords="202,256,164,218,168,214,206,253"/>
+<area shape="poly" title=" " alt="" coords="189,297,130,337,127,333,186,293"/>
 </map>
 </div>
 </div>
 <p><a href="../../db/dab/a00089_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d10/a01003.html">driver::MouseDriver</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de2/a00999.html">driver::MouseEventHandler</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6870fb46accc462562647e3d99c0b7c7" id="r_a6870fb46accc462562647e3d99c0b7c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a6870fb46accc462562647e3d99c0b7c7">__cxa_atexit</a> (void(*f)(void *), void *objptr, void *dso)</td></tr>
+<tr class="memdesc:a6870fb46accc462562647e3d99c0b7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a function to be called at program termination, compliant with the Itanium C++ ABI.  <br /></td></tr>
+<tr class="separator:a6870fb46accc462562647e3d99c0b7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:dd/d42/a00109" id="r_dd/d42/a00109"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/a00109.html">driver</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ac9670c34ae4e43ca669484a7a317e968" id="r_ac9670c34ae4e43ca669484a7a317e968"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#ac9670c34ae4e43ca669484a7a317e968">KMOUSE_COLOR_BLACK</a>&#160;&#160;&#160;0x0</td></tr>
-<tr class="separator:ac9670c34ae4e43ca669484a7a317e968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d83e86a8c6b6046bae502774a4e9e83" id="r_a6d83e86a8c6b6046bae502774a4e9e83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a6d83e86a8c6b6046bae502774a4e9e83">KMOUSE_COLOR_BLUE</a>&#160;&#160;&#160;0x1</td></tr>
-<tr class="separator:a6d83e86a8c6b6046bae502774a4e9e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bc124f24ecf7e9b0b06d181a6fd7a3e" id="r_a5bc124f24ecf7e9b0b06d181a6fd7a3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a5bc124f24ecf7e9b0b06d181a6fd7a3e">KMOUSE_COLOR_BROWN</a>&#160;&#160;&#160;0x6</td></tr>
-<tr class="separator:a5bc124f24ecf7e9b0b06d181a6fd7a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9660baab3bfc34866b252eff71da777d" id="r_a9660baab3bfc34866b252eff71da777d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a9660baab3bfc34866b252eff71da777d">KMOUSE_COLOR_CYAN</a>&#160;&#160;&#160;0x3</td></tr>
-<tr class="separator:a9660baab3bfc34866b252eff71da777d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a804c656f97148c66dee375ad20d6326e" id="r_a804c656f97148c66dee375ad20d6326e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a804c656f97148c66dee375ad20d6326e">KMOUSE_COLOR_DARK_GREY</a>&#160;&#160;&#160;0x8</td></tr>
-<tr class="separator:a804c656f97148c66dee375ad20d6326e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae245d853ffcebef06bd052849e35471c" id="r_ae245d853ffcebef06bd052849e35471c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a>&#160;&#160;&#160;0x2</td></tr>
-<tr class="separator:ae245d853ffcebef06bd052849e35471c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5882f98f21668e74fbc61e9a3cc4d4c5" id="r_a5882f98f21668e74fbc61e9a3cc4d4c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a5882f98f21668e74fbc61e9a3cc4d4c5">KMOUSE_COLOR_LIGHT_BLUE</a>&#160;&#160;&#160;0x9</td></tr>
-<tr class="separator:a5882f98f21668e74fbc61e9a3cc4d4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9391d6382197266f9d814ed3d21bac2" id="r_ac9391d6382197266f9d814ed3d21bac2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#ac9391d6382197266f9d814ed3d21bac2">KMOUSE_COLOR_LIGHT_CYAN</a>&#160;&#160;&#160;0xB</td></tr>
-<tr class="separator:ac9391d6382197266f9d814ed3d21bac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac874f858f617e42a6376c7092940376c" id="r_ac874f858f617e42a6376c7092940376c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#ac874f858f617e42a6376c7092940376c">KMOUSE_COLOR_LIGHT_GREEN</a>&#160;&#160;&#160;0xA</td></tr>
-<tr class="separator:ac874f858f617e42a6376c7092940376c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7f5f57837c11ae93f9a3c6ef0bba5a8" id="r_ab7f5f57837c11ae93f9a3c6ef0bba5a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#ab7f5f57837c11ae93f9a3c6ef0bba5a8">KMOUSE_COLOR_LIGHT_GREY</a>&#160;&#160;&#160;0x7</td></tr>
-<tr class="separator:ab7f5f57837c11ae93f9a3c6ef0bba5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a90c65c80e669968e259e84b095c408" id="r_a5a90c65c80e669968e259e84b095c408"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a5a90c65c80e669968e259e84b095c408">KMOUSE_COLOR_LIGHT_MAGENTA</a>&#160;&#160;&#160;0xD</td></tr>
-<tr class="separator:a5a90c65c80e669968e259e84b095c408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb168549620efee2737255317c814059" id="r_acb168549620efee2737255317c814059"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#acb168549620efee2737255317c814059">KMOUSE_COLOR_LIGHT_RED</a>&#160;&#160;&#160;0xC</td></tr>
-<tr class="separator:acb168549620efee2737255317c814059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe7fa11c53fb1ea1270f0ed00bb18b8" id="r_abfe7fa11c53fb1ea1270f0ed00bb18b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#abfe7fa11c53fb1ea1270f0ed00bb18b8">KMOUSE_COLOR_MAGENTA</a>&#160;&#160;&#160;0x5</td></tr>
-<tr class="separator:abfe7fa11c53fb1ea1270f0ed00bb18b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d9a56551248abc6954bf18c76ddcb74" id="r_a1d9a56551248abc6954bf18c76ddcb74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a1d9a56551248abc6954bf18c76ddcb74">KMOUSE_COLOR_RED</a>&#160;&#160;&#160;0x4</td></tr>
-<tr class="separator:a1d9a56551248abc6954bf18c76ddcb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb30f17e5bf0289632c5abbd2d2dd99a" id="r_abb30f17e5bf0289632c5abbd2d2dd99a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#abb30f17e5bf0289632c5abbd2d2dd99a">KMOUSE_COLOR_WHITE</a>&#160;&#160;&#160;0xF</td></tr>
-<tr class="separator:abb30f17e5bf0289632c5abbd2d2dd99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc652aa810e06ef28716a20cb70d51d4" id="r_abc652aa810e06ef28716a20cb70d51d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#abc652aa810e06ef28716a20cb70d51d4">KMOUSE_COLOR_YELLOW</a>&#160;&#160;&#160;0xE</td></tr>
-<tr class="separator:abc652aa810e06ef28716a20cb70d51d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a637dd833f5f7af42afa1f42349a4d89e" id="r_a637dd833f5f7af42afa1f42349a4d89e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a637dd833f5f7af42afa1f42349a4d89e">MOUSE_POINTER_COLOR</a>&#160;&#160;&#160;<a class="el" href="../../db/dab/a00089.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a></td></tr>
-<tr class="separator:a637dd833f5f7af42afa1f42349a4d89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a0f75f529cf75cf0a9cd266f8d67675dc" id="r_a0f75f529cf75cf0a9cd266f8d67675dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d8b/a00059.html#a35fc01d4eba01f3f2ec636bd6b5ff34f">uarch_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a> = 0</td></tr>
+<tr class="separator:a0f75f529cf75cf0a9cd266f8d67675dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a64060e9039acf0ba3c311b2d981b7" id="r_a05a64060e9039acf0ba3c311b2d981b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df2/a01000.html">essential::atexit_func_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a> [<a class="el" href="../../d3/d8b/a00059.html#ae07a9ad040d2fbefafcff363b77697ce">ATEXIT_MAX_FUNCS</a>]</td></tr>
+<tr class="separator:a05a64060e9039acf0ba3c311b2d981b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19df960d2907e9c08a720ae7683e632c" id="r_a19df960d2907e9c08a720ae7683e632c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a19df960d2907e9c08a720ae7683e632c">__dso_handle</a> = 0</td></tr>
+<tr class="separator:a19df960d2907e9c08a720ae7683e632c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a50b36f9886cd6bdbe05a5a6639cd95" id="r_a9a50b36f9886cd6bdbe05a5a6639cd95"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a9a50b36f9886cd6bdbe05a5a6639cd95">ctors_end</a> )()</td></tr>
+<tr class="separator:a9a50b36f9886cd6bdbe05a5a6639cd95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201d805094c80d48f8ee4e49ee85fb74" id="r_a201d805094c80d48f8ee4e49ee85fb74"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html#a201d805094c80d48f8ee4e49ee85fb74">ctors_start</a> )()</td></tr>
+<tr class="separator:a201d805094c80d48f8ee4e49ee85fb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ac9670c34ae4e43ca669484a7a317e968" name="ac9670c34ae4e43ca669484a7a317e968"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9670c34ae4e43ca669484a7a317e968">&#9670;&#160;</a></span>KMOUSE_COLOR_BLACK</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a6870fb46accc462562647e3d99c0b7c7" name="a6870fb46accc462562647e3d99c0b7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6870fb46accc462562647e3d99c0b7c7">&#9670;&#160;</a></span>__cxa_atexit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define KMOUSE_COLOR_BLACK&#160;&#160;&#160;0x0</td>
+          <td class="memname">int __cxa_atexit </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>objptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dso</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00009">9</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
+<p>Registers a function to be called at program termination, compliant with the Itanium C++ ABI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Pointer to the function (destructor) to be called. </td></tr>
+    <tr><td class="paramname">objptr</td><td>Pointer to the object instance for the destructor. </td></tr>
+    <tr><td class="paramname">dso</td><td>Handle to the shared object that owns the function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure (if the table is full). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00036">36</a> of file <a class="el" href="../../db/dab/a00089_source.html">kicxxabi.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../db/dab/a00089.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a> &gt;= <a class="code hl_define" href="../../d3/d8b/a00059.html#ae07a9ad040d2fbefafcff363b77697ce">ATEXIT_MAX_FUNCS</a>) {<span class="keywordflow">return</span> -1;};</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="../../db/dab/a00089.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[<a class="code hl_variable" href="../../db/dab/a00089.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a>].<a class="code hl_variable" href="../../d7/df2/a01000.html#a665175c477008154e9b40ef96a8d81c2">destructor_func</a> = f;</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="../../db/dab/a00089.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[<a class="code hl_variable" href="../../db/dab/a00089.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a>].<a class="code hl_variable" href="../../d7/df2/a01000.html#a24ece443578ebec2449e72e998521a11">obj_ptr</a> = objptr;</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="../../db/dab/a00089.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[<a class="code hl_variable" href="../../db/dab/a00089.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a>].<a class="code hl_variable" href="../../d7/df2/a01000.html#a98800f0ffd56e2dc77c46a741e1cf008">dso_handle</a> = dso;</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="../../db/dab/a00089.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a>++;</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> 0; <span class="comment">/*I would prefer if functions returned 1 on success, but the ABI says...*/</span></div>
+<div class="line"><span class="lineno">   44</span>};</div>
+<div class="ttc" id="aa00059_html_ae07a9ad040d2fbefafcff363b77697ce"><div class="ttname"><a href="../../d3/d8b/a00059.html#ae07a9ad040d2fbefafcff363b77697ce">ATEXIT_MAX_FUNCS</a></div><div class="ttdeci">#define ATEXIT_MAX_FUNCS</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00004">kicxxabi.hpp:4</a></div></div>
+<div class="ttc" id="aa00089_html_a05a64060e9039acf0ba3c311b2d981b7"><div class="ttname"><a href="../../db/dab/a00089.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a></div><div class="ttdeci">essential::atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS]</div><div class="ttdef"><b>Definition</b> <a href="../../db/dab/a00089_source.html#l00026">kicxxabi.cpp:26</a></div></div>
+<div class="ttc" id="aa00089_html_a0f75f529cf75cf0a9cd266f8d67675dc"><div class="ttname"><a href="../../db/dab/a00089.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a></div><div class="ttdeci">uarch_t __atexit_func_count</div><div class="ttdef"><b>Definition</b> <a href="../../db/dab/a00089_source.html#l00027">kicxxabi.cpp:27</a></div></div>
+<div class="ttc" id="aa01000_html_a24ece443578ebec2449e72e998521a11"><div class="ttname"><a href="../../d7/df2/a01000.html#a24ece443578ebec2449e72e998521a11">essential::atexit_func_entry_t::obj_ptr</a></div><div class="ttdeci">void * obj_ptr</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00017">kicxxabi.hpp:17</a></div></div>
+<div class="ttc" id="aa01000_html_a665175c477008154e9b40ef96a8d81c2"><div class="ttname"><a href="../../d7/df2/a01000.html#a665175c477008154e9b40ef96a8d81c2">essential::atexit_func_entry_t::destructor_func</a></div><div class="ttdeci">void(* destructor_func)(void *)</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00016">kicxxabi.hpp:16</a></div></div>
+<div class="ttc" id="aa01000_html_a98800f0ffd56e2dc77c46a741e1cf008"><div class="ttname"><a href="../../d7/df2/a01000.html#a98800f0ffd56e2dc77c46a741e1cf008">essential::atexit_func_entry_t::dso_handle</a></div><div class="ttdeci">void * dso_handle</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d8b/a00059_source.html#l00018">kicxxabi.hpp:18</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/dab/a00089_source.html#l00027">__atexit_func_count</a>, <a class="el" href="../../db/dab/a00089_source.html#l00026">__atexit_funcs</a>, <a class="el" href="../../d3/d8b/a00059_source.html#l00004">ATEXIT_MAX_FUNCS</a>, <a class="el" href="../../d3/d8b/a00059_source.html#l00016">essential::atexit_func_entry_t::destructor_func</a>, <a class="el" href="../../d3/d8b/a00059_source.html#l00018">essential::atexit_func_entry_t::dso_handle</a>, and <a class="el" href="../../d3/d8b/a00059_source.html#l00017">essential::atexit_func_entry_t::obj_ptr</a>.</p>
 
 </div>
 </div>
-<a id="a6d83e86a8c6b6046bae502774a4e9e83" name="a6d83e86a8c6b6046bae502774a4e9e83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d83e86a8c6b6046bae502774a4e9e83">&#9670;&#160;</a></span>KMOUSE_COLOR_BLUE</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a0f75f529cf75cf0a9cd266f8d67675dc" name="a0f75f529cf75cf0a9cd266f8d67675dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f75f529cf75cf0a9cd266f8d67675dc">&#9670;&#160;</a></span>__atexit_func_count</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define KMOUSE_COLOR_BLUE&#160;&#160;&#160;0x1</td>
+          <td class="memname"><a class="el" href="../../d3/d8b/a00059.html#a35fc01d4eba01f3f2ec636bd6b5ff34f">uarch_t</a> __atexit_func_count = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00010">10</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00027">27</a> of file <a class="el" href="../../db/dab/a00089_source.html">kicxxabi.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/dab/a00089_source.html#l00036">__cxa_atexit()</a>, and <a class="el" href="../../db/dab/a00089_source.html#l00049">essential::__cxa_finalize()</a>.</p>
 
 </div>
 </div>
-<a id="a5bc124f24ecf7e9b0b06d181a6fd7a3e" name="a5bc124f24ecf7e9b0b06d181a6fd7a3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bc124f24ecf7e9b0b06d181a6fd7a3e">&#9670;&#160;</a></span>KMOUSE_COLOR_BROWN</h2>
+<a id="a05a64060e9039acf0ba3c311b2d981b7" name="a05a64060e9039acf0ba3c311b2d981b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a64060e9039acf0ba3c311b2d981b7">&#9670;&#160;</a></span>__atexit_funcs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define KMOUSE_COLOR_BROWN&#160;&#160;&#160;0x6</td>
+          <td class="memname"><a class="el" href="../../d7/df2/a01000.html">essential::atexit_func_entry_t</a> __atexit_funcs[<a class="el" href="../../d3/d8b/a00059.html#ae07a9ad040d2fbefafcff363b77697ce">ATEXIT_MAX_FUNCS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00015">15</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00026">26</a> of file <a class="el" href="../../db/dab/a00089_source.html">kicxxabi.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/dab/a00089_source.html#l00036">__cxa_atexit()</a>, and <a class="el" href="../../db/dab/a00089_source.html#l00049">essential::__cxa_finalize()</a>.</p>
 
 </div>
 </div>
-<a id="a9660baab3bfc34866b252eff71da777d" name="a9660baab3bfc34866b252eff71da777d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9660baab3bfc34866b252eff71da777d">&#9670;&#160;</a></span>KMOUSE_COLOR_CYAN</h2>
+<a id="a19df960d2907e9c08a720ae7683e632c" name="a19df960d2907e9c08a720ae7683e632c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19df960d2907e9c08a720ae7683e632c">&#9670;&#160;</a></span>__dso_handle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define KMOUSE_COLOR_CYAN&#160;&#160;&#160;0x3</td>
+          <td class="memname">void* __dso_handle = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00012">12</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00029">29</a> of file <a class="el" href="../../db/dab/a00089_source.html">kicxxabi.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a804c656f97148c66dee375ad20d6326e" name="a804c656f97148c66dee375ad20d6326e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a804c656f97148c66dee375ad20d6326e">&#9670;&#160;</a></span>KMOUSE_COLOR_DARK_GREY</h2>
+<a id="a9a50b36f9886cd6bdbe05a5a6639cd95" name="a9a50b36f9886cd6bdbe05a5a6639cd95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a50b36f9886cd6bdbe05a5a6639cd95">&#9670;&#160;</a></span>ctors_end</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define KMOUSE_COLOR_DARK_GREY&#160;&#160;&#160;0x8</td>
+          <td class="memname">void(* ctors_end) () </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00017">17</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00005">5</a> of file <a class="el" href="../../db/dab/a00089_source.html">kicxxabi.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/dab/a00089_source.html#l00007">essential::__callConstructors()</a>.</p>
 
 </div>
 </div>
-<a id="ae245d853ffcebef06bd052849e35471c" name="ae245d853ffcebef06bd052849e35471c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae245d853ffcebef06bd052849e35471c">&#9670;&#160;</a></span>KMOUSE_COLOR_GREEN</h2>
+<a id="a201d805094c80d48f8ee4e49ee85fb74" name="a201d805094c80d48f8ee4e49ee85fb74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201d805094c80d48f8ee4e49ee85fb74">&#9670;&#160;</a></span>ctors_start</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define KMOUSE_COLOR_GREEN&#160;&#160;&#160;0x2</td>
+          <td class="memname">void(* ctors_start) () </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00011">11</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00004">4</a> of file <a class="el" href="../../db/dab/a00089_source.html">kicxxabi.cpp</a>.</p>
 
-</div>
-</div>
-<a id="a5882f98f21668e74fbc61e9a3cc4d4c5" name="a5882f98f21668e74fbc61e9a3cc4d4c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5882f98f21668e74fbc61e9a3cc4d4c5">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_BLUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_LIGHT_BLUE&#160;&#160;&#160;0x9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00018">18</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac9391d6382197266f9d814ed3d21bac2" name="ac9391d6382197266f9d814ed3d21bac2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9391d6382197266f9d814ed3d21bac2">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_CYAN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_LIGHT_CYAN&#160;&#160;&#160;0xB</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00020">20</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac874f858f617e42a6376c7092940376c" name="ac874f858f617e42a6376c7092940376c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac874f858f617e42a6376c7092940376c">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_GREEN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_LIGHT_GREEN&#160;&#160;&#160;0xA</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00019">19</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ab7f5f57837c11ae93f9a3c6ef0bba5a8" name="ab7f5f57837c11ae93f9a3c6ef0bba5a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7f5f57837c11ae93f9a3c6ef0bba5a8">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_GREY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_LIGHT_GREY&#160;&#160;&#160;0x7</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00016">16</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a5a90c65c80e669968e259e84b095c408" name="a5a90c65c80e669968e259e84b095c408"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a90c65c80e669968e259e84b095c408">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_MAGENTA</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_LIGHT_MAGENTA&#160;&#160;&#160;0xD</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00022">22</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="acb168549620efee2737255317c814059" name="acb168549620efee2737255317c814059"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb168549620efee2737255317c814059">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_RED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_LIGHT_RED&#160;&#160;&#160;0xC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00021">21</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="abfe7fa11c53fb1ea1270f0ed00bb18b8" name="abfe7fa11c53fb1ea1270f0ed00bb18b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfe7fa11c53fb1ea1270f0ed00bb18b8">&#9670;&#160;</a></span>KMOUSE_COLOR_MAGENTA</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_MAGENTA&#160;&#160;&#160;0x5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00014">14</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a1d9a56551248abc6954bf18c76ddcb74" name="a1d9a56551248abc6954bf18c76ddcb74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d9a56551248abc6954bf18c76ddcb74">&#9670;&#160;</a></span>KMOUSE_COLOR_RED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_RED&#160;&#160;&#160;0x4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00013">13</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="abb30f17e5bf0289632c5abbd2d2dd99a" name="abb30f17e5bf0289632c5abbd2d2dd99a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb30f17e5bf0289632c5abbd2d2dd99a">&#9670;&#160;</a></span>KMOUSE_COLOR_WHITE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_WHITE&#160;&#160;&#160;0xF</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00024">24</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="abc652aa810e06ef28716a20cb70d51d4" name="abc652aa810e06ef28716a20cb70d51d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc652aa810e06ef28716a20cb70d51d4">&#9670;&#160;</a></span>KMOUSE_COLOR_YELLOW</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KMOUSE_COLOR_YELLOW&#160;&#160;&#160;0xE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00023">23</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a637dd833f5f7af42afa1f42349a4d89e" name="a637dd833f5f7af42afa1f42349a4d89e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a637dd833f5f7af42afa1f42349a4d89e">&#9670;&#160;</a></span>MOUSE_POINTER_COLOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MOUSE_POINTER_COLOR&#160;&#160;&#160;<a class="el" href="../../db/dab/a00089.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/dab/a00089_source.html#l00025">25</a> of file <a class="el" href="../../db/dab/a00089_source.html">kmouse.hpp</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/dab/a00089_source.html#l00007">essential::__callConstructors()</a>.</p>
 
 </div>
 </div>
@@ -478,8 +300,8 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_72b26adc0987810216370bc6a776b23e.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_1a23d90a90b116220e4c9c5e74cdbcbc.html">driver</a></li><li class="navelem"><a class="el" href="../../db/dab/a00089.html">kmouse.hpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 00:21:12 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_267305fd0cd91744e53e95a33bbf4449.html">libk_src</a></li><li class="navelem"><a class="el" href="../../dir_9ca8e72f093c4bbb5f21665bfa76adc4.html">essential</a></li><li class="navelem"><a class="el" href="../../db/dab/a00089.html">kicxxabi.cpp</a></li>
+    <li class="footer">Generated on Fri Oct 24 2025 11:17:43 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

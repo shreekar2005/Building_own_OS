@@ -32,7 +32,7 @@
 
     namespace essential{
         /// @brief Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (GDT).
-        class GDT_row {
+        class GDT_Row {
             private :
                 uint16_t limit_low;
                 uint16_t base_low;
@@ -42,27 +42,27 @@
                 uint8_t  base_high;
 
             public:
-                GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte);
-                GDT_row(); // Default constructor for null segment
-                ~GDT_row();
-                friend class GDT;
+                GDT_Row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte);
+                GDT_Row(); // Default constructor for null segment
+                ~GDT_Row();
+                friend class GDT_Manager;
 
         } __attribute__((packed));
 
         /// @brief Manages the Global Descriptor Table (GDT), holding segment descriptors for the CPU.
-        class GDT {
+        class GDT_Manager {
             private:
                 uint16_t limit;
                 uintptr_t base;
-                GDT_row nullSegment;
-                GDT_row kernel_CS;
-                GDT_row kernel_DS;
-                GDT_row user_CS;
-                GDT_row user_DS;
+                GDT_Row nullSegment;
+                GDT_Row kernel_CS;
+                GDT_Row kernel_DS;
+                GDT_Row user_CS;
+                GDT_Row user_DS;
 
             public:
-                GDT();
-                ~GDT();
+                GDT_Manager();
+                ~GDT_Manager();
                 void installTable();
                 static void printLoadedTable();
                 static void printLoadedTableHeader();

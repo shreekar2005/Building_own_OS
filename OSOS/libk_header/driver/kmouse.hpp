@@ -37,8 +37,6 @@
         };
 
         /// @brief Driver for the PS/2 mouse, handling 3-byte packets and managing mouse state.
-        /// @inherits hardware_communication::InterruptHandler
-        /// @inherits driver::Driver
         class MouseDriver : public hardware_communication::InterruptHandler, public driver::Driver{
                 hardware_communication::Port8Bit dataPort;
                 hardware_communication::Port8Bit commandPort;

@@ -15,9 +15,9 @@ hardware_communication::InterruptHandler::~InterruptHandler(){
 
 
 /// @brief Default constructor for a single entry (row) in the IDT.
-hardware_communication::IDT_row::IDT_row(){}
-/// @brief Destroys the IDT_row object.
-hardware_communication::IDT_row::~IDT_row(){}
+hardware_communication::IDT_Row::IDT_Row(){}
+/// @brief Destroys the IDT_Row object.
+hardware_communication::IDT_Row::~IDT_Row(){}
 
 /// @brief Command port for the Master PIC (8259A).
 hardware_communication::Port8BitSlow hardware_communication::InterruptManager::picMasterCommand(0x20);
@@ -30,7 +30,7 @@ hardware_communication::Port8BitSlow hardware_communication::InterruptManager::p
 
 /// @brief Constructs an InterruptManager, initializes the PICs, and populates the IDT.
 /// @param gdt A pointer to the Global Descriptor Table instance, needed to get the kernel code segment selector.
-hardware_communication::InterruptManager::InterruptManager(essential::GDT* gdt){
+hardware_communication::InterruptManager::InterruptManager(essential::GDT_Manager* gdt){
     // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.
     picMasterCommand.write(0x11);
     picSlaveCommand.write(0x11);
@@ -138,12 +138,12 @@ void hardware_communication::InterruptManager::printLoadedTable() {
     basic::printf("INFO about : Currently Loaded IDT\n");
     basic::printf("Base Address: %#x\n", idt_ptr.base);
     basic::printf("Limit: %#x (%d bytes)\n", idt_ptr.limit, idt_ptr.limit);
-    basic::printf("Entries: %d\n", (idt_ptr.limit + 1) / sizeof(hardware_communication::IDT_row));
+    basic::printf("Entries: %d\n", (idt_ptr.limit + 1) / sizeof(hardware_communication::IDT_Row));
     basic::printf("---\n");
 
     basic::printf(" Idx | Handler Address | Selector | Access Flags\n");
-    hardware_communication::IDT_row* current_idt = (hardware_communication::IDT_row*)idt_ptr.base;
-    uint32_t num_entries = (idt_ptr.limit + 1) / sizeof(hardware_communication::IDT_row);
+    hardware_communication::IDT_Row* current_idt = (hardware_communication::IDT_Row*)idt_ptr.base;
+    uint32_t num_entries = (idt_ptr.limit + 1) / sizeof(hardware_communication::IDT_Row);
     for (uint32_t i = 0; i < num_entries; i++) {
         uint32_t handler_address = (current_idt[i].handlerAddressHighbits << 16) | current_idt[i].handlerAddressLowbits;
 
@@ -173,7 +173,7 @@ void hardware_communication::InterruptManager::printLoadedTableHeader(){
     basic::printf("INFO about : Currently Loaded IDT\n");
     basic::printf("Base Address: %#x\n", idt_ptr.base);
     basic::printf("Limit: %#x (%d bytes)\n", idt_ptr.limit, idt_ptr.limit);
-    basic::printf("Entries: %d\n", (idt_ptr.limit + 1) / sizeof(hardware_communication::IDT_row));
+    basic::printf("Entries: %d\n", (idt_ptr.limit + 1) / sizeof(hardware_communication::IDT_Row));
     basic::printf("---\n");
 }
 

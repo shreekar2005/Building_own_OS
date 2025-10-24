@@ -1,4 +1,4 @@
 var a00074 =
 [
-    [ "__printMemoryMap", "db/db6/a00074.html#a53c6425a55d9fb93998da01f2416f9ad", null ]
+    [ "installed_interrupt_manager", "db/db6/a00074.html#a1df59a6c3578a3d5d96bfef4ffd8fbc8", null ]
 ];

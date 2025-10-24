@@ -1,8 +1,9 @@
 var a00095 =
 [
-    [ "essential::atexit_func_entry_t", "d1/dac/a01015.html", "d1/dac/a01015" ],
-    [ "ATEXIT_MAX_FUNCS", "d9/d77/a00095.html#ae07a9ad040d2fbefafcff363b77697ce", null ],
-    [ "uarch_t", "d9/d77/a00095.html#a35fc01d4eba01f3f2ec636bd6b5ff34f", null ],
+    [ "atexit_func_entry_t", "d7/df2/a01000.html", "d7/df2/a01000" ],
+    [ "GDT", "d3/daa/a00996.html", "d3/daa/a00996" ],
+    [ "GDT_row", "d7/d76/a00992.html", "d7/d76/a00992" ],
+    [ "__attribute__", "d9/d77/a00095.html#a52e3ec8c29cc4bb68f65445749f0bfdb", null ],
     [ "__callConstructors", "d9/d77/a00095.html#a433c3d2d19d89890b522ac26b05fa7aa", null ],
     [ "__cxa_finalize", "d9/d77/a00095.html#a098e7240e26e869c035075be004b4ee9", null ]
 ];

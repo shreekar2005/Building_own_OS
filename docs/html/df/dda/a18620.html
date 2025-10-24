@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: essential Namespace Reference</title>
+<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kmouse.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -44,7 +44,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">OSOS - Documentation
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
+   <div id="projectbrief">32-bit Operating System : Under development - Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -87,219 +87,391 @@ $(document).ready(function(){initNavTree('df/dda/a18620.html','../../'); initRes
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">essential Namespace Reference</div></div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">kmouse.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d64/a19525.html">atexit_func_entry_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold a registered C++ ABI exit function (destructor).  <a href="../../d2/d64/a19525.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/a19521.html">GDT</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the Global Descriptor Table (<a class="el" href="../../d0/d39/a19521.html" title="Manages the Global Descriptor Table (GDT), holding segment descriptors for the CPU.">GDT</a>), holding segment descriptors for the CPU.  <a href="../../d0/d39/a19521.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dbb/a19517.html">GDT_row</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (<a class="el" href="../../d0/d39/a19521.html" title="Manages the Global Descriptor Table (GDT), holding segment descriptors for the CPU.">GDT</a>).  <a href="../../dd/dbb/a19517.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a52e3ec8c29cc4bb68f65445749f0bfdb" id="r_a52e3ec8c29cc4bb68f65445749f0bfdb"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../dd/dbb/a19517.html">essential::GDT_row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a52e3ec8c29cc4bb68f65445749f0bfdb">__attribute__</a> ((packed))</td></tr>
-<tr class="separator:a52e3ec8c29cc4bb68f65445749f0bfdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a433c3d2d19d89890b522ac26b05fa7aa" id="r_a433c3d2d19d89890b522ac26b05fa7aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a433c3d2d19d89890b522ac26b05fa7aa">__callConstructors</a> ()</td></tr>
-<tr class="memdesc:a433c3d2d19d89890b522ac26b05fa7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over the list of global constructors and calls them to initialize global C++ objects.  <br /></td></tr>
-<tr class="separator:a433c3d2d19d89890b522ac26b05fa7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a098e7240e26e869c035075be004b4ee9" id="r_a098e7240e26e869c035075be004b4ee9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a098e7240e26e869c035075be004b4ee9">__cxa_finalize</a> (void *f)</td></tr>
-<tr class="memdesc:a098e7240e26e869c035075be004b4ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes registered destructors/cleanup functions.  <br /></td></tr>
-<tr class="separator:a098e7240e26e869c035075be004b4ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a52e3ec8c29cc4bb68f65445749f0bfdb" name="a52e3ec8c29cc4bb68f65445749f0bfdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52e3ec8c29cc4bb68f65445749f0bfdb">&#9670;&#160;</a></span>__attribute__()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">class <a class="el" href="../../d0/d39/a19521.html">essential::GDT</a> essential::__attribute__ </td>
-          <td>(</td>
-          <td class="paramtype">(packed)&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a433c3d2d19d89890b522ac26b05fa7aa" name="a433c3d2d19d89890b522ac26b05fa7aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a433c3d2d19d89890b522ac26b05fa7aa">&#9670;&#160;</a></span>__callConstructors()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void essential::__callConstructors </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Iterates over the list of global constructors and calls them to initialize global C++ objects. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d9/dde/a18614_source.html#l00007">7</a> of file <a class="el" href="../../d9/dde/a18614_source.html">kicxxabi.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    7</span>                                  {</div>
-<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">for</span> (<span class="keywordtype">void</span> (**p)() = &amp;<a class="code hl_variable" href="../../d9/dde/a18614.html#a201d805094c80d48f8ee4e49ee85fb74">ctors_start</a>; p &lt; &amp;<a class="code hl_variable" href="../../d9/dde/a18614.html#a9a50b36f9886cd6bdbe05a5a6639cd95">ctors_end</a>; ++p)</div>
-<div class="line"><span class="lineno">    9</span>    {</div>
-<div class="line"><span class="lineno">   10</span>        (*p)(); <span class="comment">// Call the constructor</span></div>
-<div class="line"><span class="lineno">   11</span>    }</div>
-<div class="line"><span class="lineno">   12</span>}</div>
-<div class="ttc" id="aa18614_html_a201d805094c80d48f8ee4e49ee85fb74"><div class="ttname"><a href="../../d9/dde/a18614.html#a201d805094c80d48f8ee4e49ee85fb74">ctors_start</a></div><div class="ttdeci">void(* ctors_start)()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/dde/a18614_source.html#l00004">kicxxabi.cpp:4</a></div></div>
-<div class="ttc" id="aa18614_html_a9a50b36f9886cd6bdbe05a5a6639cd95"><div class="ttname"><a href="../../d9/dde/a18614.html#a9a50b36f9886cd6bdbe05a5a6639cd95">ctors_end</a></div><div class="ttdeci">void(* ctors_end)()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/dde/a18614_source.html#l00005">kicxxabi.cpp:5</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d9/dde/a18614_source.html#l00005">ctors_end</a>, and <a class="el" href="../../d9/dde/a18614_source.html#l00004">ctors_start</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d2/d7a/a18557_source.html#l00105">kernelMain()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/dc9/a18611_source.html">hardware_communication/kinterrupt.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/dde/a18614_source.html">hardware_communication/kport.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d71/a18608_source.html">basic/kiostream.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d3d/a18623_source.html">driver/kdriver.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kmouse.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../df/dda/a18620_a433c3d2d19d89890b522ac26b05fa7aa_icgraph.png" border="0" usemap="#adf/dda/a18620_a433c3d2d19d89890b522ac26b05fa7aa_icgraph" alt=""/></div>
-<map name="adf/dda/a18620_a433c3d2d19d89890b522ac26b05fa7aa_icgraph" id="adf/dda/a18620_a433c3d2d19d89890b522ac26b05fa7aa_icgraph">
-<area shape="rect" title="Iterates over the list of global constructors and calls them to initialize global C++ objects." alt="" coords="148,5,356,31"/>
-<area shape="rect" href="../../d2/d7a/a18557.html#abb4e4866092116b520310d61961bfe12" title="The main entry point for the C++ kernel." alt="" coords="5,5,100,31"/>
-<area shape="poly" title=" " alt="" coords="134,21,100,21,100,15,134,15"/>
+<div class="center"><img src="../../d1/d96/a18621.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kmouse_8hpp" alt=""/></div>
+<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kmouse_8hpp" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kmouse_8hpp">
+<area shape="rect" title=" " alt="" coords="289,5,517,60"/>
+<area shape="rect" title=" " alt="" coords="131,431,197,456"/>
+<area shape="poly" title=" " alt="" coords="289,40,195,53,148,65,104,82,65,104,35,131,15,166,8,208,8,283,11,307,20,329,33,350,50,368,88,399,127,422,124,427,85,404,46,372,29,353,15,332,6,308,3,284,3,207,10,164,31,128,62,99,102,77,146,60,194,48,288,34"/>
+<area shape="rect" href="../../d7/dc9/a18611.html" title=" " alt="" coords="174,108,365,148"/>
+<area shape="poly" title=" " alt="" coords="367,62,309,102,306,98,364,58"/>
+<area shape="rect" href="../../d6/d71/a18608.html" title=" " alt="" coords="201,269,356,295"/>
+<area shape="poly" title=" " alt="" coords="403,61,395,103,380,149,362,181,342,212,302,261,297,257,337,209,358,179,375,147,390,102,397,60"/>
+<area shape="rect" href="../../d9/dde/a18614.html" title=" " alt="" coords="347,343,538,383"/>
+<area shape="poly" title=" " alt="" coords="409,60,441,329,436,329,403,61"/>
+<area shape="rect" href="../../d7/d3d/a18623.html" title=" " alt="" coords="491,115,629,141"/>
+<area shape="poly" title=" " alt="" coords="448,58,530,106,527,111,446,62"/>
+<area shape="poly" title=" " alt="" coords="258,150,224,202,192,270,181,309,174,349,167,417,162,416,169,349,176,308,187,268,219,200,253,147"/>
+<area shape="poly" title=" " alt="" coords="273,148,280,256,274,256,268,149"/>
+<area shape="poly" title=" " alt="" coords="286,147,422,330,418,333,281,150"/>
+<area shape="rect" href="../../d7/dc2/a18629.html" title=" " alt="" coords="43,196,186,221"/>
+<area shape="poly" title=" " alt="" coords="233,150,151,192,148,187,231,146"/>
+<area shape="poly" title=" " alt="" coords="273,296,183,421,178,417,268,293"/>
+<area shape="rect" title=" " alt="" coords="253,350,323,375"/>
+<area shape="poly" title=" " alt="" coords="283,295,288,336,282,336,277,295"/>
+<area shape="poly" title=" " alt="" coords="297,292,384,335,382,339,295,297"/>
+<area shape="poly" title=" " alt="" coords="377,385,212,431,210,426,375,380"/>
+<area shape="poly" title=" " alt="" coords="410,345,320,302,322,298,412,340"/>
+<area shape="poly" title=" " alt="" coords="119,221,129,289,148,382,158,417,153,418,143,383,124,290,114,222"/>
+<area shape="poly" title=" " alt="" coords="142,219,241,261,238,266,140,224"/>
 </map>
 </div>
-
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d7d/a18622.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kmouse_8hppdep" alt=""/></div>
+<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kmouse_8hppdep" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kmouse_8hppdep">
+<area shape="rect" title=" " alt="" coords="321,5,549,60"/>
+<area shape="rect" href="../../d3/d3a/a18599.html" title=" " alt="" coords="5,108,187,163"/>
+<area shape="poly" title=" " alt="" coords="334,66,185,111,183,105,333,61"/>
+<area shape="rect" href="../../d7/dc1/a18635.html" title=" " alt="" coords="211,108,421,163"/>
+<area shape="poly" title=" " alt="" coords="395,71,349,110,345,106,392,67"/>
+<area shape="rect" href="../../d5/d7f/a18647.html" title=" " alt="" coords="446,108,663,163"/>
+<area shape="poly" title=" " alt="" coords="478,67,525,106,522,110,475,71"/>
+<area shape="rect" href="../../d5/d3d/a18650.html" title=" " alt="" coords="687,108,889,163"/>
+<area shape="poly" title=" " alt="" coords="540,61,697,105,695,111,539,66"/>
+</map>
 </div>
 </div>
-<a id="a098e7240e26e869c035075be004b4ee9" name="a098e7240e26e869c035075be004b4ee9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a098e7240e26e869c035075be004b4ee9">&#9670;&#160;</a></span>__cxa_finalize()</h2>
+<p><a href="../../df/dda/a18620_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d6b/a19555.html">driver::MouseDriver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d4f/a19535.html" title="Base class (interface) for all hardware drivers in the operating system.">Driver</a> for the PS/2 mouse, handling 3-byte packets and managing mouse state.  <a href="../../d5/d6b/a19555.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/a19551.html">driver::MouseEventHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class (interface) for handling mouse events (movement and button clicks).  <a href="../../d7/d4d/a19551.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:d5/d3e/a18661" id="r_d5/d3e/a18661"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d3e/a18661.html">driver</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac9670c34ae4e43ca669484a7a317e968" id="r_ac9670c34ae4e43ca669484a7a317e968"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#ac9670c34ae4e43ca669484a7a317e968">KMOUSE_COLOR_BLACK</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:ac9670c34ae4e43ca669484a7a317e968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d83e86a8c6b6046bae502774a4e9e83" id="r_a6d83e86a8c6b6046bae502774a4e9e83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a6d83e86a8c6b6046bae502774a4e9e83">KMOUSE_COLOR_BLUE</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:a6d83e86a8c6b6046bae502774a4e9e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc124f24ecf7e9b0b06d181a6fd7a3e" id="r_a5bc124f24ecf7e9b0b06d181a6fd7a3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a5bc124f24ecf7e9b0b06d181a6fd7a3e">KMOUSE_COLOR_BROWN</a>&#160;&#160;&#160;0x6</td></tr>
+<tr class="separator:a5bc124f24ecf7e9b0b06d181a6fd7a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9660baab3bfc34866b252eff71da777d" id="r_a9660baab3bfc34866b252eff71da777d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a9660baab3bfc34866b252eff71da777d">KMOUSE_COLOR_CYAN</a>&#160;&#160;&#160;0x3</td></tr>
+<tr class="separator:a9660baab3bfc34866b252eff71da777d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804c656f97148c66dee375ad20d6326e" id="r_a804c656f97148c66dee375ad20d6326e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a804c656f97148c66dee375ad20d6326e">KMOUSE_COLOR_DARK_GREY</a>&#160;&#160;&#160;0x8</td></tr>
+<tr class="separator:a804c656f97148c66dee375ad20d6326e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae245d853ffcebef06bd052849e35471c" id="r_ae245d853ffcebef06bd052849e35471c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a>&#160;&#160;&#160;0x2</td></tr>
+<tr class="separator:ae245d853ffcebef06bd052849e35471c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5882f98f21668e74fbc61e9a3cc4d4c5" id="r_a5882f98f21668e74fbc61e9a3cc4d4c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a5882f98f21668e74fbc61e9a3cc4d4c5">KMOUSE_COLOR_LIGHT_BLUE</a>&#160;&#160;&#160;0x9</td></tr>
+<tr class="separator:a5882f98f21668e74fbc61e9a3cc4d4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9391d6382197266f9d814ed3d21bac2" id="r_ac9391d6382197266f9d814ed3d21bac2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#ac9391d6382197266f9d814ed3d21bac2">KMOUSE_COLOR_LIGHT_CYAN</a>&#160;&#160;&#160;0xB</td></tr>
+<tr class="separator:ac9391d6382197266f9d814ed3d21bac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac874f858f617e42a6376c7092940376c" id="r_ac874f858f617e42a6376c7092940376c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#ac874f858f617e42a6376c7092940376c">KMOUSE_COLOR_LIGHT_GREEN</a>&#160;&#160;&#160;0xA</td></tr>
+<tr class="separator:ac874f858f617e42a6376c7092940376c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f5f57837c11ae93f9a3c6ef0bba5a8" id="r_ab7f5f57837c11ae93f9a3c6ef0bba5a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#ab7f5f57837c11ae93f9a3c6ef0bba5a8">KMOUSE_COLOR_LIGHT_GREY</a>&#160;&#160;&#160;0x7</td></tr>
+<tr class="separator:ab7f5f57837c11ae93f9a3c6ef0bba5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a90c65c80e669968e259e84b095c408" id="r_a5a90c65c80e669968e259e84b095c408"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a5a90c65c80e669968e259e84b095c408">KMOUSE_COLOR_LIGHT_MAGENTA</a>&#160;&#160;&#160;0xD</td></tr>
+<tr class="separator:a5a90c65c80e669968e259e84b095c408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb168549620efee2737255317c814059" id="r_acb168549620efee2737255317c814059"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#acb168549620efee2737255317c814059">KMOUSE_COLOR_LIGHT_RED</a>&#160;&#160;&#160;0xC</td></tr>
+<tr class="separator:acb168549620efee2737255317c814059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfe7fa11c53fb1ea1270f0ed00bb18b8" id="r_abfe7fa11c53fb1ea1270f0ed00bb18b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#abfe7fa11c53fb1ea1270f0ed00bb18b8">KMOUSE_COLOR_MAGENTA</a>&#160;&#160;&#160;0x5</td></tr>
+<tr class="separator:abfe7fa11c53fb1ea1270f0ed00bb18b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d9a56551248abc6954bf18c76ddcb74" id="r_a1d9a56551248abc6954bf18c76ddcb74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a1d9a56551248abc6954bf18c76ddcb74">KMOUSE_COLOR_RED</a>&#160;&#160;&#160;0x4</td></tr>
+<tr class="separator:a1d9a56551248abc6954bf18c76ddcb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb30f17e5bf0289632c5abbd2d2dd99a" id="r_abb30f17e5bf0289632c5abbd2d2dd99a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#abb30f17e5bf0289632c5abbd2d2dd99a">KMOUSE_COLOR_WHITE</a>&#160;&#160;&#160;0xF</td></tr>
+<tr class="separator:abb30f17e5bf0289632c5abbd2d2dd99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc652aa810e06ef28716a20cb70d51d4" id="r_abc652aa810e06ef28716a20cb70d51d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#abc652aa810e06ef28716a20cb70d51d4">KMOUSE_COLOR_YELLOW</a>&#160;&#160;&#160;0xE</td></tr>
+<tr class="separator:abc652aa810e06ef28716a20cb70d51d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637dd833f5f7af42afa1f42349a4d89e" id="r_a637dd833f5f7af42afa1f42349a4d89e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dda/a18620.html#a637dd833f5f7af42afa1f42349a4d89e">MOUSE_POINTER_COLOR</a>&#160;&#160;&#160;<a class="el" href="../../df/dda/a18620.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a></td></tr>
+<tr class="separator:a637dd833f5f7af42afa1f42349a4d89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac9670c34ae4e43ca669484a7a317e968" name="ac9670c34ae4e43ca669484a7a317e968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9670c34ae4e43ca669484a7a317e968">&#9670;&#160;</a></span>KMOUSE_COLOR_BLACK</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void essential::__cxa_finalize </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
+          <td class="memname">#define KMOUSE_COLOR_BLACK&#160;&#160;&#160;0x0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Executes registered destructors/cleanup functions. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>If non-null, only destructors associated with this function pointer are called. If null, all registered destructors are called in reverse order of registration. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00009">9</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dde/a18614_source.html#l00049">49</a> of file <a class="el" href="../../d9/dde/a18614_source.html">kicxxabi.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
-<div class="line"><span class="lineno">   51</span>    <a class="code hl_typedef" href="../../d8/d28/a18584.html#a35fc01d4eba01f3f2ec636bd6b5ff34f">uarch_t</a> i = <a class="code hl_variable" href="../../d9/dde/a18614.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a>;</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (!f)</div>
-<div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>        <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">   55</span><span class="comment">        * According to the Itanium C++ ABI, if essential::__cxa_finalize is called without a</span></div>
-<div class="line"><span class="lineno">   56</span><span class="comment">        * function ptr, then it means that we should destroy EVERYTHING MUAHAHAHA!!</span></div>
-<div class="line"><span class="lineno">   57</span><span class="comment">        *</span></div>
-<div class="line"><span class="lineno">   58</span><span class="comment">        * TODO:</span></div>
-<div class="line"><span class="lineno">   59</span><span class="comment">        * Note well, however, that deleting a function from here that contains a __dso_handle</span></div>
-<div class="line"><span class="lineno">   60</span><span class="comment">        * means that one link to a shared object file has been terminated. In other words,</span></div>
-<div class="line"><span class="lineno">   61</span><span class="comment">        * We should monitor this list (optional, of course), since it tells us how many links to </span></div>
-<div class="line"><span class="lineno">   62</span><span class="comment">        * an object file exist at runtime in a particular application. This can be used to tell </span></div>
-<div class="line"><span class="lineno">   63</span><span class="comment">        * when a shared object is no longer in use. It is one of many methods, however.</span></div>
-<div class="line"><span class="lineno">   64</span><span class="comment">        **/</span></div>
-<div class="line"><span class="lineno">   65</span>        <span class="comment">//You may insert a prinf() here to tell you whether or not the function gets called. Testing</span></div>
-<div class="line"><span class="lineno">   66</span>        <span class="comment">//is CRITICAL!</span></div>
-<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">while</span> (i--)</div>
-<div class="line"><span class="lineno">   68</span>        {</div>
-<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[i].destructor_func)</div>
-<div class="line"><span class="lineno">   70</span>            {</div>
-<div class="line"><span class="lineno">   71</span>                <span class="comment">/* ^^^ That if statement is a safeguard...</span></div>
-<div class="line"><span class="lineno">   72</span><span class="comment">                * To make sure we don&#39;t call any entries that have already been called and unset at runtime.</span></div>
-<div class="line"><span class="lineno">   73</span><span class="comment">                * Those will contain a value of 0, and calling a function with value 0</span></div>
-<div class="line"><span class="lineno">   74</span><span class="comment">                * will cause undefined behaviour. Remember that linear address 0, </span></div>
-<div class="line"><span class="lineno">   75</span><span class="comment">                * in a non-virtual address space (physical) contains the IVT and BDA.</span></div>
-<div class="line"><span class="lineno">   76</span><span class="comment">                *</span></div>
-<div class="line"><span class="lineno">   77</span><span class="comment">                * In a virtual environment, the kernel will receive a page fault, and then probably</span></div>
-<div class="line"><span class="lineno">   78</span><span class="comment">                * map in some trash, or a blank page, or something stupid like that.</span></div>
-<div class="line"><span class="lineno">   79</span><span class="comment">                * This will result in the processor executing trash, and...we don&#39;t want that.</span></div>
-<div class="line"><span class="lineno">   80</span><span class="comment">                **/</span></div>
-<div class="line"><span class="lineno">   81</span>                (*<a class="code hl_variable" href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[i].<a class="code hl_variable" href="../../d2/d64/a19525.html#a665175c477008154e9b40ef96a8d81c2">destructor_func</a>)(<a class="code hl_variable" href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[i].obj_ptr);</div>
-<div class="line"><span class="lineno">   82</span>            };</div>
-<div class="line"><span class="lineno">   83</span>        };</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   85</span>    };</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">while</span> (i--)</div>
-<div class="line"><span class="lineno">   88</span>    {</div>
-<div class="line"><span class="lineno">   89</span>        <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">   90</span><span class="comment">        * The ABI states that multiple calls to the __cxa_finalize(destructor_func_ptr) function</span></div>
-<div class="line"><span class="lineno">   91</span><span class="comment">        * should not destroy objects multiple times. Only one call is needed to eliminate multiple</span></div>
-<div class="line"><span class="lineno">   92</span><span class="comment">        * entries with the same address.</span></div>
-<div class="line"><span class="lineno">   93</span><span class="comment">        *</span></div>
-<div class="line"><span class="lineno">   94</span><span class="comment">        * FIXME:</span></div>
-<div class="line"><span class="lineno">   95</span><span class="comment">        * This presents the obvious problem: all destructors must be stored in the order they</span></div>
-<div class="line"><span class="lineno">   96</span><span class="comment">        * were placed in the list. I.e: the last initialized object&#39;s destructor must be first</span></div>
-<div class="line"><span class="lineno">   97</span><span class="comment">        * in the list of destructors to be called. But removing a destructor from the list at runtime</span></div>
-<div class="line"><span class="lineno">   98</span><span class="comment">        * creates holes in the table with unfilled entries.</span></div>
-<div class="line"><span class="lineno">   99</span><span class="comment">        * Remember that the insertion algorithm in __cxa_atexit simply inserts the next destructor</span></div>
-<div class="line"><span class="lineno">  100</span><span class="comment">        * at the end of the table. So, we have holes with our current algorithm</span></div>
-<div class="line"><span class="lineno">  101</span><span class="comment">        * This function should be modified to move all the destructors above the one currently</span></div>
-<div class="line"><span class="lineno">  102</span><span class="comment">        * being called and removed one place down in the list, so as to cover up the hole.</span></div>
-<div class="line"><span class="lineno">  103</span><span class="comment">        * Otherwise, whenever a destructor is called and removed, an entire space in the table is wasted.</span></div>
-<div class="line"><span class="lineno">  104</span><span class="comment">        **/</span></div>
-<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[i].destructor_func == f)</div>
-<div class="line"><span class="lineno">  106</span>        {</div>
-<div class="line"><span class="lineno">  107</span>            <span class="comment">/* * Note that in the next line, not every destructor function is a class destructor.</span></div>
-<div class="line"><span class="lineno">  108</span><span class="comment">            * It is perfectly legal to register a non class destructor function as a simple cleanup</span></div>
-<div class="line"><span class="lineno">  109</span><span class="comment">            * function to be called on program termination, in which case, it would not NEED an</span></div>
-<div class="line"><span class="lineno">  110</span><span class="comment">            * object This pointer. A smart programmer may even take advantage of this and register</span></div>
-<div class="line"><span class="lineno">  111</span><span class="comment">            * a C function in the table with the address of some structure containing data about</span></div>
-<div class="line"><span class="lineno">  112</span><span class="comment">            * what to clean up on exit.</span></div>
-<div class="line"><span class="lineno">  113</span><span class="comment">            * In the case of a function that takes no arguments, it will simply be ignore within the</span></div>
-<div class="line"><span class="lineno">  114</span><span class="comment">            * function itself. No worries.</span></div>
-<div class="line"><span class="lineno">  115</span><span class="comment">            **/</span></div>
-<div class="line"><span class="lineno">  116</span>            (*<a class="code hl_variable" href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[i].<a class="code hl_variable" href="../../d2/d64/a19525.html#a665175c477008154e9b40ef96a8d81c2">destructor_func</a>)(<a class="code hl_variable" href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[i].obj_ptr);</div>
-<div class="line"><span class="lineno">  117</span>            <a class="code hl_variable" href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a>[i].<a class="code hl_variable" href="../../d2/d64/a19525.html#a665175c477008154e9b40ef96a8d81c2">destructor_func</a> = 0;</div>
-<div class="line"><span class="lineno">  118</span>            </div>
-<div class="line"><span class="lineno">  119</span>            <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  120</span><span class="comment">            * Notice that we didn&#39;t decrement __atexit_func_count: this is because this algorithm</span></div>
-<div class="line"><span class="lineno">  121</span><span class="comment">            * requires patching to deal with the FIXME outlined above.</span></div>
-<div class="line"><span class="lineno">  122</span><span class="comment">            **/</span></div>
-<div class="line"><span class="lineno">  123</span>        };</div>
-<div class="line"><span class="lineno">  124</span>    };</div>
-<div class="line"><span class="lineno">  125</span>}</div>
-<div class="ttc" id="aa18584_html_a35fc01d4eba01f3f2ec636bd6b5ff34f"><div class="ttname"><a href="../../d8/d28/a18584.html#a35fc01d4eba01f3f2ec636bd6b5ff34f">uarch_t</a></div><div class="ttdeci">unsigned uarch_t</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d28/a18584_source.html#l00005">kicxxabi.hpp:5</a></div></div>
-<div class="ttc" id="aa18614_html_a05a64060e9039acf0ba3c311b2d981b7"><div class="ttname"><a href="../../d9/dde/a18614.html#a05a64060e9039acf0ba3c311b2d981b7">__atexit_funcs</a></div><div class="ttdeci">essential::atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS]</div><div class="ttdef"><b>Definition</b> <a href="../../d9/dde/a18614_source.html#l00026">kicxxabi.cpp:26</a></div></div>
-<div class="ttc" id="aa18614_html_a0f75f529cf75cf0a9cd266f8d67675dc"><div class="ttname"><a href="../../d9/dde/a18614.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a></div><div class="ttdeci">uarch_t __atexit_func_count</div><div class="ttdef"><b>Definition</b> <a href="../../d9/dde/a18614_source.html#l00027">kicxxabi.cpp:27</a></div></div>
-<div class="ttc" id="aa19525_html_a665175c477008154e9b40ef96a8d81c2"><div class="ttname"><a href="../../d2/d64/a19525.html#a665175c477008154e9b40ef96a8d81c2">essential::atexit_func_entry_t::destructor_func</a></div><div class="ttdeci">void(* destructor_func)(void *)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d28/a18584_source.html#l00016">kicxxabi.hpp:16</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d9/dde/a18614_source.html#l00027">__atexit_func_count</a>, <a class="el" href="../../d9/dde/a18614_source.html#l00026">__atexit_funcs</a>, and <a class="el" href="../../d8/d28/a18584_source.html#l00016">essential::atexit_func_entry_t::destructor_func</a>.</p>
+</div>
+</div>
+<a id="a6d83e86a8c6b6046bae502774a4e9e83" name="a6d83e86a8c6b6046bae502774a4e9e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d83e86a8c6b6046bae502774a4e9e83">&#9670;&#160;</a></span>KMOUSE_COLOR_BLUE</h2>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d7a/a18557_source.html#l00105">kernelMain()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_BLUE&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00010">10</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../df/dda/a18620_a098e7240e26e869c035075be004b4ee9_icgraph.png" border="0" usemap="#adf/dda/a18620_a098e7240e26e869c035075be004b4ee9_icgraph" alt=""/></div>
-<map name="adf/dda/a18620_a098e7240e26e869c035075be004b4ee9_icgraph" id="adf/dda/a18620_a098e7240e26e869c035075be004b4ee9_icgraph">
-<area shape="rect" title="Executes registered destructors/cleanup functions." alt="" coords="148,5,328,31"/>
-<area shape="rect" href="../../d2/d7a/a18557.html#abb4e4866092116b520310d61961bfe12" title="The main entry point for the C++ kernel." alt="" coords="5,5,100,31"/>
-<area shape="poly" title=" " alt="" coords="134,21,100,21,100,15,134,15"/>
-</map>
 </div>
+<a id="a5bc124f24ecf7e9b0b06d181a6fd7a3e" name="a5bc124f24ecf7e9b0b06d181a6fd7a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc124f24ecf7e9b0b06d181a6fd7a3e">&#9670;&#160;</a></span>KMOUSE_COLOR_BROWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_BROWN&#160;&#160;&#160;0x6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00015">15</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9660baab3bfc34866b252eff71da777d" name="a9660baab3bfc34866b252eff71da777d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9660baab3bfc34866b252eff71da777d">&#9670;&#160;</a></span>KMOUSE_COLOR_CYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_CYAN&#160;&#160;&#160;0x3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00012">12</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a804c656f97148c66dee375ad20d6326e" name="a804c656f97148c66dee375ad20d6326e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804c656f97148c66dee375ad20d6326e">&#9670;&#160;</a></span>KMOUSE_COLOR_DARK_GREY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_DARK_GREY&#160;&#160;&#160;0x8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00017">17</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae245d853ffcebef06bd052849e35471c" name="ae245d853ffcebef06bd052849e35471c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae245d853ffcebef06bd052849e35471c">&#9670;&#160;</a></span>KMOUSE_COLOR_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_GREEN&#160;&#160;&#160;0x2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00011">11</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5882f98f21668e74fbc61e9a3cc4d4c5" name="a5882f98f21668e74fbc61e9a3cc4d4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5882f98f21668e74fbc61e9a3cc4d4c5">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_BLUE&#160;&#160;&#160;0x9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00018">18</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac9391d6382197266f9d814ed3d21bac2" name="ac9391d6382197266f9d814ed3d21bac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9391d6382197266f9d814ed3d21bac2">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_CYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_CYAN&#160;&#160;&#160;0xB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00020">20</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac874f858f617e42a6376c7092940376c" name="ac874f858f617e42a6376c7092940376c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac874f858f617e42a6376c7092940376c">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_GREEN&#160;&#160;&#160;0xA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00019">19</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab7f5f57837c11ae93f9a3c6ef0bba5a8" name="ab7f5f57837c11ae93f9a3c6ef0bba5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f5f57837c11ae93f9a3c6ef0bba5a8">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_GREY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_GREY&#160;&#160;&#160;0x7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00016">16</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5a90c65c80e669968e259e84b095c408" name="a5a90c65c80e669968e259e84b095c408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a90c65c80e669968e259e84b095c408">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_MAGENTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_MAGENTA&#160;&#160;&#160;0xD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00022">22</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acb168549620efee2737255317c814059" name="acb168549620efee2737255317c814059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb168549620efee2737255317c814059">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_RED&#160;&#160;&#160;0xC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00021">21</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abfe7fa11c53fb1ea1270f0ed00bb18b8" name="abfe7fa11c53fb1ea1270f0ed00bb18b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe7fa11c53fb1ea1270f0ed00bb18b8">&#9670;&#160;</a></span>KMOUSE_COLOR_MAGENTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_MAGENTA&#160;&#160;&#160;0x5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00014">14</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1d9a56551248abc6954bf18c76ddcb74" name="a1d9a56551248abc6954bf18c76ddcb74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9a56551248abc6954bf18c76ddcb74">&#9670;&#160;</a></span>KMOUSE_COLOR_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_RED&#160;&#160;&#160;0x4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00013">13</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abb30f17e5bf0289632c5abbd2d2dd99a" name="abb30f17e5bf0289632c5abbd2d2dd99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb30f17e5bf0289632c5abbd2d2dd99a">&#9670;&#160;</a></span>KMOUSE_COLOR_WHITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_WHITE&#160;&#160;&#160;0xF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00024">24</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abc652aa810e06ef28716a20cb70d51d4" name="abc652aa810e06ef28716a20cb70d51d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc652aa810e06ef28716a20cb70d51d4">&#9670;&#160;</a></span>KMOUSE_COLOR_YELLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_YELLOW&#160;&#160;&#160;0xE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00023">23</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a637dd833f5f7af42afa1f42349a4d89e" name="a637dd833f5f7af42afa1f42349a4d89e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637dd833f5f7af42afa1f42349a4d89e">&#9670;&#160;</a></span>MOUSE_POINTER_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_POINTER_COLOR&#160;&#160;&#160;<a class="el" href="../../df/dda/a18620.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/dda/a18620_source.html#l00025">25</a> of file <a class="el" href="../../df/dda/a18620_source.html">kmouse.hpp</a>.</p>
 
 </div>
 </div>
@@ -308,8 +480,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../df/dda/a18620.html">essential</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 10:32:01 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_7e882cf9a616ed6c5e9969aa375b621d.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a></li><li class="navelem"><a class="el" href="../../df/dda/a18620.html">kmouse.hpp</a></li>
+    <li class="footer">Generated on Fri Oct 24 2025 11:40:02 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

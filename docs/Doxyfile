@@ -54,7 +54,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = OSOS is 32-bit Operating System, Currently under development - by Shreekar
+PROJECT_BRIEF          = Under development - Shreekar
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -944,8 +944,8 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  =    ../OSOS/kernel_src \
-                            ../OSOS/libk_header \
                             ../OSOS/libk_src \
+                            ../OSOS/libk_header \
                             ./mainpage.dox
 
 # This tag can be used to specify the character encoding of the source files
@@ -1054,7 +1054,9 @@ RECURSIVE              =YES
 EXCLUDE                =    ../OSOS/kernel_build \
                             ../OSOS/libk_build \
                             ../OSOS/ScreenShots \
+                            ../OSOS/libk_header/basic/multiboot.h \
                             ../OSOS/trying
+
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -1975,7 +1977,7 @@ EXTRA_SEARCH_MAPPINGS  =
 # If the GENERATE_LATEX tag is set to YES, doxygen will generate LaTeX output.
 # The default value is: YES.
 
-GENERATE_LATEX         = YES
+GENERATE_LATEX         =NO
 
 # The LATEX_OUTPUT tag is used to specify where the LaTeX docs will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
@@ -2215,7 +2217,7 @@ RTF_EXTENSIONS_FILE    =
 # classes and files.
 # The default value is: NO.
 
-GENERATE_MAN           =YES
+GENERATE_MAN           =NO
 
 # The MAN_OUTPUT tag is used to specify where the man pages will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
@@ -2259,7 +2261,7 @@ MAN_LINKS              =YES
 # captures the structure of the code including all documentation.
 # The default value is: NO.
 
-GENERATE_XML           =YES
+GENERATE_XML           =NO
 
 # The XML_OUTPUT tag is used to specify where the XML pages will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
@@ -2293,7 +2295,7 @@ XML_NS_MEMB_FILE_SCOPE =YES
 # that can be used to generate PDF.
 # The default value is: NO.
 
-GENERATE_DOCBOOK       =YES
+GENERATE_DOCBOOK       =NO
 
 # The DOCBOOK_OUTPUT tag is used to specify where the Docbook pages will be put.
 # If a relative path is entered the value of OUTPUT_DIRECTORY will be put in
@@ -2313,7 +2315,7 @@ DOCBOOK_OUTPUT         = docbook
 # is still experimental and incomplete at the moment.
 # The default value is: NO.
 
-GENERATE_AUTOGEN_DEF   =YES
+GENERATE_AUTOGEN_DEF   =NO
 
 #---------------------------------------------------------------------------
 # Configuration options related to Sqlite3 output
@@ -2323,7 +2325,7 @@ GENERATE_AUTOGEN_DEF   =YES
 # database with symbols found by doxygen stored in tables.
 # The default value is: NO.
 
-GENERATE_SQLITE3       =YES
+GENERATE_SQLITE3       =NO
 
 # The SQLITE3_OUTPUT tag is used to specify where the Sqlite3 database will be
 # put. If a relative path is entered the value of OUTPUT_DIRECTORY will be put

@@ -7,7 +7,7 @@
       <Type>cl</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>df/d30/a19493.html</Path>
+    <Path>df/da4/a49103.html</Path>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -17,7 +17,7 @@
       <Type>cl</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d3/dae/a19497.html</Path>
+    <Path>dd/df8/a49107.html</Path>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -27,7 +27,7 @@
       <Type>cl</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -37,7 +37,7 @@
       <Type>cl</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d24/a19501.html</Path>
+    <Path>db/d3f/a49111.html</Path>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -47,7 +47,7 @@
       <Type>cl</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -57,7 +57,7 @@
       <Type>cl</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>db/d16/a19509.html</Path>
+    <Path>d2/dbb/a49119.html</Path>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -67,37 +67,37 @@
       <Type>cl</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d2/d64/a19525.html</Path>
+    <Path>d0/dc8/a49135.html</Path>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>essential::GDT</Name>
+      <Name>essential::GDT_Manager</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
+    <Path>d4/d49/a49131.html</Path>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>essential::GDT_row</Name>
+      <Name>essential::GDT_Row</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
+    <Path>de/d82/a49127.html</Path>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hardware_communication::IDT_row</Name>
+      <Name>hardware_communication::IDT_Row</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
+    <Path>d6/de4/a49143.html</Path>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -107,7 +107,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>dd/d18/a19529.html</Path>
+    <Path>dc/d09/a49139.html</Path>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -117,7 +117,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -127,7 +127,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>d2/dc8/a19541.html</Path>
+    <Path>d6/d24/a49151.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -137,7 +137,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>df/d60/a19553.html</Path>
+    <Path>dd/db5/a49163.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -147,7 +147,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/daf/a19557.html</Path>
+    <Path>df/d39/a49167.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -157,7 +157,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>d5/d90/a19545.html</Path>
+    <Path>dd/d76/a49155.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -167,7 +167,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d4/dc9/a19549.html</Path>
+    <Path>d2/d2c/a49159.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -177,7 +177,7 @@
       <Type>cl</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d6/d4a/a19437.html</Path>
+    <Path>de/d9f/a49095.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -186,17 +186,7 @@
       <Type>cl</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d6c/a19441.html</Path>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_aout_symbol_table</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiboot_aout_symbol_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <DeclaredIn>multiboot.h</DeclaredIn>
+    <Path>d8/d07/a49099.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -205,7 +195,7 @@
       <Type>ns</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>dc/ddd/a18618.html</Path>
+    <Path>d1/d4b/a48276.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -214,7 +204,7 @@
       <Type>ns</Type>
       <Scope>driver</Scope>
     </TokenIdentifier>
-    <Path>d1/d08/a18619.html</Path>
+    <Path>d9/d08/a48277.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -223,7 +213,7 @@
       <Type>ns</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>df/dda/a18620.html</Path>
+    <Path>de/d9a/a48278.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -232,7 +222,7 @@
       <Type>ns</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d1/d96/a18621.html</Path>
+    <Path>db/d91/a48279.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -241,7 +231,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>ac2077f6309c79d5f585fb966b57fe065</Anchor>
   </Token>
   <Token>
@@ -251,7 +241,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>aa02009b37420687ef18db8a05ff9181f</Anchor>
   </Token>
   <Token>
@@ -259,20 +249,20 @@
       <Name>access</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a7f01a0febd325787f1ff47d6a3b668a9</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>ada83c26e24175c136116be890d84966f</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>access</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
-    <Anchor>afa706321cb5ba41a6035dbe1ec39c265</Anchor>
+    <Path>d6/de4/a49143.html</Path>
+    <Anchor>a02acf6545c95a74760d82691b73937b1</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -281,7 +271,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>df/d30/a19493.html</Path>
+    <Path>df/da4/a49103.html</Path>
     <Anchor>a8c86c1e52652d8b491d37a3b60b535b0</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -292,7 +282,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a58553d39d7dcfe6b55e8ddb1e7b1d187</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -303,7 +293,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a446769df0b3b537a525476c7c8be47bc</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -314,7 +304,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a1ab5b6378071338ede295f0bffaf3d51</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -325,7 +315,7 @@
       <Type>instm</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d3/dae/a19497.html</Path>
+    <Path>dd/df8/a49107.html</Path>
     <Anchor>a05b071d8a8c12f2d284fb61f4ecd116e</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -336,69 +326,19 @@
       <Type>instm</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d3/dae/a19497.html</Path>
+    <Path>dd/df8/a49107.html</Path>
     <Anchor>ab8bd89b91ea49f343276c3c841153cd8</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_aout_symbol_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>af0a1d2238495093ad75f36e3a146c0c7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_elf_section_header_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aac90242e270ae9df01fc3bb784b858b6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mmap_entry</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a40e066ba79afd138308bd0db4b3f4f5b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>aout_sym</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.u</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>adcc9d90eba827321c643ad06b62c7817</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>apm_table</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab340bc8f88281872676db0f52ebe7c0e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>base</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>ad0a48a89930e6a6c4467c977f4e91269</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a6035e9db06ebeea7d8666a95568b1684</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -407,7 +347,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>ad94bd8e9c355fde3e814d4894bab0181</Anchor>
   </Token>
   <Token>
@@ -415,70 +355,30 @@
       <Name>base_high</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a2cbd86d4258ecebf7b46cc9bb8611b5b</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>af7522fe10f0bbf49af21324057d9f8cc</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>base_low</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a298d18522898ad48c1e05b79f1f4dff7</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>a25137567f974ca350c8ff7f58c4c890d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>base_middle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a8429e04bddc6a61c4e95b88901ae219d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>blue</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_color</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a6f8d17b0f35ff4cbf9c51dcbc3ea7d01</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>boot_device</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ae32646de911267c65892a286ef3d529e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>boot_loader_name</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a4a3251d6b4cf85d935d989a0a369feed</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bss_end_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab4f2496ec9b0d1a95985929d281dfa19</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>ac6a8894cd60a7e4ece772afa067830b7</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -487,7 +387,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>aaa1d55d296d88995ac49a8a9a75a79d4</Anchor>
   </Token>
   <Token>
@@ -497,7 +397,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a7942997bd5ead2767e9627d91789dd70</Anchor>
   </Token>
   <Token>
@@ -507,38 +407,8 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a8a63dbc25a08a75f62ae0674df1deb30</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>checksum</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a17e73abddfe8264c254767a20099038d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cmdline</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a95a5e2cc69960e4d906abd585f91f210</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cmdline</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mod_list</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a3219140f9baf1a790a602db25e8597c7</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -547,7 +417,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a58fc9113701ffc04637996780c843ff0</Anchor>
   </Token>
   <Token>
@@ -557,58 +427,8 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a2877a9f46dd83a5f05f17fd83a0a7725</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>config_table</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a94b06ab87dbfaf966822a39cf1d9e2d6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cseg</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a9eedcae62ee49310914e238d07094c4b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cseg_16</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a9abc154a9c3a0f3d9ae96cf2b5044b43</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cseg_16_len</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a09573729600592739fe8f2480217a30d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cseg_len</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a95aa6b556019e1b9c526b190341cc531</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -617,7 +437,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>afd6cdddb62a2a2d2b31043eb32887b41</Anchor>
   </Token>
   <Token>
@@ -627,7 +447,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a8e30a6f6c5839fcf9c3ab63aa167d046</Anchor>
   </Token>
   <Token>
@@ -637,7 +457,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>df/d30/a19493.html</Path>
+    <Path>df/da4/a49103.html</Path>
     <Anchor>a4b3b5e5a163c2c0e3cb58ea752ebcef1</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -648,7 +468,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>aaa7e99b6214dc8439230a95dd57e617e</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -659,7 +479,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a4329c1cdedc72adf0b95cb3911c4acf6</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -670,19 +490,9 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a9451566bf08617378ca2144505d394a6</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>depth</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aba85b53dc3af1bf99c71292a776e9dff</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -691,7 +501,7 @@
       <Type>data</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d2/d64/a19525.html</Path>
+    <Path>d0/dc8/a49135.html</Path>
     <Anchor>a665175c477008154e9b40ef96a8d81c2</Anchor>
   </Token>
   <Token>
@@ -701,7 +511,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>df/d30/a19493.html</Path>
+    <Path>df/da4/a49103.html</Path>
     <Anchor>a7de0c11fff1dc1f5d004b2a76e840840</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -712,7 +522,7 @@
       <Type>instm</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d3/dae/a19497.html</Path>
+    <Path>dd/df8/a49107.html</Path>
     <Anchor>af3bed49a4b243c2f65d09c35db15158b</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -723,48 +533,8 @@
       <Type>data</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d3/dae/a19497.html</Path>
+    <Path>dd/df8/a49107.html</Path>
     <Anchor>acdf43f6340b26ad2d9b9c90d8974b370</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>drives_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a12916653d21ac1694b6d609a10d15332</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>drives_length</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a8bb6cc3d388a8abafecc7018744c14f3</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dseg</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a98cd7da8760cf5d49ba55e1f9e76c6d4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>dseg_len</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>afee11d31183fe424af90546b10c9fac2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -773,240 +543,50 @@
       <Type>data</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d2/d64/a19525.html</Path>
+    <Path>d0/dc8/a49135.html</Path>
     <Anchor>a98800f0ffd56e2dc77c46a741e1cf008</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>elf_sec</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.u</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>af2b83453f34de71046f2bbb48051c1f4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>entry_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ac3d807775a9d69730e6698dcdcf6491e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>flags</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab922f32c179ec7bde91519d19f27d95b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>flags</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a39f175b6fb4debca237d3ff93e960a25</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>flags</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a55fb7837ae61f63d0310b65767a2505c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a77a4d6e2b12fbd2b3e6e61d978ae5fc0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_blue_field_position</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed6__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_blue_mask_size</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed6__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aa8eaba7a0a6cf04509a014ac4bc937c0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_bpp</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab7b460c75f0342dfb1e339d2b3a2a9da</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_green_field_position</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed6__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>adfcdecf04630d77ee5e41006f47dc4d7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_green_mask_size</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed6__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>abc2579d314db9a050c48043a1b7f5ea9</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_height</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a0e8539780b79a018883d96bb444cd9c8</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_palette_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed4__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_palette_num_colors</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed4__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_pitch</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab0ecb8c7debe9ac1ac7910ae957367f6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_red_field_position</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed6__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a4dd2fad32ee3a2ce5379d7bf0a23dabe</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_red_mask_size</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info.__unnamed2__.__unnamed6__</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_type</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a540391adf02da7cb6876fe78d65a13d7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>framebuffer_width</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a770273793bac06df17306c7fa136c58f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GDT</Name>
+      <Name>GDT_Manager</Name>
       <APILanguage>cpp</APILanguage>
       <Type>ffunc</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a235097b2551abe03269f88341b4bdf87</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>aae7c07a3554da6e69e869a21134e4bf0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>GDT</Name>
+      <Name>GDT_Manager</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>aa061ecab5a20a3556413fbbde4fe89d7</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>ae4bb24dca1f0c70f599bea5f36894a2b</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>GDT_row</Name>
+      <Name>GDT_Row</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a5692f86b7ebf4eefdeb78e48f281092b</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>a3172ce0522e163418a42d4b8228237a0</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>GDT_row</Name>
+      <Name>GDT_Row</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a27ff8d9a6bf6c2c98cf78a0257e4667e</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>a09316aa5a1c7851ad3ccc1096481e9ec</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1014,20 +594,10 @@
       <Name>granularity</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>af180a640dbd5213b3f936ff7cf48deaf</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>green</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_color</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a08e1c8bc977b39015c9043645e79713d</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>afd6a6a6577994f97e83e821e500b7a7c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1036,7 +606,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a248fa0da9acac54a3a8880c7b66b3f2b</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1047,7 +617,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a1b2f08490b7954e5ca504cd8bb6862c0</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1058,7 +628,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>dd/d18/a19529.html</Path>
+    <Path>dc/d09/a49139.html</Path>
     <Anchor>aa89d41d69840cb4f1c8692fa6ded28f4</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1069,7 +639,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a2d3ef1656e1eaaf86be40a200a49a4b2</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1078,20 +648,20 @@
       <Name>handlerAddressHighbits</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
-    <Anchor>af1a4bb042f75f10c5e2b08034e82aed3</Anchor>
+    <Path>d6/de4/a49143.html</Path>
+    <Anchor>acd1dabcd4d6eabe836b20b6161d8463b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>handlerAddressLowbits</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
-    <Anchor>a3390e4d53e904d420187ecc0247e9289</Anchor>
+    <Path>d6/de4/a49143.html</Path>
+    <Anchor>a7fe1a8c5aa477d03c01275bc8ce762e6</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1100,38 +670,18 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>ac8aba191e612ad605b8b188f78e65d3b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>header_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a9718b2fc6ce29a37e9a209f92ab856e3</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>height</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a055c5e6553ea032897ad50a12f998a17</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>IDT_row</Name>
+      <Name>IDT_Row</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
-    <Anchor>a5149970639d0f251d529808a192b4b55</Anchor>
+    <Path>d6/de4/a49143.html</Path>
+    <Anchor>a1d51e696187d45d2b04a1c666f045b08</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1139,10 +689,10 @@
       <Name>installTable</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>af8e3c1da270077eb7cc6551b35c0e5ca</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a32a0dc6068696510c0f26210e5260959</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1152,7 +702,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a81d593116320da32f1aa4057087f1e11</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1163,7 +713,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>dd/d18/a19529.html</Path>
+    <Path>dc/d09/a49139.html</Path>
     <Anchor>ae86f4eae0ce9272b2027d44bdfd71e33</Anchor>
   </Token>
   <Token>
@@ -1173,8 +723,8 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
-    <Anchor>a7b6bb52a8072c51bfcb4f4877c3d0226</Anchor>
+    <Path>d5/d2a/a49147.html</Path>
+    <Anchor>af678e57f417929133cf20579898929a8</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1183,7 +733,7 @@
       <Type>ffunc</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a9aef4ea3434f8ddeaf9c32a63e6faf05</Anchor>
   </Token>
   <Token>
@@ -1193,7 +743,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>dd/d18/a19529.html</Path>
+    <Path>dc/d09/a49139.html</Path>
     <Anchor>a134c8931dff43e766f1ddc4d0f35cd48</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1202,9 +752,9 @@
       <Name>InterruptManager</Name>
       <APILanguage>cpp</APILanguage>
       <Type>ffunc</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
+    <Path>d6/de4/a49143.html</Path>
     <Anchor>a6c5563315b1a2f5c67ae8b78d06e3c7f</Anchor>
   </Token>
   <Token>
@@ -1214,8 +764,8 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
-    <Anchor>aec70c703cac64ef1eec4b5a94d2e145c</Anchor>
+    <Path>d5/d2a/a49147.html</Path>
+    <Anchor>ab9c0171a215009cc193c0a7c811e3e0f</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1225,7 +775,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>dd/d18/a19529.html</Path>
+    <Path>dc/d09/a49139.html</Path>
     <Anchor>afeede822d3e98957e76e627a54ec2f7a</Anchor>
   </Token>
   <Token>
@@ -1233,20 +783,20 @@
       <Name>kernel_CS</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a20d7a6bb352e3f696c1c68bb394766d8</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>ac0d62fdac478ea7d8331ad422914b3cc</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>kernel_CS_selector</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a89a8d2c17e3c22e7200bff09252f46e1</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>aec494a06a81c95bfd588c1e3deeafe3d</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1254,20 +804,20 @@
       <Name>kernel_DS</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>ac8a5b4f6a3dc223e2eb6abebe19c9f08</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a5c682545ec00c43cfe67ad20196c8fb0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>kernel_DS_selector</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a34661a528b1630bff806e25411ad6ec3</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a21441d13f3bc71dafbd44063a19ec075</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1275,10 +825,10 @@
       <Name>kernelCodeSegmentSelector</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
-    <Anchor>a800309c99800063315cddf536a3d0d67</Anchor>
+    <Path>d6/de4/a49143.html</Path>
+    <Anchor>add026bf0380b0386a9e3601f8be7f5e2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1287,7 +837,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a63898e993f02352193db996d00179347</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1298,7 +848,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d24/a19501.html</Path>
+    <Path>db/d3f/a49111.html</Path>
     <Anchor>a63ee0249476256e721e05e6375383317</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1309,7 +859,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a11ec84b7abf113ec270f124564776e1f</Anchor>
   </Token>
   <Token>
@@ -1319,7 +869,7 @@
       <Type>instm</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d6/d4a/a19437.html</Path>
+    <Path>de/d9f/a49095.html</Path>
     <Anchor>af9abf3fb85dea27db802a8f092c4a2fc</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -1330,28 +880,18 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>aed7b5d279f6f1dffee10d5fb92ed6b1c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>len</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mmap_entry</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a0c5d40a87a63b01fc424bb3c15c89997</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>limit</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a4105a25a1ec71dc7e338639bb370c664</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>aeb23e839a795005fdcdbba0d1aa75242</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1360,7 +900,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a1991d8428ff7c74b31f42d48bb49547a</Anchor>
   </Token>
   <Token>
@@ -1368,130 +908,10 @@
       <Name>limit_low</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a2bddbe405dfbbbd101c475bd1bd65112</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>load_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a99de1cf326c46c76c6039f317b7a1ef2</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>load_end_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ac9efc1a4c3cd18f286b2fd50ff052e31</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>magic</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a7fddee92e60ff58e159c6bf2c40bf29b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mem_lower</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a6b80f033d5a9151a4d1abd2d155942a7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mem_upper</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a1ea7d9e665d6fff00665d97e81207a8f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mmap_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a19825c91eb6aa23fa61ee3851a6ce8da</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mmap_length</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a3dd43c3204f821c0a1b5604686d9eae7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mod_end</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mod_list</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aa2b5dda7d7d51a1f3fbd613adfa640b0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mod_start</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mod_list</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a3bcfca83ccb172cd79123a8341ed4cfb</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mode_type</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a4c90b7929342dd5aab7d08afa0906d28</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mods_addr</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a766e9dadbf4a845c12704c923cb13f02</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mods_count</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a415feb83a215790e2e8f9e2e1e3df55c</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>a2e609cc7cd4bf4c69805916e874638d2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1500,7 +920,7 @@
       <Type>clm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a1a2a455ca7146dea3148afa8cb6c9ed5</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1511,7 +931,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a639956c8ce11d62ee443825e9b9695af</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1522,7 +942,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>db/d16/a19509.html</Path>
+    <Path>d2/dbb/a49119.html</Path>
     <Anchor>aa0fd3739c52bcd4d553cefaf41760a9b</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1533,7 +953,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a804f5657a062e0a18f3b56781f884c66</Anchor>
   </Token>
   <Token>
@@ -1543,7 +963,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d6c/a19441.html</Path>
+    <Path>d8/d07/a49099.html</Path>
     <Anchor>a41f57ab9baa5850e39086362ce44b1cb</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -1552,20 +972,10 @@
       <Name>nullSegment</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a154c2e2725809d873c8e7d5f19ea66c5</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>num</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_elf_section_header_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a6ed3ef34bb39d72a19533b11fe156e1f</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a26909fe5dcab0bdc7ddf7c3678f3ae48</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1574,7 +984,7 @@
       <Type>data</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d3/dae/a19497.html</Path>
+    <Path>dd/df8/a49107.html</Path>
     <Anchor>a347286da44d912bba3f720d8b0600946</Anchor>
   </Token>
   <Token>
@@ -1584,18 +994,8 @@
       <Type>data</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d2/d64/a19525.html</Path>
+    <Path>d0/dc8/a49135.html</Path>
     <Anchor>a24ece443578ebec2449e72e998521a11</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>offset</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a97958b174fe0234cafab9019eb009b91</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1604,7 +1004,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a313426dd9aa1af1540cbffc2e77c58c1</Anchor>
   </Token>
   <Token>
@@ -1614,7 +1014,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a4a671e7e2b235f6bec473cb960401bd6</Anchor>
   </Token>
   <Token>
@@ -1624,7 +1024,7 @@
       <Type>instm</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d6/d4a/a19437.html</Path>
+    <Path>de/d9f/a49095.html</Path>
     <Anchor>af82a0bd16f995dd285d4f7822117377c</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -1635,7 +1035,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d24/a19501.html</Path>
+    <Path>db/d3f/a49111.html</Path>
     <Anchor>ae2b923ef0eb58e29f57a155debadac6a</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1646,7 +1046,7 @@
       <Type>instm</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d6/d4a/a19437.html</Path>
+    <Path>de/d9f/a49095.html</Path>
     <Anchor>a0d74a48573c10174ac8bf836ac39f886</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -1657,7 +1057,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d24/a19501.html</Path>
+    <Path>db/d3f/a49111.html</Path>
     <Anchor>a28547100b7420e1f73b745df873cd411</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1668,7 +1068,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d6c/a19441.html</Path>
+    <Path>d8/d07/a49099.html</Path>
     <Anchor>ae860a16e70322e5c4bb01e1108e50bb1</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -1679,7 +1079,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>db/d16/a19509.html</Path>
+    <Path>d2/dbb/a49119.html</Path>
     <Anchor>a2f12c5f63356c3045fd6cb46fd89374f</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1690,7 +1090,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d6c/a19441.html</Path>
+    <Path>d8/d07/a49099.html</Path>
     <Anchor>adbb4c4e2814b335579119c324313f652</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -1701,7 +1101,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>db/d16/a19509.html</Path>
+    <Path>d2/dbb/a49119.html</Path>
     <Anchor>a68f635b3b65f927d37d4e0835f7e0b30</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1712,7 +1112,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d6c/a19441.html</Path>
+    <Path>d8/d07/a49099.html</Path>
     <Anchor>afca536c2187a65da265daa2d2af75d4d</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -1723,19 +1123,9 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>db/d16/a19509.html</Path>
+    <Path>d2/dbb/a49119.html</Path>
     <Anchor>a09b77fe86bfa79313b5c5b91d09eb514</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>pad</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mod_list</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aff552d4c321b0607d77cda0c2cdc5708</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1744,7 +1134,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>acb04723d03d6b34abbc5f7407cab0b33</Anchor>
   </Token>
   <Token>
@@ -1754,7 +1144,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a5287e31a546f60708b085b387332a904</Anchor>
   </Token>
   <Token>
@@ -1764,7 +1154,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>afed9d24b37c8f9386a71f4284b2502a4</Anchor>
   </Token>
   <Token>
@@ -1774,7 +1164,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>ac1111b7cfbd27b37f03a0678ae5dbaf1</Anchor>
   </Token>
   <Token>
@@ -1784,7 +1174,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>d2/dc8/a19541.html</Path>
+    <Path>d6/d24/a49151.html</Path>
     <Anchor>ad001c21b67d4c138f65024f167030cca</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -1795,7 +1185,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>df/d60/a19553.html</Path>
+    <Path>dd/db5/a49163.html</Path>
     <Anchor>a418bb2fc65b3bec91704d0e5e8957131</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -1806,7 +1196,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/daf/a19557.html</Path>
+    <Path>df/d39/a49167.html</Path>
     <Anchor>a507afa8607757baedf1789d73c2a173d</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -1817,7 +1207,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>d5/d90/a19545.html</Path>
+    <Path>dd/d76/a49155.html</Path>
     <Anchor>a057109ca3c28fbb9064c60ba5cdb1190</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -1828,7 +1218,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d4/dc9/a19549.html</Path>
+    <Path>d2/d2c/a49159.html</Path>
     <Anchor>aa830f1cf49e155af1033a8e611ecc6c1</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -1839,7 +1229,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>d2/dc8/a19541.html</Path>
+    <Path>d6/d24/a49151.html</Path>
     <Anchor>aab0c5c82b0190df88ddbb595bfac539a</Anchor>
   </Token>
   <Token>
@@ -1847,10 +1237,10 @@
       <Name>printLoadedTable</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a9c89bddfdb21d5cc09c1d82411982de9</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a9cf3e1457df23d876c6174b97548b846</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1860,7 +1250,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>aac20f3a896bea512413568a60ad48c3d</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1869,10 +1259,10 @@
       <Name>printLoadedTableHeader</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a2ae998750fc1e18e6778e92774bd3574</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a53c8f172c32273fc996c6d7a1620e748</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1882,7 +1272,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>ad8a6f694662a3a36ba9353197e20c1b1</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1893,7 +1283,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>d5/d90/a19545.html</Path>
+    <Path>dd/d76/a49155.html</Path>
     <Anchor>ae8688251b574c3fd335b99f7e93fff2d</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -1904,7 +1294,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>df/d60/a19553.html</Path>
+    <Path>dd/db5/a49163.html</Path>
     <Anchor>a6b5df5669e802e31f27f0a4a0e62492a</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -1915,39 +1305,19 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/daf/a19557.html</Path>
+    <Path>df/d39/a49167.html</Path>
     <Anchor>a41093c437a9508f984c90ae68e9c03bf</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>red</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_color</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a4c8a91229f40c06c3c63b4c37e83d219</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>reserved</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiboot_aout_symbol_table</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a488f52dbb30b4de2ae2f42f0bdfda154</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>reserved</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
-    </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
-    <Anchor>a96bce1ce9c6a7e9b5a20607f41a2e876</Anchor>
+    <Path>d6/de4/a49143.html</Path>
+    <Anchor>ab333f7e129427d5553a8dc010fbbeb0b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1956,7 +1326,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>df/d30/a19493.html</Path>
+    <Path>df/da4/a49103.html</Path>
     <Anchor>a98d2e779c02364fc58c172d0d2a32bdd</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -1967,7 +1337,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a22b7b080ab1c8b0f2ed4beba75b34691</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1978,7 +1348,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>aabe3740996bf70fda96f0a25228954a6</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1989,7 +1359,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>af448c0d55d2e226050b7f4efb6d4abe8</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2000,98 +1370,28 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>afba07c783deebfb275c1437f7c23601d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>shndx</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_elf_section_header_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a45886444dce7cc10353528373f3e50c2</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>size</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_elf_section_header_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab2740d89d4139f93c9452cca2c676c5c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>size</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mmap_entry</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a1b4b5157d5e972e92981177fd1eb6d67</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>strsize</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_aout_symbol_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a7ed0107153c88e6604e9a6105a4c7be0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>tabsize</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_aout_symbol_table</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>afbdc23500d3d7a59486a0b8ff4066c1e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>type</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_mmap_entry</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>affc11fb6e6ece4860a1929b791073538</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>u</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a0558f47498813865abaec2f6281c5f92</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>user_CS</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a32508694f9db3188cd4aba126cbfb5bb</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a6d59268a0e9d66206896d865612e9740</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>user_CS_selector</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a8806a14009c4f0432d4b7043d687be17</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>ac4a9da13763afc5a28e67e69f1942ac1</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2099,91 +1399,21 @@
       <Name>user_DS</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a73463d83e2048869692d0adf1acac7a6</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a6d00b87ca97dfbcc13ba6775499f54ee</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>user_DS_selector</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a90661f97e9cf214dd6d977b19c01f7fc</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a7032f124049a21332bfb3f209b93e8ac</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vbe_control_info</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a21c63bc2905c6fd19449eea6e8514856</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vbe_interface_len</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a31ea288eaa679a7e3a4dafb91d833f78</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vbe_interface_off</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a272d3a053e085dc513ba4dc4eb688816</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vbe_interface_seg</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a6cd85049f18e6c157d173538b162d9a6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vbe_mode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aec0fcaec97380658da787d4989f7b93f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>vbe_mode_info</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ace25791339e03186c9364bb5f461f773</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>version</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_apm_info</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab06d9309bdc00fa4a8c37fdab639beb5</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2192,18 +1422,8 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a703464394033a8f4f664d9289ae2e9f8</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>width</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiboot_header</Scope>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ad72a1a3dd608e73c818d0c27974def40</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2212,7 +1432,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>d5/d90/a19545.html</Path>
+    <Path>dd/d76/a49155.html</Path>
     <Anchor>a523b6a757b27418dc015ed13e74bef60</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2223,7 +1443,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d4/dc9/a19549.html</Path>
+    <Path>d2/d2c/a49159.html</Path>
     <Anchor>af84b15d5a205a421a9877e2341714031</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2234,7 +1454,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>df/d60/a19553.html</Path>
+    <Path>dd/db5/a49163.html</Path>
     <Anchor>ac5a46ce99a70874a8a4fcb090eb40575</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2245,7 +1465,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/daf/a19557.html</Path>
+    <Path>df/d39/a49167.html</Path>
     <Anchor>a64a16fe840224ef769ab2933770d1b21</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2256,7 +1476,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>df/d30/a19493.html</Path>
+    <Path>df/da4/a49103.html</Path>
     <Anchor>aacc7524b989c2561147c5dd0b901381c</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -2267,41 +1487,41 @@
       <Type>instm</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d3/dae/a19497.html</Path>
+    <Path>dd/df8/a49107.html</Path>
     <Anchor>a29731c1f4b1215fd5c4ab27624ae6563</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~GDT</Name>
+      <Name>~GDT_Manager</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>essential::GDT</Scope>
+      <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>d0/d39/a19521.html</Path>
-    <Anchor>a9b61f75de7fa2ffe9589f43c3f6a6a6c</Anchor>
+    <Path>d4/d49/a49131.html</Path>
+    <Anchor>a57ca97515a6a2268e669a3af93e579f6</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~GDT_row</Name>
+      <Name>~GDT_Row</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>essential::GDT_row</Scope>
+      <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dd/dbb/a19517.html</Path>
-    <Anchor>a6eb69c55c0bd16040b2d766dd068df31</Anchor>
+    <Path>de/d82/a49127.html</Path>
+    <Anchor>acd54d020140edda04944b95c94780849</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~IDT_row</Name>
+      <Name>~IDT_Row</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>hardware_communication::IDT_row</Scope>
+      <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>d4/d2e/a19533.html</Path>
-    <Anchor>a9cad760dfa1c1f76f98b6207365f7e2d</Anchor>
+    <Path>d6/de4/a49143.html</Path>
+    <Anchor>a227fd1c99fea81040250c5cefc62df2c</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2311,7 +1531,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>dd/d18/a19529.html</Path>
+    <Path>dc/d09/a49139.html</Path>
     <Anchor>a5114528f0db9926365b345337e42af9b</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2322,7 +1542,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>db/dda/a19537.html</Path>
+    <Path>d5/d2a/a49147.html</Path>
     <Anchor>a65276f26b5d5197482a415b83a898560</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2333,7 +1553,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d7/d24/a19505.html</Path>
+    <Path>d3/d95/a49115.html</Path>
     <Anchor>a77da196f3c04c549e1085ce5566e5df3</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -2344,7 +1564,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d24/a19501.html</Path>
+    <Path>db/d3f/a49111.html</Path>
     <Anchor>aed6531b818751f0f23b6b9836ac94aa0</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -2355,7 +1575,7 @@
       <Type>instm</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d6/d4a/a19437.html</Path>
+    <Path>de/d9f/a49095.html</Path>
     <Anchor>ab2b7f34603d9cdd36554a4f7f6dde585</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -2366,7 +1586,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/d33/a19513.html</Path>
+    <Path>dc/d4f/a49123.html</Path>
     <Anchor>a8c25e4a4b42d1d39b332ba6d4cbd6a22</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2377,7 +1597,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>db/d16/a19509.html</Path>
+    <Path>d2/dbb/a49119.html</Path>
     <Anchor>abbfe4a7ae2911f989513178530314211</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2388,7 +1608,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d6c/a19441.html</Path>
+    <Path>d8/d07/a49099.html</Path>
     <Anchor>aa96e9bf8dce2b60b7f86577c3a74455d</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -2399,7 +1619,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>d2/dc8/a19541.html</Path>
+    <Path>d6/d24/a49151.html</Path>
     <Anchor>a8b13c33da4911afcbdcb21c97768a72e</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2410,7 +1630,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>df/d60/a19553.html</Path>
+    <Path>dd/db5/a49163.html</Path>
     <Anchor>a78dfa215194c676583e1b7e2dab38608</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2421,7 +1641,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/daf/a19557.html</Path>
+    <Path>df/d39/a49167.html</Path>
     <Anchor>a3e87dc7d610b279e8e7e072a0d1ee78c</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2432,7 +1652,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>d5/d90/a19545.html</Path>
+    <Path>dd/d76/a49155.html</Path>
     <Anchor>a475bc218672c5743a9f8425cc84eb630</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2443,7 +1663,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d4/dc9/a19549.html</Path>
+    <Path>d2/d2c/a49159.html</Path>
     <Anchor>aa19647802064296f8bf76cc12f10d243</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2453,7 +1673,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d9/dde/a18614.html</Path>
+    <Path>db/d8f/a48245.html</Path>
     <Anchor>a0f75f529cf75cf0a9cd266f8d67675dc</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -2463,19 +1683,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d9/dde/a18614.html</Path>
+    <Path>db/d8f/a48245.html</Path>
     <Anchor>a05a64060e9039acf0ba3c311b2d981b7</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a4bbf25084dee10ec29f4356cacced463</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2484,19 +1694,9 @@
       <Type>data</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d1/d96/a18621.html</Path>
+    <Path>db/d91/a48279.html</Path>
     <Anchor>a21c3ca5c318038eaed596c14fd2666ed</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aa6b9a7218d544abc2be2bd335681b0a1</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2505,8 +1705,8 @@
       <Type>func</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>df/dda/a18620.html</Path>
-    <Anchor>a52e3ec8c29cc4bb68f65445749f0bfdb</Anchor>
+    <Path>de/d9a/a48278.html</Path>
+    <Anchor>ac6f2caf09aaeeddff940849a9580377f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2516,8 +1716,8 @@
       <Type>func</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d1/d96/a18621.html</Path>
-    <Anchor>a269f53904f53339ae2df626922b404b2</Anchor>
+    <Path>db/d91/a48279.html</Path>
+    <Anchor>abfdb717d468296a4b6e08ea847005f01</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2527,7 +1727,7 @@
       <Type>func</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>df/dda/a18620.html</Path>
+    <Path>de/d9a/a48278.html</Path>
     <Anchor>a433c3d2d19d89890b522ac26b05fa7aa</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
@@ -2538,7 +1738,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>dc/ddd/a18618.html</Path>
+    <Path>d1/d4b/a48276.html</Path>
     <Anchor>a02923caa95013ec5d9333c25d9cca1d6</Anchor>
     <DeclaredIn>kiostream.hpp</DeclaredIn>
   </Token>
@@ -2548,7 +1748,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/dde/a18614.html</Path>
+    <Path>db/d8f/a48245.html</Path>
     <Anchor>a6870fb46accc462562647e3d99c0b7c7</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -2559,7 +1759,7 @@
       <Type>func</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>df/dda/a18620.html</Path>
+    <Path>de/d9a/a48278.html</Path>
     <Anchor>a098e7240e26e869c035075be004b4ee9</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
@@ -2569,7 +1769,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d9/dde/a18614.html</Path>
+    <Path>db/d8f/a48245.html</Path>
     <Anchor>a19df960d2907e9c08a720ae7683e632c</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -2580,7 +1780,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>dc/ddd/a18618.html</Path>
+    <Path>d1/d4b/a48276.html</Path>
     <Anchor>a53c6425a55d9fb93998da01f2416f9ad</Anchor>
     <DeclaredIn>kmemory.hpp</DeclaredIn>
   </Token>
@@ -2590,7 +1790,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a8b0d6200bc639dd37ff68847a0adde5f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2600,19 +1800,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>a8b0d6200bc639dd37ff68847a0adde5f</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>addr</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a8286ae6db03c34c4bb161accbfbfbbcd</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2620,7 +1810,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d8/d28/a18584.html</Path>
+    <Path>df/d32/a48269.html</Path>
     <Anchor>ae07a9ad040d2fbefafcff363b77697ce</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
@@ -2630,7 +1820,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>ad516e6ff5b7dd7f6ce2946c527ddb8b9</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2640,7 +1830,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a1a173457c7aa39c59c008fcc3332d2b3</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2650,7 +1840,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a71e21ea67de59991e9a27666a1752a8f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2660,7 +1850,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a6b67e86f6de9204d76adab79069aec29</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2670,7 +1860,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d9/dde/a18614.html</Path>
+    <Path>db/d8f/a48245.html</Path>
     <Anchor>a9a50b36f9886cd6bdbe05a5a6639cd95</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -2680,7 +1870,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d9/dde/a18614.html</Path>
+    <Path>db/d8f/a48245.html</Path>
     <Anchor>a201d805094c80d48f8ee4e49ee85fb74</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -2690,7 +1880,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a133981c4ba48aed67a5b874f7b213583</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -2700,7 +1890,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a1bda227f31ddf346294cb531f7554ef3</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -2711,7 +1901,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>dc/ddd/a18618.html</Path>
+    <Path>d1/d4b/a48276.html</Path>
     <Anchor>a4b31902bf2cff8ff28405aa57d9f4575</Anchor>
     <DeclaredIn>kiostream.hpp</DeclaredIn>
   </Token>
@@ -2721,7 +1911,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>af382674e4c9fb57a14b178d4ee12273a</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -2732,19 +1922,9 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>dc/ddd/a18618.html</Path>
+    <Path>d1/d4b/a48276.html</Path>
     <Anchor>a8ca6648639f335b207c748074dcf9f25</Anchor>
     <DeclaredIn>kiostream.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GDT</Name>
-      <APILanguage>c</APILanguage>
-      <Type>ffunc</Type>
-    </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a2dda285f5ad6336a22f9ff1d2d098e60</Anchor>
-    <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2752,7 +1932,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>ac4461ee84aade9ee824de64d4846ec98</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2762,7 +1942,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a01d908c8637340b21274e0176b320c05</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2772,7 +1952,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a1adfff1c72212b5c4e1df35485bb102a</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2782,7 +1962,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>ac7f57dcdd84028460100b6da75ad4938</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2792,28 +1972,38 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a4941c819dbbef299c391bf53c24caf8d</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>GDT_row</Name>
+      <Name>GDT_Manager</Name>
       <APILanguage>c</APILanguage>
-      <Type>func</Type>
+      <Type>ffunc</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a24693ad4185e3f70d2be14a964474436</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>a7446d615905c4ed2cd7d97f7463f9120</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>GDT_row</Name>
+      <Name>GDT_Row</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>ad6539f5ca5082793a69451b8c1fc6523</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>a0db6a6236a2495c565e578123b21b2d4</Anchor>
+    <DeclaredIn>kgdt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GDT_Row</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>af37f29cd496af11915f442762af17a69</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2822,7 +2012,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>acfea365f69e71368a2db03333d4afd6f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2832,7 +2022,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>adf60fad10b12cc19ad193c928d36445c</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2842,7 +2032,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>a6498ed740318b424aaae4db1f223e558</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2852,7 +2042,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>a996c60cc7e88bb1c85505c19f6c35117</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2862,7 +2052,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>a7884c02f32fe35058379ebdc96c5767c</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2872,18 +2062,18 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>adf5df650f7c6f6e7792d97ee2b851265</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>IDT_row</Name>
+      <Name>IDT_Row</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
-    <Anchor>ab2572e8a0d5fb3acf2373d28ba45ce25</Anchor>
+    <Path>d9/d94/a48254.html</Path>
+    <Anchor>a8fd2ce61381319526d99e87e39b58377</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2892,7 +2082,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>a07e074bde074261858311b014bc2b398</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2902,7 +2092,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d3/d3a/a18599.html</Path>
+    <Path>d4/d78/a48230.html</Path>
     <Anchor>a1df59a6c3578a3d5d96bfef4ffd8fbc8</Anchor>
     <DeclaredIn>kinterrupt.cpp</DeclaredIn>
   </Token>
@@ -2912,7 +2102,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a258db7c2f70fd1b20332ee3c00cd1d89</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2922,7 +2112,7 @@
       <APILanguage>c</APILanguage>
       <Type>ffunc</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>a6c5563315b1a2f5c67ae8b78d06e3c7f</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2932,8 +2122,8 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a42e2af3e7b809f6f5e06ecfecdb504e0</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>aeaae7f1943db2e30f88a0dd0d18680e1</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2942,7 +2132,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a169aef5ef99da67bb0047dfc3d6a22e4</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2952,8 +2142,8 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a1b73e3464fcb9312774f2347e1b7604e</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>a3e8473e2d176d865dad7acc08691ed23</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2962,7 +2152,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>aaa6fbf4816b6af649fc82186fe18b4e0</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2972,7 +2162,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>acca378f87bf61c0de2befa4244846bfe</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2982,7 +2172,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d7a/a18557.html</Path>
+    <Path>dc/d88/a48218.html</Path>
     <Anchor>abb4e4866092116b520310d61961bfe12</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -2992,7 +2182,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>ac9670c34ae4e43ca669484a7a317e968</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3002,7 +2192,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a6d83e86a8c6b6046bae502774a4e9e83</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3012,7 +2202,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a5bc124f24ecf7e9b0b06d181a6fd7a3e</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3022,7 +2212,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a9660baab3bfc34866b252eff71da777d</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3032,7 +2222,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a804c656f97148c66dee375ad20d6326e</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3042,7 +2232,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>ae245d853ffcebef06bd052849e35471c</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3052,7 +2242,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a5882f98f21668e74fbc61e9a3cc4d4c5</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3062,7 +2252,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>ac9391d6382197266f9d814ed3d21bac2</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3072,7 +2262,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>ac874f858f617e42a6376c7092940376c</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3082,7 +2272,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>ab7f5f57837c11ae93f9a3c6ef0bba5a8</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3092,7 +2282,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a5a90c65c80e669968e259e84b095c408</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3102,7 +2292,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>acb168549620efee2737255317c814059</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3112,7 +2302,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>abfe7fa11c53fb1ea1270f0ed00bb18b8</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3122,7 +2312,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a1d9a56551248abc6954bf18c76ddcb74</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3132,7 +2322,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>abb30f17e5bf0289632c5abbd2d2dd99a</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3142,19 +2332,9 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>abc652aa810e06ef28716a20cb70d51d4</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>len</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a6de3a6d27a7e07942958b912d39792e6</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3162,7 +2342,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>ab28e82ae69032cb4ad3ec3a0be3d7129</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3172,7 +2352,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>aa7ae5b5a918e00776ff07fb1c58a348d</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3182,7 +2362,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a887422301cbe9a94f8b96263415640cf</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3192,7 +2372,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a5be9493285a1f50a67d98b887537217d</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3202,7 +2382,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/dd6/a18581.html</Path>
+    <Path>d2/ddd/a48266.html</Path>
     <Anchor>a14e1e30a5e2cbbd23a1fd111357f9076</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -3212,359 +2392,9 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d3/d36/a18578.html</Path>
+    <Path>df/da3/a48263.html</Path>
     <Anchor>a637dd833f5f7af42afa1f42349a4d89e</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_AOUT_KLUDGE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a791f0c6a97c36de5388c990503ee4639</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_BOOTLOADER_MAGIC</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aacd617f4e3daafd6eab95fb6215ccae4</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>af6005f97267af2cb0ff37fb245284440</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a8e2af641ff42074bb807c3ec9e33b2e0</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_FRAMEBUFFER_TYPE_RGB</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a34b2f01226ea42de22e06db7f652fbb1</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_HEADER_ALIGN</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>abc554da6e5184d34e039b551177434ba</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_HEADER_MAGIC</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab36ad4b4a42c58aac4ad1f2ba13054e9</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_ALIGN</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a7f583196f43e30e93323f5e44554d726</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_AOUT_SYMS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a186ab9e55c5bc612b9fd7e10b4be5600</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_APM_TABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aab73446f0cee2e9dc91f43eb9a0c806b</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_BOOT_LOADER_NAME</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a9743476d5f32c9ae22f6254a0e3ba11d</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_BOOTDEV</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>acfde5ffdd699c023dd8f4b89aa66556f</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_CMDLINE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ae75fb4f821b7ab405d46318d9b90a677</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_CONFIG_TABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ad60e5b72325f5752e955879f3fbb44c3</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_DRIVE_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>af2c5803d8cc6e1e8c00181ca546e68ab</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_ELF_SHDR</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ad7d22ae99c11dc92152acdc8494a71f0</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_FRAMEBUFFER_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a1c07b211ed2c374f5fbcf40c97bce2c0</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_MEM_MAP</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a2d16dabdfdee01362c3457d06f0ff850</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_MEMORY</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a1cb6047ede9a179b2958048573269d7a</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_MODS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a9a06a0175854cc6af54ddb6bd798c5bc</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_VBE_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>abf0a727e2e262407c77d54baf40d2f39</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>af35be82586f332a561d00207c937ee57</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_AVAILABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a7fe141351ebcde0acbd6118ad0ea1a21</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_BADRAM</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a1604ec18ac949d88dab993904b08c075</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>afdfca6bbbf4b7dca40e9d43e58201f55</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_NVS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a68f78286f7434d373a82f1b6f6473c72</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_RESERVED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a0299aedc71e1f6707181471bafb18e7c</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MOD_ALIGN</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>ab3284a28549f2a2f1a2001ca023aaa1e</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_PAGE_ALIGN</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>aab5e5487e858de2a031cd3f1232f7b60</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_SEARCH</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a0b53e2de91aa7498c4b476776b27e5f3</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint16_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a3a11e3c2b5e0617736a05343aa5795b3</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint32_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a009f355da41fed4badb8a52d432f5186</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint64_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a8dfdd61648b48aa31845db590970e06a</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint8_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a037f602538fccf97e90021c19fdfc047</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_VIDEO_MODE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a74a1da9293ae3835241c60b2d9e65e8d</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3572,8 +2402,8 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a4facd1fb9d9bd77b1dd234a062c8d9dd</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>aef2b82bef7fb75f5b80455fcd69be4ed</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3582,7 +2412,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d3c/a18590.html</Path>
+    <Path>d5/d9f/a48221.html</Path>
     <Anchor>afa145befcf5e7b83424408ca503c8637</Anchor>
     <DeclaredIn>kmemory.cpp</DeclaredIn>
   </Token>
@@ -3592,7 +2422,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d3c/a18590.html</Path>
+    <Path>d5/d9f/a48221.html</Path>
     <Anchor>af057efbdbcd21ea12954d49cd2d245c6</Anchor>
     <DeclaredIn>kmemory.cpp</DeclaredIn>
   </Token>
@@ -3602,7 +2432,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d3c/a18590.html</Path>
+    <Path>d5/d9f/a48221.html</Path>
     <Anchor>a22aea74a1155aa798d6032da46da2391</Anchor>
     <DeclaredIn>kmemory.cpp</DeclaredIn>
   </Token>
@@ -3612,7 +2442,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d3c/a18590.html</Path>
+    <Path>d5/d9f/a48221.html</Path>
     <Anchor>ab26fe706b29fdeb33d5f6ead76c05815</Anchor>
     <DeclaredIn>kmemory.cpp</DeclaredIn>
   </Token>
@@ -3622,7 +2452,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d3c/a18590.html</Path>
+    <Path>d5/d9f/a48221.html</Path>
     <Anchor>a1a7f24760c8c7ad3bfcd54856d906fc2</Anchor>
     <DeclaredIn>kmemory.cpp</DeclaredIn>
   </Token>
@@ -3632,7 +2462,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d3c/a18590.html</Path>
+    <Path>d5/d9f/a48221.html</Path>
     <Anchor>aa75472ab4b765cf6f6b5b0ebcd4a28c8</Anchor>
     <DeclaredIn>kmemory.cpp</DeclaredIn>
   </Token>
@@ -3642,7 +2472,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a91bacd34c601c4cfe39f1ffa6c2a1385</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3652,7 +2482,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a6bd99ada5f7c46567ee0ceca6c369d47</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3663,7 +2493,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>dc/ddd/a18618.html</Path>
+    <Path>d1/d4b/a48276.html</Path>
     <Anchor>a45ee52b918a784ff0e96e7c8917a91d9</Anchor>
     <DeclaredIn>kiostream.hpp</DeclaredIn>
   </Token>
@@ -3673,7 +2503,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>aab6eb585b409591414f84a1e3f606345</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3683,7 +2513,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a0a72b35b5fcadccd545ee4c5ef7efdd3</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3693,7 +2523,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a6aba53071c94f3ffe96befc625602c9c</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3703,7 +2533,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
+    <Path>d9/d94/a48254.html</Path>
     <Anchor>acb7bc06bed6f6408d719334fc41698c7</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -3713,7 +2543,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a913f40d6652965fdd1e34a04ab7dba2d</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3723,7 +2553,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a0d47ea941c3bdfd06858a467d2e76d83</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3733,7 +2563,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>ab9e609c85bc4472f4f9b69697f2e5067</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3743,7 +2573,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a0cb0ae4ca069ed571a3b2db9190e12df</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3753,7 +2583,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a6c474d3015717ee1a2d99ae6a7b00ec3</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3763,7 +2593,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>ae04daf26bdb792ae557ef1216021cc43</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3773,7 +2603,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>add294548173871e30e54b92bf5da2758</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3783,7 +2613,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>ae86357f11d481de7242f3178629241b8</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3793,7 +2623,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a9759917f0cd67a1d7c87849e211a7993</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3803,7 +2633,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a79a943b17e5929ca9e06fc7cc1cb0ccc</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3813,19 +2643,9 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a7667e7c13f08890d3a6051346233691c</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>size</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a6d813a0f2b5281b18dea3f4cda696c33</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3833,19 +2653,9 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a49426d7a9b562958ad2ab7fbf134f368</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>type</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d5/d56/a18560.html</Path>
-    <Anchor>a8da1a8c7127a0371eec0810a29e30f3c</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3853,7 +2663,7 @@
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
     </TokenIdentifier>
-    <Path>d8/d28/a18584.html</Path>
+    <Path>df/d32/a48269.html</Path>
     <Anchor>a35fc01d4eba01f3f2ec636bd6b5ff34f</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
@@ -3863,7 +2673,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a14bf754296559bf0266e127e677e8107</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3874,7 +2684,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>dc/ddd/a18618.html</Path>
+    <Path>d1/d4b/a48276.html</Path>
     <Anchor>a9d1f0f838e646660db6d9284725c2b4c</Anchor>
     <DeclaredIn>kiostream.hpp</DeclaredIn>
   </Token>
@@ -3884,8 +2694,8 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a8d89c16e869ec13a725c780925713916</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>a4dd5e213df2a9b2ad66c49c23a14fdc5</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3894,7 +2704,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a6ef65886fcf664d696b4361309452c2c</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3904,8 +2714,8 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a137b4628cf352225e57720432f2db487</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>af40b8eb1a5b52ab270a63992a3548408</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3914,7 +2724,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
+    <Path>d2/de1/a48272.html</Path>
     <Anchor>a95dcc3ea7fb0310df8f2ab457deca483</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3924,7 +2734,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a32de8112c133d2f05cae84bde7d98239</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3934,38 +2744,38 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/d87/a18593.html</Path>
+    <Path>df/df9/a48224.html</Path>
     <Anchor>a0cece8394c6a6dedd523238e9057125f</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~GDT</Name>
+      <Name>~GDT_Manager</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>ab808423f6529092dc90fcb7836fe024a</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>ab811be3c4548b496014638baf9274134</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~GDT_row</Name>
+      <Name>~GDT_Row</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d9a/a18587.html</Path>
-    <Anchor>a5322ab07a139d8ae6f9c518b288bde15</Anchor>
+    <Path>d2/de1/a48272.html</Path>
+    <Anchor>ad93710bf7c9cbb3ae688f168608c406f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~IDT_row</Name>
+      <Name>~IDT_Row</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>da/d36/a18569.html</Path>
-    <Anchor>a3fe23003c5b71fa3b47543c074c38ac3</Anchor>
+    <Path>d9/d94/a48254.html</Path>
+    <Anchor>af52ef1538ab7549c816752a65748cdfc</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
 </Tokens>

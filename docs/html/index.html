@@ -44,7 +44,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">OSOS - Documentation
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
+   <div id="projectbrief">Under development - Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -91,47 +91,63 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><h1>OSOS - 32-bit Operating System Documentation</h1>
 
 <p>Welcome to the official documentation for OSOS, a 32-bit kernel written from scratch in C++.</p>
-<p>This site provides a detailed look at the internal structure of the OSOS kernel, generated automatically by Doxygen. You can use the navigation panel to explore all classes, namespaces, and files, complete with inheritance diagrams and dependency graphs.</p>
+<p>This site provides a detailed look at the internal structure of the OSOS kernel, generated automatically by Doxygen. Use the navigation panel to explore the kernel's structure.</p>
 
 <hr>
 
-<h2>Core Features &amp; Modules</h2>
-<p>The following features are implemented in the kernel. You can find their full documentation by exploring the <a href="namespaces.html">Namespaces</a> and <a href="annotated.html">Classes</a> sections.</p>
+<h2>How to Find Details</h2>
+<p>This documentation is generated directly from the source code comments. The best way to find information is to navigate using the Doxygen-generated pages:</p>
 <ul>
-    <li><p><b>Custom Kernel Library (<code>libk</code>):</b></p>
-        <ul>
-            <li><b><code>basic</code>:</b> Provides <code>kiostream</code> (for <code>printf</code>, screen control) and <code>kmemory</code> (for custom <code>new</code>/<code>delete</code>).</li>
-            <li><b><code>driver</code>:</b> Includes the <code>DriverManager</code> and drivers for the <code>kkeyboard</code> and <code>kmouse</code>.</li>
-            <li><b><code>essential</code>:</b> Contains the <code>GDT</code> (Global Descriptor Table) setup and <code>kicxxabi</code> for global constructor/destructor support.</li>
-            <li><b><code>hardware_communication</code>:</b> Provides <code>kport</code> (for low-level I/O port access) and the <code>InterruptManager</code> (for handling the IDT and ISRs).</li>
-        </ul>
+    <li><b>To see all classes and structures:</b>
+        Click on the <b>"Classes"</b> tab in the navigation bar. For a graphical view, use the <b>"Class Hierarchy"</b> option.
     </li>
-    <li><p><b>Global Constructor/Destructor Support:</b> C++ global objects are correctly constructed before <code>kernelMain</code> is called, using <code>essential/kicxxabi</code>.</p></li>
-    <li><p><b>Hardware Initialization:</b></p>
-        <ul>
-            <li><b>Global Descriptor Table (GDT)</b></li>
-            <li><b>Interrupt Descriptor Table (IDT)</b></li>
-        </ul>
+    
+    <li><b>To see all namespaces:</b>
+        Click on the <b>"Namespaces"</b> tab. This is the best way to see the kernel's high-level organization.
     </li>
-    <li><p><b>Interrupt Handling:</b> Manages hardware interrupts from the Keyboard and Mouse via registered ISRs.</p></li>
+
+    <li><b>To explore individual files:</b>
+        Click on the <b>"Files"</b> tab to see a list of all documented source and header files.
+    </li>
+
+    <li><b>To understand a specific component (e.g., GDT or Keyboard Driver):</b>
+        <ol>
+            <li>Go to the <b>"Namespaces"</b> tab and select the relevant namespace (like <code>essential</code> or <code>driver</code>).</li>
+            <li>Click on the class you are interested in (e.g., <code>GDT</code> or <code>KeyboardDriver</code>).</li>
+            <li>On the class page, you will find a detailed description, a list of public/protected functions, and inheritance diagrams.</li>
+        </ol>
+    </li>
 </ul>
 
 <hr>
 
-<h2>Code Structure &amp; Namespaces</h2>
-<p>The kernel's code is divided into several key namespaces to keep it organized. These namespaces form the basis of the documentation's structure:</p>
+<h2>My personal rules while developing OSOS (IMP if you are thinking to Contribute)</h2>
 <ul>
-    <li><b><code>basic</code>:</b> Core functions like I/O and memory.</li>
-    <li><b><code>driver</code>:</b> Device drivers (Keyboard, Mouse).</li>
-    <li><b><code>essential</code>:</b> Critical boot-time setup code (GDT, C++ ABI support).</li>
-    <li><b><code>hardware_communication</code>:</b> Low-level port I/O and interrupt management.</li>
+    <li>Using <code>#include &lt;&gt;</code> for standard libraries</li>
+    <li>Using <code>#include ""</code> for OSOS specific libraries, e.g. libraries in <code>./libk_headers/</code></li>
+    <li>Naming OSOS kernel libraries with prefix 'k', e.g. <code>kiostream.hpp</code>, <code>kmemory.hpp</code>, etc</li>
+    <li>Naming convensions :
+        <ul>
+            <li>pointer names : <code>abc_xyz_pqr</code></li>
+            <li>class/struct names : <code>AbcXyzPqr</code> or <code>ABC_XyzPqr</code></li>
+            <li>function/variable names : <code>abcXyzPqr</code></li>
+        </ul>
+    </li>
+    <li>all kernel library functions, classes, variables are divided in namespaces :
+        <ul>
+            <li><b>basic</b> : have libraries which contains basic IO, memory management etc.</li>
+            <li><b>driver</b> : have libraries which are for managing drivers e.g. <code>kkeyboard.hpp</code></li>
+            <li><b>essential</b> : have libraries which are must for working e.g. <code>kgdt.hpp</code></li>
+            <li><b>hardware_communication</b> : have libraries which deals with hardware e.g. <code>kport.hpp</code></li>
+        </ul>
+    </li>
 </ul> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 24 2025 10:32:01 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 12:11:18 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

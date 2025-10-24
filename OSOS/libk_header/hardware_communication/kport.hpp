@@ -16,7 +16,6 @@
         };
 
         /// @brief Represents an 8-bit (byte-sized) I/O port.
-        /// @inherits Port
         class Port8Bit : public Port {
         public:
             explicit Port8Bit(uint16_t portnumber);
@@ -26,7 +25,6 @@
         };
 
         /// @brief Represents an 8-bit I/O port with a forced delay on writes.
-        /// @inherits Port8Bit
         class Port8BitSlow final : public Port8Bit {
         public:
             explicit Port8BitSlow(uint16_t portnumber);
@@ -36,7 +34,6 @@
         };
 
         /// @brief Represents a 16-bit (word-sized) I/O port.
-        /// @inherits Port
         class Port16Bit final : public Port {
         public:
             explicit Port16Bit(uint16_t portnumber);
@@ -47,7 +44,6 @@
 
 
         /// @brief Represents a 32-bit (double-word-sized) I/O port.
-        /// @inherits Port
         class Port32Bit final : public Port {
         public:
             explicit Port32Bit(uint16_t portnumber);

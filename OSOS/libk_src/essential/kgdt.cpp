@@ -1,14 +1,14 @@
 #include "essential/kgdt.hpp"
 
-/// @brief Default constructor for a null GDT_row entry.
-essential::GDT_row::GDT_row() : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
+/// @brief Default constructor for a null GDT_Row entry.
+essential::GDT_Row::GDT_Row() : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
 
-/// @brief Constructs a GDT_row (Segment Descriptor) with specified parameters.
+/// @brief Constructs a GDT_Row (Segment Descriptor) with specified parameters.
 /// @param base The 32-bit base address of the segment.
 /// @param limit The 20-bit limit (size) of the segment.
 /// @param access_byte The 8-bit access flags for the segment.
 /// @param gran_byte The 8-bit granularity flags for the segment.
-essential::GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
+essential::GDT_Row::GDT_Row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
     this->limit_low   = (limit & 0xFFFF);
     this->base_low    = (base & 0xFFFF);
     this->base_middle = (base >> 16) & 0xFF;
@@ -23,11 +23,11 @@ essential::GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, 
 }
 
 /// @brief Destroys the GDT_row object.
-essential::GDT_row::~GDT_row() {}
+essential::GDT_Row::~GDT_Row() {}
 
 
-/// @brief Constructs a new GDT object and initializes the standard kernel/user segments.
-essential::GDT::GDT()
+/// @brief Constructs a new GDT_Manager object and initializes the standard kernel/user segments.
+essential::GDT_Manager::GDT_Manager()
     // Use an initializer list to construct each GDT entry.
     : nullSegment(), // First entry must be a null descriptor.
       kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
@@ -37,18 +37,18 @@ essential::GDT::GDT()
 {
     // The GDT limit is its total size in bytes minus 1.
     // 5 entries * 8 bytes/entry = 40 bytes. Limit = 39 (0x27).
-    limit = (sizeof(essential::GDT_row) * 5) - 1;
+    limit = (sizeof(essential::GDT_Row) * 5) - 1;
     
     // The base address is the address of the first entry in our table.
     base = (uintptr_t)&this->nullSegment;
 }
 
-/// @brief Destroys the GDT object.
-essential::GDT::~GDT() {}
+/// @brief Destroys the GDT_Manager object.
+essential::GDT_Manager::~GDT_Manager() {}
 
 
 /// @brief Loads this GDT into the CPU's GDTR and reloads all segment registers.
-void essential::GDT::installTable() {
+void essential::GDT_Manager::installTable() {
     // A structure that matches the 6-byte format required by the 'lgdt' instruction.
     struct GDT_Pointer {
         uint16_t limit;
@@ -82,7 +82,7 @@ void essential::GDT::installTable() {
 }
 
 /// @brief (Static) Prints the details of all entries in the currently loaded GDT.
-void essential::GDT::printLoadedTable() {
+void essential::GDT_Manager::printLoadedTable() {
     struct GDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -96,14 +96,14 @@ void essential::GDT::printLoadedTable() {
     basic::printf("INFO about : Currently Loaded GDT\n");
     basic::printf("Base Address: %#x\n", gdtr.base);
     basic::printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
-    basic::printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(essential::GDT_row));
+    basic::printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(essential::GDT_Row));
     basic::printf("---\n");
 
-    essential::GDT_row* gdt_entries = (essential::GDT_row*)gdtr.base;
-    int num_entries = (gdtr.limit + 1) / sizeof(essential::GDT_row);
+    essential::GDT_Row* gdt_entries = (essential::GDT_Row*)gdtr.base;
+    int num_entries = (gdtr.limit + 1) / sizeof(essential::GDT_Row);
 
     for (int i = 0; i < num_entries; i++) {
-        essential::GDT_row entry = gdt_entries[i];
+        essential::GDT_Row entry = gdt_entries[i];
 
         // Reconstruct the base and limit from the scattered fields.
         uint32_t base = entry.base_high << 24 | entry.base_middle << 16 | entry.base_low;
@@ -121,7 +121,7 @@ void essential::GDT::printLoadedTable() {
 }
 
 /// @brief (Static) Prints the header information (base, limit, count) of the currently loaded GDT.
-void essential::GDT::printLoadedTableHeader() {
+void essential::GDT_Manager::printLoadedTableHeader() {
     struct GDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -135,7 +135,7 @@ void essential::GDT::printLoadedTableHeader() {
     basic::printf("INFO about : Currently Loaded GDT\n");
     basic::printf("Base Address: %#x\n", gdtr.base);
     basic::printf("Limit: %#x (%d bytes)\n", gdtr.limit, gdtr.limit);
-    basic::printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(essential::GDT_row));
+    basic::printf("Entries: %d\n", (gdtr.limit + 1) / sizeof(essential::GDT_Row));
     basic::printf("---\n");
 }
 
@@ -143,13 +143,13 @@ void essential::GDT::printLoadedTableHeader() {
 
 /// @brief (Static) Gets the kernel code segment selector.
 /// @return The 16-bit selector value.
-uint16_t essential::GDT::kernel_CS_selector() { return sizeof(essential::GDT_row) * 1; } // Selector 0x08
+uint16_t essential::GDT_Manager::kernel_CS_selector() { return sizeof(essential::GDT_Row) * 1; } // Selector 0x08
 /// @brief (Static) Gets the kernel data segment selector.
 /// @return The 16-bit selector value.
-uint16_t essential::GDT::kernel_DS_selector() { return sizeof(essential::GDT_row) * 2; } // Selector 0x10
+uint16_t essential::GDT_Manager::kernel_DS_selector() { return sizeof(essential::GDT_Row) * 2; } // Selector 0x10
 /// @brief (Static) Gets the user code segment selector.
 /// @return The 16-bit selector value.
-uint16_t essential::GDT::user_CS_selector()   { return sizeof(essential::GDT_row) * 3; } // Selector 0x18
+uint16_t essential::GDT_Manager::user_CS_selector()   { return sizeof(essential::GDT_Row) * 3; } // Selector 0x18
 /// @brief (Static) Gets the user data segment selector.
 /// @return The 16-bit selector value.
-uint16_t essential::GDT::user_DS_selector()   { return sizeof(essential::GDT_row) * 4; } // Selector 0x20
+uint16_t essential::GDT_Manager::user_DS_selector()   { return sizeof(essential::GDT_Row) * 4; } // Selector 0x20

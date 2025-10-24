@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: kernel_src/kernel.cpp File Reference</title>
+<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential/kgdt.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -44,7 +44,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">OSOS - Documentation
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development by Shreekar</div>
+   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -87,75 +87,66 @@ $(document).ready(function(){initNavTree('df/d03/a00062.html','../../'); initRes
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">kernel.cpp File Reference</div></div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">kgdt.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d0/d89/a00071_source.html">basic/multiboot.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/d77/a00095_source.html">essential/kicxxabi.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/d09/a00077_source.html">basic/kiostream.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../db/db6/a00074_source.html">basic/kmemory.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/d44/a00098_source.html">essential/kgdt.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../da/dec/a00080_source.html">hardware_communication/kinterrupt.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../da/d2a/a00086_source.html">driver/kkeyboard.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../db/dab/a00089_source.html">driver/kmouse.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/dc1/a00092_source.html">driver/kdriver.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d32/a00041_source.html">basic/kiostream.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kernel.cpp:</div>
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kgdt.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d1/d6f/a00063.png" border="0" usemap="#akernel__src_2kernel_8cpp" alt=""/></div>
-<map name="akernel__src_2kernel_8cpp" id="akernel__src_2kernel_8cpp">
-<area shape="rect" title=" " alt="" coords="570,5,729,31"/>
-<area shape="rect" title=" " alt="" coords="876,475,943,500"/>
-<area shape="poly" title=" " alt="" coords="729,19,843,24,973,35,1094,52,1143,63,1180,76,1215,93,1243,111,1261,135,1268,170,1268,327,1266,352,1258,374,1247,393,1232,410,1194,438,1148,458,1097,472,1046,481,956,489,956,483,1045,476,1096,467,1146,453,1192,433,1229,406,1243,390,1254,371,1260,351,1263,327,1263,171,1256,137,1239,115,1212,98,1178,81,1142,68,1093,57,973,40,842,30,729,24"/>
-<area shape="rect" href="../../d0/d89/a00071.html" title=" " alt="" coords="249,159,399,185"/>
-<area shape="poly" title=" " alt="" coords="570,23,523,28,473,38,424,55,379,81,364,95,351,112,334,147,330,145,347,109,360,91,376,77,422,50,472,33,523,23,569,17"/>
-<area shape="rect" href="../../d9/d77/a00095.html" title=" " alt="" coords="5,240,173,265"/>
-<area shape="poly" title=" " alt="" coords="570,24,471,29,361,39,261,56,222,67,193,81,158,113,131,153,111,193,99,228,94,226,106,191,126,150,154,110,191,76,220,62,260,51,360,34,471,24,570,19"/>
-<area shape="rect" href="../../d1/d09/a00077.html" title=" " alt="" coords="451,313,605,339"/>
-<area shape="poly" title=" " alt="" coords="570,29,464,47,406,62,350,81,284,106,260,123,238,153,232,169,229,184,236,211,255,234,284,255,320,272,361,287,443,308,442,313,359,292,318,277,281,259,251,238,231,213,224,184,227,168,234,151,256,120,281,102,348,76,405,57,463,42,569,24"/>
-<area shape="rect" href="../../db/db6/a00074.html" title=" " alt="" coords="389,79,539,104"/>
-<area shape="poly" title=" " alt="" coords="621,33,508,76,506,71,619,28"/>
-<area shape="rect" href="../../d1/d44/a00098.html" title=" " alt="" coords="526,240,669,265"/>
-<area shape="poly" title=" " alt="" coords="648,32,630,84,612,153,602,226,597,226,607,151,625,82,643,30"/>
-<area shape="rect" href="../../da/dec/a00080.html" title=" " alt="" coords="621,152,811,192"/>
-<area shape="poly" title=" " alt="" coords="657,30,705,138,700,140,652,32"/>
-<area shape="rect" href="../../da/d2a/a00086.html" title=" " alt="" coords="769,79,929,104"/>
-<area shape="poly" title=" " alt="" coords="682,28,804,71,803,76,681,33"/>
-<area shape="rect" href="../../d1/dc1/a00092.html" title=" " alt="" coords="938,159,1075,185"/>
-<area shape="poly" title=" " alt="" coords="729,17,780,22,835,33,891,50,943,76,961,91,976,109,998,145,994,148,972,112,957,95,940,81,889,55,834,38,779,28,729,23"/>
-<area shape="rect" href="../../db/dab/a00089.html" title=" " alt="" coords="1023,79,1167,104"/>
-<area shape="poly" title=" " alt="" coords="721,28,1010,74,1009,79,720,33"/>
-<area shape="poly" title=" " alt="" coords="160,263,444,308,444,314,159,268"/>
-<area shape="poly" title=" " alt="" coords="538,337,572,380,597,404,625,424,686,450,750,467,811,477,862,482,862,487,811,483,749,473,684,455,623,429,593,409,568,384,533,340"/>
-<area shape="rect" title=" " alt="" coords="483,394,554,419"/>
-<area shape="poly" title=" " alt="" coords="529,339,524,380,519,380,524,339"/>
-<area shape="rect" href="../../d2/d1f/a00083.html" title=" " alt="" coords="681,387,871,427"/>
-<area shape="poly" title=" " alt="" coords="558,336,696,380,695,385,557,341"/>
-<area shape="poly" title=" " alt="" coords="809,424,879,465,877,470,807,429"/>
-<area shape="poly" title=" " alt="" coords="723,389,583,345,585,340,725,384"/>
-<area shape="poly" title=" " alt="" coords="445,107,358,155,355,150,442,102"/>
-<area shape="poly" title=" " alt="" coords="477,103,495,124,509,151,517,182,517,208,515,233,517,265,524,299,519,301,512,266,510,233,512,208,511,183,504,153,490,127,473,106"/>
-<area shape="rect" title=" " alt="" coords="423,159,494,185"/>
-<area shape="poly" title=" " alt="" coords="466,104,463,146,458,145,461,104"/>
-<area shape="poly" title=" " alt="" coords="604,265,638,355,657,401,671,425,716,453,767,471,818,480,862,484,862,489,817,485,766,476,714,458,667,429,653,403,633,357,599,266"/>
-<area shape="poly" title=" " alt="" coords="588,268,551,305,547,302,584,264"/>
-<area shape="poly" title=" " alt="" coords="738,191,810,271,851,326,886,386,901,424,909,461,903,462,896,426,882,388,847,329,806,274,734,194"/>
-<area shape="poly" title=" " alt="" coords="716,193,706,230,696,250,683,267,646,294,604,312,602,307,643,290,679,263,692,247,701,228,711,192"/>
-<area shape="poly" title=" " alt="" coords="723,192,770,372,765,374,718,193"/>
-<area shape="poly" title=" " alt="" coords="689,194,628,235,625,230,686,190"/>
-<area shape="poly" title=" " alt="" coords="855,104,883,218,900,301,912,386,913,461,908,461,907,387,895,302,878,219,850,105"/>
-<area shape="poly" title=" " alt="" coords="849,105,786,374,781,372,844,104"/>
-<area shape="poly" title=" " alt="" coords="831,106,761,147,759,143,828,102"/>
-<area shape="poly" title=" " alt="" coords="873,102,973,151,970,156,871,106"/>
-<area shape="poly" title=" " alt="" coords="1114,102,1144,126,1178,160,1206,202,1214,226,1217,251,1217,327,1215,348,1210,368,1188,401,1157,427,1119,447,1077,463,1034,474,957,485,956,480,1033,468,1075,457,1117,442,1154,422,1184,397,1205,366,1210,347,1212,327,1212,251,1209,227,1201,205,1174,163,1141,130,1111,106"/>
-<area shape="poly" title=" " alt="" coords="1100,104,1105,146,1102,171,1090,194,1058,219,1011,241,952,261,885,277,744,303,619,319,619,313,744,297,884,272,950,256,1009,237,1055,215,1086,190,1097,170,1100,146,1095,104"/>
-<area shape="poly" title=" " alt="" coords="1104,104,1120,144,1122,169,1116,193,1092,229,1062,262,1029,291,993,316,920,356,852,385,850,380,918,352,991,311,1026,286,1059,258,1087,226,1111,191,1117,169,1115,145,1099,105"/>
-<area shape="poly" title=" " alt="" coords="1040,107,821,152,820,147,1039,101"/>
-<area shape="poly" title=" " alt="" coords="1083,106,1031,152,1028,148,1080,102"/>
+<div class="center"><img src="../../d1/d6f/a00063.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2essential_2kgdt_8hpp" alt=""/></div>
+<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2essential_2kgdt_8hpp" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2essential_2kgdt_8hpp">
+<area shape="rect" title=" " alt="" coords="5,5,187,75"/>
+<area shape="rect" title=" " alt="" coords="52,284,119,309"/>
+<area shape="poly" title=" " alt="" coords="85,75,72,123,69,163,71,203,82,270,77,271,66,204,64,163,67,122,80,74"/>
+<area shape="rect" href="../../dd/d32/a00041.html" title=" " alt="" coords="81,123,236,148"/>
+<area shape="poly" title=" " alt="" coords="121,73,145,110,141,113,116,76"/>
+<area shape="poly" title=" " alt="" coords="149,150,130,171,113,197,99,235,91,271,86,270,94,234,108,195,126,168,145,147"/>
+<area shape="rect" title=" " alt="" coords="123,203,194,229"/>
+<area shape="poly" title=" " alt="" coords="161,148,161,189,156,189,156,148"/>
+<area shape="rect" href="../../d6/d2d/a00047.html" title=" " alt="" coords="218,196,409,236"/>
+<area shape="poly" title=" " alt="" coords="176,146,257,188,255,192,174,151"/>
+<area shape="poly" title=" " alt="" coords="260,239,133,282,131,277,258,233"/>
+<area shape="poly" title=" " alt="" coords="282,198,199,156,201,151,285,193"/>
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d5f/a00064.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2essential_2kgdt_8hppdep" alt=""/></div>
+<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2essential_2kgdt_8hppdep" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2essential_2kgdt_8hppdep">
+<area shape="rect" title=" " alt="" coords="96,5,277,75"/>
+<area shape="rect" href="../../dc/d87/a00032.html" title=" " alt="" coords="44,357,225,412"/>
+<area shape="poly" title=" " alt="" coords="85,80,59,100,39,124,16,172,8,215,15,258,37,308,56,334,83,355,79,359,53,338,32,311,10,260,3,215,10,170,35,121,56,96,82,76"/>
+<area shape="rect" href="../../d5/df9/a00044.html" title=" " alt="" coords="49,123,324,192"/>
+<area shape="poly" title=" " alt="" coords="189,89,189,122,184,122,184,89"/>
+<area shape="rect" href="../../da/d2a/a00086.html" title=" " alt="" coords="348,130,547,185"/>
+<area shape="poly" title=" " alt="" coords="276,78,389,128,387,132,274,83"/>
+<area shape="poly" title=" " alt="" coords="89,202,68,220,51,241,43,259,41,274,44,290,51,308,69,334,92,355,89,359,65,338,47,311,39,291,36,274,38,257,47,239,64,216,86,197"/>
+<area shape="rect" href="../../d5/de0/a00050.html" title=" " alt="" coords="335,247,579,302"/>
+<area shape="poly" title=" " alt="" coords="279,195,396,245,394,250,277,200"/>
+<area shape="rect" href="../../dc/dee/a00053.html" title=" " alt="" coords="603,247,831,302"/>
+<area shape="poly" title=" " alt="" coords="337,189,337,189,465,212,592,237,623,245,621,250,591,243,464,218,336,195,336,195"/>
+<area shape="rect" href="../../db/db6/a00074.html" title=" " alt="" coords="62,240,311,309"/>
+<area shape="poly" title=" " alt="" coords="189,206,189,240,184,240,184,206"/>
+<area shape="poly" title=" " alt="" coords="367,309,213,360,212,355,365,304"/>
+<area shape="rect" href="../../da/dec/a00080.html" title=" " alt="" coords="354,357,571,412"/>
+<area shape="poly" title=" " alt="" coords="462,316,464,357,458,357,456,316"/>
+<area shape="poly" title=" " alt="" coords="610,308,592,312,396,348,225,374,225,369,395,343,591,307,609,303"/>
+<area shape="poly" title=" " alt="" coords="643,310,525,360,523,355,641,305"/>
+<area shape="rect" href="../../da/d24/a00068.html" title=" " alt="" coords="606,357,817,412"/>
+<area shape="poly" title=" " alt="" coords="718,316,716,357,710,357,712,316"/>
+<area shape="rect" href="../../d2/d1f/a00083.html" title=" " alt="" coords="842,357,1043,412"/>
+<area shape="poly" title=" " alt="" coords="785,306,888,355,886,360,783,311"/>
 </map>
 </div>
 </div>
@@ -163,34 +154,461 @@ $(document).ready(function(){initNavTree('df/d03/a00062.html','../../'); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d98/a00927.html">KeyboardEventHandler_for_kernel</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/daa/a00996.html">essential::GDT</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the Global Descriptor Table (<a class="el" href="../../d3/daa/a00996.html" title="Manages the Global Descriptor Table (GDT), holding segment descriptors for the CPU.">GDT</a>), holding segment descriptors for the CPU.  <a href="../../d3/daa/a00996.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbc/a00931.html">MouseEventHandler_for_kernel</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d76/a00992.html">essential::GDT_row</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (<a class="el" href="../../d3/daa/a00996.html" title="Manages the Global Descriptor Table (GDT), holding segment descriptors for the CPU.">GDT</a>).  <a href="../../d7/d76/a00992.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:d9/d77/a00095" id="r_d9/d77/a00095"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html">essential</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac4461ee84aade9ee824de64d4846ec98" id="r_ac4461ee84aade9ee824de64d4846ec98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ac4461ee84aade9ee824de64d4846ec98">GDT_ACCESS_CODE_PL0</a>&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(0) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#ae04daf26bdb792ae557ef1216021cc43">SEG_CODE_EXRD</a>)</td></tr>
+<tr class="separator:ac4461ee84aade9ee824de64d4846ec98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d908c8637340b21274e0176b320c05" id="r_a01d908c8637340b21274e0176b320c05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a01d908c8637340b21274e0176b320c05">GDT_ACCESS_CODE_PL3</a>&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(3) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#ae04daf26bdb792ae557ef1216021cc43">SEG_CODE_EXRD</a>)</td></tr>
+<tr class="separator:a01d908c8637340b21274e0176b320c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1adfff1c72212b5c4e1df35485bb102a" id="r_a1adfff1c72212b5c4e1df35485bb102a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a1adfff1c72212b5c4e1df35485bb102a">GDT_ACCESS_DATA_PL0</a>&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(0) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#add294548173871e30e54b92bf5da2758">SEG_DATA_RDWR</a>)</td></tr>
+<tr class="separator:a1adfff1c72212b5c4e1df35485bb102a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f57dcdd84028460100b6da75ad4938" id="r_ac7f57dcdd84028460100b6da75ad4938"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ac7f57dcdd84028460100b6da75ad4938">GDT_ACCESS_DATA_PL3</a>&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(3) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#add294548173871e30e54b92bf5da2758">SEG_DATA_RDWR</a>)</td></tr>
+<tr class="separator:ac7f57dcdd84028460100b6da75ad4938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4941c819dbbef299c391bf53c24caf8d" id="r_a4941c819dbbef299c391bf53c24caf8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a4941c819dbbef299c391bf53c24caf8d">GDT_GRAN_FLAGS</a>&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ae86357f11d481de7242f3178629241b8">SEG_GRAN_GRAN</a>(1) | <a class="el" href="../../df/d03/a00062.html#a7667e7c13f08890d3a6051346233691c">SEG_GRAN_SIZE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a9759917f0cd67a1d7c87849e211a7993">SEG_GRAN_LONG</a>(0) | <a class="el" href="../../df/d03/a00062.html#a79a943b17e5929ca9e06fc7cc1cb0ccc">SEG_GRAN_SAVL</a>(0)</td></tr>
+<tr class="separator:a4941c819dbbef299c391bf53c24caf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d47ea941c3bdfd06858a467d2e76d83" id="r_a0d47ea941c3bdfd06858a467d2e76d83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(x)&#160;&#160;&#160;((x) &lt;&lt; 4)</td></tr>
+<tr class="separator:a0d47ea941c3bdfd06858a467d2e76d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9e609c85bc4472f4f9b69697f2e5067" id="r_ab9e609c85bc4472f4f9b69697f2e5067"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(x)&#160;&#160;&#160;((x) &lt;&lt; 7)</td></tr>
+<tr class="separator:ab9e609c85bc4472f4f9b69697f2e5067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb0ae4ca069ed571a3b2db9190e12df" id="r_a0cb0ae4ca069ed571a3b2db9190e12df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(x)&#160;&#160;&#160;(((x) &amp; 0x03) &lt;&lt; 5)</td></tr>
+<tr class="separator:a0cb0ae4ca069ed571a3b2db9190e12df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c474d3015717ee1a2d99ae6a7b00ec3" id="r_a6c474d3015717ee1a2d99ae6a7b00ec3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(x)&#160;&#160;&#160;((x) &lt;&lt; 0)</td></tr>
+<tr class="separator:a6c474d3015717ee1a2d99ae6a7b00ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04daf26bdb792ae557ef1216021cc43" id="r_ae04daf26bdb792ae557ef1216021cc43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ae04daf26bdb792ae557ef1216021cc43">SEG_CODE_EXRD</a>&#160;&#160;&#160;0x0A</td></tr>
+<tr class="separator:ae04daf26bdb792ae557ef1216021cc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add294548173871e30e54b92bf5da2758" id="r_add294548173871e30e54b92bf5da2758"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#add294548173871e30e54b92bf5da2758">SEG_DATA_RDWR</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="separator:add294548173871e30e54b92bf5da2758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae86357f11d481de7242f3178629241b8" id="r_ae86357f11d481de7242f3178629241b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ae86357f11d481de7242f3178629241b8">SEG_GRAN_GRAN</a>(x)&#160;&#160;&#160;((x) &lt;&lt; 7)</td></tr>
+<tr class="separator:ae86357f11d481de7242f3178629241b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9759917f0cd67a1d7c87849e211a7993" id="r_a9759917f0cd67a1d7c87849e211a7993"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a9759917f0cd67a1d7c87849e211a7993">SEG_GRAN_LONG</a>(x)&#160;&#160;&#160;((x) &lt;&lt; 5)</td></tr>
+<tr class="separator:a9759917f0cd67a1d7c87849e211a7993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a943b17e5929ca9e06fc7cc1cb0ccc" id="r_a79a943b17e5929ca9e06fc7cc1cb0ccc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a79a943b17e5929ca9e06fc7cc1cb0ccc">SEG_GRAN_SAVL</a>(x)&#160;&#160;&#160;((x) &lt;&lt; 4)</td></tr>
+<tr class="separator:a79a943b17e5929ca9e06fc7cc1cb0ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7667e7c13f08890d3a6051346233691c" id="r_a7667e7c13f08890d3a6051346233691c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a7667e7c13f08890d3a6051346233691c">SEG_GRAN_SIZE</a>(x)&#160;&#160;&#160;((x) &lt;&lt; 6)</td></tr>
+<tr class="separator:a7667e7c13f08890d3a6051346233691c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abb4e4866092116b520310d61961bfe12" id="r_abb4e4866092116b520310d61961bfe12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#abb4e4866092116b520310d61961bfe12">kernelMain</a> (multiboot_info_t *mbi, uint32_t magicnumber)</td></tr>
-<tr class="separator:abb4e4866092116b520310d61961bfe12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab808423f6529092dc90fcb7836fe024a" id="r_ab808423f6529092dc90fcb7836fe024a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ab808423f6529092dc90fcb7836fe024a">~GDT</a> ()</td></tr>
+<tr class="separator:ab808423f6529092dc90fcb7836fe024a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5322ab07a139d8ae6f9c518b288bde15" id="r_a5322ab07a139d8ae6f9c518b288bde15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a5322ab07a139d8ae6f9c518b288bde15">~GDT_row</a> ()</td></tr>
+<tr class="separator:a5322ab07a139d8ae6f9c518b288bde15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e3ec8c29cc4bb68f65445749f0bfdb" id="r_a52e3ec8c29cc4bb68f65445749f0bfdb"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d7/d76/a00992.html">essential::GDT_row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#a52e3ec8c29cc4bb68f65445749f0bfdb">essential::__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a52e3ec8c29cc4bb68f65445749f0bfdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6539f5ca5082793a69451b8c1fc6523" id="r_ad6539f5ca5082793a69451b8c1fc6523"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ad6539f5ca5082793a69451b8c1fc6523">GDT_row</a> ()</td></tr>
+<tr class="separator:ad6539f5ca5082793a69451b8c1fc6523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24693ad4185e3f70d2be14a964474436" id="r_a24693ad4185e3f70d2be14a964474436"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a> (uint32_t <a class="el" href="../../df/d03/a00062.html#ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</a>, uint32_t <a class="el" href="../../df/d03/a00062.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a>, uint8_t access_byte, uint8_t gran_byte)</td></tr>
+<tr class="separator:a24693ad4185e3f70d2be14a964474436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258db7c2f70fd1b20332ee3c00cd1d89" id="r_a258db7c2f70fd1b20332ee3c00cd1d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a258db7c2f70fd1b20332ee3c00cd1d89">installTable</a> ()</td></tr>
+<tr class="separator:a258db7c2f70fd1b20332ee3c00cd1d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169aef5ef99da67bb0047dfc3d6a22e4" id="r_a169aef5ef99da67bb0047dfc3d6a22e4"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a169aef5ef99da67bb0047dfc3d6a22e4">kernel_CS_selector</a> ()</td></tr>
+<tr class="separator:a169aef5ef99da67bb0047dfc3d6a22e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa6fbf4816b6af649fc82186fe18b4e0" id="r_aaa6fbf4816b6af649fc82186fe18b4e0"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#aaa6fbf4816b6af649fc82186fe18b4e0">kernel_DS_selector</a> ()</td></tr>
+<tr class="separator:aaa6fbf4816b6af649fc82186fe18b4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a72b35b5fcadccd545ee4c5ef7efdd3" id="r_a0a72b35b5fcadccd545ee4c5ef7efdd3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a0a72b35b5fcadccd545ee4c5ef7efdd3">printLoadedTable</a> ()</td></tr>
+<tr class="separator:a0a72b35b5fcadccd545ee4c5ef7efdd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aba53071c94f3ffe96befc625602c9c" id="r_a6aba53071c94f3ffe96befc625602c9c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a6aba53071c94f3ffe96befc625602c9c">printLoadedTableHeader</a> ()</td></tr>
+<tr class="separator:a6aba53071c94f3ffe96befc625602c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef65886fcf664d696b4361309452c2c" id="r_a6ef65886fcf664d696b4361309452c2c"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a6ef65886fcf664d696b4361309452c2c">user_CS_selector</a> ()</td></tr>
+<tr class="separator:a6ef65886fcf664d696b4361309452c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95dcc3ea7fb0310df8f2ab457deca483" id="r_a95dcc3ea7fb0310df8f2ab457deca483"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a95dcc3ea7fb0310df8f2ab457deca483">user_DS_selector</a> ()</td></tr>
+<tr class="separator:a95dcc3ea7fb0310df8f2ab457deca483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8b0d6200bc639dd37ff68847a0adde5f" id="r_a8b0d6200bc639dd37ff68847a0adde5f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a></td></tr>
+<tr class="separator:a8b0d6200bc639dd37ff68847a0adde5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad516e6ff5b7dd7f6ce2946c527ddb8b9" id="r_ad516e6ff5b7dd7f6ce2946c527ddb8b9"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</a></td></tr>
+<tr class="separator:ad516e6ff5b7dd7f6ce2946c527ddb8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a173457c7aa39c59c008fcc3332d2b3" id="r_a1a173457c7aa39c59c008fcc3332d2b3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a1a173457c7aa39c59c008fcc3332d2b3">base_high</a></td></tr>
+<tr class="separator:a1a173457c7aa39c59c008fcc3332d2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e21ea67de59991e9a27666a1752a8f" id="r_a71e21ea67de59991e9a27666a1752a8f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a71e21ea67de59991e9a27666a1752a8f">base_low</a></td></tr>
+<tr class="separator:a71e21ea67de59991e9a27666a1752a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b67e86f6de9204d76adab79069aec29" id="r_a6b67e86f6de9204d76adab79069aec29"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a6b67e86f6de9204d76adab79069aec29">base_middle</a></td></tr>
+<tr class="separator:a6b67e86f6de9204d76adab79069aec29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfea365f69e71368a2db03333d4afd6f" id="r_acfea365f69e71368a2db03333d4afd6f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#acfea365f69e71368a2db03333d4afd6f">granularity</a></td></tr>
+<tr class="separator:acfea365f69e71368a2db03333d4afd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e2af3e7b809f6f5e06ecfecdb504e0" id="r_a42e2af3e7b809f6f5e06ecfecdb504e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a42e2af3e7b809f6f5e06ecfecdb504e0">kernel_CS</a></td></tr>
+<tr class="separator:a42e2af3e7b809f6f5e06ecfecdb504e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b73e3464fcb9312774f2347e1b7604e" id="r_a1b73e3464fcb9312774f2347e1b7604e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a1b73e3464fcb9312774f2347e1b7604e">kernel_DS</a></td></tr>
+<tr class="separator:a1b73e3464fcb9312774f2347e1b7604e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28e82ae69032cb4ad3ec3a0be3d7129" id="r_ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a></td></tr>
+<tr class="separator:ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ae5b5a918e00776ff07fb1c58a348d" id="r_aa7ae5b5a918e00776ff07fb1c58a348d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#aa7ae5b5a918e00776ff07fb1c58a348d">limit_low</a></td></tr>
+<tr class="separator:aa7ae5b5a918e00776ff07fb1c58a348d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4facd1fb9d9bd77b1dd234a062c8d9dd" id="r_a4facd1fb9d9bd77b1dd234a062c8d9dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a4facd1fb9d9bd77b1dd234a062c8d9dd">nullSegment</a></td></tr>
+<tr class="separator:a4facd1fb9d9bd77b1dd234a062c8d9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d89c16e869ec13a725c780925713916" id="r_a8d89c16e869ec13a725c780925713916"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a8d89c16e869ec13a725c780925713916">user_CS</a></td></tr>
+<tr class="separator:a8d89c16e869ec13a725c780925713916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137b4628cf352225e57720432f2db487" id="r_a137b4628cf352225e57720432f2db487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html#a137b4628cf352225e57720432f2db487">user_DS</a></td></tr>
+<tr class="separator:a137b4628cf352225e57720432f2db487"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="abb4e4866092116b520310d61961bfe12" name="abb4e4866092116b520310d61961bfe12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb4e4866092116b520310d61961bfe12">&#9670;&#160;</a></span>kernelMain()</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac4461ee84aade9ee824de64d4846ec98" name="ac4461ee84aade9ee824de64d4846ec98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4461ee84aade9ee824de64d4846ec98">&#9670;&#160;</a></span>GDT_ACCESS_CODE_PL0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void kernelMain </td>
+          <td class="memname">#define GDT_ACCESS_CODE_PL0&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(0) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#ae04daf26bdb792ae557ef1216021cc43">SEG_CODE_EXRD</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00024">24</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a01d908c8637340b21274e0176b320c05" name="a01d908c8637340b21274e0176b320c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01d908c8637340b21274e0176b320c05">&#9670;&#160;</a></span>GDT_ACCESS_CODE_PL3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GDT_ACCESS_CODE_PL3&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(3) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#ae04daf26bdb792ae557ef1216021cc43">SEG_CODE_EXRD</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00026">26</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1adfff1c72212b5c4e1df35485bb102a" name="a1adfff1c72212b5c4e1df35485bb102a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1adfff1c72212b5c4e1df35485bb102a">&#9670;&#160;</a></span>GDT_ACCESS_DATA_PL0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GDT_ACCESS_DATA_PL0&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(0) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#add294548173871e30e54b92bf5da2758">SEG_DATA_RDWR</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00025">25</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac7f57dcdd84028460100b6da75ad4938" name="ac7f57dcdd84028460100b6da75ad4938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f57dcdd84028460100b6da75ad4938">&#9670;&#160;</a></span>GDT_ACCESS_DATA_PL3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GDT_ACCESS_DATA_PL3&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ab9e609c85bc4472f4f9b69697f2e5067">SEG_ACCESS_PRES</a>(1) | <a class="el" href="../../df/d03/a00062.html#a0cb0ae4ca069ed571a3b2db9190e12df">SEG_ACCESS_PRIV</a>(3) | <a class="el" href="../../df/d03/a00062.html#a0d47ea941c3bdfd06858a467d2e76d83">SEG_ACCESS_DESCTYPE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a6c474d3015717ee1a2d99ae6a7b00ec3">SEG_ACCESS_TYPE</a>(<a class="el" href="../../df/d03/a00062.html#add294548173871e30e54b92bf5da2758">SEG_DATA_RDWR</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00027">27</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4941c819dbbef299c391bf53c24caf8d" name="a4941c819dbbef299c391bf53c24caf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4941c819dbbef299c391bf53c24caf8d">&#9670;&#160;</a></span>GDT_GRAN_FLAGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GDT_GRAN_FLAGS&#160;&#160;&#160;<a class="el" href="../../df/d03/a00062.html#ae86357f11d481de7242f3178629241b8">SEG_GRAN_GRAN</a>(1) | <a class="el" href="../../df/d03/a00062.html#a7667e7c13f08890d3a6051346233691c">SEG_GRAN_SIZE</a>(1) | <a class="el" href="../../df/d03/a00062.html#a9759917f0cd67a1d7c87849e211a7993">SEG_GRAN_LONG</a>(0) | <a class="el" href="../../df/d03/a00062.html#a79a943b17e5929ca9e06fc7cc1cb0ccc">SEG_GRAN_SAVL</a>(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00031">31</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0d47ea941c3bdfd06858a467d2e76d83" name="a0d47ea941c3bdfd06858a467d2e76d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d47ea941c3bdfd06858a467d2e76d83">&#9670;&#160;</a></span>SEG_ACCESS_DESCTYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_ACCESS_DESCTYPE</td>
           <td>(</td>
-          <td class="paramtype">multiboot_info_t *&#160;</td>
-          <td class="paramname"><em>mbi</em>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00009">9</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab9e609c85bc4472f4f9b69697f2e5067" name="ab9e609c85bc4472f4f9b69697f2e5067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9e609c85bc4472f4f9b69697f2e5067">&#9670;&#160;</a></span>SEG_ACCESS_PRES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_ACCESS_PRES</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00011">11</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0cb0ae4ca069ed571a3b2db9190e12df" name="a0cb0ae4ca069ed571a3b2db9190e12df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb0ae4ca069ed571a3b2db9190e12df">&#9670;&#160;</a></span>SEG_ACCESS_PRIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_ACCESS_PRIV</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(((x) &amp; 0x03) &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00010">10</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6c474d3015717ee1a2d99ae6a7b00ec3" name="a6c474d3015717ee1a2d99ae6a7b00ec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c474d3015717ee1a2d99ae6a7b00ec3">&#9670;&#160;</a></span>SEG_ACCESS_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_ACCESS_TYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00008">8</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae04daf26bdb792ae557ef1216021cc43" name="ae04daf26bdb792ae557ef1216021cc43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae04daf26bdb792ae557ef1216021cc43">&#9670;&#160;</a></span>SEG_CODE_EXRD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_CODE_EXRD&#160;&#160;&#160;0x0A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00021">21</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="add294548173871e30e54b92bf5da2758" name="add294548173871e30e54b92bf5da2758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add294548173871e30e54b92bf5da2758">&#9670;&#160;</a></span>SEG_DATA_RDWR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_DATA_RDWR&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00020">20</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae86357f11d481de7242f3178629241b8" name="ae86357f11d481de7242f3178629241b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86357f11d481de7242f3178629241b8">&#9670;&#160;</a></span>SEG_GRAN_GRAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_GRAN_GRAN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00017">17</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9759917f0cd67a1d7c87849e211a7993" name="a9759917f0cd67a1d7c87849e211a7993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9759917f0cd67a1d7c87849e211a7993">&#9670;&#160;</a></span>SEG_GRAN_LONG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_GRAN_LONG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00015">15</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a79a943b17e5929ca9e06fc7cc1cb0ccc" name="a79a943b17e5929ca9e06fc7cc1cb0ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a943b17e5929ca9e06fc7cc1cb0ccc">&#9670;&#160;</a></span>SEG_GRAN_SAVL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_GRAN_SAVL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00014">14</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7667e7c13f08890d3a6051346233691c" name="a7667e7c13f08890d3a6051346233691c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7667e7c13f08890d3a6051346233691c">&#9670;&#160;</a></span>SEG_GRAN_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_GRAN_SIZE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00016">16</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ab808423f6529092dc90fcb7836fe024a" name="ab808423f6529092dc90fcb7836fe024a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab808423f6529092dc90fcb7836fe024a">&#9670;&#160;</a></span>~GDT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__attribute__::~GDT </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5322ab07a139d8ae6f9c518b288bde15" name="a5322ab07a139d8ae6f9c518b288bde15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5322ab07a139d8ae6f9c518b288bde15">&#9670;&#160;</a></span>~GDT_row()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__attribute__::~GDT_row </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6539f5ca5082793a69451b8c1fc6523" name="ad6539f5ca5082793a69451b8c1fc6523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6539f5ca5082793a69451b8c1fc6523">&#9670;&#160;</a></span>GDT_row() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__attribute__::GDT_row </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24693ad4185e3f70d2be14a964474436" name="a24693ad4185e3f70d2be14a964474436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24693ad4185e3f70d2be14a964474436">&#9670;&#160;</a></span>GDT_row() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__attribute__::GDT_row </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>magicnumber</em>&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>access_byte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>gran_byte</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,131 +618,501 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00085">85</a> of file <a class="el" href="../../df/d03/a00062_source.html">kernel.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
-<div class="line"><span class="lineno">   87</span>    <span class="comment">// int a=1/0;</span></div>
-<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="../../d4/d81/a00110.html#a433c3d2d19d89890b522ac26b05fa7aa">essential::__callConstructors</a>();</div>
-<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="../../d1/dd6/a00108.html#a8ca6648639f335b207c748074dcf9f25">basic::enable_cursor</a>(0,15); <span class="comment">// (0,15) is for blinking block</span></div>
-<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="../../d1/dd6/a00108.html#a02923caa95013ec5d9333c25d9cca1d6">basic::__clearScreen</a>();</div>
-<div class="line"><span class="lineno">   91</span>    <span class="comment">//-------------Global Descriptor Table -------------</span></div>
-<div class="line"><span class="lineno">   92</span>    <a class="code hl_class" href="../../d6/d36/a01011.html">essential::GDT</a> osos_GDT;</div>
-<div class="line"><span class="lineno">   93</span>    osos_GDT.<a class="code hl_function" href="../../d6/d36/a01011.html#af8e3c1da270077eb7cc6551b35c0e5ca">installTable</a>();</div>
-<div class="line"><span class="lineno">   94</span>    <span class="comment">//------------Interrupt Descriptor Table and Drivers -------------</span></div>
-<div class="line"><span class="lineno">   95</span>    <a class="code hl_class" href="../../dd/dfd/a01027.html">hardware_communication::InterruptManager</a> osos_InterruptManager(&amp;osos_GDT);</div>
-<div class="line"><span class="lineno">   96</span>    osos_InterruptManager.installTable();</div>
-<div class="line"><span class="lineno">   97</span>    </div>
-<div class="line"><span class="lineno">   98</span>    <span class="comment">//------------Creating object of drivers so that they will handle their corresponding Interrupts------------</span></div>
-<div class="line"><span class="lineno">   99</span>    <a class="code hl_class" href="../../d4/d21/a00987.html">driver::DriverManager</a> driverManager;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>        <a class="code hl_class" href="../../dd/d98/a00927.html">KeyboardEventHandler_for_kernel</a> keyboardEventHandler_for_kernel;</div>
-<div class="line"><span class="lineno">  102</span>        <a class="code hl_class" href="../../dd/d48/a00995.html">driver::KeyboardDriver</a> keyboard(&amp;osos_InterruptManager,&amp;keyboardEventHandler_for_kernel);</div>
-<div class="line"><span class="lineno">  103</span>        driverManager.<a class="code hl_function" href="../../d4/d21/a00987.html#ab8bd89b91ea49f343276c3c841153cd8">addDriver</a>(&amp;keyboard);</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>        <a class="code hl_class" href="../../df/dbc/a00931.html">MouseEventHandler_for_kernel</a> mouseEventHandler_for_kernel;</div>
-<div class="line"><span class="lineno">  106</span>        <a class="code hl_class" href="../../dc/d10/a01003.html">driver::MouseDriver</a> mouse(&amp;osos_InterruptManager, &amp;mouseEventHandler_for_kernel);</div>
-<div class="line"><span class="lineno">  107</span>        driverManager.<a class="code hl_function" href="../../d4/d21/a00987.html#ab8bd89b91ea49f343276c3c841153cd8">addDriver</a>(&amp;mouse);</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>    driverManager.<a class="code hl_function" href="../../d4/d21/a00987.html#a05b071d8a8c12f2d284fb61f4ecd116e">activateAll</a>();</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>    <a class="code hl_function" href="../../dd/dfd/a01027.html#a1ab5b6378071338ede295f0bffaf3d51">hardware_communication::InterruptManager::activate</a>();</div>
-<div class="line"><span class="lineno">  112</span>    </div>
-<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="../../d6/d36/a01011.html#a2ae998750fc1e18e6778e92774bd3574">essential::GDT::printLoadedTableHeader</a>();</div>
-<div class="line"><span class="lineno">  114</span>    <a class="code hl_function" href="../../dd/dfd/a01027.html#ad8a6f694662a3a36ba9353197e20c1b1">hardware_communication::InterruptManager::printLoadedTableHeader</a>();</div>
-<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="../../d1/dd6/a00108.html#a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</a>(<span class="stringliteral">&quot;HELLO FROM OSOS :)\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>){};</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="../../d1/dd6/a00108.html#a4b31902bf2cff8ff28405aa57d9f4575">basic::disable_cursor</a>();</div>
-<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="../../d4/d81/a00110.html#a098e7240e26e869c035075be004b4ee9">essential::__cxa_finalize</a>(0);</div>
-<div class="line"><span class="lineno">  120</span>    (void)mbi;</div>
-<div class="line"><span class="lineno">  121</span>    (void)magicnumber;</div>
-<div class="line"><span class="lineno">  122</span>}</div>
-<div class="ttc" id="aa00108_html_a02923caa95013ec5d9333c25d9cca1d6"><div class="ttname"><a href="../../d1/dd6/a00108.html#a02923caa95013ec5d9333c25d9cca1d6">basic::__clearScreen</a></div><div class="ttdeci">void __clearScreen()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d5b/a00026_source.html#l00118">kiostream.cpp:118</a></div></div>
-<div class="ttc" id="aa00108_html_a45ee52b918a784ff0e96e7c8917a91d9"><div class="ttname"><a href="../../d1/dd6/a00108.html#a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</a></div><div class="ttdeci">int printf(const char *format,...)</div><div class="ttdoc">A custom implementation of the standard printf function for writing to VGA text mode memory.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d5b/a00026_source.html#l00276">kiostream.cpp:276</a></div></div>
-<div class="ttc" id="aa00108_html_a4b31902bf2cff8ff28405aa57d9f4575"><div class="ttname"><a href="../../d1/dd6/a00108.html#a4b31902bf2cff8ff28405aa57d9f4575">basic::disable_cursor</a></div><div class="ttdeci">void disable_cursor()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d5b/a00026_source.html#l00035">kiostream.cpp:35</a></div></div>
-<div class="ttc" id="aa00108_html_a8ca6648639f335b207c748074dcf9f25"><div class="ttname"><a href="../../d1/dd6/a00108.html#a8ca6648639f335b207c748074dcf9f25">basic::enable_cursor</a></div><div class="ttdeci">void enable_cursor(uint8_t cursor_start, uint8_t cursor_end)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d5b/a00026_source.html#l00017">kiostream.cpp:17</a></div></div>
-<div class="ttc" id="aa00110_html_a098e7240e26e869c035075be004b4ee9"><div class="ttname"><a href="../../d4/d81/a00110.html#a098e7240e26e869c035075be004b4ee9">essential::__cxa_finalize</a></div><div class="ttdeci">void __cxa_finalize(void *f)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/de0/a00050_source.html#l00040">kicxxabi.cpp:40</a></div></div>
-<div class="ttc" id="aa00110_html_a433c3d2d19d89890b522ac26b05fa7aa"><div class="ttname"><a href="../../d4/d81/a00110.html#a433c3d2d19d89890b522ac26b05fa7aa">essential::__callConstructors</a></div><div class="ttdeci">void __callConstructors()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/de0/a00050_source.html#l00006">kicxxabi.cpp:6</a></div></div>
-<div class="ttc" id="aa00927_html"><div class="ttname"><a href="../../dd/d98/a00927.html">KeyboardEventHandler_for_kernel</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00013">kernel.cpp:13</a></div></div>
-<div class="ttc" id="aa00931_html"><div class="ttname"><a href="../../df/dbc/a00931.html">MouseEventHandler_for_kernel</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d03/a00062_source.html#l00027">kernel.cpp:27</a></div></div>
-<div class="ttc" id="aa00987_html"><div class="ttname"><a href="../../d4/d21/a00987.html">driver::DriverManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/dc1/a00092_source.html#l00017">kdriver.hpp:17</a></div></div>
-<div class="ttc" id="aa00987_html_a05b071d8a8c12f2d284fb61f4ecd116e"><div class="ttname"><a href="../../d4/d21/a00987.html#a05b071d8a8c12f2d284fb61f4ecd116e">driver::DriverManager::activateAll</a></div><div class="ttdeci">void activateAll()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d41/a00038_source.html#l00017">kdriver.cpp:17</a></div></div>
-<div class="ttc" id="aa00987_html_ab8bd89b91ea49f343276c3c841153cd8"><div class="ttname"><a href="../../d4/d21/a00987.html#ab8bd89b91ea49f343276c3c841153cd8">driver::DriverManager::addDriver</a></div><div class="ttdeci">void addDriver(Driver *)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d41/a00038_source.html#l00012">kdriver.cpp:12</a></div></div>
-<div class="ttc" id="aa00995_html"><div class="ttname"><a href="../../dd/d48/a00995.html">driver::KeyboardDriver</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d2a/a00086_source.html#l00017">kkeyboard.hpp:17</a></div></div>
-<div class="ttc" id="aa01003_html"><div class="ttname"><a href="../../dc/d10/a01003.html">driver::MouseDriver</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/dab/a00089_source.html#l00039">kmouse.hpp:39</a></div></div>
-<div class="ttc" id="aa01011_html"><div class="ttname"><a href="../../d6/d36/a01011.html">essential::GDT</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d44/a00098_source.html#l00054">kgdt.hpp:54</a></div></div>
-<div class="ttc" id="aa01011_html_a2ae998750fc1e18e6778e92774bd3574"><div class="ttname"><a href="../../d6/d36/a01011.html#a2ae998750fc1e18e6778e92774bd3574">essential::GDT::printLoadedTableHeader</a></div><div class="ttdeci">static void printLoadedTableHeader()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d2d/a00047_source.html#l00120">kgdt.cpp:120</a></div></div>
-<div class="ttc" id="aa01011_html_af8e3c1da270077eb7cc6551b35c0e5ca"><div class="ttname"><a href="../../d6/d36/a01011.html#af8e3c1da270077eb7cc6551b35c0e5ca">essential::GDT::installTable</a></div><div class="ttdeci">void installTable()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d2d/a00047_source.html#l00046">kgdt.cpp:46</a></div></div>
-<div class="ttc" id="aa01027_html"><div class="ttname"><a href="../../dd/dfd/a01027.html">hardware_communication::InterruptManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/dec/a00080_source.html#l00046">kinterrupt.hpp:46</a></div></div>
-<div class="ttc" id="aa01027_html_a1ab5b6378071338ede295f0bffaf3d51"><div class="ttname"><a href="../../dd/dfd/a01027.html#a1ab5b6378071338ede295f0bffaf3d51">hardware_communication::InterruptManager::activate</a></div><div class="ttdeci">static void activate()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d8c/a00035_source.html#l00108">kinterrupt.cpp:108</a></div></div>
-<div class="ttc" id="aa01027_html_ad8a6f694662a3a36ba9353197e20c1b1"><div class="ttname"><a href="../../dd/dfd/a01027.html#ad8a6f694662a3a36ba9353197e20c1b1">hardware_communication::InterruptManager::printLoadedTableHeader</a></div><div class="ttdeci">static void printLoadedTableHeader()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d8c/a00035_source.html#l00151">kinterrupt.cpp:151</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/de0/a00050_source.html#l00006">essential::__callConstructors()</a>, <a class="el" href="../../d6/d5b/a00026_source.html#l00118">basic::__clearScreen()</a>, <a class="el" href="../../d5/de0/a00050_source.html#l00040">essential::__cxa_finalize()</a>, <a class="el" href="../../d4/d8c/a00035_source.html#l00108">hardware_communication::InterruptManager::activate()</a>, <a class="el" href="../../d8/d41/a00038_source.html#l00017">driver::DriverManager::activateAll()</a>, <a class="el" href="../../d8/d41/a00038_source.html#l00012">driver::DriverManager::addDriver()</a>, <a class="el" href="../../d6/d5b/a00026_source.html#l00035">basic::disable_cursor()</a>, <a class="el" href="../../d6/d5b/a00026_source.html#l00017">basic::enable_cursor()</a>, <a class="el" href="../../d6/d2d/a00047_source.html#l00046">essential::GDT::installTable()</a>, <a class="el" href="../../d4/d8c/a00035_source.html#l00091">hardware_communication::InterruptManager::installTable()</a>, <a class="el" href="../../d6/d5b/a00026_source.html#l00276">basic::printf()</a>, <a class="el" href="../../d6/d2d/a00047_source.html#l00120">essential::GDT::printLoadedTableHeader()</a>, and <a class="el" href="../../d4/d8c/a00035_source.html#l00151">hardware_communication::InterruptManager::printLoadedTableHeader()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../df/d03/a00062_abb4e4866092116b520310d61961bfe12_cgraph.png" border="0" usemap="#adf/d03/a00062_abb4e4866092116b520310d61961bfe12_cgraph" alt=""/></div>
-<map name="adf/d03/a00062_abb4e4866092116b520310d61961bfe12_cgraph" id="adf/d03/a00062_abb4e4866092116b520310d61961bfe12_cgraph">
-<area shape="rect" title=" " alt="" coords="5,340,100,365"/>
-<area shape="rect" href="../../d4/d81/a00110.html#a433c3d2d19d89890b522ac26b05fa7aa" title=" " alt="" coords="158,5,366,31"/>
-<area shape="poly" title=" " alt="" coords="51,340,53,284,64,204,76,159,93,116,116,75,146,40,151,36,154,40,150,44,120,78,97,118,81,161,69,205,58,285,56,340"/>
-<area shape="rect" href="../../d1/dd6/a00108.html#a02923caa95013ec5d9333c25d9cca1d6" title=" " alt="" coords="185,55,339,80"/>
-<area shape="poly" title=" " alt="" coords="52,340,56,292,70,225,82,188,98,152,120,118,146,89,170,75,173,79,150,93,124,121,103,154,87,190,75,226,62,293,57,340"/>
-<area shape="rect" href="../../d4/d81/a00110.html#a098e7240e26e869c035075be004b4ee9" title=" " alt="" coords="172,104,352,129"/>
-<area shape="poly" title=" " alt="" coords="53,339,61,300,77,246,105,189,124,163,146,140,158,132,161,137,150,144,128,166,109,192,82,248,66,301,58,340"/>
-<area shape="rect" href="../../dd/dfd/a01027.html#a1ab5b6378071338ede295f0bffaf3d51" title=" " alt="" coords="160,154,364,194"/>
-<area shape="poly" title=" " alt="" coords="57,339,88,278,114,242,146,211,167,198,170,202,150,215,118,245,93,281,62,341"/>
-<area shape="rect" href="../../d1/dd6/a00108.html#a45ee52b918a784ff0e96e7c8917a91d9" title="A custom implementation of the standard printf function for writing to VGA text mode memory." alt="" coords="470,455,569,480"/>
-<area shape="poly" title=" " alt="" coords="59,338,93,295,118,272,147,254,210,231,263,221,290,223,317,229,377,254,404,272,428,294,467,345,495,397,512,440,507,442,490,399,462,348,424,297,401,276,375,259,315,234,289,228,264,227,211,236,149,259,121,276,97,298,64,342"/>
-<area shape="rect" href="../../d4/d21/a00987.html#a05b071d8a8c12f2d284fb61f4ecd116e" title=" " alt="" coords="179,269,345,309"/>
-<area shape="poly" title=" " alt="" coords="89,337,147,318,174,310,175,315,149,323,91,342"/>
-<area shape="rect" href="../../d4/d21/a00987.html#ab8bd89b91ea49f343276c3c841153cd8" title=" " alt="" coords="179,333,345,373"/>
-<area shape="poly" title=" " alt="" coords="100,350,165,350,165,355,100,355"/>
-<area shape="rect" href="../../d1/dd6/a00108.html#a4b31902bf2cff8ff28405aa57d9f4575" title=" " alt="" coords="440,649,599,675"/>
-<area shape="poly" title=" " alt="" coords="56,366,58,419,69,496,80,536,97,576,120,612,150,641,185,663,224,678,265,686,307,690,389,687,458,675,459,680,390,692,307,696,265,692,223,683,183,668,146,645,116,615,92,578,75,538,64,497,52,420,51,366"/>
-<area shape="rect" href="../../d1/dd6/a00108.html#a8ca6648639f335b207c748074dcf9f25" title=" " alt="" coords="185,707,339,732"/>
-<area shape="poly" title=" " alt="" coords="56,365,57,423,68,509,79,556,96,603,119,647,150,685,174,702,171,706,146,689,115,650,91,605,74,558,63,510,52,423,51,365"/>
-<area shape="rect" href="../../d6/d36/a01011.html#af8e3c1da270077eb7cc6551b35c0e5ca" title=" " alt="" coords="163,397,361,423"/>
-<area shape="poly" title=" " alt="" coords="89,363,149,382,186,392,184,397,147,387,88,368"/>
-<area shape="rect" href="../../dd/dfd/a01027.html#a81d593116320da32f1aa4057087f1e11" title=" " alt="" coords="149,447,375,487"/>
-<area shape="poly" title=" " alt="" coords="67,364,102,398,149,432,166,440,164,445,147,436,99,402,64,367"/>
-<area shape="rect" href="../../d6/d36/a01011.html#a2ae998750fc1e18e6778e92774bd3574" title=" " alt="" coords="161,511,363,551"/>
-<area shape="poly" title=" " alt="" coords="61,364,91,428,117,466,150,497,157,502,154,507,146,501,113,469,87,431,56,367"/>
-<area shape="rect" href="../../dd/dfd/a01027.html#ad8a6f694662a3a36ba9353197e20c1b1" title=" " alt="" coords="148,576,376,631"/>
-<area shape="poly" title=" " alt="" coords="59,365,67,403,84,456,111,512,129,538,150,561,155,566,152,570,146,565,125,542,106,515,79,458,62,405,54,366"/>
-<area shape="poly" title=" " alt="" coords="347,192,378,211,405,237,429,266,468,330,496,392,513,441,508,442,491,394,463,333,424,269,401,240,374,215,344,196"/>
-<area shape="rect" href="../../d6/d5b/a00026.html#af382674e4c9fb57a14b178d4ee12273a" title=" " alt="" coords="681,360,800,385"/>
-<area shape="poly" title=" " alt="" coords="548,452,662,402,695,388,697,393,664,407,550,457"/>
-<area shape="rect" href="../../d6/d5b/a00026.html#a14bf754296559bf0266e127e677e8107" title=" " alt="" coords="917,411,1007,436"/>
-<area shape="poly" title=" " alt="" coords="569,458,662,446,903,425,903,430,663,451,570,463"/>
-<area shape="rect" href="../../d6/d5b/a00026.html#a6bd99ada5f7c46567ee0ceca6c369d47" title=" " alt="" coords="912,493,1012,519"/>
-<area shape="poly" title=" " alt="" coords="569,477,663,495,788,504,898,505,898,510,788,509,662,501,568,483"/>
-<area shape="rect" href="../../d6/d5b/a00026.html#aab6eb585b409591414f84a1e3f606345" title=" " alt="" coords="701,461,780,487"/>
-<area shape="poly" title=" " alt="" coords="569,466,688,470,687,475,569,471"/>
-<area shape="rect" href="../../d1/dd6/a00108.html#a9d1f0f838e646660db6d9284725c2b4c" title=" " alt="" coords="663,575,819,600"/>
-<area shape="poly" title=" " alt="" coords="545,478,706,566,703,570,543,483"/>
-<area shape="rect" href="../../d6/d5b/a00026.html#a91bacd34c601c4cfe39f1ffa6c2a1385" title=" " alt="" coords="931,360,993,385"/>
-<area shape="poly" title=" " alt="" coords="800,370,917,370,917,375,800,375"/>
-<area shape="poly" title=" " alt="" coords="798,383,904,407,903,413,797,388"/>
-<area shape="rect" href="../../d6/d5b/a00026.html#a913f40d6652965fdd1e34a04ab7dba2d" title=" " alt="" coords="1149,411,1220,436"/>
-<area shape="poly" title=" " alt="" coords="1008,421,1136,421,1136,426,1008,426"/>
-<area shape="rect" href="../../dc/d10/a01003.html#a1a2a455ca7146dea3148afa8cb6c9ed5" title=" " alt="" coords="1105,479,1264,533"/>
-<area shape="poly" title=" " alt="" coords="1012,503,1092,503,1092,509,1012,509"/>
-<area shape="poly" title=" " alt="" coords="779,463,903,434,904,439,781,468"/>
-<area shape="poly" title=" " alt="" coords="780,477,899,494,898,500,780,482"/>
-<area shape="rect" href="../../de/d26/a01035.html#a523b6a757b27418dc015ed13e74bef60" title=" " alt="" coords="867,642,1057,682"/>
-<area shape="poly" title=" " alt="" coords="780,598,890,635,888,640,779,603"/>
-<area shape="poly" title=" " alt="" coords="599,659,853,659,853,665,599,665"/>
-<area shape="poly" title=" " alt="" coords="339,710,853,668,853,673,340,716"/>
-<area shape="rect" href="../../de/d26/a01035.html#ae8688251b574c3fd335b99f7e93fff2d" title=" " alt="" coords="424,750,615,790"/>
-<area shape="poly" title=" " alt="" coords="328,730,411,746,410,751,327,735"/>
-<area shape="poly" title=" " alt="" coords="321,420,377,433,457,451,456,456,375,438,319,425"/>
-<area shape="poly" title=" " alt="" coords="375,465,456,465,456,470,375,470"/>
-<area shape="poly" title=" " alt="" coords="343,509,456,480,457,485,344,514"/>
-<area shape="poly" title=" " alt="" coords="347,573,375,561,438,524,490,486,493,491,441,528,377,566,349,578"/>
-</map>
 </div>
+<a id="a258db7c2f70fd1b20332ee3c00cd1d89" name="a258db7c2f70fd1b20332ee3c00cd1d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a258db7c2f70fd1b20332ee3c00cd1d89">&#9670;&#160;</a></span>installTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void __attribute__::installTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a169aef5ef99da67bb0047dfc3d6a22e4" name="a169aef5ef99da67bb0047dfc3d6a22e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169aef5ef99da67bb0047dfc3d6a22e4">&#9670;&#160;</a></span>kernel_CS_selector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t __attribute__::kernel_CS_selector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa6fbf4816b6af649fc82186fe18b4e0" name="aaa6fbf4816b6af649fc82186fe18b4e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa6fbf4816b6af649fc82186fe18b4e0">&#9670;&#160;</a></span>kernel_DS_selector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t __attribute__::kernel_DS_selector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a72b35b5fcadccd545ee4c5ef7efdd3" name="a0a72b35b5fcadccd545ee4c5ef7efdd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a72b35b5fcadccd545ee4c5ef7efdd3">&#9670;&#160;</a></span>printLoadedTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void __attribute__::printLoadedTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6aba53071c94f3ffe96befc625602c9c" name="a6aba53071c94f3ffe96befc625602c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aba53071c94f3ffe96befc625602c9c">&#9670;&#160;</a></span>printLoadedTableHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void __attribute__::printLoadedTableHeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ef65886fcf664d696b4361309452c2c" name="a6ef65886fcf664d696b4361309452c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef65886fcf664d696b4361309452c2c">&#9670;&#160;</a></span>user_CS_selector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t __attribute__::user_CS_selector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95dcc3ea7fb0310df8f2ab457deca483" name="a95dcc3ea7fb0310df8f2ab457deca483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95dcc3ea7fb0310df8f2ab457deca483">&#9670;&#160;</a></span>user_DS_selector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t __attribute__::user_DS_selector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a8b0d6200bc639dd37ff68847a0adde5f" name="a8b0d6200bc639dd37ff68847a0adde5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0d6200bc639dd37ff68847a0adde5f">&#9670;&#160;</a></span>access</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t access</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00004">4</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d2a/a00086_source.html#l00011">essential::GDT_row::GDT_row()</a>, and <a class="el" href="../../db/db6/a00074_source.html#l00128">hardware_communication::InterruptManager::printLoadedTable()</a>.</p>
+
+</div>
+</div>
+<a id="ad516e6ff5b7dd7f6ce2946c527ddb8b9" name="ad516e6ff5b7dd7f6ce2946c527ddb8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad516e6ff5b7dd7f6ce2946c527ddb8b9">&#9670;&#160;</a></span>base</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uintptr_t base</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00002">2</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/db6/a00074_source.html#l00033">hardware_communication::InterruptManager::InterruptManager()</a>, <a class="el" href="../../da/d2a/a00086_source.html#l00051">essential::GDT::installTable()</a>, <a class="el" href="../../db/db6/a00074_source.html#l00100">hardware_communication::InterruptManager::installTable()</a>, <a class="el" href="../../da/d24/a00068_source.html#l00204">power()</a>, <a class="el" href="../../da/d24/a00068_source.html#l00306">basic::printf()</a>, <a class="el" href="../../da/d2a/a00086_source.html#l00085">essential::GDT::printLoadedTable()</a>, <a class="el" href="../../db/db6/a00074_source.html#l00128">hardware_communication::InterruptManager::printLoadedTable()</a>, <a class="el" href="../../da/d2a/a00086_source.html#l00124">essential::GDT::printLoadedTableHeader()</a>, <a class="el" href="../../db/db6/a00074_source.html#l00163">hardware_communication::InterruptManager::printLoadedTableHeader()</a>, and <a class="el" href="../../da/d24/a00068_source.html#l00166">ullToString()</a>.</p>
+
+</div>
+</div>
+<a id="a1a173457c7aa39c59c008fcc3332d2b3" name="a1a173457c7aa39c59c008fcc3332d2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a173457c7aa39c59c008fcc3332d2b3">&#9670;&#160;</a></span>base_high</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t base_high</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00006">6</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d2a/a00086_source.html#l00011">essential::GDT_row::GDT_row()</a>.</p>
+
+</div>
+</div>
+<a id="a71e21ea67de59991e9a27666a1752a8f" name="a71e21ea67de59991e9a27666a1752a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e21ea67de59991e9a27666a1752a8f">&#9670;&#160;</a></span>base_low</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t base_low</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00002">2</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d2a/a00086_source.html#l00011">essential::GDT_row::GDT_row()</a>.</p>
+
+</div>
+</div>
+<a id="a6b67e86f6de9204d76adab79069aec29" name="a6b67e86f6de9204d76adab79069aec29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b67e86f6de9204d76adab79069aec29">&#9670;&#160;</a></span>base_middle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t base_middle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00003">3</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d2a/a00086_source.html#l00011">essential::GDT_row::GDT_row()</a>.</p>
+
+</div>
+</div>
+<a id="acfea365f69e71368a2db03333d4afd6f" name="acfea365f69e71368a2db03333d4afd6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfea365f69e71368a2db03333d4afd6f">&#9670;&#160;</a></span>granularity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t granularity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00005">5</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d2a/a00086_source.html#l00011">essential::GDT_row::GDT_row()</a>.</p>
+
+</div>
+</div>
+<a id="a42e2af3e7b809f6f5e06ecfecdb504e0" name="a42e2af3e7b809f6f5e06ecfecdb504e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e2af3e7b809f6f5e06ecfecdb504e0">&#9670;&#160;</a></span>kernel_CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a> kernel_CS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00004">4</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1b73e3464fcb9312774f2347e1b7604e" name="a1b73e3464fcb9312774f2347e1b7604e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b73e3464fcb9312774f2347e1b7604e">&#9670;&#160;</a></span>kernel_DS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a> kernel_DS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00005">5</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab28e82ae69032cb4ad3ec3a0be3d7129" name="ab28e82ae69032cb4ad3ec3a0be3d7129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab28e82ae69032cb4ad3ec3a0be3d7129">&#9670;&#160;</a></span>limit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t limit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00001">1</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/db6/a00074_source.html#l00033">hardware_communication::InterruptManager::InterruptManager()</a>, <a class="el" href="../../da/d2a/a00086_source.html#l00051">essential::GDT::installTable()</a>, <a class="el" href="../../db/db6/a00074_source.html#l00100">hardware_communication::InterruptManager::installTable()</a>, <a class="el" href="../../da/d2a/a00086_source.html#l00085">essential::GDT::printLoadedTable()</a>, <a class="el" href="../../db/db6/a00074_source.html#l00128">hardware_communication::InterruptManager::printLoadedTable()</a>, <a class="el" href="../../da/d2a/a00086_source.html#l00124">essential::GDT::printLoadedTableHeader()</a>, and <a class="el" href="../../db/db6/a00074_source.html#l00163">hardware_communication::InterruptManager::printLoadedTableHeader()</a>.</p>
+
+</div>
+</div>
+<a id="aa7ae5b5a918e00776ff07fb1c58a348d" name="aa7ae5b5a918e00776ff07fb1c58a348d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ae5b5a918e00776ff07fb1c58a348d">&#9670;&#160;</a></span>limit_low</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t limit_low</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00001">1</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d2a/a00086_source.html#l00011">essential::GDT_row::GDT_row()</a>.</p>
+
+</div>
+</div>
+<a id="a4facd1fb9d9bd77b1dd234a062c8d9dd" name="a4facd1fb9d9bd77b1dd234a062c8d9dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4facd1fb9d9bd77b1dd234a062c8d9dd">&#9670;&#160;</a></span>nullSegment</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a> nullSegment</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00003">3</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8d89c16e869ec13a725c780925713916" name="a8d89c16e869ec13a725c780925713916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d89c16e869ec13a725c780925713916">&#9670;&#160;</a></span>user_CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a> user_CS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00006">6</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a137b4628cf352225e57720432f2db487" name="a137b4628cf352225e57720432f2db487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137b4628cf352225e57720432f2db487">&#9670;&#160;</a></span>user_DS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d03/a00062.html#a24693ad4185e3f70d2be14a964474436">GDT_row</a> user_DS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d03/a00062_source.html#l00007">7</a> of file <a class="el" href="../../df/d03/a00062_source.html">kgdt.hpp</a>.</p>
 
 </div>
 </div>
@@ -333,8 +1121,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_8d71b6a3da26db487d68cf8b27265d88.html">kernel_src</a></li><li class="navelem"><a class="el" href="../../df/d03/a00062.html">kernel.cpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 00:21:12 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_7e882cf9a616ed6c5e9969aa375b621d.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_2c285d0013eb7350cfc94246c04dff6e.html">essential</a></li><li class="navelem"><a class="el" href="../../df/d03/a00062.html">kgdt.hpp</a></li>
+    <li class="footer">Generated on Fri Oct 24 2025 11:17:43 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

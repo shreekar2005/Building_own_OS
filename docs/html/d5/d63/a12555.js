@@ -1,8 +1,13 @@
 var a12555 =
 [
-    [ "Port32Bit", "d5/d63/a12555.html#a507afa8607757baedf1789d73c2a173d", null ],
-    [ "~Port32Bit", "d5/d63/a12555.html#a3e87dc7d610b279e8e7e072a0d1ee78c", null ],
-    [ "read", "d5/d63/a12555.html#a41093c437a9508f984c90ae68e9c03bf", null ],
-    [ "write", "d5/d63/a12555.html#a64a16fe840224ef769ab2933770d1b21", null ],
-    [ "portnumber", "d5/d63/a12555.html#aab0c5c82b0190df88ddbb595bfac539a", null ]
+    [ "IDT_row", "d2/d9f/a13467.html", "d2/d9f/a13467" ],
+    [ "InterruptHandler", "dd/d11/a13463.html", "dd/d11/a13463" ],
+    [ "InterruptManager", "df/d54/a13471.html", "df/d54/a13471" ],
+    [ "Port", "dc/d99/a13475.html", "dc/d99/a13475" ],
+    [ "Port16Bit", "d4/dc1/a13487.html", "d4/dc1/a13487" ],
+    [ "Port32Bit", "d0/d96/a13491.html", "d0/d96/a13491" ],
+    [ "Port8Bit", "d5/d55/a13479.html", "d5/d55/a13479" ],
+    [ "Port8BitSlow", "d1/d63/a13483.html", "d1/d63/a13483" ],
+    [ "__attribute__", "d5/d63/a12555.html#a269f53904f53339ae2df626922b404b2", null ],
+    [ "__attribute__", "d5/d63/a12555.html#a21c3ca5c318038eaed596c14fd2666ed", null ]
 ];

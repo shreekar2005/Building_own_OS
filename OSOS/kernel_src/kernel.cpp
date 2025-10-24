@@ -104,12 +104,11 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
 /// @param magicnumber The magic number passed by GRUB to verify boot.
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
-    // int a=1/0;
     essential::__callConstructors();
     basic::enable_cursor(0,15); // (0,15) is for blinking block
     basic::__clearScreen();
     //-------------Global Descriptor Table -------------
-    essential::GDT osos_GDT;
+    essential::GDT_Manager osos_GDT;
     osos_GDT.installTable();
     //------------Interrupt Descriptor Table and Drivers -------------
     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
@@ -130,7 +129,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 
     hardware_communication::InterruptManager::activate();
     
-    essential::GDT::printLoadedTableHeader();
+    essential::GDT_Manager::printLoadedTableHeader();
     hardware_communication::InterruptManager::printLoadedTableHeader();
     basic::printf("HELLO FROM OSOS :)\n");
     while (true){};

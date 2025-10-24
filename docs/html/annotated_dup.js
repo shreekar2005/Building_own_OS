@@ -1,40 +1,28 @@
 var annotated_dup =
 [
-    [ "driver", "d1/d08/a18619.html", [
-      [ "Driver", "df/d30/a19493.html", "df/d30/a19493" ],
-      [ "DriverManager", "d3/dae/a19497.html", "d3/dae/a19497" ],
-      [ "KeyboardDriver", "d7/d24/a19505.html", "d7/d24/a19505" ],
-      [ "KeyboardEventHandler", "df/d24/a19501.html", "df/d24/a19501" ],
-      [ "MouseDriver", "d3/d33/a19513.html", "d3/d33/a19513" ],
-      [ "MouseEventHandler", "db/d16/a19509.html", "db/d16/a19509" ]
+    [ "driver", "d9/d08/a48277.html", [
+      [ "Driver", "df/da4/a49103.html", "df/da4/a49103" ],
+      [ "DriverManager", "dd/df8/a49107.html", "dd/df8/a49107" ],
+      [ "KeyboardDriver", "d3/d95/a49115.html", "d3/d95/a49115" ],
+      [ "KeyboardEventHandler", "db/d3f/a49111.html", "db/d3f/a49111" ],
+      [ "MouseDriver", "dc/d4f/a49123.html", "dc/d4f/a49123" ],
+      [ "MouseEventHandler", "d2/dbb/a49119.html", "d2/dbb/a49119" ]
     ] ],
-    [ "essential", "df/dda/a18620.html", [
-      [ "atexit_func_entry_t", "d2/d64/a19525.html", "d2/d64/a19525" ],
-      [ "GDT", "d0/d39/a19521.html", "d0/d39/a19521" ],
-      [ "GDT_row", "dd/dbb/a19517.html", "dd/dbb/a19517" ]
+    [ "essential", "de/d9a/a48278.html", [
+      [ "atexit_func_entry_t", "d0/dc8/a49135.html", "d0/dc8/a49135" ],
+      [ "GDT_Manager", "d4/d49/a49131.html", "d4/d49/a49131" ],
+      [ "GDT_Row", "de/d82/a49127.html", "de/d82/a49127" ]
     ] ],
-    [ "hardware_communication", "d1/d96/a18621.html", [
-      [ "IDT_row", "d4/d2e/a19533.html", "d4/d2e/a19533" ],
-      [ "InterruptHandler", "dd/d18/a19529.html", "dd/d18/a19529" ],
-      [ "InterruptManager", "db/dda/a19537.html", "db/dda/a19537" ],
-      [ "Port", "d2/dc8/a19541.html", "d2/dc8/a19541" ],
-      [ "Port16Bit", "df/d60/a19553.html", "df/d60/a19553" ],
-      [ "Port32Bit", "d6/daf/a19557.html", "d6/daf/a19557" ],
-      [ "Port8Bit", "d5/d90/a19545.html", "d5/d90/a19545" ],
-      [ "Port8BitSlow", "d4/dc9/a19549.html", "d4/dc9/a19549" ]
+    [ "hardware_communication", "db/d91/a48279.html", [
+      [ "IDT_Row", "d6/de4/a49143.html", "d6/de4/a49143" ],
+      [ "InterruptHandler", "dc/d09/a49139.html", "dc/d09/a49139" ],
+      [ "InterruptManager", "d5/d2a/a49147.html", "d5/d2a/a49147" ],
+      [ "Port", "d6/d24/a49151.html", "d6/d24/a49151" ],
+      [ "Port16Bit", "dd/db5/a49163.html", "dd/db5/a49163" ],
+      [ "Port32Bit", "df/d39/a49167.html", "df/d39/a49167" ],
+      [ "Port8Bit", "dd/d76/a49155.html", "dd/d76/a49155" ],
+      [ "Port8BitSlow", "d2/d2c/a49159.html", "d2/d2c/a49159" ]
     ] ],
-    [ "KeyboardEventHandler_for_kernel", "d6/d4a/a19437.html", "d6/d4a/a19437" ],
-    [ "MouseEventHandler_for_kernel", "d8/d6c/a19441.html", "d8/d6c/a19441" ],
-    [ "multiboot_aout_symbol_table_t", "d5/d56/a18560.html#d0/d4d/a19449", "d5/d56/a18560_d0/d4d/a19449" ],
-    [ "multiboot_apm_info", "d5/d56/a18560.html#df/d5f/a19489", "d5/d56/a18560_df/d5f/a19489" ],
-    [ "multiboot_color", "d5/d56/a18560.html#d7/dcb/a19477", "d5/d56/a18560_d7/dcb/a19477" ],
-    [ "multiboot_elf_section_header_table_t", "d5/d56/a18560.html#d1/dd3/a19453", "d5/d56/a18560_d1/dd3/a19453" ],
-    [ "multiboot_header", "d5/d56/a18560.html#d4/dbe/a19445", "d5/d56/a18560_d4/dbe/a19445" ],
-    [ "multiboot_info_t", "d5/d56/a18560.html#d3/dd3/a19457", "d5/d56/a18560_d3/dd3/a19457" ],
-    [ "multiboot_info.__unnamed2__", "d5/d56/a18560.html#d4/d56/a19929", null ],
-    [ "multiboot_info.__unnamed2__.__unnamed4__", "d5/d56/a18560.html#db/d0d/a19933", "d5/d56/a18560_db/d0d/a19933" ],
-    [ "multiboot_info.__unnamed2__.__unnamed6__", "d5/d56/a18560.html#d9/d46/a19937", "d5/d56/a18560_d9/d46/a19937" ],
-    [ "multiboot_info.u", "d5/d56/a18560.html#de/d9f/a19925", "d5/d56/a18560_de/d9f/a19925" ],
-    [ "multiboot_memory_map_t", "d5/d56/a18560.html#d9/d69/a19481", "d5/d56/a18560_d9/d69/a19481" ],
-    [ "multiboot_module_t", "d5/d56/a18560.html#da/db4/a19485", "d5/d56/a18560_da/db4/a19485" ]
+    [ "KeyboardEventHandler_for_kernel", "de/d9f/a49095.html", "de/d9f/a49095" ],
+    [ "MouseEventHandler_for_kernel", "d8/d07/a49099.html", "d8/d07/a49099" ]
 ];

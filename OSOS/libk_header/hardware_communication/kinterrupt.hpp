@@ -30,7 +30,7 @@
         };
 
         /// @brief Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT).
-        class IDT_row{
+        class IDT_Row{
             private:
                 uint16_t handlerAddressLowbits;
                 uint16_t kernelCodeSegmentSelector;
@@ -38,8 +38,8 @@
                 uint8_t access;
                 uint16_t handlerAddressHighbits;
             public:
-                IDT_row();
-                ~IDT_row();
+                IDT_Row();
+                ~IDT_Row();
                 friend class InterruptManager;
         }__attribute__((packed));
         
@@ -52,7 +52,7 @@
                 uint16_t limit;
                 uint32_t base;
             protected:
-                IDT_row interruptDescriptorTable[256];
+                IDT_Row interruptDescriptorTable[256];
 
                 //handlers are actually object of corresponding drivers (e.g. keyboard-driver object which have handleInterrupt method)
                 InterruptHandler* handlers[256];
@@ -69,7 +69,7 @@
                 static hardware_communication::Port8BitSlow picSlaveData;    
     
             public:
-                InterruptManager(essential::GDT* gdt);
+                InterruptManager(essential::GDT_Manager* gdt);
                 ~InterruptManager();
                 void installTable();
                 static void activate();

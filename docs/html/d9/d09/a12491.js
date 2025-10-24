@@ -1,8 +1,6 @@
 var a12491 =
 [
-    [ "Driver", "d9/d09/a12491.html#a7de0c11fff1dc1f5d004b2a76e840840", null ],
-    [ "~Driver", "d9/d09/a12491.html#aacc7524b989c2561147c5dd0b901381c", null ],
-    [ "activate", "d9/d09/a12491.html#a8c86c1e52652d8b491d37a3b60b535b0", null ],
-    [ "deactivate", "d9/d09/a12491.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1", null ],
-    [ "reset", "d9/d09/a12491.html#a98d2e779c02364fc58c172d0d2a32bdd", null ]
+    [ "KeyboardEventHandler_for_kernel", "d2/d50/a13371.html", "d2/d50/a13371" ],
+    [ "MouseEventHandler_for_kernel", "de/d9a/a13375.html", "de/d9a/a13375" ],
+    [ "kernelMain", "d9/d09/a12491.html#abb4e4866092116b520310d61961bfe12", null ]
 ];
