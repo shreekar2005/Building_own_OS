@@ -14,7 +14,7 @@
                 virtual void onKeyUp(char ascii)=0;
         };
         
-        /// @brief Driver for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock).
+        /// @brief Custom Driver for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock).
         class KeyboardDriver : public hardware_communication::InterruptHandler, public driver::Driver{
                 hardware_communication::Port8Bit dataPort;
                 hardware_communication::Port8Bit commandPort;

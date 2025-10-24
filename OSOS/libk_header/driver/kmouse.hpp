@@ -36,7 +36,7 @@
                 virtual void onMouseMove(int8_t delta_x, int8_t delta_y)=0; //expected to be overriden 
         };
 
-        /// @brief Driver for the PS/2 mouse, handling 3-byte packets and managing mouse state.
+        /// @brief Custom Driver for the PS/2 mouse, handling 3-byte packets and managing mouse state.
         class MouseDriver : public hardware_communication::InterruptHandler, public driver::Driver{
                 hardware_communication::Port8Bit dataPort;
                 hardware_communication::Port8Bit commandPort;

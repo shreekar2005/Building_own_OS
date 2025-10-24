@@ -1,30 +1,30 @@
 var hierarchy =
 [
-    [ "driver::Driver", "d9/d99/a57815.html", [
-      [ "driver::KeyboardDriver", "de/d60/a57827.html", null ],
-      [ "driver::MouseDriver", "df/dd3/a57835.html", null ]
+    [ "driver::Driver", "db/dd8/a59225.html", [
+      [ "driver::KeyboardDriver", "d5/d44/a59237.html", null ],
+      [ "driver::MouseDriver", "df/dd7/a59245.html", null ]
     ] ],
-    [ "driver::DriverManager", "d3/d1f/a57819.html", null ],
-    [ "driver::KeyboardEventHandler", "de/d65/a57823.html", [
-      [ "KeyboardEventHandler_for_kernel", "db/d69/a57807.html", null ]
+    [ "driver::DriverManager", "d1/d00/a59229.html", null ],
+    [ "driver::KeyboardEventHandler", "d9/d48/a59233.html", [
+      [ "KeyboardEventHandler_for_kernel", "d9/d34/a59217.html", null ]
     ] ],
-    [ "driver::MouseEventHandler", "de/d1b/a57831.html", [
-      [ "MouseEventHandler_for_kernel", "da/da4/a57811.html", null ]
+    [ "driver::MouseEventHandler", "d3/ddd/a59241.html", [
+      [ "MouseEventHandler_for_kernel", "d4/dba/a59221.html", null ]
     ] ],
-    [ "essential::atexit_func_entry_t", "d1/d0f/a57847.html", null ],
-    [ "essential::GDT_Manager", "db/dfa/a57843.html", null ],
-    [ "essential::GDT_Row", "d8/dec/a57839.html", null ],
-    [ "hardware_communication::IDT_Row", "d6/d14/a57855.html", null ],
-    [ "hardware_communication::InterruptHandler", "d5/db0/a57851.html", [
-      [ "driver::KeyboardDriver", "de/d60/a57827.html", null ],
-      [ "driver::MouseDriver", "df/dd3/a57835.html", null ]
+    [ "essential::atexit_func_entry_t", "df/de9/a59257.html", null ],
+    [ "essential::GDT_Manager", "da/d21/a59253.html", null ],
+    [ "essential::GDT_Row", "d4/de4/a59249.html", null ],
+    [ "hardware_communication::IDT_Row", "d1/d32/a59265.html", null ],
+    [ "hardware_communication::InterruptHandler", "d0/d39/a59261.html", [
+      [ "driver::KeyboardDriver", "d5/d44/a59237.html", null ],
+      [ "driver::MouseDriver", "df/dd7/a59245.html", null ]
     ] ],
-    [ "hardware_communication::InterruptManager", "dc/d03/a57859.html", null ],
-    [ "hardware_communication::Port", "dd/db1/a57863.html", [
-      [ "hardware_communication::Port16Bit", "d5/db7/a57875.html", null ],
-      [ "hardware_communication::Port32Bit", "d6/d55/a57879.html", null ],
-      [ "hardware_communication::Port8Bit", "dd/da0/a57867.html", [
-        [ "hardware_communication::Port8BitSlow", "dc/d7a/a57871.html", null ]
+    [ "hardware_communication::InterruptManager", "df/d3a/a59269.html", null ],
+    [ "hardware_communication::Port", "d3/da9/a59273.html", [
+      [ "hardware_communication::Port16Bit", "df/d78/a59285.html", null ],
+      [ "hardware_communication::Port32Bit", "d4/df9/a59289.html", null ],
+      [ "hardware_communication::Port8Bit", "dc/d96/a59277.html", [
+        [ "hardware_communication::Port8BitSlow", "da/df6/a59281.html", null ]
       ] ]
     ] ]
 ];

@@ -10,7 +10,7 @@
 #include "driver/kdriver.hpp"
 
 
-/// @brief Custom keyboard event handler implementation for the kernel.
+/// @brief Custom KeyboardEventHandler implementation for kernel
 class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler{
     public:
         /// @brief Construct a new KeyboardEventHandler_for_kernel object
@@ -31,7 +31,7 @@ class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler{
         }
 };
 
-/// @brief Custom mouse event handler implementation for the kernel.
+/// @brief Custom MouseEventHandler implementation for the kernel.
 class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
     public:
         /// @brief Construct a new MouseEventHandler_for_kernel object
