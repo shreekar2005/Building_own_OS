@@ -6,7 +6,8 @@
     #include "hardware_communication/kport.hpp"
     #include "essential/kgdt.hpp"
 
-    extern "C" {
+    extern "C" 
+    {
         // following functions are defined in kinterruptstub.s
 
         void ignoreInterrupt();
@@ -15,7 +16,8 @@
         void handleIRQ0x0C(); // PS/2 Mouse 
     }
 
-    namespace hardware_communication{
+    namespace hardware_communication
+    {
         
         class InterruptManager; //making forward definition for this class (needed in InterruptHandler)
         /// @brief Base class (interface) for handling specific CPU interrupts.

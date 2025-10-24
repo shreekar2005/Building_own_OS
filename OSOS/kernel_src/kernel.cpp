@@ -11,7 +11,8 @@
 
 
 /// @brief Custom KeyboardEventHandler implementation for kernel
-class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler{
+class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler
+{
     public:
         /// @brief Construct a new KeyboardEventHandler_for_kernel object
         KeyboardEventHandler_for_kernel(){}
@@ -19,14 +20,16 @@ class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler{
         ~KeyboardEventHandler_for_kernel(){}
         /// @brief Handles key down events by printing the ASCII character.
         /// @param ascii The ASCII character of the key that was pressed.
-        void onKeyDown(char ascii) override {
+        void onKeyDown(char ascii) override
+        {
             if (ascii != 0) {
                 basic::printf("%c", ascii);
             }
         }
         /// @brief Handles key up events. (Does nothing in this implementation).
         /// @param ascii The ASCII character of the key that was released.
-        void onKeyUp(char ascii) override {
+        void onKeyUp(char ascii) override
+        {
             (void) ascii;
         }
 };
@@ -41,7 +44,8 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
         // Default implementations for the handler. A specific handler can override these.
         /// @brief Handles mouse button down events.
         /// @param button The button number that was pressed.
-        void onMouseDown(uint8_t button) override {
+        void onMouseDown(uint8_t button) override
+        {
             (void) button;
             basic::update_cursor(driver::MouseDriver::__mouse_x_, driver::MouseDriver::__mouse_y_);
             // printf("Mouse Down: %d\n", button);
@@ -49,7 +53,8 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
 
         /// @brief Handles mouse button up events.
         /// @param button The button number that was released.
-        void onMouseUp(uint8_t button) override {
+        void onMouseUp(uint8_t button) override
+        {
             (void) button;
             // printf("Mouse Up: %d\n", button);
         }
@@ -57,7 +62,8 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
         /// @brief Handles mouse movement events and updates the cursor position on the screen.
         /// @param delta_x The change in the x-coordinate.
         /// @param delta_y The change in the y-coordinate.
-        void onMouseMove(int8_t delta_x, int8_t delta_y) override {
+        void onMouseMove(int8_t delta_x, int8_t delta_y) override
+        {
             static uint16_t* video_memory = (uint16_t*) 0xb8000;
             static float deltaTod=0.2;
             static float dx=0, dy=0;

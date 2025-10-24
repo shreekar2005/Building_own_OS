@@ -1,7 +1,8 @@
 #ifndef _OSOS_DRIVER_KDRIVER_H
     #define _OSOS_DRIVER_KDRIVER_H
     #define MAX_NUMDRIVERS 265
-    namespace driver{
+    namespace driver
+    {
         /// @brief Base class (interface) for all hardware drivers in the operating system.
         class Driver{ 
             private:

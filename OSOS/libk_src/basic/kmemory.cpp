@@ -67,7 +67,8 @@ void basic::__printMemoryMap(multiboot_info_t *mbi)
 /// @brief Overload of the 'new' operator (stub).
 /// @param size The size of memory to allocate.
 /// @return Always returns nullptr as this is a stub.
-void* operator new(size_t size) noexcept {
+void* operator new(size_t size) noexcept
+{
     (void)size;
     return nullptr;
 }
@@ -75,35 +76,40 @@ void* operator new(size_t size) noexcept {
 /// @brief Overload of the 'new[]' operator (stub).
 /// @param size The size of memory to allocate for the array.
 /// @return Always returns nullptr as this is a stub.
-void* operator new[](size_t size) noexcept {
+void* operator new[](size_t size) noexcept
+{
     (void)size;
     return nullptr;
 }
 
 /// @brief Overload of the 'delete' operator (stub).
 /// @param ptr Pointer to the memory to deallocate.
-void operator delete(void* ptr) noexcept {
+void operator delete(void* ptr) noexcept
+{
     (void)ptr;
 }
 
 /// @brief Overload of the 'delete' operator with size (stub).
 /// @param ptr Pointer to the memory to deallocate.
 /// @param size The size of the memory block.
-void operator delete(void* ptr, size_t size) noexcept {
+void operator delete(void* ptr, size_t size) noexcept
+{
     (void)ptr;
     (void)size;
 }
 
 /// @brief Overload of the 'delete[]' operator (stub).
 /// @param ptr Pointer to the array memory to deallocate.
-void operator delete[](void* ptr) noexcept {
+void operator delete[](void* ptr) noexcept
+{
     (void)ptr;
 }
 
 /// @brief Overload of the 'delete[]' operator with size (stub).
 /// @param ptr Pointer to the array memory to deallocate.
 /// @param size The size of the memory block.
-void operator delete[](void* ptr, size_t size) noexcept {
+void operator delete[](void* ptr, size_t size) noexcept
+{
     (void)ptr;
     (void)size;
 }

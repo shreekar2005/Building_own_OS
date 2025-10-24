@@ -8,7 +8,8 @@ essential::GDT_Row::GDT_Row() : limit_low(0), base_low(0), base_middle(0), acces
 /// @param limit The 20-bit limit (size) of the segment.
 /// @param access_byte The 8-bit access flags for the segment.
 /// @param gran_byte The 8-bit granularity flags for the segment.
-essential::GDT_Row::GDT_Row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
+essential::GDT_Row::GDT_Row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte)
+{
     this->limit_low   = (limit & 0xFFFF);
     this->base_low    = (base & 0xFFFF);
     this->base_middle = (base >> 16) & 0xFF;
@@ -28,12 +29,11 @@ essential::GDT_Row::~GDT_Row() {}
 
 /// @brief Constructs a new GDT_Manager object and initializes the standard kernel/user segments.
 essential::GDT_Manager::GDT_Manager()
-    // Use an initializer list to construct each GDT entry.
-    : nullSegment(), // First entry must be a null descriptor.
-      kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
-      kernel_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL0, GDT_GRAN_FLAGS),
-      user_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL3, GDT_GRAN_FLAGS),
-      user_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL3, GDT_GRAN_FLAGS)
+: nullSegment(), // First entry must be a null descriptor.
+  kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
+  kernel_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL0, GDT_GRAN_FLAGS),
+  user_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL3, GDT_GRAN_FLAGS),
+  user_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL3, GDT_GRAN_FLAGS)
 {
     // The GDT limit is its total size in bytes minus 1.
     // 5 entries * 8 bytes/entry = 40 bytes. Limit = 39 (0x27).
@@ -48,7 +48,8 @@ essential::GDT_Manager::~GDT_Manager() {}
 
 
 /// @brief Loads this GDT into the CPU's GDTR and reloads all segment registers.
-void essential::GDT_Manager::installTable() {
+void essential::GDT_Manager::installTable()
+{
     // A structure that matches the 6-byte format required by the 'lgdt' instruction.
     struct GDT_Pointer {
         uint16_t limit;
@@ -60,8 +61,8 @@ void essential::GDT_Manager::installTable() {
     gdt_ptr.base = this->base;
     
     asm volatile(
-        // Load the address of our GDT_Pointer structure into the GDTR.
-        "lgdt (%0)\n\t"
+        // Load the GDT_Pointer structure directly from its memory location.
+        "lgdt %0\n\t"
 
         // Reload all data segment registers with the kernel data selector.
         "mov $0x10, %%ax\n\t"   // 0x10 is the selector for kernel_DS
@@ -71,18 +72,19 @@ void essential::GDT_Manager::installTable() {
         "mov %%ax, %%gs\n\t"
         "mov %%ax, %%ss\n\t"
 
-        // Perform a 32-bit far jump to reload the CS register and flush the CPU pipeline.
+        // Perform a 32-bit far jump to reload the CS register.
         "jmp $0x08, $flush_cs\n\t" // 0x08 is the selector for kernel_CS
         "flush_cs:\n\t"
         : // No output operands
-        : "r"(&gdt_ptr) // Input: address of our GDT_Pointer
+        : "m"(gdt_ptr)  // "m" will put address of `gdt_ptr` in place of `%0`
         : "memory", "eax" // Clobbered registers
     );
     basic::printf("GDT Installed\n");
 }
 
 /// @brief (Static) Prints the details of all entries in the currently loaded GDT.
-void essential::GDT_Manager::printLoadedTable() {
+void essential::GDT_Manager::printLoadedTable()
+{
     struct GDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -121,7 +123,8 @@ void essential::GDT_Manager::printLoadedTable() {
 }
 
 /// @brief (Static) Prints the header information (base, limit, count) of the currently loaded GDT.
-void essential::GDT_Manager::printLoadedTableHeader() {
+void essential::GDT_Manager::printLoadedTableHeader() 
+{
     struct GDT_Pointer {
         uint16_t limit;
         uint32_t base;

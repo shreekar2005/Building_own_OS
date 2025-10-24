@@ -24,7 +24,8 @@
     #define KMOUSE_COLOR_WHITE         0xF
     #define MOUSE_POINTER_COLOR KMOUSE_COLOR_GREEN //Here actually you will choose which color should your mouse pointer have
     
-    namespace driver{
+    namespace driver
+    {
         /// @brief Base class (interface) for handling mouse events (movement and button clicks).
         class MouseEventHandler{
             public:

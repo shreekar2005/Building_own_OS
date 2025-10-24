@@ -3,8 +3,8 @@
     #include <cstdint>
     #include "basic/kiostream.hpp"
 
-    namespace hardware_communication{
-
+    namespace hardware_communication
+    {
         /// @brief Base class for hardware I/O port communication.
         class Port {
         protected:

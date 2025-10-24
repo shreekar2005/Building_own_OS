@@ -1,28 +1,28 @@
 var annotated_dup =
 [
-    [ "driver", "d4/dd7/a59809.html", [
-      [ "Driver", "d2/de6/a60635.html", "d2/de6/a60635" ],
-      [ "DriverManager", "dc/d29/a60639.html", "dc/d29/a60639" ],
-      [ "KeyboardDriver", "d4/dc7/a60647.html", "d4/dc7/a60647" ],
-      [ "KeyboardEventHandler", "d6/ddb/a60643.html", "d6/ddb/a60643" ],
-      [ "MouseDriver", "d6/d30/a60655.html", "d6/d30/a60655" ],
-      [ "MouseEventHandler", "d6/d0f/a60651.html", "d6/d0f/a60651" ]
+    [ "driver", "d8/dfd/a61219.html", [
+      [ "Driver", "d7/ddf/a62045.html", "d7/ddf/a62045" ],
+      [ "DriverManager", "d8/d7f/a62049.html", "d8/d7f/a62049" ],
+      [ "KeyboardDriver", "de/d3d/a62057.html", "de/d3d/a62057" ],
+      [ "KeyboardEventHandler", "df/dd9/a62053.html", "df/dd9/a62053" ],
+      [ "MouseDriver", "d2/dc5/a62065.html", "d2/dc5/a62065" ],
+      [ "MouseEventHandler", "df/db0/a62061.html", "df/db0/a62061" ]
     ] ],
-    [ "essential", "de/d28/a59810.html", [
-      [ "atexit_func_entry_t", "d6/d44/a60667.html", "d6/d44/a60667" ],
-      [ "GDT_Manager", "da/d0b/a60663.html", "da/d0b/a60663" ],
-      [ "GDT_Row", "d1/d97/a60659.html", "d1/d97/a60659" ]
+    [ "essential", "da/d20/a61220.html", [
+      [ "atexit_func_entry_t", "d5/d4a/a62077.html", "d5/d4a/a62077" ],
+      [ "GDT_Manager", "d0/dcf/a62073.html", "d0/dcf/a62073" ],
+      [ "GDT_Row", "d9/d87/a62069.html", "d9/d87/a62069" ]
     ] ],
-    [ "hardware_communication", "d0/d41/a59811.html", [
-      [ "IDT_Row", "d8/d94/a60675.html", "d8/d94/a60675" ],
-      [ "InterruptHandler", "d5/db3/a60671.html", "d5/db3/a60671" ],
-      [ "InterruptManager", "d4/df2/a60679.html", "d4/df2/a60679" ],
-      [ "Port", "d7/d9f/a60683.html", "d7/d9f/a60683" ],
-      [ "Port16Bit", "d8/da5/a60695.html", "d8/da5/a60695" ],
-      [ "Port32Bit", "db/d00/a60699.html", "db/d00/a60699" ],
-      [ "Port8Bit", "dd/d48/a60687.html", "dd/d48/a60687" ],
-      [ "Port8BitSlow", "d7/d35/a60691.html", "d7/d35/a60691" ]
+    [ "hardware_communication", "dc/ded/a61221.html", [
+      [ "IDT_Row", "dc/d56/a62085.html", "dc/d56/a62085" ],
+      [ "InterruptHandler", "d3/dca/a62081.html", "d3/dca/a62081" ],
+      [ "InterruptManager", "d5/d06/a62089.html", "d5/d06/a62089" ],
+      [ "Port", "d7/daf/a62093.html", "d7/daf/a62093" ],
+      [ "Port16Bit", "dd/df4/a62105.html", "dd/df4/a62105" ],
+      [ "Port32Bit", "d6/d31/a62109.html", "d6/d31/a62109" ],
+      [ "Port8Bit", "d8/da5/a62097.html", "d8/da5/a62097" ],
+      [ "Port8BitSlow", "d7/dda/a62101.html", "d7/dda/a62101" ]
     ] ],
-    [ "KeyboardEventHandler_for_kernel", "d8/d6b/a60627.html", "d8/d6b/a60627" ],
-    [ "MouseEventHandler_for_kernel", "d0/dbc/a60631.html", "d0/dbc/a60631" ]
+    [ "KeyboardEventHandler_for_kernel", "da/d26/a62037.html", "da/d26/a62037" ],
+    [ "MouseEventHandler_for_kernel", "d0/deb/a62041.html", "d0/deb/a62041" ]
 ];

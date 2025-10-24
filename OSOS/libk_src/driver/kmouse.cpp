@@ -24,7 +24,6 @@ uint16_t driver::MouseDriver::mouse_block_video_mem_value(uint16_t current_char,
     return (current_char & 0x0FFF) | (mouse_pointer_color << 12);
 }
 
-// Constructor: Initialize with an event handler
 /// @brief Constructs a new MouseDriver object.
 /// @param interrupt_manager Pointer to the interrupt manager.
 /// @param mouseEventHandler Pointer to the event handler that will process mouse events.
@@ -42,7 +41,8 @@ driver::MouseDriver::~MouseDriver(){}
 /// @brief Handles the mouse interrupt (IRQ 12).
 /// @param esp The stack pointer from the interrupt context.
 /// @return The stack pointer.
-uint32_t driver::MouseDriver::handleInterrupt(uint32_t esp){
+uint32_t driver::MouseDriver::handleInterrupt(uint32_t esp)
+{
     // Check if the mouse has sent data
     uint8_t status = commandPort.read();
     if(!(status & 0x20)) return esp;
@@ -85,7 +85,8 @@ uint32_t driver::MouseDriver::handleInterrupt(uint32_t esp){
 //------------------------------OVERRIDING VIRTUAL FUNCTIONS FROM DRIVER INTERFACE-----------------------------
 
 /// @brief Activates the mouse driver.
-void driver::MouseDriver::activate(){
+void driver::MouseDriver::activate()
+{
     while(commandPort.read() & 1) dataPort.read();
     offset = 0;
     buttons = 0;

@@ -4,7 +4,8 @@
     #include "hardware_communication/kinterrupt.hpp"
     #include "hardware_communication/kport.hpp"
     #include "driver/kdriver.hpp"
-    namespace driver{
+    namespace driver
+    {
         /// @brief Base class (interface) for handling keyboard events (key presses and releases).
         class KeyboardEventHandler{
             public:

@@ -4,7 +4,8 @@
 extern "C" void (*ctors_start)();
 extern "C" void (*ctors_end)();
 /// @brief Iterates over the list of global constructors and calls them to initialize global C++ objects.
-void essential::__callConstructors(){
+void essential::__callConstructors()
+{
     for (void (**p)() = &ctors_start; p < &ctors_end; ++p)
     {
         (*p)(); // Call the constructor

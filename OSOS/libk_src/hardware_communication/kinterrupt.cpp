@@ -3,13 +3,15 @@
 /// @brief Constructs an InterruptHandler, registering it with the InterruptManager.
 /// @param interruptNumber The number of the interrupt (0-255) this handler serves.
 /// @param interrupt_manager A pointer to the InterruptManager instance.
-hardware_communication::InterruptHandler::InterruptHandler(uint8_t interruptNumber, hardware_communication::InterruptManager* interrupt_manager){
+hardware_communication::InterruptHandler::InterruptHandler(uint8_t interruptNumber, hardware_communication::InterruptManager* interrupt_manager)
+{
     this->interruptNumber=interruptNumber;
     this->interrupt_manager=interrupt_manager;
     interrupt_manager->handlers[interruptNumber]=this;
 }
 /// @brief Destroys the InterruptHandler, unregistering it from the InterruptManager if it's still the active handler.
-hardware_communication::InterruptHandler::~InterruptHandler(){
+hardware_communication::InterruptHandler::~InterruptHandler()
+{
     if(interrupt_manager->handlers[interruptNumber]==this) interrupt_manager->handlers[interruptNumber]=nullptr;
 }
 
@@ -30,7 +32,8 @@ hardware_communication::Port8BitSlow hardware_communication::InterruptManager::p
 
 /// @brief Constructs an InterruptManager, initializes the PICs, and populates the IDT.
 /// @param gdt A pointer to the Global Descriptor Table instance, needed to get the kernel code segment selector.
-hardware_communication::InterruptManager::InterruptManager(essential::GDT_Manager* gdt){
+hardware_communication::InterruptManager::InterruptManager(essential::GDT_Manager* gdt)
+{
     // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.
     picMasterCommand.write(0x11);
     picSlaveCommand.write(0x11);
@@ -86,18 +89,22 @@ void hardware_communication::InterruptManager::setIDTEntry(
     uint16_t codeSegmentSelectorOffset,
     void (*handler)(),
     uint8_t DescriptorPrivilegeLever,
-    uint8_t DescriptorType){
-        const uint8_t IDT_DESC_PRESET= 0x80;
-        interruptDescriptorTable[interruptNumber].handlerAddressLowbits=(uint32_t)handler & 0xFFFF;
-        interruptDescriptorTable[interruptNumber].handlerAddressHighbits=((uint32_t)handler >> 16) & 0xFFFF;
-        interruptDescriptorTable[interruptNumber].reserved=0;
-        interruptDescriptorTable[interruptNumber].access=IDT_DESC_PRESET | DescriptorType | ((DescriptorPrivilegeLever & 3) << 5);
-        interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;
+    uint8_t DescriptorType)
+{
+    const uint8_t IDT_DESC_PRESET= 0x80;
+    interruptDescriptorTable[interruptNumber].handlerAddressLowbits=(uint32_t)handler & 0xFFFF;
+    interruptDescriptorTable[interruptNumber].handlerAddressHighbits=((uint32_t)handler >> 16) & 0xFFFF;
+    interruptDescriptorTable[interruptNumber].reserved=0;
+    interruptDescriptorTable[interruptNumber].access=IDT_DESC_PRESET | DescriptorType | ((DescriptorPrivilegeLever & 3) << 5);
+    interruptDescriptorTable[interruptNumber].kernelCodeSegmentSelector=codeSegmentSelectorOffset;
 }
 
+/// @brief Static global pointer to point currently installed interrupt manager
 static hardware_communication::InterruptManager* installed_interrupt_manager=nullptr;
+
 /// @brief Loads the Interrupt Descriptor Table (IDT) into the CPU's IDTR register.
-void hardware_communication::InterruptManager::installTable(){
+void hardware_communication::InterruptManager::installTable()
+{
     installed_interrupt_manager=this;
     struct IDT_Pointer {
         uint16_t limit;
@@ -108,24 +115,27 @@ void hardware_communication::InterruptManager::installTable(){
     idt_ptr.limit = this->limit;
     idt_ptr.base = this->base;
 
-    __asm__ volatile ("lidt %0" : : "m"(idt_ptr));
+    __asm__ volatile ("lidt %0" : : "m"(idt_ptr)); // "m" will put address of `idt_ptr` in place of `%0`
     basic::printf("IDT Installed\n");
 }
 
 
 /// @brief Enables interrupts globally by executing the 'sti' instruction.
-void hardware_communication::InterruptManager::activate(){
+void hardware_communication::InterruptManager::activate()
+{
     __asm__ volatile ("sti");
     basic::printf("Interrupts Activated\n");
 }
 /// @brief Disables interrupts globally by executing the 'cli' instruction.
-void hardware_communication::InterruptManager::deactivate(){
+void hardware_communication::InterruptManager::deactivate()
+{
     __asm__ volatile ("cli");
     basic::printf("Interrupts Deactivated\n");
 }
 
 /// @brief Prints the details of all entries in the currently loaded IDT.
-void hardware_communication::InterruptManager::printLoadedTable() {
+void hardware_communication::InterruptManager::printLoadedTable()
+{
     struct IDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -160,8 +170,8 @@ void hardware_communication::InterruptManager::printLoadedTable() {
 }
 
 /// @brief Prints the header information (base, limit, count) of the currently loaded IDT.
-void hardware_communication::InterruptManager::printLoadedTableHeader(){
-
+void hardware_communication::InterruptManager::printLoadedTableHeader()
+{
     struct IDT_Pointer {
         uint16_t limit;
         uint32_t base;
@@ -182,7 +192,8 @@ void hardware_communication::InterruptManager::printLoadedTableHeader(){
 /// @param interruptNumber The number of the interrupt that occurred.
 /// @param esp The stack pointer (Extended Stack Pointer) from the context of the interrupted process.
 /// @return The updated stack pointer, typically the same as the input unless the handler modified the stack frame.
-uintptr_t hardware_communication::InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp){
+uintptr_t hardware_communication::InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t esp)
+{
     // Use the global pointer "installed_interrupt_manager" to access the current interrupt manager
     if(installed_interrupt_manager->handlers[interruptNumber]!=nullptr){
         esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);

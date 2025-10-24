@@ -4,7 +4,8 @@
     #include <cstdarg>
     #include "hardware_communication/kport.hpp"
 
-    namespace basic{
+    namespace basic
+    {
         void __clearScreen();
         int printf(const char *format, ...);
         void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);

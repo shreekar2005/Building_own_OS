@@ -30,7 +30,8 @@
     // For a 32-bit OS in protected mode with 4KB pages
     #define GDT_GRAN_FLAGS      SEG_GRAN_GRAN(1) | SEG_GRAN_SIZE(1) | SEG_GRAN_LONG(0) | SEG_GRAN_SAVL(0)
 
-    namespace essential{
+    namespace essential
+    {
         /// @brief Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (GDT).
         class GDT_Row {
             private :

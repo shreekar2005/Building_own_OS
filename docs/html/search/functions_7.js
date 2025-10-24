@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../da/d0b/a60663.html#aec494a06a81c95bfd588c1e3deeafe3d',1,'essential::GDT_Manager::kernel_CS_selector()'],['../d7/d0e/a59804.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
-  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../da/d0b/a60663.html#a21441d13f3bc71dafbd44063a19ec075',1,'essential::GDT_Manager::kernel_DS_selector()'],['../d7/d0e/a59804.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
-  ['kernelmain_2',['kernelMain',['../db/dad/a59750.html#abb4e4866092116b520310d61961bfe12',1,'kernel.cpp']]],
-  ['keyboarddriver_3',['KeyboardDriver',['../d4/dc7/a60647.html#a63898e993f02352193db996d00179347',1,'driver::KeyboardDriver']]],
-  ['keyboardeventhandler_4',['KeyboardEventHandler',['../d6/ddb/a60643.html#a63ee0249476256e721e05e6375383317',1,'driver::KeyboardEventHandler']]],
-  ['keyboardeventhandler_5ffor_5fkernel_5',['KeyboardEventHandler_for_kernel',['../d8/d6b/a60627.html#af9abf3fb85dea27db802a8f092c4a2fc',1,'KeyboardEventHandler_for_kernel']]]
+  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../d0/dcf/a62073.html#aec494a06a81c95bfd588c1e3deeafe3d',1,'essential::GDT_Manager::kernel_CS_selector()'],['../da/ded/a61214.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
+  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../d0/dcf/a62073.html#a21441d13f3bc71dafbd44063a19ec075',1,'essential::GDT_Manager::kernel_DS_selector()'],['../da/ded/a61214.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
+  ['kernelmain_2',['kernelMain',['../d6/d49/a61160.html#abb4e4866092116b520310d61961bfe12',1,'kernel.cpp']]],
+  ['keyboarddriver_3',['KeyboardDriver',['../de/d3d/a62057.html#a63898e993f02352193db996d00179347',1,'driver::KeyboardDriver']]],
+  ['keyboardeventhandler_4',['KeyboardEventHandler',['../df/dd9/a62053.html#a63ee0249476256e721e05e6375383317',1,'driver::KeyboardEventHandler']]],
+  ['keyboardeventhandler_5ffor_5fkernel_5',['KeyboardEventHandler_for_kernel',['../da/d26/a62037.html#af9abf3fb85dea27db802a8f092c4a2fc',1,'KeyboardEventHandler_for_kernel']]]
 ];

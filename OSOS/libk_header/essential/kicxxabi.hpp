@@ -4,7 +4,8 @@
     #define ATEXIT_MAX_FUNCS    128
     typedef unsigned uarch_t;
     
-    namespace essential{
+    namespace essential
+    {
         /// @brief Structure to hold a registered C++ ABI exit function (destructor).
         struct atexit_func_entry_t
         {

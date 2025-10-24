@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['enable_5fcursor_0',['enable_cursor',['../de/d98/a59808.html#a8ca6648639f335b207c748074dcf9f25',1,'basic']]],
-  ['essential_1',['essential',['../de/d28/a59810.html',1,'']]]
+  ['enable_5fcursor_0',['enable_cursor',['../dd/d61/a61218.html#a8ca6648639f335b207c748074dcf9f25',1,'basic']]],
+  ['essential_1',['essential',['../da/d20/a61220.html',1,'']]]
 ];

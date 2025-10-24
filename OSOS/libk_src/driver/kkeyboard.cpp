@@ -21,9 +21,10 @@ driver::KeyboardDriver::KeyboardDriver(hardware_communication::InterruptManager*
   commandPort(0x64),
   shift_pressed(false),
   caps_on(false),
-  waiting_for_led_ack(false){
+  waiting_for_led_ack(false)
+{
     this->keyboardEventHandler=keyboardEventHandler;
-  }
+}
 
 /// @brief Destroys the KeyboardDriver object.
 driver::KeyboardDriver::~KeyboardDriver(){}
@@ -31,7 +32,8 @@ driver::KeyboardDriver::~KeyboardDriver(){}
 /// @brief Handles the keyboard interrupt (IRQ 1).
 /// @param esp The stack pointer from the interrupt context.
 /// @return The stack pointer.
-uint32_t driver::KeyboardDriver::handleInterrupt(uint32_t esp){
+uint32_t driver::KeyboardDriver::handleInterrupt(uint32_t esp)
+{
     // Unshifted keys
     static const char scancode_no_shift[] = {
         0,   0, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '\b',
@@ -174,7 +176,8 @@ uint32_t driver::KeyboardDriver::handleInterrupt(uint32_t esp){
 
 
 /// @brief Activates the keyboard driver.
-void driver::KeyboardDriver::activate(){
+void driver::KeyboardDriver::activate()
+{
     while(commandPort.read() & 1) dataPort.read();
     commandPort.write(0xAE); // activate communication for keyboard
     commandPort.write(0x20); // get current state

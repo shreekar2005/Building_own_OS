@@ -17,7 +17,8 @@ static hardware_communication::Port8Bit vgaDataPort(0x3D5);
 /// @brief Enables the text mode cursor and sets its shape.
 /// @param cursor_start The starting scanline for the cursor block.
 /// @param cursor_end The ending scanline for the cursor block.
-void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
+void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
+{
     vgaIndexPort.write(0x0A);
     vgaDataPort.write((vgaDataPort.read() & 0xC0) | cursor_start);
     
@@ -28,7 +29,8 @@ void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
 /// @brief Updates the position of the text mode cursor.
 /// @param x The new x-coordinate (column).
 /// @param y The new y-coordinate (row).
-void basic::update_cursor(int x, int y) {
+void basic::update_cursor(int x, int y)
+{
     cursor_x_=x;
     cursor_y_=y;
     uint16_t pos = y * 80 + x;
@@ -39,7 +41,8 @@ void basic::update_cursor(int x, int y) {
 }
 
 /// @brief Disables the text mode cursor.
-void basic::disable_cursor() {
+void basic::disable_cursor()
+{
     vgaIndexPort.write(0x0A);
     vgaDataPort.write(0x20);
 }
@@ -254,7 +257,8 @@ static void doubleToString(double d, char *buffer, int precision)
 /// @brief Prints a hexadecimal number with leading zeros.
 /// @param n The number to print.
 /// @param digits The total number of digits to print (padded with zeros).
-static void printHex(uintptr_t n, int digits) {
+static void printHex(uintptr_t n, int digits)
+{
     char buffer[32];
     ullToString(n, buffer, 16, 0, 1); // Use uppercase for pointers typically
 
