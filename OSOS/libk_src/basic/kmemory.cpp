@@ -1,5 +1,7 @@
 #include "basic/kmemory.hpp"
 
+/// @brief Prints the system memory map provided by the Multiboot bootloader.
+/// @param mbi Pointer to the Multiboot information structure.
 void basic::__printMemoryMap(multiboot_info_t *mbi)
 {
     // Check if the memory map flag is set (bit 6)
@@ -62,29 +64,45 @@ void basic::__printMemoryMap(multiboot_info_t *mbi)
  * provide our own. For now, they don't have to do anything.
  */
 
+/// @brief Overload of the 'new' operator (stub).
+/// @param size The size of memory to allocate.
+/// @return Always returns nullptr as this is a stub.
 void* operator new(size_t size) noexcept {
     (void)size;
     return nullptr;
 }
 
+/// @brief Overload of the 'new[]' operator (stub).
+/// @param size The size of memory to allocate for the array.
+/// @return Always returns nullptr as this is a stub.
 void* operator new[](size_t size) noexcept {
     (void)size;
     return nullptr;
 }
 
+/// @brief Overload of the 'delete' operator (stub).
+/// @param ptr Pointer to the memory to deallocate.
 void operator delete(void* ptr) noexcept {
     (void)ptr;
 }
 
+/// @brief Overload of the 'delete' operator with size (stub).
+/// @param ptr Pointer to the memory to deallocate.
+/// @param size The size of the memory block.
 void operator delete(void* ptr, size_t size) noexcept {
     (void)ptr;
     (void)size;
 }
 
+/// @brief Overload of the 'delete[]' operator (stub).
+/// @param ptr Pointer to the array memory to deallocate.
 void operator delete[](void* ptr) noexcept {
     (void)ptr;
 }
 
+/// @brief Overload of the 'delete[]' operator with size (stub).
+/// @param ptr Pointer to the array memory to deallocate.
+/// @param size The size of the memory block.
 void operator delete[](void* ptr, size_t size) noexcept {
     (void)ptr;
     (void)size;

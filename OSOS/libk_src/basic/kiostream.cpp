@@ -14,6 +14,9 @@ static hardware_communication::Port8Bit vgaDataPort(0x3D5);
 
 // --- VGA Cursor Control ---
 
+/// @brief Enables the text mode cursor and sets its shape.
+/// @param cursor_start The starting scanline for the cursor block.
+/// @param cursor_end The ending scanline for the cursor block.
 void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
     vgaIndexPort.write(0x0A);
     vgaDataPort.write((vgaDataPort.read() & 0xC0) | cursor_start);
@@ -22,6 +25,9 @@ void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end) {
     vgaDataPort.write((vgaDataPort.read() & 0xE0) | cursor_end);
 }
 
+/// @brief Updates the position of the text mode cursor.
+/// @param x The new x-coordinate (column).
+/// @param y The new y-coordinate (row).
 void basic::update_cursor(int x, int y) {
     cursor_x_=x;
     cursor_y_=y;
@@ -32,12 +38,15 @@ void basic::update_cursor(int x, int y) {
     vgaDataPort.write((uint8_t)((pos >> 8) & 0xFF));
 }
 
+/// @brief Disables the text mode cursor.
 void basic::disable_cursor() {
     vgaIndexPort.write(0x0A);
     vgaDataPort.write(0x20);
 }
 
 
+/// @brief Internal function to print a null-terminated string to video memory.
+/// @param str The string to print.
 static void printCharStr(const char *str)
 {
     uint16_t *video_memory = (uint16_t *)0xb8000;
@@ -115,6 +124,7 @@ static void printCharStr(const char *str)
 
 }
 
+/// @brief Clears the entire text mode screen and resets the cursor to (0,0).
 void basic::__clearScreen()
 {
     unsigned short *video_memory = (unsigned short *)0xb8000;
@@ -130,6 +140,9 @@ void basic::__clearScreen()
     cursor_y_ = 0;
 }
 
+/// @brief Reverses a string in place.
+/// @param str The string to reverse.
+/// @param length The length of the string.
 static void reverse(char *str, int length)
 {
     int start = 0;
@@ -144,6 +157,12 @@ static void reverse(char *str, int length)
     }
 }
 
+/// @brief Converts an unsigned long long integer to a string.
+/// @param n The number to convert.
+/// @param buffer The output buffer to store the string.
+/// @param base The numerical base (e.g., 2, 8, 10, 16).
+/// @param is_signed Whether the original number was signed (for handling negative sign).
+/// @param uppercase Whether to use uppercase letters for bases > 10.
 static void ullToString(unsigned long long n, char *buffer, int base, int is_signed, int uppercase)
 {
     int i = 0;
@@ -178,6 +197,10 @@ static void ullToString(unsigned long long n, char *buffer, int base, int is_sig
     reverse(buffer, i);
 }
 
+/// @brief Calculates the power of a number.
+/// @param base The base.
+/// @param exp The exponent.
+/// @return The result of base raised to the power of exp.
 static double power(double base, int exp)
 {
     double res = 1.0;
@@ -186,6 +209,10 @@ static double power(double base, int exp)
     return res;
 }
 
+/// @brief Converts a double-precision floating point number to a string.
+/// @param d The double to convert.
+/// @param buffer The output buffer to store the string.
+/// @param precision The number of digits after the decimal point.
 static void doubleToString(double d, char *buffer, int precision)
 {
     if (precision < 0)
@@ -224,6 +251,9 @@ static void doubleToString(double d, char *buffer, int precision)
     *ptr = '\0';
 }
 
+/// @brief Prints a hexadecimal number with leading zeros.
+/// @param n The number to print.
+/// @param digits The total number of digits to print (padded with zeros).
 static void printHex(uintptr_t n, int digits) {
     char buffer[32];
     ullToString(n, buffer, 16, 0, 1); // Use uppercase for pointers typically

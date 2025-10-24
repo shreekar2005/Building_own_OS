@@ -10,36 +10,53 @@
 #include "driver/kdriver.hpp"
 
 
+/// @brief Custom keyboard event handler implementation for the kernel.
 class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler{
     public:
+        /// @brief Construct a new KeyboardEventHandler_for_kernel object
         KeyboardEventHandler_for_kernel(){}
+        /// @brief Destroy the KeyboardEventHandler_for_kernel object
         ~KeyboardEventHandler_for_kernel(){}
+        /// @brief Handles key down events by printing the ASCII character.
+        /// @param ascii The ASCII character of the key that was pressed.
         void onKeyDown(char ascii) override {
             if (ascii != 0) {
                 basic::printf("%c", ascii);
             }
         }
+        /// @brief Handles key up events. (Does nothing in this implementation).
+        /// @param ascii The ASCII character of the key that was released.
         void onKeyUp(char ascii) override {
             (void) ascii;
         }
 };
 
+/// @brief Custom mouse event handler implementation for the kernel.
 class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
     public:
+        /// @brief Construct a new MouseEventHandler_for_kernel object
         MouseEventHandler_for_kernel(){}
+        /// @brief Destroy the MouseEventHandler_for_kernel object
         ~MouseEventHandler_for_kernel(){}
         // Default implementations for the handler. A specific handler can override these.
+        /// @brief Handles mouse button down events.
+        /// @param button The button number that was pressed.
         void onMouseDown(uint8_t button) override {
             (void) button;
             basic::update_cursor(driver::MouseDriver::__mouse_x_, driver::MouseDriver::__mouse_y_);
             // printf("Mouse Down: %d\n", button);
         }
 
+        /// @brief Handles mouse button up events.
+        /// @param button The button number that was released.
         void onMouseUp(uint8_t button) override {
             (void) button;
             // printf("Mouse Up: %d\n", button);
         }
 
+        /// @brief Handles mouse movement events and updates the cursor position on the screen.
+        /// @param delta_x The change in the x-coordinate.
+        /// @param delta_y The change in the y-coordinate.
         void onMouseMove(int8_t delta_x, int8_t delta_y) override {
             static uint16_t* video_memory = (uint16_t*) 0xb8000;
             static float deltaTod=0.2;
@@ -82,6 +99,9 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
         }
 };
 
+/// @brief The main entry point for the C++ kernel.
+/// @param mbi Pointer to the Multiboot information structure provided by GRUB.
+/// @param magicnumber The magic number passed by GRUB to verify boot.
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
     // int a=1/0;
@@ -120,5 +140,3 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     (void)mbi;
     (void)magicnumber;
 }
-
-
