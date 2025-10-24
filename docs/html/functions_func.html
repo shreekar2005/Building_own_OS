@@ -15,15 +15,13 @@
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-  /* @license-end */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
 </script>
-<link rel="search" href="search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="OSOS - Documentation"/>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -48,14 +46,15 @@ MathJax.Hub.Config({
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-          <div class="left">
-            <form id="FSearchBox" action="search.html" method="get">
-              <span id="MSearchSelectExt">&#160;</span>
-              <input type="text" id="MSearchField" name="query" value="" placeholder="Search" size="20" accesskey="S" 
-                     onfocus="searchBox.OnSearchFieldFocus(true)" 
-                     onblur="searchBox.OnSearchFieldFocus(false)"/>
-            </form>
-          </div><div class="right"></div>
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
         </div>
 </td></tr>
  </tbody>
@@ -84,127 +83,148 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 /* @license-end */
 </script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="contents">
 <div class="textblock">Here is a list of all functions with links to the classes they belong to:</div>
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>activate()&#160;:&#160;<a class="el" href="df/da4/a49103.html#a8c86c1e52652d8b491d37a3b60b535b0">driver::Driver</a>, <a class="el" href="d3/d95/a49115.html#a58553d39d7dcfe6b55e8ddb1e7b1d187">driver::KeyboardDriver</a>, <a class="el" href="dc/d4f/a49123.html#a446769df0b3b537a525476c7c8be47bc">driver::MouseDriver</a>, <a class="el" href="d5/d2a/a49147.html#a1ab5b6378071338ede295f0bffaf3d51">hardware_communication::InterruptManager</a></li>
-<li>activateAll()&#160;:&#160;<a class="el" href="dd/df8/a49107.html#a05b071d8a8c12f2d284fb61f4ecd116e">driver::DriverManager</a></li>
-<li>addDriver()&#160;:&#160;<a class="el" href="dd/df8/a49107.html#ab8bd89b91ea49f343276c3c841153cd8">driver::DriverManager</a></li>
+<li>activate()&#160;:&#160;<a class="el" href="df/d00/a52175.html#a8c86c1e52652d8b491d37a3b60b535b0">driver::Driver</a>, <a class="el" href="d8/d91/a52187.html#a58553d39d7dcfe6b55e8ddb1e7b1d187">driver::KeyboardDriver</a>, <a class="el" href="da/d70/a52195.html#a446769df0b3b537a525476c7c8be47bc">driver::MouseDriver</a>, <a class="el" href="df/dbc/a52219.html#a1ab5b6378071338ede295f0bffaf3d51">hardware_communication::InterruptManager</a></li>
+<li>activateAll()&#160;:&#160;<a class="el" href="d2/de4/a52179.html#a05b071d8a8c12f2d284fb61f4ecd116e">driver::DriverManager</a></li>
+<li>addDriver()&#160;:&#160;<a class="el" href="d2/de4/a52179.html#ab8bd89b91ea49f343276c3c841153cd8">driver::DriverManager</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>deactivate()&#160;:&#160;<a class="el" href="df/da4/a49103.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1">driver::Driver</a>, <a class="el" href="d3/d95/a49115.html#aaa7e99b6214dc8439230a95dd57e617e">driver::KeyboardDriver</a>, <a class="el" href="dc/d4f/a49123.html#a4329c1cdedc72adf0b95cb3911c4acf6">driver::MouseDriver</a>, <a class="el" href="d5/d2a/a49147.html#a9451566bf08617378ca2144505d394a6">hardware_communication::InterruptManager</a></li>
-<li>Driver()&#160;:&#160;<a class="el" href="df/da4/a49103.html#a7de0c11fff1dc1f5d004b2a76e840840">driver::Driver</a></li>
-<li>DriverManager()&#160;:&#160;<a class="el" href="dd/df8/a49107.html#af3bed49a4b243c2f65d09c35db15158b">driver::DriverManager</a></li>
+<li>deactivate()&#160;:&#160;<a class="el" href="df/d00/a52175.html#a4b3b5e5a163c2c0e3cb58ea752ebcef1">driver::Driver</a>, <a class="el" href="d8/d91/a52187.html#aaa7e99b6214dc8439230a95dd57e617e">driver::KeyboardDriver</a>, <a class="el" href="da/d70/a52195.html#a4329c1cdedc72adf0b95cb3911c4acf6">driver::MouseDriver</a>, <a class="el" href="df/dbc/a52219.html#a9451566bf08617378ca2144505d394a6">hardware_communication::InterruptManager</a></li>
+<li>Driver()&#160;:&#160;<a class="el" href="df/d00/a52175.html#a7de0c11fff1dc1f5d004b2a76e840840">driver::Driver</a></li>
+<li>DriverManager()&#160;:&#160;<a class="el" href="d2/de4/a52179.html#af3bed49a4b243c2f65d09c35db15158b">driver::DriverManager</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>GDT_Manager()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#ae4bb24dca1f0c70f599bea5f36894a2b">essential::GDT_Manager</a></li>
-<li>GDT_Row()&#160;:&#160;<a class="el" href="de/d82/a49127.html#a3172ce0522e163418a42d4b8228237a0">essential::GDT_Row</a></li>
+<li>GDT_Manager()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#ae4bb24dca1f0c70f599bea5f36894a2b">essential::GDT_Manager</a></li>
+<li>GDT_Row()&#160;:&#160;<a class="el" href="d9/dfe/a52199.html#a3172ce0522e163418a42d4b8228237a0">essential::GDT_Row</a></li>
 </ul>
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
-<li>handleInterrupt()&#160;:&#160;<a class="el" href="d3/d95/a49115.html#a248fa0da9acac54a3a8880c7b66b3f2b">driver::KeyboardDriver</a>, <a class="el" href="dc/d4f/a49123.html#a1b2f08490b7954e5ca504cd8bb6862c0">driver::MouseDriver</a>, <a class="el" href="dc/d09/a49139.html#aa89d41d69840cb4f1c8692fa6ded28f4">hardware_communication::InterruptHandler</a>, <a class="el" href="d5/d2a/a49147.html#a2d3ef1656e1eaaf86be40a200a49a4b2">hardware_communication::InterruptManager</a></li>
+<li>handleInterrupt()&#160;:&#160;<a class="el" href="d8/d91/a52187.html#a248fa0da9acac54a3a8880c7b66b3f2b">driver::KeyboardDriver</a>, <a class="el" href="da/d70/a52195.html#a1b2f08490b7954e5ca504cd8bb6862c0">driver::MouseDriver</a>, <a class="el" href="dc/dc7/a52211.html#aa89d41d69840cb4f1c8692fa6ded28f4">hardware_communication::InterruptHandler</a>, <a class="el" href="df/dbc/a52219.html#a2d3ef1656e1eaaf86be40a200a49a4b2">hardware_communication::InterruptManager</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>IDT_Row()&#160;:&#160;<a class="el" href="d6/de4/a49143.html#a1d51e696187d45d2b04a1c666f045b08">hardware_communication::IDT_Row</a></li>
-<li>installTable()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#a32a0dc6068696510c0f26210e5260959">essential::GDT_Manager</a>, <a class="el" href="d5/d2a/a49147.html#a81d593116320da32f1aa4057087f1e11">hardware_communication::InterruptManager</a></li>
-<li>InterruptHandler()&#160;:&#160;<a class="el" href="dc/d09/a49139.html#a134c8931dff43e766f1ddc4d0f35cd48">hardware_communication::InterruptHandler</a></li>
-<li>InterruptManager()&#160;:&#160;<a class="el" href="d5/d2a/a49147.html#ab9c0171a215009cc193c0a7c811e3e0f">hardware_communication::InterruptManager</a></li>
+<li>IDT_Row()&#160;:&#160;<a class="el" href="df/d33/a52215.html#a1d51e696187d45d2b04a1c666f045b08">hardware_communication::IDT_Row</a></li>
+<li>installTable()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#a32a0dc6068696510c0f26210e5260959">essential::GDT_Manager</a>, <a class="el" href="df/dbc/a52219.html#a81d593116320da32f1aa4057087f1e11">hardware_communication::InterruptManager</a></li>
+<li>InterruptHandler()&#160;:&#160;<a class="el" href="dc/dc7/a52211.html#a134c8931dff43e766f1ddc4d0f35cd48">hardware_communication::InterruptHandler</a></li>
+<li>InterruptManager()&#160;:&#160;<a class="el" href="df/dbc/a52219.html#ab9c0171a215009cc193c0a7c811e3e0f">hardware_communication::InterruptManager</a></li>
 </ul>
 
 
 <h3><a id="index_k" name="index_k"></a>- k -</h3><ul>
-<li>kernel_CS_selector()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#aec494a06a81c95bfd588c1e3deeafe3d">essential::GDT_Manager</a></li>
-<li>kernel_DS_selector()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#a21441d13f3bc71dafbd44063a19ec075">essential::GDT_Manager</a></li>
-<li>KeyboardDriver()&#160;:&#160;<a class="el" href="d3/d95/a49115.html#a63898e993f02352193db996d00179347">driver::KeyboardDriver</a></li>
-<li>KeyboardEventHandler()&#160;:&#160;<a class="el" href="db/d3f/a49111.html#a63ee0249476256e721e05e6375383317">driver::KeyboardEventHandler</a></li>
-<li>KeyboardEventHandler_for_kernel()&#160;:&#160;<a class="el" href="de/d9f/a49095.html#af9abf3fb85dea27db802a8f092c4a2fc">KeyboardEventHandler_for_kernel</a></li>
+<li>kernel_CS_selector()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#aec494a06a81c95bfd588c1e3deeafe3d">essential::GDT_Manager</a></li>
+<li>kernel_DS_selector()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#a21441d13f3bc71dafbd44063a19ec075">essential::GDT_Manager</a></li>
+<li>KeyboardDriver()&#160;:&#160;<a class="el" href="d8/d91/a52187.html#a63898e993f02352193db996d00179347">driver::KeyboardDriver</a></li>
+<li>KeyboardEventHandler()&#160;:&#160;<a class="el" href="da/d05/a52183.html#a63ee0249476256e721e05e6375383317">driver::KeyboardEventHandler</a></li>
+<li>KeyboardEventHandler_for_kernel()&#160;:&#160;<a class="el" href="df/dfc/a52167.html#af9abf3fb85dea27db802a8f092c4a2fc">KeyboardEventHandler_for_kernel</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
-<li>mouse_block_video_mem_value()&#160;:&#160;<a class="el" href="dc/d4f/a49123.html#a1a2a455ca7146dea3148afa8cb6c9ed5">driver::MouseDriver</a></li>
-<li>MouseDriver()&#160;:&#160;<a class="el" href="dc/d4f/a49123.html#a639956c8ce11d62ee443825e9b9695af">driver::MouseDriver</a></li>
-<li>MouseEventHandler()&#160;:&#160;<a class="el" href="d2/dbb/a49119.html#aa0fd3739c52bcd4d553cefaf41760a9b">driver::MouseEventHandler</a></li>
-<li>MouseEventHandler_for_kernel()&#160;:&#160;<a class="el" href="d8/d07/a49099.html#a41f57ab9baa5850e39086362ce44b1cb">MouseEventHandler_for_kernel</a></li>
+<li>mouse_block_video_mem_value()&#160;:&#160;<a class="el" href="da/d70/a52195.html#a1a2a455ca7146dea3148afa8cb6c9ed5">driver::MouseDriver</a></li>
+<li>MouseDriver()&#160;:&#160;<a class="el" href="da/d70/a52195.html#a639956c8ce11d62ee443825e9b9695af">driver::MouseDriver</a></li>
+<li>MouseEventHandler()&#160;:&#160;<a class="el" href="d8/d1e/a52191.html#aa0fd3739c52bcd4d553cefaf41760a9b">driver::MouseEventHandler</a></li>
+<li>MouseEventHandler_for_kernel()&#160;:&#160;<a class="el" href="df/dd6/a52171.html#a41f57ab9baa5850e39086362ce44b1cb">MouseEventHandler_for_kernel</a></li>
 </ul>
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>onKeyDown()&#160;:&#160;<a class="el" href="db/d3f/a49111.html#ae2b923ef0eb58e29f57a155debadac6a">driver::KeyboardEventHandler</a>, <a class="el" href="de/d9f/a49095.html#af82a0bd16f995dd285d4f7822117377c">KeyboardEventHandler_for_kernel</a></li>
-<li>onKeyUp()&#160;:&#160;<a class="el" href="db/d3f/a49111.html#a28547100b7420e1f73b745df873cd411">driver::KeyboardEventHandler</a>, <a class="el" href="de/d9f/a49095.html#a0d74a48573c10174ac8bf836ac39f886">KeyboardEventHandler_for_kernel</a></li>
-<li>onMouseDown()&#160;:&#160;<a class="el" href="d2/dbb/a49119.html#a2f12c5f63356c3045fd6cb46fd89374f">driver::MouseEventHandler</a>, <a class="el" href="d8/d07/a49099.html#ae860a16e70322e5c4bb01e1108e50bb1">MouseEventHandler_for_kernel</a></li>
-<li>onMouseMove()&#160;:&#160;<a class="el" href="d2/dbb/a49119.html#a68f635b3b65f927d37d4e0835f7e0b30">driver::MouseEventHandler</a>, <a class="el" href="d8/d07/a49099.html#adbb4c4e2814b335579119c324313f652">MouseEventHandler_for_kernel</a></li>
-<li>onMouseUp()&#160;:&#160;<a class="el" href="d2/dbb/a49119.html#a09b77fe86bfa79313b5c5b91d09eb514">driver::MouseEventHandler</a>, <a class="el" href="d8/d07/a49099.html#afca536c2187a65da265daa2d2af75d4d">MouseEventHandler_for_kernel</a></li>
+<li>onKeyDown()&#160;:&#160;<a class="el" href="da/d05/a52183.html#ae2b923ef0eb58e29f57a155debadac6a">driver::KeyboardEventHandler</a>, <a class="el" href="df/dfc/a52167.html#af82a0bd16f995dd285d4f7822117377c">KeyboardEventHandler_for_kernel</a></li>
+<li>onKeyUp()&#160;:&#160;<a class="el" href="da/d05/a52183.html#a28547100b7420e1f73b745df873cd411">driver::KeyboardEventHandler</a>, <a class="el" href="df/dfc/a52167.html#a0d74a48573c10174ac8bf836ac39f886">KeyboardEventHandler_for_kernel</a></li>
+<li>onMouseDown()&#160;:&#160;<a class="el" href="d8/d1e/a52191.html#a2f12c5f63356c3045fd6cb46fd89374f">driver::MouseEventHandler</a>, <a class="el" href="df/dd6/a52171.html#ae860a16e70322e5c4bb01e1108e50bb1">MouseEventHandler_for_kernel</a></li>
+<li>onMouseMove()&#160;:&#160;<a class="el" href="d8/d1e/a52191.html#a68f635b3b65f927d37d4e0835f7e0b30">driver::MouseEventHandler</a>, <a class="el" href="df/dd6/a52171.html#adbb4c4e2814b335579119c324313f652">MouseEventHandler_for_kernel</a></li>
+<li>onMouseUp()&#160;:&#160;<a class="el" href="d8/d1e/a52191.html#a09b77fe86bfa79313b5c5b91d09eb514">driver::MouseEventHandler</a>, <a class="el" href="df/dd6/a52171.html#afca536c2187a65da265daa2d2af75d4d">MouseEventHandler_for_kernel</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>Port()&#160;:&#160;<a class="el" href="d6/d24/a49151.html#ad001c21b67d4c138f65024f167030cca">hardware_communication::Port</a></li>
-<li>Port16Bit()&#160;:&#160;<a class="el" href="dd/db5/a49163.html#a418bb2fc65b3bec91704d0e5e8957131">hardware_communication::Port16Bit</a></li>
-<li>Port32Bit()&#160;:&#160;<a class="el" href="df/d39/a49167.html#a507afa8607757baedf1789d73c2a173d">hardware_communication::Port32Bit</a></li>
-<li>Port8Bit()&#160;:&#160;<a class="el" href="dd/d76/a49155.html#a057109ca3c28fbb9064c60ba5cdb1190">hardware_communication::Port8Bit</a></li>
-<li>Port8BitSlow()&#160;:&#160;<a class="el" href="d2/d2c/a49159.html#aa830f1cf49e155af1033a8e611ecc6c1">hardware_communication::Port8BitSlow</a></li>
-<li>printLoadedTable()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#a9cf3e1457df23d876c6174b97548b846">essential::GDT_Manager</a>, <a class="el" href="d5/d2a/a49147.html#aac20f3a896bea512413568a60ad48c3d">hardware_communication::InterruptManager</a></li>
-<li>printLoadedTableHeader()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#a53c8f172c32273fc996c6d7a1620e748">essential::GDT_Manager</a>, <a class="el" href="d5/d2a/a49147.html#ad8a6f694662a3a36ba9353197e20c1b1">hardware_communication::InterruptManager</a></li>
+<li>Port()&#160;:&#160;<a class="el" href="db/dbc/a52223.html#ad001c21b67d4c138f65024f167030cca">hardware_communication::Port</a></li>
+<li>Port16Bit()&#160;:&#160;<a class="el" href="d9/dab/a52235.html#a418bb2fc65b3bec91704d0e5e8957131">hardware_communication::Port16Bit</a></li>
+<li>Port32Bit()&#160;:&#160;<a class="el" href="d6/d17/a52239.html#a507afa8607757baedf1789d73c2a173d">hardware_communication::Port32Bit</a></li>
+<li>Port8Bit()&#160;:&#160;<a class="el" href="d6/d2d/a52227.html#a057109ca3c28fbb9064c60ba5cdb1190">hardware_communication::Port8Bit</a></li>
+<li>Port8BitSlow()&#160;:&#160;<a class="el" href="d8/deb/a52231.html#aa830f1cf49e155af1033a8e611ecc6c1">hardware_communication::Port8BitSlow</a></li>
+<li>printLoadedTable()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#a9cf3e1457df23d876c6174b97548b846">essential::GDT_Manager</a>, <a class="el" href="df/dbc/a52219.html#aac20f3a896bea512413568a60ad48c3d">hardware_communication::InterruptManager</a></li>
+<li>printLoadedTableHeader()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#a53c8f172c32273fc996c6d7a1620e748">essential::GDT_Manager</a>, <a class="el" href="df/dbc/a52219.html#ad8a6f694662a3a36ba9353197e20c1b1">hardware_communication::InterruptManager</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>read()&#160;:&#160;<a class="el" href="dd/db5/a49163.html#a6b5df5669e802e31f27f0a4a0e62492a">hardware_communication::Port16Bit</a>, <a class="el" href="df/d39/a49167.html#a41093c437a9508f984c90ae68e9c03bf">hardware_communication::Port32Bit</a>, <a class="el" href="dd/d76/a49155.html#ae8688251b574c3fd335b99f7e93fff2d">hardware_communication::Port8Bit</a></li>
-<li>reset()&#160;:&#160;<a class="el" href="df/da4/a49103.html#a98d2e779c02364fc58c172d0d2a32bdd">driver::Driver</a>, <a class="el" href="d3/d95/a49115.html#a22b7b080ab1c8b0f2ed4beba75b34691">driver::KeyboardDriver</a>, <a class="el" href="dc/d4f/a49123.html#aabe3740996bf70fda96f0a25228954a6">driver::MouseDriver</a></li>
+<li>read()&#160;:&#160;<a class="el" href="d9/dab/a52235.html#a6b5df5669e802e31f27f0a4a0e62492a">hardware_communication::Port16Bit</a>, <a class="el" href="d6/d17/a52239.html#a41093c437a9508f984c90ae68e9c03bf">hardware_communication::Port32Bit</a>, <a class="el" href="d6/d2d/a52227.html#ae8688251b574c3fd335b99f7e93fff2d">hardware_communication::Port8Bit</a></li>
+<li>reset()&#160;:&#160;<a class="el" href="df/d00/a52175.html#a98d2e779c02364fc58c172d0d2a32bdd">driver::Driver</a>, <a class="el" href="d8/d91/a52187.html#a22b7b080ab1c8b0f2ed4beba75b34691">driver::KeyboardDriver</a>, <a class="el" href="da/d70/a52195.html#aabe3740996bf70fda96f0a25228954a6">driver::MouseDriver</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>setIDTEntry()&#160;:&#160;<a class="el" href="d5/d2a/a49147.html#af448c0d55d2e226050b7f4efb6d4abe8">hardware_communication::InterruptManager</a></li>
+<li>setIDTEntry()&#160;:&#160;<a class="el" href="df/dbc/a52219.html#af448c0d55d2e226050b7f4efb6d4abe8">hardware_communication::InterruptManager</a></li>
 </ul>
 
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
-<li>user_CS_selector()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#ac4a9da13763afc5a28e67e69f1942ac1">essential::GDT_Manager</a></li>
-<li>user_DS_selector()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#a7032f124049a21332bfb3f209b93e8ac">essential::GDT_Manager</a></li>
+<li>user_CS_selector()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#ac4a9da13763afc5a28e67e69f1942ac1">essential::GDT_Manager</a></li>
+<li>user_DS_selector()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#a7032f124049a21332bfb3f209b93e8ac">essential::GDT_Manager</a></li>
 </ul>
 
 
 <h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>write()&#160;:&#160;<a class="el" href="dd/db5/a49163.html#ac5a46ce99a70874a8a4fcb090eb40575">hardware_communication::Port16Bit</a>, <a class="el" href="df/d39/a49167.html#a64a16fe840224ef769ab2933770d1b21">hardware_communication::Port32Bit</a>, <a class="el" href="dd/d76/a49155.html#a523b6a757b27418dc015ed13e74bef60">hardware_communication::Port8Bit</a>, <a class="el" href="d2/d2c/a49159.html#af84b15d5a205a421a9877e2341714031">hardware_communication::Port8BitSlow</a></li>
+<li>write()&#160;:&#160;<a class="el" href="d9/dab/a52235.html#ac5a46ce99a70874a8a4fcb090eb40575">hardware_communication::Port16Bit</a>, <a class="el" href="d6/d17/a52239.html#a64a16fe840224ef769ab2933770d1b21">hardware_communication::Port32Bit</a>, <a class="el" href="d6/d2d/a52227.html#a523b6a757b27418dc015ed13e74bef60">hardware_communication::Port8Bit</a>, <a class="el" href="d8/deb/a52231.html#af84b15d5a205a421a9877e2341714031">hardware_communication::Port8BitSlow</a></li>
 </ul>
 
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
-<li>~Driver()&#160;:&#160;<a class="el" href="df/da4/a49103.html#aacc7524b989c2561147c5dd0b901381c">driver::Driver</a></li>
-<li>~DriverManager()&#160;:&#160;<a class="el" href="dd/df8/a49107.html#a29731c1f4b1215fd5c4ab27624ae6563">driver::DriverManager</a></li>
-<li>~GDT_Manager()&#160;:&#160;<a class="el" href="d4/d49/a49131.html#a57ca97515a6a2268e669a3af93e579f6">essential::GDT_Manager</a></li>
-<li>~GDT_Row()&#160;:&#160;<a class="el" href="de/d82/a49127.html#acd54d020140edda04944b95c94780849">essential::GDT_Row</a></li>
-<li>~IDT_Row()&#160;:&#160;<a class="el" href="d6/de4/a49143.html#a227fd1c99fea81040250c5cefc62df2c">hardware_communication::IDT_Row</a></li>
-<li>~InterruptHandler()&#160;:&#160;<a class="el" href="dc/d09/a49139.html#a5114528f0db9926365b345337e42af9b">hardware_communication::InterruptHandler</a></li>
-<li>~InterruptManager()&#160;:&#160;<a class="el" href="d5/d2a/a49147.html#a65276f26b5d5197482a415b83a898560">hardware_communication::InterruptManager</a></li>
-<li>~KeyboardDriver()&#160;:&#160;<a class="el" href="d3/d95/a49115.html#a77da196f3c04c549e1085ce5566e5df3">driver::KeyboardDriver</a></li>
-<li>~KeyboardEventHandler()&#160;:&#160;<a class="el" href="db/d3f/a49111.html#aed6531b818751f0f23b6b9836ac94aa0">driver::KeyboardEventHandler</a></li>
-<li>~KeyboardEventHandler_for_kernel()&#160;:&#160;<a class="el" href="de/d9f/a49095.html#ab2b7f34603d9cdd36554a4f7f6dde585">KeyboardEventHandler_for_kernel</a></li>
-<li>~MouseDriver()&#160;:&#160;<a class="el" href="dc/d4f/a49123.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22">driver::MouseDriver</a></li>
-<li>~MouseEventHandler()&#160;:&#160;<a class="el" href="d2/dbb/a49119.html#abbfe4a7ae2911f989513178530314211">driver::MouseEventHandler</a></li>
-<li>~MouseEventHandler_for_kernel()&#160;:&#160;<a class="el" href="d8/d07/a49099.html#aa96e9bf8dce2b60b7f86577c3a74455d">MouseEventHandler_for_kernel</a></li>
-<li>~Port()&#160;:&#160;<a class="el" href="d6/d24/a49151.html#a8b13c33da4911afcbdcb21c97768a72e">hardware_communication::Port</a></li>
-<li>~Port16Bit()&#160;:&#160;<a class="el" href="dd/db5/a49163.html#a78dfa215194c676583e1b7e2dab38608">hardware_communication::Port16Bit</a></li>
-<li>~Port32Bit()&#160;:&#160;<a class="el" href="df/d39/a49167.html#a3e87dc7d610b279e8e7e072a0d1ee78c">hardware_communication::Port32Bit</a></li>
-<li>~Port8Bit()&#160;:&#160;<a class="el" href="dd/d76/a49155.html#a475bc218672c5743a9f8425cc84eb630">hardware_communication::Port8Bit</a></li>
-<li>~Port8BitSlow()&#160;:&#160;<a class="el" href="d2/d2c/a49159.html#aa19647802064296f8bf76cc12f10d243">hardware_communication::Port8BitSlow</a></li>
+<li>~Driver()&#160;:&#160;<a class="el" href="df/d00/a52175.html#aacc7524b989c2561147c5dd0b901381c">driver::Driver</a></li>
+<li>~DriverManager()&#160;:&#160;<a class="el" href="d2/de4/a52179.html#a29731c1f4b1215fd5c4ab27624ae6563">driver::DriverManager</a></li>
+<li>~GDT_Manager()&#160;:&#160;<a class="el" href="d3/d95/a52203.html#a57ca97515a6a2268e669a3af93e579f6">essential::GDT_Manager</a></li>
+<li>~GDT_Row()&#160;:&#160;<a class="el" href="d9/dfe/a52199.html#acd54d020140edda04944b95c94780849">essential::GDT_Row</a></li>
+<li>~IDT_Row()&#160;:&#160;<a class="el" href="df/d33/a52215.html#a227fd1c99fea81040250c5cefc62df2c">hardware_communication::IDT_Row</a></li>
+<li>~InterruptHandler()&#160;:&#160;<a class="el" href="dc/dc7/a52211.html#a5114528f0db9926365b345337e42af9b">hardware_communication::InterruptHandler</a></li>
+<li>~InterruptManager()&#160;:&#160;<a class="el" href="df/dbc/a52219.html#a65276f26b5d5197482a415b83a898560">hardware_communication::InterruptManager</a></li>
+<li>~KeyboardDriver()&#160;:&#160;<a class="el" href="d8/d91/a52187.html#a77da196f3c04c549e1085ce5566e5df3">driver::KeyboardDriver</a></li>
+<li>~KeyboardEventHandler()&#160;:&#160;<a class="el" href="da/d05/a52183.html#aed6531b818751f0f23b6b9836ac94aa0">driver::KeyboardEventHandler</a></li>
+<li>~KeyboardEventHandler_for_kernel()&#160;:&#160;<a class="el" href="df/dfc/a52167.html#ab2b7f34603d9cdd36554a4f7f6dde585">KeyboardEventHandler_for_kernel</a></li>
+<li>~MouseDriver()&#160;:&#160;<a class="el" href="da/d70/a52195.html#a8c25e4a4b42d1d39b332ba6d4cbd6a22">driver::MouseDriver</a></li>
+<li>~MouseEventHandler()&#160;:&#160;<a class="el" href="d8/d1e/a52191.html#abbfe4a7ae2911f989513178530314211">driver::MouseEventHandler</a></li>
+<li>~MouseEventHandler_for_kernel()&#160;:&#160;<a class="el" href="df/dd6/a52171.html#aa96e9bf8dce2b60b7f86577c3a74455d">MouseEventHandler_for_kernel</a></li>
+<li>~Port()&#160;:&#160;<a class="el" href="db/dbc/a52223.html#a8b13c33da4911afcbdcb21c97768a72e">hardware_communication::Port</a></li>
+<li>~Port16Bit()&#160;:&#160;<a class="el" href="d9/dab/a52235.html#a78dfa215194c676583e1b7e2dab38608">hardware_communication::Port16Bit</a></li>
+<li>~Port32Bit()&#160;:&#160;<a class="el" href="d6/d17/a52239.html#a3e87dc7d610b279e8e7e072a0d1ee78c">hardware_communication::Port32Bit</a></li>
+<li>~Port8Bit()&#160;:&#160;<a class="el" href="d6/d2d/a52227.html#a475bc218672c5743a9f8425cc84eb630">hardware_communication::Port8Bit</a></li>
+<li>~Port8BitSlow()&#160;:&#160;<a class="el" href="d8/deb/a52231.html#aa19647802064296f8bf76cc12f10d243">hardware_communication::Port8BitSlow</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 24 2025 12:11:18 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 12:19:54 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

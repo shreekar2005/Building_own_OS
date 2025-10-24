@@ -15,15 +15,13 @@
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-  /* @license-end */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
 </script>
-<link rel="search" href="search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="OSOS - Documentation"/>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -48,14 +46,15 @@ MathJax.Hub.Config({
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-          <div class="left">
-            <form id="FSearchBox" action="search.html" method="get">
-              <span id="MSearchSelectExt">&#160;</span>
-              <input type="text" id="MSearchField" name="query" value="" placeholder="Search" size="20" accesskey="S" 
-                     onfocus="searchBox.OnSearchFieldFocus(true)" 
-                     onblur="searchBox.OnSearchFieldFocus(false)"/>
-            </form>
-          </div><div class="right"></div>
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
         </div>
 </td></tr>
  </tbody>
@@ -84,14 +83,35 @@ $(document).ready(function(){initNavTree('dir_5b5337be9c567761b45350e8fb23514b.h
 /* @license-end */
 </script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="contents">
-<h3>driver &rarr; libk_header Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in OSOS/libk_src/driver</th><th class="dirtab">Includes file in OSOS/libk_header</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dc/dd0/a48233.html">kdriver.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="d2/ddd/a48266.html">kdriver.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d3/d28/a48236.html">kkeyboard.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="de/d51/a48260.html">kkeyboard.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d3/d28/a48236.html">kkeyboard.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="df/da3/a48263.html">kmouse.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d5/dbb/a48239.html">kmouse.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="df/da3/a48263.html">kmouse.hpp</a></td></tr></table></div><!-- contents -->
+<h3>driver &rarr; libk_header Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in OSOS/libk_src/driver</th><th class="dirtab">Includes file in OSOS/libk_header</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="db/d59/a51305.html">kdriver.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="df/d77/a51338.html">kdriver.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d8/dce/a51308.html">kkeyboard.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="d8/ddc/a51332.html">kkeyboard.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d8/dce/a51308.html">kkeyboard.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="dd/d0b/a51335.html">kmouse.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="d3/dbc/a51311.html">kmouse.cpp</a></td><td class="dirtab"><a class="el" href="dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a>&#160;/&#160;<a class="el" href="dd/d0b/a51335.html">kmouse.hpp</a></td></tr></table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="dir_267305fd0cd91744e53e95a33bbf4449.html">libk_src</a></li><li class="navelem"><a class="el" href="dir_5b5337be9c567761b45350e8fb23514b.html">driver</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 12:11:18 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Oct 24 2025 12:19:54 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
