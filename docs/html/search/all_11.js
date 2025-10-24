@@ -1,16 +1,4 @@
 var searchData=
 [
-  ['seg_5faccess_5fdesctype_0',['SEG_ACCESS_DESCTYPE',['../dc/dc4/a51344.html#a0d47ea941c3bdfd06858a467d2e76d83',1,'kgdt.hpp']]],
-  ['seg_5faccess_5fpres_1',['SEG_ACCESS_PRES',['../dc/dc4/a51344.html#ab9e609c85bc4472f4f9b69697f2e5067',1,'kgdt.hpp']]],
-  ['seg_5faccess_5fpriv_2',['SEG_ACCESS_PRIV',['../dc/dc4/a51344.html#a0cb0ae4ca069ed571a3b2db9190e12df',1,'kgdt.hpp']]],
-  ['seg_5faccess_5ftype_3',['SEG_ACCESS_TYPE',['../dc/dc4/a51344.html#a6c474d3015717ee1a2d99ae6a7b00ec3',1,'kgdt.hpp']]],
-  ['seg_5fcode_5fexrd_4',['SEG_CODE_EXRD',['../dc/dc4/a51344.html#ae04daf26bdb792ae557ef1216021cc43',1,'kgdt.hpp']]],
-  ['seg_5fdata_5frdwr_5',['SEG_DATA_RDWR',['../dc/dc4/a51344.html#add294548173871e30e54b92bf5da2758',1,'kgdt.hpp']]],
-  ['seg_5fgran_5fgran_6',['SEG_GRAN_GRAN',['../dc/dc4/a51344.html#ae86357f11d481de7242f3178629241b8',1,'kgdt.hpp']]],
-  ['seg_5fgran_5flong_7',['SEG_GRAN_LONG',['../dc/dc4/a51344.html#a9759917f0cd67a1d7c87849e211a7993',1,'kgdt.hpp']]],
-  ['seg_5fgran_5fsavl_8',['SEG_GRAN_SAVL',['../dc/dc4/a51344.html#a79a943b17e5929ca9e06fc7cc1cb0ccc',1,'kgdt.hpp']]],
-  ['seg_5fgran_5fsize_9',['SEG_GRAN_SIZE',['../dc/dc4/a51344.html#a7667e7c13f08890d3a6051346233691c',1,'kgdt.hpp']]],
-  ['setidtentry_10',['setIDTEntry',['../df/dbc/a52219.html#af448c0d55d2e226050b7f4efb6d4abe8',1,'hardware_communication::InterruptManager']]],
-  ['shift_5fpressed_11',['shift_pressed',['../d8/d91/a52187.html#afba07c783deebfb275c1437f7c23601d',1,'driver::KeyboardDriver']]],
-  ['system_20documentation_12',['OSOS - 32-bit Operating System Documentation',['../index.html',1,'']]]
+  ['tab_5fwidth_0',['TAB_WIDTH',['../d1/d0a/a56936.html#a49426d7a9b562958ad2ab7fbf134f368',1,'kiostream.cpp']]]
 ];

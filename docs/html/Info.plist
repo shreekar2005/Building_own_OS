@@ -4,7 +4,7 @@
 <plist version="1.0">
 <dict>
      <key>CFBundleName</key>
-     <string>OSOS - Documentation</string>
+     <string>OSOS Dev</string>
      <key>CFBundleIdentifier</key>
      <string>org.doxygen.Project</string>
      <key>CFBundleVersion</key>

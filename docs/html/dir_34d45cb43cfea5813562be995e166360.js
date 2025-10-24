@@ -1,5 +1,5 @@
 var dir_34d45cb43cfea5813562be995e166360 =
 [
-    [ "kiostream.hpp", "df/dac/a51323.html", "df/dac/a51323" ],
-    [ "kmemory.hpp", "d9/d91/a51320.html", "d9/d91/a51320" ]
+    [ "kiostream.hpp", "d3/dd3/a56963.html", "d3/dd3/a56963" ],
+    [ "kmemory.hpp", "dc/d6a/a56960.html", "dc/d6a/a56960" ]
 ];

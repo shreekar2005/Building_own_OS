@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['documentation_0',['OSOS - 32-bit Operating System Documentation',['../index.html',1,'']]]
+  ['osos_20dev_0',['About OSOS Dev',['../index.html',1,'']]]
 ];

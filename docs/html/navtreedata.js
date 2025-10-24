@@ -24,8 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "OSOS - Documentation", "index.html", [
-    [ "OSOS - 32-bit Operating System Documentation", "index.html", null ],
+  [ "OSOS Dev", "index.html", [
+    [ "About OSOS Dev", "index.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -60,7 +60,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"da/d70/a52195.html#a1b2f08490b7954e5ca504cd8bb6862c0",
+"d9/dd7/a56988.html#a9d1f0f838e646660db6d9284725c2b4c",
 "globals.html"
 ];
 

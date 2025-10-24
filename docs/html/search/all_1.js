@@ -1,14 +1,10 @@
 var searchData=
 [
-  ['_5f_5fatexit_5ffunc_5fcount_0',['__atexit_func_count',['../d7/d85/a51317.html#a0f75f529cf75cf0a9cd266f8d67675dc',1,'kicxxabi.cpp']]],
-  ['_5f_5fatexit_5ffuncs_1',['__atexit_funcs',['../d7/d85/a51317.html#a05a64060e9039acf0ba3c311b2d981b7',1,'kicxxabi.cpp']]],
-  ['_5f_5fattribute_5f_5f_2',['__attribute__',['../d3/dd5/a51351.html#a21c3ca5c318038eaed596c14fd2666ed',1,'hardware_communication::__attribute__'],['../d9/d8b/a51350.html#ac6f2caf09aaeeddff940849a9580377f',1,'essential::__attribute__()'],['../d3/dd5/a51351.html#abfdb717d468296a4b6e08ea847005f01',1,'hardware_communication::__attribute__()']]],
-  ['_5f_5fcallconstructors_3',['__callConstructors',['../d9/d8b/a51350.html#a433c3d2d19d89890b522ac26b05fa7aa',1,'essential']]],
-  ['_5f_5fclearscreen_4',['__clearScreen',['../df/def/a51348.html#a02923caa95013ec5d9333c25d9cca1d6',1,'basic']]],
-  ['_5f_5fcxa_5fatexit_5',['__cxa_atexit',['../d7/d85/a51317.html#a6870fb46accc462562647e3d99c0b7c7',1,'kicxxabi.cpp']]],
-  ['_5f_5fcxa_5ffinalize_6',['__cxa_finalize',['../d9/d8b/a51350.html#a098e7240e26e869c035075be004b4ee9',1,'essential']]],
-  ['_5f_5fdso_5fhandle_7',['__dso_handle',['../d7/d85/a51317.html#a19df960d2907e9c08a720ae7683e632c',1,'kicxxabi.cpp']]],
-  ['_5f_5fmouse_5fx_5f_8',['__mouse_x_',['../da/d70/a52195.html#ac2077f6309c79d5f585fb966b57fe065',1,'driver::MouseDriver']]],
-  ['_5f_5fmouse_5fy_5f_9',['__mouse_y_',['../da/d70/a52195.html#aa02009b37420687ef18db8a05ff9181f',1,'driver::MouseDriver']]],
-  ['_5f_5fprintmemorymap_10',['__printMemoryMap',['../df/def/a51348.html#a53c6425a55d9fb93998da01f2416f9ad',1,'basic']]]
+  ['about_20osos_20dev_0',['About OSOS Dev',['../index.html',1,'']]],
+  ['access_1',['access',['../d8/dec/a57839.html#ada83c26e24175c136116be890d84966f',1,'essential::GDT_Row::access'],['../d6/d14/a57855.html#a02acf6545c95a74760d82691b73937b1',1,'hardware_communication::IDT_Row::access'],['../d6/df4/a56984.html#a8b0d6200bc639dd37ff68847a0adde5f',1,'access:&#160;kgdt.hpp'],['../d4/def/a56966.html#a8b0d6200bc639dd37ff68847a0adde5f',1,'access:&#160;kinterrupt.hpp']]],
+  ['activate_2',['activate',['../d9/d99/a57815.html#a8c86c1e52652d8b491d37a3b60b535b0',1,'driver::Driver::activate()'],['../de/d60/a57827.html#a58553d39d7dcfe6b55e8ddb1e7b1d187',1,'driver::KeyboardDriver::activate()'],['../df/dd3/a57835.html#a446769df0b3b537a525476c7c8be47bc',1,'driver::MouseDriver::activate()'],['../dc/d03/a57859.html#a1ab5b6378071338ede295f0bffaf3d51',1,'hardware_communication::InterruptManager::activate()']]],
+  ['activateall_3',['activateAll',['../d3/d1f/a57819.html#a05b071d8a8c12f2d284fb61f4ecd116e',1,'driver::DriverManager']]],
+  ['adddriver_4',['addDriver',['../d3/d1f/a57819.html#ab8bd89b91ea49f343276c3c841153cd8',1,'driver::DriverManager']]],
+  ['atexit_5ffunc_5fentry_5ft_5',['atexit_func_entry_t',['../d1/d0f/a57847.html',1,'essential']]],
+  ['atexit_5fmax_5ffuncs_6',['ATEXIT_MAX_FUNCS',['../d9/db6/a56981.html#ae07a9ad040d2fbefafcff363b77697ce',1,'kicxxabi.hpp']]]
 ];
