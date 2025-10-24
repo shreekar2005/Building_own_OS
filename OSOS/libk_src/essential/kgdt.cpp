@@ -1,10 +1,13 @@
 #include "essential/kgdt.hpp"
 
-// GDT_row (Segment Descriptor)
-
-// Default constructor for a null GDT_row entry.
+/// @brief Default constructor for a null GDT_row entry.
 essential::GDT_row::GDT_row() : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
 
+/// @brief Constructs a GDT_row (Segment Descriptor) with specified parameters.
+/// @param base The 32-bit base address of the segment.
+/// @param limit The 20-bit limit (size) of the segment.
+/// @param access_byte The 8-bit access flags for the segment.
+/// @param gran_byte The 8-bit granularity flags for the segment.
 essential::GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte) {
     this->limit_low   = (limit & 0xFFFF);
     this->base_low    = (base & 0xFFFF);
@@ -19,10 +22,11 @@ essential::GDT_row::GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, 
     this->access = access_byte;
 }
 
+/// @brief Destroys the GDT_row object.
 essential::GDT_row::~GDT_row() {}
 
 
-// GDT (Global Descriptor Table)
+/// @brief Constructs a new GDT object and initializes the standard kernel/user segments.
 essential::GDT::GDT()
     // Use an initializer list to construct each GDT entry.
     : nullSegment(), // First entry must be a null descriptor.
@@ -39,10 +43,11 @@ essential::GDT::GDT()
     base = (uintptr_t)&this->nullSegment;
 }
 
+/// @brief Destroys the GDT object.
 essential::GDT::~GDT() {}
 
 
-// Loads this GDT into the CPU's GDTR and reloads segment registers.
+/// @brief Loads this GDT into the CPU's GDTR and reloads all segment registers.
 void essential::GDT::installTable() {
     // A structure that matches the 6-byte format required by the 'lgdt' instruction.
     struct GDT_Pointer {
@@ -76,9 +81,7 @@ void essential::GDT::installTable() {
     basic::printf("GDT Installed\n");
 }
 
-/**
- * @brief (Static) Prints the currently loaded GDT by reading the GDTR.
- */
+/// @brief (Static) Prints the details of all entries in the currently loaded GDT.
 void essential::GDT::printLoadedTable() {
     struct GDT_Pointer {
         uint16_t limit;
@@ -117,6 +120,7 @@ void essential::GDT::printLoadedTable() {
     basic::printf("---\n");
 }
 
+/// @brief (Static) Prints the header information (base, limit, count) of the currently loaded GDT.
 void essential::GDT::printLoadedTableHeader() {
     struct GDT_Pointer {
         uint16_t limit;
@@ -137,7 +141,15 @@ void essential::GDT::printLoadedTableHeader() {
 
 // --- Static functions to get segment selectors ---
 
+/// @brief (Static) Gets the kernel code segment selector.
+/// @return The 16-bit selector value.
 uint16_t essential::GDT::kernel_CS_selector() { return sizeof(essential::GDT_row) * 1; } // Selector 0x08
+/// @brief (Static) Gets the kernel data segment selector.
+/// @return The 16-bit selector value.
 uint16_t essential::GDT::kernel_DS_selector() { return sizeof(essential::GDT_row) * 2; } // Selector 0x10
+/// @brief (Static) Gets the user code segment selector.
+/// @return The 16-bit selector value.
 uint16_t essential::GDT::user_CS_selector()   { return sizeof(essential::GDT_row) * 3; } // Selector 0x18
+/// @brief (Static) Gets the user data segment selector.
+/// @return The 16-bit selector value.
 uint16_t essential::GDT::user_DS_selector()   { return sizeof(essential::GDT_row) * 4; } // Selector 0x20

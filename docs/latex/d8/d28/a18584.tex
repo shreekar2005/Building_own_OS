@@ -1,0 +1,72 @@
+\doxysubsection{/home/shreekar/\+Desktop/\+Building\+\_\+own\+\_\+\+OS/\+OSOS/libk\+\_\+header/essential/kicxxabi.hpp File Reference}
+\hypertarget{a18584}{}\label{a18584}\index{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/essential/kicxxabi.hpp@{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/essential/kicxxabi.hpp}}
+{\ttfamily \#include "{}basic/kiostream.\+hpp"{}}\newline
+Include dependency graph for kicxxabi.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{df/d77/a18585}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d89/a18586}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a19525}{essential\+::atexit\+\_\+func\+\_\+entry\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold a registered C++ ABI exit function (destructor). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a18620}{essential}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a18584_ae07a9ad040d2fbefafcff363b77697ce}{ATEXIT\+\_\+\+MAX\+\_\+\+FUNCS}}~128
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned \mbox{\hyperlink{a18584_a35fc01d4eba01f3f2ec636bd6b5ff34f}{uarch\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a18620_a433c3d2d19d89890b522ac26b05fa7aa}{essential\+::\+\_\+\+\_\+call\+Constructors}} ()
+\begin{DoxyCompactList}\small\item\em Iterates over the list of global constructors and calls them to initialize global C++ objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a18620_a098e7240e26e869c035075be004b4ee9}{essential\+::\+\_\+\+\_\+cxa\+\_\+finalize}} (void \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Executes registered destructors/cleanup functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{a18584_ae07a9ad040d2fbefafcff363b77697ce}\label{a18584_ae07a9ad040d2fbefafcff363b77697ce} 
+\index{kicxxabi.hpp@{kicxxabi.hpp}!ATEXIT\_MAX\_FUNCS@{ATEXIT\_MAX\_FUNCS}}
+\index{ATEXIT\_MAX\_FUNCS@{ATEXIT\_MAX\_FUNCS}!kicxxabi.hpp@{kicxxabi.hpp}}
+\doxyparagraph{\texorpdfstring{ATEXIT\_MAX\_FUNCS}{ATEXIT\_MAX\_FUNCS}}
+{\footnotesize\ttfamily \#define ATEXIT\+\_\+\+MAX\+\_\+\+FUNCS~128}
+
+
+
+Definition at line \mbox{\hyperlink{a18584_source_l00004}{4}} of file \mbox{\hyperlink{a18584_source}{kicxxabi.\+hpp}}.
+
+
+
+\doxysubsubsection{Typedef Documentation}
+\Hypertarget{a18584_a35fc01d4eba01f3f2ec636bd6b5ff34f}\label{a18584_a35fc01d4eba01f3f2ec636bd6b5ff34f} 
+\index{kicxxabi.hpp@{kicxxabi.hpp}!uarch\_t@{uarch\_t}}
+\index{uarch\_t@{uarch\_t}!kicxxabi.hpp@{kicxxabi.hpp}}
+\doxyparagraph{\texorpdfstring{uarch\_t}{uarch\_t}}
+{\footnotesize\ttfamily typedef unsigned \mbox{\hyperlink{a18584_a35fc01d4eba01f3f2ec636bd6b5ff34f}{uarch\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{a18584_source_l00005}{5}} of file \mbox{\hyperlink{a18584_source}{kicxxabi.\+hpp}}.
+

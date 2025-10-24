@@ -1,8 +1,9 @@
-.TH "hardware_communication::InterruptHandler" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "hardware_communication::InterruptHandler" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-hardware_communication::InterruptHandler
+hardware_communication::InterruptHandler \- Base class (interface) for handling specific CPU interrupts\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -23,9 +24,11 @@ Inherited by \fBdriver::KeyboardDriver\fP, and \fBdriver::MouseDriver\fP\&.
 .ti -1c
 .RI "\fBInterruptHandler\fP (uint8_t \fBinterruptNumber\fP, \fBInterruptManager\fP *\fBinterrupt_manager\fP)"
 .br
+.RI "Constructs an \fBInterruptHandler\fP, registering it with the \fBInterruptManager\fP\&. "
 .ti -1c
 .RI "\fB~InterruptHandler\fP ()"
 .br
+.RI "Destroys the \fBInterruptHandler\fP, unregistering it from the \fBInterruptManager\fP if it's still the active handler\&. "
 .in -1c
 .SS "Protected Attributes"
 
@@ -39,19 +42,32 @@ Inherited by \fBdriver::KeyboardDriver\fP, and \fBdriver::MouseDriver\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB23\fP of file \fBkinterrupt\&.hpp\fP\&.
+Base class (interface) for handling specific CPU interrupts\&. 
+.PP
+Definition at line \fB22\fP of file \fBkinterrupt\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "hardware_communication::InterruptHandler::InterruptHandler (uint8_t interruptNumber, \fBhardware_communication::InterruptManager\fP * interrupt_manager)\fC [protected]\fP"
 
 .PP
-Definition at line \fB11\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+Constructs an \fBInterruptHandler\fP, registering it with the \fBInterruptManager\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterruptNumber\fP The number of the interrupt (0-255) this handler serves\&. 
+.br
+\fIinterrupt_manager\fP A pointer to the \fBInterruptManager\fP instance\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB6\fP of file \fBkinterrupt\&.cpp\fP\&..PP
 .nf
-11                                                                                                                                           {
-12     this\->interruptNumber=interruptNumber;
-13     this\->interrupt_manager=interrupt_manager;
-14     interrupt_manager\->handlers[interruptNumber]=this;
-15 }
+6                                                                                                                                           {
+7     this\->interruptNumber=interruptNumber;
+8     this\->interrupt_manager=interrupt_manager;
+9     interrupt_manager\->handlers[interruptNumber]=this;
+10 }
 .fi
 
 .PP
@@ -59,11 +75,13 @@ References \fBhardware_communication::InterruptManager::handlers\fP, \fBinterrup
 .SS "hardware_communication::InterruptHandler::~InterruptHandler ()\fC [protected]\fP"
 
 .PP
-Definition at line \fB16\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+Destroys the \fBInterruptHandler\fP, unregistering it from the \fBInterruptManager\fP if it's still the active handler\&. 
+.PP
+Definition at line \fB12\fP of file \fBkinterrupt\&.cpp\fP\&..PP
 .nf
-16                                                          {
-17     if(interrupt_manager\->handlers[interruptNumber]==this) interrupt_manager\->handlers[interruptNumber]=nullptr;
-18 }
+12                                                          {
+13     if(interrupt_manager\->handlers[interruptNumber]==this) interrupt_manager\->handlers[interruptNumber]=nullptr;
+14 }
 .fi
 
 .SH "Member Function Documentation"
@@ -77,13 +95,13 @@ Referenced by \fBhardware_communication::InterruptManager::handleInterrupt()\fP\
 .SS "\fBInterruptManager\fP* hardware_communication::InterruptHandler::interrupt_manager\fC [protected]\fP"
 
 .PP
-Definition at line \fB26\fP of file \fBkinterrupt\&.hpp\fP\&.
+Definition at line \fB25\fP of file \fBkinterrupt\&.hpp\fP\&.
 .PP
 Referenced by \fBInterruptHandler()\fP\&.
 .SS "uint8_t hardware_communication::InterruptHandler::interruptNumber\fC [protected]\fP"
 
 .PP
-Definition at line \fB25\fP of file \fBkinterrupt\&.hpp\fP\&.
+Definition at line \fB24\fP of file \fBkinterrupt\&.hpp\fP\&.
 .PP
 Referenced by \fBInterruptHandler()\fP\&.
 

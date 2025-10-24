@@ -1,8 +1,9 @@
-.TH "essential::GDT_row" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "essential::GDT_row" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-essential::GDT_row
+essential::GDT_row \- Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (\fBGDT\fP)\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,12 +15,15 @@ essential::GDT_row
 .ti -1c
 .RI "\fBGDT_row\fP ()"
 .br
+.RI "Default constructor for a null \fBGDT_row\fP entry\&. "
 .ti -1c
 .RI "\fBGDT_row\fP (uint32_t \fBbase\fP, uint32_t \fBlimit\fP, uint8_t access_byte, uint8_t gran_byte)"
 .br
+.RI "Constructs a \fBGDT_row\fP (Segment Descriptor) with specified parameters\&. "
 .ti -1c
 .RI "\fB~GDT_row\fP ()"
 .br
+.RI "Destroys the \fBGDT_row\fP object\&. "
 .in -1c
 .SS "Private Attributes"
 
@@ -45,27 +49,44 @@ essential::GDT_row
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB34\fP of file \fBkgdt\&.hpp\fP\&.
+Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (\fBGDT\fP)\&. 
+.PP
+Definition at line \fB35\fP of file \fBkgdt\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "essential::GDT_row::GDT_row (uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte)"
 
 .PP
-Definition at line \fB8\fP of file \fBkgdt\&.cpp\fP\&..PP
+Constructs a \fBGDT_row\fP (Segment Descriptor) with specified parameters\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbase\fP The 32-bit base address of the segment\&. 
+.br
+\fIlimit\fP The 20-bit limit (size) of the segment\&. 
+.br
+\fIaccess_byte\fP The 8-bit access flags for the segment\&. 
+.br
+\fIgran_byte\fP The 8-bit granularity flags for the segment\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB11\fP of file \fBkgdt\&.cpp\fP\&..PP
 .nf
-8                                                                                                {
-9     this\->limit_low   = (limit & 0xFFFF);
-10     this\->base_low    = (base & 0xFFFF);
-11     this\->base_middle = (base >> 16) & 0xFF;
-12     this\->base_high   = (base >> 24) & 0xFF;
-13 
-14     // The upper 4 bits of the 20\-bit limit go into the lower 4 bits of the granularity byte\&.
-15     this\->granularity = ((limit >> 16) & 0x0F);
-16     // The granularity flags (G, D/B, L, AVL) go into the upper 4 bits\&.
-17     this\->granularity |= (gran_byte & 0xF0);
-18     // Set the access flags for this segment\&.
-19     this\->access = access_byte;
-20 }
+11                                                                                                {
+12     this\->limit_low   = (limit & 0xFFFF);
+13     this\->base_low    = (base & 0xFFFF);
+14     this\->base_middle = (base >> 16) & 0xFF;
+15     this\->base_high   = (base >> 24) & 0xFF;
+16 
+17     // The upper 4 bits of the 20\-bit limit go into the lower 4 bits of the granularity byte\&.
+18     this\->granularity = ((limit >> 16) & 0x0F);
+19     // The granularity flags (G, D/B, L, AVL) go into the upper 4 bits\&.
+20     this\->granularity |= (gran_byte & 0xF0);
+21     // Set the access flags for this segment\&.
+22     this\->access = access_byte;
+23 }
 .fi
 
 .PP
@@ -73,17 +94,21 @@ References \fBaccess\fP, \fBbase_high\fP, \fBbase_low\fP, \fBbase_middle\fP, \fB
 .SS "essential::GDT_row::GDT_row ()"
 
 .PP
-Definition at line \fB6\fP of file \fBkgdt\&.cpp\fP\&..PP
+Default constructor for a null \fBGDT_row\fP entry\&. 
+.PP
+Definition at line \fB4\fP of file \fBkgdt\&.cpp\fP\&..PP
 .nf
-6 : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
+4 : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
 .fi
 
 .SS "essential::GDT_row::~GDT_row ()"
 
 .PP
-Definition at line \fB22\fP of file \fBkgdt\&.cpp\fP\&..PP
+Destroys the \fBGDT_row\fP object\&. 
+.PP
+Definition at line \fB26\fP of file \fBkgdt\&.cpp\fP\&..PP
 .nf
-22 {}
+26 {}
 .fi
 
 .SH "Member Data Documentation"
@@ -91,37 +116,37 @@ Definition at line \fB22\fP of file \fBkgdt\&.cpp\fP\&..PP
 .SS "uint8_t essential::GDT_row::access\fC [private]\fP"
 
 .PP
-Definition at line \fB39\fP of file \fBkgdt\&.hpp\fP\&.
+Definition at line \fB40\fP of file \fBkgdt\&.hpp\fP\&.
 .PP
 Referenced by \fBessential::GDT::printLoadedTable()\fP\&.
 .SS "uint8_t essential::GDT_row::base_high\fC [private]\fP"
 
 .PP
-Definition at line \fB41\fP of file \fBkgdt\&.hpp\fP\&.
+Definition at line \fB42\fP of file \fBkgdt\&.hpp\fP\&.
 .PP
 Referenced by \fBessential::GDT::printLoadedTable()\fP\&.
 .SS "uint16_t essential::GDT_row::base_low\fC [private]\fP"
 
 .PP
-Definition at line \fB37\fP of file \fBkgdt\&.hpp\fP\&.
+Definition at line \fB38\fP of file \fBkgdt\&.hpp\fP\&.
 .PP
 Referenced by \fBessential::GDT::printLoadedTable()\fP\&.
 .SS "uint8_t essential::GDT_row::base_middle\fC [private]\fP"
 
 .PP
-Definition at line \fB38\fP of file \fBkgdt\&.hpp\fP\&.
+Definition at line \fB39\fP of file \fBkgdt\&.hpp\fP\&.
 .PP
 Referenced by \fBessential::GDT::printLoadedTable()\fP\&.
 .SS "uint8_t essential::GDT_row::granularity\fC [private]\fP"
 
 .PP
-Definition at line \fB40\fP of file \fBkgdt\&.hpp\fP\&.
+Definition at line \fB41\fP of file \fBkgdt\&.hpp\fP\&.
 .PP
 Referenced by \fBessential::GDT::printLoadedTable()\fP\&.
 .SS "uint16_t essential::GDT_row::limit_low\fC [private]\fP"
 
 .PP
-Definition at line \fB36\fP of file \fBkgdt\&.hpp\fP\&.
+Definition at line \fB37\fP of file \fBkgdt\&.hpp\fP\&.
 .PP
 Referenced by \fBessential::GDT::printLoadedTable()\fP\&.
 

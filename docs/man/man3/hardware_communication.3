@@ -1,4 +1,4 @@
-.TH "hardware_communication" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "hardware_communication" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,27 +12,35 @@ hardware_communication
 .ti -1c
 .RI "class \fBIDT_row\fP"
 .br
+.RI "Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT)\&. "
 .ti -1c
 .RI "class \fBInterruptHandler\fP"
 .br
+.RI "Base class (interface) for handling specific CPU interrupts\&. "
 .ti -1c
 .RI "class \fBInterruptManager\fP"
 .br
+.RI "Manages the Interrupt Descriptor Table (IDT) and Programmable Interrupt Controllers (PICs), dispatching interrupts to registered handlers\&. "
 .ti -1c
 .RI "class \fBPort\fP"
 .br
+.RI "Base class for hardware I/O port communication\&. "
 .ti -1c
 .RI "class \fBPort16Bit\fP"
 .br
+.RI "Represents a 16-bit (word-sized) I/O port\&. @inherits \fBPort\fP\&. "
 .ti -1c
 .RI "class \fBPort32Bit\fP"
 .br
+.RI "Represents a 32-bit (double-word-sized) I/O port\&. @inherits \fBPort\fP\&. "
 .ti -1c
 .RI "class \fBPort8Bit\fP"
 .br
+.RI "Represents an 8-bit (byte-sized) I/O port\&. @inherits \fBPort\fP\&. "
 .ti -1c
 .RI "class \fBPort8BitSlow\fP"
 .br
+.RI "Represents an 8-bit I/O port with a forced delay on writes\&. @inherits \fBPort8Bit\fP\&. "
 .in -1c
 .SS "Functions"
 

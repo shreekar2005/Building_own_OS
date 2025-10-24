@@ -1,5 +1,5 @@
 #include <cstdint>
-#include "basic/multiboot.hpp" // header for handling multiboot info (provided by grub)
+#include "basic/multiboot.h" // header for handling multiboot info (provided by grub)
 #include "essential/kicxxabi.hpp"
 #include "basic/kiostream.hpp"  // header to use video memory : e.g. printf, keyboard_input_by_polling
 #include "basic/kmemory.hpp" // for using printMemoryMap()

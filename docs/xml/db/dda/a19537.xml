@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="db/dda/a19537" kind="class" language="C++" prot="public">
+    <compoundname>hardware_communication::InterruptManager</compoundname>
+    <includes refid="da/d36/a18569" local="yes">kinterrupt.hpp</includes>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="db/dda/a19537_1a9aef4ea3434f8ddeaf9c32a63e6faf05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class InterruptHandler</definition>
+        <argsstring></argsstring>
+        <name>InterruptHandler</name>
+        <qualifiedname>hardware_communication::InterruptManager::InterruptHandler</qualifiedname>
+        <param>
+          <type><ref refid="dd/d18/a19529" kindref="compound">InterruptHandler</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="49" column="26" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/dda/a19537_1ad94bd8e9c355fde3e814d4894bab0181" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hardware_communication::InterruptManager::base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <qualifiedname>hardware_communication::InterruptManager::base</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="53" column="26" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dda/a19537_1a1991d8428ff7c74b31f42d48bb49547a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hardware_communication::InterruptManager::limit</definition>
+        <argsstring></argsstring>
+        <name>limit</name>
+        <qualifiedname>hardware_communication::InterruptManager::limit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="52" column="26" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="db/dda/a19537_1ac8aba191e612ad605b8b188f78e65d3b" prot="protected" static="no" mutable="no">
+        <type><ref refid="dd/d18/a19529" kindref="compound">InterruptHandler</ref> *</type>
+        <definition>InterruptHandler* hardware_communication::InterruptManager::handlers[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>handlers</name>
+        <qualifiedname>hardware_communication::InterruptManager::handlers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="58" column="34" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="58" bodyend="-1"/>
+        <referencedby refid="dd/d18/a19529_1a134c8931dff43e766f1ddc4d0f35cd48" compoundref="d3/d3a/a18599" startline="6" endline="10">hardware_communication::InterruptHandler::InterruptHandler</referencedby>
+        <referencedby refid="db/dda/a19537_1a2d3ef1656e1eaaf86be40a200a49a4b2" compoundref="d3/d3a/a18599" startline="185" endline="202">handleInterrupt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="db/dda/a19537_1a7b6bb52a8072c51bfcb4f4877c3d0226" prot="protected" static="no" mutable="no">
+        <type><ref refid="d4/d2e/a19533" kindref="compound">IDT_row</ref></type>
+        <definition>IDT_row hardware_communication::InterruptManager::interruptDescriptorTable[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>interruptDescriptorTable</name>
+        <qualifiedname>hardware_communication::InterruptManager::interruptDescriptorTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="55" column="25" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="db/dda/a19537_1acb04723d03d6b34abbc5f7407cab0b33" prot="protected" static="yes" mutable="no">
+        <type><ref refid="d4/dc9/a19549" kindref="compound">hardware_communication::Port8BitSlow</ref></type>
+        <definition>hardware_communication::Port8BitSlow hardware_communication::InterruptManager::picMasterCommand</definition>
+        <argsstring></argsstring>
+        <name>picMasterCommand</name>
+        <qualifiedname>hardware_communication::InterruptManager::picMasterCommand</qualifiedname>
+        <briefdescription>
+<para>Command port for the Master PIC (8259A). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="66" column="61" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dda/a19537_1a5287e31a546f60708b085b387332a904" prot="protected" static="yes" mutable="no">
+        <type><ref refid="d4/dc9/a19549" kindref="compound">hardware_communication::Port8BitSlow</ref></type>
+        <definition>hardware_communication::Port8BitSlow hardware_communication::InterruptManager::picMasterData</definition>
+        <argsstring></argsstring>
+        <name>picMasterData</name>
+        <qualifiedname>hardware_communication::InterruptManager::picMasterData</qualifiedname>
+        <briefdescription>
+<para>Data port for the Master PIC (8259A). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="67" column="61" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dda/a19537_1afed9d24b37c8f9386a71f4284b2502a4" prot="protected" static="yes" mutable="no">
+        <type><ref refid="d4/dc9/a19549" kindref="compound">hardware_communication::Port8BitSlow</ref></type>
+        <definition>hardware_communication::Port8BitSlow hardware_communication::InterruptManager::picSlaveCommand</definition>
+        <argsstring></argsstring>
+        <name>picSlaveCommand</name>
+        <qualifiedname>hardware_communication::InterruptManager::picSlaveCommand</qualifiedname>
+        <briefdescription>
+<para>Command port for the Slave PIC (8259A). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="68" column="61" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dda/a19537_1ac1111b7cfbd27b37f03a0678ae5dbaf1" prot="protected" static="yes" mutable="no">
+        <type><ref refid="d4/dc9/a19549" kindref="compound">hardware_communication::Port8BitSlow</ref></type>
+        <definition>hardware_communication::Port8BitSlow hardware_communication::InterruptManager::picSlaveData</definition>
+        <argsstring></argsstring>
+        <name>picSlaveData</name>
+        <qualifiedname>hardware_communication::InterruptManager::picSlaveData</qualifiedname>
+        <briefdescription>
+<para>Data port for the Slave PIC (8259A). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="69" column="61" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="db/dda/a19537_1af448c0d55d2e226050b7f4efb6d4abe8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::InterruptManager::setIDTEntry</definition>
+        <argsstring>(uint8_t interruptNumber, uint16_t codeSegmentSelectorOffset, void(*handler)(), uint8_t DescriptorPrivilegeLever, uint8_t DescriptorType)</argsstring>
+        <name>setIDTEntry</name>
+        <qualifiedname>hardware_communication::InterruptManager::setIDTEntry</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>interruptNumber</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>codeSegmentSelectorOffset</declname>
+        </param>
+        <param>
+          <type>void(*)()</type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>DescriptorPrivilegeLever</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>DescriptorType</declname>
+        </param>
+        <briefdescription>
+<para>Populates a specific entry in the Interrupt Descriptor Table (IDT). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interruptNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the IDT entry to set (0-255). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>codeSegmentSelectorOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The segment selector for the interrupt handler code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A function pointer to the assembly stub that handles the interrupt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DescriptorPrivilegeLever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DPL (Descriptor Privilege Level) for the interrupt gate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DescriptorType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the descriptor (e.g., 0xE for 32-bit Interrupt Gate). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="59" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="84" bodyend="96"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/dda/a19537_1aec70c703cac64ef1eec4b5a94d2e145c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::InterruptManager::InterruptManager</definition>
+        <argsstring>(essential::GDT *gdt)</argsstring>
+        <name>InterruptManager</name>
+        <qualifiedname>hardware_communication::InterruptManager::InterruptManager</qualifiedname>
+        <param>
+          <type><ref refid="d0/d39/a19521" kindref="compound">essential::GDT</ref> *</type>
+          <declname>gdt</declname>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="db/dda/a19537" kindref="compound">InterruptManager</ref>, initializes the PICs, and populates the IDT. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gdt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the Global Descriptor Table instance, needed to get the kernel code segment selector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="72" column="17" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="33" bodyend="73"/>
+        <references refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" compoundref="d2/d9a/a18587" startline="2">base</references>
+        <references refid="da/d36/a18569_1adf60fad10b12cc19ad193c928d36445c">handleIRQ0x00</references>
+        <references refid="da/d36/a18569_1a6498ed740318b424aaae4db1f223e558">handleIRQ0x01</references>
+        <references refid="da/d36/a18569_1a996c60cc7e88bb1c85505c19f6c35117">handleIRQ0x0C</references>
+        <references refid="da/d36/a18569_1a07e074bde074261858311b014bc2b398">ignoreInterrupt</references>
+        <references refid="d0/d39/a19521_1a89a8d2c17e3c22e7200bff09252f46e1" compoundref="d7/dc9/a18611" startline="146" endline="146">essential::GDT::kernel_CS_selector</references>
+        <references refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" compoundref="d2/d9a/a18587" startline="1">limit</references>
+      </memberdef>
+      <memberdef kind="function" id="db/dda/a19537_1a65276f26b5d5197482a415b83a898560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::InterruptManager::~InterruptManager</definition>
+        <argsstring>()</argsstring>
+        <name>~InterruptManager</name>
+        <qualifiedname>hardware_communication::InterruptManager::~InterruptManager</qualifiedname>
+        <briefdescription>
+<para>Destroys the <ref refid="db/dda/a19537" kindref="compound">InterruptManager</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="73" column="17" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dda/a19537_1a81d593116320da32f1aa4057087f1e11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::InterruptManager::installTable</definition>
+        <argsstring>()</argsstring>
+        <name>installTable</name>
+        <qualifiedname>hardware_communication::InterruptManager::installTable</qualifiedname>
+        <briefdescription>
+<para>Loads the Interrupt Descriptor Table (IDT) into the CPU&apos;s IDTR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="74" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="100" bodyend="113"/>
+        <references refid="d1/d96/a18621_1a21c3ca5c318038eaed596c14fd2666ed">hardware_communication::__attribute__</references>
+        <references refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" compoundref="d2/d9a/a18587" startline="2">base</references>
+        <references refid="d3/d3a/a18599_1a1df59a6c3578a3d5d96bfef4ffd8fbc8" compoundref="d3/d3a/a18599" startline="98">installed_interrupt_manager</references>
+        <references refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" compoundref="d2/d9a/a18587" startline="1">limit</references>
+        <references refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d8/d87/a18593" startline="306" endline="502">basic::printf</references>
+        <referencedby refid="d2/d7a/a18557_1abb4e4866092116b520310d61961bfe12" compoundref="d2/d7a/a18557" startline="105" endline="142">kernelMain</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="db/dda/a19537_1a1ab5b6378071338ede295f0bffaf3d51" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::InterruptManager::activate</definition>
+        <argsstring>()</argsstring>
+        <name>activate</name>
+        <qualifiedname>hardware_communication::InterruptManager::activate</qualifiedname>
+        <briefdescription>
+<para>Enables interrupts globally by executing the &apos;sti&apos; instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="75" column="29" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="117" bodyend="120"/>
+        <references refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d8/d87/a18593" startline="306" endline="502">basic::printf</references>
+        <referencedby refid="d2/d7a/a18557_1abb4e4866092116b520310d61961bfe12" compoundref="d2/d7a/a18557" startline="105" endline="142">kernelMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/dda/a19537_1a9451566bf08617378ca2144505d394a6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::InterruptManager::deactivate</definition>
+        <argsstring>()</argsstring>
+        <name>deactivate</name>
+        <qualifiedname>hardware_communication::InterruptManager::deactivate</qualifiedname>
+        <briefdescription>
+<para>Disables interrupts globally by executing the &apos;cli&apos; instruction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="76" column="29" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="122" bodyend="125"/>
+        <references refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d8/d87/a18593" startline="306" endline="502">basic::printf</references>
+      </memberdef>
+      <memberdef kind="function" id="db/dda/a19537_1a2d3ef1656e1eaaf86be40a200a49a4b2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uintptr_t</type>
+        <definition>uintptr_t hardware_communication::InterruptManager::handleInterrupt</definition>
+        <argsstring>(uint8_t interruptNumber, uintptr_t esp)</argsstring>
+        <name>handleInterrupt</name>
+        <qualifiedname>hardware_communication::InterruptManager::handleInterrupt</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>interruptNumber</declname>
+        </param>
+        <param>
+          <type>uintptr_t</type>
+          <declname>esp</declname>
+        </param>
+        <briefdescription>
+<para>The central interrupt dispatching function called by assembly stubs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interruptNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of the interrupt that occurred. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>esp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stack pointer (Extended Stack Pointer) from the context of the interrupted process. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The updated stack pointer, typically the same as the input unless the handler modified the stack frame. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="79" column="34" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="185" bodyend="202"/>
+        <references refid="dd/d18/a19529_1aa89d41d69840cb4f1c8692fa6ded28f4">hardware_communication::InterruptHandler::handleInterrupt</references>
+        <references refid="db/dda/a19537_1ac8aba191e612ad605b8b188f78e65d3b" compoundref="da/d36/a18569" startline="58">handlers</references>
+        <references refid="d3/d3a/a18599_1a1df59a6c3578a3d5d96bfef4ffd8fbc8" compoundref="d3/d3a/a18599" startline="98">installed_interrupt_manager</references>
+        <references refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d8/d87/a18593" startline="306" endline="502">basic::printf</references>
+      </memberdef>
+      <memberdef kind="function" id="db/dda/a19537_1aac20f3a896bea512413568a60ad48c3d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::InterruptManager::printLoadedTable</definition>
+        <argsstring>()</argsstring>
+        <name>printLoadedTable</name>
+        <qualifiedname>hardware_communication::InterruptManager::printLoadedTable</qualifiedname>
+        <briefdescription>
+<para>Prints the details of all entries in the currently loaded IDT. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="77" column="29" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="128" bodyend="160"/>
+        <references refid="d1/d96/a18621_1a21c3ca5c318038eaed596c14fd2666ed">hardware_communication::__attribute__</references>
+        <references refid="d2/d9a/a18587_1a8b0d6200bc639dd37ff68847a0adde5f" compoundref="d2/d9a/a18587" startline="4">access</references>
+        <references refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" compoundref="d2/d9a/a18587" startline="2">base</references>
+        <references refid="d4/d2e/a19533_1af1a4bb042f75f10c5e2b08034e82aed3" compoundref="da/d36/a18569" startline="39">hardware_communication::IDT_row::handlerAddressHighbits</references>
+        <references refid="da/d36/a18569_1adf5df650f7c6f6e7792d97ee2b851265" compoundref="da/d36/a18569" startline="1">handlerAddressLowbits</references>
+        <references refid="da/d36/a18569_1acca378f87bf61c0de2befa4244846bfe" compoundref="da/d36/a18569" startline="2">kernelCodeSegmentSelector</references>
+        <references refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" compoundref="d2/d9a/a18587" startline="1">limit</references>
+        <references refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d8/d87/a18593" startline="306" endline="502">basic::printf</references>
+      </memberdef>
+      <memberdef kind="function" id="db/dda/a19537_1ad8a6f694662a3a36ba9353197e20c1b1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::InterruptManager::printLoadedTableHeader</definition>
+        <argsstring>()</argsstring>
+        <name>printLoadedTableHeader</name>
+        <qualifiedname>hardware_communication::InterruptManager::printLoadedTableHeader</qualifiedname>
+        <briefdescription>
+<para>Prints the header information (base, limit, count) of the currently loaded IDT. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="78" column="29" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp" bodystart="163" bodyend="178"/>
+        <references refid="d1/d96/a18621_1a21c3ca5c318038eaed596c14fd2666ed">hardware_communication::__attribute__</references>
+        <references refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" compoundref="d2/d9a/a18587" startline="2">base</references>
+        <references refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" compoundref="d2/d9a/a18587" startline="1">limit</references>
+        <references refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d8/d87/a18593" startline="306" endline="502">basic::printf</references>
+        <referencedby refid="d2/d7a/a18557_1abb4e4866092116b520310d61961bfe12" compoundref="d2/d7a/a18557" startline="105" endline="142">kernelMain</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Manages the Interrupt Descriptor Table (IDT) and Programmable Interrupt Controllers (PICs), dispatching interrupts to registered handlers. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>hardware_communication::IDT_row</label>
+        <link refid="d4/d2e/a19533"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-handlerAddressHighbits</edgelabel>
+          <edgelabel>-handlerAddressLowbits</edgelabel>
+          <edgelabel>-kernelCodeSegmentSelector</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-access</edgelabel>
+          <edgelabel>-reserved</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>hardware_communication::InterruptHandler</label>
+        <link refid="dd/d18/a19529"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>#interruptNumber</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>#interrupt_manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>hardware_communication::InterruptManager</label>
+        <link refid="db/dda/a19537"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+limit</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+base</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>#interruptDescriptorTable</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>#handlers</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>#picMasterCommand</edgelabel>
+          <edgelabel>#picMasterData</edgelabel>
+          <edgelabel>#picSlaveCommand</edgelabel>
+          <edgelabel>#picSlaveData</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>hardware_communication::Port</label>
+        <link refid="d2/dc8/a19541"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>#portnumber</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>hardware_communication::Port8Bit</label>
+        <link refid="d5/d90/a19545"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>hardware_communication::Port8BitSlow</label>
+        <link refid="d4/dc9/a19549"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uint16_t</label>
+      </node>
+      <node id="3">
+        <label>uint32_t</label>
+      </node>
+      <node id="5">
+        <label>uint8_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" line="47" column="9" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" bodystart="47" bodyend="80"/>
+    <listofallmembers>
+      <member refid="db/dda/a19537_1a1ab5b6378071338ede295f0bffaf3d51" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>activate</name></member>
+      <member refid="db/dda/a19537_1ad94bd8e9c355fde3e814d4894bab0181" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>base</name></member>
+      <member refid="db/dda/a19537_1a9451566bf08617378ca2144505d394a6" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>deactivate</name></member>
+      <member refid="db/dda/a19537_1a2d3ef1656e1eaaf86be40a200a49a4b2" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>handleInterrupt</name></member>
+      <member refid="db/dda/a19537_1ac8aba191e612ad605b8b188f78e65d3b" prot="protected" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>handlers</name></member>
+      <member refid="db/dda/a19537_1a81d593116320da32f1aa4057087f1e11" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>installTable</name></member>
+      <member refid="db/dda/a19537_1a7b6bb52a8072c51bfcb4f4877c3d0226" prot="protected" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>interruptDescriptorTable</name></member>
+      <member refid="db/dda/a19537_1aec70c703cac64ef1eec4b5a94d2e145c" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>InterruptManager</name></member>
+      <member refid="db/dda/a19537_1a1991d8428ff7c74b31f42d48bb49547a" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>limit</name></member>
+      <member refid="db/dda/a19537_1acb04723d03d6b34abbc5f7407cab0b33" prot="protected" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>picMasterCommand</name></member>
+      <member refid="db/dda/a19537_1a5287e31a546f60708b085b387332a904" prot="protected" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>picMasterData</name></member>
+      <member refid="db/dda/a19537_1afed9d24b37c8f9386a71f4284b2502a4" prot="protected" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>picSlaveCommand</name></member>
+      <member refid="db/dda/a19537_1ac1111b7cfbd27b37f03a0678ae5dbaf1" prot="protected" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>picSlaveData</name></member>
+      <member refid="db/dda/a19537_1aac20f3a896bea512413568a60ad48c3d" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>printLoadedTable</name></member>
+      <member refid="db/dda/a19537_1ad8a6f694662a3a36ba9353197e20c1b1" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>printLoadedTableHeader</name></member>
+      <member refid="db/dda/a19537_1af448c0d55d2e226050b7f4efb6d4abe8" prot="protected" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>setIDTEntry</name></member>
+      <member refid="db/dda/a19537_1a65276f26b5d5197482a415b83a898560" prot="public" virt="non-virtual"><scope>hardware_communication::InterruptManager</scope><name>~InterruptManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

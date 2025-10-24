@@ -1,4 +1,4 @@
-.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,21 +30,27 @@
 .ti -1c
 .RI "static void \fBdoubleToString\fP (double d, char *buffer, int precision)"
 .br
+.RI "Converts a double-precision floating point number to a string\&. "
 .ti -1c
 .RI "static double \fBpower\fP (double \fBbase\fP, int exp)"
 .br
+.RI "Calculates the power of a number\&. "
 .ti -1c
 .RI "static void \fBprintCharStr\fP (const char *str)"
 .br
+.RI "Internal function to print a null-terminated string to video memory\&. "
 .ti -1c
 .RI "static void \fBprintHex\fP (uintptr_t n, int digits)"
 .br
+.RI "Prints a hexadecimal number with leading zeros\&. "
 .ti -1c
 .RI "static void \fBreverse\fP (char *str, int length)"
 .br
+.RI "Reverses a string in place\&. "
 .ti -1c
 .RI "static void \fBullToString\fP (unsigned long long n, char *buffer, int \fBbase\fP, int is_signed, int uppercase)"
 .br
+.RI "Converts an unsigned long long integer to a string\&. "
 .in -1c
 .SS "Variables"
 
@@ -81,44 +87,57 @@ Definition at line \fB9\fP of file \fBkiostream\&.cpp\fP\&.
 .SS "static void doubleToString (double d, char * buffer, int precision)\fC [static]\fP"
 
 .PP
-Definition at line \fB189\fP of file \fBkiostream\&.cpp\fP\&..PP
+Converts a double-precision floating point number to a string\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fId\fP The double to convert\&. 
+.br
+\fIbuffer\fP The output buffer to store the string\&. 
+.br
+\fIprecision\fP The number of digits after the decimal point\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB216\fP of file \fBkiostream\&.cpp\fP\&..PP
 .nf
-190 {
-191     if (precision < 0)
-192         precision = 6;
-193     char *ptr = buffer;
-194 
-195     if (d < 0)
-196     {
-197         *ptr++ = '\-';
-198         d = \-d;
-199     }
-200     
-201     unsigned long long int_part = (unsigned long long)d;
-202     double frac_part = d \- (double)int_part;
-203 
-204     ullToString(int_part, ptr, 10, 0, 0);
-205     while (*ptr) ptr++;
-206 
-207     *ptr++ = '\&.';
-208     
-209     unsigned long long frac_as_ull = (unsigned long long)(frac_part * power(10, precision) + 0\&.5);
-210     
-211     char frac_buffer[32];
-212     ullToString(frac_as_ull, frac_buffer, 10, 0, 0);
-213 
-214     int frac_len = 0;
-215     while(frac_buffer[frac_len] != '\\0') frac_len++;
-216     
-217     int padding = precision \- frac_len;
-218     for (int i = 0; i < padding; i++)
-219         *ptr++ = '0';
-220     
-221     char* frac_ptr = frac_buffer;
-222     while(*frac_ptr) *ptr++ = *frac_ptr++;
-223 
-224     *ptr = '\\0';
-225 }
+217 {
+218     if (precision < 0)
+219         precision = 6;
+220     char *ptr = buffer;
+221 
+222     if (d < 0)
+223     {
+224         *ptr++ = '\-';
+225         d = \-d;
+226     }
+227     
+228     unsigned long long int_part = (unsigned long long)d;
+229     double frac_part = d \- (double)int_part;
+230 
+231     ullToString(int_part, ptr, 10, 0, 0);
+232     while (*ptr) ptr++;
+233 
+234     *ptr++ = '\&.';
+235     
+236     unsigned long long frac_as_ull = (unsigned long long)(frac_part * power(10, precision) + 0\&.5);
+237     
+238     char frac_buffer[32];
+239     ullToString(frac_as_ull, frac_buffer, 10, 0, 0);
+240 
+241     int frac_len = 0;
+242     while(frac_buffer[frac_len] != '\\0') frac_len++;
+243     
+244     int padding = precision \- frac_len;
+245     for (int i = 0; i < padding; i++)
+246         *ptr++ = '0';
+247     
+248     char* frac_ptr = frac_buffer;
+249     while(*frac_ptr) *ptr++ = *frac_ptr++;
+250 
+251     *ptr = '\\0';
+252 }
 .fi
 
 .PP
@@ -128,14 +147,30 @@ Referenced by \fBbasic::printf()\fP\&.
 .SS "static double power (double base, int exp)\fC [static]\fP"
 
 .PP
-Definition at line \fB181\fP of file \fBkiostream\&.cpp\fP\&..PP
+Calculates the power of a number\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbase\fP The base\&. 
+.br
+\fIexp\fP The exponent\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The result of base raised to the power of exp\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB204\fP of file \fBkiostream\&.cpp\fP\&..PP
 .nf
-182 {
-183     double res = 1\&.0;
-184     for (int i = 0; i < exp; ++i)
-185         res *= base;
-186     return res;
-187 }
+205 {
+206     double res = 1\&.0;
+207     for (int i = 0; i < exp; ++i)
+208         res *= base;
+209     return res;
+210 }
 .fi
 
 .PP
@@ -145,83 +180,92 @@ Referenced by \fBdoubleToString()\fP\&.
 .SS "static void printCharStr (const char * str)\fC [static]\fP"
 
 .PP
-Definition at line \fB41\fP of file \fBkiostream\&.cpp\fP\&..PP
+Internal function to print a null-terminated string to video memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP The string to print\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB50\fP of file \fBkiostream\&.cpp\fP\&..PP
 .nf
-42 {
-43     uint16_t *video_memory = (uint16_t *)0xb8000;
-44     // FOR TEXT : Attribute for Gray\-White (0x7) text on a Black (0x0) background (last 2 bytes (LSBs) are not used for color)\&.
-45     const uint16_t color_attribute = 0x0700;
-46 
-47     // \-\-\- MOUSE\-SAFE PRINTING: remove mouse \-\-\-
-48     int mouse_offset = driver::MouseDriver::__mouse_y_ * MAGIC_WIDTH + driver::MouseDriver::__mouse_x_;
-49     if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::old_char_under_mouse_pointer;
-50 
-51 
-52     for (int i = 0; str[i] != '\\0'; i++)
-53     {
-54         if (str[i] == '\\n')
-55         {
-56             cursor_y_++;
-57             cursor_x_ = 0;
-58         }
-59         else if (str[i] == '\\b')
-60         {
-61             if (cursor_x_ > 0)
-62             {
-63                 cursor_x_\-\-;
-64                 int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
-65                 video_memory[offset] = color_attribute | ' ';
-66             }
+51 {
+52     uint16_t *video_memory = (uint16_t *)0xb8000;
+53     // FOR TEXT : Attribute for Gray\-White (0x7) text on a Black (0x0) background (last 2 bytes (LSBs) are not used for color)\&.
+54     const uint16_t color_attribute = 0x0700;
+55 
+56     // \-\-\- MOUSE\-SAFE PRINTING: remove mouse \-\-\-
+57     int mouse_offset = driver::MouseDriver::__mouse_y_ * MAGIC_WIDTH + driver::MouseDriver::__mouse_x_;
+58     if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::old_char_under_mouse_pointer;
+59 
+60 
+61     for (int i = 0; str[i] != '\\0'; i++)
+62     {
+63         if (str[i] == '\\n')
+64         {
+65             cursor_y_++;
+66             cursor_x_ = 0;
 67         }
-68         else if (str[i] == '\\r')
+68         else if (str[i] == '\\b')
 69         {
-70             cursor_x_ = 0;
-71         }
-72         else if (str[i] == '\\t')
-73         {
-74             cursor_x_ = cursor_x_ + (TAB_WIDTH \- (cursor_x_ % TAB_WIDTH));
-75         }
-76         else
-77         {
-78             int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
-79             video_memory[offset] = color_attribute | str[i];
-80             cursor_x_++;
-81         }
-82 
-83         if (cursor_x_ >= MAGIC_WIDTH)
-84         {
-85             cursor_y_++;
-86             cursor_x_ = 0;
-87         }
-88 
-89         if (cursor_y_ >= MAGIC_HEIGHT)
-90         {
-91             for (int y = 0; y < (MAGIC_HEIGHT \- 1); y++)
-92             {
-93                 for (int x = 0; x < MAGIC_WIDTH; x++)
-94                 {
-95                     int current_offset = y * MAGIC_WIDTH + x;
-96                     int next_line_offset = (y + 1) * MAGIC_WIDTH + x;
-97                     video_memory[current_offset] = video_memory[next_line_offset];
-98                 }
-99             }
-100 
-101             int last_line_offset_start = (MAGIC_HEIGHT \- 1) * MAGIC_WIDTH;
-102             for (int x = 0; x < MAGIC_WIDTH; x++)
-103             {
-104                 video_memory[last_line_offset_start + x] = color_attribute | ' ';
-105             }
-106 
-107             cursor_y_ = MAGIC_HEIGHT \- 1;
-108             cursor_x_ = 0;
-109         }
-110     }
-111 
-112     // \-\-\- MOUSE\-SAFE PRINTING: add mouse again\-\-\-
-113     driver::MouseDriver::old_char_under_mouse_pointer = video_memory[mouse_offset];
-114     if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::mouse_block_video_mem_value(driver::MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
+70             if (cursor_x_ > 0)
+71             {
+72                 cursor_x_\-\-;
+73                 int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
+74                 video_memory[offset] = color_attribute | ' ';
+75             }
+76         }
+77         else if (str[i] == '\\r')
+78         {
+79             cursor_x_ = 0;
+80         }
+81         else if (str[i] == '\\t')
+82         {
+83             cursor_x_ = cursor_x_ + (TAB_WIDTH \- (cursor_x_ % TAB_WIDTH));
+84         }
+85         else
+86         {
+87             int offset = cursor_y_ * MAGIC_WIDTH + cursor_x_;
+88             video_memory[offset] = color_attribute | str[i];
+89             cursor_x_++;
+90         }
+91 
+92         if (cursor_x_ >= MAGIC_WIDTH)
+93         {
+94             cursor_y_++;
+95             cursor_x_ = 0;
+96         }
+97 
+98         if (cursor_y_ >= MAGIC_HEIGHT)
+99         {
+100             for (int y = 0; y < (MAGIC_HEIGHT \- 1); y++)
+101             {
+102                 for (int x = 0; x < MAGIC_WIDTH; x++)
+103                 {
+104                     int current_offset = y * MAGIC_WIDTH + x;
+105                     int next_line_offset = (y + 1) * MAGIC_WIDTH + x;
+106                     video_memory[current_offset] = video_memory[next_line_offset];
+107                 }
+108             }
+109 
+110             int last_line_offset_start = (MAGIC_HEIGHT \- 1) * MAGIC_WIDTH;
+111             for (int x = 0; x < MAGIC_WIDTH; x++)
+112             {
+113                 video_memory[last_line_offset_start + x] = color_attribute | ' ';
+114             }
 115 
-116 }
+116             cursor_y_ = MAGIC_HEIGHT \- 1;
+117             cursor_x_ = 0;
+118         }
+119     }
+120 
+121     // \-\-\- MOUSE\-SAFE PRINTING: add mouse again\-\-\-
+122     driver::MouseDriver::old_char_under_mouse_pointer = video_memory[mouse_offset];
+123     if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::mouse_block_video_mem_value(driver::MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
+124 
+125 }
 .fi
 
 .PP
@@ -231,22 +275,33 @@ Referenced by \fBbasic::printf()\fP, and \fBprintHex()\fP\&.
 .SS "static void printHex (uintptr_t n, int digits)\fC [static]\fP"
 
 .PP
-Definition at line \fB227\fP of file \fBkiostream\&.cpp\fP\&..PP
+Prints a hexadecimal number with leading zeros\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIn\fP The number to print\&. 
+.br
+\fIdigits\fP The total number of digits to print (padded with zeros)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB257\fP of file \fBkiostream\&.cpp\fP\&..PP
 .nf
-227                                               {
-228     char buffer[32];
-229     ullToString(n, buffer, 16, 0, 1); // Use uppercase for pointers typically
-230 
-231     int len = 0;
-232     while (buffer[len] != '\\0') {
-233         len++;
-234     }
-235 
-236     for (int i = 0; i < digits \- len; i++) {
-237         printCharStr("0");
-238     }
-239     printCharStr(buffer);
-240 }
+257                                               {
+258     char buffer[32];
+259     ullToString(n, buffer, 16, 0, 1); // Use uppercase for pointers typically
+260 
+261     int len = 0;
+262     while (buffer[len] != '\\0') {
+263         len++;
+264     }
+265 
+266     for (int i = 0; i < digits \- len; i++) {
+267         printCharStr("0");
+268     }
+269     printCharStr(buffer);
+270 }
 .fi
 
 .PP
@@ -256,20 +311,31 @@ Referenced by \fBbasic::printf()\fP\&.
 .SS "static void reverse (char * str, int length)\fC [static]\fP"
 
 .PP
-Definition at line \fB133\fP of file \fBkiostream\&.cpp\fP\&..PP
+Reverses a string in place\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP The string to reverse\&. 
+.br
+\fIlength\fP The length of the string\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB146\fP of file \fBkiostream\&.cpp\fP\&..PP
 .nf
-134 {
-135     int start = 0;
-136     int end = length \- 1;
-137     while (start < end)
-138     {
-139         char temp = str[start];
-140         str[start] = str[end];
-141         str[end] = temp;
-142         start++;
-143         end\-\-;
-144     }
-145 }
+147 {
+148     int start = 0;
+149     int end = length \- 1;
+150     while (start < end)
+151     {
+152         char temp = str[start];
+153         str[start] = str[end];
+154         str[end] = temp;
+155         start++;
+156         end\-\-;
+157     }
+158 }
 .fi
 
 .PP
@@ -277,40 +343,57 @@ Referenced by \fBullToString()\fP\&.
 .SS "static void ullToString (unsigned long long n, char * buffer, int base, int is_signed, int uppercase)\fC [static]\fP"
 
 .PP
-Definition at line \fB147\fP of file \fBkiostream\&.cpp\fP\&..PP
+Converts an unsigned long long integer to a string\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIn\fP The number to convert\&. 
+.br
+\fIbuffer\fP The output buffer to store the string\&. 
+.br
+\fIbase\fP The numerical base (e\&.g\&., 2, 8, 10, 16)\&. 
+.br
+\fIis_signed\fP Whether the original number was signed (for handling negative sign)\&. 
+.br
+\fIuppercase\fP Whether to use uppercase letters for bases > 10\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB166\fP of file \fBkiostream\&.cpp\fP\&..PP
 .nf
-148 {
-149     int i = 0;
-150     int isNegative = 0;
-151 
-152     if (n == 0)
-153     {
-154         buffer[i++] = '0';
-155         buffer[i] = '\\0';
-156         return;
-157     }
-158 
-159     if (is_signed && (long long)n < 0)
-160     {
-161         isNegative = 1;
-162         n = \-(long long)n;
-163     }
-164 
-165     while (n != 0)
-166     {
-167         int rem = n % base;
-168         buffer[i++] = (rem > 9) ? ((rem \- 10) + (uppercase ? 'A' : 'a')) : (rem + '0');
-169         n = n / base;
-170     }
-171 
-172     if (isNegative)
-173     {
-174         buffer[i++] = '\-';
-175     }
-176 
-177     buffer[i] = '\\0';
-178     reverse(buffer, i);
-179 }
+167 {
+168     int i = 0;
+169     int isNegative = 0;
+170 
+171     if (n == 0)
+172     {
+173         buffer[i++] = '0';
+174         buffer[i] = '\\0';
+175         return;
+176     }
+177 
+178     if (is_signed && (long long)n < 0)
+179     {
+180         isNegative = 1;
+181         n = \-(long long)n;
+182     }
+183 
+184     while (n != 0)
+185     {
+186         int rem = n % base;
+187         buffer[i++] = (rem > 9) ? ((rem \- 10) + (uppercase ? 'A' : 'a')) : (rem + '0');
+188         n = n / base;
+189     }
+190 
+191     if (isNegative)
+192     {
+193         buffer[i++] = '\-';
+194     }
+195 
+196     buffer[i] = '\\0';
+197     reverse(buffer, i);
+198 }
 .fi
 
 .PP

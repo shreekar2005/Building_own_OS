@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d2/daa/a18566" kind="file" language="C++">
+    <compoundname>kiostream.hpp</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">cstdarg</includes>
+    <includes refid="d8/d68/a18572" local="yes">hardware_communication/kport.hpp</includes>
+    <includedby refid="d2/d7a/a18557" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/kernel_src/kernel.cpp</includedby>
+    <includedby refid="d3/d31/a18563" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kmemory.hpp</includedby>
+    <includedby refid="d3/d36/a18578" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kmouse.hpp</includedby>
+    <includedby refid="d2/d9a/a18587" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential/kgdt.hpp</includedby>
+    <includedby refid="d8/d28/a18584" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential/kicxxabi.hpp</includedby>
+    <includedby refid="da/d36/a18569" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp</includedby>
+    <includedby refid="d8/d68/a18572" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp</includedby>
+    <includedby refid="d8/d87/a18593" local="yes">/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp</label>
+        <link refid="d2/daa/a18566"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>hardware_communication/kport.hpp</label>
+        <link refid="d8/d68/a18572"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstdarg</label>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/kernel_src/kernel.cpp</label>
+        <link refid="d2/d7a/a18557"/>
+      </node>
+      <node id="1">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp</label>
+        <link refid="d2/daa/a18566"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kmemory.hpp</label>
+        <link refid="d3/d31/a18563"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kkeyboard.hpp</label>
+        <link refid="da/db3/a18575"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kmouse.hpp</label>
+        <link refid="d3/d36/a18578"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential/kgdt.hpp</label>
+        <link refid="d2/d9a/a18587"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential/kicxxabi.hpp</label>
+        <link refid="d8/d28/a18584"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp</label>
+        <link refid="da/d36/a18569"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp</label>
+        <link refid="d8/d68/a18572"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp</label>
+        <link refid="d8/d87/a18593"/>
+      </node>
+      <node id="4">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kmemory.cpp</label>
+        <link refid="d8/d3c/a18590"/>
+      </node>
+      <node id="7">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kkeyboard.cpp</label>
+        <link refid="d1/d73/a18605"/>
+      </node>
+      <node id="8">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kmouse.cpp</label>
+        <link refid="d6/d71/a18608"/>
+      </node>
+      <node id="13">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential/kgdt.cpp</label>
+        <link refid="d7/dc9/a18611"/>
+      </node>
+      <node id="15">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential/kicxxabi.cpp</label>
+        <link refid="d9/dde/a18614"/>
+      </node>
+      <node id="12">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kinterrupt.cpp</label>
+        <link refid="d3/d3a/a18599"/>
+      </node>
+      <node id="17">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kport.cpp</label>
+        <link refid="d7/d22/a18596"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="dc/ddd/a18618">basic</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="dc/ddd/a18618_1a02923caa95013ec5d9333c25d9cca1d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void basic::__clearScreen</definition>
+        <argsstring>()</argsstring>
+        <name>__clearScreen</name>
+        <qualifiedname>basic::__clearScreen</qualifiedname>
+        <briefdescription>
+<para>Clears the entire text mode screen and resets the cursor to (0,0). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" line="8" column="14" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp" bodystart="128" bodyend="141" declfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" declline="8" declcolumn="14"/>
+        <references refid="d8/d87/a18593_1a133981c4ba48aed67a5b874f7b213583" compoundref="d8/d87/a18593" startline="4">cursor_x_</references>
+        <references refid="d8/d87/a18593_1a1bda227f31ddf346294cb531f7554ef3" compoundref="d8/d87/a18593" startline="5">cursor_y_</references>
+        <references refid="d8/d87/a18593_1a887422301cbe9a94f8b96263415640cf" compoundref="d8/d87/a18593" startline="8">MAGIC_HEIGHT</references>
+        <references refid="d8/d87/a18593_1a5be9493285a1f50a67d98b887537217d" compoundref="d8/d87/a18593" startline="7">MAGIC_WIDTH</references>
+        <referencedby refid="d2/d7a/a18557_1abb4e4866092116b520310d61961bfe12" compoundref="d2/d7a/a18557" startline="105" endline="142">kernelMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/ddd/a18618_1a4b31902bf2cff8ff28405aa57d9f4575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void basic::disable_cursor</definition>
+        <argsstring>()</argsstring>
+        <name>disable_cursor</name>
+        <qualifiedname>basic::disable_cursor</qualifiedname>
+        <briefdescription>
+<para>Disables the text mode cursor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" line="12" column="14" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp" bodystart="42" bodyend="45" declfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" declline="12" declcolumn="14"/>
+        <references refid="d8/d87/a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</references>
+        <references refid="d8/d87/a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</references>
+        <references refid="d5/d90/a19545_1a523b6a757b27418dc015ed13e74bef60" compoundref="d7/d22/a18596" startline="21" endline="23">hardware_communication::Port8Bit::write</references>
+        <referencedby refid="d2/d7a/a18557_1abb4e4866092116b520310d61961bfe12" compoundref="d2/d7a/a18557" startline="105" endline="142">kernelMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/ddd/a18618_1a8ca6648639f335b207c748074dcf9f25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void basic::enable_cursor</definition>
+        <argsstring>(uint8_t cursor_start, uint8_t cursor_end)</argsstring>
+        <name>enable_cursor</name>
+        <qualifiedname>basic::enable_cursor</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>cursor_start</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>cursor_end</declname>
+        </param>
+        <briefdescription>
+<para>Enables the text mode cursor and sets its shape. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cursor_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting scanline for the cursor block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cursor_end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ending scanline for the cursor block. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" line="10" column="14" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp" bodystart="20" bodyend="26" declfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" declline="10" declcolumn="14"/>
+        <references refid="d5/d90/a19545_1ae8688251b574c3fd335b99f7e93fff2d" compoundref="d7/d22/a18596" startline="26" endline="30">hardware_communication::Port8Bit::read</references>
+        <references refid="d8/d87/a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</references>
+        <references refid="d8/d87/a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</references>
+        <references refid="d5/d90/a19545_1a523b6a757b27418dc015ed13e74bef60" compoundref="d7/d22/a18596" startline="21" endline="23">hardware_communication::Port8Bit::write</references>
+        <referencedby refid="d2/d7a/a18557_1abb4e4866092116b520310d61961bfe12" compoundref="d2/d7a/a18557" startline="105" endline="142">kernelMain</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int basic::printf</definition>
+        <argsstring>(const char *format,...)</argsstring>
+        <name>printf</name>
+        <qualifiedname>basic::printf</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>A custom implementation of the standard printf function for writing to VGA text mode memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>This function formats a string and prints it to the screen, handling various format specifiers, flags, width, precision, and length modifiers. It returns the total number of characters written.</para>
+</listitem><listitem><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The format string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable arguments corresponding to the format specifiers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem><listitem><para><simplesect kind="return"><para>The total number of characters written to the screen.</para>
+</simplesect>
+</para>
+</listitem><listitem></listitem></itemizedlist>
+</para>
+<para>Supported Format Specifiers: c - Character s - String d, i - Signed decimal integer u - Unsigned decimal integer f - Floating point number (double) x - Unsigned hexadecimal integer (lowercase) X - Unsigned hexadecimal integer (uppercase) b - Unsigned binary integer o - Unsigned octal integer p - Pointer address %% - A literal &apos;&apos; character<itemizedlist>
+<listitem><para>Supported Flags: &apos;#&apos; - Alternative form (e.g., 0x for hex, 0 for octal). &apos;0&apos; - Zero-padding for width.</para>
+</listitem><listitem><para>Supported Width: A number after &apos;&apos; specifies the minimum field width (e.g., %10d).</para>
+</listitem><listitem><para>Supported Precision: A period followed by a number specifies precision (e.g., %.4f, %.8X). For integers, this specifies the minimum number of digits to print.</para>
+</listitem><listitem><para>Supported Length Modifiers: h - short int (for d, i, u, x, X, o, b) hh - signed/unsigned char (for d, i, u, x, X, o, b) l - long int ll - long long int </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" line="9" column="13" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp" bodystart="306" bodyend="502" declfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" declline="9" declcolumn="13"/>
+        <references refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" compoundref="d2/d9a/a18587" startline="2">base</references>
+        <references refid="d8/d87/a18593_1a133981c4ba48aed67a5b874f7b213583" compoundref="d8/d87/a18593" startline="4">cursor_x_</references>
+        <references refid="d8/d87/a18593_1a1bda227f31ddf346294cb531f7554ef3" compoundref="d8/d87/a18593" startline="5">cursor_y_</references>
+        <references refid="d8/d87/a18593_1af382674e4c9fb57a14b178d4ee12273a" compoundref="d8/d87/a18593" startline="216" endline="252">doubleToString</references>
+        <references refid="d5/d56/a18560_1a6de3a6d27a7e07942958b912d39792e6" compoundref="d5/d56/a18560" startline="2">len</references>
+        <references refid="d8/d87/a18593_1a6bd99ada5f7c46567ee0ceca6c369d47" compoundref="d8/d87/a18593" startline="50" endline="125">printCharStr</references>
+        <references refid="d8/d87/a18593_1aab6eb585b409591414f84a1e3f606345" compoundref="d8/d87/a18593" startline="257" endline="270">printHex</references>
+        <references refid="d8/d87/a18593_1a14bf754296559bf0266e127e677e8107" compoundref="d8/d87/a18593" startline="166" endline="198">ullToString</references>
+        <references refid="dc/ddd/a18618_1a9d1f0f838e646660db6d9284725c2b4c" compoundref="d8/d87/a18593" startline="31" endline="39">basic::update_cursor</references>
+        <referencedby refid="dc/ddd/a18618_1a53c6425a55d9fb93998da01f2416f9ad" compoundref="d8/d3c/a18590" startline="5" endline="57">basic::__printMemoryMap</referencedby>
+        <referencedby refid="db/dda/a19537_1a1ab5b6378071338ede295f0bffaf3d51" compoundref="d3/d3a/a18599" startline="117" endline="120">hardware_communication::InterruptManager::activate</referencedby>
+        <referencedby refid="d7/d24/a19505_1a58553d39d7dcfe6b55e8ddb1e7b1d187" compoundref="d1/d73/a18605" startline="177" endline="186">driver::KeyboardDriver::activate</referencedby>
+        <referencedby refid="d3/d33/a19513_1a446769df0b3b537a525476c7c8be47bc" compoundref="d6/d71/a18608" startline="88" endline="114">driver::MouseDriver::activate</referencedby>
+        <referencedby refid="db/dda/a19537_1a9451566bf08617378ca2144505d394a6" compoundref="d3/d3a/a18599" startline="122" endline="125">hardware_communication::InterruptManager::deactivate</referencedby>
+        <referencedby refid="db/dda/a19537_1a2d3ef1656e1eaaf86be40a200a49a4b2" compoundref="d3/d3a/a18599" startline="185" endline="202">hardware_communication::InterruptManager::handleInterrupt</referencedby>
+        <referencedby refid="d0/d39/a19521_1af8e3c1da270077eb7cc6551b35c0e5ca" compoundref="d7/dc9/a18611" startline="51" endline="82">essential::GDT::installTable</referencedby>
+        <referencedby refid="db/dda/a19537_1a81d593116320da32f1aa4057087f1e11" compoundref="d3/d3a/a18599" startline="100" endline="113">hardware_communication::InterruptManager::installTable</referencedby>
+        <referencedby refid="d2/d7a/a18557_1abb4e4866092116b520310d61961bfe12" compoundref="d2/d7a/a18557" startline="105" endline="142">kernelMain</referencedby>
+        <referencedby refid="d6/d4a/a19437_1af82a0bd16f995dd285d4f7822117377c" compoundref="d2/d7a/a18557" startline="22" endline="26">KeyboardEventHandler_for_kernel::onKeyDown</referencedby>
+        <referencedby refid="d0/d39/a19521_1a9c89bddfdb21d5cc09c1d82411982de9" compoundref="d7/dc9/a18611" startline="85" endline="121">essential::GDT::printLoadedTable</referencedby>
+        <referencedby refid="db/dda/a19537_1aac20f3a896bea512413568a60ad48c3d" compoundref="d3/d3a/a18599" startline="128" endline="160">hardware_communication::InterruptManager::printLoadedTable</referencedby>
+        <referencedby refid="d0/d39/a19521_1a2ae998750fc1e18e6778e92774bd3574" compoundref="d7/dc9/a18611" startline="124" endline="140">essential::GDT::printLoadedTableHeader</referencedby>
+        <referencedby refid="db/dda/a19537_1ad8a6f694662a3a36ba9353197e20c1b1" compoundref="d3/d3a/a18599" startline="163" endline="178">hardware_communication::InterruptManager::printLoadedTableHeader</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/ddd/a18618_1a9d1f0f838e646660db6d9284725c2b4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void basic::update_cursor</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>update_cursor</name>
+        <qualifiedname>basic::update_cursor</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Updates the position of the text mode cursor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new x-coordinate (column). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new y-coordinate (row). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" line="11" column="14" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kiostream.cpp" bodystart="31" bodyend="39" declfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" declline="11" declcolumn="14"/>
+        <references refid="d8/d87/a18593_1a133981c4ba48aed67a5b874f7b213583" compoundref="d8/d87/a18593" startline="4">cursor_x_</references>
+        <references refid="d8/d87/a18593_1a1bda227f31ddf346294cb531f7554ef3" compoundref="d8/d87/a18593" startline="5">cursor_y_</references>
+        <references refid="d8/d87/a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</references>
+        <references refid="d8/d87/a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</references>
+        <references refid="d5/d90/a19545_1a523b6a757b27418dc015ed13e74bef60" compoundref="d7/d22/a18596" startline="21" endline="23">hardware_communication::Port8Bit::write</references>
+        <referencedby refid="d8/d6c/a19441_1ae860a16e70322e5c4bb01e1108e50bb1" compoundref="d2/d7a/a18557" startline="44" endline="48">MouseEventHandler_for_kernel::onMouseDown</referencedby>
+        <referencedby refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" compoundref="d8/d87/a18593" startline="306" endline="502">basic::printf</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_OSOS_BASIC_KIOSTREAM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_OSOS_BASIC_KIOSTREAM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;cstdarg&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="d8/d68/a18572" kindref="compound">hardware_communication/kport.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="dc/ddd/a18618" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dc/ddd/a18618" kindref="compound">basic</ref>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dc/ddd/a18618_1a02923caa95013ec5d9333c25d9cca1d6" kindref="member">__clearScreen</ref>();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">printf</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dc/ddd/a18618_1a8ca6648639f335b207c748074dcf9f25" kindref="member">enable_cursor</ref>(uint8_t<sp/>cursor_start,<sp/>uint8_t<sp/>cursor_end);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dc/ddd/a18618_1a9d1f0f838e646660db6d9284725c2b4c" kindref="member">update_cursor</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dc/ddd/a18618_1a4b31902bf2cff8ff28405aa57d9f4575" kindref="member">disable_cursor</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp"/>
+  </compounddef>
+</doxygen>

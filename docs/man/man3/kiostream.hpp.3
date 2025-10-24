@@ -1,4 +1,4 @@
-.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,12 +26,15 @@
 .ti -1c
 .RI "void \fBbasic::__clearScreen\fP ()"
 .br
+.RI "Clears the entire text mode screen and resets the cursor to (0,0)\&. "
 .ti -1c
 .RI "void \fBbasic::disable_cursor\fP ()"
 .br
+.RI "Disables the text mode cursor\&. "
 .ti -1c
 .RI "void \fBbasic::enable_cursor\fP (uint8_t cursor_start, uint8_t cursor_end)"
 .br
+.RI "Enables the text mode cursor and sets its shape\&. "
 .ti -1c
 .RI "int \fBbasic::printf\fP (const char *format,\&.\&.\&.)"
 .br
@@ -39,6 +42,7 @@
 .ti -1c
 .RI "void \fBbasic::update_cursor\fP (int x, int y)"
 .br
+.RI "Updates the position of the text mode cursor\&. "
 .in -1c
 .SH "Author"
 .PP 

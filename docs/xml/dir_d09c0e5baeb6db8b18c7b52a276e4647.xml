@@ -2,8 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_d09c0e5baeb6db8b18c7b52a276e4647" kind="dir">
     <compoundname>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication</compoundname>
-    <innerfile refid="db/d09/a16235">kinterrupt.hpp</innerfile>
-    <innerfile refid="d4/d67/a16238">kport.hpp</innerfile>
+    <innerfile refid="da/d36/a18569">kinterrupt.hpp</innerfile>
+    <innerfile refid="d8/d68/a18572">kport.hpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,8 +1,9 @@
-.TH "driver::MouseEventHandler" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "driver::MouseEventHandler" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-driver::MouseEventHandler
+driver::MouseEventHandler \- Base class (interface) for handling mouse events (movement and button clicks)\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -16,9 +17,11 @@ Inherited by \fBMouseEventHandler_for_kernel\fP\&.
 .ti -1c
 .RI "\fBMouseEventHandler\fP ()"
 .br
+.RI "Base class for handling mouse events\&. "
 .ti -1c
 .RI "virtual \fB~MouseEventHandler\fP ()"
 .br
+.RI "Destroys the \fBMouseEventHandler\fP object\&. "
 .ti -1c
 .RI "virtual void \fBonMouseDown\fP (uint8_t button)=0"
 .br
@@ -31,23 +34,29 @@ Inherited by \fBMouseEventHandler_for_kernel\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
+Base class (interface) for handling mouse events (movement and button clicks)\&. 
+.PP
 Definition at line \fB29\fP of file \fBkmouse\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "driver::MouseEventHandler::MouseEventHandler ()"
 
 .PP
-Definition at line \fB5\fP of file \fBkmouse\&.cpp\fP\&..PP
+Base class for handling mouse events\&. 
+.PP
+Definition at line \fB6\fP of file \fBkmouse\&.cpp\fP\&..PP
 .nf
-5 {}
+6 {}
 .fi
 
 .SS "driver::MouseEventHandler::~MouseEventHandler ()\fC [virtual]\fP"
 
 .PP
-Definition at line \fB6\fP of file \fBkmouse\&.cpp\fP\&..PP
+Destroys the \fBMouseEventHandler\fP object\&. 
+.PP
+Definition at line \fB8\fP of file \fBkmouse\&.cpp\fP\&..PP
 .nf
-6 {}
+8 {}
 .fi
 
 .SH "Member Function Documentation"

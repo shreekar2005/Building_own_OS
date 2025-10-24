@@ -1,8 +1,9 @@
-.TH "hardware_communication::Port8Bit" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "hardware_communication::Port8Bit" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-hardware_communication::Port8Bit
+hardware_communication::Port8Bit \- Represents an 8-bit (byte-sized) I/O port\&. @inherits \fBPort\fP\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -18,15 +19,19 @@ Inherited by \fBhardware_communication::Port8BitSlow\fP\&.
 .ti -1c
 .RI "\fBPort8Bit\fP (uint16_t \fBportnumber\fP)"
 .br
+.RI "Constructs a new \fBPort8Bit\fP object\&. "
 .ti -1c
 .RI "virtual \fB~Port8Bit\fP () override"
 .br
+.RI "Destroys the \fBPort8Bit\fP object\&. "
 .ti -1c
 .RI "uint8_t \fBread\fP ()"
 .br
+.RI "Reads an 8-bit value from the I/O port\&. "
 .ti -1c
 .RI "virtual void \fBwrite\fP (uint8_t data)"
 .br
+.RI "Writes an 8-bit value to the I/O port\&. "
 .in -1c
 .SS "Protected Attributes"
 
@@ -37,23 +42,36 @@ Inherited by \fBhardware_communication::Port8BitSlow\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB30\fP of file \fBkport\&.hpp\fP\&.
+Represents an 8-bit (byte-sized) I/O port\&. @inherits \fBPort\fP\&. 
+.PP
+Definition at line \fB20\fP of file \fBkport\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "hardware_communication::Port8Bit::Port8Bit (uint16_t portnumber)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB10\fP of file \fBkport\&.cpp\fP\&..PP
+Constructs a new \fBPort8Bit\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIportnumber\fP The 16-bit address of the I/O port\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB15\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-10 :Port(portnumber){} 
+15 :Port(portnumber){} 
 .fi
 
 .SS "hardware_communication::Port8Bit::~Port8Bit ()\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
-Definition at line \fB11\fP of file \fBkport\&.cpp\fP\&..PP
+Destroys the \fBPort8Bit\fP object\&. 
+.PP
+Definition at line \fB17\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-11 {}
+17 {}
 .fi
 
 .SH "Member Function Documentation"
@@ -61,13 +79,22 @@ Definition at line \fB11\fP of file \fBkport\&.cpp\fP\&..PP
 .SS "uint8_t hardware_communication::Port8Bit::read ()"
 
 .PP
-Definition at line \fB16\fP of file \fBkport\&.cpp\fP\&..PP
+Reads an 8-bit value from the I/O port\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The 8-bit value read from the port\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-16                                             {
-17     uint8_t result;
-18     __asm__ volatile("inb %1, %0" :"=a"(result) : "Nd"(portnumber));
-19     return result;
-20 }
+26                                             {
+27     uint8_t result;
+28     __asm__ volatile("inb %1, %0" :"=a"(result) : "Nd"(portnumber));
+29     return result;
+30 }
 .fi
 
 .PP
@@ -75,13 +102,22 @@ Referenced by \fBbasic::enable_cursor()\fP\&.
 .SS "void hardware_communication::Port8Bit::write (uint8_t data)\fC [virtual]\fP"
 
 .PP
+Writes an 8-bit value to the I/O port\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP The 8-bit value to write\&. 
+.RE
+.PP
+
+.PP
 Reimplemented in \fBhardware_communication::Port8BitSlow\fP\&.
 .PP
-Definition at line \fB13\fP of file \fBkport\&.cpp\fP\&..PP
+Definition at line \fB21\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-13                                                       {
-14     __asm__ volatile("outb %0, %1" : : "a"(data), "Nd"(portnumber));
-15 }
+21                                                       {
+22     __asm__ volatile("outb %0, %1" : : "a"(data), "Nd"(portnumber));
+23 }
 .fi
 
 .PP
@@ -91,7 +127,7 @@ Referenced by \fBbasic::disable_cursor()\fP, \fBbasic::enable_cursor()\fP, and \
 .SS "uint16_t hardware_communication::Port::portnumber\fC [protected]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line \fB13\fP of file \fBkport\&.hpp\fP\&.
+Definition at line \fB11\fP of file \fBkport\&.hpp\fP\&.
 .PP
 Referenced by \fBhardware_communication::Port::Port()\fP\&.
 

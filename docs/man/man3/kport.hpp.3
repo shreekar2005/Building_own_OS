@@ -1,4 +1,4 @@
-.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,18 +17,23 @@
 .ti -1c
 .RI "class \fBhardware_communication::Port\fP"
 .br
+.RI "Base class for hardware I/O port communication\&. "
 .ti -1c
 .RI "class \fBhardware_communication::Port16Bit\fP"
 .br
+.RI "Represents a 16-bit (word-sized) I/O port\&. @inherits \fBPort\fP\&. "
 .ti -1c
 .RI "class \fBhardware_communication::Port32Bit\fP"
 .br
+.RI "Represents a 32-bit (double-word-sized) I/O port\&. @inherits \fBPort\fP\&. "
 .ti -1c
 .RI "class \fBhardware_communication::Port8Bit\fP"
 .br
+.RI "Represents an 8-bit (byte-sized) I/O port\&. @inherits \fBPort\fP\&. "
 .ti -1c
 .RI "class \fBhardware_communication::Port8BitSlow\fP"
 .br
+.RI "Represents an 8-bit I/O port with a forced delay on writes\&. @inherits \fBPort8Bit\fP\&. "
 .in -1c
 .SS "Namespaces"
 

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a18619" xml:lang="en-US">
+<title>driver Namespace Reference</title>
+<indexterm><primary>driver</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_a19493">Driver</link></para>
+
+<para>Base class (interface) for all hardware drivers in the operating system. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a19497">DriverManager</link></para>
+
+<para>Manages a collection of <link linkend="_a19493">Driver</link> objects, facilitating their activation and organization. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a19505">KeyboardDriver</link></para>
+
+<para><link linkend="_a19493">Driver</link> for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock). @inherits <link linkend="_a19529">hardware_communication::InterruptHandler</link> @inherits <link linkend="_a19493">driver::Driver</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a19501">KeyboardEventHandler</link></para>
+
+<para>Base class (interface) for handling keyboard events (key presses and releases). </para>
+</listitem>
+            <listitem><para>class <link linkend="_a19513">MouseDriver</link></para>
+
+<para><link linkend="_a19493">Driver</link> for the PS/2 mouse, handling 3-byte packets and managing mouse state. @inherits <link linkend="_a19529">hardware_communication::InterruptHandler</link> @inherits <link linkend="_a19493">driver::Driver</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_a19509">MouseEventHandler</link></para>
+
+<para>Base class (interface) for handling mouse events (movement and button clicks). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

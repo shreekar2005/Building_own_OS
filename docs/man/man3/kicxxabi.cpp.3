@@ -1,4 +1,4 @@
-.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential/kicxxabi.cpp" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential/kicxxabi.cpp" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,6 +15,7 @@
 .ti -1c
 .RI "int \fB__cxa_atexit\fP (void(*f)(void *), void *objptr, void *dso)"
 .br
+.RI "Registers a function to be called at program termination, compliant with the Itanium C++ ABI\&. "
 .in -1c
 .SS "Variables"
 
@@ -40,16 +41,34 @@
 .SS "int __cxa_atexit (void(*)(void *) f, void * objptr, void * dso)"
 
 .PP
-Definition at line \fB29\fP of file \fBkicxxabi\&.cpp\fP\&..PP
+Registers a function to be called at program termination, compliant with the Itanium C++ ABI\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIf\fP Pointer to the function (destructor) to be called\&. 
+.br
+\fIobjptr\fP Pointer to the object instance for the destructor\&. 
+.br
+\fIdso\fP Handle to the shared object that owns the function\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success, -1 on failure (if the table is full)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB36\fP of file \fBkicxxabi\&.cpp\fP\&..PP
 .nf
-30 {
-31     if (__atexit_func_count >= ATEXIT_MAX_FUNCS) {return \-1;};
-32     __atexit_funcs[__atexit_func_count]\&.destructor_func = f;
-33     __atexit_funcs[__atexit_func_count]\&.obj_ptr = objptr;
-34     __atexit_funcs[__atexit_func_count]\&.dso_handle = dso;
-35     __atexit_func_count++;
-36     return 0; /*I would prefer if functions returned 1 on success, but the ABI says\&.\&.\&.*/
-37 };
+37 {
+38     if (__atexit_func_count >= ATEXIT_MAX_FUNCS) {return \-1;};
+39     __atexit_funcs[__atexit_func_count]\&.destructor_func = f;
+40     __atexit_funcs[__atexit_func_count]\&.obj_ptr = objptr;
+41     __atexit_funcs[__atexit_func_count]\&.dso_handle = dso;
+42     __atexit_func_count++;
+43     return 0; /*I would prefer if functions returned 1 on success, but the ABI says\&.\&.\&.*/
+44 };
 .fi
 
 .PP
@@ -59,19 +78,19 @@ References \fB__atexit_func_count\fP, \fB__atexit_funcs\fP, \fBATEXIT_MAX_FUNCS\
 .SS "\fBuarch_t\fP __atexit_func_count = 0"
 
 .PP
-Definition at line \fB25\fP of file \fBkicxxabi\&.cpp\fP\&.
+Definition at line \fB27\fP of file \fBkicxxabi\&.cpp\fP\&.
 .PP
 Referenced by \fB__cxa_atexit()\fP, and \fBessential::__cxa_finalize()\fP\&.
 .SS "\fBessential::atexit_func_entry_t\fP __atexit_funcs[\fBATEXIT_MAX_FUNCS\fP]"
 
 .PP
-Definition at line \fB24\fP of file \fBkicxxabi\&.cpp\fP\&.
+Definition at line \fB26\fP of file \fBkicxxabi\&.cpp\fP\&.
 .PP
 Referenced by \fB__cxa_atexit()\fP, and \fBessential::__cxa_finalize()\fP\&.
 .SS "void* __dso_handle = 0"
 
 .PP
-Definition at line \fB27\fP of file \fBkicxxabi\&.cpp\fP\&.
+Definition at line \fB29\fP of file \fBkicxxabi\&.cpp\fP\&.
 .SS "void(* ctors_end) () ()"
 
 .PP

@@ -1,8 +1,9 @@
-.TH "hardware_communication::IDT_row" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "hardware_communication::IDT_row" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-hardware_communication::IDT_row
+hardware_communication::IDT_row \- Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT)\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,9 +15,11 @@ hardware_communication::IDT_row
 .ti -1c
 .RI "\fBIDT_row\fP ()"
 .br
+.RI "Default constructor for a single entry (row) in the IDT\&. "
 .ti -1c
 .RI "\fB~IDT_row\fP ()"
 .br
+.RI "Destroys the \fBIDT_row\fP object\&. "
 .in -1c
 .SS "Private Attributes"
 
@@ -39,23 +42,29 @@ hardware_communication::IDT_row
 .in -1c
 .SH "Detailed Description"
 .PP 
+Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT)\&. 
+.PP
 Definition at line \fB33\fP of file \fBkinterrupt\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "hardware_communication::IDT_row::IDT_row ()"
 
 .PP
-Definition at line \fB24\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+Default constructor for a single entry (row) in the IDT\&. 
+.PP
+Definition at line \fB18\fP of file \fBkinterrupt\&.cpp\fP\&..PP
 .nf
-24 {}
+18 {}
 .fi
 
 .SS "hardware_communication::IDT_row::~IDT_row ()"
 
 .PP
-Definition at line \fB25\fP of file \fBkinterrupt\&.cpp\fP\&..PP
+Destroys the \fBIDT_row\fP object\&. 
+.PP
+Definition at line \fB20\fP of file \fBkinterrupt\&.cpp\fP\&..PP
 .nf
-25 {}
+20 {}
 .fi
 
 .SH "Member Data Documentation"

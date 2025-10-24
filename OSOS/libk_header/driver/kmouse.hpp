@@ -25,7 +25,7 @@
     #define MOUSE_POINTER_COLOR KMOUSE_COLOR_GREEN //Here actually you will choose which color should your mouse pointer have
     
     namespace driver{
-        // MouseEventHandler is an INTERFACE
+        /// @brief Base class (interface) for handling mouse events (movement and button clicks).
         class MouseEventHandler{
             public:
                 MouseEventHandler();
@@ -36,6 +36,9 @@
                 virtual void onMouseMove(int8_t delta_x, int8_t delta_y)=0; //expected to be overriden 
         };
 
+        /// @brief Driver for the PS/2 mouse, handling 3-byte packets and managing mouse state.
+        /// @inherits hardware_communication::InterruptHandler
+        /// @inherits driver::Driver
         class MouseDriver : public hardware_communication::InterruptHandler, public driver::Driver{
                 hardware_communication::Port8Bit dataPort;
                 hardware_communication::Port8Bit commandPort;

@@ -1,6 +1,6 @@
 var dir_34d45cb43cfea5813562be995e166360 =
 [
-    [ "kiostream.hpp", "df/d80/a16232.html", "df/d80/a16232" ],
-    [ "kmemory.hpp", "d9/df6/a16229.html", "d9/df6/a16229" ],
-    [ "multiboot.hpp", "d5/dd5/a16226.html", "d5/dd5/a16226" ]
+    [ "kiostream.hpp", "d2/daa/a18566.html", "d2/daa/a18566" ],
+    [ "kmemory.hpp", "d3/d31/a18563.html", "d3/d31/a18563" ],
+    [ "multiboot.h", "d5/d56/a18560.html", "d5/d56/a18560" ]
 ];

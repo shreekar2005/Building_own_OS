@@ -1,8 +1,9 @@
-.TH "hardware_communication::Port32Bit" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "hardware_communication::Port32Bit" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-hardware_communication::Port32Bit
+hardware_communication::Port32Bit \- Represents a 32-bit (double-word-sized) I/O port\&. @inherits \fBPort\fP\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -16,15 +17,19 @@ Inherits \fBhardware_communication::Port\fP\&.
 .ti -1c
 .RI "\fBPort32Bit\fP (uint16_t \fBportnumber\fP)"
 .br
+.RI "Constructs a new \fBPort32Bit\fP object\&. "
 .ti -1c
 .RI "\fB~Port32Bit\fP () override"
 .br
+.RI "Destroys the \fBPort32Bit\fP object\&. "
 .ti -1c
 .RI "uint32_t \fBread\fP ()"
 .br
+.RI "Reads a 32-bit value from the I/O port\&. "
 .ti -1c
 .RI "void \fBwrite\fP (uint32_t data)"
 .br
+.RI "Writes a 32-bit value to the I/O port\&. "
 .in -1c
 .SS "Protected Attributes"
 
@@ -35,23 +40,36 @@ Inherits \fBhardware_communication::Port\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB80\fP of file \fBkport\&.hpp\fP\&.
+Represents a 32-bit (double-word-sized) I/O port\&. @inherits \fBPort\fP\&. 
+.PP
+Definition at line \fB51\fP of file \fBkport\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "hardware_communication::Port32Bit::Port32Bit (uint16_t portnumber)\fC [explicit]\fP"
 
 .PP
-Definition at line \fB47\fP of file \fBkport\&.cpp\fP\&..PP
+Constructs a new \fBPort32Bit\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIportnumber\fP The 16-bit address of the I/O port\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-47 :Port(portnumber){} 
+71 :Port(portnumber){} 
 .fi
 
 .SS "hardware_communication::Port32Bit::~Port32Bit ()\fC [override]\fP"
 
 .PP
-Definition at line \fB48\fP of file \fBkport\&.cpp\fP\&..PP
+Destroys the \fBPort32Bit\fP object\&. 
+.PP
+Definition at line \fB73\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-48 {}
+73 {}
 .fi
 
 .SH "Member Function Documentation"
@@ -59,23 +77,41 @@ Definition at line \fB48\fP of file \fBkport\&.cpp\fP\&..PP
 .SS "uint32_t hardware_communication::Port32Bit::read ()"
 
 .PP
-Definition at line \fB53\fP of file \fBkport\&.cpp\fP\&..PP
+Reads a 32-bit value from the I/O port\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The 32-bit value read from the port\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB82\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-53                                               {
-54     uint32_t result;
-55     __asm__ volatile("inl %1, %0" :"=a"(result) : "Nd"(portnumber));
-56     return result;
-57 }
+82                                               {
+83     uint32_t result;
+84     __asm__ volatile("inl %1, %0" :"=a"(result) : "Nd"(portnumber));
+85     return result;
+86 }
 .fi
 
 .SS "void hardware_communication::Port32Bit::write (uint32_t data)"
 
 .PP
-Definition at line \fB50\fP of file \fBkport\&.cpp\fP\&..PP
+Writes a 32-bit value to the I/O port\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP The 32-bit value to write\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB77\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-50                                                         {
-51     __asm__ volatile("outl %0, %1" : : "a"(data), "Nd"(portnumber));
-52 }
+77                                                         {
+78     __asm__ volatile("outl %0, %1" : : "a"(data), "Nd"(portnumber));
+79 }
 .fi
 
 .SH "Member Data Documentation"
@@ -83,7 +119,7 @@ Definition at line \fB50\fP of file \fBkport\&.cpp\fP\&..PP
 .SS "uint16_t hardware_communication::Port::portnumber\fC [protected]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line \fB13\fP of file \fBkport\&.hpp\fP\&.
+Definition at line \fB11\fP of file \fBkport\&.hpp\fP\&.
 .PP
 Referenced by \fBhardware_communication::Port::Port()\fP\&.
 

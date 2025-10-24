@@ -1,0 +1,57 @@
+\doxysubsection{kport.\+hpp}
+\hypertarget{a18572_source}{}\label{a18572_source}\index{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/hardware\_communication/kport.hpp@{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_header/hardware\_communication/kport.hpp}}
+\mbox{\hyperlink{a18572}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ \_OSOS\_HARDWARE\_COMMUNICATION\_KPORT\_H\ }}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00002}00002\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_OSOS\_HARDWARE\_COMMUNICATION\_KPORT\_H}}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00003}00003\ \textcolor{preprocessor}{\ \ \ \ \#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00004}00004\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{a18566}{basic/kiostream.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a18621}{hardware\_communication}}\{}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00009}\mbox{\hyperlink{a19541}{00009}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a19541}{Port}}\ \{}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00011}\mbox{\hyperlink{a19541_aab0c5c82b0190df88ddbb595bfac539a}{00011}}\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a19541_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a19541}{Port}}(uint16\_t\ \mbox{\hyperlink{a19541_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}});\ \textcolor{comment}{//\ making\ constructor\ explicit\ to\ prevent\ unintended\ conversions}}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a19541_a8b13c33da4911afcbdcb21c97768a72e}{\string~Port}}();}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00016}00016\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00020}\mbox{\hyperlink{a19545}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a19545}{Port8Bit}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a19541}{Port}}\ \{}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a19545}{Port8Bit}}(uint16\_t\ \mbox{\hyperlink{a19541_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}});}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a19545_a475bc218672c5743a9f8425cc84eb630}{\string~Port8Bit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a19545_a523b6a757b27418dc015ed13e74bef60}{write}}(uint8\_t\ data);}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{a19545_ae8688251b574c3fd335b99f7e93fff2d}{read}}();}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00026}00026\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00030}\mbox{\hyperlink{a19549}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a19549}{Port8BitSlow}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a19545}{Port8Bit}}\ \{}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a19549}{Port8BitSlow}}(uint16\_t\ \mbox{\hyperlink{a19541_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}});}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19549_aa19647802064296f8bf76cc12f10d243}{\string~Port8BitSlow}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(uint8\_t\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ read()\ :\ inherited\ from\ Port8Bit}}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00036}00036\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00040}\mbox{\hyperlink{a19553}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a19553}{Port16Bit}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a19541}{Port}}\ \{}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a19553}{Port16Bit}}(uint16\_t\ \mbox{\hyperlink{a19541_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}});}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19553_a78dfa215194c676583e1b7e2dab38608}{\string~Port16Bit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a19553_ac5a46ce99a70874a8a4fcb090eb40575}{write}}(uint16\_t\ data);}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a19553_a6b5df5669e802e31f27f0a4a0e62492a}{read}}();}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00046}00046\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00051}\mbox{\hyperlink{a19557}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a19557}{Port32Bit}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a19541}{Port}}\ \{}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a19557}{Port32Bit}}(uint16\_t\ \mbox{\hyperlink{a19541_aab0c5c82b0190df88ddbb595bfac539a}{portnumber}});}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19557_a3e87dc7d610b279e8e7e072a0d1ee78c}{\string~Port32Bit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a19557_a64a16fe840224ef769ab2933770d1b21}{write}}(uint32\_t\ data);}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a19557_a41093c437a9508f984c90ae68e9c03bf}{read}}();}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00057}00057\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a18572_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{a18572_source_l00060}00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ KERNEL\_PORT\_H}}
+
+\end{DoxyCode}

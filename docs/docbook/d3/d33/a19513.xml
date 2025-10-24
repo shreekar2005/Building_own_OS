@@ -1,0 +1,515 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a19513" xml:lang="en-US">
+<title>driver::MouseDriver</title>
+<indexterm><primary>driver::MouseDriver</primary></indexterm>
+<para>
+
+<para><link linkend="_a19493">Driver</link> for the PS/2 mouse, handling 3-byte packets and managing mouse state. @inherits <link linkend="_a19529">hardware_communication::InterruptHandler</link> @inherits <link linkend="_a19493">driver::Driver</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;kmouse.hpp&quot;</computeroutput>
+</para>
+Inheritance diagram for driver::MouseDriver:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d2d/a19512.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for driver::MouseDriver:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d2/df8/a19511.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a19513_1a639956c8ce11d62ee443825e9b9695af">MouseDriver</link> (<link linkend="_a19537">hardware_communication::InterruptManager</link> *<link linkend="_a19529_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>, <link linkend="_a19509">MouseEventHandler</link> *<link linkend="_a19513_1a804f5657a062e0a18f3b56781f884c66">mouseEventHandler</link>)</para>
+
+<para>Constructs a new <link linkend="_a19513">MouseDriver</link> object. </para>
+</listitem>
+            <listitem><para><link linkend="_a19513_1a8c25e4a4b42d1d39b332ba6d4cbd6a22">~MouseDriver</link> ()</para>
+
+<para>Destroys the <link linkend="_a19513">MouseDriver</link> object. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a19513_1a446769df0b3b537a525476c7c8be47bc">activate</link> () override</para>
+
+<para>Activates the mouse driver. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a19513_1a4329c1cdedc72adf0b95cb3911c4acf6">deactivate</link> () override</para>
+
+<para>Deactivates the mouse driver. (Stub) </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_a19513_1a1b2f08490b7954e5ca504cd8bb6862c0">handleInterrupt</link> (uint32_t esp) override</para>
+
+<para>Handles the mouse interrupt (IRQ 12). </para>
+</listitem>
+            <listitem><para>virtual uintptr_t <link linkend="_a19529_1aa89d41d69840cb4f1c8692fa6ded28f4">handleInterrupt</link> (uintptr_t esp)=0</para>
+</listitem>
+            <listitem><para>int <link linkend="_a19513_1aabe3740996bf70fda96f0a25228954a6">reset</link> () override</para>
+
+<para>Resets the mouse. (Stub) </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static uint16_t <link linkend="_a19513_1a1a2a455ca7146dea3148afa8cb6c9ed5">mouse_block_video_mem_value</link> (uint16_t <link linkend="_a19513_1a4a671e7e2b235f6bec473cb960401bd6">old_char_under_mouse_pointer</link>, uint8_t mouse_pointer_color)</para>
+
+<para>Calculates the video memory value for the mouse cursor block. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static int8_t <link linkend="_a19513_1ac2077f6309c79d5f585fb966b57fe065">__mouse_x_</link> = -1</para>
+</listitem>
+            <listitem><para>static int8_t <link linkend="_a19513_1aa02009b37420687ef18db8a05ff9181f">__mouse_y_</link> = -1</para>
+</listitem>
+            <listitem><para>static uint16_t <link linkend="_a19513_1a4a671e7e2b235f6bec473cb960401bd6">old_char_under_mouse_pointer</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a18569_1a6c5563315b1a2f5c67ae8b78d06e3c7f">InterruptManager</link> * <link linkend="_a19529_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a19529_1afeede822d3e98957e76e627a54ec2f7a">interruptNumber</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int8_t <link linkend="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4">buffer</link> [3]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a19513_1a7942997bd5ead2767e9627d91789dd70">buttons</link></para>
+</listitem>
+            <listitem><para><link linkend="_a19545">hardware_communication::Port8Bit</link> <link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link></para>
+</listitem>
+            <listitem><para><link linkend="_a19545">hardware_communication::Port8Bit</link> <link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link></para>
+</listitem>
+            <listitem><para><link linkend="_a19509">MouseEventHandler</link> * <link linkend="_a19513_1a804f5657a062e0a18f3b56781f884c66">mouseEventHandler</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a19513_1a313426dd9aa1af1540cbffc2e77c58c1">offset</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_a19493">Driver</link> for the PS/2 mouse, handling 3-byte packets and managing mouse state. @inherits <link linkend="_a19529">hardware_communication::InterruptHandler</link> @inherits <link linkend="_a19493">driver::Driver</link>. </para>
+<para>
+Definition at line <link linkend="_a18578_source_1l00042">42</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a19513_1a639956c8ce11d62ee443825e9b9695af"/><section>
+    <title>MouseDriver()</title>
+<indexterm><primary>MouseDriver</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>MouseDriver</secondary></indexterm>
+<para><computeroutput>driver::MouseDriver::MouseDriver (<link linkend="_a19537">hardware_communication::InterruptManager</link> * interrupt_manager, <link linkend="_a19509">driver::MouseEventHandler</link> * mouseEventHandler)</computeroutput></para><para>
+
+<para>Constructs a new <link linkend="_a19513">MouseDriver</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>interrupt_manager</entry><entry>
+<para>Pointer to the interrupt manager. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mouseEventHandler</entry><entry>
+<para>Pointer to the event handler that will process mouse events. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18608_source_1l00031">31</link> of file <link linkend="_a18608_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00032 :&#32;<link linkend="_a19529">hardware_communication::InterruptHandler</link>(0x2C,&#32;<link linkend="_a19529_1ae86f4eae0ce9272b2027d44bdfd71e33">interrupt_manager</link>),&#32;
+00033 &#32;&#32;<link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link>(0x60),&#32;
+00034 &#32;&#32;<link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link>(0x64)
+00035 {
+00036 &#32;&#32;&#32;&#32;this-&gt;mouseEventHandler&#32;=&#32;<link linkend="_a19513_1a804f5657a062e0a18f3b56781f884c66">mouseEventHandler</link>;
+00037 }
+</programlisting><para>
+References <link linkend="_a18578_source_1l00048">mouseEventHandler</link>.</para>
+</section>
+<anchor xml:id="_a19513_1a8c25e4a4b42d1d39b332ba6d4cbd6a22"/><section>
+    <title>~MouseDriver()</title>
+<indexterm><primary>~MouseDriver</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>~MouseDriver</secondary></indexterm>
+<para><computeroutput>driver::MouseDriver::~MouseDriver ( )</computeroutput></para><para>
+
+<para>Destroys the <link linkend="_a19513">MouseDriver</link> object. </para>
+</para>
+<para>
+Definition at line <link linkend="_a18608_source_1l00040">40</link> of file <link linkend="_a18608_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00040 {}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_a19513_1a446769df0b3b537a525476c7c8be47bc"/><section>
+    <title>activate()</title>
+<indexterm><primary>activate</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>activate</secondary></indexterm>
+<para><computeroutput>void driver::MouseDriver::activate ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Activates the mouse driver. </para>
+</para>
+<para>
+Implements <link linkend="_a19493_1a8c86c1e52652d8b491d37a3b60b535b0">driver::Driver</link>.</para>
+<para>
+Definition at line <link linkend="_a18608_source_1l00088">88</link> of file <link linkend="_a18608_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00089 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>()&#32;&amp;&#32;1)&#32;<link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>();
+00090 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a313426dd9aa1af1540cbffc2e77c58c1">offset</link>&#32;=&#32;0;
+00091 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a7942997bd5ead2767e9627d91789dd70">buttons</link>&#32;=&#32;0;
+00092 &#32;&#32;&#32;&#32;<link linkend="_a19513_1ac2077f6309c79d5f585fb966b57fe065">__mouse_x_</link>&#32;=&#32;40;
+00093 &#32;&#32;&#32;&#32;<link linkend="_a19513_1aa02009b37420687ef18db8a05ff9181f">__mouse_y_</link>&#32;=&#32;12;
+00094 
+00095 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;uint16_t*&#32;video_memory&#32;=&#32;(uint16_t*)&#32;0xb8000;
+00096 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a4a671e7e2b235f6bec473cb960401bd6">old_char_under_mouse_pointer</link>&#32;=&#32;video_memory[80&#32;*&#32;<link linkend="_a19513_1aa02009b37420687ef18db8a05ff9181f">__mouse_y_</link>&#32;+&#32;<link linkend="_a19513_1ac2077f6309c79d5f585fb966b57fe065">__mouse_x_</link>];
+00097 &#32;&#32;&#32;&#32;video_memory[80&#32;*&#32;<link linkend="_a19513_1aa02009b37420687ef18db8a05ff9181f">__mouse_y_</link>&#32;+&#32;<link linkend="_a19513_1ac2077f6309c79d5f585fb966b57fe065">__mouse_x_</link>]&#32;=&#32;<link linkend="_a19513_1a1a2a455ca7146dea3148afa8cb6c9ed5">mouse_block_video_mem_value</link>(<link linkend="_a19513_1a4a671e7e2b235f6bec473cb960401bd6">old_char_under_mouse_pointer</link>,&#32;<link linkend="_a18578_1a637dd833f5f7af42afa1f42349a4d89e">MOUSE_POINTER_COLOR</link>);
+00098 
+00099 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Enable&#32;the&#32;auxiliary&#32;mouse&#32;device</emphasis>
+00100 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0xA8);&#32;
+00101 &#32;&#32;&#32;&#32;
+00102 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Enable&#32;the&#32;interrupts&#32;for&#32;the&#32;mouse</emphasis>
+00103 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x20);&#32;
+00104 &#32;&#32;&#32;&#32;uint8_t&#32;status&#32;=&#32;(<link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>()&#32;|&#32;2);&#32;
+00105 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x60);
+00106 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(status);
+00107 
+00108 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;mouse&#32;to&#32;use&#32;default&#32;settings&#32;and&#32;enable&#32;packet&#32;streaming</emphasis>
+00109 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0xD4);
+00110 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0xF4);
+00111 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>();&#32;<emphasis role="comment">//&#32;Acknowledge</emphasis>
+00112 &#32;&#32;&#32;&#32;
+00113 &#32;&#32;&#32;&#32;<link linkend="_a18618_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Mouse&#32;Driver&#32;activated!\n&quot;</emphasis>);
+00114 }
+</programlisting><para>
+References <link linkend="_a18578_source_1l00025">MOUSE_POINTER_COLOR</link>, and <link linkend="_a18593_source_1l00306">basic::printf()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d33/a19513_a446769df0b3b537a525476c7c8be47bc_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a19513_1a4329c1cdedc72adf0b95cb3911c4acf6"/><section>
+    <title>deactivate()</title>
+<indexterm><primary>deactivate</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>deactivate</secondary></indexterm>
+<para><computeroutput>void driver::MouseDriver::deactivate ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Deactivates the mouse driver. (Stub) </para>
+</para>
+<para>
+Implements <link linkend="_a19493_1a4b3b5e5a163c2c0e3cb58ea752ebcef1">driver::Driver</link>.</para>
+<para>
+Definition at line <link linkend="_a18608_source_1l00120">120</link> of file <link linkend="_a18608_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00120 {}
+</programlisting></section>
+<anchor xml:id="_a19513_1a1b2f08490b7954e5ca504cd8bb6862c0"/><section>
+    <title>handleInterrupt()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>handleInterrupt</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>handleInterrupt</secondary></indexterm>
+<para><computeroutput>uint32_t driver::MouseDriver::handleInterrupt (uint32_t esp)<computeroutput>[override]</computeroutput></computeroutput></para><para>
+
+<para>Handles the mouse interrupt (IRQ 12). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>esp</entry><entry>
+<para>The stack pointer from the interrupt context. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The stack pointer. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_a18608_source_1l00045">45</link> of file <link linkend="_a18608_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00046 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;the&#32;mouse&#32;has&#32;sent&#32;data</emphasis>
+00047 &#32;&#32;&#32;&#32;uint8_t&#32;status&#32;=&#32;<link linkend="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725">commandPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>();
+00048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!(status&#32;&amp;&#32;0x20))&#32;<emphasis role="keywordflow">return</emphasis>&#32;esp;
+00049 &#32;&#32;&#32;&#32;
+00050 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Read&#32;the&#32;next&#32;byte&#32;of&#32;the&#32;packet</emphasis>
+00051 &#32;&#32;&#32;&#32;<link linkend="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4">buffer</link>[<link linkend="_a19513_1a313426dd9aa1af1540cbffc2e77c58c1">offset</link>]&#32;=&#32;<link linkend="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046">dataPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>();
+00052 &#32;&#32;&#32;&#32;<link linkend="_a19513_1a313426dd9aa1af1540cbffc2e77c58c1">offset</link>&#32;=&#32;(<link linkend="_a19513_1a313426dd9aa1af1540cbffc2e77c58c1">offset</link>&#32;+&#32;1)&#32;%&#32;3;
+00053 
+00054 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;When&#32;a&#32;full&#32;3-byte&#32;packet&#32;is&#32;received</emphasis>
+00055 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_a19513_1a313426dd9aa1af1540cbffc2e77c58c1">offset</link>&#32;==&#32;0){
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_a19513_1a804f5657a062e0a18f3b56781f884c66">mouseEventHandler</link>&#32;==&#32;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;esp;&#32;<emphasis role="comment">//&#32;Do&#32;nothing&#32;without&#32;a&#32;handler</emphasis>
+00057 
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;---&#32;Handle&#32;Mouse&#32;Movement&#32;---</emphasis>
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;int8_t&#32;delta_x&#32;=&#32;<link linkend="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4">buffer</link>[1];
+00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;int8_t&#32;delta_y&#32;=&#32;-<link linkend="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4">buffer</link>[2];&#32;<emphasis role="comment">//&#32;Y-axis&#32;is&#32;inverted&#32;from&#32;the&#32;mouse&apos;s&#32;perspective</emphasis>
+00061 
+00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(delta_x&#32;!=&#32;0&#32;||&#32;delta_y&#32;!=&#32;0)&#32;{
+00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a19513_1a804f5657a062e0a18f3b56781f884c66">mouseEventHandler</link>-&gt;<link linkend="_a19509_1a68f635b3b65f927d37d4e0835f7e0b30">onMouseMove</link>(delta_x,&#32;delta_y);
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00065 
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;---&#32;Handle&#32;Mouse&#32;Buttons&#32;---</emphasis>
+00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(uint8_t&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;3;&#32;i++)&#32;{
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;the&#32;state&#32;of&#32;button&#32;&apos;i&apos;&#32;has&#32;changed</emphasis>
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((<link linkend="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4">buffer</link>[0]&#32;&amp;&#32;(1&#32;&lt;&lt;&#32;i))&#32;!=&#32;(<link linkend="_a19513_1a7942997bd5ead2767e9627d91789dd70">buttons</link>&#32;&amp;&#32;(1&#32;&lt;&lt;&#32;i)))&#32;{
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4">buffer</link>[0]&#32;&amp;&#32;(1&#32;&lt;&lt;&#32;i))&#32;{
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a19513_1a804f5657a062e0a18f3b56781f884c66">mouseEventHandler</link>-&gt;<link linkend="_a19509_1a2f12c5f63356c3045fd6cb46fd89374f">onMouseDown</link>(i&#32;+&#32;1);&#32;<emphasis role="comment">//&#32;Left=1,&#32;Right=2,&#32;Middle=3</emphasis>
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a19513_1a804f5657a062e0a18f3b56781f884c66">mouseEventHandler</link>-&gt;<link linkend="_a19509_1a09b77fe86bfa79313b5c5b91d09eb514">onMouseUp</link>(i&#32;+&#32;1);
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a19513_1a7942997bd5ead2767e9627d91789dd70">buttons</link>&#32;=&#32;<link linkend="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4">buffer</link>[0];&#32;<emphasis role="comment">//&#32;Save&#32;the&#32;current&#32;button&#32;state&#32;for&#32;the&#32;next&#32;interrupt</emphasis>
+00078 &#32;&#32;&#32;&#32;}
+00079 
+00080 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;esp;
+00081 }
+</programlisting><para>
+References <link linkend="_a19509_1a68f635b3b65f927d37d4e0835f7e0b30">driver::MouseEventHandler::onMouseMove()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d33/a19513_a1b2f08490b7954e5ca504cd8bb6862c0_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a19529_1aa89d41d69840cb4f1c8692fa6ded28f4"/><section>
+    <title>handleInterrupt()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>handleInterrupt</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>handleInterrupt</secondary></indexterm>
+<para><computeroutput>virtual uintptr_t hardware_communication::InterruptHandler::handleInterrupt (uintptr_t esp)<computeroutput>[pure virtual]</computeroutput>, <computeroutput>[inherited]</computeroutput></computeroutput></para><para>
+Referenced by <link linkend="_a18599_source_1l00185">hardware_communication::InterruptManager::handleInterrupt()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dd/d18/a19529_aa89d41d69840cb4f1c8692fa6ded28f4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a19513_1a1a2a455ca7146dea3148afa8cb6c9ed5"/><section>
+    <title>mouse_block_video_mem_value()</title>
+<indexterm><primary>mouse_block_video_mem_value</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>mouse_block_video_mem_value</secondary></indexterm>
+<para><computeroutput>uint16_t driver::MouseDriver::mouse_block_video_mem_value (uint16_t current_char, uint8_t mouse_pointer_color)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Calculates the video memory value for the mouse cursor block. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>current_char</entry><entry>
+<para>The original character attributes and ASCII value at the cursor position. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mouse_pointer_color</entry><entry>
+<para>The desired background color for the mouse pointer. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The new 16-bit video memory value representing the character with the new background color. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_a18608_source_1l00023">23</link> of file <link linkend="_a18608_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(current_char&#32;&amp;&#32;0x0FFF)&#32;|&#32;(mouse_pointer_color&#32;&lt;&lt;&#32;12);
+00025 }
+</programlisting><para>
+Referenced by <link linkend="_a18557_source_1l00060">MouseEventHandler_for_kernel::onMouseMove()</link>, and <link linkend="_a18593_source_1l00050">printCharStr()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d33/a19513_a1a2a455ca7146dea3148afa8cb6c9ed5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a19513_1aabe3740996bf70fda96f0a25228954a6"/><section>
+    <title>reset()</title>
+<indexterm><primary>reset</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>reset</secondary></indexterm>
+<para><computeroutput>int driver::MouseDriver::reset ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Resets the mouse. (Stub) </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Always returns 0. </para>
+</formalpara>
+</para>
+<para>
+Implements <link linkend="_a19493_1a98d2e779c02364fc58c172d0d2a32bdd">driver::Driver</link>.</para>
+<para>
+Definition at line <link linkend="_a18608_source_1l00118">118</link> of file <link linkend="_a18608_source">kmouse.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00118 {<emphasis role="keywordflow">return</emphasis>&#32;0;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a19513_1ac2077f6309c79d5f585fb966b57fe065"/><section>
+    <title>__mouse_x_</title>
+<indexterm><primary>__mouse_x_</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>__mouse_x_</secondary></indexterm>
+<para><computeroutput>int8_t driver::MouseDriver::__mouse_x_ = -1<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00053">53</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a18557_source_1l00044">MouseEventHandler_for_kernel::onMouseDown()</link>, <link linkend="_a18557_source_1l00060">MouseEventHandler_for_kernel::onMouseMove()</link>, and <link linkend="_a18593_source_1l00050">printCharStr()</link>.</para>
+</section>
+<anchor xml:id="_a19513_1aa02009b37420687ef18db8a05ff9181f"/><section>
+    <title>__mouse_y_</title>
+<indexterm><primary>__mouse_y_</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>__mouse_y_</secondary></indexterm>
+<para><computeroutput>int8_t driver::MouseDriver::__mouse_y_ = -1<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00053">53</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a18557_source_1l00044">MouseEventHandler_for_kernel::onMouseDown()</link>, <link linkend="_a18557_source_1l00060">MouseEventHandler_for_kernel::onMouseMove()</link>, and <link linkend="_a18593_source_1l00050">printCharStr()</link>.</para>
+</section>
+<anchor xml:id="_a19513_1aaa1d55d296d88995ac49a8a9a75a79d4"/><section>
+    <title>buffer</title>
+<indexterm><primary>buffer</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>buffer</secondary></indexterm>
+<para><computeroutput>int8_t driver::MouseDriver::buffer[3]<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00045">45</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19513_1a7942997bd5ead2767e9627d91789dd70"/><section>
+    <title>buttons</title>
+<indexterm><primary>buttons</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>buttons</secondary></indexterm>
+<para><computeroutput>uint8_t driver::MouseDriver::buttons<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00047">47</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19513_1a2877a9f46dd83a5f05f17fd83a0a7725"/><section>
+    <title>commandPort</title>
+<indexterm><primary>commandPort</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>commandPort</secondary></indexterm>
+<para><computeroutput><link linkend="_a19545">hardware_communication::Port8Bit</link> driver::MouseDriver::commandPort<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00044">44</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19513_1a8e30a6f6c5839fcf9c3ab63aa167d046"/><section>
+    <title>dataPort</title>
+<indexterm><primary>dataPort</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>dataPort</secondary></indexterm>
+<para><computeroutput><link linkend="_a19545">hardware_communication::Port8Bit</link> driver::MouseDriver::dataPort<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00043">43</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19529_1ae86f4eae0ce9272b2027d44bdfd71e33"/><section>
+    <title>interrupt_manager</title>
+<indexterm><primary>interrupt_manager</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>interrupt_manager</secondary></indexterm>
+<para><computeroutput><link linkend="_a18569_1a6c5563315b1a2f5c67ae8b78d06e3c7f">InterruptManager</link>* hardware_communication::InterruptHandler::interrupt_manager<computeroutput>[protected]</computeroutput>, <computeroutput>[inherited]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18569_source_1l00025">25</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a18599_source_1l00006">hardware_communication::InterruptHandler::InterruptHandler()</link>.</para>
+</section>
+<anchor xml:id="_a19529_1afeede822d3e98957e76e627a54ec2f7a"/><section>
+    <title>interruptNumber</title>
+<indexterm><primary>interruptNumber</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>interruptNumber</secondary></indexterm>
+<para><computeroutput>uint8_t hardware_communication::InterruptHandler::interruptNumber<computeroutput>[protected]</computeroutput>, <computeroutput>[inherited]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18569_source_1l00024">24</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a18599_source_1l00006">hardware_communication::InterruptHandler::InterruptHandler()</link>.</para>
+</section>
+<anchor xml:id="_a19513_1a804f5657a062e0a18f3b56781f884c66"/><section>
+    <title>mouseEventHandler</title>
+<indexterm><primary>mouseEventHandler</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>mouseEventHandler</secondary></indexterm>
+<para><computeroutput><link linkend="_a19509">MouseEventHandler</link>* driver::MouseDriver::mouseEventHandler<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00048">48</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a18608_source_1l00031">MouseDriver()</link>.</para>
+</section>
+<anchor xml:id="_a19513_1a313426dd9aa1af1540cbffc2e77c58c1"/><section>
+    <title>offset</title>
+<indexterm><primary>offset</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>offset</secondary></indexterm>
+<para><computeroutput>uint8_t driver::MouseDriver::offset<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00046">46</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19513_1a4a671e7e2b235f6bec473cb960401bd6"/><section>
+    <title>old_char_under_mouse_pointer</title>
+<indexterm><primary>old_char_under_mouse_pointer</primary><secondary>driver::MouseDriver</secondary></indexterm>
+<indexterm><primary>driver::MouseDriver</primary><secondary>old_char_under_mouse_pointer</secondary></indexterm>
+<para><computeroutput>uint16_t driver::MouseDriver::old_char_under_mouse_pointer<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18578_source_1l00051">51</link> of file <link linkend="_a18578_source">kmouse.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a18557_source_1l00060">MouseEventHandler_for_kernel::onMouseMove()</link>, and <link linkend="_a18593_source_1l00050">printCharStr()</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/<link linkend="_a18578">kmouse.hpp</link>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/<link linkend="_a18608">kmouse.cpp</link></section>
+</section>

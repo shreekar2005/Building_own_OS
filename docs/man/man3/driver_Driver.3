@@ -1,8 +1,9 @@
-.TH "driver::Driver" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "driver::Driver" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-driver::Driver
+driver::Driver \- Base class (interface) for all hardware drivers in the operating system\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -16,9 +17,11 @@ Inherited by \fBdriver::KeyboardDriver\fP, and \fBdriver::MouseDriver\fP\&.
 .ti -1c
 .RI "\fBDriver\fP ()"
 .br
+.RI "Default constructor for the base \fBDriver\fP class\&. "
 .ti -1c
 .RI "virtual \fB~Driver\fP ()"
 .br
+.RI "Default destructor for the base \fBDriver\fP class\&. "
 .ti -1c
 .RI "virtual void \fBactivate\fP ()=0"
 .br
@@ -31,23 +34,29 @@ Inherited by \fBdriver::KeyboardDriver\fP, and \fBdriver::MouseDriver\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
+Base class (interface) for all hardware drivers in the operating system\&. 
+.PP
 Definition at line \fB6\fP of file \fBkdriver\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "driver::Driver::Driver ()"
 
 .PP
-Definition at line \fB3\fP of file \fBkdriver\&.cpp\fP\&..PP
+Default constructor for the base \fBDriver\fP class\&. 
+.PP
+Definition at line \fB4\fP of file \fBkdriver\&.cpp\fP\&..PP
 .nf
-3 {}
+4 {}
 .fi
 
 .SS "driver::Driver::~Driver ()\fC [virtual]\fP"
 
 .PP
-Definition at line \fB4\fP of file \fBkdriver\&.cpp\fP\&..PP
+Default destructor for the base \fBDriver\fP class\&. 
+.PP
+Definition at line \fB6\fP of file \fBkdriver\&.cpp\fP\&..PP
 .nf
-4 {}
+6 {}
 .fi
 
 .SH "Member Function Documentation"

@@ -1,4 +1,4 @@
-.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/kernel_src/kernel.cpp" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/kernel_src/kernel.cpp" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,7 +8,7 @@
 .PP
 \fC#include <cstdint>\fP
 .br
-\fC#include 'basic/multiboot\&.hpp'\fP
+\fC#include 'basic/multiboot\&.h'\fP
 .br
 \fC#include 'essential/kicxxabi\&.hpp'\fP
 .br
@@ -33,9 +33,11 @@
 .ti -1c
 .RI "class \fBKeyboardEventHandler_for_kernel\fP"
 .br
+.RI "Custom keyboard event handler implementation for the kernel\&. "
 .ti -1c
 .RI "class \fBMouseEventHandler_for_kernel\fP"
 .br
+.RI "Custom mouse event handler implementation for the kernel\&. "
 .in -1c
 .SS "Functions"
 
@@ -43,51 +45,63 @@
 .ti -1c
 .RI "void \fBkernelMain\fP (multiboot_info_t *mbi, uint32_t magicnumber)"
 .br
+.RI "The main entry point for the C++ kernel\&. "
 .in -1c
 .SH "Function Documentation"
 .PP 
 .SS "void kernelMain (multiboot_info_t * mbi, uint32_t magicnumber)"
 
 .PP
-Definition at line \fB85\fP of file \fBkernel\&.cpp\fP\&..PP
+The main entry point for the C++ kernel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImbi\fP Pointer to the Multiboot information structure provided by GRUB\&. 
+.br
+\fImagicnumber\fP The magic number passed by GRUB to verify boot\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB105\fP of file \fBkernel\&.cpp\fP\&..PP
 .nf
-86 {
-87     // int a=1/0;
-88     essential::__callConstructors();
-89     basic::enable_cursor(0,15); // (0,15) is for blinking block
-90     basic::__clearScreen();
-91     //\-\-\-\-\-\-\-\-\-\-\-\-\-Global Descriptor Table \-\-\-\-\-\-\-\-\-\-\-\-\-
-92     essential::GDT osos_GDT;
-93     osos_GDT\&.installTable();
-94     //\-\-\-\-\-\-\-\-\-\-\-\-Interrupt Descriptor Table and Drivers \-\-\-\-\-\-\-\-\-\-\-\-\-
-95     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
-96     osos_InterruptManager\&.installTable();
-97     
-98     //\-\-\-\-\-\-\-\-\-\-\-\-Creating object of drivers so that they will handle their corresponding Interrupts\-\-\-\-\-\-\-\-\-\-\-\-
-99     driver::DriverManager driverManager;
-100 
-101         KeyboardEventHandler_for_kernel keyboardEventHandler_for_kernel;
-102         driver::KeyboardDriver keyboard(&osos_InterruptManager,&keyboardEventHandler_for_kernel);
-103         driverManager\&.addDriver(&keyboard);
-104 
-105         MouseEventHandler_for_kernel mouseEventHandler_for_kernel;
-106         driver::MouseDriver mouse(&osos_InterruptManager, &mouseEventHandler_for_kernel);
-107         driverManager\&.addDriver(&mouse);
-108 
-109     driverManager\&.activateAll();
-110 
-111     hardware_communication::InterruptManager::activate();
-112     
-113     essential::GDT::printLoadedTableHeader();
-114     hardware_communication::InterruptManager::printLoadedTableHeader();
-115     basic::printf("HELLO FROM OSOS :)\\n");
-116     while (true){};
-117 
-118     basic::disable_cursor();
-119     essential::__cxa_finalize(0);
-120     (void)mbi;
-121     (void)magicnumber;
-122 }
+106 {
+107     // int a=1/0;
+108     essential::__callConstructors();
+109     basic::enable_cursor(0,15); // (0,15) is for blinking block
+110     basic::__clearScreen();
+111     //\-\-\-\-\-\-\-\-\-\-\-\-\-Global Descriptor Table \-\-\-\-\-\-\-\-\-\-\-\-\-
+112     essential::GDT osos_GDT;
+113     osos_GDT\&.installTable();
+114     //\-\-\-\-\-\-\-\-\-\-\-\-Interrupt Descriptor Table and Drivers \-\-\-\-\-\-\-\-\-\-\-\-\-
+115     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
+116     osos_InterruptManager\&.installTable();
+117     
+118     //\-\-\-\-\-\-\-\-\-\-\-\-Creating object of drivers so that they will handle their corresponding Interrupts\-\-\-\-\-\-\-\-\-\-\-\-
+119     driver::DriverManager driverManager;
+120 
+121         KeyboardEventHandler_for_kernel keyboardEventHandler_for_kernel;
+122         driver::KeyboardDriver keyboard(&osos_InterruptManager,&keyboardEventHandler_for_kernel);
+123         driverManager\&.addDriver(&keyboard);
+124 
+125         MouseEventHandler_for_kernel mouseEventHandler_for_kernel;
+126         driver::MouseDriver mouse(&osos_InterruptManager, &mouseEventHandler_for_kernel);
+127         driverManager\&.addDriver(&mouse);
+128 
+129     driverManager\&.activateAll();
+130 
+131     hardware_communication::InterruptManager::activate();
+132     
+133     essential::GDT::printLoadedTableHeader();
+134     hardware_communication::InterruptManager::printLoadedTableHeader();
+135     basic::printf("HELLO FROM OSOS :)\\n");
+136     while (true){};
+137 
+138     basic::disable_cursor();
+139     essential::__cxa_finalize(0);
+140     (void)mbi;
+141     (void)magicnumber;
+142 }
 .fi
 
 .PP

@@ -1,8 +1,9 @@
-.TH "driver::DriverManager" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "driver::DriverManager" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-driver::DriverManager
+driver::DriverManager \- Manages a collection of \fBDriver\fP objects, facilitating their activation and organization\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,15 +15,19 @@ driver::DriverManager
 .ti -1c
 .RI "\fBDriverManager\fP ()"
 .br
+.RI "Constructs a new \fBDriverManager\fP object, initializing the driver count to zero\&. "
 .ti -1c
 .RI "\fB~DriverManager\fP ()"
 .br
+.RI "Destroys the \fBDriverManager\fP object\&. "
 .ti -1c
 .RI "void \fBactivateAll\fP ()"
 .br
+.RI "Activates all drivers currently registered with the manager\&. "
 .ti -1c
 .RI "void \fBaddDriver\fP (\fBDriver\fP *)"
 .br
+.RI "Adds a driver to the manager's list\&. "
 .in -1c
 .SS "Private Attributes"
 
@@ -36,25 +41,31 @@ driver::DriverManager
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB17\fP of file \fBkdriver\&.hpp\fP\&.
+Manages a collection of \fBDriver\fP objects, facilitating their activation and organization\&. 
+.PP
+Definition at line \fB18\fP of file \fBkdriver\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "driver::DriverManager::DriverManager ()"
 
 .PP
-Definition at line \fB7\fP of file \fBkdriver\&.cpp\fP\&..PP
+Constructs a new \fBDriverManager\fP object, initializing the driver count to zero\&. 
+.PP
+Definition at line \fB10\fP of file \fBkdriver\&.cpp\fP\&..PP
 .nf
-7                                   {
-8     numDrivers=0;
-9 }
+10                                   {
+11     numDrivers=0;
+12 }
 .fi
 
 .SS "driver::DriverManager::~DriverManager ()"
 
 .PP
-Definition at line \fB10\fP of file \fBkdriver\&.cpp\fP\&..PP
+Destroys the \fBDriverManager\fP object\&. 
+.PP
+Definition at line \fB14\fP of file \fBkdriver\&.cpp\fP\&..PP
 .nf
-10 {}
+14 {}
 .fi
 
 .SH "Member Function Documentation"
@@ -62,13 +73,15 @@ Definition at line \fB10\fP of file \fBkdriver\&.cpp\fP\&..PP
 .SS "void driver::DriverManager::activateAll ()"
 
 .PP
-Definition at line \fB17\fP of file \fBkdriver\&.cpp\fP\&..PP
+Activates all drivers currently registered with the manager\&. 
+.PP
+Definition at line \fB24\fP of file \fBkdriver\&.cpp\fP\&..PP
 .nf
-17                                      {
-18     for(int i=0; i<numDrivers; i++){
-19         drivers[i]\->activate();
-20     }
-21 }
+24                                      {
+25     for(int i=0; i<numDrivers; i++){
+26         drivers[i]\->activate();
+27     }
+28 }
 .fi
 
 .PP
@@ -76,12 +89,21 @@ Referenced by \fBkernelMain()\fP\&.
 .SS "void driver::DriverManager::addDriver (\fBdriver::Driver\fP * driver)"
 
 .PP
-Definition at line \fB12\fP of file \fBkdriver\&.cpp\fP\&..PP
+Adds a driver to the manager's list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdriver\fP A pointer to the driver object to be added\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB18\fP of file \fBkdriver\&.cpp\fP\&..PP
 .nf
-12                                                        {
-13     drivers[numDrivers]=driver;
-14     numDrivers++;
-15 }
+18                                                        {
+19     drivers[numDrivers]=driver;
+20     numDrivers++;
+21 }
 .fi
 
 .PP
@@ -91,11 +113,11 @@ Referenced by \fBkernelMain()\fP\&.
 .SS "\fBDriver\fP* driver::DriverManager::drivers[\fBMAX_NUMDRIVERS\fP]\fC [private]\fP"
 
 .PP
-Definition at line \fB19\fP of file \fBkdriver\&.hpp\fP\&.
+Definition at line \fB20\fP of file \fBkdriver\&.hpp\fP\&.
 .SS "int driver::DriverManager::numDrivers\fC [private]\fP"
 
 .PP
-Definition at line \fB20\fP of file \fBkdriver\&.hpp\fP\&.
+Definition at line \fB21\fP of file \fBkdriver\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a19533" xml:lang="en-US">
+<title>hardware_communication::IDT_row</title>
+<indexterm><primary>hardware_communication::IDT_row</primary></indexterm>
+<para>
+
+<para>Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT). </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;kinterrupt.hpp&quot;</computeroutput>
+</para>
+Collaboration diagram for hardware_communication::IDT_row:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/db2/a19531.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_a19533_1a5149970639d0f251d529808a192b4b55">IDT_row</link> ()</para>
+
+<para>Default constructor for a single entry (row) in the IDT. </para>
+</listitem>
+            <listitem><para><link linkend="_a19533_1a9cad760dfa1c1f76f98b6207365f7e2d">~IDT_row</link> ()</para>
+
+<para>Destroys the <link linkend="_a19533">IDT_row</link> object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_a19533_1afa706321cb5ba41a6035dbe1ec39c265">access</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a19533_1af1a4bb042f75f10c5e2b08034e82aed3">handlerAddressHighbits</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a19533_1a3390e4d53e904d420187ecc0247e9289">handlerAddressLowbits</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_a19533_1a800309c99800063315cddf536a3d0d67">kernelCodeSegmentSelector</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_a19533_1a96bce1ce9c6a7e9b5a20607f41a2e876">reserved</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT). </para>
+<para>
+Definition at line <link linkend="_a18569_source_1l00033">33</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_a19533_1a5149970639d0f251d529808a192b4b55"/><section>
+    <title>IDT_row()</title>
+<indexterm><primary>IDT_row</primary><secondary>hardware_communication::IDT_row</secondary></indexterm>
+<indexterm><primary>hardware_communication::IDT_row</primary><secondary>IDT_row</secondary></indexterm>
+<para><computeroutput>hardware_communication::IDT_row::IDT_row ( )</computeroutput></para><para>
+
+<para>Default constructor for a single entry (row) in the IDT. </para>
+</para>
+<para>
+Definition at line <link linkend="_a18599_source_1l00018">18</link> of file <link linkend="_a18599_source">kinterrupt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00018 {}
+</programlisting></section>
+<anchor xml:id="_a19533_1a9cad760dfa1c1f76f98b6207365f7e2d"/><section>
+    <title>~IDT_row()</title>
+<indexterm><primary>~IDT_row</primary><secondary>hardware_communication::IDT_row</secondary></indexterm>
+<indexterm><primary>hardware_communication::IDT_row</primary><secondary>~IDT_row</secondary></indexterm>
+<para><computeroutput>hardware_communication::IDT_row::~IDT_row ( )</computeroutput></para><para>
+
+<para>Destroys the <link linkend="_a19533">IDT_row</link> object. </para>
+</para>
+<para>
+Definition at line <link linkend="_a18599_source_1l00020">20</link> of file <link linkend="_a18599_source">kinterrupt.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00020 {}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_a19533_1afa706321cb5ba41a6035dbe1ec39c265"/><section>
+    <title>access</title>
+<indexterm><primary>access</primary><secondary>hardware_communication::IDT_row</secondary></indexterm>
+<indexterm><primary>hardware_communication::IDT_row</primary><secondary>access</secondary></indexterm>
+<para><computeroutput>uint8_t hardware_communication::IDT_row::access<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18569_source_1l00038">38</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19533_1af1a4bb042f75f10c5e2b08034e82aed3"/><section>
+    <title>handlerAddressHighbits</title>
+<indexterm><primary>handlerAddressHighbits</primary><secondary>hardware_communication::IDT_row</secondary></indexterm>
+<indexterm><primary>hardware_communication::IDT_row</primary><secondary>handlerAddressHighbits</secondary></indexterm>
+<para><computeroutput>uint16_t hardware_communication::IDT_row::handlerAddressHighbits<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18569_source_1l00039">39</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+<para>
+Referenced by <link linkend="_a18599_source_1l00128">hardware_communication::InterruptManager::printLoadedTable()</link>.</para>
+</section>
+<anchor xml:id="_a19533_1a3390e4d53e904d420187ecc0247e9289"/><section>
+    <title>handlerAddressLowbits</title>
+<indexterm><primary>handlerAddressLowbits</primary><secondary>hardware_communication::IDT_row</secondary></indexterm>
+<indexterm><primary>hardware_communication::IDT_row</primary><secondary>handlerAddressLowbits</secondary></indexterm>
+<para><computeroutput>uint16_t hardware_communication::IDT_row::handlerAddressLowbits<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18569_source_1l00035">35</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19533_1a800309c99800063315cddf536a3d0d67"/><section>
+    <title>kernelCodeSegmentSelector</title>
+<indexterm><primary>kernelCodeSegmentSelector</primary><secondary>hardware_communication::IDT_row</secondary></indexterm>
+<indexterm><primary>hardware_communication::IDT_row</primary><secondary>kernelCodeSegmentSelector</secondary></indexterm>
+<para><computeroutput>uint16_t hardware_communication::IDT_row::kernelCodeSegmentSelector<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18569_source_1l00036">36</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+</section>
+<anchor xml:id="_a19533_1a96bce1ce9c6a7e9b5a20607f41a2e876"/><section>
+    <title>reserved</title>
+<indexterm><primary>reserved</primary><secondary>hardware_communication::IDT_row</secondary></indexterm>
+<indexterm><primary>hardware_communication::IDT_row</primary><secondary>reserved</secondary></indexterm>
+<para><computeroutput>uint8_t hardware_communication::IDT_row::reserved<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="_a18569_source_1l00037">37</link> of file <link linkend="_a18569_source">kinterrupt.hpp</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/<link linkend="_a18569">kinterrupt.hpp</link>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/<link linkend="_a18599">kinterrupt.cpp</link></section>
+</section>

@@ -1,0 +1,644 @@
+\doxysubsection{hardware\+\_\+communication\+::Interrupt\+Manager}
+\hypertarget{a19537}{}\label{a19537}\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+
+
+Manages the Interrupt Descriptor Table (IDT) and Programmable Interrupt Controllers (PICs), dispatching interrupts to registered handlers.  
+
+
+
+
+{\ttfamily \#include "{}kinterrupt.\+hpp"{}}
+
+
+
+Collaboration diagram for hardware\+\_\+communication\+::Interrupt\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d5/d4f/a19535}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a19537_aec70c703cac64ef1eec4b5a94d2e145c}{Interrupt\+Manager}} (\mbox{\hyperlink{a19521}{essential\+::\+GDT}} \texorpdfstring{$\ast$}{*}gdt)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{a19537}{Interrupt\+Manager}, initializes the PICs, and populates the IDT. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a19537_a65276f26b5d5197482a415b83a898560}{\texorpdfstring{$\sim$}{\string~}\+Interrupt\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{a19537}{Interrupt\+Manager} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a19537_a81d593116320da32f1aa4057087f1e11}{install\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Loads the Interrupt Descriptor Table (IDT) into the CPU\textquotesingle{}s IDTR register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a19537_a1ab5b6378071338ede295f0bffaf3d51}{activate}} ()
+\begin{DoxyCompactList}\small\item\em Enables interrupts globally by executing the \textquotesingle{}sti\textquotesingle{} instruction. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a19537_a9451566bf08617378ca2144505d394a6}{deactivate}} ()
+\begin{DoxyCompactList}\small\item\em Disables interrupts globally by executing the \textquotesingle{}cli\textquotesingle{} instruction. \end{DoxyCompactList}\item 
+static uintptr\+\_\+t \mbox{\hyperlink{a19537_a2d3ef1656e1eaaf86be40a200a49a4b2}{handle\+Interrupt}} (uint8\+\_\+t interrupt\+Number, uintptr\+\_\+t esp)
+\begin{DoxyCompactList}\small\item\em The central interrupt dispatching function called by assembly stubs. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a19537_aac20f3a896bea512413568a60ad48c3d}{print\+Loaded\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Prints the details of all entries in the currently loaded IDT. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a19537_ad8a6f694662a3a36ba9353197e20c1b1}{print\+Loaded\+Table\+Header}} ()
+\begin{DoxyCompactList}\small\item\em Prints the header information (base, limit, count) of the currently loaded IDT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{a19537_ad94bd8e9c355fde3e814d4894bab0181}{base}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{a19537_a1991d8428ff7c74b31f42d48bb49547a}{limit}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a19537_af448c0d55d2e226050b7f4efb6d4abe8}{set\+IDTEntry}} (uint8\+\_\+t interrupt\+Number, uint16\+\_\+t code\+Segment\+Selector\+Offset, void(\texorpdfstring{$\ast$}{*}handler)(), uint8\+\_\+t Descriptor\+Privilege\+Lever, uint8\+\_\+t Descriptor\+Type)
+\begin{DoxyCompactList}\small\item\em Populates a specific entry in the Interrupt Descriptor Table (IDT). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a19529}{Interrupt\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a19537_ac8aba191e612ad605b8b188f78e65d3b}{handlers}} \mbox{[}256\mbox{]}
+\item 
+\mbox{\hyperlink{a19533}{IDT\+\_\+row}} \mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interrupt\+Descriptor\+Table}} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} \mbox{\hyperlink{a19537_acb04723d03d6b34abbc5f7407cab0b33}{pic\+Master\+Command}}
+\begin{DoxyCompactList}\small\item\em Command port for the Master PIC (8259A). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} \mbox{\hyperlink{a19537_a5287e31a546f60708b085b387332a904}{pic\+Master\+Data}}
+\begin{DoxyCompactList}\small\item\em Data port for the Master PIC (8259A). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} \mbox{\hyperlink{a19537_afed9d24b37c8f9386a71f4284b2502a4}{pic\+Slave\+Command}}
+\begin{DoxyCompactList}\small\item\em Command port for the Slave PIC (8259A). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} \mbox{\hyperlink{a19537_ac1111b7cfbd27b37f03a0678ae5dbaf1}{pic\+Slave\+Data}}
+\begin{DoxyCompactList}\small\item\em Data port for the Slave PIC (8259A). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Manages the Interrupt Descriptor Table (IDT) and Programmable Interrupt Controllers (PICs), dispatching interrupts to registered handlers. 
+
+Definition at line \mbox{\hyperlink{a18569_source_l00047}{47}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a19537_aec70c703cac64ef1eec4b5a94d2e145c}\label{a19537_aec70c703cac64ef1eec4b5a94d2e145c} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!InterruptManager@{InterruptManager}}
+\index{InterruptManager@{InterruptManager}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{InterruptManager()}{InterruptManager()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Interrupt\+Manager\+::\+Interrupt\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a19521}{essential\+::\+GDT}} \texorpdfstring{$\ast$}{*}}]{gdt }\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{a19537}{Interrupt\+Manager}, initializes the PICs, and populates the IDT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gdt} & A pointer to the Global Descriptor Table instance, needed to get the kernel code segment selector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00033}{33}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ ICW1:\ Start\ Initialization\ Sequence.\ Both\ PICs\ are\ told\ to\ listen\ for\ 3\ more\ bytes\ of\ config\ data.}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{a19537_acb04723d03d6b34abbc5f7407cab0b33}{picMasterCommand}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x11);}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{a19537_afed9d24b37c8f9386a71f4284b2502a4}{picSlaveCommand}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x11);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ ICW2:\ Vector\ Remapping.}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Master\ is\ told\ to\ remap\ its\ IRQs\ (0-\/7)\ to\ CPU\ vectors\ 0x20-\/0x27.}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{a19537_a5287e31a546f60708b085b387332a904}{picMasterData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x20);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Slave\ is\ told\ to\ remap\ its\ IRQs\ (8-\/15)\ to\ CPU\ vectors\ 0x28-\/0x2F.}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{a19537_ac1111b7cfbd27b37f03a0678ae5dbaf1}{picSlaveData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x28);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ ICW3:\ Chaining\ Configuration.}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Master\ is\ told\ a\ slave\ is\ connected\ on\ its\ IRQ\ 2\ line\ (0x04\ =\ bit\ 2\ set).}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a19537_a5287e31a546f60708b085b387332a904}{picMasterData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x04);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Slave\ is\ told\ its\ identity\ is\ 2.}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{a19537_ac1111b7cfbd27b37f03a0678ae5dbaf1}{picSlaveData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x02);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ ICW4:\ Environment\ Information.}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Both\ are\ told\ to\ operate\ in\ standard\ "{}8086/88"{}\ mode.}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{a19537_a5287e31a546f60708b085b387332a904}{picMasterData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x01);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{a19537_ac1111b7cfbd27b37f03a0678ae5dbaf1}{picSlaveData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x01);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ OCW1:\ Interrupt\ Masking.}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ final\ step,\ enabling\ all\ interrupts\ by\ writing\ a\ mask\ of\ all\ zeros.}}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{a19537_a5287e31a546f60708b085b387332a904}{picMasterData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x00);}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{a19537_ac1111b7cfbd27b37f03a0678ae5dbaf1}{picSlaveData}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x00);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{a19537_ad94bd8e9c355fde3e814d4894bab0181}{base}}=(uintptr\_t)\&\mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}};}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{a19537_a1991d8428ff7c74b31f42d48bb49547a}{limit}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}})\ -\/\ 1;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ uint16\_t\ kernelCSselectorOffset\ =\ gdt-\/>\mbox{\hyperlink{a19521_a89a8d2c17e3c22e7200bff09252f46e1}{kernel\_CS\_selector}}();}
+\DoxyCodeLine{00064\ \ \ \ \ uint8\_t\ IDT\_INTERRUPT\_GATE=0xE;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<256;\ i++)\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19537_af448c0d55d2e226050b7f4efb6d4abe8}{setIDTEntry}}(i,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a18569_a07e074bde074261858311b014bc2b398}{ignoreInterrupt}},\ 0,\ IDT\_INTERRUPT\_GATE);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ Set\ handlers\ for\ hardware\ interrupts}}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{a19537_af448c0d55d2e226050b7f4efb6d4abe8}{setIDTEntry}}(0x20,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a18569_adf60fad10b12cc19ad193c928d36445c}{handleIRQ0x00}},\ 0,\ IDT\_INTERRUPT\_GATE);\ \textcolor{comment}{//\ Timer}}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{a19537_af448c0d55d2e226050b7f4efb6d4abe8}{setIDTEntry}}(0x21,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a18569_a6498ed740318b424aaae4db1f223e558}{handleIRQ0x01}},\ 0,\ IDT\_INTERRUPT\_GATE);\ \textcolor{comment}{//\ Keyboard}}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{a19537_af448c0d55d2e226050b7f4efb6d4abe8}{setIDTEntry}}(0x2C,\ kernelCSselectorOffset,\ \&\mbox{\hyperlink{a18569_a996c60cc7e88bb1c85505c19f6c35117}{handleIRQ0x0C}},\ 0,\ IDT\_INTERRUPT\_GATE);\ \textcolor{comment}{//\ PS/2\ Mouse}}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a18587_source_l00002}{base}}, \mbox{\hyperlink{a18569_adf60fad10b12cc19ad193c928d36445c}{handle\+IRQ0x00()}}, \mbox{\hyperlink{a18569_a6498ed740318b424aaae4db1f223e558}{handle\+IRQ0x01()}}, \mbox{\hyperlink{a18569_a996c60cc7e88bb1c85505c19f6c35117}{handle\+IRQ0x0\+C()}}, \mbox{\hyperlink{a18569_a07e074bde074261858311b014bc2b398}{ignore\+Interrupt()}}, \mbox{\hyperlink{a18611_source_l00146}{essential\+::\+GDT\+::kernel\+\_\+\+CS\+\_\+selector()}}, and \mbox{\hyperlink{a18587_source_l00001}{limit}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_aec70c703cac64ef1eec4b5a94d2e145c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a19537_a65276f26b5d5197482a415b83a898560}\label{a19537_a65276f26b5d5197482a415b83a898560} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!````~InterruptManager@{\texorpdfstring{$\sim$}{\string~}InterruptManager}}
+\index{````~InterruptManager@{\texorpdfstring{$\sim$}{\string~}InterruptManager}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}InterruptManager()}{\string~InterruptManager()}}
+{\footnotesize\ttfamily hardware\+\_\+communication\+::\+Interrupt\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Interrupt\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \doxylink{a19537}{Interrupt\+Manager} object. 
+
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00076}{76}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{a19537_a1ab5b6378071338ede295f0bffaf3d51}\label{a19537_a1ab5b6378071338ede295f0bffaf3d51} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!activate@{activate}}
+\index{activate@{activate}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Interrupt\+Manager\+::activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enables interrupts globally by executing the \textquotesingle{}sti\textquotesingle{} instruction. 
+
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00117}{117}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}sti"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Interrupts\ Activated\(\backslash\)n"{}});}
+\DoxyCodeLine{00120\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a18593_source_l00306}{basic\+::printf()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a18557_source_l00105}{kernel\+Main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_a1ab5b6378071338ede295f0bffaf3d51_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{db/dda/a19537_a1ab5b6378071338ede295f0bffaf3d51_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a19537_a9451566bf08617378ca2144505d394a6}\label{a19537_a9451566bf08617378ca2144505d394a6} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{deactivate()}{deactivate()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Interrupt\+Manager\+::deactivate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Disables interrupts globally by executing the \textquotesingle{}cli\textquotesingle{} instruction. 
+
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00122}{122}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}cli"{}});}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Interrupts\ Deactivated\(\backslash\)n"{}});}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a18593_source_l00306}{basic\+::printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_a9451566bf08617378ca2144505d394a6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a19537_a2d3ef1656e1eaaf86be40a200a49a4b2}\label{a19537_a2d3ef1656e1eaaf86be40a200a49a4b2} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!handleInterrupt@{handleInterrupt}}
+\index{handleInterrupt@{handleInterrupt}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{handleInterrupt()}{handleInterrupt()}}
+{\footnotesize\ttfamily uintptr\+\_\+t hardware\+\_\+communication\+::\+Interrupt\+Manager\+::handle\+Interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+Number,  }\item[{uintptr\+\_\+t}]{esp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The central interrupt dispatching function called by assembly stubs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+Number} & The number of the interrupt that occurred. \\
+\hline
+{\em esp} & The stack pointer (Extended Stack Pointer) from the context of the interrupted process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated stack pointer, typically the same as the input unless the handler modified the stack frame. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00185}{185}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ Use\ the\ global\ pointer\ "{}installed\_interrupt\_manager"{}\ to\ access\ the\ current\ interrupt\ manager}}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{a18599_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{installed\_interrupt\_manager}}-\/>\mbox{\hyperlink{a19537_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[interruptNumber]!=\textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ esp\ =\ \mbox{\hyperlink{a18599_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{installed\_interrupt\_manager}}-\/>\mbox{\hyperlink{a19537_ac8aba191e612ad605b8b188f78e65d3b}{handlers}}[interruptNumber]-\/>\mbox{\hyperlink{a19529_aa89d41d69840cb4f1c8692fa6ded28f4}{handleInterrupt}}(esp);}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(interruptNumber!=0x20)\{\ \textcolor{comment}{//0x20\ is\ Hardware\ Timer\ Interrupt}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}UNHANDLED\ INTERRUPT\ \%\#hx\(\backslash\)n"{}},interruptNumber);}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//\ Hardware\ interrupts\ must\ still\ be\ acknowledged\ to\ the\ PIC}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{if}\ (0x20\ <=interruptNumber\ \&\&\ interruptNumber\ <=\ 0x2F)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19537_acb04723d03d6b34abbc5f7407cab0b33}{picMasterCommand}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x20);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0x28\ <=\ interruptNumber)\ \mbox{\hyperlink{a19537_afed9d24b37c8f9386a71f4284b2502a4}{picSlaveCommand}}.\mbox{\hyperlink{a19549_af84b15d5a205a421a9877e2341714031}{write}}(0x20);}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{return}\ esp;}
+\DoxyCodeLine{00202\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a19529_aa89d41d69840cb4f1c8692fa6ded28f4}{hardware\+\_\+communication\+::\+Interrupt\+Handler\+::handle\+Interrupt()}}, \mbox{\hyperlink{a18569_source_l00058}{handlers}}, \mbox{\hyperlink{a18599_source_l00098}{installed\+\_\+interrupt\+\_\+manager}}, and \mbox{\hyperlink{a18593_source_l00306}{basic\+::printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_a2d3ef1656e1eaaf86be40a200a49a4b2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a19537_a81d593116320da32f1aa4057087f1e11}\label{a19537_a81d593116320da32f1aa4057087f1e11} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!installTable@{installTable}}
+\index{installTable@{installTable}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{installTable()}{installTable()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Interrupt\+Manager\+::install\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the Interrupt Descriptor Table (IDT) into the CPU\textquotesingle{}s IDTR register. 
+
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00100}{100}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{a18599_a1df59a6c3578a3d5d96bfef4ffd8fbc8}{installed\_interrupt\_manager}}=\textcolor{keyword}{this};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{struct\ }IDT\_Pointer\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a18587_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a18587_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00105\ \ \ \ \ \}\ \mbox{\hyperlink{a18621_a21c3ca5c318038eaed596c14fd2666ed}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ IDT\_Pointer\ idt\_ptr;}
+\DoxyCodeLine{00108\ \ \ \ \ idt\_ptr.limit\ =\ this-\/>\mbox{\hyperlink{a19537_a1991d8428ff7c74b31f42d48bb49547a}{limit}};}
+\DoxyCodeLine{00109\ \ \ \ \ idt\_ptr.base\ =\ this-\/>\mbox{\hyperlink{a19537_ad94bd8e9c355fde3e814d4894bab0181}{base}};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}lidt\ \%0"{}}\ :\ :\ \textcolor{stringliteral}{"{}m"{}}(idt\_ptr));}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}IDT\ Installed\(\backslash\)n"{}});}
+\DoxyCodeLine{00113\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a18621_a21c3ca5c318038eaed596c14fd2666ed}{hardware\+\_\+communication\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+}}, \mbox{\hyperlink{a18587_source_l00002}{base}}, \mbox{\hyperlink{a18599_source_l00098}{installed\+\_\+interrupt\+\_\+manager}}, \mbox{\hyperlink{a18587_source_l00001}{limit}}, and \mbox{\hyperlink{a18593_source_l00306}{basic\+::printf()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a18557_source_l00105}{kernel\+Main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_a81d593116320da32f1aa4057087f1e11_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_a81d593116320da32f1aa4057087f1e11_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a19537_aac20f3a896bea512413568a60ad48c3d}\label{a19537_aac20f3a896bea512413568a60ad48c3d} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!printLoadedTable@{printLoadedTable}}
+\index{printLoadedTable@{printLoadedTable}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{printLoadedTable()}{printLoadedTable()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the details of all entries in the currently loaded IDT. 
+
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00128}{128}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{struct\ }IDT\_Pointer\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a18587_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a18587_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00132\ \ \ \ \ \}\ \mbox{\hyperlink{a18621_a21c3ca5c318038eaed596c14fd2666ed}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ IDT\_Pointer\ idt\_ptr;}
+\DoxyCodeLine{00135\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}sidt\ \%0"{}}\ :\ \textcolor{stringliteral}{"{}=m"{}}(idt\_ptr));}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}INFO\ about\ :\ Currently\ Loaded\ IDT\(\backslash\)n"{}});}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Base\ Address:\ \%\#x\(\backslash\)n"{}},\ idt\_ptr.base);}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Limit:\ \%\#x\ (\%d\ bytes)\(\backslash\)n"{}},\ idt\_ptr.limit,\ idt\_ptr.limit);}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Entries:\ \%d\(\backslash\)n"{}},\ (idt\_ptr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a19533}{hardware\_communication::IDT\_row}}));}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\ Idx\ |\ Handler\ Address\ |\ Selector\ |\ Access\ Flags\(\backslash\)n"{}});}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{a19533}{hardware\_communication::IDT\_row}}*\ current\_idt\ =\ (\mbox{\hyperlink{a19533}{hardware\_communication::IDT\_row}}*)idt\_ptr.base;}
+\DoxyCodeLine{00146\ \ \ \ \ uint32\_t\ num\_entries\ =\ (idt\_ptr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a19533}{hardware\_communication::IDT\_row}});}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ num\_entries;\ i++)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ uint32\_t\ handler\_address\ =\ (current\_idt[i].handlerAddressHighbits\ <<\ 16)\ |\ current\_idt[i].\mbox{\hyperlink{a18569_adf5df650f7c6f6e7792d97ee2b851265}{handlerAddressLowbits}};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handler\_address\ !=\ 0)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}\ \%3d\ |\ \%\#015x\ |\ \%\#08x\ |\ \%\#012x\(\backslash\)n"{}},\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler\_address,\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_idt[i].\mbox{\hyperlink{a18569_acca378f87bf61c0de2befa4244846bfe}{kernelCodeSegmentSelector}},}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_idt[i].\mbox{\hyperlink{a18587_a8b0d6200bc639dd37ff68847a0adde5f}{access}}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00160\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a18621_a21c3ca5c318038eaed596c14fd2666ed}{hardware\+\_\+communication\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+}}, \mbox{\hyperlink{a18587_source_l00004}{access}}, \mbox{\hyperlink{a18587_source_l00002}{base}}, \mbox{\hyperlink{a18569_source_l00039}{hardware\+\_\+communication\+::\+IDT\+\_\+row\+::handler\+Address\+Highbits}}, \mbox{\hyperlink{a18569_source_l00001}{handler\+Address\+Lowbits}}, \mbox{\hyperlink{a18569_source_l00002}{kernel\+Code\+Segment\+Selector}}, \mbox{\hyperlink{a18587_source_l00001}{limit}}, and \mbox{\hyperlink{a18593_source_l00306}{basic\+::printf()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_aac20f3a896bea512413568a60ad48c3d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a19537_ad8a6f694662a3a36ba9353197e20c1b1}\label{a19537_ad8a6f694662a3a36ba9353197e20c1b1} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!printLoadedTableHeader@{printLoadedTableHeader}}
+\index{printLoadedTableHeader@{printLoadedTableHeader}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{printLoadedTableHeader()}{printLoadedTableHeader()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Interrupt\+Manager\+::print\+Loaded\+Table\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the header information (base, limit, count) of the currently loaded IDT. 
+
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00163}{163}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{struct\ }IDT\_Pointer\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{a18587_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}};}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{a18587_ad516e6ff5b7dd7f6ce2946c527ddb8b9}{base}};}
+\DoxyCodeLine{00168\ \ \ \ \ \}\ \mbox{\hyperlink{a18621_a21c3ca5c318038eaed596c14fd2666ed}{\_\_attribute\_\_}}((packed));}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ IDT\_Pointer\ idt\_ptr;}
+\DoxyCodeLine{00171\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}sidt\ \%0"{}}\ :\ \textcolor{stringliteral}{"{}=m"{}}(idt\_ptr));}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}INFO\ about\ :\ Currently\ Loaded\ IDT\(\backslash\)n"{}});}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Base\ Address:\ \%\#x\(\backslash\)n"{}},\ idt\_ptr.base);}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Limit:\ \%\#x\ (\%d\ bytes)\(\backslash\)n"{}},\ idt\_ptr.limit,\ idt\_ptr.limit);}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}Entries:\ \%d\(\backslash\)n"{}},\ (idt\_ptr.limit\ +\ 1)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a19533}{hardware\_communication::IDT\_row}}));}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{a18618_a45ee52b918a784ff0e96e7c8917a91d9}{basic::printf}}(\textcolor{stringliteral}{"{}-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{00178\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{a18621_a21c3ca5c318038eaed596c14fd2666ed}{hardware\+\_\+communication\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+}}, \mbox{\hyperlink{a18587_source_l00002}{base}}, \mbox{\hyperlink{a18587_source_l00001}{limit}}, and \mbox{\hyperlink{a18593_source_l00306}{basic\+::printf()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a18557_source_l00105}{kernel\+Main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_ad8a6f694662a3a36ba9353197e20c1b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dda/a19537_ad8a6f694662a3a36ba9353197e20c1b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a19537_af448c0d55d2e226050b7f4efb6d4abe8}\label{a19537_af448c0d55d2e226050b7f4efb6d4abe8} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!setIDTEntry@{setIDTEntry}}
+\index{setIDTEntry@{setIDTEntry}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{setIDTEntry()}{setIDTEntry()}}
+{\footnotesize\ttfamily void hardware\+\_\+communication\+::\+Interrupt\+Manager\+::set\+IDTEntry (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+Number,  }\item[{uint16\+\_\+t}]{code\+Segment\+Selector\+Offset,  }\item[{void(\texorpdfstring{$\ast$}{*})()}]{handler,  }\item[{uint8\+\_\+t}]{Descriptor\+Privilege\+Lever,  }\item[{uint8\+\_\+t}]{Descriptor\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Populates a specific entry in the Interrupt Descriptor Table (IDT). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+Number} & The index of the IDT entry to set (0-\/255). \\
+\hline
+{\em code\+Segment\+Selector\+Offset} & The segment selector for the interrupt handler code. \\
+\hline
+{\em handler} & A function pointer to the assembly stub that handles the interrupt. \\
+\hline
+{\em Descriptor\+Privilege\+Lever} & The DPL (Descriptor Privilege Level) for the interrupt gate. \\
+\hline
+{\em Descriptor\+Type} & The type of the descriptor (e.\+g., 0xE for 32-\/bit Interrupt Gate). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{a18599_source_l00084}{84}} of file \mbox{\hyperlink{a18599_source}{kinterrupt.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ IDT\_DESC\_PRESET=\ 0x80;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}}[interruptNumber].\mbox{\hyperlink{a19533_a3390e4d53e904d420187ecc0247e9289}{handlerAddressLowbits}}=(uint32\_t)handler\ \&\ 0xFFFF;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}}[interruptNumber].\mbox{\hyperlink{a19533_af1a4bb042f75f10c5e2b08034e82aed3}{handlerAddressHighbits}}=((uint32\_t)handler\ >>\ 16)\ \&\ 0xFFFF;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}}[interruptNumber].\mbox{\hyperlink{a19533_a96bce1ce9c6a7e9b5a20607f41a2e876}{reserved}}=0;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}}[interruptNumber].\mbox{\hyperlink{a19533_afa706321cb5ba41a6035dbe1ec39c265}{access}}=IDT\_DESC\_PRESET\ |\ DescriptorType\ |\ ((DescriptorPrivilegeLever\ \&\ 3)\ <<\ 5);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}{interruptDescriptorTable}}[interruptNumber].\mbox{\hyperlink{a19533_a800309c99800063315cddf536a3d0d67}{kernelCodeSegmentSelector}}=codeSegmentSelectorOffset;}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Data Documentation}
+\Hypertarget{a19537_ad94bd8e9c355fde3e814d4894bab0181}\label{a19537_ad94bd8e9c355fde3e814d4894bab0181} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!base@{base}}
+\index{base@{base}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily uint32\+\_\+t hardware\+\_\+communication\+::\+Interrupt\+Manager\+::base}
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00053}{53}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+\Hypertarget{a19537_ac8aba191e612ad605b8b188f78e65d3b}\label{a19537_ac8aba191e612ad605b8b188f78e65d3b} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!handlers@{handlers}}
+\index{handlers@{handlers}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{handlers}{handlers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a19529}{Interrupt\+Handler}}\texorpdfstring{$\ast$}{*} hardware\+\_\+communication\+::\+Interrupt\+Manager\+::handlers\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00058}{58}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{a18599_source_l00006}{hardware\+\_\+communication\+::\+Interrupt\+Handler\+::\+Interrupt\+Handler()}}, and \mbox{\hyperlink{a18599_source_l00185}{handle\+Interrupt()}}.
+
+\Hypertarget{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226}\label{a19537_a7b6bb52a8072c51bfcb4f4877c3d0226} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!interruptDescriptorTable@{interruptDescriptorTable}}
+\index{interruptDescriptorTable@{interruptDescriptorTable}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{interruptDescriptorTable}{interruptDescriptorTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a19533}{IDT\+\_\+row}} hardware\+\_\+communication\+::\+Interrupt\+Manager\+::interrupt\+Descriptor\+Table\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00055}{55}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+\Hypertarget{a19537_a1991d8428ff7c74b31f42d48bb49547a}\label{a19537_a1991d8428ff7c74b31f42d48bb49547a} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!limit@{limit}}
+\index{limit@{limit}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{limit}{limit}}
+{\footnotesize\ttfamily uint16\+\_\+t hardware\+\_\+communication\+::\+Interrupt\+Manager\+::limit}
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00052}{52}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+\Hypertarget{a19537_acb04723d03d6b34abbc5f7407cab0b33}\label{a19537_acb04723d03d6b34abbc5f7407cab0b33} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!picMasterCommand@{picMasterCommand}}
+\index{picMasterCommand@{picMasterCommand}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{picMasterCommand}{picMasterCommand}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} hardware\+\_\+communication\+::\+Interrupt\+Manager\+::pic\+Master\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Command port for the Master PIC (8259A). 
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00066}{66}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+\Hypertarget{a19537_a5287e31a546f60708b085b387332a904}\label{a19537_a5287e31a546f60708b085b387332a904} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!picMasterData@{picMasterData}}
+\index{picMasterData@{picMasterData}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{picMasterData}{picMasterData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} hardware\+\_\+communication\+::\+Interrupt\+Manager\+::pic\+Master\+Data\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Data port for the Master PIC (8259A). 
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00067}{67}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+\Hypertarget{a19537_afed9d24b37c8f9386a71f4284b2502a4}\label{a19537_afed9d24b37c8f9386a71f4284b2502a4} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!picSlaveCommand@{picSlaveCommand}}
+\index{picSlaveCommand@{picSlaveCommand}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{picSlaveCommand}{picSlaveCommand}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} hardware\+\_\+communication\+::\+Interrupt\+Manager\+::pic\+Slave\+Command\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Command port for the Slave PIC (8259A). 
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00068}{68}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+\Hypertarget{a19537_ac1111b7cfbd27b37f03a0678ae5dbaf1}\label{a19537_ac1111b7cfbd27b37f03a0678ae5dbaf1} 
+\index{hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}!picSlaveData@{picSlaveData}}
+\index{picSlaveData@{picSlaveData}!hardware\_communication::InterruptManager@{hardware\_communication::InterruptManager}}
+\doxyparagraph{\texorpdfstring{picSlaveData}{picSlaveData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a19549}{hardware\+\_\+communication\+::\+Port8\+Bit\+Slow}} hardware\+\_\+communication\+::\+Interrupt\+Manager\+::pic\+Slave\+Data\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Data port for the Slave PIC (8259A). 
+
+
+
+Definition at line \mbox{\hyperlink{a18569_source_l00069}{69}} of file \mbox{\hyperlink{a18569_source}{kinterrupt.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/shreekar/\+Desktop/\+Building\+\_\+own\+\_\+\+OS/\+OSOS/libk\+\_\+header/hardware\+\_\+communication/\mbox{\hyperlink{a18569}{kinterrupt.\+hpp}}\item 
+/home/shreekar/\+Desktop/\+Building\+\_\+own\+\_\+\+OS/\+OSOS/libk\+\_\+src/hardware\+\_\+communication/\mbox{\hyperlink{a18599}{kinterrupt.\+cpp}}\end{DoxyCompactItemize}

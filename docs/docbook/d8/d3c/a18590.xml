@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a18590" xml:lang="en-US">
+<title>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kmemory.cpp File Reference</title>
+<indexterm><primary>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/basic/kmemory.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;basic/kmemory.hpp&quot;<?linebreak?></programlisting>Include dependency graph for kmemory.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d6/d81/a18591.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a18590_1afa145befcf5e7b83424408ca503c8637">operator delete</link> (void *ptr) noexcept</para>
+
+<para>Overload of the &apos;delete&apos; operator (stub). </para>
+</listitem>
+            <listitem><para>void <link linkend="_a18590_1af057efbdbcd21ea12954d49cd2d245c6">operator delete</link> (void *ptr, size_t <link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+
+<para>Overload of the &apos;delete&apos; operator with size (stub). </para>
+</listitem>
+            <listitem><para>void <link linkend="_a18590_1a22aea74a1155aa798d6032da46da2391">operator delete[]</link> (void *ptr) noexcept</para>
+
+<para>Overload of the &apos;delete[]&apos; operator (stub). </para>
+</listitem>
+            <listitem><para>void <link linkend="_a18590_1ab26fe706b29fdeb33d5f6ead76c05815">operator delete[]</link> (void *ptr, size_t <link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+
+<para>Overload of the &apos;delete[]&apos; operator with size (stub). </para>
+</listitem>
+            <listitem><para>void * <link linkend="_a18590_1a1a7f24760c8c7ad3bfcd54856d906fc2">operator new</link> (size_t <link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+
+<para>The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors. </para>
+</listitem>
+            <listitem><para>void * <link linkend="_a18590_1aa75472ab4b765cf6f6b5b0ebcd4a28c8">operator new[]</link> (size_t <link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>) noexcept</para>
+
+<para>Overload of the &apos;new[]&apos; operator (stub). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a18590_1afa145befcf5e7b83424408ca503c8637"/><section>
+    <title>operator delete()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator delete</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete</secondary></indexterm>
+<para><computeroutput>void operator delete (void * ptr)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Overload of the &apos;delete&apos; operator (stub). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ptr</entry><entry>
+<para>Pointer to the memory to deallocate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18590_source_1l00085">85</link> of file <link linkend="_a18590_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00086 &#32;&#32;&#32;&#32;(void)ptr;
+00087 }
+</programlisting></section>
+<anchor xml:id="_a18590_1af057efbdbcd21ea12954d49cd2d245c6"/><section>
+    <title>operator delete()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator delete</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete</secondary></indexterm>
+<para><computeroutput>void operator delete (void * ptr, size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Overload of the &apos;delete&apos; operator with size (stub). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ptr</entry><entry>
+<para>Pointer to the memory to deallocate. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>The size of the memory block. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18590_source_1l00092">92</link> of file <link linkend="_a18590_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00093 &#32;&#32;&#32;&#32;(void)ptr;
+00094 &#32;&#32;&#32;&#32;(void)<link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00095 }
+</programlisting><para>
+References <link linkend="_a18560_source_1l00000">size</link>.</para>
+</section>
+<anchor xml:id="_a18590_1a22aea74a1155aa798d6032da46da2391"/><section>
+    <title>operator delete[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator delete[]</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete[]</secondary></indexterm>
+<para><computeroutput>void operator delete[] (void * ptr)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Overload of the &apos;delete[]&apos; operator (stub). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ptr</entry><entry>
+<para>Pointer to the array memory to deallocate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18590_source_1l00099">99</link> of file <link linkend="_a18590_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00100 &#32;&#32;&#32;&#32;(void)ptr;
+00101 }
+</programlisting></section>
+<anchor xml:id="_a18590_1ab26fe706b29fdeb33d5f6ead76c05815"/><section>
+    <title>operator delete[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator delete[]</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator delete[]</secondary></indexterm>
+<para><computeroutput>void operator delete[] (void * ptr, size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Overload of the &apos;delete[]&apos; operator with size (stub). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ptr</entry><entry>
+<para>Pointer to the array memory to deallocate. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>The size of the memory block. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18590_source_1l00106">106</link> of file <link linkend="_a18590_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00107 &#32;&#32;&#32;&#32;(void)ptr;
+00108 &#32;&#32;&#32;&#32;(void)<link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00109 }
+</programlisting><para>
+References <link linkend="_a18560_source_1l00000">size</link>.</para>
+</section>
+<anchor xml:id="_a18590_1a1a7f24760c8c7ad3bfcd54856d906fc2"/><section>
+    <title>operator new()</title>
+<indexterm><primary>operator new</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator new</secondary></indexterm>
+<para><computeroutput>void * operator new (size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>The compiler requires these functions to be defined to handle memory allocation and deallocation, especially for classes with virtual destructors. </para>
+</para>
+
+<para>Since we are not linking the standard library, we must provide our own. For now, they don&apos;t have to do anything.</para>
+
+<para>Overload of the &apos;new&apos; operator (stub). 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>size</entry><entry>
+<para>The size of memory to allocate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Always returns nullptr as this is a stub. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_a18590_source_1l00070">70</link> of file <link linkend="_a18590_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00071 &#32;&#32;&#32;&#32;(void)<link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00072 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">nullptr</emphasis>;
+00073 }
+</programlisting><para>
+References <link linkend="_a18560_source_1l00000">size</link>.</para>
+</section>
+<anchor xml:id="_a18590_1aa75472ab4b765cf6f6b5b0ebcd4a28c8"/><section>
+    <title>operator new[]()</title>
+<indexterm><primary>operator new[]</primary><secondary>kmemory.cpp</secondary></indexterm>
+<indexterm><primary>kmemory.cpp</primary><secondary>operator new[]</secondary></indexterm>
+<para><computeroutput>void * operator new[] (size_t size)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Overload of the &apos;new[]&apos; operator (stub). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>size</entry><entry>
+<para>The size of memory to allocate for the array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Always returns nullptr as this is a stub. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_a18590_source_1l00078">78</link> of file <link linkend="_a18590_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00079 &#32;&#32;&#32;&#32;(void)<link linkend="_a18560_1a6d813a0f2b5281b18dea3f4cda696c33">size</link>;
+00080 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">nullptr</emphasis>;
+00081 }
+</programlisting><para>
+References <link linkend="_a18560_source_1l00000">size</link>.</para>
+</section>
+</section>
+</section>

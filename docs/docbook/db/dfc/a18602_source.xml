@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a18602_source" xml:lang="en-US">
+<title>kdriver.cpp</title>
+<indexterm><primary>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kdriver.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_a18602_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_a18581">driver/kdriver.hpp</link>&quot;</emphasis>
+<anchor xml:id="_a18602_source_1l00002"/>00002 
+<anchor xml:id="_a18602_source_1l00004"/><link linkend="_a19493_1a7de0c11fff1dc1f5d004b2a76e840840">00004</link> <link linkend="_a19493_1a7de0c11fff1dc1f5d004b2a76e840840">driver::Driver::Driver</link>(){}
+<anchor xml:id="_a18602_source_1l00006"/><link linkend="_a19493_1aacc7524b989c2561147c5dd0b901381c">00006</link> <link linkend="_a19493_1aacc7524b989c2561147c5dd0b901381c">driver::Driver::~Driver</link>(){}
+<anchor xml:id="_a18602_source_1l00007"/>00007 
+<anchor xml:id="_a18602_source_1l00008"/>00008 
+<anchor xml:id="_a18602_source_1l00010"/><link linkend="_a19497_1af3bed49a4b243c2f65d09c35db15158b">00010</link> <link linkend="_a19497_1af3bed49a4b243c2f65d09c35db15158b">driver::DriverManager::DriverManager</link>(){
+<anchor xml:id="_a18602_source_1l00011"/>00011 &#32;&#32;&#32;&#32;numDrivers=0;
+<anchor xml:id="_a18602_source_1l00012"/>00012 }
+<anchor xml:id="_a18602_source_1l00014"/><link linkend="_a19497_1a29731c1f4b1215fd5c4ab27624ae6563">00014</link> <link linkend="_a19497_1a29731c1f4b1215fd5c4ab27624ae6563">driver::DriverManager::~DriverManager</link>(){}
+<anchor xml:id="_a18602_source_1l00015"/>00015 
+<anchor xml:id="_a18602_source_1l00018"/><link linkend="_a19497_1ab8bd89b91ea49f343276c3c841153cd8">00018</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a19497_1ab8bd89b91ea49f343276c3c841153cd8">driver::DriverManager::addDriver</link>(<link linkend="_a19493">driver::Driver</link>*&#32;<link linkend="_a18619">driver</link>){
+<anchor xml:id="_a18602_source_1l00019"/>00019 &#32;&#32;&#32;&#32;drivers[numDrivers]=<link linkend="_a18619">driver</link>;
+<anchor xml:id="_a18602_source_1l00020"/>00020 &#32;&#32;&#32;&#32;numDrivers++;
+<anchor xml:id="_a18602_source_1l00021"/>00021 }
+<anchor xml:id="_a18602_source_1l00022"/>00022 
+<anchor xml:id="_a18602_source_1l00024"/><link linkend="_a19497_1a05b071d8a8c12f2d284fb61f4ecd116e">00024</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_a19497_1a05b071d8a8c12f2d284fb61f4ecd116e">driver::DriverManager::activateAll</link>(){
+<anchor xml:id="_a18602_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numDrivers;&#32;i++){
+<anchor xml:id="_a18602_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;drivers[i]-&gt;activate();
+<anchor xml:id="_a18602_source_1l00027"/>00027 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_a18602_source_1l00028"/>00028 }
+</programlisting></section>

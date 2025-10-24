@@ -31,6 +31,7 @@
     #define GDT_GRAN_FLAGS      SEG_GRAN_GRAN(1) | SEG_GRAN_SIZE(1) | SEG_GRAN_LONG(0) | SEG_GRAN_SAVL(0)
 
     namespace essential{
+        /// @brief Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (GDT).
         class GDT_row {
             private :
                 uint16_t limit_low;
@@ -41,16 +42,14 @@
                 uint8_t  base_high;
 
             public:
-                // Constructor now takes an 8-bit access byte and 8-bit granularity byte
                 GDT_row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte);
                 GDT_row(); // Default constructor for null segment
                 ~GDT_row();
-
-                // Friend class to allow GDT to access private members for printing
                 friend class GDT;
 
         } __attribute__((packed));
 
+        /// @brief Manages the Global Descriptor Table (GDT), holding segment descriptors for the CPU.
         class GDT {
             private:
                 uint16_t limit;

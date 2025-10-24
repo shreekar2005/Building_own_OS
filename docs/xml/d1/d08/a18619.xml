@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d1/d08/a18619" kind="namespace" language="C++">
+    <compoundname>driver</compoundname>
+    <innerclass refid="df/d30/a19493" prot="public">driver::Driver</innerclass>
+    <innerclass refid="d3/dae/a19497" prot="public">driver::DriverManager</innerclass>
+    <innerclass refid="d7/d24/a19505" prot="public">driver::KeyboardDriver</innerclass>
+    <innerclass refid="df/d24/a19501" prot="public">driver::KeyboardEventHandler</innerclass>
+    <innerclass refid="d3/d33/a19513" prot="public">driver::MouseDriver</innerclass>
+    <innerclass refid="db/d16/a19509" prot="public">driver::MouseEventHandler</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kdriver.hpp" line="4" column="1"/>
+  </compounddef>
+</doxygen>

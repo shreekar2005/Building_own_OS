@@ -1,8 +1,9 @@
-.TH "hardware_communication::Port" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "hardware_communication::Port" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-hardware_communication::Port
+hardware_communication::Port \- Base class for hardware I/O port communication\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -16,6 +17,7 @@ Inherited by \fBhardware_communication::Port16Bit\fP, \fBhardware_communication:
 .ti -1c
 .RI "virtual \fB~Port\fP ()"
 .br
+.RI "Destroys the \fBPort\fP object\&. "
 .in -1c
 .SS "Protected Member Functions"
 
@@ -23,6 +25,7 @@ Inherited by \fBhardware_communication::Port16Bit\fP, \fBhardware_communication:
 .ti -1c
 .RI "\fBPort\fP (uint16_t \fBportnumber\fP)"
 .br
+.RI "Constructs a new \fBPort\fP object\&. "
 .in -1c
 .SS "Protected Attributes"
 
@@ -33,17 +36,28 @@ Inherited by \fBhardware_communication::Port16Bit\fP, \fBhardware_communication:
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB11\fP of file \fBkport\&.hpp\fP\&.
+Base class for hardware I/O port communication\&. 
+.PP
+Definition at line \fB9\fP of file \fBkport\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "hardware_communication::Port::Port (uint16_t portnumber)\fC [explicit]\fP, \fC [protected]\fP"
 
 .PP
-Definition at line \fB3\fP of file \fBkport\&.cpp\fP\&..PP
+Constructs a new \fBPort\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIportnumber\fP The 16-bit address of the I/O port\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB5\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-3                                                    {
-4     this\->portnumber = portnumber;
-5 }
+5                                                    {
+6     this\->portnumber = portnumber;
+7 }
 .fi
 
 .PP
@@ -51,9 +65,11 @@ References \fBportnumber\fP\&.
 .SS "hardware_communication::Port::~Port ()\fC [virtual]\fP"
 
 .PP
-Definition at line \fB6\fP of file \fBkport\&.cpp\fP\&..PP
+Destroys the \fBPort\fP object\&. 
+.PP
+Definition at line \fB9\fP of file \fBkport\&.cpp\fP\&..PP
 .nf
-6 {}
+9 {}
 .fi
 
 .SH "Member Data Documentation"
@@ -61,7 +77,7 @@ Definition at line \fB6\fP of file \fBkport\&.cpp\fP\&..PP
 .SS "uint16_t hardware_communication::Port::portnumber\fC [protected]\fP"
 
 .PP
-Definition at line \fB13\fP of file \fBkport\&.hpp\fP\&.
+Definition at line \fB11\fP of file \fBkport\&.hpp\fP\&.
 .PP
 Referenced by \fBPort()\fP\&.
 

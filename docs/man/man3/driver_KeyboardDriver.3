@@ -1,8 +1,9 @@
-.TH "driver::KeyboardDriver" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "driver::KeyboardDriver" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-driver::KeyboardDriver
+driver::KeyboardDriver \- \fBDriver\fP for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock)\&. @inherits \fBhardware_communication::InterruptHandler\fP @inherits \fBdriver::Driver\fP\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -16,24 +17,30 @@ Inherits \fBhardware_communication::InterruptHandler\fP, and \fBdriver::Driver\f
 .ti -1c
 .RI "\fBKeyboardDriver\fP (\fBhardware_communication::InterruptManager\fP *\fBinterrupt_manager\fP, \fBKeyboardEventHandler\fP *\fBkeyboardEventHandler\fP)"
 .br
+.RI "Constructs a new \fBKeyboardDriver\fP object\&. "
 .ti -1c
 .RI "\fB~KeyboardDriver\fP ()"
 .br
+.RI "Destroys the \fBKeyboardDriver\fP object\&. "
 .ti -1c
 .RI "void \fBactivate\fP () override"
 .br
+.RI "Activates the keyboard driver\&. "
 .ti -1c
 .RI "void \fBdeactivate\fP () override"
 .br
+.RI "Deactivates the keyboard driver\&. (Stub) "
 .ti -1c
 .RI "uint32_t \fBhandleInterrupt\fP (uint32_t esp) override"
 .br
+.RI "Handles the keyboard interrupt (IRQ 1)\&. "
 .ti -1c
 .RI "virtual uintptr_t \fBhandleInterrupt\fP (uintptr_t esp)=0"
 .br
 .ti -1c
 .RI "int \fBreset\fP () override"
 .br
+.RI "Resets the keyboard\&. (Stub) "
 .in -1c
 .SS "Protected Attributes"
 
@@ -72,22 +79,35 @@ Inherits \fBhardware_communication::InterruptHandler\fP, and \fBdriver::Driver\f
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB17\fP of file \fBkkeyboard\&.hpp\fP\&.
+\fBDriver\fP for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock)\&. @inherits \fBhardware_communication::InterruptHandler\fP @inherits \fBdriver::Driver\fP\&. 
+.PP
+Definition at line \fB20\fP of file \fBkkeyboard\&.hpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "driver::KeyboardDriver::KeyboardDriver (\fBhardware_communication::InterruptManager\fP * interrupt_manager, \fBdriver::KeyboardEventHandler\fP * keyboardEventHandler)"
 
 .PP
-Definition at line \fB13\fP of file \fBkkeyboard\&.cpp\fP\&..PP
+Constructs a new \fBKeyboardDriver\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterrupt_manager\fP Pointer to the interrupt manager\&. 
+.br
+\fIkeyboardEventHandler\fP Pointer to the event handler that will process key events\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB18\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .nf
-14 : hardware_communication::InterruptHandler(0x21, interrupt_manager), 
-15   dataPort(0x60), 
-16   commandPort(0x64),
-17   shift_pressed(false),
-18   caps_on(false),
-19   waiting_for_led_ack(false){
-20     this\->keyboardEventHandler=keyboardEventHandler;
-21   }
+19 : hardware_communication::InterruptHandler(0x21, interrupt_manager), 
+20   dataPort(0x60), 
+21   commandPort(0x64),
+22   shift_pressed(false),
+23   caps_on(false),
+24   waiting_for_led_ack(false){
+25     this\->keyboardEventHandler=keyboardEventHandler;
+26   }
 .fi
 
 .PP
@@ -95,9 +115,11 @@ References \fBkeyboardEventHandler\fP\&.
 .SS "driver::KeyboardDriver::~KeyboardDriver ()"
 
 .PP
-Definition at line \fB23\fP of file \fBkkeyboard\&.cpp\fP\&..PP
+Destroys the \fBKeyboardDriver\fP object\&. 
+.PP
+Definition at line \fB29\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .nf
-23 {}
+29 {}
 .fi
 
 .SH "Member Function Documentation"
@@ -105,20 +127,22 @@ Definition at line \fB23\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .SS "void driver::KeyboardDriver::activate ()\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
+Activates the keyboard driver\&. 
+.PP
 Implements \fBdriver::Driver\fP\&.
 .PP
-Definition at line \fB167\fP of file \fBkkeyboard\&.cpp\fP\&..PP
+Definition at line \fB177\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .nf
-167                                    {
-168     while(commandPort\&.read() & 1) dataPort\&.read();
-169     commandPort\&.write(0xAE); // activate communication for keyboard
-170     commandPort\&.write(0x20); // get current state
-171     uint8_t status = (dataPort\&.read() | 1) & ~0x10; // set LSB and clear 5th bit
-172     commandPort\&.write(0x60); // set state
-173     dataPort\&.write(status);
-174     dataPort\&.write(0xF4);
-175     basic::printf("Keyboard Driver activated!\\n");
-176 }
+177                                    {
+178     while(commandPort\&.read() & 1) dataPort\&.read();
+179     commandPort\&.write(0xAE); // activate communication for keyboard
+180     commandPort\&.write(0x20); // get current state
+181     uint8_t status = (dataPort\&.read() | 1) & ~0x10; // set LSB and clear 5th bit
+182     commandPort\&.write(0x60); // set state
+183     dataPort\&.write(status);
+184     dataPort\&.write(0xF4);
+185     basic::printf("Keyboard Driver activated!\\n");
+186 }
 .fi
 
 .PP
@@ -126,154 +150,170 @@ References \fBbasic::printf()\fP\&.
 .SS "void driver::KeyboardDriver::deactivate ()\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
+Deactivates the keyboard driver\&. (Stub) 
+.PP
 Implements \fBdriver::Driver\fP\&.
 .PP
-Definition at line \fB179\fP of file \fBkkeyboard\&.cpp\fP\&..PP
+Definition at line \fB192\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .nf
-179 {}
+192 {}
 .fi
 
 .SS "uint32_t driver::KeyboardDriver::handleInterrupt (uint32_t esp)\fC [override]\fP"
 
 .PP
-Definition at line \fB25\fP of file \fBkkeyboard\&.cpp\fP\&..PP
+Handles the keyboard interrupt (IRQ 1)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIesp\fP The stack pointer from the interrupt context\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The stack pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB34\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .nf
-25                                                           {
-26     // Unshifted keys
-27     static const char scancode_no_shift[] = {
-28         0,   0, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\-', '=', '\\b',
-29         '\\t', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\n',
-30         0, 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\\'', '`', 0,
-31         '\\\\', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '\&.', '/', 0, '*', 0,
-32         ' ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-33         0, 0, 0, 0, 0,
-34     };
-35 
-36     // Shifted keys
-37     static const char scancode_shifted[] = {
-38         0,   0, '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '\\b',
-39         '\\t', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '\\n',
-40         0, 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', '~', 0,
-41         '|', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', 0, '*', 0,
-42         ' ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-43         0, 0, 0, 0, 0,
-44     };
-45 
-46     uint8_t scancode = dataPort\&.read();
-47     if(keyboardEventHandler==0) return esp; //if dont have any handler just return
-48 
-49 
-50     if (this\->waiting_for_led_ack) {
-51         if (scancode == 0xFA) { // Got ACK
-52             dataPort\&.write(this\->led_byte_to_send);
-53             this\->waiting_for_led_ack = false;
-54         }
-55         // If we get something else, the keyboard is out of sync\&.
-56         // We'll just drop out of the ACK\-waiting state and process
-57         // the scancode normally (by falling through)\&.
-58         else {
-59              this\->waiting_for_led_ack = false;
-60         }
-61 
-62         // If we got the ACK, we're done for this interrupt\&.
-63         if (scancode == 0xFA) {
-64             return esp;
-65         }
-66     }
-67 
-68 
-69     // Check for key release
-70     if (scancode & 0x80) {
-71         scancode \-= 0x80; 
-72         switch(scancode) {
-73             case 0x2A: // Left Shift Release
-74             case 0x36: // Right Shift Release
-75                 this\->shift_pressed = false;
-76                 break;
-77             
-78             // Handle release of all other keys
-79             default: {
-80                 char ascii = 0;
-81                 if (scancode < sizeof(scancode_no_shift)) {
-82                     
-83                     char base_char = scancode_no_shift[scancode];
-84 
-85                     // Determine the character that was released based on the keyboard state
-86                     if (base_char >= 'a' && base_char <= 'z') {
-87                         if (this\->shift_pressed ^ this\->caps_on) {
-88                             ascii = scancode_shifted[scancode];
-89                         } else {
-90                             ascii = base_char;
-91                         }
-92                     } else {
-93                         if (this\->shift_pressed) {
-94                             ascii = scancode_shifted[scancode];
-95                         } else {
-96                             ascii = base_char;
-97                         }
-98                     }
-99                     if (ascii != 0) {
-100                         keyboardEventHandler\->onKeyUp(ascii);
-101                     }
-102                 }
-103                 break;
-104             }
-105         }
-106     } 
-107 
-108     // Check for key press
-109     else {
-110         switch(scancode) {
-111             case 0x2A: // Left Shift Press
-112             case 0x36: // Right Shift Press
-113                 this\->shift_pressed = true;
-114                 break;
-115 
-116             case 0x3A: // Caps Lock Press
-117                 this\->caps_on = !this\->caps_on; // Toggle the state
-118                 
-119                 // Prepare to send LED update
-120                 this\->led_byte_to_send = 0;
-121                 if (this\->caps_on) this\->led_byte_to_send |= 0x04; // Bit 2 for Caps Lock LED
-122                 
-123                 dataPort\&.write(0xED); // Send "Set LEDs" command
-124                 this\->waiting_for_led_ack = true; // Set state to wait for ACK
-125                 break;
-126 
-127             default: {
-128                 // It's a printable key
-129                 char ascii = 0;
-130                 if (scancode < sizeof(scancode_no_shift)) {
-131                     
-132                     char base_char = scancode_no_shift[scancode];
-133 
-134                     // Check if it's an alphabet character
-135                     if (base_char >= 'a' && base_char <= 'z') {
-136                         // It's a letter\&. Apply Shift XOR Caps Lock
-137                         // (shift ^ caps) = true means capitalize
-138                         if (this\->shift_pressed ^ this\->caps_on) {
-139                             ascii = scancode_shifted[scancode]; // Uppercase
-140                         } else {
-141                             ascii = base_char; // Lowercase
-142                         }
-143                     } else {
-144                         // It's not a letter (number, symbol, etc\&.)
-145                         // Only Shift applies
-146                         if (this\->shift_pressed) {
-147                             ascii = scancode_shifted[scancode];
-148                         } else {
-149                             ascii = base_char;
-150                         }
-151                     }
-152                     keyboardEventHandler\->onKeyDown(ascii);
-153                 }
-154                 break;
-155             }
-156         }
-157     }
-158 
-159     return esp;
-160 }
+34                                                           {
+35     // Unshifted keys
+36     static const char scancode_no_shift[] = {
+37         0,   0, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\-', '=', '\\b',
+38         '\\t', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\n',
+39         0, 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\\'', '`', 0,
+40         '\\\\', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '\&.', '/', 0, '*', 0,
+41         ' ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+42         0, 0, 0, 0, 0,
+43     };
+44 
+45     // Shifted keys
+46     static const char scancode_shifted[] = {
+47         0,   0, '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '\\b',
+48         '\\t', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '\\n',
+49         0, 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', '~', 0,
+50         '|', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', 0, '*', 0,
+51         ' ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+52         0, 0, 0, 0, 0,
+53     };
+54 
+55     uint8_t scancode = dataPort\&.read();
+56     if(keyboardEventHandler==0) return esp; //if dont have any handler just return
+57 
+58 
+59     if (this\->waiting_for_led_ack) {
+60         if (scancode == 0xFA) { // Got ACK
+61             dataPort\&.write(this\->led_byte_to_send);
+62             this\->waiting_for_led_ack = false;
+63         }
+64         // If we get something else, the keyboard is out of sync\&.
+65         // We'll just drop out of the ACK\-waiting state and process
+66         // the scancode normally (by falling through)\&.
+67         else {
+68              this\->waiting_for_led_ack = false;
+69         }
+70 
+71         // If we got the ACK, we're done for this interrupt\&.
+72         if (scancode == 0xFA) {
+73             return esp;
+74         }
+75     }
+76 
+77 
+78     // Check for key release
+79     if (scancode & 0x80) {
+80         scancode \-= 0x80; 
+81         switch(scancode) {
+82             case 0x2A: // Left Shift Release
+83             case 0x36: // Right Shift Release
+84                 this\->shift_pressed = false;
+85                 break;
+86             
+87             // Handle release of all other keys
+88             default: {
+89                 char ascii = 0;
+90                 if (scancode < sizeof(scancode_no_shift)) {
+91                     
+92                     char base_char = scancode_no_shift[scancode];
+93 
+94                     // Determine the character that was released based on the keyboard state
+95                     if (base_char >= 'a' && base_char <= 'z') {
+96                         if (this\->shift_pressed ^ this\->caps_on) {
+97                             ascii = scancode_shifted[scancode];
+98                         } else {
+99                             ascii = base_char;
+100                         }
+101                     } else {
+102                         if (this\->shift_pressed) {
+103                             ascii = scancode_shifted[scancode];
+104                         } else {
+105                             ascii = base_char;
+106                         }
+107                     }
+108                     if (ascii != 0) {
+109                         keyboardEventHandler\->onKeyUp(ascii);
+110                     }
+111                 }
+112                 break;
+113             }
+114         }
+115     } 
+116 
+117     // Check for key press
+118     else {
+119         switch(scancode) {
+120             case 0x2A: // Left Shift Press
+121             case 0x36: // Right Shift Press
+122                 this\->shift_pressed = true;
+123                 break;
+124 
+125             case 0x3A: // Caps Lock Press
+126                 this\->caps_on = !this\->caps_on; // Toggle the state
+127                 
+128                 // Prepare to send LED update
+129                 this\->led_byte_to_send = 0;
+130                 if (this\->caps_on) this\->led_byte_to_send |= 0x04; // Bit 2 for Caps Lock LED
+131                 
+132                 dataPort\&.write(0xED); // Send "Set LEDs" command
+133                 this\->waiting_for_led_ack = true; // Set state to wait for ACK
+134                 break;
+135 
+136             default: {
+137                 // It's a printable key
+138                 char ascii = 0;
+139                 if (scancode < sizeof(scancode_no_shift)) {
+140                     
+141                     char base_char = scancode_no_shift[scancode];
+142 
+143                     // Check if it's an alphabet character
+144                     if (base_char >= 'a' && base_char <= 'z') {
+145                         // It's a letter\&. Apply Shift XOR Caps Lock
+146                         // (shift ^ caps) = true means capitalize
+147                         if (this\->shift_pressed ^ this\->caps_on) {
+148                             ascii = scancode_shifted[scancode]; // Uppercase
+149                         } else {
+150                             ascii = base_char; // Lowercase
+151                         }
+152                     } else {
+153                         // It's not a letter (number, symbol, etc\&.)
+154                         // Only Shift applies
+155                         if (this\->shift_pressed) {
+156                             ascii = scancode_shifted[scancode];
+157                         } else {
+158                             ascii = base_char;
+159                         }
+160                     }
+161                     keyboardEventHandler\->onKeyDown(ascii);
+162                 }
+163                 break;
+164             }
+165         }
+166     }
+167 
+168     return esp;
+169 }
 .fi
 
 .PP
@@ -285,11 +325,20 @@ Referenced by \fBhardware_communication::InterruptManager::handleInterrupt()\fP\
 .SS "int driver::KeyboardDriver::reset ()\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
+Resets the keyboard\&. (Stub) 
+.PP
+\fBReturns\fP
+.RS 4
+Always returns 0\&. 
+.RE
+.PP
+
+.PP
 Implements \fBdriver::Driver\fP\&.
 .PP
-Definition at line \fB178\fP of file \fBkkeyboard\&.cpp\fP\&..PP
+Definition at line \fB190\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .nf
-178 {return 0;}
+190 {return 0;}
 .fi
 
 .SH "Member Data Documentation"
@@ -297,45 +346,45 @@ Definition at line \fB178\fP of file \fBkkeyboard\&.cpp\fP\&..PP
 .SS "bool driver::KeyboardDriver::caps_on\fC [private]\fP"
 
 .PP
-Definition at line \fB23\fP of file \fBkkeyboard\&.hpp\fP\&.
+Definition at line \fB26\fP of file \fBkkeyboard\&.hpp\fP\&.
 .SS "\fBhardware_communication::Port8Bit\fP driver::KeyboardDriver::commandPort\fC [private]\fP"
 
 .PP
-Definition at line \fB19\fP of file \fBkkeyboard\&.hpp\fP\&.
+Definition at line \fB22\fP of file \fBkkeyboard\&.hpp\fP\&.
 .SS "\fBhardware_communication::Port8Bit\fP driver::KeyboardDriver::dataPort\fC [private]\fP"
 
 .PP
-Definition at line \fB18\fP of file \fBkkeyboard\&.hpp\fP\&.
+Definition at line \fB21\fP of file \fBkkeyboard\&.hpp\fP\&.
 .SS "\fBInterruptManager\fP* hardware_communication::InterruptHandler::interrupt_manager\fC [protected]\fP, \fC [inherited]\fP"
-
-.PP
-Definition at line \fB26\fP of file \fBkinterrupt\&.hpp\fP\&.
-.PP
-Referenced by \fBhardware_communication::InterruptHandler::InterruptHandler()\fP\&.
-.SS "uint8_t hardware_communication::InterruptHandler::interruptNumber\fC [protected]\fP, \fC [inherited]\fP"
 
 .PP
 Definition at line \fB25\fP of file \fBkinterrupt\&.hpp\fP\&.
 .PP
 Referenced by \fBhardware_communication::InterruptHandler::InterruptHandler()\fP\&.
+.SS "uint8_t hardware_communication::InterruptHandler::interruptNumber\fC [protected]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line \fB24\fP of file \fBkinterrupt\&.hpp\fP\&.
+.PP
+Referenced by \fBhardware_communication::InterruptHandler::InterruptHandler()\fP\&.
 .SS "\fBKeyboardEventHandler\fP* driver::KeyboardDriver::keyboardEventHandler\fC [private]\fP"
 
 .PP
-Definition at line \fB27\fP of file \fBkkeyboard\&.hpp\fP\&.
+Definition at line \fB30\fP of file \fBkkeyboard\&.hpp\fP\&.
 .PP
 Referenced by \fBKeyboardDriver()\fP\&.
 .SS "uint8_t driver::KeyboardDriver::led_byte_to_send\fC [private]\fP"
 
 .PP
-Definition at line \fB25\fP of file \fBkkeyboard\&.hpp\fP\&.
+Definition at line \fB28\fP of file \fBkkeyboard\&.hpp\fP\&.
 .SS "bool driver::KeyboardDriver::shift_pressed\fC [private]\fP"
 
 .PP
-Definition at line \fB21\fP of file \fBkkeyboard\&.hpp\fP\&.
+Definition at line \fB24\fP of file \fBkkeyboard\&.hpp\fP\&.
 .SS "bool driver::KeyboardDriver::waiting_for_led_ack\fC [private]\fP"
 
 .PP
-Definition at line \fB24\fP of file \fBkkeyboard\&.hpp\fP\&.
+Definition at line \fB27\fP of file \fBkkeyboard\&.hpp\fP\&.
 
 .SH "Author"
 .PP 

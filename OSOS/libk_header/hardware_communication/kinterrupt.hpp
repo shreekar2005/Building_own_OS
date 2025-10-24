@@ -1,6 +1,6 @@
-#ifndef _OSOS_HARDWARE_COMMUNICATION_KINTERRUPT_H
+#ifndef _OSOS_HARDWARE_COMMUNCATION_KINTERRUPT_H
 
-    #define _OSOS_HARDWARE_COMMUNICATION_KINTERRUPT_H
+    #define _OSOS_HARDWARE_COMMUNCATION_KINTERRUPT_H
     #include <cstdint>
     #include "basic/kiostream.hpp"
     #include "hardware_communication/kport.hpp"
@@ -8,6 +8,7 @@
 
     extern "C" {
         // following functions are defined in kinterruptstub.s
+
         void ignoreInterrupt();
         void handleIRQ0x00(); // Timer
         void handleIRQ0x01(); // Keyboard
@@ -15,11 +16,9 @@
     }
 
     namespace hardware_communication{
-        // -------------------------- Class structures ------------------------
         
-        //making forward definition for this class (needed in InterruptHandler)
-        class InterruptManager;
-        //Interrupthandler is an INTERFACE
+        class InterruptManager; //making forward definition for this class (needed in InterruptHandler)
+        /// @brief Base class (interface) for handling specific CPU interrupts.
         class InterruptHandler{
             protected:
                 uint8_t interruptNumber;
@@ -30,6 +29,7 @@
                 virtual uintptr_t handleInterrupt(uintptr_t esp)=0; //pure virtual function
         };
 
+        /// @brief Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT).
         class IDT_row{
             private:
                 uint16_t handlerAddressLowbits;
@@ -43,6 +43,7 @@
                 friend class InterruptManager;
         }__attribute__((packed));
         
+        /// @brief Manages the Interrupt Descriptor Table (IDT) and Programmable Interrupt Controllers (PICs), dispatching interrupts to registered handlers.
         class InterruptManager{
             
             friend class InterruptHandler;
@@ -52,6 +53,7 @@
                 uint32_t base;
             protected:
                 IDT_row interruptDescriptorTable[256];
+
                 //handlers are actually object of corresponding drivers (e.g. keyboard-driver object which have handleInterrupt method)
                 InterruptHandler* handlers[256];
                 void setIDTEntry(
@@ -70,7 +72,6 @@
                 InterruptManager(essential::GDT* gdt);
                 ~InterruptManager();
                 void installTable();
-
                 static void activate();
                 static void deactivate();
                 static void printLoadedTable();

@@ -14,9 +14,9 @@ Directory dependency graph for basic:<para>
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
-            <listitem><para>file <link linkend="_a16259">kiostream.cpp</link></para>
+            <listitem><para>file <link linkend="_a18593">kiostream.cpp</link></para>
 </listitem>
-            <listitem><para>file <link linkend="_a16256">kmemory.cpp</link></para>
+            <listitem><para>file <link linkend="_a18590">kmemory.cpp</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

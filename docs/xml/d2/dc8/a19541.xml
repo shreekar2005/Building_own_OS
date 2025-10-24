@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d2/dc8/a19541" kind="class" language="C++" prot="public">
+    <compoundname>hardware_communication::Port</compoundname>
+    <derivedcompoundref refid="df/d60/a19553" prot="public" virt="non-virtual">hardware_communication::Port16Bit</derivedcompoundref>
+    <derivedcompoundref refid="d6/daf/a19557" prot="public" virt="non-virtual">hardware_communication::Port32Bit</derivedcompoundref>
+    <derivedcompoundref refid="d5/d90/a19545" prot="public" virt="non-virtual">hardware_communication::Port8Bit</derivedcompoundref>
+    <includes refid="d8/d68/a18572" local="yes">kport.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d2/dc8/a19541_1aab0c5c82b0190df88ddbb595bfac539a" prot="protected" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hardware_communication::Port::portnumber</definition>
+        <argsstring></argsstring>
+        <name>portnumber</name>
+        <qualifiedname>hardware_communication::Port::portnumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="11" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" bodystart="11" bodyend="-1"/>
+        <referencedby refid="d2/dc8/a19541_1ad001c21b67d4c138f65024f167030cca" compoundref="d7/d22/a18596" startline="5" endline="7">Port</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d2/dc8/a19541_1ad001c21b67d4c138f65024f167030cca" prot="protected" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::Port::Port</definition>
+        <argsstring>(uint16_t portnumber)</argsstring>
+        <name>Port</name>
+        <qualifiedname>hardware_communication::Port::Port</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>portnumber</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new <ref refid="d2/dc8/a19541" kindref="compound">Port</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>portnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 16-bit address of the I/O port. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="12" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kport.cpp" bodystart="5" bodyend="7"/>
+        <references refid="d2/dc8/a19541_1aab0c5c82b0190df88ddbb595bfac539a" compoundref="d8/d68/a18572" startline="11">portnumber</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/dc8/a19541_1a8b13c33da4911afcbdcb21c97768a72e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>hardware_communication::Port::~Port</definition>
+        <argsstring>()</argsstring>
+        <name>~Port</name>
+        <qualifiedname>hardware_communication::Port::~Port</qualifiedname>
+        <briefdescription>
+<para>Destroys the <ref refid="d2/dc8/a19541" kindref="compound">Port</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="15" column="21" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kport.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for hardware I/O port communication. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>hardware_communication::Port</label>
+        <link refid="d2/dc8/a19541"/>
+      </node>
+      <node id="2">
+        <label>hardware_communication::Port16Bit</label>
+        <link refid="df/d60/a19553"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>hardware_communication::Port32Bit</label>
+        <link refid="d6/daf/a19557"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>hardware_communication::Port8Bit</label>
+        <link refid="d5/d90/a19545"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>hardware_communication::Port8BitSlow</label>
+        <link refid="d4/dc9/a19549"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>hardware_communication::Port</label>
+        <link refid="d2/dc8/a19541"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>#portnumber</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uint16_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="9" column="9" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" bodystart="9" bodyend="16"/>
+    <listofallmembers>
+      <member refid="d2/dc8/a19541_1ad001c21b67d4c138f65024f167030cca" prot="protected" virt="non-virtual"><scope>hardware_communication::Port</scope><name>Port</name></member>
+      <member refid="d2/dc8/a19541_1aab0c5c82b0190df88ddbb595bfac539a" prot="protected" virt="non-virtual"><scope>hardware_communication::Port</scope><name>portnumber</name></member>
+      <member refid="d2/dc8/a19541_1a8b13c33da4911afcbdcb21c97768a72e" prot="public" virt="virtual"><scope>hardware_communication::Port</scope><name>~Port</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

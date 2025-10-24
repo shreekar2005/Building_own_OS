@@ -1,0 +1,27 @@
+\doxysubsection{kdriver.\+cpp}
+\hypertarget{a18602_source}{}\label{a18602_source}\index{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_src/driver/kdriver.cpp@{/home/shreekar/Desktop/Building\_own\_OS/OSOS/libk\_src/driver/kdriver.cpp}}
+\mbox{\hyperlink{a18602}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a18581}{driver/kdriver.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{a18602_source_l00004}\mbox{\hyperlink{a19493_a7de0c11fff1dc1f5d004b2a76e840840}{00004}}\ \mbox{\hyperlink{a19493_a7de0c11fff1dc1f5d004b2a76e840840}{driver::Driver::Driver}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00006}\mbox{\hyperlink{a19493_aacc7524b989c2561147c5dd0b901381c}{00006}}\ \mbox{\hyperlink{a19493_aacc7524b989c2561147c5dd0b901381c}{driver::Driver::\string~Driver}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{a18602_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{a18602_source_l00010}\mbox{\hyperlink{a19497_af3bed49a4b243c2f65d09c35db15158b}{00010}}\ \mbox{\hyperlink{a19497_af3bed49a4b243c2f65d09c35db15158b}{driver::DriverManager::DriverManager}}()\{}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00011}00011\ \ \ \ \ numDrivers=0;}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00014}\mbox{\hyperlink{a19497_a29731c1f4b1215fd5c4ab27624ae6563}{00014}}\ \mbox{\hyperlink{a19497_a29731c1f4b1215fd5c4ab27624ae6563}{driver::DriverManager::\string~DriverManager}}()\{\}}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{a18602_source_l00018}\mbox{\hyperlink{a19497_ab8bd89b91ea49f343276c3c841153cd8}{00018}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a19497_ab8bd89b91ea49f343276c3c841153cd8}{driver::DriverManager::addDriver}}(\mbox{\hyperlink{a19493}{driver::Driver}}*\ \mbox{\hyperlink{a18619}{driver}})\{}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00019}00019\ \ \ \ \ drivers[numDrivers]=\mbox{\hyperlink{a18619}{driver}};}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00020}00020\ \ \ \ \ numDrivers++;}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{a18602_source_l00024}\mbox{\hyperlink{a19497_a05b071d8a8c12f2d284fb61f4ecd116e}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a19497_a05b071d8a8c12f2d284fb61f4ecd116e}{driver::DriverManager::activateAll}}()\{}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<numDrivers;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00026}00026\ \ \ \ \ \ \ \ \ drivers[i]-\/>activate();}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{a18602_source_l00028}00028\ \}}
+
+\end{DoxyCode}

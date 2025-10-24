@@ -1,8 +1,9 @@
-.TH "KeyboardEventHandler_for_kernel" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "KeyboardEventHandler_for_kernel" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-KeyboardEventHandler_for_kernel
+KeyboardEventHandler_for_kernel \- Custom keyboard event handler implementation for the kernel\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,35 +15,45 @@ Inherits \fBdriver::KeyboardEventHandler\fP\&.
 .ti -1c
 .RI "\fBKeyboardEventHandler_for_kernel\fP ()"
 .br
+.RI "Construct a new \fBKeyboardEventHandler_for_kernel\fP object\&. "
 .ti -1c
 .RI "\fB~KeyboardEventHandler_for_kernel\fP ()"
 .br
+.RI "Destroy the \fBKeyboardEventHandler_for_kernel\fP object\&. "
 .ti -1c
 .RI "void \fBonKeyDown\fP (char ascii) override"
 .br
+.RI "Handles key down events by printing the ASCII character\&. "
 .ti -1c
 .RI "void \fBonKeyUp\fP (char ascii) override"
 .br
+.RI "Handles key up events\&. (Does nothing in this implementation)\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB13\fP of file \fBkernel\&.cpp\fP\&.
+Custom keyboard event handler implementation for the kernel\&. 
+.PP
+Definition at line \fB14\fP of file \fBkernel\&.cpp\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "KeyboardEventHandler_for_kernel::KeyboardEventHandler_for_kernel ()\fC [inline]\fP"
 
 .PP
-Definition at line \fB15\fP of file \fBkernel\&.cpp\fP\&..PP
+Construct a new \fBKeyboardEventHandler_for_kernel\fP object\&. 
+.PP
+Definition at line \fB17\fP of file \fBkernel\&.cpp\fP\&..PP
 .nf
-15 {}
+17 {}
 .fi
 
 .SS "KeyboardEventHandler_for_kernel::~KeyboardEventHandler_for_kernel ()\fC [inline]\fP"
 
 .PP
-Definition at line \fB16\fP of file \fBkernel\&.cpp\fP\&..PP
+Destroy the \fBKeyboardEventHandler_for_kernel\fP object\&. 
+.PP
+Definition at line \fB19\fP of file \fBkernel\&.cpp\fP\&..PP
 .nf
-16 {}
+19 {}
 .fi
 
 .SH "Member Function Documentation"
@@ -50,15 +61,24 @@ Definition at line \fB16\fP of file \fBkernel\&.cpp\fP\&..PP
 .SS "void KeyboardEventHandler_for_kernel::onKeyDown (char ascii)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
 
 .PP
+Handles key down events by printing the ASCII character\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIascii\fP The ASCII character of the key that was pressed\&. 
+.RE
+.PP
+
+.PP
 Implements \fBdriver::KeyboardEventHandler\fP\&.
 .PP
-Definition at line \fB17\fP of file \fBkernel\&.cpp\fP\&..PP
+Definition at line \fB22\fP of file \fBkernel\&.cpp\fP\&..PP
 .nf
-17                                             {
-18             if (ascii != 0) {
-19                 basic::printf("%c", ascii);
-20             }
-21         }
+22                                             {
+23             if (ascii != 0) {
+24                 basic::printf("%c", ascii);
+25             }
+26         }
 .fi
 
 .PP
@@ -66,13 +86,22 @@ References \fBbasic::printf()\fP\&.
 .SS "void KeyboardEventHandler_for_kernel::onKeyUp (char ascii)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
 
 .PP
+Handles key up events\&. (Does nothing in this implementation)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIascii\fP The ASCII character of the key that was released\&. 
+.RE
+.PP
+
+.PP
 Implements \fBdriver::KeyboardEventHandler\fP\&.
 .PP
-Definition at line \fB22\fP of file \fBkernel\&.cpp\fP\&..PP
+Definition at line \fB29\fP of file \fBkernel\&.cpp\fP\&..PP
 .nf
-22                                           {
-23             (void) ascii;
-24         }
+29                                           {
+30             (void) ascii;
+31         }
 .fi
 
 

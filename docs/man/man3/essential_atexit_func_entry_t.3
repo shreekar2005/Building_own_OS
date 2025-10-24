@@ -1,8 +1,9 @@
-.TH "essential::atexit_func_entry_t" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "essential::atexit_func_entry_t" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-essential::atexit_func_entry_t
+essential::atexit_func_entry_t \- Structure to hold a registered C++ ABI exit function (destructor)\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -23,25 +24,27 @@ essential::atexit_func_entry_t
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB8\fP of file \fBkicxxabi\&.hpp\fP\&.
+Structure to hold a registered C++ ABI exit function (destructor)\&. 
+.PP
+Definition at line \fB9\fP of file \fBkicxxabi\&.hpp\fP\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "void(* essential::atexit_func_entry_t::destructor_func) (void *)"
 
 .PP
-Definition at line \fB14\fP of file \fBkicxxabi\&.hpp\fP\&.
+Definition at line \fB16\fP of file \fBkicxxabi\&.hpp\fP\&.
 .PP
 Referenced by \fB__cxa_atexit()\fP, and \fBessential::__cxa_finalize()\fP\&.
 .SS "void* essential::atexit_func_entry_t::dso_handle"
 
 .PP
-Definition at line \fB16\fP of file \fBkicxxabi\&.hpp\fP\&.
+Definition at line \fB18\fP of file \fBkicxxabi\&.hpp\fP\&.
 .PP
 Referenced by \fB__cxa_atexit()\fP\&.
 .SS "void* essential::atexit_func_entry_t::obj_ptr"
 
 .PP
-Definition at line \fB15\fP of file \fBkicxxabi\&.hpp\fP\&.
+Definition at line \fB17\fP of file \fBkicxxabi\&.hpp\fP\&.
 .PP
 Referenced by \fB__cxa_atexit()\fP\&.
 

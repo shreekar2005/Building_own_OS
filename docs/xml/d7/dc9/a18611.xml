@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d7/dc9/a18611" kind="file" language="C++">
+    <compoundname>kgdt.cpp</compoundname>
+    <includes refid="d2/d9a/a18587" local="yes">essential/kgdt.hpp</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>basic/kiostream.hpp</label>
+        <link refid="d2/daa/a18566"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>essential/kgdt.hpp</label>
+        <link refid="d2/d9a/a18587"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>hardware_communication/kport.hpp</label>
+        <link refid="d8/d68/a18572"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential/kgdt.cpp</label>
+        <link refid="d7/dc9/a18611"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cstdarg</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d2/d9a/a18587" kindref="compound">essential/kgdt.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="dd/dbb/a19517_1a27ff8d9a6bf6c2c98cf78a0257e4667e" refkind="member"><highlight class="normal"><ref refid="dd/dbb/a19517_1a27ff8d9a6bf6c2c98cf78a0257e4667e" kindref="member">essential::GDT_row::GDT_row</ref>()<sp/>:<sp/><ref refid="d2/d9a/a18587_1aa7ae5b5a918e00776ff07fb1c58a348d" kindref="member">limit_low</ref>(0),<sp/><ref refid="d2/d9a/a18587_1a71e21ea67de59991e9a27666a1752a8f" kindref="member">base_low</ref>(0),<sp/><ref refid="d2/d9a/a18587_1a6b67e86f6de9204d76adab79069aec29" kindref="member">base_middle</ref>(0),<sp/><ref refid="d2/d9a/a18587_1a8b0d6200bc639dd37ff68847a0adde5f" kindref="member">access</ref>(0),<sp/><ref refid="d2/d9a/a18587_1acfea365f69e71368a2db03333d4afd6f" kindref="member">granularity</ref>(0),<sp/><ref refid="d2/d9a/a18587_1a1a173457c7aa39c59c008fcc3332d2b3" kindref="member">base_high</ref>(0)<sp/>{}</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="dd/dbb/a19517_1a5692f86b7ebf4eefdeb78e48f281092b" refkind="member"><highlight class="normal"><ref refid="dd/dbb/a19517_1a27ff8d9a6bf6c2c98cf78a0257e4667e" kindref="member">essential::GDT_row::GDT_row</ref>(uint32_t<sp/><ref refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kindref="member">base</ref>,<sp/>uint32_t<sp/><ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref>,<sp/>uint8_t<sp/>access_byte,<sp/>uint8_t<sp/>gran_byte)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="d2/d9a/a18587_1aa7ae5b5a918e00776ff07fb1c58a348d" kindref="member">limit_low</ref><sp/><sp/><sp/>=<sp/>(limit<sp/>&amp;<sp/>0xFFFF);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="d2/d9a/a18587_1a71e21ea67de59991e9a27666a1752a8f" kindref="member">base_low</ref><sp/><sp/><sp/><sp/>=<sp/>(base<sp/>&amp;<sp/>0xFFFF);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="d2/d9a/a18587_1a6b67e86f6de9204d76adab79069aec29" kindref="member">base_middle</ref><sp/>=<sp/>(base<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="d2/d9a/a18587_1a1a173457c7aa39c59c008fcc3332d2b3" kindref="member">base_high</ref><sp/><sp/><sp/>=<sp/>(base<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>upper<sp/>4<sp/>bits<sp/>of<sp/>the<sp/>20-bit<sp/>limit<sp/>go<sp/>into<sp/>the<sp/>lower<sp/>4<sp/>bits<sp/>of<sp/>the<sp/>granularity<sp/>byte.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="d2/d9a/a18587_1acfea365f69e71368a2db03333d4afd6f" kindref="member">granularity</ref><sp/>=<sp/>((limit<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0x0F);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>granularity<sp/>flags<sp/>(G,<sp/>D/B,<sp/>L,<sp/>AVL)<sp/>go<sp/>into<sp/>the<sp/>upper<sp/>4<sp/>bits.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="d2/d9a/a18587_1acfea365f69e71368a2db03333d4afd6f" kindref="member">granularity</ref><sp/>|=<sp/>(gran_byte<sp/>&amp;<sp/>0xF0);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>access<sp/>flags<sp/>for<sp/>this<sp/>segment.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="d2/d9a/a18587_1a8b0d6200bc639dd37ff68847a0adde5f" kindref="member">access</ref><sp/>=<sp/>access_byte;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="dd/dbb/a19517_1a6eb69c55c0bd16040b2d766dd068df31" refkind="member"><highlight class="normal"><ref refid="dd/dbb/a19517_1a6eb69c55c0bd16040b2d766dd068df31" kindref="member">essential::GDT_row::~GDT_row</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="d0/d39/a19521_1aa061ecab5a20a3556413fbbde4fe89d7" refkind="member"><highlight class="normal"><ref refid="d0/d39/a19521_1aa061ecab5a20a3556413fbbde4fe89d7" kindref="member">essential::GDT::GDT</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>an<sp/>initializer<sp/>list<sp/>to<sp/>construct<sp/>each<sp/>GDT<sp/>entry.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="d2/d9a/a18587_1a4facd1fb9d9bd77b1dd234a062c8d9dd" kindref="member">nullSegment</ref>(),<sp/></highlight><highlight class="comment">//<sp/>First<sp/>entry<sp/>must<sp/>be<sp/>a<sp/>null<sp/>descriptor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d2/d9a/a18587_1a42e2af3e7b809f6f5e06ecfecdb504e0" kindref="member">kernel_CS</ref>(0,<sp/>0xFFFFFFFF,<sp/><ref refid="d2/d9a/a18587_1ac4461ee84aade9ee824de64d4846ec98" kindref="member">GDT_ACCESS_CODE_PL0</ref>,<sp/><ref refid="d2/d9a/a18587_1a4941c819dbbef299c391bf53c24caf8d" kindref="member">GDT_GRAN_FLAGS</ref>),</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d2/d9a/a18587_1a1b73e3464fcb9312774f2347e1b7604e" kindref="member">kernel_DS</ref>(0,<sp/>0xFFFFFFFF,<sp/><ref refid="d2/d9a/a18587_1a1adfff1c72212b5c4e1df35485bb102a" kindref="member">GDT_ACCESS_DATA_PL0</ref>,<sp/><ref refid="d2/d9a/a18587_1a4941c819dbbef299c391bf53c24caf8d" kindref="member">GDT_GRAN_FLAGS</ref>),</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d2/d9a/a18587_1a8d89c16e869ec13a725c780925713916" kindref="member">user_CS</ref>(0,<sp/>0xFFFFFFFF,<sp/><ref refid="d2/d9a/a18587_1a01d908c8637340b21274e0176b320c05" kindref="member">GDT_ACCESS_CODE_PL3</ref>,<sp/><ref refid="d2/d9a/a18587_1a4941c819dbbef299c391bf53c24caf8d" kindref="member">GDT_GRAN_FLAGS</ref>),</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d2/d9a/a18587_1a137b4628cf352225e57720432f2db487" kindref="member">user_DS</ref>(0,<sp/>0xFFFFFFFF,<sp/><ref refid="d2/d9a/a18587_1ac7f57dcdd84028460100b6da75ad4938" kindref="member">GDT_ACCESS_DATA_PL3</ref>,<sp/><ref refid="d2/d9a/a18587_1a4941c819dbbef299c391bf53c24caf8d" kindref="member">GDT_GRAN_FLAGS</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>GDT<sp/>limit<sp/>is<sp/>its<sp/>total<sp/>size<sp/>in<sp/>bytes<sp/>minus<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>5<sp/>entries<sp/>*<sp/>8<sp/>bytes/entry<sp/>=<sp/>40<sp/>bytes.<sp/>Limit<sp/>=<sp/>39<sp/>(0x27).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/d39/a19521_1a4105a25a1ec71dc7e338639bb370c664" kindref="member">limit</ref><sp/>=<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>)<sp/>*<sp/>5)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>base<sp/>address<sp/>is<sp/>the<sp/>address<sp/>of<sp/>the<sp/>first<sp/>entry<sp/>in<sp/>our<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/d39/a19521_1ad0a48a89930e6a6c4467c977f4e91269" kindref="member">base</ref><sp/>=<sp/>(uintptr_t)&amp;this-&gt;<ref refid="d0/d39/a19521_1a154c2e2725809d873c8e7d5f19ea66c5" kindref="member">nullSegment</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="d0/d39/a19521_1a9b61f75de7fa2ffe9589f43c3f6a6a6c" refkind="member"><highlight class="normal"><ref refid="d0/d39/a19521_1a9b61f75de7fa2ffe9589f43c3f6a6a6c" kindref="member">essential::GDT::~GDT</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="d0/d39/a19521_1af8e3c1da270077eb7cc6551b35c0e5ca" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/d39/a19521_1af8e3c1da270077eb7cc6551b35c0e5ca" kindref="member">essential::GDT::installTable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>structure<sp/>that<sp/>matches<sp/>the<sp/>6-byte<sp/>format<sp/>required<sp/>by<sp/>the<sp/>&apos;lgdt&apos;<sp/>instruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">GDT_Pointer<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kindref="member">base</ref>;<sp/></highlight><highlight class="comment">//<sp/>Use<sp/>uint32_t<sp/>for<sp/>our<sp/>i686<sp/>(32-bit)<sp/>target</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="d5/d56/a18560_1a4bbf25084dee10ec29f4356cacced463" kindref="member">__attribute__</ref>((packed));</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>GDT_Pointer<sp/>gdt_ptr;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt_ptr.limit<sp/>=<sp/>this-&gt;<ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt_ptr.base<sp/>=<sp/>this-&gt;<ref refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kindref="member">base</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">asm</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>the<sp/>address<sp/>of<sp/>our<sp/>GDT_Pointer<sp/>structure<sp/>into<sp/>the<sp/>GDTR.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;lgdt<sp/>(%0)\n\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reload<sp/>all<sp/>data<sp/>segment<sp/>registers<sp/>with<sp/>the<sp/>kernel<sp/>data<sp/>selector.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mov<sp/>$0x10,<sp/>%%ax\n\t&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x10<sp/>is<sp/>the<sp/>selector<sp/>for<sp/>kernel_DS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mov<sp/>%%ax,<sp/>%%ds\n\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mov<sp/>%%ax,<sp/>%%es\n\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mov<sp/>%%ax,<sp/>%%fs\n\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mov<sp/>%%ax,<sp/>%%gs\n\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mov<sp/>%%ax,<sp/>%%ss\n\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Perform<sp/>a<sp/>32-bit<sp/>far<sp/>jump<sp/>to<sp/>reload<sp/>the<sp/>CS<sp/>register<sp/>and<sp/>flush<sp/>the<sp/>CPU<sp/>pipeline.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;jmp<sp/>$0x08,<sp/>$flush_cs\n\t&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>0x08<sp/>is<sp/>the<sp/>selector<sp/>for<sp/>kernel_CS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;flush_cs:\n\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="comment">//<sp/>No<sp/>output<sp/>operands</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">(&amp;gdt_ptr)<sp/></highlight><highlight class="comment">//<sp/>Input:<sp/>address<sp/>of<sp/>our<sp/>GDT_Pointer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;memory&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;eax&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Clobbered<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;GDT<sp/>Installed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="d0/d39/a19521_1a9c89bddfdb21d5cc09c1d82411982de9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/d39/a19521_1a9c89bddfdb21d5cc09c1d82411982de9" kindref="member">essential::GDT::printLoadedTable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">GDT_Pointer<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kindref="member">base</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="d5/d56/a18560_1a4bbf25084dee10ec29f4356cacced463" kindref="member">__attribute__</ref>((packed));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>GDT_Pointer<sp/>gdtr;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Store<sp/>the<sp/>current<sp/>GDT<sp/>register<sp/>contents<sp/>into<sp/>our<sp/>struct.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">asm</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&quot;sgdt<sp/>%0&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;=m&quot;</highlight><highlight class="normal">(gdtr));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;---\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;INFO<sp/>about<sp/>:<sp/>Currently<sp/>Loaded<sp/>GDT\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;Base<sp/>Address:<sp/>%#x\n&quot;</highlight><highlight class="normal">,<sp/>gdtr.base);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;Limit:<sp/>%#x<sp/>(%d<sp/>bytes)\n&quot;</highlight><highlight class="normal">,<sp/>gdtr.limit,<sp/>gdtr.limit);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;Entries:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(gdtr.limit<sp/>+<sp/>1)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>));</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;---\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>*<sp/>gdt_entries<sp/>=<sp/>(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>*)gdtr.base;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_entries<sp/>=<sp/>(gdtr.limit<sp/>+<sp/>1)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>num_entries;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref><sp/>entry<sp/>=<sp/>gdt_entries[i];</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reconstruct<sp/>the<sp/>base<sp/>and<sp/>limit<sp/>from<sp/>the<sp/>scattered<sp/>fields.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kindref="member">base</ref><sp/>=<sp/>entry.<ref refid="dd/dbb/a19517_1a2cbd86d4258ecebf7b46cc9bb8611b5b" kindref="member">base_high</ref><sp/>&lt;&lt;<sp/>24<sp/>|<sp/>entry.<ref refid="dd/dbb/a19517_1a8429e04bddc6a61c4e95b88901ae219d" kindref="member">base_middle</ref><sp/>&lt;&lt;<sp/>16<sp/>|<sp/>entry.<ref refid="dd/dbb/a19517_1a298d18522898ad48c1e05b79f1f4dff7" kindref="member">base_low</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref><sp/>=<sp/>(entry.<ref refid="dd/dbb/a19517_1af180a640dbd5213b3f936ff7cf48deaf" kindref="member">granularity</ref><sp/>&amp;<sp/>0x0F)<sp/>&lt;&lt;<sp/>16<sp/>|<sp/>entry.<ref refid="dd/dbb/a19517_1a2bddbe405dfbbbd101c475bd1bd65112" kindref="member">limit_low</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>granularity<sp/>bit<sp/>is<sp/>set,<sp/>the<sp/>limit<sp/>is<sp/>in<sp/>4<sp/>KiB<sp/>pages.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((entry.<ref refid="dd/dbb/a19517_1af180a640dbd5213b3f936ff7cf48deaf" kindref="member">granularity</ref><sp/>&amp;<sp/>0x80)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref><sp/>=<sp/>(<ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref><sp/>&lt;&lt;<sp/>12)<sp/>|<sp/>0xFFF;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;GDT<sp/>Entry<sp/>%d:<sp/>Base=%p,<sp/>Limit=%#x,<sp/>Access=%#x,<sp/>Granularity=%#x\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)(uintptr_t)<ref refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kindref="member">base</ref>,<sp/><ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref>,<sp/>entry.<ref refid="dd/dbb/a19517_1a7f01a0febd325787f1ff47d6a3b668a9" kindref="member">access</ref>,<sp/>entry.<ref refid="dd/dbb/a19517_1af180a640dbd5213b3f936ff7cf48deaf" kindref="member">granularity</ref>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;---\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="d0/d39/a19521_1a2ae998750fc1e18e6778e92774bd3574" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/d39/a19521_1a2ae998750fc1e18e6778e92774bd3574" kindref="member">essential::GDT::printLoadedTableHeader</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">GDT_Pointer<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="d2/d9a/a18587_1ab28e82ae69032cb4ad3ec3a0be3d7129" kindref="member">limit</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d2/d9a/a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9" kindref="member">base</ref>;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="d5/d56/a18560_1a4bbf25084dee10ec29f4356cacced463" kindref="member">__attribute__</ref>((packed));</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>GDT_Pointer<sp/>gdtr;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Store<sp/>the<sp/>current<sp/>GDT<sp/>register<sp/>contents<sp/>into<sp/>our<sp/>struct.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">asm</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&quot;sgdt<sp/>%0&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;=m&quot;</highlight><highlight class="normal">(gdtr));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;---\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;INFO<sp/>about<sp/>:<sp/>Currently<sp/>Loaded<sp/>GDT\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;Base<sp/>Address:<sp/>%#x\n&quot;</highlight><highlight class="normal">,<sp/>gdtr.base);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;Limit:<sp/>%#x<sp/>(%d<sp/>bytes)\n&quot;</highlight><highlight class="normal">,<sp/>gdtr.limit,<sp/>gdtr.limit);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;Entries:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(gdtr.limit<sp/>+<sp/>1)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>));</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dc/ddd/a18618_1a45ee52b918a784ff0e96e7c8917a91d9" kindref="member">basic::printf</ref>(</highlight><highlight class="stringliteral">&quot;---\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---<sp/>Static<sp/>functions<sp/>to<sp/>get<sp/>segment<sp/>selectors<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="d0/d39/a19521_1a89a8d2c17e3c22e7200bff09252f46e1" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="d0/d39/a19521_1a89a8d2c17e3c22e7200bff09252f46e1" kindref="member">essential::GDT::kernel_CS_selector</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>)<sp/>*<sp/>1;<sp/>}<sp/></highlight><highlight class="comment">//<sp/>Selector<sp/>0x08</highlight></codeline>
+<codeline lineno="149" refid="d0/d39/a19521_1a34661a528b1630bff806e25411ad6ec3" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="d0/d39/a19521_1a34661a528b1630bff806e25411ad6ec3" kindref="member">essential::GDT::kernel_DS_selector</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>)<sp/>*<sp/>2;<sp/>}<sp/></highlight><highlight class="comment">//<sp/>Selector<sp/>0x10</highlight></codeline>
+<codeline lineno="152" refid="d0/d39/a19521_1a8806a14009c4f0432d4b7043d687be17" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="d0/d39/a19521_1a8806a14009c4f0432d4b7043d687be17" kindref="member">essential::GDT::user_CS_selector</ref>()<sp/><sp/><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>)<sp/>*<sp/>3;<sp/>}<sp/></highlight><highlight class="comment">//<sp/>Selector<sp/>0x18</highlight></codeline>
+<codeline lineno="155" refid="d0/d39/a19521_1a90661f97e9cf214dd6d977b19c01f7fc" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="d0/d39/a19521_1a90661f97e9cf214dd6d977b19c01f7fc" kindref="member">essential::GDT::user_DS_selector</ref>()<sp/><sp/><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="dd/dbb/a19517" kindref="compound">essential::GDT_row</ref>)<sp/>*<sp/>4;<sp/>}<sp/></highlight><highlight class="comment">//<sp/>Selector<sp/>0x20</highlight></codeline>
+    </programlisting>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/essential/kgdt.cpp"/>
+  </compounddef>
+</doxygen>

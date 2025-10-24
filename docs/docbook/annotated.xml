@@ -1,4 +1,42 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
 <title>Class List</title>
-Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_a17159">driver::Driver</link><link linkend="_a17163">driver::DriverManager</link><link linkend="_a17171">driver::KeyboardDriver</link><link linkend="_a17167">driver::KeyboardEventHandler</link><link linkend="_a17179">driver::MouseDriver</link><link linkend="_a17175">driver::MouseEventHandler</link><link linkend="_a17191">essential::atexit_func_entry_t</link><link linkend="_a17187">essential::GDT</link><link linkend="_a17183">essential::GDT_row</link><link linkend="_a17199">hardware_communication::IDT_row</link><link linkend="_a17195">hardware_communication::InterruptHandler</link><link linkend="_a17203">hardware_communication::InterruptManager</link><link linkend="_a17207">hardware_communication::Port</link><link linkend="_a17219">hardware_communication::Port16Bit</link><link linkend="_a17223">hardware_communication::Port32Bit</link><link linkend="_a17211">hardware_communication::Port8Bit</link><link linkend="_a17215">hardware_communication::Port8BitSlow</link><link linkend="_a17103">KeyboardEventHandler_for_kernel</link><link linkend="_a17107">MouseEventHandler_for_kernel</link></section>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_a19493">driver::Driver</link>
+<para>Base class (interface) for all hardware drivers in the operating system </para>
+<link linkend="_a19497">driver::DriverManager</link>
+<para>Manages a collection of <link linkend="_a19493">Driver</link> objects, facilitating their activation and organization </para>
+<link linkend="_a19505">driver::KeyboardDriver</link>
+<para><link linkend="_a19493">Driver</link> for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock). @inherits <link linkend="_a19529">hardware_communication::InterruptHandler</link> @inherits <link linkend="_a19493">driver::Driver</link> </para>
+<link linkend="_a19501">driver::KeyboardEventHandler</link>
+<para>Base class (interface) for handling keyboard events (key presses and releases) </para>
+<link linkend="_a19513">driver::MouseDriver</link>
+<para><link linkend="_a19493">Driver</link> for the PS/2 mouse, handling 3-byte packets and managing mouse state. @inherits <link linkend="_a19529">hardware_communication::InterruptHandler</link> @inherits <link linkend="_a19493">driver::Driver</link> </para>
+<link linkend="_a19509">driver::MouseEventHandler</link>
+<para>Base class (interface) for handling mouse events (movement and button clicks) </para>
+<link linkend="_a19525">essential::atexit_func_entry_t</link>
+<para>Structure to hold a registered C++ ABI exit function (destructor) </para>
+<link linkend="_a19521">essential::GDT</link>
+<para>Manages the Global Descriptor Table (<link linkend="_a19521">GDT</link>), holding segment descriptors for the CPU </para>
+<link linkend="_a19517">essential::GDT_row</link>
+<para>Represents a single 8-byte segment descriptor entry in the Global Descriptor Table (<link linkend="_a19521">GDT</link>) </para>
+<link linkend="_a19533">hardware_communication::IDT_row</link>
+<para>Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT) </para>
+<link linkend="_a19529">hardware_communication::InterruptHandler</link>
+<para>Base class (interface) for handling specific CPU interrupts </para>
+<link linkend="_a19537">hardware_communication::InterruptManager</link>
+<para>Manages the Interrupt Descriptor Table (IDT) and Programmable Interrupt Controllers (PICs), dispatching interrupts to registered handlers </para>
+<link linkend="_a19541">hardware_communication::Port</link>
+<para>Base class for hardware I/O port communication </para>
+<link linkend="_a19553">hardware_communication::Port16Bit</link>
+<para>Represents a 16-bit (word-sized) I/O port. @inherits <link linkend="_a19541">Port</link> </para>
+<link linkend="_a19557">hardware_communication::Port32Bit</link>
+<para>Represents a 32-bit (double-word-sized) I/O port. @inherits <link linkend="_a19541">Port</link> </para>
+<link linkend="_a19545">hardware_communication::Port8Bit</link>
+<para>Represents an 8-bit (byte-sized) I/O port. @inherits <link linkend="_a19541">Port</link> </para>
+<link linkend="_a19549">hardware_communication::Port8BitSlow</link>
+<para>Represents an 8-bit I/O port with a forced delay on writes. @inherits <link linkend="_a19545">Port8Bit</link> </para>
+<link linkend="_a19437">KeyboardEventHandler_for_kernel</link>
+<para>Custom keyboard event handler implementation for the kernel </para>
+<link linkend="_a19441">MouseEventHandler_for_kernel</link>
+<para>Custom mouse event handler implementation for the kernel </para>
+</section>

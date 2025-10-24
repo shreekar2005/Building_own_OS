@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d6/daf/a19557" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>hardware_communication::Port32Bit</compoundname>
+    <basecompoundref refid="d2/dc8/a19541" prot="public" virt="non-virtual">hardware_communication::Port</basecompoundref>
+    <includes refid="d8/d68/a18572" local="yes">kport.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/daf/a19557_1a507afa8607757baedf1789d73c2a173d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::Port32Bit::Port32Bit</definition>
+        <argsstring>(uint16_t portnumber)</argsstring>
+        <name>Port32Bit</name>
+        <qualifiedname>hardware_communication::Port32Bit::Port32Bit</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>portnumber</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new <ref refid="d6/daf/a19557" kindref="compound">Port32Bit</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>portnumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 16-bit address of the I/O port. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="53" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kport.cpp" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daf/a19557_1a3e87dc7d610b279e8e7e072a0d1ee78c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hardware_communication::Port32Bit::~Port32Bit</definition>
+        <argsstring>() override</argsstring>
+        <name>~Port32Bit</name>
+        <qualifiedname>hardware_communication::Port32Bit::~Port32Bit</qualifiedname>
+        <briefdescription>
+<para>Destroys the <ref refid="d6/daf/a19557" kindref="compound">Port32Bit</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="54" column="13" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kport.cpp" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daf/a19557_1a41093c437a9508f984c90ae68e9c03bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t hardware_communication::Port32Bit::read</definition>
+        <argsstring>()</argsstring>
+        <name>read</name>
+        <qualifiedname>hardware_communication::Port32Bit::read</qualifiedname>
+        <briefdescription>
+<para>Reads a 32-bit value from the I/O port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The 32-bit value read from the port. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="56" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kport.cpp" bodystart="82" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daf/a19557_1a64a16fe840224ef769ab2933770d1b21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hardware_communication::Port32Bit::write</definition>
+        <argsstring>(uint32_t data)</argsstring>
+        <name>write</name>
+        <qualifiedname>hardware_communication::Port32Bit::write</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Writes a 32-bit value to the I/O port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 32-bit value to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="55" column="18" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/hardware_communication/kport.cpp" bodystart="77" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d2/dc8/a19541_1aab0c5c82b0190df88ddbb595bfac539a" prot="protected" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t hardware_communication::Port::portnumber</definition>
+        <argsstring></argsstring>
+        <name>portnumber</name>
+        <qualifiedname>hardware_communication::Port::portnumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="11" column="22" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" bodystart="11" bodyend="-1"/>
+        <referencedby refid="d2/dc8/a19541_1ad001c21b67d4c138f65024f167030cca" compoundref="d7/d22/a18596" startline="5" endline="7">hardware_communication::Port::Port</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a 32-bit (double-word-sized) I/O port. @inherits <ref refid="d2/dc8/a19541" kindref="compound">Port</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>hardware_communication::Port</label>
+        <link refid="d2/dc8/a19541"/>
+      </node>
+      <node id="1">
+        <label>hardware_communication::Port32Bit</label>
+        <link refid="d6/daf/a19557"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>hardware_communication::Port</label>
+        <link refid="d2/dc8/a19541"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#portnumber</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>hardware_communication::Port32Bit</label>
+        <link refid="d6/daf/a19557"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>uint16_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" line="51" column="9" bodyfile="/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kport.hpp" bodystart="51" bodyend="57"/>
+    <listofallmembers>
+      <member refid="d2/dc8/a19541_1ad001c21b67d4c138f65024f167030cca" prot="protected" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>Port</name></member>
+      <member refid="d6/daf/a19557_1a507afa8607757baedf1789d73c2a173d" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>Port32Bit</name></member>
+      <member refid="d2/dc8/a19541_1aab0c5c82b0190df88ddbb595bfac539a" prot="protected" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>portnumber</name></member>
+      <member refid="d6/daf/a19557_1a41093c437a9508f984c90ae68e9c03bf" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>read</name></member>
+      <member refid="d6/daf/a19557_1a64a16fe840224ef769ab2933770d1b21" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>write</name></member>
+      <member refid="d2/dc8/a19541_1a8b13c33da4911afcbdcb21c97768a72e" prot="public" virt="virtual"><scope>hardware_communication::Port32Bit</scope><name>~Port</name></member>
+      <member refid="d6/daf/a19557_1a3e87dc7d610b279e8e7e072a0d1ee78c" prot="public" virt="non-virtual"><scope>hardware_communication::Port32Bit</scope><name>~Port32Bit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

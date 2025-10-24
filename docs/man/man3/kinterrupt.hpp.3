@@ -1,4 +1,4 @@
-.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/hardware_communication/kinterrupt.hpp" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,12 +21,15 @@
 .ti -1c
 .RI "class \fBhardware_communication::IDT_row\fP"
 .br
+.RI "Represents a single 8-byte entry (gate descriptor) in the Interrupt Descriptor Table (IDT)\&. "
 .ti -1c
 .RI "class \fBhardware_communication::InterruptHandler\fP"
 .br
+.RI "Base class (interface) for handling specific CPU interrupts\&. "
 .ti -1c
 .RI "class \fBhardware_communication::InterruptManager\fP"
 .br
+.RI "Manages the Interrupt Descriptor Table (IDT) and Programmable Interrupt Controllers (PICs), dispatching interrupts to registered handlers\&. "
 .in -1c
 .SS "Namespaces"
 

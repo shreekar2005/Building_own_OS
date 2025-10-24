@@ -1,0 +1,17 @@
+\doxysubsection{driver Namespace Reference}
+\hypertarget{a18619}{}\label{a18619}\index{driver@{driver}}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a19493}{Driver}}
+\begin{DoxyCompactList}\small\item\em Base class (interface) for all hardware drivers in the operating system. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a19497}{Driver\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages a collection of \doxylink{a19493}{Driver} objects, facilitating their activation and organization. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a19505}{Keyboard\+Driver}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a19493}{Driver} for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock). @inherits \doxylink{a19529}{hardware\+\_\+communication\+::\+Interrupt\+Handler} @inherits \doxylink{a19493}{driver\+::\+Driver}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a19501}{Keyboard\+Event\+Handler}}
+\begin{DoxyCompactList}\small\item\em Base class (interface) for handling keyboard events (key presses and releases). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a19513}{Mouse\+Driver}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a19493}{Driver} for the PS/2 mouse, handling 3-\/byte packets and managing mouse state. @inherits \doxylink{a19529}{hardware\+\_\+communication\+::\+Interrupt\+Handler} @inherits \doxylink{a19493}{driver\+::\+Driver}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a19509}{Mouse\+Event\+Handler}}
+\begin{DoxyCompactList}\small\item\em Base class (interface) for handling mouse events (movement and button clicks). \end{DoxyCompactList}\end{DoxyCompactItemize}

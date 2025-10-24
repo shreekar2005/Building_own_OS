@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_a18618" xml:lang="en-US">
+<title>basic Namespace Reference</title>
+<indexterm><primary>basic</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_a18618_1a02923caa95013ec5d9333c25d9cca1d6">__clearScreen</link> ()</para>
+
+<para>Clears the entire text mode screen and resets the cursor to (0,0). </para>
+</listitem>
+            <listitem><para>void <link linkend="_a18618_1a53c6425a55d9fb93998da01f2416f9ad">__printMemoryMap</link> (multiboot_info_t *mbi)</para>
+
+<para>Prints the system memory map provided by the Multiboot bootloader. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a18618_1a4b31902bf2cff8ff28405aa57d9f4575">disable_cursor</link> ()</para>
+
+<para>Disables the text mode cursor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a18618_1a8ca6648639f335b207c748074dcf9f25">enable_cursor</link> (uint8_t cursor_start, uint8_t cursor_end)</para>
+
+<para>Enables the text mode cursor and sets its shape. </para>
+</listitem>
+            <listitem><para>int <link linkend="_a18618_1a45ee52b918a784ff0e96e7c8917a91d9">printf</link> (const char *format,...)</para>
+
+<para>A custom implementation of the standard printf function for writing to VGA text mode memory. </para>
+</listitem>
+            <listitem><para>void <link linkend="_a18618_1a9d1f0f838e646660db6d9284725c2b4c">update_cursor</link> (int x, int y)</para>
+
+<para>Updates the position of the text mode cursor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_a18618_1a02923caa95013ec5d9333c25d9cca1d6"/><section>
+    <title>__clearScreen()</title>
+<indexterm><primary>__clearScreen</primary><secondary>basic</secondary></indexterm>
+<indexterm><primary>basic</primary><secondary>__clearScreen</secondary></indexterm>
+<para><computeroutput>void basic::__clearScreen ( )</computeroutput></para><para>
+
+<para>Clears the entire text mode screen and resets the cursor to (0,0). </para>
+</para>
+<para>
+Definition at line <link linkend="_a18593_source_1l00128">128</link> of file <link linkend="_a18593_source">kiostream.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00129 {
+00130 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;*video_memory&#32;=&#32;(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;*)0xb8000;
+00131 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;blank&#32;=&#32;(0x07&#32;&lt;&lt;&#32;8)&#32;|&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>;
+00132 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;screenSize&#32;=&#32;<link linkend="_a18593_1a5be9493285a1f50a67d98b887537217d">MAGIC_WIDTH</link>&#32;*&#32;<link linkend="_a18593_1a887422301cbe9a94f8b96263415640cf">MAGIC_HEIGHT</link>;
+00133 
+00134 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;screenSize;&#32;i++)
+00135 &#32;&#32;&#32;&#32;{
+00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;video_memory[i]&#32;=&#32;blank;
+00137 &#32;&#32;&#32;&#32;}
+00138 
+00139 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a133981c4ba48aed67a5b874f7b213583">cursor_x_</link>&#32;=&#32;0;
+00140 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a1bda227f31ddf346294cb531f7554ef3">cursor_y_</link>&#32;=&#32;0;
+00141 }
+</programlisting><para>
+References <link linkend="_a18593_source_1l00004">cursor_x_</link>, <link linkend="_a18593_source_1l00005">cursor_y_</link>, <link linkend="_a18593_source_1l00008">MAGIC_HEIGHT</link>, and <link linkend="_a18593_source_1l00007">MAGIC_WIDTH</link>.</para>
+<para>
+Referenced by <link linkend="_a18557_source_1l00105">kernelMain()</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a02923caa95013ec5d9333c25d9cca1d6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a18618_1a53c6425a55d9fb93998da01f2416f9ad"/><section>
+    <title>__printMemoryMap()</title>
+<indexterm><primary>__printMemoryMap</primary><secondary>basic</secondary></indexterm>
+<indexterm><primary>basic</primary><secondary>__printMemoryMap</secondary></indexterm>
+<para><computeroutput>void basic::__printMemoryMap (multiboot_info_t * mbi)</computeroutput></para><para>
+
+<para>Prints the system memory map provided by the Multiboot bootloader. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mbi</entry><entry>
+<para>Pointer to the Multiboot information structure. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18590_source_1l00005">5</link> of file <link linkend="_a18590_source">kmemory.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00006 {
+00007 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;the&#32;memory&#32;map&#32;flag&#32;is&#32;set&#32;(bit&#32;6)</emphasis>
+00008 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!(mbi-&gt;flags&#32;&amp;&#32;(1&#32;&lt;&lt;&#32;6)))&#32;{
+00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18618_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;\nError:&#32;Memory&#32;map&#32;not&#32;provided&#32;by&#32;bootloader.\n&quot;</emphasis>);
+00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00011 &#32;&#32;&#32;&#32;}
+00012 
+00013 &#32;&#32;&#32;&#32;<link linkend="_a18618_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;\n---&#32;System&#32;Memory&#32;Map&#32;---\n&quot;</emphasis>);
+00014 &#32;&#32;&#32;&#32;
+00015 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;uint64_t&#32;to&#32;correctly&#32;accumulate&#32;total&#32;memory&#32;size</emphasis>
+00016 &#32;&#32;&#32;&#32;uint64_t&#32;total_available_bytes&#32;=&#32;0;
+00017 &#32;&#32;&#32;&#32;
+00018 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;uintptr_t&#32;for&#32;pointer&#32;arithmetic&#32;to&#32;ensure&#32;portability</emphasis>
+00019 &#32;&#32;&#32;&#32;uintptr_t&#32;mmap_start&#32;=&#32;mbi-&gt;mmap_addr;
+00020 &#32;&#32;&#32;&#32;uintptr_t&#32;mmap_end&#32;=&#32;mbi-&gt;mmap_addr&#32;+&#32;mbi-&gt;mmap_length;
+00021 
+00022 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(multiboot_memory_map_t&#32;*mmap&#32;=&#32;(multiboot_memory_map_t&#32;*)mmap_start;
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(uintptr_t)mmap&#32;&lt;&#32;mmap_end;
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mmap&#32;=&#32;(multiboot_memory_map_t&#32;*)((uintptr_t)mmap&#32;+&#32;mmap-&gt;size&#32;+&#32;<emphasis role="keyword">sizeof</emphasis>(mmap-&gt;size)))
+00025 &#32;&#32;&#32;&#32;{
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*type_str;
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(mmap-&gt;type)
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_a18560_1a7fe141351ebcde0acbd6118ad0ea1a21">MULTIBOOT_MEMORY_AVAILABLE</link>:
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;type_str&#32;=&#32;<emphasis role="stringliteral">&quot;Available&quot;</emphasis>;
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;total_available_bytes&#32;+=&#32;mmap-&gt;len;
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_a18560_1a0299aedc71e1f6707181471bafb18e7c">MULTIBOOT_MEMORY_RESERVED</link>:
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;type_str&#32;=&#32;<emphasis role="stringliteral">&quot;Reserved&quot;</emphasis>;
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_a18560_1af35be82586f332a561d00207c937ee57">MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</link>:
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;type_str&#32;=&#32;<emphasis role="stringliteral">&quot;ACPI&#32;Reclaimable&quot;</emphasis>;
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_a18560_1a68f78286f7434d373a82f1b6f6473c72">MULTIBOOT_MEMORY_NVS</link>:
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;type_str&#32;=&#32;<emphasis role="stringliteral">&quot;NVS&quot;</emphasis>;
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_a18560_1a1604ec18ac949d88dab993904b08c075">MULTIBOOT_MEMORY_BADRAM</link>:
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;type_str&#32;=&#32;<emphasis role="stringliteral">&quot;Bad&#32;RAM&quot;</emphasis>;
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;type_str&#32;=&#32;<emphasis role="stringliteral">&quot;Unknown&quot;</emphasis>;
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00049 
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;%#llx&#32;for&#32;64-bit&#32;hex&#32;values&#32;(address&#32;and&#32;length)</emphasis>
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18618_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Addr:&#32;%#llx&#32;|&#32;Len:&#32;%.2fKB&#32;|&#32;Type:&#32;%s\n&quot;</emphasis>,&#32;mmap-&gt;addr,&#32;mmap-&gt;len/1024.0,&#32;type_str);
+00052 &#32;&#32;&#32;&#32;}
+00053 &#32;&#32;&#32;&#32;
+00054 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;floating&#32;point&#32;for&#32;the&#32;final&#32;calculation&#32;and&#32;display</emphasis>
+00055 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;total_mb&#32;=&#32;total_available_bytes&#32;/&#32;1024.0;
+00056 &#32;&#32;&#32;&#32;<link linkend="_a18618_1a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</link>(<emphasis role="stringliteral">&quot;Total&#32;available&#32;memory:&#32;%.2f&#32;KB\n\n&quot;</emphasis>,&#32;total_mb);
+00057 }
+</programlisting><para>
+References <link linkend="_a18560_source_1l00245">MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</link>, <link linkend="_a18560_source_1l00243">MULTIBOOT_MEMORY_AVAILABLE</link>, <link linkend="_a18560_source_1l00247">MULTIBOOT_MEMORY_BADRAM</link>, <link linkend="_a18560_source_1l00246">MULTIBOOT_MEMORY_NVS</link>, <link linkend="_a18560_source_1l00244">MULTIBOOT_MEMORY_RESERVED</link>, and <link linkend="_a18593_source_1l00306">printf()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a53c6425a55d9fb93998da01f2416f9ad_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a18618_1a4b31902bf2cff8ff28405aa57d9f4575"/><section>
+    <title>disable_cursor()</title>
+<indexterm><primary>disable_cursor</primary><secondary>basic</secondary></indexterm>
+<indexterm><primary>basic</primary><secondary>disable_cursor</secondary></indexterm>
+<para><computeroutput>void basic::disable_cursor ( )</computeroutput></para><para>
+
+<para>Disables the text mode cursor. </para>
+</para>
+<para>
+Definition at line <link linkend="_a18593_source_1l00042">42</link> of file <link linkend="_a18593_source">kiostream.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00043 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x0A);
+00044 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x20);
+00045 }
+</programlisting><para>
+References <link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>, <link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>, and <link linkend="_a18596_source_1l00021">hardware_communication::Port8Bit::write()</link>.</para>
+<para>
+Referenced by <link linkend="_a18557_source_1l00105">kernelMain()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a4b31902bf2cff8ff28405aa57d9f4575_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a4b31902bf2cff8ff28405aa57d9f4575_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a18618_1a8ca6648639f335b207c748074dcf9f25"/><section>
+    <title>enable_cursor()</title>
+<indexterm><primary>enable_cursor</primary><secondary>basic</secondary></indexterm>
+<indexterm><primary>basic</primary><secondary>enable_cursor</secondary></indexterm>
+<para><computeroutput>void basic::enable_cursor (uint8_t cursor_start, uint8_t cursor_end)</computeroutput></para><para>
+
+<para>Enables the text mode cursor and sets its shape. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>cursor_start</entry><entry>
+<para>The starting scanline for the cursor block. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>cursor_end</entry><entry>
+<para>The ending scanline for the cursor block. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18593_source_1l00020">20</link> of file <link linkend="_a18593_source">kiostream.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00021 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x0A);
+00022 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>((<link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>()&#32;&amp;&#32;0xC0)&#32;|&#32;cursor_start);
+00023 &#32;&#32;&#32;&#32;
+00024 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x0B);
+00025 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>((<link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>.<link linkend="_a19545_1ae8688251b574c3fd335b99f7e93fff2d">read</link>()&#32;&amp;&#32;0xE0)&#32;|&#32;cursor_end);
+00026 }
+</programlisting><para>
+References <link linkend="_a18596_source_1l00026">hardware_communication::Port8Bit::read()</link>, <link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>, <link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>, and <link linkend="_a18596_source_1l00021">hardware_communication::Port8Bit::write()</link>.</para>
+<para>
+Referenced by <link linkend="_a18557_source_1l00105">kernelMain()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a8ca6648639f335b207c748074dcf9f25_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a8ca6648639f335b207c748074dcf9f25_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a18618_1a45ee52b918a784ff0e96e7c8917a91d9"/><section>
+    <title>printf()</title>
+<indexterm><primary>printf</primary><secondary>basic</secondary></indexterm>
+<indexterm><primary>basic</primary><secondary>printf</secondary></indexterm>
+<para><computeroutput>int basic::printf (const char * format,  ...)</computeroutput></para><para>
+
+<para>A custom implementation of the standard printf function for writing to VGA text mode memory. </para>
+</para>
+
+<para><itemizedlist>
+<listitem>
+<para>This function formats a string and prints it to the screen, handling various format specifiers, flags, width, precision, and length modifiers. It returns the total number of characters written.</para>
+</listitem><listitem>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>format</entry><entry>
+<para>The format string. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>Variable arguments corresponding to the format specifiers.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</listitem><listitem>
+<para><formalpara><title>Returns</title>
+
+<para>The total number of characters written to the screen.</para>
+</formalpara>
+</para>
+</listitem><listitem></listitem></itemizedlist>
+</para>
+
+<para>Supported Format Specifiers: c - Character s - String d, i - Signed decimal integer u - Unsigned decimal integer f - Floating point number (double) x - Unsigned hexadecimal integer (lowercase) X - Unsigned hexadecimal integer (uppercase) b - Unsigned binary integer o - Unsigned octal integer p - Pointer address %% - A literal &apos;&apos; character<itemizedlist>
+<listitem>
+<para>Supported Flags: &apos;#&apos; - Alternative form (e.g., 0x for hex, 0 for octal). &apos;0&apos; - Zero-padding for width.</para>
+</listitem><listitem>
+<para>Supported Width: A number after &apos;&apos; specifies the minimum field width (e.g., %10d).</para>
+</listitem><listitem>
+<para>Supported Precision: A period followed by a number specifies precision (e.g., %.4f, %.8X). For integers, this specifies the minimum number of digits to print.</para>
+</listitem><listitem>
+<para>Supported Length Modifiers: h - short int (for d, i, u, x, X, o, b) hh - signed/unsigned char (for d, i, u, x, X, o, b) l - long int ll - long long int </para>
+</listitem></itemizedlist>
+</para>
+<para>
+Definition at line <link linkend="_a18593_source_1l00306">306</link> of file <link linkend="_a18593_source">kiostream.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00307 {
+00308 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;chars_written&#32;=&#32;0;
+00309 
+00310 &#32;&#32;&#32;&#32;va_list&#32;args;
+00311 &#32;&#32;&#32;&#32;va_start(args,&#32;format);
+00312 
+00313 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;buffer[128];
+00314 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;char_str[2]&#32;=&#32;{0,&#32;0};
+00315 
+00316 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;format[i]&#32;!=&#32;<emphasis role="charliteral">&apos;\0&apos;</emphasis>;&#32;i++)
+00317 &#32;&#32;&#32;&#32;{
+00318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;%&apos;</emphasis>)
+00319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+00321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;use_alternative_form&#32;=&#32;0;
+00323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;zero_pad&#32;=&#32;0;
+00324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;width&#32;=&#32;0;
+00325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;precision&#32;=&#32;-1;
+00326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;1.&#32;Flags</emphasis>
+00328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;A&#32;boolean&#32;is&#32;clearer&#32;than&#32;using&#32;a&#32;while&#32;loop&#32;here</emphasis>
+00329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;#&apos;</emphasis>)&#32;{
+00330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;use_alternative_form&#32;=&#32;1;
+00331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+00332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>)&#32;{
+00334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;zero_pad&#32;=&#32;1;
+00335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+00336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00337 
+00338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;2.&#32;Width</emphasis>
+00339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(format[i]&#32;&gt;=&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>&#32;&amp;&amp;&#32;format[i]&#32;&lt;=&#32;<emphasis role="charliteral">&apos;9&apos;</emphasis>)&#32;{
+00340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;width&#32;=&#32;width&#32;*&#32;10&#32;+&#32;(format[i]&#32;-&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>);
+00341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+00342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00343 
+00344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;3.&#32;Precision</emphasis>
+00345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;.&apos;</emphasis>)&#32;{
+00346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+00347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;precision&#32;=&#32;0;
+00348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(format[i]&#32;&gt;=&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>&#32;&amp;&amp;&#32;format[i]&#32;&lt;=&#32;<emphasis role="charliteral">&apos;9&apos;</emphasis>)&#32;{
+00349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;precision&#32;=&#32;precision&#32;*&#32;10&#32;+&#32;(format[i]&#32;-&#32;<emphasis role="charliteral">&apos;0&apos;</emphasis>);
+00350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+00351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;zero_pad&#32;=&#32;0;
+00353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00354 
+00355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;4.&#32;Length&#32;Modifiers</emphasis>
+00356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;is_long&#32;=&#32;0,&#32;is_long_long&#32;=&#32;0,&#32;is_short&#32;=&#32;0,&#32;is_char&#32;=&#32;0;
+00357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;l&apos;</emphasis>)&#32;{
+00358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_long&#32;=&#32;1;&#32;i++;
+00359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;l&apos;</emphasis>)&#32;{&#32;is_long_long&#32;=&#32;1;&#32;is_long&#32;=&#32;0;&#32;i++;&#32;}
+00360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;h&apos;</emphasis>)&#32;{
+00361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;is_short&#32;=&#32;1;&#32;i++;
+00362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;h&apos;</emphasis>)&#32;{&#32;is_char&#32;=&#32;1;&#32;is_short&#32;=&#32;0;&#32;i++;&#32;}
+00363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00364 
+00365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;---&#32;Handle&#32;Specifiers&#32;---</emphasis>
+00366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(format[i])
+00367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;c&apos;</emphasis>:
+00369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;char_str[0]&#32;=&#32;(char)va_arg(args,&#32;<emphasis role="keywordtype">int</emphasis>);
+00370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(char_str);
+00371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written++;
+00372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;s&apos;</emphasis>:
+00374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*str&#32;=&#32;va_arg(args,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*);
+00376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!str)&#32;{
+00377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;str&#32;=&#32;<emphasis role="stringliteral">&quot;(null)&quot;</emphasis>;
+00378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>&#32;=&#32;0;
+00380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(str[<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>])&#32;{
+00381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>++;
+00382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(str);
+00384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written&#32;+=&#32;<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>;
+00385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;f&apos;</emphasis>:
+00388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1af382674e4c9fb57a14b178d4ee12273a">doubleToString</link>(va_arg(args,&#32;<emphasis role="keywordtype">double</emphasis>),&#32;buffer,&#32;precision);
+00390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>&#32;=&#32;0;
+00391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(buffer[<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>])&#32;{
+00392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>++;
+00393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(buffer);
+00395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written&#32;+=&#32;<link linkend="_a18560_1a6de3a6d27a7e07942958b912d39792e6">len</link>;
+00396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;d&apos;</emphasis>:&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;i&apos;</emphasis>:&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;u&apos;</emphasis>:&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;x&apos;</emphasis>:&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>:&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;b&apos;</emphasis>:&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;o&apos;</emphasis>:
+00399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;val;
+00401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;=&#32;10;
+00402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;uppercase&#32;=&#32;0;
+00403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;sign_char&#32;=&#32;0;
+00404 
+00405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(format[i]&#32;==&#32;<emphasis role="charliteral">&apos;d&apos;</emphasis>&#32;||&#32;format[i]&#32;==&#32;<emphasis role="charliteral">&apos;i&apos;</emphasis>)&#32;{
+00406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;signed_val;
+00407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_long_long)&#32;signed_val&#32;=&#32;va_arg(args,&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>);
+00408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_long)&#32;signed_val&#32;=&#32;va_arg(args,&#32;<emphasis role="keywordtype">long</emphasis>);
+00409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_char)&#32;signed_val&#32;=&#32;(<emphasis role="keywordtype">signed</emphasis>&#32;char)va_arg(args,&#32;<emphasis role="keywordtype">int</emphasis>);
+00410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_short)&#32;signed_val&#32;=&#32;(short)va_arg(args,&#32;<emphasis role="keywordtype">int</emphasis>);
+00411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;signed_val&#32;=&#32;va_arg(args,&#32;<emphasis role="keywordtype">int</emphasis>);
+00412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(signed_val&#32;&lt;&#32;0)&#32;{
+00414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sign_char&#32;=&#32;<emphasis role="charliteral">&apos;-&apos;</emphasis>;
+00415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val&#32;=&#32;-signed_val;
+00416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val&#32;=&#32;signed_val;
+00418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_long_long)&#32;val&#32;=&#32;va_arg(args,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>);
+00421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_long)&#32;val&#32;=&#32;va_arg(args,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>);
+00422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_char)&#32;val&#32;=&#32;(<emphasis role="keywordtype">unsigned</emphasis>&#32;char)va_arg(args,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>);
+00423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(is_short)&#32;val&#32;=&#32;(<emphasis role="keywordtype">unsigned</emphasis>&#32;short)va_arg(args,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>);
+00424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;val&#32;=&#32;va_arg(args,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>);
+00425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00426 
+00427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(format[i])&#32;{
+00428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;x&apos;</emphasis>:&#32;<link linkend="_a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;=&#32;16;&#32;<emphasis role="keywordflow">break</emphasis>;
+00429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>:&#32;<link linkend="_a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;=&#32;16;&#32;uppercase&#32;=&#32;1;&#32;<emphasis role="keywordflow">break</emphasis>;
+00430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;b&apos;</emphasis>:&#32;<link linkend="_a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;=&#32;2;&#32;<emphasis role="keywordflow">break</emphasis>;
+00431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;o&apos;</emphasis>:&#32;<link linkend="_a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>&#32;=&#32;8;&#32;<emphasis role="keywordflow">break</emphasis>;
+00432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a14bf754296559bf0266e127e677e8107">ullToString</link>(val,&#32;buffer,&#32;<link linkend="_a18587_1ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</link>,&#32;0,&#32;uppercase);
+00435 
+00436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;prefix&#32;=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(use_alternative_form&#32;&amp;&amp;&#32;val&#32;!=&#32;0)&#32;{
+00438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(format[i])&#32;{
+00439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;x&apos;</emphasis>:&#32;prefix&#32;=&#32;<emphasis role="stringliteral">&quot;0x&quot;</emphasis>;&#32;<emphasis role="keywordflow">break</emphasis>;
+00440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;X&apos;</emphasis>:&#32;prefix&#32;=&#32;<emphasis role="stringliteral">&quot;0X&quot;</emphasis>;&#32;<emphasis role="keywordflow">break</emphasis>;
+00441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;b&apos;</emphasis>:&#32;prefix&#32;=&#32;<emphasis role="stringliteral">&quot;0b&quot;</emphasis>;&#32;<emphasis role="keywordflow">break</emphasis>;
+00442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;o&apos;</emphasis>:&#32;prefix&#32;=&#32;<emphasis role="stringliteral">&quot;0&quot;</emphasis>;&#32;<emphasis role="keywordflow">break</emphasis>;
+00443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;num_len&#32;=&#32;0;&#32;<emphasis role="keywordflow">while</emphasis>(buffer[num_len])&#32;num_len++;
+00447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;prefix_len&#32;=&#32;0;&#32;<emphasis role="keywordflow">while</emphasis>(prefix[prefix_len])&#32;prefix_len++;
+00448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;precision_pads&#32;=&#32;(precision&#32;&gt;&#32;num_len)&#32;?&#32;(precision&#32;-&#32;num_len)&#32;:&#32;0;
+00450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;total_len&#32;=&#32;num_len&#32;+&#32;(sign_char&#32;?&#32;1&#32;:&#32;0)&#32;+&#32;prefix_len&#32;+&#32;precision_pads;
+00451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;width_pads&#32;=&#32;(width&#32;&gt;&#32;total_len)&#32;?&#32;(width&#32;-&#32;total_len)&#32;:&#32;0;
+00452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written&#32;+=&#32;width_pads&#32;+&#32;total_len;
+00454 
+00455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!zero_pad&#32;&amp;&amp;&#32;width_pads&#32;&gt;&#32;0)&#32;{
+00456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;width_pads;&#32;j++)&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>);
+00457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(sign_char)&#32;{
+00459 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;char_str[0]&#32;=&#32;sign_char;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(char_str);
+00460 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(prefix_len&#32;&gt;&#32;0)&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(prefix);
+00462 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(zero_pad&#32;&amp;&amp;&#32;width_pads&#32;&gt;&#32;0)&#32;{
+00463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;width_pads;&#32;j++)&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(<emphasis role="stringliteral">&quot;0&quot;</emphasis>);
+00464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(precision_pads&#32;&gt;&#32;0)&#32;{
+00466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j&#32;=&#32;0;&#32;j&#32;&lt;&#32;precision_pads;&#32;j++)&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(<emphasis role="stringliteral">&quot;0&quot;</emphasis>);
+00467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(buffer);
+00469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00472 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;p&apos;</emphasis>:
+00473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00474 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(<emphasis role="stringliteral">&quot;0x&quot;</emphasis>);
+00475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hex_digits&#32;=&#32;<emphasis role="keyword">sizeof</emphasis>(uintptr_t)&#32;*&#32;2;
+00476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1aab6eb585b409591414f84a1e3f606345">printHex</link>((uintptr_t)va_arg(args,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*),&#32;hex_digits);
+00477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written&#32;+=&#32;2&#32;+&#32;hex_digits;
+00478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00479 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="charliteral">&apos;%&apos;</emphasis>:
+00481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(<emphasis role="stringliteral">&quot;%&quot;</emphasis>);
+00482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written++;
+00483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+00485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(<emphasis role="stringliteral">&quot;%&quot;</emphasis>);
+00486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;char_str[0]&#32;=&#32;format[i];
+00487 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(char_str);
+00488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written&#32;+=&#32;2;
+00489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00490 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00491 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00492 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00493 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;char_str[0]&#32;=&#32;format[i];
+00495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_a18593_1a6bd99ada5f7c46567ee0ceca6c369d47">printCharStr</link>(char_str);
+00496 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;chars_written++;
+00497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00498 &#32;&#32;&#32;&#32;}
+00499 &#32;&#32;&#32;&#32;va_end(args);
+00500 &#32;&#32;&#32;&#32;<link linkend="_a18618_1a9d1f0f838e646660db6d9284725c2b4c">update_cursor</link>(<link linkend="_a18593_1a133981c4ba48aed67a5b874f7b213583">cursor_x_</link>,&#32;<link linkend="_a18593_1a1bda227f31ddf346294cb531f7554ef3">cursor_y_</link>);
+00501 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chars_written;
+00502 }
+</programlisting><para>
+References <link linkend="_a18587_source_1l00002">base</link>, <link linkend="_a18593_source_1l00004">cursor_x_</link>, <link linkend="_a18593_source_1l00005">cursor_y_</link>, <link linkend="_a18593_source_1l00216">doubleToString()</link>, <link linkend="_a18560_source_1l00002">len</link>, <link linkend="_a18593_source_1l00050">printCharStr()</link>, <link linkend="_a18593_source_1l00257">printHex()</link>, <link linkend="_a18593_source_1l00166">ullToString()</link>, and <link linkend="_a18593_source_1l00031">update_cursor()</link>.</para>
+<para>
+Referenced by <link linkend="_a18590_source_1l00005">__printMemoryMap()</link>, <link linkend="_a18599_source_1l00117">hardware_communication::InterruptManager::activate()</link>, <link linkend="_a18605_source_1l00177">driver::KeyboardDriver::activate()</link>, <link linkend="_a18608_source_1l00088">driver::MouseDriver::activate()</link>, <link linkend="_a18599_source_1l00122">hardware_communication::InterruptManager::deactivate()</link>, <link linkend="_a18599_source_1l00185">hardware_communication::InterruptManager::handleInterrupt()</link>, <link linkend="_a18611_source_1l00051">essential::GDT::installTable()</link>, <link linkend="_a18599_source_1l00100">hardware_communication::InterruptManager::installTable()</link>, <link linkend="_a18557_source_1l00105">kernelMain()</link>, <link linkend="_a18557_source_1l00022">KeyboardEventHandler_for_kernel::onKeyDown()</link>, <link linkend="_a18611_source_1l00085">essential::GDT::printLoadedTable()</link>, <link linkend="_a18599_source_1l00128">hardware_communication::InterruptManager::printLoadedTable()</link>, <link linkend="_a18611_source_1l00124">essential::GDT::printLoadedTableHeader()</link>, and <link linkend="_a18599_source_1l00163">hardware_communication::InterruptManager::printLoadedTableHeader()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a45ee52b918a784ff0e96e7c8917a91d9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a45ee52b918a784ff0e96e7c8917a91d9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_a18618_1a9d1f0f838e646660db6d9284725c2b4c"/><section>
+    <title>update_cursor()</title>
+<indexterm><primary>update_cursor</primary><secondary>basic</secondary></indexterm>
+<indexterm><primary>basic</primary><secondary>update_cursor</secondary></indexterm>
+<para><computeroutput>void basic::update_cursor (int x, int y)</computeroutput></para><para>
+
+<para>Updates the position of the text mode cursor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>x</entry><entry>
+<para>The new x-coordinate (column). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>The new y-coordinate (row). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="_a18593_source_1l00031">31</link> of file <link linkend="_a18593_source">kiostream.cpp</link>.</para>
+<programlisting linenumbering="unnumbered">00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00032 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a133981c4ba48aed67a5b874f7b213583">cursor_x_</link>=x;
+00033 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a1bda227f31ddf346294cb531f7554ef3">cursor_y_</link>=y;
+00034 &#32;&#32;&#32;&#32;uint16_t&#32;pos&#32;=&#32;y&#32;*&#32;80&#32;+&#32;x;
+00035 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x0F);
+00036 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>((uint8_t)(pos&#32;&amp;&#32;0xFF));
+00037 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>(0x0E);
+00038 &#32;&#32;&#32;&#32;<link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>.<link linkend="_a19545_1a523b6a757b27418dc015ed13e74bef60">write</link>((uint8_t)((pos&#32;&gt;&gt;&#32;8)&#32;&amp;&#32;0xFF));
+00039 }
+</programlisting><para>
+References <link linkend="_a18593_source_1l00004">cursor_x_</link>, <link linkend="_a18593_source_1l00005">cursor_y_</link>, <link linkend="_a18593_1a32de8112c133d2f05cae84bde7d98239">vgaDataPort</link>, <link linkend="_a18593_1a0cece8394c6a6dedd523238e9057125f">vgaIndexPort</link>, and <link linkend="_a18596_source_1l00021">hardware_communication::Port8Bit::write()</link>.</para>
+<para>
+Referenced by <link linkend="_a18557_source_1l00044">MouseEventHandler_for_kernel::onMouseDown()</link>, and <link linkend="_a18593_source_1l00306">printf()</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a9d1f0f838e646660db6d9284725c2b4c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/ddd/a18618_a9d1f0f838e646660db6d9284725c2b4c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

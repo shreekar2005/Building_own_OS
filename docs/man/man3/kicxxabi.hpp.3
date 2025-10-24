@@ -1,4 +1,4 @@
-.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential/kicxxabi.hpp" 3 "Fri Oct 24 2025 00:40:52" "OSOS - Documentation" \" -*- nroff -*-
+.TH "/home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/essential/kicxxabi.hpp" 3 "Fri Oct 24 2025 10:32:01" "OSOS - Documentation" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,6 +15,7 @@
 .ti -1c
 .RI "struct \fBessential::atexit_func_entry_t\fP"
 .br
+.RI "Structure to hold a registered C++ ABI exit function (destructor)\&. "
 .in -1c
 .SS "Namespaces"
 
@@ -43,9 +44,11 @@
 .ti -1c
 .RI "void \fBessential::__callConstructors\fP ()"
 .br
+.RI "Iterates over the list of global constructors and calls them to initialize global C++ objects\&. "
 .ti -1c
 .RI "void \fBessential::__cxa_finalize\fP (void *f)"
 .br
+.RI "Executes registered destructors/cleanup functions\&. "
 .in -1c
 .SH "Macro Definition Documentation"
 .PP 

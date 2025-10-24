@@ -5,7 +5,7 @@
     #include "hardware_communication/kport.hpp"
     #include "driver/kdriver.hpp"
     namespace driver{
-        //KeyboardEventHandler is an INTREFACE
+        /// @brief Base class (interface) for handling keyboard events (key presses and releases).
         class KeyboardEventHandler{
             public:
                 KeyboardEventHandler();
@@ -14,6 +14,9 @@
                 virtual void onKeyUp(char ascii)=0;
         };
         
+        /// @brief Driver for the PS/2 keyboard, handling scancodes and managing keyboard state (Shift, Caps Lock).
+        /// @inherits hardware_communication::InterruptHandler
+        /// @inherits driver::Driver
         class KeyboardDriver : public hardware_communication::InterruptHandler, public driver::Driver{
                 hardware_communication::Port8Bit dataPort;
                 hardware_communication::Port8Bit commandPort;
@@ -30,7 +33,6 @@
                 KeyboardDriver(hardware_communication::InterruptManager* interrupt_manager, KeyboardEventHandler* keyboardEventHandler);
                 ~KeyboardDriver();
                 uint32_t handleInterrupt(uint32_t esp) override; // function mainly defined in InterruptHandler class.
-
                 void activate() override;
                 int reset() override;
                 void deactivate() override;

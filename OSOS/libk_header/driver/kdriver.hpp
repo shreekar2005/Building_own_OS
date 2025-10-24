@@ -2,7 +2,7 @@
     #define _OSOS_DRIVER_KDRIVER_H
     #define MAX_NUMDRIVERS 265
     namespace driver{
-        //Driver is an INTERFACE
+        /// @brief Base class (interface) for all hardware drivers in the operating system.
         class Driver{ 
             private:
                 
@@ -14,6 +14,7 @@
                 virtual void deactivate()=0;
         };
 
+        /// @brief Manages a collection of Driver objects, facilitating their activation and organization.
         class DriverManager{
             private:
                 Driver* drivers[MAX_NUMDRIVERS];

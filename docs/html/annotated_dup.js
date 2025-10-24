@@ -1,40 +1,40 @@
 var annotated_dup =
 [
-    [ "driver", "d7/dd3/a16285.html", [
-      [ "Driver", "d6/d6f/a17159.html", "d6/d6f/a17159" ],
-      [ "DriverManager", "d1/d4a/a17163.html", "d1/d4a/a17163" ],
-      [ "KeyboardDriver", "d1/d14/a17171.html", "d1/d14/a17171" ],
-      [ "KeyboardEventHandler", "d4/de0/a17167.html", "d4/de0/a17167" ],
-      [ "MouseDriver", "de/d81/a17179.html", "de/d81/a17179" ],
-      [ "MouseEventHandler", "d1/dd8/a17175.html", "d1/dd8/a17175" ]
+    [ "driver", "d1/d08/a18619.html", [
+      [ "Driver", "df/d30/a19493.html", "df/d30/a19493" ],
+      [ "DriverManager", "d3/dae/a19497.html", "d3/dae/a19497" ],
+      [ "KeyboardDriver", "d7/d24/a19505.html", "d7/d24/a19505" ],
+      [ "KeyboardEventHandler", "df/d24/a19501.html", "df/d24/a19501" ],
+      [ "MouseDriver", "d3/d33/a19513.html", "d3/d33/a19513" ],
+      [ "MouseEventHandler", "db/d16/a19509.html", "db/d16/a19509" ]
     ] ],
-    [ "essential", "d1/d63/a16286.html", [
-      [ "atexit_func_entry_t", "d6/d46/a17191.html", "d6/d46/a17191" ],
-      [ "GDT", "d3/d41/a17187.html", "d3/d41/a17187" ],
-      [ "GDT_row", "da/d39/a17183.html", "da/d39/a17183" ]
+    [ "essential", "df/dda/a18620.html", [
+      [ "atexit_func_entry_t", "d2/d64/a19525.html", "d2/d64/a19525" ],
+      [ "GDT", "d0/d39/a19521.html", "d0/d39/a19521" ],
+      [ "GDT_row", "dd/dbb/a19517.html", "dd/dbb/a19517" ]
     ] ],
-    [ "hardware_communication", "dd/ddd/a16287.html", [
-      [ "IDT_row", "d4/dcb/a17199.html", "d4/dcb/a17199" ],
-      [ "InterruptHandler", "d9/dec/a17195.html", "d9/dec/a17195" ],
-      [ "InterruptManager", "d2/d2e/a17203.html", "d2/d2e/a17203" ],
-      [ "Port", "d7/dbb/a17207.html", "d7/dbb/a17207" ],
-      [ "Port16Bit", "d5/dcb/a17219.html", "d5/dcb/a17219" ],
-      [ "Port32Bit", "dd/d69/a17223.html", "dd/d69/a17223" ],
-      [ "Port8Bit", "da/db0/a17211.html", "da/db0/a17211" ],
-      [ "Port8BitSlow", "df/dd0/a17215.html", "df/dd0/a17215" ]
+    [ "hardware_communication", "d1/d96/a18621.html", [
+      [ "IDT_row", "d4/d2e/a19533.html", "d4/d2e/a19533" ],
+      [ "InterruptHandler", "dd/d18/a19529.html", "dd/d18/a19529" ],
+      [ "InterruptManager", "db/dda/a19537.html", "db/dda/a19537" ],
+      [ "Port", "d2/dc8/a19541.html", "d2/dc8/a19541" ],
+      [ "Port16Bit", "df/d60/a19553.html", "df/d60/a19553" ],
+      [ "Port32Bit", "d6/daf/a19557.html", "d6/daf/a19557" ],
+      [ "Port8Bit", "d5/d90/a19545.html", "d5/d90/a19545" ],
+      [ "Port8BitSlow", "d4/dc9/a19549.html", "d4/dc9/a19549" ]
     ] ],
-    [ "KeyboardEventHandler_for_kernel", "d5/dfd/a17103.html", "d5/dfd/a17103" ],
-    [ "MouseEventHandler_for_kernel", "df/dca/a17107.html", "df/dca/a17107" ],
-    [ "multiboot_aout_symbol_table_t", "d5/dd5/a16226.html#d1/dfe/a17115", "d5/dd5/a16226_d1/dfe/a17115" ],
-    [ "multiboot_apm_info", "d5/dd5/a16226.html#d7/d11/a17155", "d5/dd5/a16226_d7/d11/a17155" ],
-    [ "multiboot_color", "d5/dd5/a16226.html#dc/d42/a17143", "d5/dd5/a16226_dc/d42/a17143" ],
-    [ "multiboot_elf_section_header_table_t", "d5/dd5/a16226.html#d3/dd6/a17119", "d5/dd5/a16226_d3/dd6/a17119" ],
-    [ "multiboot_header", "d5/dd5/a16226.html#d9/dc9/a17111", "d5/dd5/a16226_d9/dc9/a17111" ],
-    [ "multiboot_info_t", "d5/dd5/a16226.html#dd/d93/a17123", "d5/dd5/a16226_dd/d93/a17123" ],
-    [ "multiboot_info.__unnamed2__", "d5/dd5/a16226.html#d0/db2/a17595", null ],
-    [ "multiboot_info.__unnamed2__.__unnamed4__", "d5/dd5/a16226.html#db/d8c/a17599", "d5/dd5/a16226_db/d8c/a17599" ],
-    [ "multiboot_info.__unnamed2__.__unnamed6__", "d5/dd5/a16226.html#d2/d00/a17603", "d5/dd5/a16226_d2/d00/a17603" ],
-    [ "multiboot_info.u", "d5/dd5/a16226.html#d5/d59/a17591", "d5/dd5/a16226_d5/d59/a17591" ],
-    [ "multiboot_memory_map_t", "d5/dd5/a16226.html#d1/df8/a17147", "d5/dd5/a16226_d1/df8/a17147" ],
-    [ "multiboot_module_t", "d5/dd5/a16226.html#da/dd8/a17151", "d5/dd5/a16226_da/dd8/a17151" ]
+    [ "KeyboardEventHandler_for_kernel", "d6/d4a/a19437.html", "d6/d4a/a19437" ],
+    [ "MouseEventHandler_for_kernel", "d8/d6c/a19441.html", "d8/d6c/a19441" ],
+    [ "multiboot_aout_symbol_table_t", "d5/d56/a18560.html#d0/d4d/a19449", "d5/d56/a18560_d0/d4d/a19449" ],
+    [ "multiboot_apm_info", "d5/d56/a18560.html#df/d5f/a19489", "d5/d56/a18560_df/d5f/a19489" ],
+    [ "multiboot_color", "d5/d56/a18560.html#d7/dcb/a19477", "d5/d56/a18560_d7/dcb/a19477" ],
+    [ "multiboot_elf_section_header_table_t", "d5/d56/a18560.html#d1/dd3/a19453", "d5/d56/a18560_d1/dd3/a19453" ],
+    [ "multiboot_header", "d5/d56/a18560.html#d4/dbe/a19445", "d5/d56/a18560_d4/dbe/a19445" ],
+    [ "multiboot_info_t", "d5/d56/a18560.html#d3/dd3/a19457", "d5/d56/a18560_d3/dd3/a19457" ],
+    [ "multiboot_info.__unnamed2__", "d5/d56/a18560.html#d4/d56/a19929", null ],
+    [ "multiboot_info.__unnamed2__.__unnamed4__", "d5/d56/a18560.html#db/d0d/a19933", "d5/d56/a18560_db/d0d/a19933" ],
+    [ "multiboot_info.__unnamed2__.__unnamed6__", "d5/d56/a18560.html#d9/d46/a19937", "d5/d56/a18560_d9/d46/a19937" ],
+    [ "multiboot_info.u", "d5/d56/a18560.html#de/d9f/a19925", "d5/d56/a18560_de/d9f/a19925" ],
+    [ "multiboot_memory_map_t", "d5/d56/a18560.html#d9/d69/a19481", "d5/d56/a18560_d9/d69/a19481" ],
+    [ "multiboot_module_t", "d5/d56/a18560.html#da/db4/a19485", "d5/d56/a18560_da/db4/a19485" ]
 ];
