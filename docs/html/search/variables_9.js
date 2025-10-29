@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['led_5fbyte_5fto_5fsend_0',['led_byte_to_send',['../d2/d76/a03296.html#aed7b5d279f6f1dffee10d5fb92ed6b1c',1,'driver::KeyboardDriver']]],
-  ['limit_1',['limit',['../dc/de8/a03312.html#aeb23e839a795005fdcdbba0d1aa75242',1,'essential::GDT_Manager::limit'],['../d3/d5d/a03328.html#a1991d8428ff7c74b31f42d48bb49547a',1,'hardware_communication::InterruptManager::limit'],['../d3/d27/a02453.html#ab28e82ae69032cb4ad3ec3a0be3d7129',1,'limit:&#160;kgdt.hpp']]],
-  ['limit_5flow_2',['limit_low',['../d0/de4/a03308.html#a2e609cc7cd4bf4c69805916e874638d2',1,'essential::GDT_Row::limit_low'],['../d3/d27/a02453.html#aa7ae5b5a918e00776ff07fb1c58a348d',1,'limit_low:&#160;kgdt.hpp']]]
+  ['kernel_5fcs_0',['kernel_cs',['../dc/d32/a04884.html#ac0d62fdac478ea7d8331ad422914b3cc',1,'essential::GDT_Manager::kernel_CS'],['../d6/d73/a04025.html#aeaae7f1943db2e30f88a0dd0d18680e1',1,'kernel_CS:&#160;kgdt.hpp']]],
+  ['kernel_5fds_1',['kernel_ds',['../dc/d32/a04884.html#a5c682545ec00c43cfe67ad20196c8fb0',1,'essential::GDT_Manager::kernel_DS'],['../d6/d73/a04025.html#a3e8473e2d176d865dad7acc08691ed23',1,'kernel_DS:&#160;kgdt.hpp']]],
+  ['kernelcodesegmentselector_2',['kernelcodesegmentselector',['../d2/d1f/a04896.html#add026bf0380b0386a9e3601f8be7f5e2',1,'hardware_communication::IDT_Row::kernelCodeSegmentSelector'],['../d2/dfc/a04007.html#acca378f87bf61c0de2befa4244846bfe',1,'kernelCodeSegmentSelector:&#160;kinterrupt.hpp']]],
+  ['keyboardeventhandler_3',['keyboardEventHandler',['../d7/d61/a04868.html#a11ec84b7abf113ec270f124564776e1f',1,'driver::KeyboardDriver']]]
 ];

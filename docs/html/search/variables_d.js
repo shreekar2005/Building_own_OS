@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['picmastercommand_0',['picMasterCommand',['../d3/d5d/a03328.html#af9c77ff57e676fc39052e236f9db2cf9',1,'hardware_communication::InterruptManager']]],
-  ['picmasterdata_1',['picMasterData',['../d3/d5d/a03328.html#a89b97f27237779fb165d82988d85465a',1,'hardware_communication::InterruptManager']]],
-  ['picslavecommand_2',['picSlaveCommand',['../d3/d5d/a03328.html#abeacc2cde573d48e1a1d69529588748b',1,'hardware_communication::InterruptManager']]],
-  ['picslavedata_3',['picSlaveData',['../d3/d5d/a03328.html#a4c73820e65ebf60fa4bdd38ac747b0bd',1,'hardware_communication::InterruptManager']]],
-  ['portnumber_4',['portnumber',['../d1/d24/a03336.html#aab0c5c82b0190df88ddbb595bfac539a',1,'hardware_communication::Port']]]
+  ['obj_5fptr_0',['obj_ptr',['../d0/d62/a04888.html#a24ece443578ebec2449e72e998521a11',1,'essential::atexit_func_entry_t']]],
+  ['offset_1',['offset',['../d9/d27/a04876.html#a313426dd9aa1af1540cbffc2e77c58c1',1,'driver::MouseDriver']]],
+  ['old_5fchar_5funder_5fmouse_5fpointer_2',['old_char_under_mouse_pointer',['../d9/d27/a04876.html#adae1afe77b7991c182ee1ca948413636',1,'driver::MouseDriver']]]
 ];

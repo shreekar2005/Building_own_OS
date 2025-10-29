@@ -1,16 +1,5 @@
 var searchData=
 [
-  ['obj_5fptr_0',['obj_ptr',['../df/daa/a03316.html#a24ece443578ebec2449e72e998521a11',1,'essential::atexit_func_entry_t']]],
-  ['offset_1',['offset',['../d2/d14/a03304.html#a313426dd9aa1af1540cbffc2e77c58c1',1,'driver::MouseDriver']]],
-  ['old_5fchar_5funder_5fmouse_5fpointer_2',['old_char_under_mouse_pointer',['../d2/d14/a03304.html#adae1afe77b7991c182ee1ca948413636',1,'driver::MouseDriver']]],
-  ['onkeydown_3',['onkeydown',['../d0/ded/a03276.html#af82a0bd16f995dd285d4f7822117377c',1,'KeyboardEventHandler_for_kernel::onKeyDown()'],['../d7/d52/a03292.html#ae2b923ef0eb58e29f57a155debadac6a',1,'driver::KeyboardEventHandler::onKeyDown()']]],
-  ['onkeyup_4',['onkeyup',['../d0/ded/a03276.html#a0d74a48573c10174ac8bf836ac39f886',1,'KeyboardEventHandler_for_kernel::onKeyUp()'],['../d7/d52/a03292.html#a28547100b7420e1f73b745df873cd411',1,'driver::KeyboardEventHandler::onKeyUp()']]],
-  ['onmousedown_5',['onmousedown',['../de/d7f/a03280.html#ae860a16e70322e5c4bb01e1108e50bb1',1,'MouseEventHandler_for_kernel::onMouseDown()'],['../d0/d7c/a03300.html#a2f12c5f63356c3045fd6cb46fd89374f',1,'driver::MouseEventHandler::onMouseDown(uint8_t button)=0']]],
-  ['onmousemove_6',['onmousemove',['../d0/d7c/a03300.html#a68f635b3b65f927d37d4e0835f7e0b30',1,'driver::MouseEventHandler::onMouseMove()'],['../de/d7f/a03280.html#adbb4c4e2814b335579119c324313f652',1,'MouseEventHandler_for_kernel::onMouseMove(int8_t delta_x, int8_t delta_y) override']]],
-  ['onmouseup_7',['onmouseup',['../de/d7f/a03280.html#afca536c2187a65da265daa2d2af75d4d',1,'MouseEventHandler_for_kernel::onMouseUp()'],['../d0/d7c/a03300.html#a09b77fe86bfa79313b5c5b91d09eb514',1,'driver::MouseEventHandler::onMouseUp()']]],
-  ['operator_20delete_8',['operator delete',['../d5/d10/a02396.html#afa145befcf5e7b83424408ca503c8637',1,'operator delete(void *ptr) noexcept:&#160;kmemory.cpp'],['../d5/d10/a02396.html#af057efbdbcd21ea12954d49cd2d245c6',1,'operator delete(void *ptr, size_t size) noexcept:&#160;kmemory.cpp']]],
-  ['operator_20delete_5b_5d_9',['operator delete[]',['../d5/d10/a02396.html#a22aea74a1155aa798d6032da46da2391',1,'operator delete[](void *ptr) noexcept:&#160;kmemory.cpp'],['../d5/d10/a02396.html#ab26fe706b29fdeb33d5f6ead76c05815',1,'operator delete[](void *ptr, size_t size) noexcept:&#160;kmemory.cpp']]],
-  ['operator_20new_10',['operator new',['../d5/d10/a02396.html#a1a7f24760c8c7ad3bfcd54856d906fc2',1,'kmemory.cpp']]],
-  ['operator_20new_5b_5d_11',['operator new[]',['../d5/d10/a02396.html#aa75472ab4b765cf6f6b5b0ebcd4a28c8',1,'kmemory.cpp']]],
-  ['osos_20dev_12',['About OSOS Dev',['../index.html',1,'']]]
+  ['nullsegment_0',['nullsegment',['../dc/d32/a04884.html#a26909fe5dcab0bdc7ddf7c3678f3ae48',1,'essential::GDT_Manager::nullSegment'],['../d6/d73/a04025.html#aef2b82bef7fb75f5b80455fcd69be4ed',1,'nullSegment:&#160;kgdt.hpp']]],
+  ['numdrivers_1',['numDrivers',['../d1/dda/a04860.html#a347286da44d912bba3f720d8b0600946',1,'driver::DriverManager']]]
 ];

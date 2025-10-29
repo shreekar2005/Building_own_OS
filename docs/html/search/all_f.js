@@ -1,7 +1,22 @@
 var searchData=
 [
-  ['read_0',['read',['../d6/d83/a03332.html#a0e84bd34162647f1c3a2b0c46a9adcd2',1,'hardware_communication::PCI_Controller::read()'],['../d2/d5b/a03340.html#ae8688251b574c3fd335b99f7e93fff2d',1,'hardware_communication::Port8Bit::read()'],['../dd/d68/a03348.html#a6b5df5669e802e31f27f0a4a0e62492a',1,'hardware_communication::Port16Bit::read()'],['../d2/d66/a03352.html#a41093c437a9508f984c90ae68e9c03bf',1,'hardware_communication::Port32Bit::read()']]],
-  ['reserved_1',['reserved',['../df/d3e/a03324.html#ab333f7e129427d5553a8dc010fbbeb0b',1,'hardware_communication::IDT_Row::reserved'],['../d1/de1/a02435.html#acb7bc06bed6f6408d719334fc41698c7',1,'reserved:&#160;kinterrupt.hpp']]],
-  ['reset_2',['reset',['../d6/d25/a03284.html#a98d2e779c02364fc58c172d0d2a32bdd',1,'driver::Driver::reset()'],['../d2/d76/a03296.html#afd98f610ae8577e9242298db39370108',1,'driver::KeyboardDriver::reset()'],['../d2/d14/a03304.html#aa18ffdba62abee43186e473b044c1c6d',1,'driver::MouseDriver::reset()']]],
-  ['reverse_3',['reverse',['../d4/d87/a02457.html#a6cfc2f6949fb98dfc419f9fd19f95982',1,'basic']]]
+  ['pci_5fcontroller_0',['pci_controller',['../da/db8/a04908.html',1,'hardware_communication::PCI_Controller'],['../da/db8/a04908.html#a71d89c22009309f0d354da5cbf359dc7',1,'hardware_communication::PCI_Controller::PCI_Controller()']]],
+  ['pci_5fdevicedescriptor_1',['pci_devicedescriptor',['../df/d8c/a04904.html',1,'hardware_communication::PCI_DeviceDescriptor'],['../df/d8c/a04904.html#a5a505bd19fc7767ed91adb172a985e20',1,'hardware_communication::PCI_DeviceDescriptor::PCI_DeviceDescriptor()']]],
+  ['picmastercommand_2',['picMasterCommand',['../d9/d2e/a04900.html#af9c77ff57e676fc39052e236f9db2cf9',1,'hardware_communication::InterruptManager']]],
+  ['picmasterdata_3',['picMasterData',['../d9/d2e/a04900.html#a89b97f27237779fb165d82988d85465a',1,'hardware_communication::InterruptManager']]],
+  ['picslavecommand_4',['picSlaveCommand',['../d9/d2e/a04900.html#abeacc2cde573d48e1a1d69529588748b',1,'hardware_communication::InterruptManager']]],
+  ['picslavedata_5',['picSlaveData',['../d9/d2e/a04900.html#a4c73820e65ebf60fa4bdd38ac747b0bd',1,'hardware_communication::InterruptManager']]],
+  ['port_6',['port',['../dc/d52/a04912.html',1,'hardware_communication::Port'],['../dc/d52/a04912.html#ad001c21b67d4c138f65024f167030cca',1,'hardware_communication::Port::Port()']]],
+  ['port16bit_7',['port16bit',['../d1/db7/a04924.html',1,'hardware_communication::Port16Bit'],['../d1/db7/a04924.html#a418bb2fc65b3bec91704d0e5e8957131',1,'hardware_communication::Port16Bit::Port16Bit()']]],
+  ['port32bit_8',['port32bit',['../db/d15/a04928.html#a507afa8607757baedf1789d73c2a173d',1,'hardware_communication::Port32Bit::Port32Bit()'],['../db/d15/a04928.html',1,'hardware_communication::Port32Bit']]],
+  ['port8bit_9',['port8bit',['../d1/d58/a04916.html',1,'hardware_communication::Port8Bit'],['../d1/d58/a04916.html#a057109ca3c28fbb9064c60ba5cdb1190',1,'hardware_communication::Port8Bit::Port8Bit()']]],
+  ['port8bitslow_10',['port8bitslow',['../da/d05/a04920.html#aa830f1cf49e155af1033a8e611ecc6c1',1,'hardware_communication::Port8BitSlow::Port8BitSlow()'],['../da/d05/a04920.html',1,'hardware_communication::Port8BitSlow']]],
+  ['portbase_11',['portBase',['../df/d8c/a04904.html#a776999daa61da5d99d3c43284d1a1fe9',1,'hardware_communication::PCI_DeviceDescriptor']]],
+  ['portnumber_12',['portnumber',['../dc/d52/a04912.html#aab0c5c82b0190df88ddbb595bfac539a',1,'hardware_communication::Port']]],
+  ['power_13',['power',['../df/df0/a04029.html#aa7de4c6aa018e049aa8992b037cc052a',1,'basic']]],
+  ['printcharstr_14',['printCharStr',['../df/df0/a04029.html#a3d0041ad59dbbae5bc9adbb8ab784499',1,'basic']]],
+  ['printf_15',['printf',['../df/df0/a04029.html#a45ee52b918a784ff0e96e7c8917a91d9',1,'basic']]],
+  ['printhex_16',['printHex',['../df/df0/a04029.html#a5ecbf4c8112c602ba65a689ebe5014f8',1,'basic']]],
+  ['printloadedtable_17',['printloadedtable',['../d9/d2e/a04900.html#ae43c9bc0611cf6dfbac0a532e2f631ef',1,'hardware_communication::InterruptManager::printLoadedTable()'],['../d6/d73/a04025.html#a0a72b35b5fcadccd545ee4c5ef7efdd3',1,'printLoadedTable():&#160;kgdt.hpp'],['../dc/d32/a04884.html#a12155526ff104614deb65f1c5a35c013',1,'essential::GDT_Manager::printLoadedTable()']]],
+  ['printloadedtableheader_18',['printloadedtableheader',['../d9/d2e/a04900.html#add6866291fc50f63ccbacedc26236908',1,'hardware_communication::InterruptManager::printLoadedTableHeader()'],['../dc/d32/a04884.html#a50eaa45b2e7e4c8579aec1d8d6aae6b7',1,'essential::GDT_Manager::printLoadedTableHeader()'],['../d6/d73/a04025.html#a6aba53071c94f3ffe96befc625602c9c',1,'printLoadedTableHeader():&#160;kgdt.hpp']]]
 ];

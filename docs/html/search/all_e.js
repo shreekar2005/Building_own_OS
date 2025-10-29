@@ -1,20 +1,16 @@
 var searchData=
 [
-  ['pci_5fcontroller_0',['pci_controller',['../d6/d83/a03332.html',1,'hardware_communication::PCI_Controller'],['../d6/d83/a03332.html#a71d89c22009309f0d354da5cbf359dc7',1,'hardware_communication::PCI_Controller::PCI_Controller()']]],
-  ['picmastercommand_1',['picMasterCommand',['../d3/d5d/a03328.html#af9c77ff57e676fc39052e236f9db2cf9',1,'hardware_communication::InterruptManager']]],
-  ['picmasterdata_2',['picMasterData',['../d3/d5d/a03328.html#a89b97f27237779fb165d82988d85465a',1,'hardware_communication::InterruptManager']]],
-  ['picslavecommand_3',['picSlaveCommand',['../d3/d5d/a03328.html#abeacc2cde573d48e1a1d69529588748b',1,'hardware_communication::InterruptManager']]],
-  ['picslavedata_4',['picSlaveData',['../d3/d5d/a03328.html#a4c73820e65ebf60fa4bdd38ac747b0bd',1,'hardware_communication::InterruptManager']]],
-  ['port_5',['port',['../d1/d24/a03336.html',1,'hardware_communication::Port'],['../d1/d24/a03336.html#ad001c21b67d4c138f65024f167030cca',1,'hardware_communication::Port::Port()']]],
-  ['port16bit_6',['port16bit',['../dd/d68/a03348.html',1,'hardware_communication::Port16Bit'],['../dd/d68/a03348.html#a418bb2fc65b3bec91704d0e5e8957131',1,'hardware_communication::Port16Bit::Port16Bit()']]],
-  ['port32bit_7',['port32bit',['../d2/d66/a03352.html#a507afa8607757baedf1789d73c2a173d',1,'hardware_communication::Port32Bit::Port32Bit()'],['../d2/d66/a03352.html',1,'hardware_communication::Port32Bit']]],
-  ['port8bit_8',['port8bit',['../d2/d5b/a03340.html',1,'hardware_communication::Port8Bit'],['../d2/d5b/a03340.html#a057109ca3c28fbb9064c60ba5cdb1190',1,'hardware_communication::Port8Bit::Port8Bit()']]],
-  ['port8bitslow_9',['port8bitslow',['../da/dcf/a03344.html',1,'hardware_communication::Port8BitSlow'],['../da/dcf/a03344.html#aa830f1cf49e155af1033a8e611ecc6c1',1,'hardware_communication::Port8BitSlow::Port8BitSlow()']]],
-  ['portnumber_10',['portnumber',['../d1/d24/a03336.html#aab0c5c82b0190df88ddbb595bfac539a',1,'hardware_communication::Port']]],
-  ['power_11',['power',['../d4/d87/a02457.html#aa7de4c6aa018e049aa8992b037cc052a',1,'basic']]],
-  ['printcharstr_12',['printCharStr',['../d4/d87/a02457.html#a3d0041ad59dbbae5bc9adbb8ab784499',1,'basic']]],
-  ['printf_13',['printf',['../d4/d87/a02457.html#a45ee52b918a784ff0e96e7c8917a91d9',1,'basic']]],
-  ['printhex_14',['printHex',['../d4/d87/a02457.html#a5ecbf4c8112c602ba65a689ebe5014f8',1,'basic']]],
-  ['printloadedtable_15',['printloadedtable',['../dc/de8/a03312.html#a9cf3e1457df23d876c6174b97548b846',1,'essential::GDT_Manager::printLoadedTable()'],['../d3/d5d/a03328.html#ae43c9bc0611cf6dfbac0a532e2f631ef',1,'hardware_communication::InterruptManager::printLoadedTable()'],['../d3/d27/a02453.html#a0a72b35b5fcadccd545ee4c5ef7efdd3',1,'printLoadedTable():&#160;kgdt.hpp']]],
-  ['printloadedtableheader_16',['printloadedtableheader',['../dc/de8/a03312.html#a53c8f172c32273fc996c6d7a1620e748',1,'essential::GDT_Manager::printLoadedTableHeader()'],['../d3/d5d/a03328.html#add6866291fc50f63ccbacedc26236908',1,'hardware_communication::InterruptManager::printLoadedTableHeader()'],['../d3/d27/a02453.html#a6aba53071c94f3ffe96befc625602c9c',1,'printLoadedTableHeader():&#160;kgdt.hpp']]]
+  ['obj_5fptr_0',['obj_ptr',['../d0/d62/a04888.html#a24ece443578ebec2449e72e998521a11',1,'essential::atexit_func_entry_t']]],
+  ['offset_1',['offset',['../d9/d27/a04876.html#a313426dd9aa1af1540cbffc2e77c58c1',1,'driver::MouseDriver']]],
+  ['old_5fchar_5funder_5fmouse_5fpointer_2',['old_char_under_mouse_pointer',['../d9/d27/a04876.html#adae1afe77b7991c182ee1ca948413636',1,'driver::MouseDriver']]],
+  ['onkeydown_3',['onkeydown',['../db/d08/a04848.html#af82a0bd16f995dd285d4f7822117377c',1,'KeyboardEventHandler_for_kernel::onKeyDown()'],['../da/dea/a04864.html#ae2b923ef0eb58e29f57a155debadac6a',1,'driver::KeyboardEventHandler::onKeyDown()']]],
+  ['onkeyup_4',['onkeyup',['../db/d08/a04848.html#a0d74a48573c10174ac8bf836ac39f886',1,'KeyboardEventHandler_for_kernel::onKeyUp()'],['../da/dea/a04864.html#a28547100b7420e1f73b745df873cd411',1,'driver::KeyboardEventHandler::onKeyUp()']]],
+  ['onmousedown_5',['onmousedown',['../de/d75/a04852.html#ae860a16e70322e5c4bb01e1108e50bb1',1,'MouseEventHandler_for_kernel::onMouseDown()'],['../de/d6f/a04872.html#a2f12c5f63356c3045fd6cb46fd89374f',1,'driver::MouseEventHandler::onMouseDown(uint8_t button)=0']]],
+  ['onmousemove_6',['onmousemove',['../de/d6f/a04872.html#a68f635b3b65f927d37d4e0835f7e0b30',1,'driver::MouseEventHandler::onMouseMove()'],['../de/d75/a04852.html#adbb4c4e2814b335579119c324313f652',1,'MouseEventHandler_for_kernel::onMouseMove(int8_t delta_x, int8_t delta_y) override']]],
+  ['onmouseup_7',['onmouseup',['../de/d75/a04852.html#afca536c2187a65da265daa2d2af75d4d',1,'MouseEventHandler_for_kernel::onMouseUp()'],['../de/d6f/a04872.html#a09b77fe86bfa79313b5c5b91d09eb514',1,'driver::MouseEventHandler::onMouseUp()']]],
+  ['operator_20delete_8',['operator delete',['../db/de8/a03968.html#afa145befcf5e7b83424408ca503c8637',1,'operator delete(void *ptr) noexcept:&#160;kmemory.cpp'],['../db/de8/a03968.html#af057efbdbcd21ea12954d49cd2d245c6',1,'operator delete(void *ptr, size_t size) noexcept:&#160;kmemory.cpp']]],
+  ['operator_20delete_5b_5d_9',['operator delete[]',['../db/de8/a03968.html#a22aea74a1155aa798d6032da46da2391',1,'operator delete[](void *ptr) noexcept:&#160;kmemory.cpp'],['../db/de8/a03968.html#ab26fe706b29fdeb33d5f6ead76c05815',1,'operator delete[](void *ptr, size_t size) noexcept:&#160;kmemory.cpp']]],
+  ['operator_20new_10',['operator new',['../db/de8/a03968.html#a1a7f24760c8c7ad3bfcd54856d906fc2',1,'kmemory.cpp']]],
+  ['operator_20new_5b_5d_11',['operator new[]',['../db/de8/a03968.html#aa75472ab4b765cf6f6b5b0ebcd4a28c8',1,'kmemory.cpp']]],
+  ['osos_20dev_12',['About OSOS Dev',['../index.html',1,'']]]
 ];

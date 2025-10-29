@@ -1,15 +1,8 @@
 var searchData=
 [
-  ['seg_5faccess_5fdesctype_0',['SEG_ACCESS_DESCTYPE',['../d3/d27/a02453.html#a0d47ea941c3bdfd06858a467d2e76d83',1,'kgdt.hpp']]],
-  ['seg_5faccess_5fpres_1',['SEG_ACCESS_PRES',['../d3/d27/a02453.html#ab9e609c85bc4472f4f9b69697f2e5067',1,'kgdt.hpp']]],
-  ['seg_5faccess_5fpriv_2',['SEG_ACCESS_PRIV',['../d3/d27/a02453.html#a0cb0ae4ca069ed571a3b2db9190e12df',1,'kgdt.hpp']]],
-  ['seg_5faccess_5ftype_3',['SEG_ACCESS_TYPE',['../d3/d27/a02453.html#a6c474d3015717ee1a2d99ae6a7b00ec3',1,'kgdt.hpp']]],
-  ['seg_5fcode_5fexrd_4',['SEG_CODE_EXRD',['../d3/d27/a02453.html#ae04daf26bdb792ae557ef1216021cc43',1,'kgdt.hpp']]],
-  ['seg_5fdata_5frdwr_5',['SEG_DATA_RDWR',['../d3/d27/a02453.html#add294548173871e30e54b92bf5da2758',1,'kgdt.hpp']]],
-  ['seg_5fgran_5fgran_6',['SEG_GRAN_GRAN',['../d3/d27/a02453.html#ae86357f11d481de7242f3178629241b8',1,'kgdt.hpp']]],
-  ['seg_5fgran_5flong_7',['SEG_GRAN_LONG',['../d3/d27/a02453.html#a9759917f0cd67a1d7c87849e211a7993',1,'kgdt.hpp']]],
-  ['seg_5fgran_5fsavl_8',['SEG_GRAN_SAVL',['../d3/d27/a02453.html#a79a943b17e5929ca9e06fc7cc1cb0ccc',1,'kgdt.hpp']]],
-  ['seg_5fgran_5fsize_9',['SEG_GRAN_SIZE',['../d3/d27/a02453.html#a7667e7c13f08890d3a6051346233691c',1,'kgdt.hpp']]],
-  ['setidtentry_10',['setIDTEntry',['../d3/d5d/a03328.html#aafee62e0a8417524d4e23e2d497d77b0',1,'hardware_communication::InterruptManager']]],
-  ['shift_5fpressed_11',['shift_pressed',['../d2/d76/a03296.html#afba07c783deebfb275c1437f7c23601d',1,'driver::KeyboardDriver']]]
+  ['read_0',['read',['../da/db8/a04908.html#a0e84bd34162647f1c3a2b0c46a9adcd2',1,'hardware_communication::PCI_Controller::read()'],['../d1/d58/a04916.html#ae8688251b574c3fd335b99f7e93fff2d',1,'hardware_communication::Port8Bit::read()'],['../d1/db7/a04924.html#a6b5df5669e802e31f27f0a4a0e62492a',1,'hardware_communication::Port16Bit::read()'],['../db/d15/a04928.html#a41093c437a9508f984c90ae68e9c03bf',1,'hardware_communication::Port32Bit::read()']]],
+  ['reserved_1',['reserved',['../d2/d1f/a04896.html#ab333f7e129427d5553a8dc010fbbeb0b',1,'hardware_communication::IDT_Row::reserved'],['../d2/dfc/a04007.html#acb7bc06bed6f6408d719334fc41698c7',1,'reserved:&#160;kinterrupt.hpp']]],
+  ['reset_2',['reset',['../db/dde/a04856.html#a98d2e779c02364fc58c172d0d2a32bdd',1,'driver::Driver::reset()'],['../d7/d61/a04868.html#afd98f610ae8577e9242298db39370108',1,'driver::KeyboardDriver::reset()'],['../d9/d27/a04876.html#aa18ffdba62abee43186e473b044c1c6d',1,'driver::MouseDriver::reset()']]],
+  ['reverse_3',['reverse',['../df/df0/a04029.html#a6cfc2f6949fb98dfc419f9fd19f95982',1,'basic']]],
+  ['revision_4',['revision',['../df/d8c/a04904.html#a47709787dd44be45e9b622dbea4c17f0',1,'hardware_communication::PCI_DeviceDescriptor']]]
 ];

@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['magic_5fheight_0',['MAGIC_HEIGHT',['../da/d11/a02399.html#a887422301cbe9a94f8b96263415640cf',1,'kiostream.cpp']]],
-  ['magic_5fwidth_1',['MAGIC_WIDTH',['../da/d11/a02399.html#a5be9493285a1f50a67d98b887537217d',1,'kiostream.cpp']]],
-  ['mainpage_2edox_2',['mainpage.dox',['../dd/dad/a00005.html',1,'']]],
-  ['max_5fnumdrivers_3',['MAX_NUMDRIVERS',['../d8/d9a/a02447.html#a14e1e30a5e2cbbd23a1fd111357f9076',1,'kdriver.hpp']]],
-  ['mouse_5fblock_5fvideo_5fmem_5fvalue_4',['mouse_block_video_mem_value',['../d2/d14/a03304.html#a3341e35350e7e04dcc2042a813ecf629',1,'driver::MouseDriver']]],
-  ['mouse_5fpointer_5fcolor_5',['MOUSE_POINTER_COLOR',['../d4/da8/a02444.html#a637dd833f5f7af42afa1f42349a4d89e',1,'kmouse.hpp']]],
-  ['mousedriver_6',['mousedriver',['../d2/d14/a03304.html',1,'driver::MouseDriver'],['../d2/d14/a03304.html#ab3925414a9d834c2b3892498c0ae3988',1,'driver::MouseDriver::MouseDriver()']]],
-  ['mouseeventhandler_7',['mouseeventhandler',['../d0/d7c/a03300.html',1,'driver::MouseEventHandler'],['../d0/d7c/a03300.html#a91a351ce9442ed70a5202095f0dab802',1,'driver::MouseEventHandler::MouseEventHandler()'],['../d2/d14/a03304.html#a804f5657a062e0a18f3b56781f884c66',1,'driver::MouseDriver::mouseEventHandler']]],
-  ['mouseeventhandler_5ffor_5fkernel_8',['mouseeventhandler_for_kernel',['../de/d7f/a03280.html',1,'MouseEventHandler_for_kernel'],['../de/d7f/a03280.html#a41f57ab9baa5850e39086362ce44b1cb',1,'MouseEventHandler_for_kernel::MouseEventHandler_for_kernel()']]]
+  ['led_5fbyte_5fto_5fsend_0',['led_byte_to_send',['../d7/d61/a04868.html#aed7b5d279f6f1dffee10d5fb92ed6b1c',1,'driver::KeyboardDriver']]],
+  ['limit_1',['limit',['../dc/d32/a04884.html#aeb23e839a795005fdcdbba0d1aa75242',1,'essential::GDT_Manager::limit'],['../d9/d2e/a04900.html#a1991d8428ff7c74b31f42d48bb49547a',1,'hardware_communication::InterruptManager::limit'],['../d6/d73/a04025.html#ab28e82ae69032cb4ad3ec3a0be3d7129',1,'limit:&#160;kgdt.hpp']]],
+  ['limit_5flow_2',['limit_low',['../d1/dcd/a04880.html#a2e609cc7cd4bf4c69805916e874638d2',1,'essential::GDT_Row::limit_low'],['../d6/d73/a04025.html#aa7ae5b5a918e00776ff07fb1c58a348d',1,'limit_low:&#160;kgdt.hpp']]]
 ];
