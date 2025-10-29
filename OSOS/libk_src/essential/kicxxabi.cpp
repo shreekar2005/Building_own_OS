@@ -44,7 +44,6 @@ extern "C" int __cxa_atexit(void (*f)(void *), void *objptr, void *dso)
     return 0; /*I would prefer if functions returned 1 on success, but the ABI says...*/
 };
 
-// Call this function, then every global destructor will be called
 /// @brief Executes registered destructors/cleanup functions.
 /// @param f If non-null, only destructors associated with this function pointer are called. If null, all registered destructors are called in reverse order of registration.
 void essential::__cxa_finalize(void *f)

@@ -1,21 +1,21 @@
 #include "driver/kkeyboard.hpp" 
 #include "driver/kmouse.hpp"
 
-// --- KeyboardEventHandler ---
+using namespace driver;
+
 
 /// @brief Base class for handling keyboard events.
-driver::KeyboardEventHandler::KeyboardEventHandler(){}
+KeyboardEventHandler::KeyboardEventHandler(){}
 /// @brief Destroys the KeyboardEventHandler object.
-driver::KeyboardEventHandler::~KeyboardEventHandler(){}
+KeyboardEventHandler::~KeyboardEventHandler(){}
 
 
-// --- KeyboardDriver ---
 
 // Constructor: Initialize the new state variable
 /// @brief Constructs a new KeyboardDriver object.
 /// @param interrupt_manager Pointer to the interrupt manager.
 /// @param keyboardEventHandler Pointer to the event handler that will process key events.
-driver::KeyboardDriver::KeyboardDriver(hardware_communication::InterruptManager* interrupt_manager, driver::KeyboardEventHandler* keyboardEventHandler)
+KeyboardDriver::KeyboardDriver(hardware_communication::InterruptManager* interrupt_manager, KeyboardEventHandler* keyboardEventHandler)
 : hardware_communication::InterruptHandler(0x21, interrupt_manager), 
   dataPort(0x60), 
   commandPort(0x64),
@@ -27,12 +27,12 @@ driver::KeyboardDriver::KeyboardDriver(hardware_communication::InterruptManager*
 }
 
 /// @brief Destroys the KeyboardDriver object.
-driver::KeyboardDriver::~KeyboardDriver(){}
+KeyboardDriver::~KeyboardDriver(){}
 
 /// @brief Handles the keyboard interrupt (IRQ 1).
 /// @param esp The stack pointer from the interrupt context.
 /// @return The stack pointer.
-uint32_t driver::KeyboardDriver::handleInterrupt(uint32_t esp)
+uint32_t KeyboardDriver::handleInterrupt(uint32_t esp)
 {
     // Unshifted keys
     static const char scancode_no_shift[] = {
@@ -171,12 +171,8 @@ uint32_t driver::KeyboardDriver::handleInterrupt(uint32_t esp)
 }
 
 
-//------------------------------OVERRIDING VIRTUAL FUNCTIONS FROM DRIVER INTERFACE-----------------------------
-
-
-
 /// @brief Activates the keyboard driver.
-void driver::KeyboardDriver::activate()
+void KeyboardDriver::activate()
 {
     while(commandPort.read() & 1) dataPort.read();
     commandPort.write(0xAE); // activate communication for keyboard
@@ -190,6 +186,6 @@ void driver::KeyboardDriver::activate()
 
 /// @brief Resets the keyboard. (Stub)
 /// @return Always returns 0.
-int driver::KeyboardDriver::reset(){return 0;}
+int KeyboardDriver::reset(){return 0;}
 /// @brief Deactivates the keyboard driver. (Stub)
-void driver::KeyboardDriver::deactivate(){}
+void KeyboardDriver::deactivate(){}

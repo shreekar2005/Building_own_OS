@@ -1,5 +1,7 @@
 #include "basic/kiostream.hpp"
 #include "driver/kmouse.hpp"
+namespace basic
+{ // namespace basic start
 
 static int cursor_x_ = 0;
 static int cursor_y_ = 0;
@@ -8,16 +10,14 @@ static int cursor_y_ = 0;
 #define MAGIC_HEIGHT 25
 #define TAB_WIDTH 4 
 
-// --- Global Port Objects ---
 static hardware_communication::Port8Bit vgaIndexPort(0x3D4);
 static hardware_communication::Port8Bit vgaDataPort(0x3D5);
 
-// --- VGA Cursor Control ---
 
 /// @brief Enables the text mode cursor and sets its shape.
 /// @param cursor_start The starting scanline for the cursor block.
 /// @param cursor_end The ending scanline for the cursor block.
-void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
+void enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
 {
     vgaIndexPort.write(0x0A);
     vgaDataPort.write((vgaDataPort.read() & 0xC0) | cursor_start);
@@ -29,7 +29,7 @@ void basic::enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
 /// @brief Updates the position of the text mode cursor.
 /// @param x The new x-coordinate (column).
 /// @param y The new y-coordinate (row).
-void basic::update_cursor(int x, int y)
+void update_cursor(int x, int y)
 {
     cursor_x_=x;
     cursor_y_=y;
@@ -41,7 +41,7 @@ void basic::update_cursor(int x, int y)
 }
 
 /// @brief Disables the text mode cursor.
-void basic::disable_cursor()
+void disable_cursor()
 {
     vgaIndexPort.write(0x0A);
     vgaDataPort.write(0x20);
@@ -128,7 +128,7 @@ static void printCharStr(const char *str)
 }
 
 /// @brief Clears the entire text mode screen and resets the cursor to (0,0).
-void basic::__clearScreen()
+void __clearScreen()
 {
     unsigned short *video_memory = (unsigned short *)0xb8000;
     unsigned short blank = (0x07 << 8) | ' ';
@@ -307,7 +307,7 @@ static void printHex(uintptr_t n, int digits)
  * l  - long int
  * ll - long long int
  */
-int basic::printf(const char *format, ...)
+int printf(const char *format, ...)
 {
     int chars_written = 0;
 
@@ -504,3 +504,5 @@ int basic::printf(const char *format, ...)
     update_cursor(cursor_x_, cursor_y_);
     return chars_written;
 }
+
+} // namespace basic end

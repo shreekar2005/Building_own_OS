@@ -1,16 +1,17 @@
 #include "basic/kmemory.hpp"
-
+namespace basic
+{ // namespace basic start
 /// @brief Prints the system memory map provided by the Multiboot bootloader.
 /// @param mbi Pointer to the Multiboot information structure.
-void basic::__printMemoryMap(multiboot_info_t *mbi)
+void __printMemoryMap(multiboot_info_t *mbi)
 {
     // Check if the memory map flag is set (bit 6)
     if (!(mbi->flags & (1 << 6))) {
-        basic::printf("\nError: Memory map not provided by bootloader.\n");
+        printf("\nError: Memory map not provided by bootloader.\n");
         return;
     }
 
-    basic::printf("\n--- System Memory Map ---\n");
+    printf("\n--- System Memory Map ---\n");
     
     // Use uint64_t to correctly accumulate total memory size
     uint64_t total_available_bytes = 0;
@@ -20,8 +21,8 @@ void basic::__printMemoryMap(multiboot_info_t *mbi)
     uintptr_t mmap_end = mbi->mmap_addr + mbi->mmap_length;
 
     for (multiboot_memory_map_t *mmap = (multiboot_memory_map_t *)mmap_start;
-         (uintptr_t)mmap < mmap_end;
-         mmap = (multiboot_memory_map_t *)((uintptr_t)mmap + mmap->size + sizeof(mmap->size)))
+        (uintptr_t)mmap < mmap_end;
+        mmap = (multiboot_memory_map_t *)((uintptr_t)mmap + mmap->size + sizeof(mmap->size)))
     {
         const char *type_str;
         switch (mmap->type)
@@ -48,13 +49,14 @@ void basic::__printMemoryMap(multiboot_info_t *mbi)
         }
 
         // Use %#llx for 64-bit hex values (address and length)
-        basic::printf("Addr: %#llx | Len: %.2fKB | Type: %s\n", mmap->addr, mmap->len/1024.0, type_str);
+        printf("Addr: %#llx | Len: %.2fKB | Type: %s\n", mmap->addr, mmap->len/1024.0, type_str);
     }
     
     // Use floating point for the final calculation and display
     double total_mb = total_available_bytes / 1024.0;
-    basic::printf("Total available memory: %.2f KB\n\n", total_mb);
+    printf("Total available memory: %.2f KB\n\n", total_mb);
 }
+} // namespace basic end
 
 
 /**

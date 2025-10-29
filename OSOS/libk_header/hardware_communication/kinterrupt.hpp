@@ -1,6 +1,6 @@
-#ifndef _OSOS_HARDWARE_COMMUNCATION_KINTERRUPT_H
+#ifndef _OSOS_HARDWARECOMMUNCATION_KINTERRUPT_H
 
-    #define _OSOS_HARDWARE_COMMUNCATION_KINTERRUPT_H
+    #define _OSOS_HARDWARECOMMUNCATION_KINTERRUPT_H
     #include <cstdint>
     #include "basic/kiostream.hpp"
     #include "hardware_communication/kport.hpp"

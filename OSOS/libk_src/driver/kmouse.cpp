@@ -1,33 +1,31 @@
 #include "driver/kmouse.hpp"
 
-// --- MouseEventHandler ---
+using namespace driver;
 
 /// @brief Base class for handling mouse events.
-driver::MouseEventHandler::MouseEventHandler(){}
+MouseEventHandler::MouseEventHandler(){}
 /// @brief Destroys the MouseEventHandler object.
-driver::MouseEventHandler::~MouseEventHandler(){}
+MouseEventHandler::~MouseEventHandler(){}
 
-
-// --- MouseDriver ---
 
 // Static member initialization
-uint16_t driver::MouseDriver::old_char_under_mouse_pointer;
+uint16_t MouseDriver::old_char_under_mouse_pointer;
 // DO NOT CHANGE THESE -1 INITIALIZATIONS (THAT WILL LEAD TO BUG OF "GHOST MOUSE POINTER")
-int8_t driver::MouseDriver::__mouse_x_ = -1;
-int8_t driver::MouseDriver::__mouse_y_ = -1;
+int8_t MouseDriver::__mouse_x_ = -1;
+int8_t MouseDriver::__mouse_y_ = -1;
 
 /// @brief Calculates the video memory value for the mouse cursor block.
 /// @param current_char The original character attributes and ASCII value at the cursor position.
 /// @param mouse_pointer_color The desired background color for the mouse pointer.
 /// @return The new 16-bit video memory value representing the character with the new background color.
-uint16_t driver::MouseDriver::mouse_block_video_mem_value(uint16_t current_char, uint8_t mouse_pointer_color){
+uint16_t MouseDriver::mouse_block_video_mem_value(uint16_t current_char, uint8_t mouse_pointer_color){
     return (current_char & 0x0FFF) | (mouse_pointer_color << 12);
 }
 
 /// @brief Constructs a new MouseDriver object.
 /// @param interrupt_manager Pointer to the interrupt manager.
 /// @param mouseEventHandler Pointer to the event handler that will process mouse events.
-driver::MouseDriver::MouseDriver(hardware_communication::InterruptManager* interrupt_manager, driver::MouseEventHandler* mouseEventHandler)
+MouseDriver::MouseDriver(hardware_communication::InterruptManager* interrupt_manager, MouseEventHandler* mouseEventHandler)
 : hardware_communication::InterruptHandler(0x2C, interrupt_manager), 
   dataPort(0x60), 
   commandPort(0x64)
@@ -36,12 +34,12 @@ driver::MouseDriver::MouseDriver(hardware_communication::InterruptManager* inter
 }
 
 /// @brief Destroys the MouseDriver object.
-driver::MouseDriver::~MouseDriver(){}
+MouseDriver::~MouseDriver(){}
 
 /// @brief Handles the mouse interrupt (IRQ 12).
 /// @param esp The stack pointer from the interrupt context.
 /// @return The stack pointer.
-uint32_t driver::MouseDriver::handleInterrupt(uint32_t esp)
+uint32_t MouseDriver::handleInterrupt(uint32_t esp)
 {
     // Check if the mouse has sent data
     uint8_t status = commandPort.read();
@@ -81,11 +79,8 @@ uint32_t driver::MouseDriver::handleInterrupt(uint32_t esp)
 }
 
 
-
-//------------------------------OVERRIDING VIRTUAL FUNCTIONS FROM DRIVER INTERFACE-----------------------------
-
 /// @brief Activates the mouse driver.
-void driver::MouseDriver::activate()
+void MouseDriver::activate()
 {
     while(commandPort.read() & 1) dataPort.read();
     offset = 0;
@@ -116,6 +111,6 @@ void driver::MouseDriver::activate()
 
 /// @brief Resets the mouse. (Stub)
 /// @return Always returns 0.
-int driver::MouseDriver::reset(){return 0;}
+int MouseDriver::reset(){return 0;}
 /// @brief Deactivates the mouse driver. (Stub)
-void driver::MouseDriver::deactivate(){}
+void MouseDriver::deactivate(){}

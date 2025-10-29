@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vgadataport_0',['vgaDataPort',['../da/d82/a61166.html#a32de8112c133d2f05cae84bde7d98239',1,'kiostream.cpp']]],
-  ['vgaindexport_1',['vgaIndexPort',['../da/d82/a61166.html#a0cece8394c6a6dedd523238e9057125f',1,'kiostream.cpp']]]
+  ['vgadataport_0',['vgaDataPort',['../dc/d14/a67278.html#a4aac51e0a415ce34f927f9d9cf1bd707',1,'basic']]],
+  ['vgaindexport_1',['vgaIndexPort',['../dc/d14/a67278.html#a1df12d53eb327f5085ac6d4dfeb3a0ef',1,'basic']]]
 ];

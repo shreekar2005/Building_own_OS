@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['read_0',['read',['../d8/da5/a62097.html#ae8688251b574c3fd335b99f7e93fff2d',1,'hardware_communication::Port8Bit::read()'],['../dd/df4/a62105.html#a6b5df5669e802e31f27f0a4a0e62492a',1,'hardware_communication::Port16Bit::read()'],['../d6/d31/a62109.html#a41093c437a9508f984c90ae68e9c03bf',1,'hardware_communication::Port32Bit::read()']]],
-  ['reset_1',['reset',['../d7/ddf/a62045.html#a98d2e779c02364fc58c172d0d2a32bdd',1,'driver::Driver::reset()'],['../de/d3d/a62057.html#a22b7b080ab1c8b0f2ed4beba75b34691',1,'driver::KeyboardDriver::reset()'],['../d2/dc5/a62065.html#aabe3740996bf70fda96f0a25228954a6',1,'driver::MouseDriver::reset()']]],
-  ['reverse_2',['reverse',['../da/d82/a61166.html#a913f40d6652965fdd1e34a04ab7dba2d',1,'kiostream.cpp']]]
+  ['read_0',['read',['../df/d1d/a68153.html#a061a6e46e2b44491baec9030da11df1e',1,'hardware_communication::PCI_Controller::read()'],['../de/d4e/a68161.html#ae8688251b574c3fd335b99f7e93fff2d',1,'hardware_communication::Port8Bit::read()'],['../dd/d0e/a68169.html#a6b5df5669e802e31f27f0a4a0e62492a',1,'hardware_communication::Port16Bit::read()'],['../df/d5c/a68173.html#a41093c437a9508f984c90ae68e9c03bf',1,'hardware_communication::Port32Bit::read()']]],
+  ['reset_1',['reset',['../de/d02/a68105.html#a98d2e779c02364fc58c172d0d2a32bdd',1,'driver::Driver::reset()'],['../d9/d96/a68117.html#afd98f610ae8577e9242298db39370108',1,'driver::KeyboardDriver::reset()'],['../d5/da3/a68125.html#aa18ffdba62abee43186e473b044c1c6d',1,'driver::MouseDriver::reset()']]],
+  ['reverse_2',['reverse',['../dc/d14/a67278.html#a6cfc2f6949fb98dfc419f9fd19f95982',1,'basic']]]
 ];

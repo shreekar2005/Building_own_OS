@@ -9,7 +9,6 @@
 #include "driver/kmouse.hpp"
 #include "driver/kdriver.hpp"
 
-
 /// @brief Custom KeyboardEventHandler implementation for kernel
 class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler
 {
@@ -110,8 +109,8 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
 /// @param magicnumber The magic number passed by GRUB to verify boot.
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
-    essential::__callConstructors();
-    basic::enable_cursor(0,15); // (0,15) is for blinking block
+    essential::__callConstructors(); // calling all global constructors 
+    basic::enable_cursor(0,15);
     basic::__clearScreen();
     //-------------Global Descriptor Table -------------
     essential::GDT_Manager osos_GDT;
@@ -141,7 +140,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     while (true){};
 
     basic::disable_cursor();
-    essential::__cxa_finalize(0);
+    essential::__cxa_finalize(0); // calling all global destructors
     (void)mbi;
     (void)magicnumber;
 }

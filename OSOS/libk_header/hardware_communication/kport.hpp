@@ -1,5 +1,5 @@
-#ifndef _OSOS_HARDWARE_COMMUNICATION_KPORT_H 
-    #define _OSOS_HARDWARE_COMMUNICATION_KPORT_H
+#ifndef _OSOS_HARDWARECOMMUNICATION_KPORT_H 
+    #define _OSOS_HARDWARECOMMUNICATION_KPORT_H
     #include <cstdint>
     #include "basic/kiostream.hpp"
 
@@ -53,4 +53,4 @@
         };
     }
 
-#endif // KERNEL_PORT_H
+#endif
