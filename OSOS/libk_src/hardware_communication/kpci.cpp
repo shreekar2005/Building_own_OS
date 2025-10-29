@@ -45,7 +45,6 @@ void PCI_Controller::write(uint16_t bus, uint16_t device, uint16_t function, uin
 
     commandPort.write(address);
     dataPort.write(value);
-    
 }
 
 bool PCI_Controller::deviceHasFunctions(uint16_t bus, uint16_t device)
