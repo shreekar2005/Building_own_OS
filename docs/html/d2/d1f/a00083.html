@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kmouse.cpp File Reference</title>
+<title>OSOS Dev: kmouse.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -15,15 +15,13 @@
 <script type="text/javascript" src="../../navtreedata.js"></script>
 <script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-  /* @license-end */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
 </script>
-<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="OSOS - Documentation"/>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -42,20 +40,21 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OSOS - Documentation
+   <div id="projectname">OSOS Dev
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
+   <div id="projectbrief">Developed by Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-          <div class="left">
-            <form id="FSearchBox" action="../../search.html" method="get">
-              <span id="MSearchSelectExt">&#160;</span>
-              <input type="text" id="MSearchField" name="query" value="" placeholder="Search" size="20" accesskey="S" 
-                     onfocus="searchBox.OnSearchFieldFocus(true)" 
-                     onblur="searchBox.OnSearchFieldFocus(false)"/>
-            </form>
-          </div><div class="right"></div>
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
         </div>
 </td></tr>
  </tbody>
@@ -84,55 +83,425 @@ $(document).ready(function(){initNavTree('d2/d1f/a00083.html','../../'); initRes
 /* @license-end */
 </script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
-  <div class="headertitle"><div class="title">kmouse.cpp File Reference</div></div>
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">kmouse.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/dee/a00053_source.html">driver/kmouse.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../db/db6/a00074_source.html">hardware_communication/kinterrupt.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d09/a00077_source.html">hardware_communication/kport.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d24/a00068_source.html">basic/kiostream.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d2a/a00086_source.html">driver/kdriver.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kmouse.cpp:</div>
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kmouse.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../df/d5d/a00084.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__src_2driver_2kmouse_8cpp" alt=""/></div>
-<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__src_2driver_2kmouse_8cpp" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__src_2driver_2kmouse_8cpp">
-<area shape="rect" title=" " alt="" coords="302,5,503,60"/>
-<area shape="rect" href="../../dc/dee/a00053.html" title=" " alt="" coords="331,108,475,133"/>
-<area shape="poly" title=" " alt="" coords="405,60,405,94,400,94,400,60"/>
-<area shape="rect" title=" " alt="" coords="131,504,197,529"/>
-<area shape="poly" title=" " alt="" coords="342,136,242,158,132,191,83,211,44,233,17,256,10,268,8,281,8,356,11,380,20,403,33,423,50,441,88,473,127,495,124,500,85,477,46,445,29,426,15,405,6,382,3,357,3,280,5,267,13,253,41,228,81,206,130,186,241,153,340,131"/>
-<area shape="rect" href="../../d5/df9/a00044.html" title=" " alt="" coords="174,181,365,221"/>
-<area shape="poly" title=" " alt="" coords="384,136,315,177,312,172,382,131"/>
-<area shape="rect" href="../../dd/d32/a00041.html" title=" " alt="" coords="201,343,356,368"/>
-<area shape="poly" title=" " alt="" coords="404,134,396,174,380,222,341,285,301,334,297,331,337,282,375,220,391,173,399,133"/>
-<area shape="rect" href="../../d6/d2d/a00047.html" title=" " alt="" coords="347,416,538,456"/>
-<area shape="poly" title=" " alt="" coords="407,133,441,402,436,402,401,134"/>
-<area shape="rect" href="../../d9/d2e/a00056.html" title=" " alt="" coords="491,189,629,214"/>
-<area shape="poly" title=" " alt="" coords="427,131,526,180,524,185,424,136"/>
-<area shape="poly" title=" " alt="" coords="258,223,224,276,192,344,181,383,174,423,167,490,162,490,169,422,176,382,187,342,219,273,253,220"/>
-<area shape="poly" title=" " alt="" coords="273,222,280,329,274,329,268,222"/>
-<area shape="poly" title=" " alt="" coords="286,220,422,403,418,406,281,223"/>
-<area shape="rect" href="../../df/d03/a00062.html" title=" " alt="" coords="43,269,186,295"/>
-<area shape="poly" title=" " alt="" coords="233,224,151,265,148,261,231,219"/>
-<area shape="poly" title=" " alt="" coords="273,370,183,494,178,491,268,367"/>
-<area shape="rect" title=" " alt="" coords="253,423,323,449"/>
-<area shape="poly" title=" " alt="" coords="283,368,288,409,282,410,277,368"/>
-<area shape="poly" title=" " alt="" coords="297,366,384,408,382,413,295,371"/>
-<area shape="poly" title=" " alt="" coords="377,459,212,505,210,500,375,453"/>
-<area shape="poly" title=" " alt="" coords="410,418,320,376,322,371,412,413"/>
-<area shape="poly" title=" " alt="" coords="119,294,129,363,148,455,158,490,153,491,143,457,124,364,114,295"/>
-<area shape="poly" title=" " alt="" coords="142,292,241,335,238,340,140,297"/>
+<div class="center"><img src="../../df/d5d/a00084.png" border="0" usemap="#akmouse_8hpp" alt=""/></div>
+<map name="akmouse_8hpp" id="akmouse_8hpp">
+<area shape="rect" title=" " alt="" coords="351,5,454,31"/>
+<area shape="rect" title=" " alt="" coords="131,401,197,427"/>
+<area shape="poly" title=" " alt="" coords="352,31,252,53,139,86,88,106,46,129,18,153,11,165,8,178,8,254,11,278,20,300,33,320,50,339,88,370,127,393,124,397,85,374,46,343,29,324,15,302,6,279,3,254,3,178,6,163,14,150,43,124,85,102,137,81,251,48,351,26"/>
+<area shape="rect" href="../../db/db6/a00074.html" title=" " alt="" coords="174,79,365,119"/>
+<area shape="poly" title=" " alt="" coords="384,33,315,74,312,69,382,29"/>
+<area shape="rect" href="../../da/d24/a00068.html" title=" " alt="" coords="201,240,356,265"/>
+<area shape="poly" title=" " alt="" coords="404,31,396,71,380,120,341,183,301,232,297,228,337,180,375,118,391,70,399,30"/>
+<area shape="rect" href="../../d1/d09/a00077.html" title=" " alt="" coords="347,313,538,353"/>
+<area shape="poly" title=" " alt="" coords="407,30,441,299,436,300,401,31"/>
+<area shape="rect" href="../../da/d2a/a00086.html" title=" " alt="" coords="491,86,629,111"/>
+<area shape="poly" title=" " alt="" coords="427,28,526,78,524,82,424,33"/>
+<area shape="poly" title=" " alt="" coords="258,120,224,173,192,241,181,280,174,320,167,388,162,387,169,319,176,279,187,239,219,170,253,117"/>
+<area shape="poly" title=" " alt="" coords="273,119,280,226,274,227,268,119"/>
+<area shape="poly" title=" " alt="" coords="286,117,422,300,418,304,281,121"/>
+<area shape="rect" href="../../d1/dc1/a00092.html" title=" " alt="" coords="43,167,186,192"/>
+<area shape="poly" title=" " alt="" coords="233,121,151,163,148,158,231,116"/>
+<area shape="poly" title=" " alt="" coords="273,267,183,391,178,388,268,264"/>
+<area shape="rect" title=" " alt="" coords="253,321,323,346"/>
+<area shape="poly" title=" " alt="" coords="283,265,288,307,282,307,277,266"/>
+<area shape="poly" title=" " alt="" coords="297,263,384,305,382,310,295,268"/>
+<area shape="poly" title=" " alt="" coords="377,356,212,402,210,397,375,351"/>
+<area shape="poly" title=" " alt="" coords="410,316,320,273,322,268,412,311"/>
+<area shape="poly" title=" " alt="" coords="119,192,129,260,148,353,158,387,153,389,143,354,124,261,114,192"/>
+<area shape="poly" title=" " alt="" coords="142,190,241,232,238,237,140,194"/>
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../df/d13/a00085.png" border="0" usemap="#akmouse_8hppdep" alt=""/></div>
+<map name="akmouse_8hppdep" id="akmouse_8hppdep">
+<area shape="rect" title=" " alt="" coords="195,5,297,31"/>
+<area shape="rect" href="../../dc/d87/a00032.html" title=" " alt="" coords="5,79,95,104"/>
+<area shape="poly" title=" " alt="" coords="203,38,83,81,81,76,201,33"/>
+<area shape="rect" href="../../d8/d41/a00038.html" title=" " alt="" coords="119,79,234,104"/>
+<area shape="poly" title=" " alt="" coords="227,43,190,80,186,77,223,39"/>
+<area shape="rect" href="../../dc/dee/a00053.html" title=" " alt="" coords="258,79,375,104"/>
+<area shape="poly" title=" " alt="" coords="269,39,307,77,303,80,265,43"/>
+<area shape="rect" href="../../d9/d2e/a00056.html" title=" " alt="" coords="399,79,501,104"/>
+<area shape="poly" title=" " alt="" coords="292,33,418,76,416,81,291,38"/>
 </map>
 </div>
 </div>
 <p><a href="../../d2/d1f/a00083_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/ddd/a00943.html">driver::MouseDriver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom <a class="el" href="../../df/de9/a00923.html" title="Base class (interface) for all hardware drivers in the operating system.">Driver</a> for the PS/2 mouse, handling 3-byte packets and managing mouse state.  <a href="../../d1/ddd/a00943.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d20/a00939.html">driver::MouseEventHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class (interface) for handling mouse events (movement and button clicks).  <a href="../../dd/d20/a00939.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:da/d74/a00099" id="r_da/d74/a00099"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d74/a00099.html">driver</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac9670c34ae4e43ca669484a7a317e968" id="r_ac9670c34ae4e43ca669484a7a317e968"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#ac9670c34ae4e43ca669484a7a317e968">KMOUSE_COLOR_BLACK</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:ac9670c34ae4e43ca669484a7a317e968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d83e86a8c6b6046bae502774a4e9e83" id="r_a6d83e86a8c6b6046bae502774a4e9e83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a6d83e86a8c6b6046bae502774a4e9e83">KMOUSE_COLOR_BLUE</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:a6d83e86a8c6b6046bae502774a4e9e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc124f24ecf7e9b0b06d181a6fd7a3e" id="r_a5bc124f24ecf7e9b0b06d181a6fd7a3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a5bc124f24ecf7e9b0b06d181a6fd7a3e">KMOUSE_COLOR_BROWN</a>&#160;&#160;&#160;0x6</td></tr>
+<tr class="separator:a5bc124f24ecf7e9b0b06d181a6fd7a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9660baab3bfc34866b252eff71da777d" id="r_a9660baab3bfc34866b252eff71da777d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a9660baab3bfc34866b252eff71da777d">KMOUSE_COLOR_CYAN</a>&#160;&#160;&#160;0x3</td></tr>
+<tr class="separator:a9660baab3bfc34866b252eff71da777d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804c656f97148c66dee375ad20d6326e" id="r_a804c656f97148c66dee375ad20d6326e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a804c656f97148c66dee375ad20d6326e">KMOUSE_COLOR_DARK_GREY</a>&#160;&#160;&#160;0x8</td></tr>
+<tr class="separator:a804c656f97148c66dee375ad20d6326e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae245d853ffcebef06bd052849e35471c" id="r_ae245d853ffcebef06bd052849e35471c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a>&#160;&#160;&#160;0x2</td></tr>
+<tr class="separator:ae245d853ffcebef06bd052849e35471c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5882f98f21668e74fbc61e9a3cc4d4c5" id="r_a5882f98f21668e74fbc61e9a3cc4d4c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a5882f98f21668e74fbc61e9a3cc4d4c5">KMOUSE_COLOR_LIGHT_BLUE</a>&#160;&#160;&#160;0x9</td></tr>
+<tr class="separator:a5882f98f21668e74fbc61e9a3cc4d4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9391d6382197266f9d814ed3d21bac2" id="r_ac9391d6382197266f9d814ed3d21bac2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#ac9391d6382197266f9d814ed3d21bac2">KMOUSE_COLOR_LIGHT_CYAN</a>&#160;&#160;&#160;0xB</td></tr>
+<tr class="separator:ac9391d6382197266f9d814ed3d21bac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac874f858f617e42a6376c7092940376c" id="r_ac874f858f617e42a6376c7092940376c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#ac874f858f617e42a6376c7092940376c">KMOUSE_COLOR_LIGHT_GREEN</a>&#160;&#160;&#160;0xA</td></tr>
+<tr class="separator:ac874f858f617e42a6376c7092940376c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f5f57837c11ae93f9a3c6ef0bba5a8" id="r_ab7f5f57837c11ae93f9a3c6ef0bba5a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#ab7f5f57837c11ae93f9a3c6ef0bba5a8">KMOUSE_COLOR_LIGHT_GREY</a>&#160;&#160;&#160;0x7</td></tr>
+<tr class="separator:ab7f5f57837c11ae93f9a3c6ef0bba5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a90c65c80e669968e259e84b095c408" id="r_a5a90c65c80e669968e259e84b095c408"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a5a90c65c80e669968e259e84b095c408">KMOUSE_COLOR_LIGHT_MAGENTA</a>&#160;&#160;&#160;0xD</td></tr>
+<tr class="separator:a5a90c65c80e669968e259e84b095c408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb168549620efee2737255317c814059" id="r_acb168549620efee2737255317c814059"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#acb168549620efee2737255317c814059">KMOUSE_COLOR_LIGHT_RED</a>&#160;&#160;&#160;0xC</td></tr>
+<tr class="separator:acb168549620efee2737255317c814059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfe7fa11c53fb1ea1270f0ed00bb18b8" id="r_abfe7fa11c53fb1ea1270f0ed00bb18b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#abfe7fa11c53fb1ea1270f0ed00bb18b8">KMOUSE_COLOR_MAGENTA</a>&#160;&#160;&#160;0x5</td></tr>
+<tr class="separator:abfe7fa11c53fb1ea1270f0ed00bb18b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d9a56551248abc6954bf18c76ddcb74" id="r_a1d9a56551248abc6954bf18c76ddcb74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a1d9a56551248abc6954bf18c76ddcb74">KMOUSE_COLOR_RED</a>&#160;&#160;&#160;0x4</td></tr>
+<tr class="separator:a1d9a56551248abc6954bf18c76ddcb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb30f17e5bf0289632c5abbd2d2dd99a" id="r_abb30f17e5bf0289632c5abbd2d2dd99a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#abb30f17e5bf0289632c5abbd2d2dd99a">KMOUSE_COLOR_WHITE</a>&#160;&#160;&#160;0xF</td></tr>
+<tr class="separator:abb30f17e5bf0289632c5abbd2d2dd99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc652aa810e06ef28716a20cb70d51d4" id="r_abc652aa810e06ef28716a20cb70d51d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#abc652aa810e06ef28716a20cb70d51d4">KMOUSE_COLOR_YELLOW</a>&#160;&#160;&#160;0xE</td></tr>
+<tr class="separator:abc652aa810e06ef28716a20cb70d51d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637dd833f5f7af42afa1f42349a4d89e" id="r_a637dd833f5f7af42afa1f42349a4d89e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html#a637dd833f5f7af42afa1f42349a4d89e">MOUSE_POINTER_COLOR</a>&#160;&#160;&#160;<a class="el" href="../../d2/d1f/a00083.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a></td></tr>
+<tr class="separator:a637dd833f5f7af42afa1f42349a4d89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac9670c34ae4e43ca669484a7a317e968" name="ac9670c34ae4e43ca669484a7a317e968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9670c34ae4e43ca669484a7a317e968">&#9670;&#160;</a></span>KMOUSE_COLOR_BLACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_BLACK&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00009">9</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6d83e86a8c6b6046bae502774a4e9e83" name="a6d83e86a8c6b6046bae502774a4e9e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d83e86a8c6b6046bae502774a4e9e83">&#9670;&#160;</a></span>KMOUSE_COLOR_BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_BLUE&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00010">10</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5bc124f24ecf7e9b0b06d181a6fd7a3e" name="a5bc124f24ecf7e9b0b06d181a6fd7a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc124f24ecf7e9b0b06d181a6fd7a3e">&#9670;&#160;</a></span>KMOUSE_COLOR_BROWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_BROWN&#160;&#160;&#160;0x6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00015">15</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9660baab3bfc34866b252eff71da777d" name="a9660baab3bfc34866b252eff71da777d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9660baab3bfc34866b252eff71da777d">&#9670;&#160;</a></span>KMOUSE_COLOR_CYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_CYAN&#160;&#160;&#160;0x3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00012">12</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a804c656f97148c66dee375ad20d6326e" name="a804c656f97148c66dee375ad20d6326e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804c656f97148c66dee375ad20d6326e">&#9670;&#160;</a></span>KMOUSE_COLOR_DARK_GREY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_DARK_GREY&#160;&#160;&#160;0x8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00017">17</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae245d853ffcebef06bd052849e35471c" name="ae245d853ffcebef06bd052849e35471c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae245d853ffcebef06bd052849e35471c">&#9670;&#160;</a></span>KMOUSE_COLOR_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_GREEN&#160;&#160;&#160;0x2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00011">11</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5882f98f21668e74fbc61e9a3cc4d4c5" name="a5882f98f21668e74fbc61e9a3cc4d4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5882f98f21668e74fbc61e9a3cc4d4c5">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_BLUE&#160;&#160;&#160;0x9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00018">18</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac9391d6382197266f9d814ed3d21bac2" name="ac9391d6382197266f9d814ed3d21bac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9391d6382197266f9d814ed3d21bac2">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_CYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_CYAN&#160;&#160;&#160;0xB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00020">20</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac874f858f617e42a6376c7092940376c" name="ac874f858f617e42a6376c7092940376c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac874f858f617e42a6376c7092940376c">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_GREEN&#160;&#160;&#160;0xA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00019">19</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab7f5f57837c11ae93f9a3c6ef0bba5a8" name="ab7f5f57837c11ae93f9a3c6ef0bba5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f5f57837c11ae93f9a3c6ef0bba5a8">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_GREY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_GREY&#160;&#160;&#160;0x7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00016">16</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5a90c65c80e669968e259e84b095c408" name="a5a90c65c80e669968e259e84b095c408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a90c65c80e669968e259e84b095c408">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_MAGENTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_MAGENTA&#160;&#160;&#160;0xD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00022">22</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acb168549620efee2737255317c814059" name="acb168549620efee2737255317c814059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb168549620efee2737255317c814059">&#9670;&#160;</a></span>KMOUSE_COLOR_LIGHT_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_LIGHT_RED&#160;&#160;&#160;0xC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00021">21</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abfe7fa11c53fb1ea1270f0ed00bb18b8" name="abfe7fa11c53fb1ea1270f0ed00bb18b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe7fa11c53fb1ea1270f0ed00bb18b8">&#9670;&#160;</a></span>KMOUSE_COLOR_MAGENTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_MAGENTA&#160;&#160;&#160;0x5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00014">14</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1d9a56551248abc6954bf18c76ddcb74" name="a1d9a56551248abc6954bf18c76ddcb74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9a56551248abc6954bf18c76ddcb74">&#9670;&#160;</a></span>KMOUSE_COLOR_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_RED&#160;&#160;&#160;0x4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00013">13</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abb30f17e5bf0289632c5abbd2d2dd99a" name="abb30f17e5bf0289632c5abbd2d2dd99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb30f17e5bf0289632c5abbd2d2dd99a">&#9670;&#160;</a></span>KMOUSE_COLOR_WHITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_WHITE&#160;&#160;&#160;0xF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00024">24</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abc652aa810e06ef28716a20cb70d51d4" name="abc652aa810e06ef28716a20cb70d51d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc652aa810e06ef28716a20cb70d51d4">&#9670;&#160;</a></span>KMOUSE_COLOR_YELLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KMOUSE_COLOR_YELLOW&#160;&#160;&#160;0xE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00023">23</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a637dd833f5f7af42afa1f42349a4d89e" name="a637dd833f5f7af42afa1f42349a4d89e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637dd833f5f7af42afa1f42349a4d89e">&#9670;&#160;</a></span>MOUSE_POINTER_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_POINTER_COLOR&#160;&#160;&#160;<a class="el" href="../../d2/d1f/a00083.html#ae245d853ffcebef06bd052849e35471c">KMOUSE_COLOR_GREEN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d1f/a00083_source.html#l00025">25</a> of file <a class="el" href="../../d2/d1f/a00083_source.html">kmouse.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_267305fd0cd91744e53e95a33bbf4449.html">libk_src</a></li><li class="navelem"><a class="el" href="../../dir_5b5337be9c567761b45350e8fb23514b.html">driver</a></li><li class="navelem"><a class="el" href="../../d2/d1f/a00083.html">kmouse.cpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 11:17:43 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_7e882cf9a616ed6c5e9969aa375b621d.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a></li><li class="navelem"><a class="el" href="../../d2/d1f/a00083.html">kmouse.hpp</a></li>
+    <li class="footer">Generated on Wed Oct 29 2025 19:58:33 for OSOS Dev by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

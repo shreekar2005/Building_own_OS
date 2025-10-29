@@ -1,16 +1,17 @@
 #ifndef _OSOS_BASIC_KIOSTREAM_H
-    #define _OSOS_BASIC_KIOSTREAM_H
-    #include <cstdint>
-    #include <cstdarg>
-    #include "hardware_communication/kport.hpp"
+#define _OSOS_BASIC_KIOSTREAM_H
 
-    namespace basic
-    {
-        void __clearScreen();
-        int printf(const char *format, ...);
-        void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);
-        void update_cursor(int x, int y);
-        void disable_cursor();
-    }
+#include <cstdint>
+#include <cstdarg>
+#include "hardware_communication/kport.hpp"
+
+namespace basic
+{
+    void __clearScreen();
+    int printf(const char *format, ...);
+    void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);
+    void update_cursor(int x, int y);
+    void disable_cursor();
+}
     
 #endif 

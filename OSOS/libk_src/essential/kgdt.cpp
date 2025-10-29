@@ -2,9 +2,6 @@
 
 using namespace essential;
 
-/// @brief Default constructor for a null GDT_Row entry.
-GDT_Row::GDT_Row() : limit_low(0), base_low(0), base_middle(0), access(0), granularity(0), base_high(0) {}
-
 /// @brief Constructs a GDT_Row (Segment Descriptor) with specified parameters.
 /// @param base The 32-bit base address of the segment.
 /// @param limit The 20-bit limit (size) of the segment.
@@ -31,7 +28,7 @@ GDT_Row::~GDT_Row() {}
 
 /// @brief Constructs a new GDT_Manager object and initializes the standard kernel/user segments.
 GDT_Manager::GDT_Manager()
-: nullSegment(), // First entry must be a null descriptor.
+: nullSegment(0,0,0,0), // First entry must be a null descriptor.
   kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
   kernel_DS(0, 0xFFFFFFFF, GDT_ACCESS_DATA_PL0, GDT_GRAN_FLAGS),
   user_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL3, GDT_GRAN_FLAGS),

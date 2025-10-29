@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/driver/kdriver.hpp File Reference</title>
+<title>OSOS Dev: kmouse.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -15,15 +15,13 @@
 <script type="text/javascript" src="../../navtreedata.js"></script>
 <script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-  /* @license-end */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
 </script>
-<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="OSOS - Documentation"/>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -42,20 +40,21 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OSOS - Documentation
+   <div id="projectname">OSOS Dev
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
+   <div id="projectbrief">Developed by Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-          <div class="left">
-            <form id="FSearchBox" action="../../search.html" method="get">
-              <span id="MSearchSelectExt">&#160;</span>
-              <input type="text" id="MSearchField" name="query" value="" placeholder="Search" size="20" accesskey="S" 
-                     onfocus="searchBox.OnSearchFieldFocus(true)" 
-                     onblur="searchBox.OnSearchFieldFocus(false)"/>
-            </form>
-          </div><div class="right"></div>
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
         </div>
 </td></tr>
  </tbody>
@@ -84,87 +83,76 @@ $(document).ready(function(){initNavTree('d9/d2e/a00056.html','../../'); initRes
 /* @license-end */
 </script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">kdriver.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">kmouse.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d1f/a00083_source.html">driver/kmouse.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kmouse.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d7/df7/a00058.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kdriver_8hppdep" alt=""/></div>
-<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kdriver_8hppdep" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2driver_2kdriver_8hppdep">
-<area shape="rect" title=" " alt="" coords="275,5,496,60"/>
-<area shape="rect" href="../../dc/d87/a00032.html" title=" " alt="" coords="5,211,187,265"/>
-<area shape="poly" title=" " alt="" coords="262,44,224,53,187,66,153,85,123,110,108,133,100,159,96,211,91,210,95,158,104,131,119,106,150,80,185,61,223,47,261,38"/>
-<area shape="rect" href="../../d5/de0/a00050.html" title=" " alt="" coords="134,108,378,163"/>
-<area shape="poly" title=" " alt="" coords="343,70,292,110,288,106,339,66"/>
-<area shape="rect" href="../../dc/dee/a00053.html" title=" " alt="" coords="402,108,630,163"/>
-<area shape="poly" title=" " alt="" coords="432,66,483,106,480,110,428,70"/>
-<area shape="rect" href="../../d1/d09/a00077.html" title=" " alt="" coords="655,108,849,163"/>
-<area shape="poly" title=" " alt="" coords="494,61,657,105,656,111,493,66"/>
-<area shape="poly" title=" " alt="" coords="204,172,139,213,137,208,202,168"/>
-<area shape="rect" href="../../da/dec/a00080.html" title=" " alt="" coords="211,211,429,265"/>
-<area shape="poly" title=" " alt="" coords="282,173,306,209,301,212,278,176"/>
-<area shape="poly" title=" " alt="" coords="389,168,199,213,187,216,186,211,198,208,388,163"/>
-<area shape="poly" title=" " alt="" coords="454,171,372,213,370,208,452,167"/>
-<area shape="rect" href="../../da/d24/a00068.html" title=" " alt="" coords="453,211,664,265"/>
-<area shape="poly" title=" " alt="" coords="535,174,550,210,545,212,530,176"/>
-<area shape="rect" href="../../d2/d1f/a00083.html" title=" " alt="" coords="689,211,890,265"/>
-<area shape="poly" title=" " alt="" coords="601,165,719,208,717,213,599,170"/>
+<div class="center"><img src="../../d1/d22/a00057.png" border="0" usemap="#akmouse_8cpp" alt=""/></div>
+<map name="akmouse_8cpp" id="akmouse_8cpp">
+<area shape="rect" title=" " alt="" coords="352,5,453,31"/>
+<area shape="rect" href="../../d2/d1f/a00083.html" title=" " alt="" coords="331,79,475,104"/>
+<area shape="poly" title=" " alt="" coords="405,31,405,65,400,65,400,31"/>
+<area shape="rect" title=" " alt="" coords="131,475,197,500"/>
+<area shape="poly" title=" " alt="" coords="342,107,242,129,132,162,83,182,44,203,17,227,10,239,8,252,8,327,11,351,20,373,33,394,50,412,88,443,127,466,124,471,85,448,46,416,29,397,15,376,6,352,3,328,3,251,5,237,13,224,41,199,81,177,130,157,241,124,340,101"/>
+<area shape="rect" href="../../db/db6/a00074.html" title=" " alt="" coords="174,152,365,192"/>
+<area shape="poly" title=" " alt="" coords="384,106,315,147,312,143,382,102"/>
+<area shape="rect" href="../../da/d24/a00068.html" title=" " alt="" coords="201,313,356,339"/>
+<area shape="poly" title=" " alt="" coords="404,105,396,145,380,193,341,256,301,305,297,301,337,253,375,191,391,143,399,104"/>
+<area shape="rect" href="../../d1/d09/a00077.html" title=" " alt="" coords="347,387,538,427"/>
+<area shape="poly" title=" " alt="" coords="407,104,441,372,436,373,401,105"/>
+<area shape="rect" href="../../da/d2a/a00086.html" title=" " alt="" coords="491,159,629,185"/>
+<area shape="poly" title=" " alt="" coords="427,102,526,151,524,156,424,106"/>
+<area shape="poly" title=" " alt="" coords="258,194,224,246,192,314,181,353,174,393,167,461,162,460,169,393,176,352,187,312,219,244,253,191"/>
+<area shape="poly" title=" " alt="" coords="273,192,280,300,274,300,268,193"/>
+<area shape="poly" title=" " alt="" coords="286,191,422,374,418,377,281,194"/>
+<area shape="rect" href="../../d1/dc1/a00092.html" title=" " alt="" coords="43,240,186,265"/>
+<area shape="poly" title=" " alt="" coords="233,194,151,236,148,231,231,190"/>
+<area shape="poly" title=" " alt="" coords="273,340,183,465,178,461,268,337"/>
+<area shape="rect" title=" " alt="" coords="253,394,323,419"/>
+<area shape="poly" title=" " alt="" coords="283,339,288,380,282,380,277,339"/>
+<area shape="poly" title=" " alt="" coords="297,336,384,379,382,383,295,341"/>
+<area shape="poly" title=" " alt="" coords="377,429,212,475,210,470,375,424"/>
+<area shape="poly" title=" " alt="" coords="410,389,320,346,322,342,412,384"/>
+<area shape="poly" title=" " alt="" coords="119,265,129,333,148,426,158,461,153,462,143,427,124,334,114,266"/>
+<area shape="poly" title=" " alt="" coords="142,263,241,305,238,310,140,268"/>
 </map>
 </div>
 </div>
 <p><a href="../../d9/d2e/a00056_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd4/a00968.html">driver::Driver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class (interface) for all hardware drivers in the operating system.  <a href="../../d7/dd4/a00968.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4e/a00972.html">driver::DriverManager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages a collection of <a class="el" href="../../d7/dd4/a00968.html" title="Base class (interface) for all hardware drivers in the operating system.">Driver</a> objects, facilitating their activation and organization.  <a href="../../de/d4e/a00972.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:dc/d54/a00094" id="r_dc/d54/a00094"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/a00094.html">driver</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a14e1e30a5e2cbbd23a1fd111357f9076" id="r_a14e1e30a5e2cbbd23a1fd111357f9076"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2e/a00056.html#a14e1e30a5e2cbbd23a1fd111357f9076">MAX_NUMDRIVERS</a>&#160;&#160;&#160;265</td></tr>
-<tr class="separator:a14e1e30a5e2cbbd23a1fd111357f9076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a14e1e30a5e2cbbd23a1fd111357f9076" name="a14e1e30a5e2cbbd23a1fd111357f9076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14e1e30a5e2cbbd23a1fd111357f9076">&#9670;&#160;</a></span>MAX_NUMDRIVERS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_NUMDRIVERS&#160;&#160;&#160;265</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d9/d2e/a00056_source.html#l00003">3</a> of file <a class="el" href="../../d9/d2e/a00056_source.html">kdriver.hpp</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_7e882cf9a616ed6c5e9969aa375b621d.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_7faf50180643549cf2b0d5c9077f3326.html">driver</a></li><li class="navelem"><a class="el" href="../../d9/d2e/a00056.html">kdriver.hpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 11:17:43 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_267305fd0cd91744e53e95a33bbf4449.html">libk_src</a></li><li class="navelem"><a class="el" href="../../dir_5b5337be9c567761b45350e8fb23514b.html">driver</a></li><li class="navelem"><a class="el" href="../../d9/d2e/a00056.html">kmouse.cpp</a></li>
+    <li class="footer">Generated on Wed Oct 29 2025 19:58:33 for OSOS Dev by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

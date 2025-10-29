@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kiostream.hpp Source File</title>
+<title>OSOS Dev: kpci.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -15,15 +15,13 @@
 <script type="text/javascript" src="../../navtreedata.js"></script>
 <script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-  /* @license-end */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
 </script>
-<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="OSOS - Documentation"/>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -42,20 +40,21 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OSOS - Documentation
+   <div id="projectname">OSOS Dev
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
+   <div id="projectbrief">Developed by Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-          <div class="left">
-            <form id="FSearchBox" action="../../search.html" method="get">
-              <span id="MSearchSelectExt">&#160;</span>
-              <input type="text" id="MSearchField" name="query" value="" placeholder="Search" size="20" accesskey="S" 
-                     onfocus="searchBox.OnSearchFieldFocus(true)" 
-                     onblur="searchBox.OnSearchFieldFocus(false)"/>
-            </form>
-          </div><div class="right"></div>
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
         </div>
 </td></tr>
  </tbody>
@@ -84,41 +83,104 @@ $(document).ready(function(){initNavTree('dd/d32/a00041_source.html','../../'); 
 /* @license-end */
 </script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
-  <div class="headertitle"><div class="title">kiostream.hpp</div></div>
+  <div class="headertitle"><div class="title">kpci.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../dd/d32/a00041.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _OSOS_BASIC_KIOSTREAM_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">    #define _OSOS_BASIC_KIOSTREAM_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">    #include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">    #include &lt;cstdarg&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">    #include &quot;<a class="code" href="../../d6/d2d/a00047.html">hardware_communication/kport.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d4/d7d/a00093.html">    7</a></span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="../../d4/d7d/a00093.html">basic</a>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7d/a00093.html#a02923caa95013ec5d9333c25d9cca1d6">__clearScreen</a>();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="../../d4/d7d/a00093.html#a45ee52b918a784ff0e96e7c8917a91d9">printf</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7d/a00093.html#a8ca6648639f335b207c748074dcf9f25">enable_cursor</a>(uint8_t cursor_start, uint8_t cursor_end);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7d/a00093.html#a9d1f0f838e646660db6d9284725c2b4c">update_cursor</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7d/a00093.html#a4b31902bf2cff8ff28405aa57d9f4575">disable_cursor</a>();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<a href="../../dd/d32/a00041.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/d89/a00071.html">hardware_communication/kpci.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d1/d44/a00098.html">hardware_communication</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d0/d3c/a00971.html#a71d89c22009309f0d354da5cbf359dc7">    4</a></span><a class="code hl_function" href="../../d0/d3c/a00971.html#a71d89c22009309f0d354da5cbf359dc7">PCI_Controller::PCI_Controller</a>()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>:dataPort(0xCFC),</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> commandPort(0xCF8)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> {}</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif </span></div>
-<div class="ttc" id="aa00047_html"><div class="ttname"><a href="../../d6/d2d/a00047.html">kport.hpp</a></div></div>
-<div class="ttc" id="aa00093_html"><div class="ttname"><a href="../../d4/d7d/a00093.html">basic</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d32/a00041_source.html#l00007">kiostream.hpp:7</a></div></div>
-<div class="ttc" id="aa00093_html_a02923caa95013ec5d9333c25d9cca1d6"><div class="ttname"><a href="../../d4/d7d/a00093.html#a02923caa95013ec5d9333c25d9cca1d6">basic::__clearScreen</a></div><div class="ttdeci">void __clearScreen()</div><div class="ttdoc">Clears the entire text mode screen and resets the cursor to (0,0).</div><div class="ttdef"><b>Definition</b> <a href="../../da/d24/a00068_source.html#l00128">kiostream.cpp:128</a></div></div>
-<div class="ttc" id="aa00093_html_a45ee52b918a784ff0e96e7c8917a91d9"><div class="ttname"><a href="../../d4/d7d/a00093.html#a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</a></div><div class="ttdeci">int printf(const char *format,...)</div><div class="ttdoc">A custom implementation of the standard printf function for writing to VGA text mode memory.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d24/a00068_source.html#l00306">kiostream.cpp:306</a></div></div>
-<div class="ttc" id="aa00093_html_a4b31902bf2cff8ff28405aa57d9f4575"><div class="ttname"><a href="../../d4/d7d/a00093.html#a4b31902bf2cff8ff28405aa57d9f4575">basic::disable_cursor</a></div><div class="ttdeci">void disable_cursor()</div><div class="ttdoc">Disables the text mode cursor.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d24/a00068_source.html#l00042">kiostream.cpp:42</a></div></div>
-<div class="ttc" id="aa00093_html_a8ca6648639f335b207c748074dcf9f25"><div class="ttname"><a href="../../d4/d7d/a00093.html#a8ca6648639f335b207c748074dcf9f25">basic::enable_cursor</a></div><div class="ttdeci">void enable_cursor(uint8_t cursor_start, uint8_t cursor_end)</div><div class="ttdoc">Enables the text mode cursor and sets its shape.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d24/a00068_source.html#l00020">kiostream.cpp:20</a></div></div>
-<div class="ttc" id="aa00093_html_a9d1f0f838e646660db6d9284725c2b4c"><div class="ttname"><a href="../../d4/d7d/a00093.html#a9d1f0f838e646660db6d9284725c2b4c">basic::update_cursor</a></div><div class="ttdeci">void update_cursor(int x, int y)</div><div class="ttdoc">Updates the position of the text mode cursor.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d24/a00068_source.html#l00031">kiostream.cpp:31</a></div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d0/d3c/a00971.html#a3ee06d7487fe4ff999d2176786c2e743">    9</a></span><a class="code hl_function" href="../../d0/d3c/a00971.html#a3ee06d7487fe4ff999d2176786c2e743">PCI_Controller::~PCI_Controller</a>(){}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d0/d3c/a00971.html#a0e84bd34162647f1c3a2b0c46a9adcd2">   12</a></span>uint32_t <a class="code hl_function" href="../../d0/d3c/a00971.html#a0e84bd34162647f1c3a2b0c46a9adcd2">PCI_Controller::read</a>(uint16_t bus, uint16_t device, uint16_t function, uint32_t registerOffset)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    uint32_t address; <span class="comment">// address is actually exact location = which bus, which device and which registerOffset</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    uint32_t lbus  = (uint32_t)bus;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    uint32_t lslot = (uint32_t)device;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    uint32_t lfunc = (uint32_t)function;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Create configuration address as per Figure 1</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    address = 0x1&lt;&lt;31</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            | (lbus &lt;&lt; 16) </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            | (lslot &lt;&lt; 11) </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            | (lfunc &lt;&lt; 8) </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            | (registerOffset &amp; 0xFC) ;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// Write out the address</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_variable" href="../../d0/d3c/a00971.html#ab6a9e1ba7e8934198624da046fc80bad">commandPort</a>.<a class="code hl_function" href="../../df/d2f/a00991.html#a64a16fe840224ef769ab2933770d1b21">write</a>(address);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Read in the data</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    uint32_t result = <a class="code hl_variable" href="../../d0/d3c/a00971.html#a63cf29ae25d0a70ee448ac1e2896a041">dataPort</a>.<a class="code hl_function" href="../../df/d2f/a00991.html#a41093c437a9508f984c90ae68e9c03bf">read</a>() &gt;&gt; (8 * (registerOffset % 4));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d0/d3c/a00971.html#a771c1c2b5edd953a2a6a751873176597">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d3c/a00971.html#a771c1c2b5edd953a2a6a751873176597">PCI_Controller::write</a>(uint16_t bus, uint16_t device, uint16_t function, uint32_t registerOffset, uint32_t value)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    uint32_t address;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    uint32_t lbus  = (uint32_t)bus;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    uint32_t lslot = (uint32_t)device;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    uint32_t lfunc = (uint32_t)function;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    address = 0x1&lt;&lt;31</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            | (lbus &lt;&lt; 16) </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            | (lslot &lt;&lt; 11) </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            | (lfunc &lt;&lt; 8) </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            | (registerOffset &amp; 0xFC) ;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_variable" href="../../d0/d3c/a00971.html#ab6a9e1ba7e8934198624da046fc80bad">commandPort</a>.<a class="code hl_function" href="../../df/d2f/a00991.html#a64a16fe840224ef769ab2933770d1b21">write</a>(address);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_variable" href="../../d0/d3c/a00971.html#a63cf29ae25d0a70ee448ac1e2896a041">dataPort</a>.<a class="code hl_function" href="../../df/d2f/a00991.html#a64a16fe840224ef769ab2933770d1b21">write</a>(value);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+</div>
+<div class="ttc" id="aa00071_html"><div class="ttname"><a href="../../d0/d89/a00071.html">kpci.hpp</a></div></div>
+<div class="ttc" id="aa00098_html"><div class="ttname"><a href="../../d1/d44/a00098.html">hardware_communication</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00003">kport.cpp:4</a></div></div>
+<div class="ttc" id="aa00971_html_a0e84bd34162647f1c3a2b0c46a9adcd2"><div class="ttname"><a href="../../d0/d3c/a00971.html#a0e84bd34162647f1c3a2b0c46a9adcd2">hardware_communication::PCI_Controller::read</a></div><div class="ttdeci">uint32_t read(uint16_t bus, uint16_t device, uint16_t function, uint32_t registerOffset)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d32/a00041_source.html#l00012">kpci.cpp:12</a></div></div>
+<div class="ttc" id="aa00971_html_a3ee06d7487fe4ff999d2176786c2e743"><div class="ttname"><a href="../../d0/d3c/a00971.html#a3ee06d7487fe4ff999d2176786c2e743">hardware_communication::PCI_Controller::~PCI_Controller</a></div><div class="ttdeci">~PCI_Controller()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d32/a00041_source.html#l00009">kpci.cpp:9</a></div></div>
+<div class="ttc" id="aa00971_html_a63cf29ae25d0a70ee448ac1e2896a041"><div class="ttname"><a href="../../d0/d3c/a00971.html#a63cf29ae25d0a70ee448ac1e2896a041">hardware_communication::PCI_Controller::dataPort</a></div><div class="ttdeci">Port32Bit dataPort</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d89/a00071_source.html#l00010">kpci.hpp:10</a></div></div>
+<div class="ttc" id="aa00971_html_a71d89c22009309f0d354da5cbf359dc7"><div class="ttname"><a href="../../d0/d3c/a00971.html#a71d89c22009309f0d354da5cbf359dc7">hardware_communication::PCI_Controller::PCI_Controller</a></div><div class="ttdeci">PCI_Controller()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d32/a00041_source.html#l00004">kpci.cpp:4</a></div></div>
+<div class="ttc" id="aa00971_html_a771c1c2b5edd953a2a6a751873176597"><div class="ttname"><a href="../../d0/d3c/a00971.html#a771c1c2b5edd953a2a6a751873176597">hardware_communication::PCI_Controller::write</a></div><div class="ttdeci">void write(uint16_t bus, uint16_t device, uint16_t function, uint32_t registerOffset, uint32_t value)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d32/a00041_source.html#l00034">kpci.cpp:34</a></div></div>
+<div class="ttc" id="aa00971_html_ab6a9e1ba7e8934198624da046fc80bad"><div class="ttname"><a href="../../d0/d3c/a00971.html#ab6a9e1ba7e8934198624da046fc80bad">hardware_communication::PCI_Controller::commandPort</a></div><div class="ttdeci">Port32Bit commandPort</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d89/a00071_source.html#l00011">kpci.hpp:11</a></div></div>
+<div class="ttc" id="aa00991_html_a41093c437a9508f984c90ae68e9c03bf"><div class="ttname"><a href="../../df/d2f/a00991.html#a41093c437a9508f984c90ae68e9c03bf">hardware_communication::Port32Bit::read</a></div><div class="ttdeci">uint32_t read()</div><div class="ttdoc">Reads a 32-bit value from the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00092">kport.cpp:92</a></div></div>
+<div class="ttc" id="aa00991_html_a64a16fe840224ef769ab2933770d1b21"><div class="ttname"><a href="../../df/d2f/a00991.html#a64a16fe840224ef769ab2933770d1b21">hardware_communication::Port32Bit::write</a></div><div class="ttdeci">void write(uint32_t data)</div><div class="ttdoc">Writes a 32-bit value to the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00086">kport.cpp:86</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_7e882cf9a616ed6c5e9969aa375b621d.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_34d45cb43cfea5813562be995e166360.html">basic</a></li><li class="navelem"><a class="el" href="../../dd/d32/a00041.html">kiostream.hpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 11:17:43 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_267305fd0cd91744e53e95a33bbf4449.html">libk_src</a></li><li class="navelem"><a class="el" href="../../dir_5608498c1410927f4d1a780666bcc3ac.html">hardware_communication</a></li><li class="navelem"><a class="el" href="../../dd/d32/a00041.html">kpci.cpp</a></li>
+    <li class="footer">Generated on Wed Oct 29 2025 19:58:33 for OSOS Dev by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

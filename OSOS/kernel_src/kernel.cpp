@@ -8,6 +8,7 @@
 #include "driver/kkeyboard.hpp"
 #include "driver/kmouse.hpp"
 #include "driver/kdriver.hpp"
+#include "hardware_communication/kpci.hpp"
 
 /// @brief Custom KeyboardEventHandler implementation for kernel
 class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler
@@ -130,12 +131,15 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
         driver::MouseDriver mouse(&osos_InterruptManager, &mouseEventHandler_for_kernel);
         driverManager.addDriver(&mouse);
 
+        hardware_communication::PCI_Controller pciController;
+        pciController.selectDrivers(&driverManager);
+
     driverManager.activateAll();
 
     hardware_communication::InterruptManager::activate();
     
-    essential::GDT_Manager::printLoadedTableHeader();
-    hardware_communication::InterruptManager::printLoadedTableHeader();
+    // essential::GDT_Manager::printLoadedTableHeader();
+    // hardware_communication::InterruptManager::printLoadedTableHeader();
     basic::printf("HELLO FROM OSOS :)\n");
     while (true){};
 

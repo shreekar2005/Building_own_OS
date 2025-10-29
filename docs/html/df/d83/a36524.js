@@ -1,8 +1,0 @@
-var a36524 =
-[
-    [ "essential::atexit_func_entry_t", "d4/de7/a37438.html", "d4/de7/a37438" ],
-    [ "ATEXIT_MAX_FUNCS", "df/d83/a36524.html#ae07a9ad040d2fbefafcff363b77697ce", null ],
-    [ "uarch_t", "df/d83/a36524.html#a35fc01d4eba01f3f2ec636bd6b5ff34f", null ],
-    [ "__callConstructors", "df/d83/a36524.html#a433c3d2d19d89890b522ac26b05fa7aa", null ],
-    [ "__cxa_finalize", "df/d83/a36524.html#a098e7240e26e869c035075be004b4ee9", null ]
-];

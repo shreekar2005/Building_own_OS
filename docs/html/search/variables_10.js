@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['user_5fcs_0',['user_cs',['../d3/daa/a68133.html#a6d59268a0e9d66206896d865612e9740',1,'essential::GDT_Manager::user_CS'],['../de/d6c/a67274.html#a4dd5e213df2a9b2ad66c49c23a14fdc5',1,'user_CS:&#160;kgdt.hpp']]],
-  ['user_5fds_1',['user_ds',['../d3/daa/a68133.html#a6d00b87ca97dfbcc13ba6775499f54ee',1,'essential::GDT_Manager::user_DS'],['../de/d6c/a67274.html#af40b8eb1a5b52ab270a63992a3548408',1,'user_DS:&#160;kgdt.hpp']]]
+  ['user_5fcs_0',['user_cs',['../dc/de8/a03312.html#a6d59268a0e9d66206896d865612e9740',1,'essential::GDT_Manager::user_CS'],['../d3/d27/a02453.html#a4dd5e213df2a9b2ad66c49c23a14fdc5',1,'user_CS:&#160;kgdt.hpp']]],
+  ['user_5fds_1',['user_ds',['../dc/de8/a03312.html#a6d00b87ca97dfbcc13ba6775499f54ee',1,'essential::GDT_Manager::user_DS'],['../d3/d27/a02453.html#af40b8eb1a5b52ab270a63992a3548408',1,'user_DS:&#160;kgdt.hpp']]]
 ];

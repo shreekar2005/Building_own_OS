@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_src/driver/kdriver.cpp Source File</title>
+<title>OSOS Dev: kport.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -15,15 +15,13 @@
 <script type="text/javascript" src="../../navtreedata.js"></script>
 <script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-  /* @license-end */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
 </script>
-<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="OSOS - Documentation"/>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -42,20 +40,21 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OSOS - Documentation
+   <div id="projectname">OSOS Dev
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
+   <div id="projectbrief">Developed by Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-          <div class="left">
-            <form id="FSearchBox" action="../../search.html" method="get">
-              <span id="MSearchSelectExt">&#160;</span>
-              <input type="text" id="MSearchField" name="query" value="" placeholder="Search" size="20" accesskey="S" 
-                     onfocus="searchBox.OnSearchFieldFocus(true)" 
-                     onblur="searchBox.OnSearchFieldFocus(false)"/>
-            </form>
-          </div><div class="right"></div>
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
         </div>
 </td></tr>
  </tbody>
@@ -84,53 +83,119 @@ $(document).ready(function(){initNavTree('d1/d09/a00077_source.html','../../'); 
 /* @license-end */
 </script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
-  <div class="headertitle"><div class="title">kdriver.cpp</div></div>
+  <div class="headertitle"><div class="title">kport.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d1/d09/a00077.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../d9/d2e/a00056.html">driver/kdriver.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d7/dd4/a00968.html#a7de0c11fff1dc1f5d004b2a76e840840">    4</a></span><a class="code hl_function" href="../../d7/dd4/a00968.html#a7de0c11fff1dc1f5d004b2a76e840840">driver::Driver::Driver</a>(){}</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d7/dd4/a00968.html#aacc7524b989c2561147c5dd0b901381c">    6</a></span><a class="code hl_function" href="../../d7/dd4/a00968.html#aacc7524b989c2561147c5dd0b901381c">driver::Driver::~Driver</a>(){}</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../de/d4e/a00972.html#af3bed49a4b243c2f65d09c35db15158b">   10</a></span><a class="code hl_function" href="../../de/d4e/a00972.html#af3bed49a4b243c2f65d09c35db15158b">driver::DriverManager::DriverManager</a>(){</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    numDrivers=0;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<a href="../../d1/d09/a00077.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _OSOS_HARDWARECOMMUNICATION_KPORT_H </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">    #define _OSOS_HARDWARECOMMUNICATION_KPORT_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">    #include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">    #include &quot;<a class="code" href="../../da/d24/a00068.html">basic/kiostream.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="../../d1/d44/a00098.html">hardware_communication</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../db/dbf/a00975.html">    9</a></span>        <span class="keyword">class </span><a class="code hl_class" href="../../db/dbf/a00975.html">Port</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">   11</a></span>            uint16_t <a class="code hl_variable" href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">portnumber</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keyword">explicit</span> <a class="code hl_class" href="../../db/dbf/a00975.html">Port</a>(uint16_t <a class="code hl_variable" href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">portnumber</a>); <span class="comment">// making constructor explicit to prevent unintended conversions</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keyword">virtual</span> <a class="code hl_function" href="../../db/dbf/a00975.html#a8b13c33da4911afcbdcb21c97768a72e">~Port</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        };</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../de/d4e/a00972.html#a29731c1f4b1215fd5c4ab27624ae6563">   14</a></span><a class="code hl_function" href="../../de/d4e/a00972.html#a29731c1f4b1215fd5c4ab27624ae6563">driver::DriverManager::~DriverManager</a>(){}</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../de/d4e/a00972.html#ab8bd89b91ea49f343276c3c841153cd8">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d4e/a00972.html#ab8bd89b91ea49f343276c3c841153cd8">driver::DriverManager::addDriver</a>(<a class="code hl_class" href="../../d7/dd4/a00968.html">driver::Driver</a>* <a class="code hl_namespace" href="../../dc/d54/a00094.html">driver</a>){</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    drivers[numDrivers]=<a class="code hl_namespace" href="../../dc/d54/a00094.html">driver</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    numDrivers++;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d49/a00979.html">   19</a></span>        <span class="keyword">class </span><a class="code hl_class" href="../../d8/d49/a00979.html">Port8Bit</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../db/dbf/a00975.html">Port</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keyword">explicit</span> <a class="code hl_class" href="../../d8/d49/a00979.html">Port8Bit</a>(uint16_t <a class="code hl_variable" href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">portnumber</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keyword">virtual</span> <a class="code hl_function" href="../../d8/d49/a00979.html#a475bc218672c5743a9f8425cc84eb630">~Port8Bit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d49/a00979.html#a523b6a757b27418dc015ed13e74bef60">write</a>(uint8_t data);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            uint8_t <a class="code hl_function" href="../../d8/d49/a00979.html#ae8688251b574c3fd335b99f7e93fff2d">read</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        };</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../de/d4e/a00972.html#a05b071d8a8c12f2d284fb61f4ecd116e">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d4e/a00972.html#a05b071d8a8c12f2d284fb61f4ecd116e">driver::DriverManager::activateAll</a>(){</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;numDrivers; i++){</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        drivers[i]-&gt;activate();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d7/d98/a00983.html">   28</a></span>        <span class="keyword">class </span><a class="code hl_class" href="../../d7/d98/a00983.html">Port8BitSlow</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d8/d49/a00979.html">Port8Bit</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keyword">explicit</span> <a class="code hl_class" href="../../d7/d98/a00983.html">Port8BitSlow</a>(uint16_t <a class="code hl_variable" href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">portnumber</a>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_function" href="../../d7/d98/a00983.html#aa19647802064296f8bf76cc12f10d243">~Port8BitSlow</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d98/a00983.html#af84b15d5a205a421a9877e2341714031">write</a>(uint8_t data) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="comment">// read() : inherited from Port8Bit</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        };</div>
 </div>
-<div class="ttc" id="aa00056_html"><div class="ttname"><a href="../../d9/d2e/a00056.html">kdriver.hpp</a></div></div>
-<div class="ttc" id="aa00094_html"><div class="ttname"><a href="../../dc/d54/a00094.html">driver</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d2e/a00056_source.html#l00004">kdriver.hpp:4</a></div></div>
-<div class="ttc" id="aa00968_html"><div class="ttname"><a href="../../d7/dd4/a00968.html">driver::Driver</a></div><div class="ttdoc">Base class (interface) for all hardware drivers in the operating system.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d2e/a00056_source.html#l00006">kdriver.hpp:6</a></div></div>
-<div class="ttc" id="aa00968_html_a7de0c11fff1dc1f5d004b2a76e840840"><div class="ttname"><a href="../../d7/dd4/a00968.html#a7de0c11fff1dc1f5d004b2a76e840840">driver::Driver::Driver</a></div><div class="ttdeci">Driver()</div><div class="ttdoc">Default constructor for the base Driver class.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00004">kdriver.cpp:4</a></div></div>
-<div class="ttc" id="aa00968_html_aacc7524b989c2561147c5dd0b901381c"><div class="ttname"><a href="../../d7/dd4/a00968.html#aacc7524b989c2561147c5dd0b901381c">driver::Driver::~Driver</a></div><div class="ttdeci">virtual ~Driver()</div><div class="ttdoc">Default destructor for the base Driver class.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00006">kdriver.cpp:6</a></div></div>
-<div class="ttc" id="aa00972_html_a05b071d8a8c12f2d284fb61f4ecd116e"><div class="ttname"><a href="../../de/d4e/a00972.html#a05b071d8a8c12f2d284fb61f4ecd116e">driver::DriverManager::activateAll</a></div><div class="ttdeci">void activateAll()</div><div class="ttdoc">Activates all drivers currently registered with the manager.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00024">kdriver.cpp:24</a></div></div>
-<div class="ttc" id="aa00972_html_a29731c1f4b1215fd5c4ab27624ae6563"><div class="ttname"><a href="../../de/d4e/a00972.html#a29731c1f4b1215fd5c4ab27624ae6563">driver::DriverManager::~DriverManager</a></div><div class="ttdeci">~DriverManager()</div><div class="ttdoc">Destroys the DriverManager object.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00014">kdriver.cpp:14</a></div></div>
-<div class="ttc" id="aa00972_html_ab8bd89b91ea49f343276c3c841153cd8"><div class="ttname"><a href="../../de/d4e/a00972.html#ab8bd89b91ea49f343276c3c841153cd8">driver::DriverManager::addDriver</a></div><div class="ttdeci">void addDriver(Driver *)</div><div class="ttdoc">Adds a driver to the manager's list.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00018">kdriver.cpp:18</a></div></div>
-<div class="ttc" id="aa00972_html_af3bed49a4b243c2f65d09c35db15158b"><div class="ttname"><a href="../../de/d4e/a00972.html#af3bed49a4b243c2f65d09c35db15158b">driver::DriverManager::DriverManager</a></div><div class="ttdeci">DriverManager()</div><div class="ttdoc">Constructs a new DriverManager object, initializing the driver count to zero.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00010">kdriver.cpp:10</a></div></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d4/d21/a00987.html">   37</a></span>        <span class="keyword">class </span><a class="code hl_class" href="../../d4/d21/a00987.html">Port16Bit</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../db/dbf/a00975.html">Port</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keyword">explicit</span> <a class="code hl_class" href="../../d4/d21/a00987.html">Port16Bit</a>(uint16_t <a class="code hl_variable" href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">portnumber</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_function" href="../../d4/d21/a00987.html#a78dfa215194c676583e1b7e2dab38608">~Port16Bit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d21/a00987.html#ac5a46ce99a70874a8a4fcb090eb40575">write</a>(uint16_t data);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            uint16_t <a class="code hl_function" href="../../d4/d21/a00987.html#a6b5df5669e802e31f27f0a4a0e62492a">read</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        };</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../df/d2f/a00991.html">   47</a></span>        <span class="keyword">class </span><a class="code hl_class" href="../../df/d2f/a00991.html">Port32Bit</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../db/dbf/a00975.html">Port</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keyword">explicit</span> <a class="code hl_class" href="../../df/d2f/a00991.html">Port32Bit</a>(uint16_t <a class="code hl_variable" href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">portnumber</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <a class="code hl_function" href="../../df/d2f/a00991.html#a3e87dc7d610b279e8e7e072a0d1ee78c">~Port32Bit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d2f/a00991.html#a64a16fe840224ef769ab2933770d1b21">write</a>(uint32_t data);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            uint32_t <a class="code hl_function" href="../../df/d2f/a00991.html#a41093c437a9508f984c90ae68e9c03bf">read</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        };</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00068_html"><div class="ttname"><a href="../../da/d24/a00068.html">kiostream.hpp</a></div></div>
+<div class="ttc" id="aa00098_html"><div class="ttname"><a href="../../d1/d44/a00098.html">hardware_communication</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00003">kport.cpp:4</a></div></div>
+<div class="ttc" id="aa00975_html"><div class="ttname"><a href="../../db/dbf/a00975.html">hardware_communication::Port</a></div><div class="ttdoc">Base class for hardware I/O port communication.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00009">kport.hpp:9</a></div></div>
+<div class="ttc" id="aa00975_html_a8b13c33da4911afcbdcb21c97768a72e"><div class="ttname"><a href="../../db/dbf/a00975.html#a8b13c33da4911afcbdcb21c97768a72e">hardware_communication::Port::~Port</a></div><div class="ttdeci">virtual ~Port()</div><div class="ttdoc">Destroys the Port object.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00013">kport.cpp:13</a></div></div>
+<div class="ttc" id="aa00975_html_aab0c5c82b0190df88ddbb595bfac539a"><div class="ttname"><a href="../../db/dbf/a00975.html#aab0c5c82b0190df88ddbb595bfac539a">hardware_communication::Port::portnumber</a></div><div class="ttdeci">uint16_t portnumber</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00011">kport.hpp:11</a></div></div>
+<div class="ttc" id="aa00979_html"><div class="ttname"><a href="../../d8/d49/a00979.html">hardware_communication::Port8Bit</a></div><div class="ttdoc">Represents an 8-bit (byte-sized) I/O Port.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00019">kport.hpp:19</a></div></div>
+<div class="ttc" id="aa00979_html_a475bc218672c5743a9f8425cc84eb630"><div class="ttname"><a href="../../d8/d49/a00979.html#a475bc218672c5743a9f8425cc84eb630">hardware_communication::Port8Bit::~Port8Bit</a></div><div class="ttdeci">virtual ~Port8Bit() override</div><div class="ttdoc">Destroys the Port8Bit object.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00021">kport.cpp:21</a></div></div>
+<div class="ttc" id="aa00979_html_a523b6a757b27418dc015ed13e74bef60"><div class="ttname"><a href="../../d8/d49/a00979.html#a523b6a757b27418dc015ed13e74bef60">hardware_communication::Port8Bit::write</a></div><div class="ttdeci">virtual void write(uint8_t data)</div><div class="ttdoc">Writes an 8-bit value to the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00025">kport.cpp:25</a></div></div>
+<div class="ttc" id="aa00979_html_ae8688251b574c3fd335b99f7e93fff2d"><div class="ttname"><a href="../../d8/d49/a00979.html#ae8688251b574c3fd335b99f7e93fff2d">hardware_communication::Port8Bit::read</a></div><div class="ttdeci">uint8_t read()</div><div class="ttdoc">Reads an 8-bit value from the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00031">kport.cpp:31</a></div></div>
+<div class="ttc" id="aa00983_html"><div class="ttname"><a href="../../d7/d98/a00983.html">hardware_communication::Port8BitSlow</a></div><div class="ttdoc">Represents a Port8Bit with a forced delay on writes.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00028">kport.hpp:28</a></div></div>
+<div class="ttc" id="aa00983_html_aa19647802064296f8bf76cc12f10d243"><div class="ttname"><a href="../../d7/d98/a00983.html#aa19647802064296f8bf76cc12f10d243">hardware_communication::Port8BitSlow::~Port8BitSlow</a></div><div class="ttdeci">~Port8BitSlow() override</div><div class="ttdoc">Destroys the Port8BitSlow object.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00044">kport.cpp:44</a></div></div>
+<div class="ttc" id="aa00983_html_af84b15d5a205a421a9877e2341714031"><div class="ttname"><a href="../../d7/d98/a00983.html#af84b15d5a205a421a9877e2341714031">hardware_communication::Port8BitSlow::write</a></div><div class="ttdeci">void write(uint8_t data) override</div><div class="ttdoc">Writes an 8-bit value to the I/O port with a delay.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00048">kport.cpp:48</a></div></div>
+<div class="ttc" id="aa00987_html"><div class="ttname"><a href="../../d4/d21/a00987.html">hardware_communication::Port16Bit</a></div><div class="ttdoc">Represents a 16-bit (word-sized) I/O Port.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00037">kport.hpp:37</a></div></div>
+<div class="ttc" id="aa00987_html_a6b5df5669e802e31f27f0a4a0e62492a"><div class="ttname"><a href="../../d4/d21/a00987.html#a6b5df5669e802e31f27f0a4a0e62492a">hardware_communication::Port16Bit::read</a></div><div class="ttdeci">uint16_t read()</div><div class="ttdoc">Reads a 16-bit value from the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00069">kport.cpp:69</a></div></div>
+<div class="ttc" id="aa00987_html_a78dfa215194c676583e1b7e2dab38608"><div class="ttname"><a href="../../d4/d21/a00987.html#a78dfa215194c676583e1b7e2dab38608">hardware_communication::Port16Bit::~Port16Bit</a></div><div class="ttdeci">~Port16Bit() override</div><div class="ttdoc">Destroys the Port16Bit object.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00059">kport.cpp:59</a></div></div>
+<div class="ttc" id="aa00987_html_ac5a46ce99a70874a8a4fcb090eb40575"><div class="ttname"><a href="../../d4/d21/a00987.html#ac5a46ce99a70874a8a4fcb090eb40575">hardware_communication::Port16Bit::write</a></div><div class="ttdeci">void write(uint16_t data)</div><div class="ttdoc">Writes a 16-bit value to the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00063">kport.cpp:63</a></div></div>
+<div class="ttc" id="aa00991_html"><div class="ttname"><a href="../../df/d2f/a00991.html">hardware_communication::Port32Bit</a></div><div class="ttdoc">Represents a 32-bit (double-word-sized) I/O Port.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/a00077_source.html#l00047">kport.hpp:47</a></div></div>
+<div class="ttc" id="aa00991_html_a3e87dc7d610b279e8e7e072a0d1ee78c"><div class="ttname"><a href="../../df/d2f/a00991.html#a3e87dc7d610b279e8e7e072a0d1ee78c">hardware_communication::Port32Bit::~Port32Bit</a></div><div class="ttdeci">~Port32Bit() override</div><div class="ttdoc">Destroys the Port32Bit object.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00082">kport.cpp:82</a></div></div>
+<div class="ttc" id="aa00991_html_a41093c437a9508f984c90ae68e9c03bf"><div class="ttname"><a href="../../df/d2f/a00991.html#a41093c437a9508f984c90ae68e9c03bf">hardware_communication::Port32Bit::read</a></div><div class="ttdeci">uint32_t read()</div><div class="ttdoc">Reads a 32-bit value from the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00092">kport.cpp:92</a></div></div>
+<div class="ttc" id="aa00991_html_a64a16fe840224ef769ab2933770d1b21"><div class="ttname"><a href="../../df/d2f/a00991.html#a64a16fe840224ef769ab2933770d1b21">hardware_communication::Port32Bit::write</a></div><div class="ttdeci">void write(uint32_t data)</div><div class="ttdoc">Writes a 32-bit value to the I/O port.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/df9/a00044_source.html#l00086">kport.cpp:86</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_267305fd0cd91744e53e95a33bbf4449.html">libk_src</a></li><li class="navelem"><a class="el" href="../../dir_5b5337be9c567761b45350e8fb23514b.html">driver</a></li><li class="navelem"><a class="el" href="../../d1/d09/a00077.html">kdriver.cpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 11:17:43 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_7e882cf9a616ed6c5e9969aa375b621d.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_d09c0e5baeb6db8b18c7b52a276e4647.html">hardware_communication</a></li><li class="navelem"><a class="el" href="../../d1/d09/a00077.html">kport.hpp</a></li>
+    <li class="footer">Generated on Wed Oct 29 2025 19:58:33 for OSOS Dev by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

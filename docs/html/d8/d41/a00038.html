@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OSOS - Documentation: /home/shreekar/Desktop/Building_own_OS/OSOS/libk_header/basic/kmemory.hpp File Reference</title>
+<title>OSOS Dev: kiostream.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -15,15 +15,13 @@
 <script type="text/javascript" src="../../navtreedata.js"></script>
 <script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-  /* @license-end */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
 </script>
-<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="OSOS - Documentation"/>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -42,20 +40,21 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OSOS - Documentation
+   <div id="projectname">OSOS Dev
    </div>
-   <div id="projectbrief">OSOS is 32-bit Operating System, Currently under development - by Shreekar</div>
+   <div id="projectbrief">Developed by Shreekar</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-          <div class="left">
-            <form id="FSearchBox" action="../../search.html" method="get">
-              <span id="MSearchSelectExt">&#160;</span>
-              <input type="text" id="MSearchField" name="query" value="" placeholder="Search" size="20" accesskey="S" 
-                     onfocus="searchBox.OnSearchFieldFocus(true)" 
-                     onblur="searchBox.OnSearchFieldFocus(false)"/>
-            </form>
-          </div><div class="right"></div>
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
         </div>
 </td></tr>
  </tbody>
@@ -84,52 +83,72 @@ $(document).ready(function(){initNavTree('d8/d41/a00038.html','../../'); initRes
 /* @license-end */
 </script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">kmemory.hpp File Reference</div></div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">kiostream.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dd/d32/a00041_source.html">basic/kiostream.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d4/d8c/a00035_source.html">basic/multiboot.h</a>&quot;</code><br />
-<code>#include &lt;cstddef&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../da/d24/a00068_source.html">basic/kiostream.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d1f/a00083_source.html">driver/kmouse.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kmemory.hpp:</div>
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for kiostream.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d3/de7/a00039.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2basic_2kmemory_8hpp" alt=""/></div>
-<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2basic_2kmemory_8hpp" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2basic_2kmemory_8hpp">
-<area shape="rect" title=" " alt="" coords="190,5,424,60"/>
-<area shape="rect" href="../../dd/d32/a00041.html" title=" " alt="" coords="60,108,215,133"/>
-<area shape="poly" title=" " alt="" coords="256,62,174,104,171,99,254,58"/>
-<area shape="rect" href="../../d4/d8c/a00035.html" title=" " alt="" coords="240,108,374,133"/>
-<area shape="poly" title=" " alt="" coords="310,60,310,94,304,94,304,60"/>
-<area shape="rect" title=" " alt="" coords="398,108,469,133"/>
-<area shape="poly" title=" " alt="" coords="347,58,406,98,403,102,344,62"/>
-<area shape="rect" title=" " alt="" coords="67,269,134,295"/>
-<area shape="poly" title=" " alt="" coords="84,136,45,154,28,166,14,183,8,201,15,220,34,243,59,261,56,265,30,247,10,223,3,201,10,180,24,163,42,149,82,131"/>
-<area shape="rect" title=" " alt="" coords="25,189,96,214"/>
-<area shape="poly" title=" " alt="" coords="128,135,83,181,79,177,124,132"/>
-<area shape="rect" href="../../d6/d2d/a00047.html" title=" " alt="" coords="120,181,310,221"/>
-<area shape="poly" title=" " alt="" coords="144,132,180,170,176,174,140,135"/>
-<area shape="poly" title=" " alt="" coords="202,183,164,144,168,140,206,179"/>
-<area shape="poly" title=" " alt="" coords="189,224,130,264,127,259,186,219"/>
-</map>
-</div>
-</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../db/d3a/a00040.png" border="0" usemap="#a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2basic_2kmemory_8hppdep" alt=""/></div>
-<map name="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2basic_2kmemory_8hppdep" id="a_2home_2shreekar_2Desktop_2Building__own__OS_2OSOS_2libk__header_2basic_2kmemory_8hppdep">
-<area shape="rect" title=" " alt="" coords="89,5,322,60"/>
-<area shape="rect" href="../../dc/d87/a00032.html" title=" " alt="" coords="5,108,187,163"/>
-<area shape="poly" title=" " alt="" coords="168,72,126,110,123,106,165,68"/>
-<area shape="rect" href="../../de/de1/a00065.html" title=" " alt="" coords="211,108,418,163"/>
-<area shape="poly" title=" " alt="" coords="246,68,288,106,284,110,242,72"/>
+<div class="center"><img src="../../d3/de7/a00039.png" border="0" usemap="#akiostream_8cpp" alt=""/></div>
+<map name="akiostream_8cpp" id="akiostream_8cpp">
+<area shape="rect" title=" " alt="" coords="49,5,164,31"/>
+<area shape="rect" href="../../da/d24/a00068.html" title=" " alt="" coords="5,313,160,339"/>
+<area shape="poly" title=" " alt="" coords="108,31,89,240,86,300,81,299,84,240,103,31"/>
+<area shape="rect" href="../../d2/d1f/a00083.html" title=" " alt="" coords="139,79,283,104"/>
+<area shape="poly" title=" " alt="" coords="125,28,184,68,181,73,122,33"/>
+<area shape="rect" title=" " alt="" coords="337,475,404,500"/>
+<area shape="poly" title=" " alt="" coords="71,341,54,359,38,381,30,404,31,415,37,425,55,439,84,451,162,468,249,478,324,482,323,488,248,483,161,473,83,456,53,444,33,428,26,417,25,404,33,379,50,355,67,337"/>
+<area shape="rect" title=" " alt="" coords="47,394,118,419"/>
+<area shape="poly" title=" " alt="" coords="85,339,85,380,80,380,80,339"/>
+<area shape="rect" href="../../d1/d09/a00077.html" title=" " alt="" coords="142,387,333,427"/>
+<area shape="poly" title=" " alt="" coords="100,336,181,378,179,383,98,341"/>
+<area shape="poly" title=" " alt="" coords="206,389,123,347,125,342,209,384"/>
+<area shape="poly" title=" " alt="" coords="271,424,341,465,338,470,268,429"/>
+<area shape="poly" title=" " alt="" coords="191,106,163,126,137,154,117,191,103,230,88,300,83,299,97,229,112,188,133,150,159,122,188,102"/>
+<area shape="poly" title=" " alt="" coords="283,93,358,100,438,110,509,127,537,137,556,150,575,173,583,196,584,251,584,328,579,357,567,383,548,406,524,426,470,456,418,476,416,471,468,452,521,422,544,402,562,380,574,355,579,327,579,251,578,197,571,175,553,154,534,142,508,132,437,116,357,105,282,99"/>
+<area shape="poly" title=" " alt="" coords="204,106,192,127,181,153,179,172,181,192,203,291,228,373,223,374,198,293,176,192,173,172,176,151,187,124,200,103"/>
+<area shape="rect" href="../../db/db6/a00074.html" title=" " alt="" coords="353,152,543,192"/>
+<area shape="poly" title=" " alt="" coords="246,101,379,145,377,150,244,107"/>
+<area shape="rect" href="../../da/d2a/a00086.html" title=" " alt="" coords="191,159,329,185"/>
+<area shape="poly" title=" " alt="" coords="220,103,248,146,243,149,216,106"/>
+<area shape="poly" title=" " alt="" coords="377,195,308,216,237,242,170,276,113,309,110,304,167,271,235,238,307,211,375,190"/>
+<area shape="poly" title=" " alt="" coords="452,192,453,226,449,266,436,323,418,378,384,463,379,461,413,376,431,321,444,265,447,226,447,192"/>
+<area shape="poly" title=" " alt="" coords="358,195,317,213,282,242,262,272,250,307,243,342,240,373,235,372,237,341,244,306,257,270,278,238,314,209,356,190"/>
+<area shape="rect" href="../../d1/dc1/a00092.html" title=" " alt="" coords="293,240,435,265"/>
+<area shape="poly" title=" " alt="" coords="429,194,388,232,385,229,426,190"/>
+<area shape="poly" title=" " alt="" coords="319,268,142,312,141,307,318,263"/>
+<area shape="poly" title=" " alt="" coords="367,266,373,460,367,461,362,266"/>
 </map>
 </div>
 </div>
@@ -137,22 +156,121 @@ $(document).ready(function(){initNavTree('d8/d41/a00038.html','../../'); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d4/d7d/a00093" id="r_d4/d7d/a00093"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7d/a00093.html">basic</a></td></tr>
+<tr class="memitem:d9/df8/a00096" id="r_d9/df8/a00096"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html">basic</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a887422301cbe9a94f8b96263415640cf" id="r_a887422301cbe9a94f8b96263415640cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#a887422301cbe9a94f8b96263415640cf">MAGIC_HEIGHT</a>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:a887422301cbe9a94f8b96263415640cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be9493285a1f50a67d98b887537217d" id="r_a5be9493285a1f50a67d98b887537217d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#a5be9493285a1f50a67d98b887537217d">MAGIC_WIDTH</a>&#160;&#160;&#160;80</td></tr>
+<tr class="separator:a5be9493285a1f50a67d98b887537217d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49426d7a9b562958ad2ab7fbf134f368" id="r_a49426d7a9b562958ad2ab7fbf134f368"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#a49426d7a9b562958ad2ab7fbf134f368">TAB_WIDTH</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a49426d7a9b562958ad2ab7fbf134f368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a53c6425a55d9fb93998da01f2416f9ad" id="r_a53c6425a55d9fb93998da01f2416f9ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7d/a00093.html#a53c6425a55d9fb93998da01f2416f9ad">basic::__printMemoryMap</a> (multiboot_info_t *mbi)</td></tr>
-<tr class="memdesc:a53c6425a55d9fb93998da01f2416f9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the system memory map provided by the Multiboot bootloader.  <br /></td></tr>
-<tr class="separator:a53c6425a55d9fb93998da01f2416f9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02923caa95013ec5d9333c25d9cca1d6" id="r_a02923caa95013ec5d9333c25d9cca1d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a02923caa95013ec5d9333c25d9cca1d6">basic::__clearScreen</a> ()</td></tr>
+<tr class="memdesc:a02923caa95013ec5d9333c25d9cca1d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the entire text mode screen and resets the cursor to (0,0).  <br /></td></tr>
+<tr class="separator:a02923caa95013ec5d9333c25d9cca1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b31902bf2cff8ff28405aa57d9f4575" id="r_a4b31902bf2cff8ff28405aa57d9f4575"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a4b31902bf2cff8ff28405aa57d9f4575">basic::disable_cursor</a> ()</td></tr>
+<tr class="memdesc:a4b31902bf2cff8ff28405aa57d9f4575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the text mode cursor.  <br /></td></tr>
+<tr class="separator:a4b31902bf2cff8ff28405aa57d9f4575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeacdadb7f1bb76f1452689d0e5cd4dad" id="r_aeacdadb7f1bb76f1452689d0e5cd4dad"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#aeacdadb7f1bb76f1452689d0e5cd4dad">basic::doubleToString</a> (double d, char *buffer, int precision)</td></tr>
+<tr class="memdesc:aeacdadb7f1bb76f1452689d0e5cd4dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a double-precision floating point number to a string.  <br /></td></tr>
+<tr class="separator:aeacdadb7f1bb76f1452689d0e5cd4dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca6648639f335b207c748074dcf9f25" id="r_a8ca6648639f335b207c748074dcf9f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a8ca6648639f335b207c748074dcf9f25">basic::enable_cursor</a> (uint8_t cursor_start, uint8_t cursor_end)</td></tr>
+<tr class="memdesc:a8ca6648639f335b207c748074dcf9f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the text mode cursor and sets its shape.  <br /></td></tr>
+<tr class="separator:a8ca6648639f335b207c748074dcf9f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7de4c6aa018e049aa8992b037cc052a" id="r_aa7de4c6aa018e049aa8992b037cc052a"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#aa7de4c6aa018e049aa8992b037cc052a">basic::power</a> (double <a class="el" href="../../d1/dc1/a00092.html#ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</a>, int exp)</td></tr>
+<tr class="memdesc:aa7de4c6aa018e049aa8992b037cc052a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the power of a number.  <br /></td></tr>
+<tr class="separator:aa7de4c6aa018e049aa8992b037cc052a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0041ad59dbbae5bc9adbb8ab784499" id="r_a3d0041ad59dbbae5bc9adbb8ab784499"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a3d0041ad59dbbae5bc9adbb8ab784499">basic::printCharStr</a> (const char *str)</td></tr>
+<tr class="memdesc:a3d0041ad59dbbae5bc9adbb8ab784499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal function to print a null-terminated string to video memory.  <br /></td></tr>
+<tr class="separator:a3d0041ad59dbbae5bc9adbb8ab784499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ee52b918a784ff0e96e7c8917a91d9" id="r_a45ee52b918a784ff0e96e7c8917a91d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a45ee52b918a784ff0e96e7c8917a91d9">basic::printf</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a45ee52b918a784ff0e96e7c8917a91d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A custom implementation of the standard printf function for writing to VGA text mode memory.  <br /></td></tr>
+<tr class="separator:a45ee52b918a784ff0e96e7c8917a91d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ecbf4c8112c602ba65a689ebe5014f8" id="r_a5ecbf4c8112c602ba65a689ebe5014f8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a5ecbf4c8112c602ba65a689ebe5014f8">basic::printHex</a> (uintptr_t n, int digits)</td></tr>
+<tr class="memdesc:a5ecbf4c8112c602ba65a689ebe5014f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a hexadecimal number with leading zeros.  <br /></td></tr>
+<tr class="separator:a5ecbf4c8112c602ba65a689ebe5014f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cfc2f6949fb98dfc419f9fd19f95982" id="r_a6cfc2f6949fb98dfc419f9fd19f95982"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a6cfc2f6949fb98dfc419f9fd19f95982">basic::reverse</a> (char *str, int length)</td></tr>
+<tr class="memdesc:a6cfc2f6949fb98dfc419f9fd19f95982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses a string in place.  <br /></td></tr>
+<tr class="separator:a6cfc2f6949fb98dfc419f9fd19f95982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a72638a4a04f5706b7f9b217359ecf" id="r_a84a72638a4a04f5706b7f9b217359ecf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a84a72638a4a04f5706b7f9b217359ecf">basic::ullToString</a> (unsigned long long n, char *buffer, int <a class="el" href="../../d1/dc1/a00092.html#ad516e6ff5b7dd7f6ce2946c527ddb8b9">base</a>, int is_signed, int uppercase)</td></tr>
+<tr class="memdesc:a84a72638a4a04f5706b7f9b217359ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an unsigned long long integer to a string.  <br /></td></tr>
+<tr class="separator:a84a72638a4a04f5706b7f9b217359ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1f0f838e646660db6d9284725c2b4c" id="r_a9d1f0f838e646660db6d9284725c2b4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a9d1f0f838e646660db6d9284725c2b4c">basic::update_cursor</a> (int x, int y)</td></tr>
+<tr class="memdesc:a9d1f0f838e646660db6d9284725c2b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the position of the text mode cursor.  <br /></td></tr>
+<tr class="separator:a9d1f0f838e646660db6d9284725c2b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae562e5f327151ca6743dbbb4137c0525" id="r_ae562e5f327151ca6743dbbb4137c0525"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#ae562e5f327151ca6743dbbb4137c0525">basic::cursor_x_</a> = 0</td></tr>
+<tr class="separator:ae562e5f327151ca6743dbbb4137c0525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b44be0fd742e77d6658d79e81d5f02" id="r_aa7b44be0fd742e77d6658d79e81d5f02"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#aa7b44be0fd742e77d6658d79e81d5f02">basic::cursor_y_</a> = 0</td></tr>
+<tr class="separator:aa7b44be0fd742e77d6658d79e81d5f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aac51e0a415ce34f927f9d9cf1bd707" id="r_a4aac51e0a415ce34f927f9d9cf1bd707"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/d49/a00979.html">hardware_communication::Port8Bit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a4aac51e0a415ce34f927f9d9cf1bd707">basic::vgaDataPort</a> (0x3D5)</td></tr>
+<tr class="separator:a4aac51e0a415ce34f927f9d9cf1bd707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df12d53eb327f5085ac6d4dfeb3a0ef" id="r_a1df12d53eb327f5085ac6d4dfeb3a0ef"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/d49/a00979.html">hardware_communication::Port8Bit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/a00096.html#a1df12d53eb327f5085ac6d4dfeb3a0ef">basic::vgaIndexPort</a> (0x3D4)</td></tr>
+<tr class="separator:a1df12d53eb327f5085ac6d4dfeb3a0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a887422301cbe9a94f8b96263415640cf" name="a887422301cbe9a94f8b96263415640cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a887422301cbe9a94f8b96263415640cf">&#9670;&#160;</a></span>MAGIC_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIC_HEIGHT&#160;&#160;&#160;25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d41/a00038_source.html#l00010">10</a> of file <a class="el" href="../../d8/d41/a00038_source.html">kiostream.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5be9493285a1f50a67d98b887537217d" name="a5be9493285a1f50a67d98b887537217d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be9493285a1f50a67d98b887537217d">&#9670;&#160;</a></span>MAGIC_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIC_WIDTH&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d41/a00038_source.html#l00009">9</a> of file <a class="el" href="../../d8/d41/a00038_source.html">kiostream.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a49426d7a9b562958ad2ab7fbf134f368" name="a49426d7a9b562958ad2ab7fbf134f368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49426d7a9b562958ad2ab7fbf134f368">&#9670;&#160;</a></span>TAB_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TAB_WIDTH&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d41/a00038_source.html#l00011">11</a> of file <a class="el" href="../../d8/d41/a00038_source.html">kiostream.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_7e882cf9a616ed6c5e9969aa375b621d.html">libk_header</a></li><li class="navelem"><a class="el" href="../../dir_34d45cb43cfea5813562be995e166360.html">basic</a></li><li class="navelem"><a class="el" href="../../d8/d41/a00038.html">kmemory.hpp</a></li>
-    <li class="footer">Generated on Fri Oct 24 2025 11:17:43 for OSOS - Documentation by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="../../dir_e7cd60a87ed7e48aa040ec42e948de58.html">OSOS</a></li><li class="navelem"><a class="el" href="../../dir_267305fd0cd91744e53e95a33bbf4449.html">libk_src</a></li><li class="navelem"><a class="el" href="../../dir_f1daeb3a5efd11763b002b7c8c80cbc4.html">basic</a></li><li class="navelem"><a class="el" href="../../d8/d41/a00038.html">kiostream.cpp</a></li>
+    <li class="footer">Generated on Wed Oct 29 2025 19:58:33 for OSOS Dev by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
