@@ -1,6 +1,6 @@
 # Welcome to Building_own_OS
 
-## You will find detailed README in specific directory 
+## You will find detailed README in specific directory
 e.g) README for OSOS is in OSOS directory, README for cross-compiler is in cross-compiler directory
 
 ## You are Strongly Requested to checkout [`./OSOS/README.md`](https://github.com/shreekar2005/Building_own_OS/tree/main/OSOS#osos) :)
@@ -9,10 +9,11 @@ In this repo you will find src code for completely new operating system called "
 I am in learning phase also so there may be subprojects like baby_OSOS, busybox_linux, etc.
 
 ### Currently this Repository is divided as follows
-1. `OSOS` : actuall OS to work on. It's major portion will be written in C++. OSOS will be 32bit OS
-2. `cross-compiler` : You will need to build cross compiler in order to build OSOS
-3. `baby_OSOS` : for understanding how kernel loads in memory. In baby_OSOS we are loading bootloader in memory and then loading kernel from bootloder (with pure x86 assembly)
-4. `busybox_linux` : minimal linux based OS, which have many bash commands also (working). This is for understand how to build linux kernel
+1.  `OSOS` : actuall OS to work on. It's major portion will be written in C++. OSOS will be 32bit OS
+2.  `cross-compiler` : You will need to build cross compiler in order to build OSOS
+3.  `baby_OSOS` : for understanding how kernel loads in memory. In baby_OSOS we are loading bootloader in memory and then loading kernel from bootloder (with pure x86 assembly)
+4.  `busybox_linux` : minimal linux based OS, which have many bash commands also (working). This is for understand how to build linux kernel
+5.  `manuals` : This directory contains the official Intel® Software Developer's Manuals (SDM), which are the definitive reference for x86 OS development.
 
 ### Reference for learning : https://wiki.osdev.org/Expanded_Main_Page
 
