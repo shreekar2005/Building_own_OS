@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['kernel_5fcs_0',['kernel_cs',['../d3/d8f/a06534.html#ac0d62fdac478ea7d8331ad422914b3cc',1,'essential::GDT_Manager::kernel_CS'],['../d2/d44/a05675.html#aeaae7f1943db2e30f88a0dd0d18680e1',1,'kernel_CS:&#160;kgdt.hpp']]],
-  ['kernel_5fds_1',['kernel_ds',['../d3/d8f/a06534.html#a5c682545ec00c43cfe67ad20196c8fb0',1,'essential::GDT_Manager::kernel_DS'],['../d2/d44/a05675.html#a3e8473e2d176d865dad7acc08691ed23',1,'kernel_DS:&#160;kgdt.hpp']]],
-  ['kernelcodesegmentselector_2',['kernelcodesegmentselector',['../db/db0/a06546.html#add026bf0380b0386a9e3601f8be7f5e2',1,'hardware_communication::IDT_Row::kernelCodeSegmentSelector'],['../db/dbf/a05657.html#acca378f87bf61c0de2befa4244846bfe',1,'kernelCodeSegmentSelector:&#160;kinterrupt.hpp']]],
-  ['keyboardeventhandler_3',['keyboardEventHandler',['../dc/d82/a06518.html#a11ec84b7abf113ec270f124564776e1f',1,'driver::KeyboardDriver']]]
+  ['installed_5finterrupt_5fmanager_0',['installed_interrupt_manager',['../db/d78/a09305.html#a3177271af6bf4efd5950b23eba735372',1,'kinterrupt.cpp']]],
+  ['intenableport_1',['intEnablePort',['../de/db2/a10223.html#a47d6d6af3c4074873a59dd82e18cfedc',1,'driver::SerialDriver']]],
+  ['interfaceid_2',['interfaceId',['../d1/dd3/a10251.html#a40aef755e64abb912c480142443461d7',1,'hardware_communication::PCI_DeviceDescriptor']]],
+  ['interrupt_3',['interrupt',['../d1/dd3/a10251.html#ad2b77550b237a1d9a4665601427da19f',1,'hardware_communication::PCI_DeviceDescriptor']]],
+  ['interrupt_5fmanager_4',['interrupt_manager',['../dd/d7a/a10239.html#ae86f4eae0ce9272b2027d44bdfd71e33',1,'hardware_communication::InterruptHandler']]],
+  ['interruptdescriptortable_5',['interruptDescriptorTable',['../db/d9b/a10247.html#af678e57f417929133cf20579898929a8',1,'hardware_communication::InterruptManager']]],
+  ['interruptnumber_6',['interruptNumber',['../dd/d7a/a10239.html#afeede822d3e98957e76e627a54ec2f7a',1,'hardware_communication::InterruptHandler']]]
 ];

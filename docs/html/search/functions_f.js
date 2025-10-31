@@ -1,23 +1,8 @@
 var searchData=
 [
-  ['_7edriver_0',['~Driver',['../dc/dc0/a06506.html#ac7645eea8d3ce2bc39ddbda5e840297a',1,'driver::Driver']]],
-  ['_7edrivermanager_1',['~DriverManager',['../d5/d44/a06510.html#ae4dec72dfff075ed524e25e4baaf0385',1,'driver::DriverManager']]],
-  ['_7egdt_5fmanager_2',['~gdt_manager',['../d3/d8f/a06534.html#ab0fb218f4d5871f185d4acf5432e3e2a',1,'essential::GDT_Manager::~GDT_Manager()'],['../d2/d44/a05675.html#ab811be3c4548b496014638baf9274134',1,'~GDT_Manager():&#160;kgdt.hpp']]],
-  ['_7egdt_5frow_3',['~gdt_row',['../d9/d07/a06530.html#a02fc33f86cb5e47628f3029f107e9008',1,'essential::GDT_Row::~GDT_Row()'],['../d2/d44/a05675.html#ad93710bf7c9cbb3ae688f168608c406f',1,'~GDT_Row():&#160;kgdt.hpp']]],
-  ['_7eidt_5frow_4',['~idt_row',['../db/dbf/a05657.html#af52ef1538ab7549c816752a65748cdfc',1,'~IDT_Row():&#160;kinterrupt.hpp'],['../db/db0/a06546.html#a9c02a7a81e8bde8ea0f50ff106a95b17',1,'hardware_communication::IDT_Row::~IDT_Row()']]],
-  ['_7einterrupthandler_5',['~InterruptHandler',['../d6/d95/a06542.html#a12b87c89015a61b702184070354e7876',1,'hardware_communication::InterruptHandler']]],
-  ['_7einterruptmanager_6',['~InterruptManager',['../d1/df9/a06550.html#a91bd23784e8ca1fa3d4123051c107319',1,'hardware_communication::InterruptManager']]],
-  ['_7ekeyboarddriver_7',['~KeyboardDriver',['../dc/d82/a06518.html#ad6d861600fa8b332d42b0b3f96904329',1,'driver::KeyboardDriver']]],
-  ['_7ekeyboardeventhandler_8',['~KeyboardEventHandler',['../d8/d63/a06514.html#ad52b0b5f344416c5e4ea01a4eed48746',1,'driver::KeyboardEventHandler']]],
-  ['_7ekeyboardeventhandler_5ffor_5fkernel_9',['~KeyboardEventHandler_for_kernel',['../d4/da8/a06498.html#ab2b7f34603d9cdd36554a4f7f6dde585',1,'KeyboardEventHandler_for_kernel']]],
-  ['_7emousedriver_10',['~MouseDriver',['../d4/d0a/a06526.html#a6a5552a02e011b343fa8b41928f22741',1,'driver::MouseDriver']]],
-  ['_7emouseeventhandler_11',['~MouseEventHandler',['../db/dc5/a06522.html#a5fd77fcf955282a5a8a14ce37c0cddbb',1,'driver::MouseEventHandler']]],
-  ['_7emouseeventhandler_5ffor_5fkernel_12',['~MouseEventHandler_for_kernel',['../d5/df5/a06502.html#aa96e9bf8dce2b60b7f86577c3a74455d',1,'MouseEventHandler_for_kernel']]],
-  ['_7epci_5fcontroller_13',['~PCI_Controller',['../d4/d30/a06558.html#a3ee06d7487fe4ff999d2176786c2e743',1,'hardware_communication::PCI_Controller']]],
-  ['_7epci_5fdevicedescriptor_14',['~PCI_DeviceDescriptor',['../de/d9f/a06554.html#a7d58a16cccfab8c55edb49943bad31a3',1,'hardware_communication::PCI_DeviceDescriptor']]],
-  ['_7eport_15',['~Port',['../db/de2/a06562.html#a8b13c33da4911afcbdcb21c97768a72e',1,'hardware_communication::Port']]],
-  ['_7eport16bit_16',['~Port16Bit',['../d1/d31/a06574.html#a78dfa215194c676583e1b7e2dab38608',1,'hardware_communication::Port16Bit']]],
-  ['_7eport32bit_17',['~Port32Bit',['../dd/d05/a06578.html#a3e87dc7d610b279e8e7e072a0d1ee78c',1,'hardware_communication::Port32Bit']]],
-  ['_7eport8bit_18',['~Port8Bit',['../de/d3f/a06566.html#a475bc218672c5743a9f8425cc84eb630',1,'hardware_communication::Port8Bit']]],
-  ['_7eport8bitslow_19',['~Port8BitSlow',['../dd/dc3/a06570.html#aa19647802064296f8bf76cc12f10d243',1,'hardware_communication::Port8BitSlow']]]
+  ['write_0',['write',['../db/d17/a10263.html#a523b6a757b27418dc015ed13e74bef60',1,'hardware_communication::Port8Bit::write()'],['../da/dd8/a10267.html#af84b15d5a205a421a9877e2341714031',1,'hardware_communication::Port8BitSlow::write()'],['../db/d7e/a10271.html#ac5a46ce99a70874a8a4fcb090eb40575',1,'hardware_communication::Port16Bit::write()'],['../d1/d80/a10275.html#a64a16fe840224ef769ab2933770d1b21',1,'hardware_communication::Port32Bit::write()']]],
+  ['write16_1',['write16',['../d6/d49/a10255.html#ac4466a0762483fd1c3ec5f2745a58386',1,'hardware_communication::PCI_Controller']]],
+  ['write32_2',['write32',['../d6/d49/a10255.html#a2f72611558fb7dcc7971e748058832d8',1,'hardware_communication::PCI_Controller']]],
+  ['write8_3',['write8',['../d6/d49/a10255.html#a1bbd1027e1d181bb2eb280070e3d1831',1,'hardware_communication::PCI_Controller']]],
+  ['write_5fserial_5fchar_4',['write_serial_char',['../dc/dd6/a09360.html#adef8a5b5400c388c29477d74db094cf3',1,'basic']]]
 ];

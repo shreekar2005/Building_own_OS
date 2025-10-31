@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['ulltostring_0',['ullToString',['../d3/ddb/a05679.html#a84a72638a4a04f5706b7f9b217359ecf',1,'basic']]],
-  ['update_5fcursor_1',['update_cursor',['../d3/ddb/a05679.html#a9d1f0f838e646660db6d9284725c2b4c',1,'basic']]],
-  ['user_5fcs_5fselector_2',['user_cs_selector',['../d3/d8f/a06534.html#a3cd677f5ce4878f9c0ebb06fe3335843',1,'essential::GDT_Manager::user_CS_selector()'],['../d2/d44/a05675.html#a6ef65886fcf664d696b4361309452c2c',1,'user_CS_selector():&#160;kgdt.hpp']]],
-  ['user_5fds_5fselector_3',['user_ds_selector',['../d3/d8f/a06534.html#a7f7ac69330ee9fa3cfc1841932cf5f55',1,'essential::GDT_Manager::user_DS_selector()'],['../d2/d44/a05675.html#a95dcc3ea7fb0310df8f2ab457deca483',1,'user_DS_selector():&#160;kgdt.hpp']]]
+  ['scanbus_0',['scanBus',['../d6/d49/a10255.html#a78f739f356bf6b7d240825f260eb7fca',1,'hardware_communication::PCI_Controller']]],
+  ['selectdrivers_1',['selectDrivers',['../d6/d49/a10255.html#a0ebde52bf683c26d5581009b9d772938',1,'hardware_communication::PCI_Controller']]],
+  ['serialdriver_2',['SerialDriver',['../de/db2/a10223.html#a308be05a603ae5e360244267d2e97fdd',1,'driver::SerialDriver']]],
+  ['serialeventhandler_3',['SerialEventHandler',['../dc/de0/a10219.html#a6c1053f71267a6d1fe167a53b8a8c3dd',1,'driver::SerialEventHandler']]],
+  ['serialeventhandler_5ffor_5fkernel_4',['SerialEventHandler_for_kernel',['../dd/d4e/a10191.html#a4e7ba3312ad2618afe1b7dd22e477644',1,'SerialEventHandler_for_kernel']]],
+  ['setidtentry_5',['setIDTEntry',['../db/d9b/a10247.html#aafee62e0a8417524d4e23e2d497d77b0',1,'hardware_communication::InterruptManager']]]
 ];

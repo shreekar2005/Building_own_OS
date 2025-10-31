@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['installed_5finterrupt_5fmanager_0',['installed_interrupt_manager',['../d6/df7/a05630.html#a3177271af6bf4efd5950b23eba735372',1,'kinterrupt.cpp']]],
-  ['interfaceid_1',['interfaceId',['../de/d9f/a06554.html#a40aef755e64abb912c480142443461d7',1,'hardware_communication::PCI_DeviceDescriptor']]],
-  ['interrupt_2',['interrupt',['../de/d9f/a06554.html#a3da32cfbad0dc3c648e7326dc96788bd',1,'hardware_communication::PCI_DeviceDescriptor']]],
-  ['interrupt_5fmanager_3',['interrupt_manager',['../d6/d95/a06542.html#ae86f4eae0ce9272b2027d44bdfd71e33',1,'hardware_communication::InterruptHandler']]],
-  ['interruptdescriptortable_4',['interruptDescriptorTable',['../d1/df9/a06550.html#af678e57f417929133cf20579898929a8',1,'hardware_communication::InterruptManager']]],
-  ['interruptnumber_5',['interruptNumber',['../d6/d95/a06542.html#afeede822d3e98957e76e627a54ec2f7a',1,'hardware_communication::InterruptHandler']]]
+  ['handleraddresshighbits_0',['handleraddresshighbits',['../d9/d35/a10243.html#acd1dabcd4d6eabe836b20b6161d8463b',1,'hardware_communication::IDT_Row::handlerAddressHighbits'],['../dc/d0e/a09335.html#a7884c02f32fe35058379ebdc96c5767c',1,'handlerAddressHighbits:&#160;kinterrupt.hpp']]],
+  ['handleraddresslowbits_1',['handleraddresslowbits',['../d9/d35/a10243.html#a7fe1a8c5aa477d03c01275bc8ce762e6',1,'hardware_communication::IDT_Row::handlerAddressLowbits'],['../dc/d0e/a09335.html#adf5df650f7c6f6e7792d97ee2b851265',1,'handlerAddressLowbits:&#160;kinterrupt.hpp']]],
+  ['handlers_2',['handlers',['../db/d9b/a10247.html#ac8aba191e612ad605b8b188f78e65d3b',1,'hardware_communication::InterruptManager']]],
+  ['headertype_3',['headerType',['../d1/dd3/a10251.html#a4b95645003dcb8c06e1646904e73a496',1,'hardware_communication::PCI_DeviceDescriptor']]]
 ];

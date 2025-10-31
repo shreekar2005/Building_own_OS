@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['user_5fcs_0',['user_cs',['../d3/d8f/a06534.html#a6d59268a0e9d66206896d865612e9740',1,'essential::GDT_Manager::user_CS'],['../d2/d44/a05675.html#a4dd5e213df2a9b2ad66c49c23a14fdc5',1,'user_CS:&#160;kgdt.hpp']]],
-  ['user_5fds_1',['user_ds',['../d3/d8f/a06534.html#a6d00b87ca97dfbcc13ba6775499f54ee',1,'essential::GDT_Manager::user_DS'],['../d2/d44/a05675.html#af40b8eb1a5b52ab270a63992a3548408',1,'user_DS:&#160;kgdt.hpp']]]
+  ['shift_5fpressed_0',['shift_pressed',['../db/dd0/a10207.html#afba07c783deebfb275c1437f7c23601d',1,'driver::KeyboardDriver']]],
+  ['subclassid_1',['subclassId',['../d1/dd3/a10251.html#aab6f4d0868ad0278d4094f49026b7cdb',1,'hardware_communication::PCI_DeviceDescriptor']]]
 ];

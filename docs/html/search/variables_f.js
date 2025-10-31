@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['reserved_0',['reserved',['../db/db0/a06546.html#ab333f7e129427d5553a8dc010fbbeb0b',1,'hardware_communication::IDT_Row::reserved'],['../db/dbf/a05657.html#acb7bc06bed6f6408d719334fc41698c7',1,'reserved:&#160;kinterrupt.hpp']]],
-  ['revision_1',['revision',['../de/d9f/a06554.html#a47709787dd44be45e9b622dbea4c17f0',1,'hardware_communication::PCI_DeviceDescriptor']]]
+  ['picmastercommand_0',['picMasterCommand',['../db/d9b/a10247.html#af9c77ff57e676fc39052e236f9db2cf9',1,'hardware_communication::InterruptManager']]],
+  ['picmasterdata_1',['picMasterData',['../db/d9b/a10247.html#a89b97f27237779fb165d82988d85465a',1,'hardware_communication::InterruptManager']]],
+  ['picslavecommand_2',['picSlaveCommand',['../db/d9b/a10247.html#abeacc2cde573d48e1a1d69529588748b',1,'hardware_communication::InterruptManager']]],
+  ['picslavedata_3',['picSlaveData',['../db/d9b/a10247.html#a4c73820e65ebf60fa4bdd38ac747b0bd',1,'hardware_communication::InterruptManager']]],
+  ['portnumber_4',['portnumber',['../d1/d6f/a10259.html#aab0c5c82b0190df88ddbb595bfac539a',1,'hardware_communication::Port']]]
 ];

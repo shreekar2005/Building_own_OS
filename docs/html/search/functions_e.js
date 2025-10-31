@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['write_0',['write',['../d4/d30/a06558.html#a771c1c2b5edd953a2a6a751873176597',1,'hardware_communication::PCI_Controller::write()'],['../de/d3f/a06566.html#a523b6a757b27418dc015ed13e74bef60',1,'hardware_communication::Port8Bit::write()'],['../dd/dc3/a06570.html#af84b15d5a205a421a9877e2341714031',1,'hardware_communication::Port8BitSlow::write()'],['../d1/d31/a06574.html#ac5a46ce99a70874a8a4fcb090eb40575',1,'hardware_communication::Port16Bit::write()'],['../dd/d05/a06578.html#a64a16fe840224ef769ab2933770d1b21',1,'hardware_communication::Port32Bit::write()']]]
+  ['ulltostring_0',['ullToString',['../dc/dd6/a09360.html#a84a72638a4a04f5706b7f9b217359ecf',1,'basic']]],
+  ['update_5fcursor_1',['update_cursor',['../dc/dd6/a09360.html#a9d1f0f838e646660db6d9284725c2b4c',1,'basic']]],
+  ['user_5fcs_5fselector_2',['user_cs_selector',['../d1/db9/a10231.html#a3cd677f5ce4878f9c0ebb06fe3335843',1,'essential::GDT_Manager::user_CS_selector()'],['../dc/d11/a09356.html#a6ef65886fcf664d696b4361309452c2c',1,'user_CS_selector():&#160;kgdt.hpp']]],
+  ['user_5fds_5fselector_3',['user_ds_selector',['../d1/db9/a10231.html#a7f7ac69330ee9fa3cfc1841932cf5f55',1,'essential::GDT_Manager::user_DS_selector()'],['../dc/d11/a09356.html#a95dcc3ea7fb0310df8f2ab457deca483',1,'user_DS_selector():&#160;kgdt.hpp']]]
 ];

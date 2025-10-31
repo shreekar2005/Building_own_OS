@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['waiting_5ffor_5fled_5fack_0',['waiting_for_led_ack',['../dc/d82/a06518.html#a703464394033a8f4f664d9289ae2e9f8',1,'driver::KeyboardDriver']]],
-  ['write_1',['write',['../d4/d30/a06558.html#a771c1c2b5edd953a2a6a751873176597',1,'hardware_communication::PCI_Controller::write()'],['../de/d3f/a06566.html#a523b6a757b27418dc015ed13e74bef60',1,'hardware_communication::Port8Bit::write()'],['../dd/dc3/a06570.html#af84b15d5a205a421a9877e2341714031',1,'hardware_communication::Port8BitSlow::write()'],['../d1/d31/a06574.html#ac5a46ce99a70874a8a4fcb090eb40575',1,'hardware_communication::Port16Bit::write()'],['../dd/d05/a06578.html#a64a16fe840224ef769ab2933770d1b21',1,'hardware_communication::Port32Bit::write()']]]
+  ['waiting_5ffor_5fled_5fack_0',['waiting_for_led_ack',['../db/dd0/a10207.html#a703464394033a8f4f664d9289ae2e9f8',1,'driver::KeyboardDriver']]],
+  ['write_1',['write',['../db/d17/a10263.html#a523b6a757b27418dc015ed13e74bef60',1,'hardware_communication::Port8Bit::write()'],['../da/dd8/a10267.html#af84b15d5a205a421a9877e2341714031',1,'hardware_communication::Port8BitSlow::write()'],['../db/d7e/a10271.html#ac5a46ce99a70874a8a4fcb090eb40575',1,'hardware_communication::Port16Bit::write()'],['../d1/d80/a10275.html#a64a16fe840224ef769ab2933770d1b21',1,'hardware_communication::Port32Bit::write()']]],
+  ['write16_2',['write16',['../d6/d49/a10255.html#ac4466a0762483fd1c3ec5f2745a58386',1,'hardware_communication::PCI_Controller']]],
+  ['write32_3',['write32',['../d6/d49/a10255.html#a2f72611558fb7dcc7971e748058832d8',1,'hardware_communication::PCI_Controller']]],
+  ['write8_4',['write8',['../d6/d49/a10255.html#a1bbd1027e1d181bb2eb280070e3d1831',1,'hardware_communication::PCI_Controller']]],
+  ['write_5fserial_5fchar_5',['write_serial_char',['../dc/dd6/a09360.html#adef8a5b5400c388c29477d74db094cf3',1,'basic']]]
 ];

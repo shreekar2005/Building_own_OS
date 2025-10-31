@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['nullsegment_0',['nullsegment',['../d3/d8f/a06534.html#a26909fe5dcab0bdc7ddf7c3678f3ae48',1,'essential::GDT_Manager::nullSegment'],['../d2/d44/a05675.html#aef2b82bef7fb75f5b80455fcd69be4ed',1,'nullSegment:&#160;kgdt.hpp']]],
-  ['numdrivers_1',['numDrivers',['../d5/d44/a06510.html#a347286da44d912bba3f720d8b0600946',1,'driver::DriverManager']]]
+  ['m_5fbuffer_5findex_0',['m_buffer_index',['../dd/dcb/a10179.html#a974cc2f880aea5fe72964caa33a64708',1,'KernelShell']]],
+  ['m_5fline_5fbuffer_1',['m_line_buffer',['../dd/dcb/a10179.html#ab7bdf300a5afa6e6d2572bb0a0852b4c',1,'KernelShell']]],
+  ['m_5fshell_2',['m_shell',['../d0/deb/a10183.html#a0acad34e831f29b886403165ba7deaa1',1,'KeyboardEventHandler_for_kernel::m_shell'],['../dd/d4e/a10191.html#acfccded977b423ac83b947c66010c6f8',1,'SerialEventHandler_for_kernel::m_shell']]],
+  ['modemcontrolport_3',['modemControlPort',['../de/db2/a10223.html#a8cbc246517425bb7b37356ca0c03459b',1,'driver::SerialDriver']]],
+  ['mouseeventhandler_4',['mouseEventHandler',['../db/d6a/a10215.html#a804f5657a062e0a18f3b56781f884c66',1,'driver::MouseDriver']]]
 ];
