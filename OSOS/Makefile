@@ -51,12 +51,17 @@ GDB			:= osos-gdb
 # -g is for adding debugging symbols
 
 # Default target when you just type 'make'. It starts qemu virtual machine
+qemu: qemu_elf
 qemu_elf: elf 
 	$(QEMU) -kernel $(TARGET_ELF) -m 4096
 
 # Boot from ISO file
 qemu_iso: iso
 	$(QEMU) -cdrom $(TARGET_ISO) -m 4096
+
+qemu_nographic: elf
+	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -serial stdio
+
 
 # Rule to create the kernel ELF.
 elf: $(TARGET_ELF)

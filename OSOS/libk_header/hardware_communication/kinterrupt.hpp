@@ -14,6 +14,7 @@ extern "C"
     void handleIRQ0x00(); // Timer
     void handleIRQ0x01(); // Keyboard
     void handleIRQ0x0C(); // PS/2 Mouse 
+    void handleIRQ0x04(); // Serial IO (COM1)
 }
 
 namespace hardware_communication

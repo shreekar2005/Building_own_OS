@@ -75,6 +75,7 @@ InterruptManager::InterruptManager(essential::GDT_Manager* gdt)
     setIDTEntry(0x20, kernelCSselectorOffset, &handleIRQ0x00, 0, IDT_INTERRUPT_GATE); // Timer
     setIDTEntry(0x21, kernelCSselectorOffset, &handleIRQ0x01, 0, IDT_INTERRUPT_GATE); // Keyboard
     setIDTEntry(0x2C, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // PS/2 Mouse
+    setIDTEntry(0x24, kernelCSselectorOffset, &handleIRQ0x04, 0, IDT_INTERRUPT_GATE); // Serial (COM1)
 }
 
 /// @brief Destroys the InterruptManager object.

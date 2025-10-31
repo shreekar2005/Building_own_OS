@@ -5,6 +5,7 @@
         "cpp": "make clear && make qemu_elf"
     },
     "files.associations": {
-        "cstdint": "cpp"
+        "cstdint": "cpp",
+        "cstdarg": "cpp"
     }
 }

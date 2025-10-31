@@ -1,5 +1,9 @@
 #include "basic/kiostream.hpp"
 #include "driver/kmouse.hpp"
+
+// We need to bring in the Port8Bit class for the serial port
+using hardware_communication::Port8Bit;
+
 namespace basic
 { // namespace basic start
 
@@ -10,8 +14,32 @@ static int cursor_y_ = 0;
 #define MAGIC_HEIGHT 25
 #define TAB_WIDTH 4 
 
-static hardware_communication::Port8Bit vgaIndexPort(0x3D4);
-static hardware_communication::Port8Bit vgaDataPort(0x3D5);
+static Port8Bit vgaIndexPort(0x3D4);
+static Port8Bit vgaDataPort(0x3D5);
+
+
+/// @brief Checks if the serial port's transmit buffer is empty (COM1).
+static bool is_serial_ready()
+{
+    // Formula: Check 6th bit (0x20) of Line Status Port (0x3FD)
+    Port8Bit lineStatusPort(0x3FD);
+    return (lineStatusPort.read() & 0x20); // 0x20 = (1 << 5)
+}
+
+/// @brief Writes a single character to the COM1 serial port.
+static void write_serial_char(char c)
+{
+    Port8Bit dataPort(0x3F8); // COM1 Data Port
+    
+    // Handle newline: serial port needs CRLF (\r\n)
+    if (c == '\n') {
+        while (is_serial_ready() == 0); // Wait for port to be ready
+        dataPort.write((uint8_t)'\r'); // Send carriage return
+    }
+    
+    while (is_serial_ready() == 0); // Wait for port to be ready
+    dataPort.write((uint8_t)c);    // Send the character
+}
 
 
 /// @brief Enables the text mode cursor and sets its shape.
@@ -48,7 +76,7 @@ void disable_cursor()
 }
 
 
-/// @brief Internal function to print a null-terminated string to video memory.
+/// @brief Internal function to print a null-terminated string to video memory AND serial.
 /// @param str The string to print.
 static void printCharStr(const char *str)
 {
@@ -63,6 +91,13 @@ static void printCharStr(const char *str)
 
     for (int i = 0; str[i] != '\0'; i++)
     {
+        // --- THIS IS THE ONLY LINE WE ADDED ---
+        // ---   Send the character to the serial port first ---
+        write_serial_char(str[i]);
+        // ---   End of added line   ---
+
+
+        // --- Existing VGA Logic ---
         if (str[i] == '\n')
         {
             cursor_y_++;
@@ -128,7 +163,7 @@ static void printCharStr(const char *str)
 }
 
 /// @brief Clears the entire text mode screen and resets the cursor to (0,0).
-void __clearScreen()
+void clearScreen()
 {
     unsigned short *video_memory = (unsigned short *)0xb8000;
     unsigned short blank = (0x07 << 8) | ' ';
@@ -141,6 +176,9 @@ void __clearScreen()
 
     cursor_x_ = 0;
     cursor_y_ = 0;
+
+    // Also clear the serial screen with a "form feed"
+    write_serial_char('\f');
 }
 
 /// @brief Reverses a string in place.
