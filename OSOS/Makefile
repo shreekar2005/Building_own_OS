@@ -1,6 +1,8 @@
 # Instructions to use this makefile
 # make          		: To build elf and boot with elf and qemu
 # make qemu_elf 		: To build elf and boot with elf and qemu
+# make qemu_nographic	: To build elf and boot with elf and qemu with serial IO only (attached to terminal of host machine)
+# make qemu_serial 		: To build elf and boot with elf and qemu with both serial IO and graphical mode
 # make qemu_iso 		: To build iso and boot with iso and qemu
 # make vm       		: To build iso and boot with iso and VirtualBox (read README for setting up VM)
 # make elf      		: To build elf file by compiling and linking source code
@@ -12,6 +14,7 @@
 # make dbg_start_qemu 	: To build dbg_elf and just start QEMU (can connect that from VSCode or cli GDB)
 # make dbg_cli			: To connect QEMU instance (created by `make dbg_start_qemu`) with cli GDB
 # make docs				: To update docs - OSOS documentation (which have technical details and info for project)
+
 # .PHONY is for targets that are NOT files
 .PHONY: qemu_elf qemu_iso elf vm iso clear clean debug setup dbg_elf dbg_start_qemu dbg_cli docs
 
@@ -59,9 +62,13 @@ qemu_elf: elf
 qemu_iso: iso
 	$(QEMU) -cdrom $(TARGET_ISO) -m 4096
 
-qemu_nographic: elf
+# Have both graphic and serial mode
+qemu_serial: elf
 	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -serial stdio
 
+# Have only serial mode
+qemu_nographic : elf
+	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -nographic
 
 # Rule to create the kernel ELF.
 elf: $(TARGET_ELF)

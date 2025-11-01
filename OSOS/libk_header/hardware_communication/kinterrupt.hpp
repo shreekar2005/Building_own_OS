@@ -59,6 +59,7 @@ namespace hardware_communication
 
             //handlers are actually object of corresponding drivers (e.g. keyboard-driver object which have handleInterrupt method)
             InterruptHandler* handlers[256];
+            
             void setIDTEntry(
                 uint8_t interruptNumber,
                 uint16_t codeSegmentSelectorOffset,

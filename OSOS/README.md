@@ -55,20 +55,23 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 
 ## What things are implemented in OSOS:
 
-1. Custom kernel library headers (checkout `./kernel_src/include` for headers and `./libk_src/` for their source code)
+1. Custom kernel library headers (checkout `./libk_header` for headers and `./libk_src/` for their source code)
     - basic :
-        1. **kiostream** : printf(), clearScreen(), enable/update/disable_cursor()
-        2. **kmemory** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***
+        1. **kiostream.hpp** : printf(), clearScreen(), enable/update/disable_cursor().
+        2. **kmemory.hpp** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***.
+        3. **multiboot.h** : Have structures for multiboot information that grub provides.
     - driver :
-        1. **kdriver** : Class to manage all driver
-        2. **kmouse** : Mouse driver which give Interface for mouse event handlers
-        3. **kkeyboard** : Keyboard driver which give Interface for keyboard event handlers
+        1. **kdriver.hpp** : Class to manage all driver.
+        2. **kmouse.hpp** : Mouse driver which give Interface for mouse event handlers.
+        3. **kkeyboard.hpp** : Keyboard driver which give Interface for keyboard event handlers.
+        4. **kserial.hpp** : Serial driver to handle COM1 interrupts and communicate with serial port.
     - essential :
-        1. **kgdt** : Class GDT to setup segments (even if we use paging in future, we need to setup GDT in early stage)
-        2. **kicxxabi** : __callConstructors(), __cxa_finalize()
+        1. **kgdt.hpp** : Class GDT to setup segments (even if we use paging in future, we need to setup GDT in early stage).
+        2. **kicxxabi.hpp** : __callConstructors(), __cxa_finalize() for calling global constructors and destructors.
     - hardware_communication :
-        1. **kport** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read()
-        2. **kinterrupt** : Have InterruptManager, which can manage interrupts. 
+        1. **kport.hpp** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read().
+        2. **kinterrupt.hpp** : Have InterruptManager, which can manage interrupts. 
+        3. **kpci.hpp** : Have PCI_Controller to control Peripheral Component Interconnect devices.
 
 
 2. Accessed multiboot info structure provided by grub bootloader.
@@ -81,7 +84,8 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 
 5. Can handle **Keyboard interrupts** using ISR.
 6. Can handle **Mouse interrupts** using ISR
-
+7. Can communicate with peripheral devices using **PCI_Controller**
+8. Have **KernelShell** (in kernel.cpp) that have basic commands working e.g. "help"
 ---
 ---
 
@@ -146,6 +150,23 @@ make dbg_cli
 - There are **Software Interrupts** that are recieved by CPU (e.g. divide by zero with interruptNumber = 0x00). So we should make their handlers also and keep their reference in IDT.
 - **Main Issue of PIC** : Actually PIC also recives IRQ number from 0x00 (e.g. Timer IRQnumber=0x00, Keyboard IRQnumber=0x01). So PIC just cannot forward that number to CPU because then CPU will just call same handler for 'divide by zero' and 'Timer' interrupt. So we will add some offset(0x20 for Master PIC and 0x28 for Slave PIC) such that new interrupt number of IRQ will not conflict with Software Interrupt number.
 
+### 5. How to add driver to OSOS kernel :
+- Suppose you want some `xyz` driver
+1. Write driver header in `libk_header/driver/kxyz.hpp`
+2. Write driver implementation in `libk_src/driver/kxyz.cpp`
+3. Make one `xyzEventHandler` class which will have some virtual functions e.g. onDataReceived, onClick etc. (To be overrided according to use)
+4. Make one `xyzDriver` class to add driver which will inherit `public hardware_communication::InterruptHandler, public driver::Driver` (so now you have to override their virtual functions in your xyzDriver)
+5. Add `void handleIRQ0xZZ();` line in `libk_header/hardware_communication/kinterrupt.hpp` (where you will see `extern "C"`), where "ZZ" is IRQ number for interrupt.
+6. Add `handleIRQ 0xZZ, 0xZZ` line in `libk_src/hardware_communication/kinterruptstub.s`
+7. Add `setIDTEntry(0xYY, kernelCSselectorOffset, &handleIRQ0xZZ, 0, IDT_INTERRUPT_GATE);` in constructor of `InterruptManager` that you will find in `libk_src/hardware_communication/kinterrupt.cpp`, where YY is interrupt number that CPU will see (After adding some offset like 0x20 or 0x27 to IRQ)
+8. make `xyzEventHandler_for_kernel` class in kernel.cpp where you will inherit `xyzEventHandler` and override its virtual functions.
+9. now add these lines to kernel.cpp, just before `driverManager.activateAll();`
+```cpp
+xyzEventHandler_for_kernel xyzEventHandler_for_kernel();
+driver::xyzDriver xyzdriver(&osos_InterruptManager, &xyzEventHandler_for_kernel);
+driverManager.addDriver(&xyzdriver);
+```
+- Now your driver is installed and its entry is also registered in IDT (for handling interrupt).
 ---
 ---
 

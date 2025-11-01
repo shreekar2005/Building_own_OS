@@ -1,7 +1,6 @@
 #include "hardware_communication/kpci.hpp"
 using namespace hardware_communication;
 
-// --- PCI_DeviceDescriptor ---
 
 /// @brief Constructs a new PCI_DeviceDescriptor object.
 PCI_DeviceDescriptor::PCI_DeviceDescriptor(){}
@@ -10,7 +9,6 @@ PCI_DeviceDescriptor::PCI_DeviceDescriptor(){}
 PCI_DeviceDescriptor::~PCI_DeviceDescriptor(){}
 
 
-// --- PCI_Controller ---
 
 /// @brief Constructs a new PCI_Controller, initializing the command and data ports.
 PCI_Controller::PCI_Controller() : dataPort(0xCFC), commandPort(0xCF8) {}
@@ -35,8 +33,6 @@ uint32_t PCI_Controller::getAddress(uint8_t bus, uint8_t device, uint8_t functio
          | (registerOffset & 0xFC); // Mask to get 32-bit aligned offset
 }
 
-
-// --- Safe Read/Write Functions ---
 
 /// @brief Reads a 32-bit DWORD from the PCI config space.
 uint32_t PCI_Controller::read32(uint8_t bus, uint8_t device, uint8_t function, uint8_t registerOffset)
@@ -92,17 +88,17 @@ void PCI_Controller::write16(uint8_t bus, uint8_t device, uint8_t function, uint
 {
     // This must be a Read-Modify-Write to avoid corrupting adjacent bytes.
     
-    // 1. Read the current 32-bit DWORD
+    // Read the current 32-bit DWORD
     uint32_t dword = read32(bus, device, function, registerOffset);
     
-    // 2. Modify
+    // Modify
     uint32_t shift = (8 * (registerOffset % 4)); // 0 or 16
     uint32_t mask = 0xFFFF << shift; // Mask for the 16 bits
     
     dword &= ~mask; // Clear the old 16 bits
     dword |= ((uint32_t)value << shift); // Set the new 16 bits
     
-    // 3. Write
+    // Write
     write32(bus, device, function, registerOffset, dword);
 }
 
@@ -110,24 +106,20 @@ void PCI_Controller::write16(uint8_t bus, uint8_t device, uint8_t function, uint
 /// @details Performs a read-modify-write to avoid corrupting adjacent bytes.
 void PCI_Controller::write8(uint8_t bus, uint8_t device, uint8_t function, uint8_t registerOffset, uint8_t value)
 {
-    // This must be a Read-Modify-Write.
-
-    // 1. Read
+    // Read
     uint32_t dword = read32(bus, device, function, registerOffset);
     
-    // 2. Modify
+    // Modify
     uint32_t shift = (8 * (registerOffset % 4)); // 0, 8, 16, or 24
     uint32_t mask = 0xFF << shift; // Mask for the 8 bits
     
     dword &= ~mask; // Clear the old 8 bits
     dword |= ((uint32_t)value << shift); // Set the new 8 bits
     
-    // 3. Write
+    // Write
     write32(bus, device, function, registerOffset, dword);
 }
 
-
-// --- Enumeration Functions ---
 
 /// @brief Checks if a device is a multi-function device.
 bool PCI_Controller::deviceHasFunctions(uint8_t bus, uint8_t device)
@@ -145,22 +137,18 @@ PCI_DeviceDescriptor PCI_Controller::getDeviceDescriptor(uint8_t bus, uint8_t de
     result.device =     device;
     result.function =   function;
 
-    // --- Identification ---
     result.vendorId =   read16(bus, device, function, 0x00);
     result.deviceId =   read16(bus, device, function, 0x02);
 
-    // --- Classification ---
     result.classId =        read8(bus, device, function, 0x0B);
     result.subclassId =     read8(bus, device, function, 0x0A);
     result.interfaceId =    read8(bus, device, function, 0x09);
     result.revision =       read8(bus, device, function, 0x08);
 
-    // --- Type & Interrupt ---
     result.headerType =     read8(bus, device, function, 0x0E);
     result.interrupt =      read8(bus, device, function, 0x3C);
 
-    // --- Base Address Registers (BARs) ---
-    // These are read as full 32-bit values
+    // Base Address Registers (BARs)
     result.bar0 = read32(bus, device, function, 0x10);
     result.bar1 = read32(bus, device, function, 0x14);
     result.bar2 = read32(bus, device, function, 0x18);
@@ -188,14 +176,13 @@ void PCI_Controller::scanBus(uint8_t bus, driver::DriverManager* driver_manager)
             if(dev.vendorId == 0x0000 || dev.vendorId == 0xFFFF) 
                 continue;
             
-            // 1. Process the device (print info and pass to driver manager)
             basic::printf("PCI BUS %#3x, DEVICE %#3x, FUNCTION %#3x ", bus, device, function);
             basic::printf("= VENDOR %#5hx, DEVICE %#5hx (CLASS %#3x, SUB %#3x)\n", 
                           dev.vendorId, dev.deviceId, dev.classId, dev.subclassId);
             
             // driver_manager->registerDevice(dev); // TODO: Uncomment when ready
 
-            // 2. Check if it's a PCI-to-PCI bridge
+            // Check if it's a PCI-to-PCI bridge
             // Class 0x06 = Bridge, Subclass 0x04 = PCI-to-PCI Bridge
             // We can also check (dev.headerType & 0x7F) == 0x01
             if(dev.classId == 0x06 && dev.subclassId == 0x04)
@@ -203,9 +190,8 @@ void PCI_Controller::scanBus(uint8_t bus, driver::DriverManager* driver_manager)
                 // It's a bridge. Read its secondary bus number. (Register 0x19)
                 uint8_t secondaryBus = read8(bus, (uint8_t)device, (uint8_t)function, 0x19);
                 
-                // 3. Recursively scan the bus on the other side
+                // Recursively scan the bus on the other side
                 if (secondaryBus != bus) { 
-                    // IMPORTANT: Pass the driver_manager to the recursive call
                     scanBus(secondaryBus, driver_manager); 
                 }
             }

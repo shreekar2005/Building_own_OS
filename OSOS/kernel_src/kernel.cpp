@@ -80,7 +80,7 @@ public:
             basic::printf("OSOS Kernel Shell. Type 'pci' to list devices.");
         }
         else if (command[0] == 'p' && command[1] == 'c' && command[2] == 'i' && command[3] == '\0') {
-            basic::printf("Listing PCI devices (stub)...");
+            basic::printf("Listing PCI devices (This is just fake command hehe)...");
         }
         else {
             basic::printf("Unknown command: '%s'", command);
@@ -208,50 +208,51 @@ class SerialEventHandler_for_kernel : public driver::SerialEventHandler{
 /// @param magicnumber The magic number passed by GRUB to verify boot.
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
-    essential::__callConstructors(); // calling all global constructors 
+    essential::__callConstructors(); 
     basic::enable_cursor(0,15);
     basic::clearScreen();
-    //-------------Global Descriptor Table -------------
+    basic::printf("\n");
+
     essential::GDT_Manager osos_GDT;
     osos_GDT.installTable();
-    //------------Interrupt Descriptor Table and Drivers -------------
-    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
-    osos_InterruptManager.installTable();
-    
-    // --- Create the central shell FIRST ---
+    essential::GDT_Manager::printLoadedTableHeader();
+
+    // Creating the central shell
     KernelShell shell;
 
-    //------------Creating object of drivers so that they will handle their corresponding Interrupts------------
+    
+    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
+    
+    //Creating object of drivers so that they will handle their corresponding Interrupts
     driver::DriverManager driverManager;
-
-        // --- Pass the shell to the handlers ---
+    
         KeyboardEventHandler_for_kernel keyboardEventHandler_for_kernel(&shell);
         driver::KeyboardDriver keyboard(&osos_InterruptManager,&keyboardEventHandler_for_kernel);
         driverManager.addDriver(&keyboard);
-
+        
         MouseEventHandler_for_kernel mouseEventHandler_for_kernel;
         driver::MouseDriver mouse(&osos_InterruptManager, &mouseEventHandler_for_kernel);
         driverManager.addDriver(&mouse);
-
+        
         SerialEventHandler_for_kernel serialEventHandler_for_kernel(&shell);
         driver::SerialDriver serialIO(&osos_InterruptManager, &serialEventHandler_for_kernel);
         driverManager.addDriver(&serialIO);
-
+        
         hardware_communication::PCI_Controller pciController;
         pciController.selectDrivers(&driverManager);
-
+    
     driverManager.activateAll();
-
+    
+    osos_InterruptManager.installTable();
+    hardware_communication::InterruptManager::printLoadedTableHeader();
     hardware_communication::InterruptManager::activate();
     
-    // essential::GDT_Manager::printLoadedTableHeader();
-    // hardware_communication::InterruptManager::printLoadedTableHeader();
     basic::printf("HELLO FROM OSOS :)\n");
-    basic::printf("OSOS> "); // Print the first prompt
+    basic::printf("OSOS> ");
     while (true){asm("hlt");};
-
+    
     basic::disable_cursor();
-    essential::__cxa_finalize(0); // calling all global destructors
+    essential::__cxa_finalize(0);
     (void)mbi;
     (void)magicnumber;
 }
