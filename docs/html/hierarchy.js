@@ -1,38 +1,38 @@
 var hierarchy =
 [
-    [ "driver::Driver", "d2/d4c/a28675.html", [
-      [ "driver::KeyboardDriver", "db/d5c/a28687.html", null ],
-      [ "driver::MouseDriver", "dc/d18/a28695.html", null ],
-      [ "driver::SerialDriver", "d5/d82/a28703.html", null ]
+    [ "driver::Driver", "d8/d64/a30727.html", [
+      [ "driver::KeyboardDriver", "db/d71/a30739.html", null ],
+      [ "driver::MouseDriver", "df/d95/a30747.html", null ],
+      [ "driver::SerialDriver", "d3/db8/a30755.html", null ]
     ] ],
-    [ "driver::DriverManager", "d7/d04/a28679.html", null ],
-    [ "driver::KeyboardEventHandler", "da/d77/a28683.html", [
-      [ "KeyboardEventHandler_for_kernel", "d2/dbd/a28663.html", null ]
+    [ "driver::DriverManager", "d9/d59/a30731.html", null ],
+    [ "driver::KeyboardEventHandler", "df/d65/a30735.html", [
+      [ "KeyboardEventHandler_for_kernel", "db/de8/a30715.html", null ]
     ] ],
-    [ "driver::MouseEventHandler", "df/def/a28691.html", [
-      [ "MouseEventHandler_for_kernel", "d8/df2/a28667.html", null ]
+    [ "driver::MouseEventHandler", "d5/d52/a30743.html", [
+      [ "MouseEventHandler_for_kernel", "da/d7b/a30719.html", null ]
     ] ],
-    [ "driver::SerialEventHandler", "da/d63/a28699.html", [
-      [ "SerialEventHandler_for_kernel", "de/de8/a28671.html", null ]
+    [ "driver::SerialEventHandler", "d4/d22/a30751.html", [
+      [ "SerialEventHandler_for_kernel", "d6/df8/a30723.html", null ]
     ] ],
-    [ "essential::atexit_func_entry_t", "d5/ddf/a28715.html", null ],
-    [ "essential::GDT_Manager", "d8/dd1/a28711.html", null ],
-    [ "essential::GDT_Row", "da/d68/a28707.html", null ],
-    [ "hardware_communication::IDT_Row", "dc/d41/a28723.html", null ],
-    [ "hardware_communication::InterruptHandler", "d0/d42/a28719.html", [
-      [ "driver::KeyboardDriver", "db/d5c/a28687.html", null ],
-      [ "driver::MouseDriver", "dc/d18/a28695.html", null ],
-      [ "driver::SerialDriver", "d5/d82/a28703.html", null ]
+    [ "essential::atexit_func_entry_t", "d3/dc4/a30767.html", null ],
+    [ "essential::GDT_Manager", "df/db8/a30763.html", null ],
+    [ "essential::GDT_Row", "de/dad/a30759.html", null ],
+    [ "hardware_communication::IDT_Row", "d0/d2f/a30775.html", null ],
+    [ "hardware_communication::InterruptHandler", "d6/d7e/a30771.html", [
+      [ "driver::KeyboardDriver", "db/d71/a30739.html", null ],
+      [ "driver::MouseDriver", "df/d95/a30747.html", null ],
+      [ "driver::SerialDriver", "d3/db8/a30755.html", null ]
     ] ],
-    [ "hardware_communication::InterruptManager", "de/daf/a28727.html", null ],
-    [ "hardware_communication::PCI_Controller", "d1/dc0/a28735.html", null ],
-    [ "hardware_communication::PCI_DeviceDescriptor", "d7/d9a/a28731.html", null ],
-    [ "hardware_communication::Port", "dc/da7/a28739.html", [
-      [ "hardware_communication::Port16Bit", "dc/d7f/a28751.html", null ],
-      [ "hardware_communication::Port32Bit", "dc/d82/a28755.html", null ],
-      [ "hardware_communication::Port8Bit", "d3/d30/a28743.html", [
-        [ "hardware_communication::Port8BitSlow", "d9/d39/a28747.html", null ]
+    [ "hardware_communication::InterruptManager", "da/d9d/a30779.html", null ],
+    [ "hardware_communication::PCI_Controller", "d3/db3/a30787.html", null ],
+    [ "hardware_communication::PCI_DeviceDescriptor", "dd/d44/a30783.html", null ],
+    [ "hardware_communication::Port", "d7/dc8/a30791.html", [
+      [ "hardware_communication::Port16Bit", "d8/da7/a30803.html", null ],
+      [ "hardware_communication::Port32Bit", "d0/db2/a30807.html", null ],
+      [ "hardware_communication::Port8Bit", "df/da2/a30795.html", [
+        [ "hardware_communication::Port8BitSlow", "dc/dc1/a30799.html", null ]
       ] ]
     ] ],
-    [ "KernelShell", "d7/db0/a28659.html", null ]
+    [ "KernelShell", "df/d6b/a30711.html", null ]
 ];

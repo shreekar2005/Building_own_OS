@@ -9,7 +9,7 @@
 
 namespace driver 
 {
-// Interface for handling serial port events
+/// @brief Interface for handling serial port events
 class SerialEventHandler{
     public:
         SerialEventHandler();
@@ -17,7 +17,7 @@ class SerialEventHandler{
         virtual void onDataReceived(char data)=0;
 };
 
-// Driver for the COM1 serial port (0x3F8)
+/// @brief Driver for the COM1 serial port (0x3F8)
 class SerialDriver : public hardware_communication::InterruptHandler, public driver::Driver{
 private:
     hardware_communication::Port8Bit dataPort;
