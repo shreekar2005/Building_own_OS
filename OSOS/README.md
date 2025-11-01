@@ -160,7 +160,7 @@ make dbg_cli
 6. Add `handleIRQ 0xZZ, 0xZZ` line in `libk_src/hardware_communication/kinterruptstub.s`
 7. Add `setIDTEntry(0xYY, kernelCSselectorOffset, &handleIRQ0xZZ, 0, IDT_INTERRUPT_GATE);` in constructor of `InterruptManager` that you will find in `libk_src/hardware_communication/kinterrupt.cpp`, where YY is interrupt number that CPU will see (After adding some offset like 0x20 or 0x27 to IRQ)
 8. make `xyzEventHandler_for_kernel` class in kernel.cpp where you will inherit `xyzEventHandler` and override its virtual functions.
-9. now add these lines to kernel.cpp, just before `driverManager.activateAll();`
+9. now add these lines to kernel.hpp, just before `driverManager.activateAll();`
 ```cpp
 xyzEventHandler_for_kernel xyzEventHandler_for_kernel();
 driver::xyzDriver xyzdriver(&osos_InterruptManager, &xyzEventHandler_for_kernel);
