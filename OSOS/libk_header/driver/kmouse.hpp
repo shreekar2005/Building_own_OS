@@ -4,7 +4,6 @@
 #include <cstdint>
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kport.hpp"
-#include "basic/kiostream.hpp"
 #include "driver/kdriver.hpp"
 
 #define KMOUSE_COLOR_BLACK         0x0
@@ -56,7 +55,7 @@ class MouseDriver : public hardware_communication::InterruptHandler, public driv
         /// @param current_char The original character attributes and ASCII value at the cursor position.
         /// @param mouse_pointer_color The desired background color for the mouse pointer.
         /// @return The new 16-bit video memory value representing the character with the new background color.
-        static uint16_t mouse_block_video_mem_value(uint16_t old_char_under_mouse_pointer, uint8_t mouse_pointer_color);
+        static uint16_t mouse_block_video_mem_value(uint16_t current_char, uint8_t mouse_pointer_color);
 
         /// @brief Handles the mouse interrupt (IRQ 12).
         /// @param esp The stack pointer from the interrupt context.

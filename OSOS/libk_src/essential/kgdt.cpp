@@ -1,4 +1,5 @@
 #include "essential/kgdt.hpp"
+#include "basic/kiostream.hpp"
 
 using namespace essential;
 

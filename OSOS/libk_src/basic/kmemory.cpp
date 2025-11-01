@@ -1,4 +1,6 @@
 #include "basic/kmemory.hpp"
+#include "basic/kiostream.hpp"
+
 namespace basic
 { // namespace basic start
 

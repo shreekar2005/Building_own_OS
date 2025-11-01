@@ -1,6 +1,7 @@
 #include "hardware_communication/kpci.hpp"
-using namespace hardware_communication;
+#include "basic/kiostream.hpp"
 
+using namespace hardware_communication;
 
 /// @brief Constructs a new PCI_DeviceDescriptor object.
 PCI_DeviceDescriptor::PCI_DeviceDescriptor(){}

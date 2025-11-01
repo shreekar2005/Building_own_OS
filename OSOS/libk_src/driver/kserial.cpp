@@ -33,7 +33,7 @@ uint32_t SerialDriver::handleInterrupt(uint32_t esp)
     return esp;
 }
 
-/// @brief Activates the serial driver by enabling its interrupts.
+
 void SerialDriver::activate()
 {
     intEnablePort.write(0x01); 

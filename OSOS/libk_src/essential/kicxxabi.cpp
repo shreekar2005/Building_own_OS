@@ -1,4 +1,5 @@
 #include "essential/kicxxabi.hpp"
+#include "basic/kiostream.hpp"
 
 // To call constructors of global objects
 extern "C" void (*ctors_start)();

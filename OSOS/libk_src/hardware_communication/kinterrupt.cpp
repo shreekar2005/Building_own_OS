@@ -1,4 +1,5 @@
 #include "hardware_communication/kinterrupt.hpp"
+#include "basic/kiostream.hpp"
 
 using namespace hardware_communication;
 

@@ -2,7 +2,6 @@
 #define _OSOS_ESSENTIAL_GDT_H
 
 #include <cstdint>
-#include "basic/kiostream.hpp"
 
 // Flags for the 8-bit ACCESS BYTE
 #define SEG_ACCESS_TYPE(x)      ((x) << 0)  // Type field (e.g., SEG_CODE_EXRD)

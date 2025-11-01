@@ -1,5 +1,6 @@
 #include "basic/kiostream.hpp"
 #include "driver/kmouse.hpp"
+#include "hardware_communication/kport.hpp"
 
 using hardware_communication::Port8Bit;
 

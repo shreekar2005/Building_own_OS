@@ -1,4 +1,5 @@
-#include "driver/kkeyboard.hpp" 
+#include "driver/kkeyboard.hpp"
+#include "basic/kiostream.hpp"
 #include "driver/kmouse.hpp"
 
 using namespace driver;

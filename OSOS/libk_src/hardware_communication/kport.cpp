@@ -1,7 +1,7 @@
 #include "hardware_communication/kport.hpp"
 
-namespace hardware_communication
-{
+using namespace hardware_communication;
+
 
 Port::Port(uint16_t portnumber)
 {
@@ -64,5 +64,4 @@ uint32_t Port32Bit::read()
     uint32_t result;
     __asm__ volatile("inl %1, %0" :"=a"(result) : "Nd"(portnumber));
     return result;
-}
 }

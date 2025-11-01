@@ -1,8 +1,6 @@
 #ifndef _OSOS_ESSENTIAL_ICXXABI_H
 #define _OSOS_ESSENTIAL_ICXXABI_H
 
-#include "basic/kiostream.hpp"
-
 #define ATEXIT_MAX_FUNCS    128
 typedef unsigned uarch_t;
 

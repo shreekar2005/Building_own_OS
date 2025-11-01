@@ -3,7 +3,6 @@
 
 #include <cstdint>
 #include <cstdarg>
-#include "hardware_communication/kport.hpp"
 
 namespace basic
 {

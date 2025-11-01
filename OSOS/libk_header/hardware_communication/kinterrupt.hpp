@@ -2,9 +2,8 @@
 #define _OSOS_HARDWARECOMMUNCATION_KINTERRUPT_H
 
 #include <cstdint>
-#include "basic/kiostream.hpp"
-#include "hardware_communication/kport.hpp"
 #include "essential/kgdt.hpp"
+#include "hardware_communication/kport.hpp"
 
 extern "C" 
 {

@@ -1,4 +1,5 @@
 #include "driver/kmouse.hpp"
+#include "basic/kiostream.hpp"
 
 using namespace driver;
 

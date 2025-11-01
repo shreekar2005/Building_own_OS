@@ -2,6 +2,7 @@
 #define _OSOS_DRIVER_KSERIAL_H
 
 #include <cstdint>
+
 #include "driver/kdriver.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kport.hpp"
@@ -35,9 +36,11 @@ public:
     /// @details Reads a character from the data port (which clears the interrupt) and forwards it to the event handler.
     uint32_t handleInterrupt(uint32_t esp) override;
 
+    /// @brief Activates the serial driver by enabling its interrupts.
+    void activate() override;
+
     /// @brief Resets the serial driver. (Stub)
     /// @return Always returns 0.
-    void activate() override;
     int reset() override;
 
     /// @brief Deactivates the serial driver by disabling its interrupts.

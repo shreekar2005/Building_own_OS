@@ -2,7 +2,6 @@
 #define _OSOS_HARDWARECOMMUNICATION_KPORT_H
 
 #include <cstdint>
-#include "basic/kiostream.hpp"
 
 namespace hardware_communication
 {
