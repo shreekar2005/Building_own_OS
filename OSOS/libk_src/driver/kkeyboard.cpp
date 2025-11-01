@@ -3,18 +3,10 @@
 
 using namespace driver;
 
-
-/// @brief Base class for handling keyboard events.
 KeyboardEventHandler::KeyboardEventHandler(){}
-/// @brief Destroys the KeyboardEventHandler object.
 KeyboardEventHandler::~KeyboardEventHandler(){}
 
 
-
-// Constructor: Initialize the new state variable
-/// @brief Constructs a new KeyboardDriver object.
-/// @param interrupt_manager Pointer to the interrupt manager.
-/// @param keyboardEventHandler Pointer to the event handler that will process key events.
 KeyboardDriver::KeyboardDriver(hardware_communication::InterruptManager* interrupt_manager, KeyboardEventHandler* keyboardEventHandler)
 : hardware_communication::InterruptHandler(0x21, interrupt_manager), 
   dataPort(0x60), 
@@ -26,12 +18,8 @@ KeyboardDriver::KeyboardDriver(hardware_communication::InterruptManager* interru
     this->keyboardEventHandler=keyboardEventHandler;
 }
 
-/// @brief Destroys the KeyboardDriver object.
 KeyboardDriver::~KeyboardDriver(){}
 
-/// @brief Handles the keyboard interrupt (IRQ 1).
-/// @param esp The stack pointer from the interrupt context.
-/// @return The stack pointer.
 uint32_t KeyboardDriver::handleInterrupt(uint32_t esp)
 {
     // Unshifted keys
@@ -171,7 +159,6 @@ uint32_t KeyboardDriver::handleInterrupt(uint32_t esp)
 }
 
 
-/// @brief Activates the keyboard driver.
 void KeyboardDriver::activate()
 {
     while(commandPort.read() & 1) dataPort.read();
@@ -184,8 +171,6 @@ void KeyboardDriver::activate()
     basic::printf("Keyboard Driver activated!\n");
 }
 
-/// @brief Resets the keyboard. (Stub)
-/// @return Always returns 0.
 int KeyboardDriver::reset(){return 0;}
-/// @brief Deactivates the keyboard driver. (Stub)
+
 void KeyboardDriver::deactivate(){}

@@ -7,7 +7,10 @@
 
 namespace basic
 {
-    void __printMemoryMap(multiboot_info_t *mbi);
+/// @brief Prints the system memory map provided by the Multiboot bootloader.
+/// @param mbi Pointer to the Multiboot information structure.
+void __printMemoryMap(multiboot_info_t *mbi);
+
 }
 
 #endif

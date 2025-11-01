@@ -1,11 +1,10 @@
 #include "basic/kiostream.hpp"
 #include "driver/kmouse.hpp"
 
-// We need to bring in the Port8Bit class for the serial port
 using hardware_communication::Port8Bit;
 
 namespace basic
-{ // namespace basic start
+{
 
 static int cursor_x_ = 0;
 static int cursor_y_ = 0;
@@ -21,7 +20,7 @@ static Port8Bit vgaDataPort(0x3D5);
 /// @brief Checks if the serial port's transmit buffer is empty (COM1).
 static bool is_serial_ready()
 {
-    // Formula: Check 6th bit (0x20) of Line Status Port (0x3FD)
+    // Check 6th bit (0x20) of Line Status Port (0x3FD)
     Port8Bit lineStatusPort(0x3FD);
     return (lineStatusPort.read() & 0x20); // 0x20 = (1 << 5)
 }
@@ -42,9 +41,7 @@ static void write_serial_char(char c)
 }
 
 
-/// @brief Enables the text mode cursor and sets its shape.
-/// @param cursor_start The starting scanline for the cursor block.
-/// @param cursor_end The ending scanline for the cursor block.
+
 void enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
 {
     vgaIndexPort.write(0x0A);
@@ -54,9 +51,7 @@ void enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
     vgaDataPort.write((vgaDataPort.read() & 0xE0) | cursor_end);
 }
 
-/// @brief Updates the position of the text mode cursor.
-/// @param x The new x-coordinate (column).
-/// @param y The new y-coordinate (row).
+
 void update_cursor(int x, int y)
 {
     cursor_x_=x;
@@ -68,7 +63,7 @@ void update_cursor(int x, int y)
     vgaDataPort.write((uint8_t)((pos >> 8) & 0xFF));
 }
 
-/// @brief Disables the text mode cursor.
+
 void disable_cursor()
 {
     vgaIndexPort.write(0x0A);
@@ -84,20 +79,14 @@ static void printCharStr(const char *str)
     // FOR TEXT : Attribute for Gray-White (0x7) text on a Black (0x0) background (last 2 bytes (LSBs) are not used for color).
     const uint16_t color_attribute = 0x0700;
 
-    // --- MOUSE-SAFE PRINTING: remove mouse ---
+    // remove mouse pointer
     int mouse_offset = driver::MouseDriver::__mouse_y_ * MAGIC_WIDTH + driver::MouseDriver::__mouse_x_;
     if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::old_char_under_mouse_pointer;
 
 
     for (int i = 0; str[i] != '\0'; i++)
     {
-        // --- THIS IS THE ONLY LINE WE ADDED ---
-        // ---   Send the character to the serial port first ---
         write_serial_char(str[i]);
-        // ---   End of added line   ---
-
-
-        // --- Existing VGA Logic ---
         if (str[i] == '\n')
         {
             cursor_y_++;
@@ -156,19 +145,20 @@ static void printCharStr(const char *str)
         }
     }
 
-    // --- MOUSE-SAFE PRINTING: add mouse again---
+    // add mouse pointer again
     driver::MouseDriver::old_char_under_mouse_pointer = video_memory[mouse_offset];
     if(mouse_offset>=0) video_memory[mouse_offset] = driver::MouseDriver::mouse_block_video_mem_value(driver::MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
 
 }
 
-/// @brief Clears the entire text mode screen and resets the cursor to (0,0).
+
 void clearScreen()
 {
     unsigned short *video_memory = (unsigned short *)0xb8000;
     unsigned short blank = (0x07 << 8) | ' ';
     int screenSize = MAGIC_WIDTH * MAGIC_HEIGHT;
 
+    // This part is correct for clearing the VGA screen
     for (int i = 0; i < screenSize; i++)
     {
         video_memory[i] = blank;
@@ -176,9 +166,16 @@ void clearScreen()
 
     cursor_x_ = 0;
     cursor_y_ = 0;
+    update_cursor(cursor_x_, cursor_y_);
 
-    // Also clear the serial screen with a "form feed"
-    write_serial_char('\f');
+    // ANSI escape sequence to clear the serial terminal
+    // \e[2J = Clear entire screen
+    // \e[H  = Move cursor to home (top-left)
+    const char* clear_sequence = "\e[2J\e[H";
+    for (int i = 0; clear_sequence[i] != '\0'; i++)
+    {
+        write_serial_char(clear_sequence[i]);
+    }
 }
 
 /// @brief Reverses a string in place.
@@ -311,40 +308,7 @@ static void printHex(uintptr_t n, int digits)
     printCharStr(buffer);
 }
 
-/**
- * @brief A custom implementation of the standard printf function for writing to VGA text mode memory.
- * * This function formats a string and prints it to the screen, handling various format specifiers,
- * flags, width, precision, and length modifiers. It returns the total number of characters written.
- * * @param format The format string.
- * @param ... Variable arguments corresponding to the format specifiers.
- * * @return The total number of characters written to the screen.
- * * @details
- * Supported Format Specifiers:
- * %c - Character
- * %s - String
- * %d, %i - Signed decimal integer
- * %u - Unsigned decimal integer
- * %f - Floating point number (double)
- * %x - Unsigned hexadecimal integer (lowercase)
- * %X - Unsigned hexadecimal integer (uppercase)
- * %b - Unsigned binary integer
- * %o - Unsigned octal integer
- * %p - Pointer address
- * %% - A literal '%' character
- * * Supported Flags:
- * '#' - Alternative form (e.g., 0x for hex, 0 for octal).
- * '0' - Zero-padding for width.
- * * Supported Width:
- * A number after '%' specifies the minimum field width (e.g., %10d).
- * * Supported Precision:
- * A period followed by a number specifies precision (e.g., %.4f, %.8X).
- * For integers, this specifies the minimum number of digits to print.
- * * Supported Length Modifiers:
- * h  - short int (for d, i, u, x, X, o, b)
- * hh - signed/unsigned char (for d, i, u, x, X, o, b)
- * l  - long int
- * ll - long long int
- */
+
 int printf(const char *format, ...)
 {
     int chars_written = 0;
@@ -366,8 +330,7 @@ int printf(const char *format, ...)
             int width = 0;
             int precision = -1;
             
-            // 1. Flags
-            // A boolean is clearer than using a while loop here
+            // Flags
             if (format[i] == '#') {
                 use_alternative_form = 1;
                 i++;
@@ -377,13 +340,13 @@ int printf(const char *format, ...)
                 i++;
             }
 
-            // 2. Width
+            // Width
             while (format[i] >= '0' && format[i] <= '9') {
                 width = width * 10 + (format[i] - '0');
                 i++;
             }
 
-            // 3. Precision
+            // Precision
             if (format[i] == '.') {
                 i++;
                 precision = 0;
@@ -394,7 +357,7 @@ int printf(const char *format, ...)
                 zero_pad = 0;
             }
 
-            // 4. Length Modifiers
+            // Length Modifiers
             int is_long = 0, is_long_long = 0, is_short = 0, is_char = 0;
             if (format[i] == 'l') {
                 is_long = 1; i++;
@@ -404,7 +367,7 @@ int printf(const char *format, ...)
                 if (format[i] == 'h') { is_char = 1; is_short = 0; i++; }
             }
 
-            // --- Handle Specifiers ---
+            // Handle Specifiers
             switch (format[i])
             {
                 case 'c':
@@ -543,4 +506,4 @@ int printf(const char *format, ...)
     return chars_written;
 }
 
-} // namespace basic end
+}

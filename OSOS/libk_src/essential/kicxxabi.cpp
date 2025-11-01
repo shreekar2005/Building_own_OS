@@ -3,7 +3,7 @@
 // To call constructors of global objects
 extern "C" void (*ctors_start)();
 extern "C" void (*ctors_end)();
-/// @brief Iterates over the list of global constructors and calls them to initialize global C++ objects.
+
 void essential::__callConstructors()
 {
     for (void (**p)() = &ctors_start; p < &ctors_end; ++p)
@@ -11,18 +11,6 @@ void essential::__callConstructors()
         (*p)(); // Call the constructor
     }
 }
-
-// To call destructors of global objects
-// But we will use __cxa_finalize() function for calling destructors 
-// extern "C" void(*dtors_start)();
-// extern "C" void(*dtors_end)();
-// void __callDestructors(){
-//  for (void (**p)() = &dtors_start; p < &dtors_end; ++p)
-//     {
-//         (*p)(); // Call the destructor
-//     }
-// }
-
 
 essential::atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS];
 uarch_t __atexit_func_count = 0;
@@ -44,8 +32,6 @@ extern "C" int __cxa_atexit(void (*f)(void *), void *objptr, void *dso)
     return 0; /*I would prefer if functions returned 1 on success, but the ABI says...*/
 };
 
-/// @brief Executes registered destructors/cleanup functions.
-/// @param f If non-null, only destructors associated with this function pointer are called. If null, all registered destructors are called in reverse order of registration.
 void essential::__cxa_finalize(void *f)
 {
     uarch_t i = __atexit_func_count;

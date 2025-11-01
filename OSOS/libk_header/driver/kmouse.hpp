@@ -27,38 +27,52 @@
 
 namespace driver
 {
-    /// @brief Base class (interface) for handling mouse events (movement and button clicks).
-    class MouseEventHandler{
-        public:
-            MouseEventHandler();
-            virtual ~MouseEventHandler();
-            virtual void onMouseDown(uint8_t button)=0; //expected to be overriden 
-            // button: Left=1, Right=2, Middle=3
-            virtual void onMouseUp(uint8_t button)=0; //expected to be overriden 
-            virtual void onMouseMove(int8_t delta_x, int8_t delta_y)=0; //expected to be overriden 
-    };
+/// @brief Base class (interface) for handling mouse events (movement and button clicks).
+class MouseEventHandler{
+    public:
+        MouseEventHandler();
+        virtual ~MouseEventHandler();
+        virtual void onMouseDown(uint8_t button)=0;
+        virtual void onMouseUp(uint8_t button)=0;
+        virtual void onMouseMove(int8_t delta_x, int8_t delta_y)=0;
+};
 
-    /// @brief Custom Driver for the PS/2 mouse, handling 3-byte packets and managing mouse state.
-    class MouseDriver : public hardware_communication::InterruptHandler, public driver::Driver{
-            hardware_communication::Port8Bit dataPort;
-            hardware_communication::Port8Bit commandPort;
-            int8_t buffer[3];
-            uint8_t offset;
-            uint8_t buttons;
-            MouseEventHandler *mouseEventHandler;
-            
-        public :
-            static uint16_t old_char_under_mouse_pointer;
-            static uint16_t mouse_block_video_mem_value(uint16_t old_char_under_mouse_pointer, uint8_t mouse_pointer_color);
-            static int8_t __mouse_x_, __mouse_y_;
-            MouseDriver(hardware_communication::InterruptManager* interrupt_manager, MouseEventHandler* mouseEventHandler);
-            ~MouseDriver();
-            uint32_t handleInterrupt(uint32_t esp) override; // function mainly defined in InterruptHandler class.
-            
-            void activate() override;
-            int reset() override;
-            void deactivate() override;
-    };
+/// @brief Custom Driver for the PS/2 mouse, handling 3-byte packets and managing mouse state.
+class MouseDriver : public hardware_communication::InterruptHandler, public driver::Driver{
+        hardware_communication::Port8Bit dataPort;
+        hardware_communication::Port8Bit commandPort;
+        int8_t buffer[3];
+        uint8_t offset;
+        uint8_t buttons;
+        MouseEventHandler *mouseEventHandler;
+        
+    public :
+        static uint16_t old_char_under_mouse_pointer;
+        static int8_t __mouse_x_, __mouse_y_;
+        MouseDriver(hardware_communication::InterruptManager* interrupt_manager, MouseEventHandler* mouseEventHandler);
+        ~MouseDriver();
+
+        /// @brief Calculates the video memory value for the mouse cursor block.
+        /// @param current_char The original character attributes and ASCII value at the cursor position.
+        /// @param mouse_pointer_color The desired background color for the mouse pointer.
+        /// @return The new 16-bit video memory value representing the character with the new background color.
+        static uint16_t mouse_block_video_mem_value(uint16_t old_char_under_mouse_pointer, uint8_t mouse_pointer_color);
+
+        /// @brief Handles the mouse interrupt (IRQ 12).
+        /// @param esp The stack pointer from the interrupt context.
+        /// @return The stack pointer.
+        uint32_t handleInterrupt(uint32_t esp) override;
+        
+        /// @brief Activates the mouse driver.
+        void activate() override;
+
+        /// @brief Resets the mouse. (Stub)
+        /// @return Always returns 0.
+        int reset() override;
+
+        /// @brief Deactivates the mouse driver. (Stub)
+        void deactivate() override;
+};
 }
 
 #endif

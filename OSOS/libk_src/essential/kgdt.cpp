@@ -2,11 +2,6 @@
 
 using namespace essential;
 
-/// @brief Constructs a GDT_Row (Segment Descriptor) with specified parameters.
-/// @param base The 32-bit base address of the segment.
-/// @param limit The 20-bit limit (size) of the segment.
-/// @param access_byte The 8-bit access flags for the segment.
-/// @param gran_byte The 8-bit granularity flags for the segment.
 GDT_Row::GDT_Row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gran_byte)
 {
     this->limit_low   = (limit & 0xFFFF);
@@ -22,11 +17,8 @@ GDT_Row::GDT_Row(uint32_t base, uint32_t limit, uint8_t access_byte, uint8_t gra
     this->access = access_byte;
 }
 
-/// @brief Destroys the GDT_row object.
 GDT_Row::~GDT_Row() {}
 
-
-/// @brief Constructs a new GDT_Manager object and initializes the standard kernel/user segments.
 GDT_Manager::GDT_Manager()
 : nullSegment(0,0,0,0), // First entry must be a null descriptor.
   kernel_CS(0, 0xFFFFFFFF, GDT_ACCESS_CODE_PL0, GDT_GRAN_FLAGS),
@@ -42,11 +34,8 @@ GDT_Manager::GDT_Manager()
     base = (uintptr_t)&this->nullSegment;
 }
 
-/// @brief Destroys the GDT_Manager object.
 GDT_Manager::~GDT_Manager() {}
 
-
-/// @brief Loads this GDT into the CPU's GDTR and reloads all segment registers.
 void GDT_Manager::installTable()
 {
     // A structure that matches the 6-byte format required by the 'lgdt' instruction.
@@ -81,7 +70,6 @@ void GDT_Manager::installTable()
     basic::printf("GDT Installed\n");
 }
 
-/// @brief (Static) Prints the details of all entries in the currently loaded GDT.
 void GDT_Manager::printLoadedTable()
 {
     struct GDT_Pointer {
@@ -121,7 +109,6 @@ void GDT_Manager::printLoadedTable()
     basic::printf("---\n");
 }
 
-/// @brief (Static) Prints the header information (base, limit, count) of the currently loaded GDT.
 void GDT_Manager::printLoadedTableHeader() 
 {
     struct GDT_Pointer {
@@ -142,15 +129,8 @@ void GDT_Manager::printLoadedTableHeader()
 }
 
 
-/// @brief (Static) Gets the kernel code segment selector.
-/// @return The 16-bit selector value.
-uint16_t GDT_Manager::kernel_CS_selector() { return sizeof(GDT_Row) * 1; } // Selector 0x08
-/// @brief (Static) Gets the kernel data segment selector.
-/// @return The 16-bit selector value.
-uint16_t GDT_Manager::kernel_DS_selector() { return sizeof(GDT_Row) * 2; } // Selector 0x10
-/// @brief (Static) Gets the user code segment selector.
-/// @return The 16-bit selector value.
-uint16_t GDT_Manager::user_CS_selector()   { return sizeof(GDT_Row) * 3; } // Selector 0x18
-/// @brief (Static) Gets the user data segment selector.
-/// @return The 16-bit selector value.
-uint16_t GDT_Manager::user_DS_selector()   { return sizeof(GDT_Row) * 4; } // Selector 0x20
+
+uint16_t GDT_Manager::kernel_CS_selector() { return sizeof(GDT_Row) * 1; }
+uint16_t GDT_Manager::kernel_DS_selector() { return sizeof(GDT_Row) * 2; }
+uint16_t GDT_Manager::user_CS_selector()   { return sizeof(GDT_Row) * 3; }
+uint16_t GDT_Manager::user_DS_selector()   { return sizeof(GDT_Row) * 4; }

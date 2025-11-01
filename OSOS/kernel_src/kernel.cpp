@@ -122,7 +122,7 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
     public:
         MouseEventHandler_for_kernel(){}
         ~MouseEventHandler_for_kernel(){}
-        // Default implementations for the handler. A specific handler can override these.
+        
         /// @brief Handles mouse button down events.
         /// @param button The button number that was pressed.
         void onMouseDown(uint8_t button) override
@@ -211,7 +211,6 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     essential::__callConstructors(); 
     basic::enable_cursor(0,15);
     basic::clearScreen();
-    basic::printf("\n");
 
     essential::GDT_Manager osos_GDT;
     osos_GDT.installTable();

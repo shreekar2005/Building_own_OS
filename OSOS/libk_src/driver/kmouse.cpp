@@ -2,29 +2,9 @@
 
 using namespace driver;
 
-/// @brief Base class for handling mouse events.
 MouseEventHandler::MouseEventHandler(){}
-/// @brief Destroys the MouseEventHandler object.
 MouseEventHandler::~MouseEventHandler(){}
 
-
-// Static member initialization
-uint16_t MouseDriver::old_char_under_mouse_pointer;
-// DO NOT CHANGE THESE -1 INITIALIZATIONS (THAT WILL LEAD TO BUG OF "GHOST MOUSE POINTER")
-int8_t MouseDriver::__mouse_x_ = -1;
-int8_t MouseDriver::__mouse_y_ = -1;
-
-/// @brief Calculates the video memory value for the mouse cursor block.
-/// @param current_char The original character attributes and ASCII value at the cursor position.
-/// @param mouse_pointer_color The desired background color for the mouse pointer.
-/// @return The new 16-bit video memory value representing the character with the new background color.
-uint16_t MouseDriver::mouse_block_video_mem_value(uint16_t current_char, uint8_t mouse_pointer_color){
-    return (current_char & 0x0FFF) | (mouse_pointer_color << 12);
-}
-
-/// @brief Constructs a new MouseDriver object.
-/// @param interrupt_manager Pointer to the interrupt manager.
-/// @param mouseEventHandler Pointer to the event handler that will process mouse events.
 MouseDriver::MouseDriver(hardware_communication::InterruptManager* interrupt_manager, MouseEventHandler* mouseEventHandler)
 : hardware_communication::InterruptHandler(0x2C, interrupt_manager), 
   dataPort(0x60), 
@@ -33,12 +13,17 @@ MouseDriver::MouseDriver(hardware_communication::InterruptManager* interrupt_man
     this->mouseEventHandler = mouseEventHandler;
 }
 
-/// @brief Destroys the MouseDriver object.
 MouseDriver::~MouseDriver(){}
 
-/// @brief Handles the mouse interrupt (IRQ 12).
-/// @param esp The stack pointer from the interrupt context.
-/// @return The stack pointer.
+uint16_t MouseDriver::old_char_under_mouse_pointer;
+int8_t MouseDriver::__mouse_x_ = -1; // DO NOT CHANGE THESE -1 INITIALIZATIONS (THAT WILL LEAD TO BUG OF "GHOST MOUSE POINTER")
+int8_t MouseDriver::__mouse_y_ = -1; // DO NOT CHANGE THESE -1 INITIALIZATIONS (THAT WILL LEAD TO BUG OF "GHOST MOUSE POINTER")
+
+uint16_t MouseDriver::mouse_block_video_mem_value(uint16_t current_char, uint8_t mouse_pointer_color)
+{
+    return (current_char & 0x0FFF) | (mouse_pointer_color << 12);
+}
+
 uint32_t MouseDriver::handleInterrupt(uint32_t esp)
 {
     // Check if the mouse has sent data
@@ -53,7 +38,6 @@ uint32_t MouseDriver::handleInterrupt(uint32_t esp)
     if(offset == 0){
         if(mouseEventHandler == 0) return esp; // Do nothing without a handler
 
-        // --- Handle Mouse Movement ---
         int8_t delta_x = buffer[1];
         int8_t delta_y = -buffer[2]; // Y-axis is inverted from the mouse's perspective
 
@@ -61,7 +45,6 @@ uint32_t MouseDriver::handleInterrupt(uint32_t esp)
             mouseEventHandler->onMouseMove(delta_x, delta_y);
         }
 
-        // --- Handle Mouse Buttons ---
         for(uint8_t i = 0; i < 3; i++) {
             // Check if the state of button 'i' has changed
             if((buffer[0] & (1 << i)) != (buttons & (1 << i))) {
@@ -78,8 +61,6 @@ uint32_t MouseDriver::handleInterrupt(uint32_t esp)
     return esp;
 }
 
-
-/// @brief Activates the mouse driver.
 void MouseDriver::activate()
 {
     while(commandPort.read() & 1) dataPort.read();
@@ -109,8 +90,5 @@ void MouseDriver::activate()
     basic::printf("Mouse Driver activated!\n");
 }
 
-/// @brief Resets the mouse. (Stub)
-/// @return Always returns 0.
 int MouseDriver::reset(){return 0;}
-/// @brief Deactivates the mouse driver. (Stub)
 void MouseDriver::deactivate(){}
