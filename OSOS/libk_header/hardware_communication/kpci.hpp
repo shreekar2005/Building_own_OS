@@ -3,11 +3,26 @@
 
 #include <cstdint>
 #include "hardware_communication/kport.hpp"
+#include "hardware_communication/kinterrupt.hpp"
 #include "driver/kdriver.hpp"
+
 
 
 namespace hardware_communication
 {
+    enum BaseAddressRegisterType{
+        memoryMapping = 0,
+        inputOutput = 1
+    };
+    
+    class BaseAddressRegister{
+        public:
+            bool prefetchable;
+            uint8_t* address;
+            uint32_t size;
+            BaseAddressRegisterType type;
+    };
+
     class PCI_DeviceDescriptor{
         public:
             uint8_t bus;
@@ -17,20 +32,18 @@ namespace hardware_communication
             uint16_t vendorId;
             uint16_t deviceId;
 
-            uint8_t classId;
-            uint8_t subclassId;
-            uint8_t interfaceId;
             uint8_t revision;
+            uint8_t interfaceId;
+            uint8_t subclassId;
+            uint8_t classId;
             
             uint8_t headerType;
+            
+            uint32_t bar[6];
+            
             uint8_t interrupt;
 
-            uint32_t bar0;
-            uint32_t bar1;
-            uint32_t bar2;
-            uint32_t bar3;
-            uint32_t bar4;
-            uint32_t bar5;
+            uint32_t portBase[6];
 
             PCI_DeviceDescriptor();
             ~PCI_DeviceDescriptor();
@@ -57,8 +70,16 @@ namespace hardware_communication
             
             bool deviceHasFunctions(uint8_t bus, uint8_t device);
             PCI_DeviceDescriptor getDeviceDescriptor(uint8_t bus, uint8_t device, uint8_t function);
-            void scanBus(uint8_t bus, driver::DriverManager* driver_manager);
-            void selectDrivers(driver::DriverManager* driver_manager);
+
+            void recursiveSelDriver(uint8_t bus, driver::DriverManager* driver_manager, hardware_communication::InterruptManager* interrupt_manager);
+            void selectDrivers(driver::DriverManager* driver_manager, hardware_communication::InterruptManager* interrupt_manager);
+
+            driver::Driver* getDriver(PCI_DeviceDescriptor dev, hardware_communication::InterruptManager* interrupt_manager);
+            BaseAddressRegister getBaseAddressRegister(uint8_t bus, uint8_t device, uint8_t function, uint16_t bar);
+
+            void scanBus(uint8_t bus);
+
+            
     };
 }
 

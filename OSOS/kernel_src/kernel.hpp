@@ -17,6 +17,7 @@ class KernelShell {
 private:
     char m_line_buffer[256]; // Our internal line buffer (bcs after pressing enter we need full line buffer to process)
     int m_buffer_index; // Our current top position in the buffer
+    hardware_communication::PCI_Controller pciController;
 
 public:
     KernelShell()
@@ -75,10 +76,12 @@ public:
     {
         // Simple "strcmp"
         if (command[0] == 'h' && command[1] == 'e' && command[2] == 'l' && command[3] == 'p' && command[4] == '\0') {
-            basic::printf("OSOS Kernel Shell. Type 'pci' to list devices.");
+            basic::printf("OSOS Kernel Shell. Type 'lspci' to list devices.");
         }
-        else if (command[0] == 'p' && command[1] == 'c' && command[2] == 'i' && command[3] == '\0') {
-            basic::printf("Listing PCI devices (This is just fake command hehe)...");
+        else if (command[0] == 'l' && command[1] == 's' && command[2] == 'p' && command[3] == 'c' && command[4] == 'i' && command[5] == '\0') {
+            basic::printf("Listing PCI devices...\n");
+            pciController.scanBus(0);
+
         }
         else {
             basic::printf("Unknown command: '%s'", command);

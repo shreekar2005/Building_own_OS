@@ -35,7 +35,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
         driverManager.addDriver(&serialIO);
         
         hardware_communication::PCI_Controller pciController;
-        pciController.selectDrivers(&driverManager);
+        pciController.selectDrivers(&driverManager, &osos_InterruptManager);
     
     driverManager.activateAll();
     
