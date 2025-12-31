@@ -1,34 +1,35 @@
 var annotated_dup =
 [
-    [ "driver", "d4/d53/a29893.html", [
-      [ "Driver", "d8/d64/a30727.html", "d8/d64/a30727" ],
-      [ "DriverManager", "d9/d59/a30731.html", "d9/d59/a30731" ],
-      [ "KeyboardDriver", "db/d71/a30739.html", "db/d71/a30739" ],
-      [ "KeyboardEventHandler", "df/d65/a30735.html", "df/d65/a30735" ],
-      [ "MouseDriver", "df/d95/a30747.html", "df/d95/a30747" ],
-      [ "MouseEventHandler", "d5/d52/a30743.html", "d5/d52/a30743" ],
-      [ "SerialDriver", "d3/db8/a30755.html", "d3/db8/a30755" ],
-      [ "SerialEventHandler", "d4/d22/a30751.html", "d4/d22/a30751" ]
+    [ "driver", "d6/db4/a36205.html", [
+      [ "Driver", "d9/dfb/a37039.html", "d9/dfb/a37039" ],
+      [ "DriverManager", "db/d5a/a37043.html", "db/d5a/a37043" ],
+      [ "KeyboardDriver", "de/d52/a37051.html", "de/d52/a37051" ],
+      [ "KeyboardEventHandler", "d5/dca/a37047.html", "d5/dca/a37047" ],
+      [ "MouseDriver", "d0/d9e/a37059.html", "d0/d9e/a37059" ],
+      [ "MouseEventHandler", "d7/d5f/a37055.html", "d7/d5f/a37055" ],
+      [ "SerialDriver", "de/d4f/a37067.html", "de/d4f/a37067" ],
+      [ "SerialEventHandler", "de/d4f/a37063.html", "de/d4f/a37063" ]
     ] ],
-    [ "essential", "d5/d71/a29894.html", [
-      [ "atexit_func_entry_t", "d3/dc4/a30767.html", "d3/dc4/a30767" ],
-      [ "GDT_Manager", "df/db8/a30763.html", "df/db8/a30763" ],
-      [ "GDT_Row", "de/dad/a30759.html", "de/dad/a30759" ]
+    [ "essential", "dc/dbc/a36206.html", [
+      [ "atexit_func_entry_t", "d4/df9/a37079.html", "d4/df9/a37079" ],
+      [ "GDT_Manager", "d3/d15/a37075.html", "d3/d15/a37075" ],
+      [ "GDT_Row", "de/d41/a37071.html", "de/d41/a37071" ]
     ] ],
-    [ "hardware_communication", "d0/db2/a29895.html", [
-      [ "IDT_Row", "d0/d2f/a30775.html", "d0/d2f/a30775" ],
-      [ "InterruptHandler", "d6/d7e/a30771.html", "d6/d7e/a30771" ],
-      [ "InterruptManager", "da/d9d/a30779.html", "da/d9d/a30779" ],
-      [ "PCI_Controller", "d3/db3/a30787.html", "d3/db3/a30787" ],
-      [ "PCI_DeviceDescriptor", "dd/d44/a30783.html", "dd/d44/a30783" ],
-      [ "Port", "d7/dc8/a30791.html", "d7/dc8/a30791" ],
-      [ "Port16Bit", "d8/da7/a30803.html", "d8/da7/a30803" ],
-      [ "Port32Bit", "d0/db2/a30807.html", "d0/db2/a30807" ],
-      [ "Port8Bit", "df/da2/a30795.html", "df/da2/a30795" ],
-      [ "Port8BitSlow", "dc/dc1/a30799.html", "dc/dc1/a30799" ]
+    [ "hardware_communication", "d7/dce/a36207.html", [
+      [ "BaseAddressRegister", "d7/dce/a36207.html#d4/d4c/a37095", "d7/dce/a36207_d4/d4c/a37095_dup" ],
+      [ "IDT_Row", "d5/dbb/a37087.html", "d5/dbb/a37087" ],
+      [ "InterruptHandler", "dd/dd3/a37083.html", "dd/dd3/a37083" ],
+      [ "InterruptManager", "d7/d2b/a37091.html", "d7/d2b/a37091" ],
+      [ "PCI_Controller", "de/df1/a37103.html", "de/df1/a37103" ],
+      [ "PCI_DeviceDescriptor", "de/d01/a37099.html", "de/d01/a37099" ],
+      [ "Port", "da/d23/a37107.html", "da/d23/a37107" ],
+      [ "Port16Bit", "d4/dc2/a37119.html", "d4/dc2/a37119" ],
+      [ "Port32Bit", "d9/d94/a37123.html", "d9/d94/a37123" ],
+      [ "Port8Bit", "d8/d55/a37111.html", "d8/d55/a37111" ],
+      [ "Port8BitSlow", "d7/d27/a37115.html", "d7/d27/a37115" ]
     ] ],
-    [ "KernelShell", "df/d6b/a30711.html", "df/d6b/a30711" ],
-    [ "KeyboardEventHandler_for_kernel", "db/de8/a30715.html", "db/de8/a30715" ],
-    [ "MouseEventHandler_for_kernel", "da/d7b/a30719.html", "da/d7b/a30719" ],
-    [ "SerialEventHandler_for_kernel", "d6/df8/a30723.html", "d6/df8/a30723" ]
+    [ "KernelShell", "d3/dd2/a37023.html", "d3/dd2/a37023" ],
+    [ "KeyboardEventHandler_for_kernel", "da/d2c/a37027.html", "da/d2c/a37027" ],
+    [ "MouseEventHandler_for_kernel", "d7/de2/a37031.html", "d7/de2/a37031" ],
+    [ "SerialEventHandler_for_kernel", "de/dac/a37035.html", "de/dac/a37035" ]
 ];
