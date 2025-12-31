@@ -421,6 +421,6 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor dev, hardware_com
             break;
     }
 
-    basic::printf("|\n");
+    basic::printf("|\n---\n");
     return driver;
 }
