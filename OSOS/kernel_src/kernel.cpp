@@ -13,13 +13,13 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_GDT.installTable();
     essential::GDT_Manager::printLoadedTableHeader();
 
-    // Creating the central shell
+    // central kernel shell
     KernelShell shell;
 
     
     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
     
-    //Creating object of drivers so that they will handle their corresponding Interrupts
+    // object of drivers so that they will handle their corresponding Interrupts
     driver::DriverManager driverManager;
     
         KeyboardEventHandler_for_kernel keyboardEventHandler_for_kernel(&shell);
