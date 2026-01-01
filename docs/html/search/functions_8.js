@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../d0/dc4/a39202.html#aeee649c66c6b25bc2c03b9004ce9ddb4',1,'essential::GDT_Manager::kernel_CS_selector()'],['../d2/d11/a38327.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
-  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../d0/dc4/a39202.html#af5f963bc66aa93608c39d294b52df657',1,'essential::GDT_Manager::kernel_DS_selector()'],['../d2/d11/a38327.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
-  ['kernel_5fidle_5floop_2',['kernel_idle_loop',['../d5/da4/a38249.html#a9a9999a6b39bc57567717e63dd9fa42e',1,'kernel.cpp']]],
-  ['kernelmain_3',['kernelMain',['../d5/da4/a38249.html#abb4e4866092116b520310d61961bfe12',1,'kernel.cpp']]],
-  ['kernelshell_4',['KernelShell',['../d0/d08/a39150.html#aa3b51e6f8ff335da9262db36ce7fbb96',1,'KernelShell']]],
-  ['keyboarddriver_5',['KeyboardDriver',['../d8/d22/a39178.html#aab41851dc0d68f42e172bdc67bb9f06e',1,'driver::KeyboardDriver']]],
-  ['keyboardeventhandler_6',['KeyboardEventHandler',['../d3/d28/a39174.html#a37b511e50e8c1f5d294740b29d5e6c92',1,'driver::KeyboardEventHandler']]],
-  ['keyboardeventhandler_5ffor_5fkernel_7',['KeyboardEventHandler_for_kernel',['../d1/d28/a39154.html#a9d7f63ab5c08495337ba137785c0ccc4',1,'KeyboardEventHandler_for_kernel']]],
-  ['killcurrenttask_8',['killCurrentTask',['../d1/d31/a39218.html#a9ba5eecd6f81789803ef7752699ac948',1,'essential::TaskManager']]]
+  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../d0/d0a/a41683.html#aeee649c66c6b25bc2c03b9004ce9ddb4',1,'essential::GDT_Manager::kernel_CS_selector()'],['../dc/def/a40808.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
+  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../d0/d0a/a41683.html#af5f963bc66aa93608c39d294b52df657',1,'essential::GDT_Manager::kernel_DS_selector()'],['../dc/def/a40808.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
+  ['kernel_5fidle_5floop_2',['kernel_idle_loop',['../d7/de8/a40730.html#a9a9999a6b39bc57567717e63dd9fa42e',1,'kernel.cpp']]],
+  ['kernelmain_3',['kernelMain',['../d7/de8/a40730.html#abb4e4866092116b520310d61961bfe12',1,'kernel.cpp']]],
+  ['kernelshell_4',['KernelShell',['../d3/ddf/a41631.html#aa3b51e6f8ff335da9262db36ce7fbb96',1,'KernelShell']]],
+  ['keyboarddriver_5',['KeyboardDriver',['../d6/d4c/a41659.html#aab41851dc0d68f42e172bdc67bb9f06e',1,'driver::KeyboardDriver']]],
+  ['keyboardeventhandler_6',['KeyboardEventHandler',['../db/dc3/a41655.html#a37b511e50e8c1f5d294740b29d5e6c92',1,'driver::KeyboardEventHandler']]],
+  ['keyboardeventhandler_5ffor_5fkernel_7',['KeyboardEventHandler_for_kernel',['../dd/d75/a41635.html#a9d7f63ab5c08495337ba137785c0ccc4',1,'KeyboardEventHandler_for_kernel']]],
+  ['killcurrenttask_8',['killCurrentTask',['../d8/dcf/a41699.html#a9ba5eecd6f81789803ef7752699ac948',1,'essential::TaskManager']]]
 ];

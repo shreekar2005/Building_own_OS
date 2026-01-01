@@ -72,7 +72,7 @@ void TaskManager::onTaskExit()
 
 CPUState* TaskManager::schedule(CPUState* cpustate)
 {
-    const int TIME_QUANTUM = 5; 
+    const int TIME_QUANTUM = 4; 
     static int tick_counter = 0;
 
     if(numTasks <= 0) 
