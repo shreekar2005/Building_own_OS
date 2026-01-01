@@ -25,8 +25,9 @@ Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
 Port8BitSlow InterruptManager::picSlaveData(0xA1);
 
 
-InterruptManager::InterruptManager(essential::GDT_Manager* gdt)
+InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::TaskManager* task_manager)
 {
+    this->task_manager = task_manager;
     // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.
     picMasterCommand.write(0x11);
     picSlaveCommand.write(0x11);
@@ -179,9 +180,8 @@ uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t e
     if(installed_interrupt_manager->handlers[interruptNumber]!=nullptr){
         esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);
     }
-
-    else if(interruptNumber!=0x20){ //0x20 is Hardware Timer Interrupt
-        basic::printf("UNHANDLED INTERRUPT %#hx\n",interruptNumber);
+    if(interruptNumber==0x20){ //0x20 is Hardware Timer Interrupt
+        esp = (uintptr_t)installed_interrupt_manager->task_manager->schedule((essential::CPUState*)esp);
     }
 
     // Hardware interrupts must still be acknowledged to the PIC
@@ -189,6 +189,9 @@ uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t e
         picMasterCommand.write(0x20);
         if (0x28 <= interruptNumber) picSlaveCommand.write(0x20);
     }
-    
+
+    else {
+        basic::printf("UNHANDLED INTERRUPT %#hx\n",interruptNumber);
+    }
     return esp;
 }

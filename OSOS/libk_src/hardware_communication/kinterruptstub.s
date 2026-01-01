@@ -1,64 +1,74 @@
 .set IRQ_BASE, 0x20
 
 .section .text
-.extern  _ZN16InterruptManager15handleInterruptEhm
+.extern  _ZN22hardware_communication16InterruptManager15handleInterruptEhm
 
-// Common stub that all real interrupts will jump to
 common_interrupt_stub:
-    // Save all general purpose registers
-    pusha
+    // follow register order like defined in CPUStatus (defined in kmultitasking.hpp)
+    pushl $0 // Dummy error code
 
-    // Save segment registers
     pushl %ds
     pushl %es
     pushl %fs
     pushl %gs
 
-    // Push arguments for the C++ handler
-    // C++ function signature: handleInterrupt(uint8_t interruptNumber, uintptr_t esp)
-    pushl %esp              // Arg 2: current stack pointer
-    push (interruptNumber)  // Arg 1: the interrupt number we stored earlier
+    pushl %ebp
+    pushl %edi
+    pushl %esi
+    pushl %edx
+    pushl %ecx
+    pushl %ebx
+    pushl %eax
 
+    // void handleInterrupt(uint8_t interruptNumber, uintptr_t esp)
+    
+    pushl %esp // Arg 2: Current Stack Pointer (points to CPUState)
+    
+    xorl %eax, %eax // Clear EAX
+    movb (interruptNumber), %al
+    pushl %eax // Arg 1: The Interrupt Number (from global var)
+
+    // Call the C++ Method
     call  _ZN22hardware_communication16InterruptManager15handleInterruptEhm
 
-    // The C++ handler returns the new stack pointer in EAX.
-    // This cleans up the two arguments we pushed.
+    // The C++ handler returns the (possibly new) stack pointer in EAX.
     movl %eax, %esp 
 
-    // Restore segment registers
+    popl %eax
+    popl %ebx
+    popl %ecx
+    popl %edx
+    popl %esi
+    popl %edi
+    popl %ebp
+
     popl %gs
     popl %fs
     popl %es
     popl %ds
 
-    // Restore all general purpose registers
-    popa
-
-    // Return from interrupt
+    add $4, %esp
     iret
 
-
-// A separate, simple handler for interrupts we want to ignore
 .global ignoreInterrupt
 ignoreInterrupt:
     iret
 
 
-// Macro for generating an IRQ stub
+// Macro for Hardware Interrupts (IRQs)
 .macro handleIRQ IRQnum, handler_suffix
 .global handleIRQ\handler_suffix
 handleIRQ\handler_suffix:
-    movb $\IRQnum + IRQ_BASE, (interruptNumber) //interruptNumber is index for IDT table
+    movb $\IRQnum + IRQ_BASE, (interruptNumber)
     jmp common_interrupt_stub
 .endm
 
-// Generate the stubs we are using
-// handleIRQ IRQnum, handler_suffix
-handleIRQ 0x00, 0x00 // Timer : will convert its number from 0x00 to 0x20
-handleIRQ 0x01, 0x01 // Keyboard : will convert its number from 0x01 to 0x21
-handleIRQ 0x0C, 0x0C // PS/2 Mouse : will convert its number from 0x0C to 0x2C
-handleIRQ 0x04, 0x04 // Serial (COM1) : will convert its number from 0x04 to 0x024
 
+// Generate the stubs
+handleIRQ 0x00, 0x00 // Timer (IRQ 0) -> Int 0x20
+handleIRQ 0x01, 0x01 // Keyboard (IRQ 1) -> Int 0x21
+handleIRQ 0x0C, 0x0C // Mouse (IRQ 12) -> Int 0x2C
+handleIRQ 0x04, 0x04 // COM1 (IRQ 4) -> Int 0x24
 
 
 .section .data

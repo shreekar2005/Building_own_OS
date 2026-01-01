@@ -1,5 +1,20 @@
 #include "kernel.hpp"
 
+void taskA()
+{
+    for(int i=0; i<15; i++){
+        basic::printf("A");
+        for(long long i=0; i<1000000; i++){basic::printf("");} //for some short delay
+    }
+}
+void taskB()
+{
+    for(int i=0; i<15; i++){
+        basic::printf("B");
+        for(int i=0; i<1000000; i++){basic::printf("");} //for some short delay
+    }
+}
+
 /// @brief The main entry point for the C++ kernel.
 /// @param mbi Pointer to the Multiboot information structure provided by GRUB.
 /// @param magicnumber The magic number passed by GRUB to verify boot.
@@ -13,11 +28,16 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_GDT.installTable();
     essential::GDT_Manager::printLoadedTableHeader();
 
+    essential::TaskManager osos_TaskManager;
+    essential::Task task1(&osos_GDT, taskA);
+    essential::Task task2(&osos_GDT, taskB);
+    osos_TaskManager.addTask(&task1);
+    osos_TaskManager.addTask(&task2);
+
     // central kernel shell
     KernelShell shell;
 
-    
-    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT);
+    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT, &osos_TaskManager);
     
     // object of drivers so that they will handle their corresponding Interrupts
     driver::DriverManager driverManager;

@@ -5,6 +5,7 @@
 #include "basic/kmemory.hpp"
 #include "essential/kgdt.hpp"
 #include "essential/kicxxabi.hpp"
+#include "essential/kmultitasking.hpp"
 #include "driver/kkeyboard.hpp"
 #include "driver/kmouse.hpp"
 #include "driver/kdriver.hpp"
