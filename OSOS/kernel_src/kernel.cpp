@@ -74,8 +74,8 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     hardware_communication::InterruptManager::printLoadedTableHeader();
     
     basic::printf("\nHELLO FROM OSOS...\nEnter 'help' to see working commands :)\n");
-    basic::printf("OSOS> ");
     hardware_communication::InterruptManager::activate();
+    basic::printf("OSOS> ");
     while (true){asm("hlt");};
     
     basic::disable_cursor();
