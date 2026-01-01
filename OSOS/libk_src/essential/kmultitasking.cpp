@@ -7,7 +7,6 @@ TaskManager* TaskManager::activeTaskManager = nullptr;
 Task::Task(GDT_Manager *gdt_manager, void (*entrypoint)()){
     this->m_entrypoint = entrypoint;
     this->m_segmentSelector = gdt_manager->kernel_CS_selector();
-    reset(); 
 } 
 
 Task::~Task(){}
@@ -18,10 +17,13 @@ void Task::reset()
 
     cpustate->eax = 0; cpustate->ebx = 0; cpustate->ecx = 0; cpustate->edx = 0;
     cpustate->esi = 0; cpustate->edi = 0; cpustate->ebp = 0;
-    
+    cpustate->gs = 0x10;
+    cpustate->fs = 0x10;
+    cpustate->es = 0x10;
+    cpustate->ds = 0x10;
+
     cpustate->error = 0;
     cpustate->eip = (uint32_t)m_entrypoint;
-    
     cpustate->cs = m_segmentSelector;
     cpustate->eflags = 0x202; 
     cpustate->esp = (uint32_t)TaskManager::onTaskExit;
@@ -38,6 +40,14 @@ TaskManager::~TaskManager(){}
 
 bool TaskManager::addTask(Task *task)
 {
+    // Prevent adding the same task object twice
+    for(int i = 0; i < numTasks; i++) {
+        if(tasks[i] == task) {
+            return false; // Task is already running
+        }
+    }
+
+    task->reset();
     if (numTasks >= 256)
         return false;
     tasks[numTasks++] = task;
@@ -49,7 +59,7 @@ void TaskManager::killCurrentTask()
     if (numTasks <= 0) return;
     tasks[currentTask] = tasks[numTasks - 1];
     numTasks--;
-    currentTask = -1; 
+    currentTask = -1;
 }
 
 void TaskManager::onTaskExit()
@@ -60,14 +70,26 @@ void TaskManager::onTaskExit()
         asm("hlt");
 }
 
-CPUState *TaskManager::schedule(CPUState *cpustate)
+CPUState* TaskManager::schedule(CPUState* cpustate)
 {
+    const int TIME_QUANTUM = 5; 
+    static int tick_counter = 0;
+
     if(numTasks <= 0) 
         return cpustate;
+
     if(currentTask >= 0)
         tasks[currentTask]->cpustate = cpustate;
     
-    // Round Robin
+    tick_counter++;
+    
+    if (tick_counter < TIME_QUANTUM) {
+        return cpustate; 
+    }
+
+    tick_counter = 0;
+
+    // Round Robin Logic
     if(++currentTask >= numTasks)
         currentTask = 0;
     

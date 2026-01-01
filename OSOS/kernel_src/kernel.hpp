@@ -94,13 +94,15 @@ public:
         }
         else if (basic::strcmp(command, "task1") == 0) {
             basic::printf("Starting task1...\n");
-            task1_ptr->reset();
-            osos_TaskManager_ptr->addTask(task1_ptr);
+            if (osos_TaskManager_ptr->addTask(task1_ptr)==false) {
+                 basic::printf("Error: failed to start task1.\n");
+            }
         }
         else if (basic::strcmp(command, "task2") == 0) {
             basic::printf("Starting task2...\n");
-            task2_ptr->reset();
-            osos_TaskManager_ptr->addTask(task2_ptr);
+            if (osos_TaskManager_ptr->addTask(task2_ptr)==false) {
+                 basic::printf("Error: failed to start task2.\n");
+            }
         }
         else {
             basic::printf("Unknown command: '%s'", command);
