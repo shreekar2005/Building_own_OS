@@ -60,6 +60,7 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
         1. **kiostream.hpp** : printf(), clearScreen(), enable/update/disable_cursor().
         2. **kmemory.hpp** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***.
         3. **multiboot.h** : Have structures for multiboot information that grub provides.
+        4. **kstring.hpp** : Have basic string functions
     - driver :
         1. **kdriver.hpp** : Class to manage all driver.
         2. **kmouse.hpp** : Mouse driver which give Interface for mouse event handlers.
@@ -68,6 +69,7 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
     - essential :
         1. **kgdt.hpp** : Class GDT to setup segments (even if we use paging in future, we need to setup GDT in early stage).
         2. **kicxxabi.hpp** : __callConstructors(), __cxa_finalize() for calling global constructors and destructors.
+        3. **kmultitasking.hpp** : have declarations for managing scheduling, adding new tasks.
     - hardware_communication :
         1. **kport.hpp** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read().
         2. **kinterrupt.hpp** : Have InterruptManager, which can manage interrupts. 
@@ -85,7 +87,8 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 5. Can handle **Keyboard interrupts** using ISR.
 6. Can handle **Mouse interrupts** using ISR
 7. Can communicate with peripheral devices using **PCI_Controller**
-8. Have **KernelShell** (in kernel.cpp) that have basic commands working e.g. "help"
+8. Have **KernelShell** (in kernel.cpp) that have basic commands working e.g. "help, lspci"
+9. **Multitasking** : OSOS can do multiple tasks with Round Robin scheduling
 ---
 ---
 
