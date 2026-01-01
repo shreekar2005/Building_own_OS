@@ -2,6 +2,7 @@
 
 #include "basic/multiboot.h"
 #include "basic/kiostream.hpp" 
+#include "basic/kstring.hpp"
 #include "basic/kmemory.hpp"
 #include "essential/kgdt.hpp"
 #include "essential/kicxxabi.hpp"
@@ -19,10 +20,16 @@ private:
     char m_line_buffer[256]; // Our internal line buffer (bcs after pressing enter we need full line buffer to process)
     int m_buffer_index; // Our current top position in the buffer
     hardware_communication::PCI_Controller pciController;
+    essential::TaskManager *osos_TaskManager_ptr;
+    essential::Task *task1_ptr;
+    essential::Task *task2_ptr;
 
 public:
-    KernelShell()
+    KernelShell(essential::TaskManager *osos_TaskManager_ptr, essential::Task *task1_ptr, essential::Task *task2_ptr)
     {
+        this->osos_TaskManager_ptr=osos_TaskManager_ptr;
+        this->task1_ptr=task1_ptr;
+        this->task2_ptr=task2_ptr;
         m_buffer_index = 0;
         m_line_buffer[0] = '\0';
     }
@@ -75,14 +82,25 @@ public:
     /// @param command The null-terminated command string to process.
     void process_command(const char* command)
     {
-        // Simple "strcmp"
-        if (command[0] == 'h' && command[1] == 'e' && command[2] == 'l' && command[3] == 'p' && command[4] == '\0') {
-            basic::printf("OSOS Kernel Shell. Type 'lspci' to list devices.");
+        if (basic::strcmp(command, "help") == 0) {
+            basic::printf("OSOS Kernel Shell\n\
+'lspci' : list PCI devices\n\
+'task1' : start taskA\n\
+'task2' : start taskB");
         }
-        else if (command[0] == 'l' && command[1] == 's' && command[2] == 'p' && command[3] == 'c' && command[4] == 'i' && command[5] == '\0') {
+        else if (basic::strcmp(command, "lspci") == 0) {
             basic::printf("Listing PCI devices...\n");
             pciController.scanBus(0);
-
+        }
+        else if (basic::strcmp(command, "task1") == 0) {
+            basic::printf("Starting task1...\n");
+            task1_ptr->reset();
+            osos_TaskManager_ptr->addTask(task1_ptr);
+        }
+        else if (basic::strcmp(command, "task2") == 0) {
+            basic::printf("Starting task2...\n");
+            task2_ptr->reset();
+            osos_TaskManager_ptr->addTask(task2_ptr);
         }
         else {
             basic::printf("Unknown command: '%s'", command);

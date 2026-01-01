@@ -1,5 +1,5 @@
-#ifndef _OSOS_ESSENTIAL_GDT_H
-#define _OSOS_ESSENTIAL_GDT_H
+#ifndef _OSOS_ESSENTIAL_KGDT_H
+#define _OSOS_ESSENTIAL_KGDT_H
 
 #include <cstdint>
 

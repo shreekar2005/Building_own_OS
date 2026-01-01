@@ -4,7 +4,7 @@ void taskA()
 {
     for(int i=0; i<15; i++){
         basic::printf("A");
-        for(long long i=0; i<1000000; i++){basic::printf("");} //for some short delay
+        for(long long i=0; i<1000000; i++){basic::printf("");} //for some short delay    
     }
 }
 void taskB()
@@ -29,13 +29,11 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     essential::GDT_Manager::printLoadedTableHeader();
 
     essential::TaskManager osos_TaskManager;
-    essential::Task task1(&osos_GDT, taskA);
-    essential::Task task2(&osos_GDT, taskB);
-    osos_TaskManager.addTask(&task1);
-    osos_TaskManager.addTask(&task2);
+    essential::Task task1(&osos_GDT, &taskA);
+    essential::Task task2(&osos_GDT, &taskB);
 
     // central kernel shell
-    KernelShell shell;
+    KernelShell shell(&osos_TaskManager, &task1, &task2);
 
     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT, &osos_TaskManager);
     

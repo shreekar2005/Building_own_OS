@@ -1,5 +1,5 @@
-#ifndef _OSOS_ESSENTIAL_MULTITASKING_H
-#define _OSOS_ESSENTIAL_MULTITASKING_H
+#ifndef _OSOS_ESSENTIAL_KMULTITASKING_H
+#define _OSOS_ESSENTIAL_KMULTITASKING_H
 
 #include <cstdint>
 #include <essential/kgdt.hpp>
@@ -16,14 +16,18 @@ struct CPUState
 }__attribute__((packed));
 
 
-class Task{
+class Task {
     friend class TaskManager;
     private:
         uint8_t stack[4096]; 
         CPUState* cpustate;
+        void (*m_entrypoint)(); 
+        uint16_t m_segmentSelector;
+
     public:
-        Task(GDT_Manager* gdt_manager, void entrypoint());
+        Task(GDT_Manager* gdt_manager, void (*entrypoint)()); 
         ~Task();
+        void reset(); 
 };
 
 class TaskManager{
@@ -31,8 +35,6 @@ class TaskManager{
         Task* tasks[256];
         int numTasks;
         int currentTask;
-        
-        // Static pointer to the active manager (so the exit handler can find it)
         static TaskManager* activeTaskManager; 
 
     public:
