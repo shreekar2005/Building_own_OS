@@ -1,27 +1,8 @@
 var searchData=
 [
-  ['_7edriver_0',['~Driver',['../d9/dfb/a37039.html#ac7645eea8d3ce2bc39ddbda5e840297a',1,'driver::Driver']]],
-  ['_7edrivermanager_1',['~DriverManager',['../db/d5a/a37043.html#ae4dec72dfff075ed524e25e4baaf0385',1,'driver::DriverManager']]],
-  ['_7egdt_5fmanager_2',['~gdt_manager',['../d3/d15/a37075.html#ab0fb218f4d5871f185d4acf5432e3e2a',1,'essential::GDT_Manager::~GDT_Manager()'],['../d0/db6/a36200.html#ab811be3c4548b496014638baf9274134',1,'~GDT_Manager():&#160;kgdt.hpp']]],
-  ['_7egdt_5frow_3',['~gdt_row',['../de/d41/a37071.html#a02fc33f86cb5e47628f3029f107e9008',1,'essential::GDT_Row::~GDT_Row()'],['../d0/db6/a36200.html#ad93710bf7c9cbb3ae688f168608c406f',1,'~GDT_Row():&#160;kgdt.hpp']]],
-  ['_7eidt_5frow_4',['~idt_row',['../dd/dc4/a36179.html#af52ef1538ab7549c816752a65748cdfc',1,'~IDT_Row():&#160;kinterrupt.hpp'],['../d5/dbb/a37087.html#a9c02a7a81e8bde8ea0f50ff106a95b17',1,'hardware_communication::IDT_Row::~IDT_Row()']]],
-  ['_7einterrupthandler_5',['~InterruptHandler',['../dd/dd3/a37083.html#a12b87c89015a61b702184070354e7876',1,'hardware_communication::InterruptHandler']]],
-  ['_7einterruptmanager_6',['~InterruptManager',['../d7/d2b/a37091.html#a91bd23784e8ca1fa3d4123051c107319',1,'hardware_communication::InterruptManager']]],
-  ['_7ekernelshell_7',['~KernelShell',['../d3/dd2/a37023.html#ae26132acbd55fa27781bb8210ff088ec',1,'KernelShell']]],
-  ['_7ekeyboarddriver_8',['~KeyboardDriver',['../de/d52/a37051.html#ad6d861600fa8b332d42b0b3f96904329',1,'driver::KeyboardDriver']]],
-  ['_7ekeyboardeventhandler_9',['~KeyboardEventHandler',['../d5/dca/a37047.html#ad52b0b5f344416c5e4ea01a4eed48746',1,'driver::KeyboardEventHandler']]],
-  ['_7ekeyboardeventhandler_5ffor_5fkernel_10',['~KeyboardEventHandler_for_kernel',['../da/d2c/a37027.html#ab2b7f34603d9cdd36554a4f7f6dde585',1,'KeyboardEventHandler_for_kernel']]],
-  ['_7emousedriver_11',['~MouseDriver',['../d0/d9e/a37059.html#a6a5552a02e011b343fa8b41928f22741',1,'driver::MouseDriver']]],
-  ['_7emouseeventhandler_12',['~MouseEventHandler',['../d7/d5f/a37055.html#a5fd77fcf955282a5a8a14ce37c0cddbb',1,'driver::MouseEventHandler']]],
-  ['_7emouseeventhandler_5ffor_5fkernel_13',['~MouseEventHandler_for_kernel',['../d7/de2/a37031.html#aa96e9bf8dce2b60b7f86577c3a74455d',1,'MouseEventHandler_for_kernel']]],
-  ['_7epci_5fcontroller_14',['~PCI_Controller',['../de/df1/a37103.html#a3ee06d7487fe4ff999d2176786c2e743',1,'hardware_communication::PCI_Controller']]],
-  ['_7epci_5fdevicedescriptor_15',['~PCI_DeviceDescriptor',['../de/d01/a37099.html#a7d58a16cccfab8c55edb49943bad31a3',1,'hardware_communication::PCI_DeviceDescriptor']]],
-  ['_7eport_16',['~Port',['../da/d23/a37107.html#afe166c2a6b10ad34d47472a150366bc1',1,'hardware_communication::Port']]],
-  ['_7eport16bit_17',['~Port16Bit',['../d4/dc2/a37119.html#abe7d942088dbe47b54bd93a13a575d6e',1,'hardware_communication::Port16Bit']]],
-  ['_7eport32bit_18',['~Port32Bit',['../d9/d94/a37123.html#a2ded98f81f6e4581d5e18dfaafbdbf47',1,'hardware_communication::Port32Bit']]],
-  ['_7eport8bit_19',['~Port8Bit',['../d8/d55/a37111.html#a00937f7600d3f5062c8504814b6bf61b',1,'hardware_communication::Port8Bit']]],
-  ['_7eport8bitslow_20',['~Port8BitSlow',['../d7/d27/a37115.html#a97f9eb6dba56896461cc291fb11c4ad7',1,'hardware_communication::Port8BitSlow']]],
-  ['_7eserialdriver_21',['~SerialDriver',['../de/d4f/a37067.html#a31aa1a9a5d828c7f790a5a56370380d5',1,'driver::SerialDriver']]],
-  ['_7eserialeventhandler_22',['~SerialEventHandler',['../de/d4f/a37063.html#a2581310b60a10ed9e7928fa44f73ba36',1,'driver::SerialEventHandler']]],
-  ['_7eserialeventhandler_5ffor_5fkernel_23',['~SerialEventHandler_for_kernel',['../de/dac/a37035.html#a126116de4d4bbb58554554027aa8d941',1,'SerialEventHandler_for_kernel']]]
+  ['write_0',['write',['../db/d5b/a39250.html#a6ede8fba6ba7e26c5982a91a3d5ffa72',1,'hardware_communication::Port8Bit::write()'],['../d1/d84/a39254.html#af59dc9eca6d847543caf786f4c9c7a66',1,'hardware_communication::Port8BitSlow::write()'],['../db/d4a/a39258.html#a24f6a288e57d4c01634926ca3580324d',1,'hardware_communication::Port16Bit::write()'],['../de/dac/a39262.html#ad13c0ec90a83f05b61c023dd8a1f53e8',1,'hardware_communication::Port32Bit::write()']]],
+  ['write16_1',['write16',['../db/d96/a39242.html#ac4466a0762483fd1c3ec5f2745a58386',1,'hardware_communication::PCI_Controller']]],
+  ['write32_2',['write32',['../db/d96/a39242.html#a2f72611558fb7dcc7971e748058832d8',1,'hardware_communication::PCI_Controller']]],
+  ['write8_3',['write8',['../db/d96/a39242.html#a1bbd1027e1d181bb2eb280070e3d1831',1,'hardware_communication::PCI_Controller']]],
+  ['write_5fserial_5fchar_4',['write_serial_char',['../d1/d9e/a38331.html#adef8a5b5400c388c29477d74db094cf3',1,'basic']]]
 ];
