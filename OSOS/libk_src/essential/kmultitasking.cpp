@@ -1,5 +1,4 @@
 #include <essential/kmultitasking.hpp>
-#include "basic/kiostream.hpp" // For printf if needed
 
 using namespace essential;
 
@@ -51,8 +50,6 @@ void TaskManager::killCurrentTask()
     tasks[currentTask] = tasks[numTasks - 1];
     numTasks--;
     currentTask = -1; 
-    
-    basic::printf("\nTask Finished. Remaining: %d\n", numTasks);
 }
 
 void TaskManager::onTaskExit()
