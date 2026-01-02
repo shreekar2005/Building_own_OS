@@ -2,11 +2,14 @@
 
 using namespace essential;
 
-TaskManager* TaskManager::activeTaskManager = nullptr;
+/// @brief Global pointer to the active TaskManager instance (used by onTaskExit).
+static TaskManager* activeTaskManager = nullptr;
 
-Task::Task(GDT_Manager *gdt_manager, void (*entrypoint)()){
+Task::Task(void (*entrypoint)(void*), void* arg)
+{
     this->m_entrypoint = entrypoint;
-    this->m_segmentSelector = gdt_manager->kernel_CS_selector();
+    this->m_arg = arg;
+    this->m_codeSegmentSelector = activeTaskManager->gdt_manager->kernel_CS_selector();
 } 
 
 Task::~Task(){}
@@ -24,13 +27,14 @@ void Task::reset()
 
     cpustate->error = 0;
     cpustate->eip = (uint32_t)m_entrypoint;
-    cpustate->cs = m_segmentSelector;
+    cpustate->cs = m_codeSegmentSelector;
     cpustate->eflags = 0x202; 
     cpustate->esp = (uint32_t)TaskManager::onTaskExit;
 }
 
-TaskManager::TaskManager()
+TaskManager::TaskManager(GDT_Manager *gdt_manager)
 {
+    this->gdt_manager=gdt_manager;
     numTasks = 0;
     currentTask = -1;
     activeTaskManager = this;

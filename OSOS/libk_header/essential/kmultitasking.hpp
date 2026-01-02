@@ -40,16 +40,19 @@ class Task {
         CPUState* cpustate;
         
         /// @brief The function to execute when the task starts.
-        void (*m_entrypoint)(); 
+        void (*m_entrypoint)(void*); 
+
+        /// @brief this is argument pointer for entrypoint.
+        void *m_arg; 
         
         /// @brief The Code Segment selector to run this task in (Kernel vs User).
-        uint16_t m_segmentSelector;
+        uint16_t m_codeSegmentSelector;
 
     public:
         /// @brief Constructs a new Task.
         /// @param gdt_manager Pointer to the GDT Manager to retrieve the correct Code Segment selector.
         /// @param entrypoint The function pointer where execution should begin.
-        Task(GDT_Manager* gdt_manager, void (*entrypoint)()); 
+        Task(void (*entrypoint)(void*), void*); 
         
         ~Task();
 
@@ -72,13 +75,12 @@ class TaskManager{
         
         /// @brief The index of the currently running task in the `tasks` array.
         int currentTask;
-        
-        /// @brief Global pointer to the active TaskManager instance (used by onTaskExit).
-        static TaskManager* activeTaskManager; 
 
     public:
+        GDT_Manager *gdt_manager;
+
         /// @brief Initializes the Task Manager.
-        TaskManager();
+        TaskManager(GDT_Manager *gdt_manager);
         
         ~TaskManager();
 

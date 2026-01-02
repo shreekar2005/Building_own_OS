@@ -1,15 +1,18 @@
 #include "kernel.hpp"
 
 /// @brief This is required for multitasking to protect stack which CPU is using which there is no task to do
-void kernel_idle_loop() {
+void kernel_idle_loop(void* arg)
+{
+    (void) arg;
     while(true) {
         asm("hlt"); // Wait for interrupts (saves CPU)
     }
 }
 
 /// @brief taskA for testing multitasking
-void taskA()
+void taskA(void* arg)
 {
+    (void) arg;
     for(int i=0; i<100; i++){
         basic::printf("A");
         for(long long i=0; i<100000; i++){basic::printf("");} //for some short delay    
@@ -17,8 +20,9 @@ void taskA()
 }
 
 /// @brief taskB for testing multitasking
-void taskB()
+void taskB(void* arg)
 {
+    (void) arg;
     for(int i=0; i<100; i++){
         basic::printf("B");
         for(long long i=0; i<100000; i++){basic::printf("");} //for some short delay
@@ -38,12 +42,12 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_GDT.installTable();
     essential::GDT_Manager::printLoadedTableHeader();
 
-    essential::TaskManager osos_TaskManager;
-    essential::Task idleTask(&osos_GDT, &kernel_idle_loop);
+    essential::TaskManager osos_TaskManager(&osos_GDT);
+    essential::Task idleTask(&kernel_idle_loop, nullptr);
     osos_TaskManager.addTask(&idleTask);
 
-    essential::Task task1(&osos_GDT, &taskA);
-    essential::Task task2(&osos_GDT, &taskB);
+    essential::Task task1(&taskA, nullptr);
+    essential::Task task2(&taskB, nullptr);
     
     // central kernel shell
     KernelShell shell(&osos_TaskManager, &task1, &task2);
