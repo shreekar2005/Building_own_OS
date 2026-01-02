@@ -27,7 +27,7 @@ struct CPUState
 }__attribute__((packed));
 
 
-/// @brief Represents a single unit of execution (a thread or process) in the OS.
+/// @brief Represents a single unit of execution (a thread or process) in the OS. 
 /// @details Each Task maintains its own private stack memory (4KB) and a pointer to its saved CPU state.
 class Task {
     friend class TaskManager;
@@ -50,9 +50,9 @@ class Task {
 
     public:
         /// @brief Constructs a new Task.
-        /// @param gdt_manager Pointer to the GDT Manager to retrieve the correct Code Segment selector.
         /// @param entrypoint The function pointer where execution should begin.
-        Task(void (*entrypoint)(void*), void*); 
+        /// @param arg Void* argument pointer for entrypoint
+        Task(void (*entrypoint)(void*), void* arg); 
         
         ~Task();
 
