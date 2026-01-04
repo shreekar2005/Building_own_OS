@@ -30,6 +30,7 @@ void Task::reset()
     cpustate->cs = m_codeSegmentSelector;
     cpustate->eflags = 0x202; 
     cpustate->esp = (uint32_t)TaskManager::onTaskExit;
+    cpustate->ss  = (uint32_t)m_arg;
 }
 
 TaskManager::TaskManager(GDT_Manager *gdt_manager)
