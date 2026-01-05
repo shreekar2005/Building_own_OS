@@ -1,13 +1,17 @@
 #include "basic/kmemory.hpp"
 #include "basic/kiostream.hpp"
 
+// This symbol is defined by your linker script (linker.ld)
+// It points to the address right after your kernel code/data.
+extern "C" uint32_t end;
+
 namespace basic
 {
 
 // Define static members
-uint8_t PhysicalMemoryManager::memory_bitmap[BITMAP_SIZE];
+uint8_t* PhysicalMemoryManager::memory_bitmap = nullptr;
 uint32_t PhysicalMemoryManager::total_blocks = 0;
-uint32_t used_blocks = 0; // Just for statistics
+uint32_t PhysicalMemoryManager::used_blocks = 0;
 
 void printMemoryMap(multiboot_info_t *mbi)
 {
@@ -90,13 +94,16 @@ bool PhysicalMemoryManager::is_used(uint32_t block_index) {
 
 void PhysicalMemoryManager::init(multiboot_info_t* mbi)
 {
-    // 1. Initialize bitmap: Mark EVERYTHING as used (1) initially.
-    //    We only free what Multiboot tells us is actually RAM.
+    // placing it at the address of 'end', ensuring it doesn't overwrite kernel code.
+    memory_bitmap = (uint8_t*)&end;
+
+    // Mark EVERYTHING as used (1) initially.
+    // We only free what Multiboot tells us is actually RAM.
     for (int i = 0; i < (int)BITMAP_SIZE; i++) {
         memory_bitmap[i] = 0xFF; 
     }
 
-    // 2. Parse Multiboot Map to unlock available RAM
+    // Parse Multiboot Map to unlock available RAM
     uintptr_t mmap_start = mbi->mmap_addr;
     uintptr_t mmap_end = mbi->mmap_addr + mbi->mmap_length;
 
@@ -108,6 +115,19 @@ void PhysicalMemoryManager::init(multiboot_info_t* mbi)
             // Calculate which 4KB blocks this region covers
             uint32_t start_block = mmap->addr / PAGE_SIZE;
             uint32_t num_blocks = mmap->len / PAGE_SIZE;
+            
+            // Calculate total blocks supported by our bitmap size
+            uint32_t max_supported_blocks = BITMAP_SIZE * 8; 
+
+            // If memory starts beyond 4GB, ignore it
+            if (start_block >= max_supported_blocks) {
+                continue; 
+            }
+
+            // If memory starts inside 4GB but extends beyond it, cap it.
+            if (start_block + num_blocks > max_supported_blocks) {
+                num_blocks = max_supported_blocks - start_block;
+            }
             
             // Mark them as free
             for (uint32_t i = 0; i < num_blocks; i++) {
@@ -121,7 +141,7 @@ void PhysicalMemoryManager::init(multiboot_info_t* mbi)
         }
     }
 
-    // 3. Protect Critical Regions
+    // Protect Critical Regions
     // Mark the first 4MB as USED. This covers:
     // - Real Mode IVT (0x0)
     // - BIOS Data Area

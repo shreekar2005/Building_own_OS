@@ -61,6 +61,8 @@ SECTIONS
 
     } :data_segment 
 
+    end = .; _end = .;
+
     /DISCARD/ : 
     {
         *(.comment)

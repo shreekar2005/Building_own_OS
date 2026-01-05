@@ -19,10 +19,11 @@ namespace basic
     class PhysicalMemoryManager {
     private:
         // The bitmap array. bit=0 means free, bit=1 means used.
-        static uint8_t memory_bitmap[BITMAP_SIZE];
+        static uint8_t* memory_bitmap;
         
         // Total blocks (frames) detected in the system
         static uint32_t total_blocks;
+        static uint32_t used_blocks;
         
         // Helper: Set a bit to 1 (Used)
         static void mark_used(uint32_t block_index);

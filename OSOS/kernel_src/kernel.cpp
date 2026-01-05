@@ -53,6 +53,7 @@ void init(void* arg)
 
     basic::printf("\nHELLO FROM OSOS (`help` to see commands)...\npress Enter to continue... :)");
     // basic::printf("%d",basic::PhysicalMemoryManager::get_free_memory_kb());
+    
 
     while (true){asm("hlt");};
     basic::disable_cursor();
@@ -68,7 +69,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     basic::enable_cursor(0,15);
     basic::clearScreen();
 
-    // basic::PhysicalMemoryManager::init(mbi);
+    basic::PhysicalMemoryManager::init(mbi);
 
     essential::GDT_Manager osos_GDT_Manager;
     osos_GDT_Manager.installTable();
