@@ -1,27 +1,27 @@
 #include "kernel.hpp"
 
-/// @brief taskA for testing multitasking
-void taskA(void* arg)
+/// @brief task_o for testing multitasking
+void task_o(void* arg)
 {
     (void) arg;
-    for(int i=0; i<100; i++){
-        basic::printf("A");
+    for(int i=0; i<200; i++){
+        basic::printf("o");
         for(long long i=0; i<100000; i++){basic::printf("");} //for some short delay    
     }
 }
 
-/// @brief taskB for testing multitasking
-void taskB(void* arg)
+/// @brief task_x for testing multitasking
+void task_x(void* arg)
 {
     (void) arg;
-    for(int i=0; i<100; i++){
-        basic::printf("B");
+    for(int i=0; i<200; i++){
+        basic::printf("x");
         for(long long i=0; i<100000; i++){basic::printf("");} //for some short delay
     }
 }
 
-essential::Task task1(&taskA, nullptr);
-essential::Task task2(&taskB, nullptr);
+essential::KernelThread task1(&task_o, nullptr);
+essential::KernelThread task2(&task_x, nullptr);
 
 /// @brief This is halt for kernelMain
 void halt(void* arg)
@@ -64,12 +64,12 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_GDT_Manager.installTable();
     essential::GDT_Manager::printLoadedTableHeader();
 
-    essential::TaskManager osos_TaskManager(&osos_GDT_Manager);
+    essential::KernelThreadManager osos_ThreadManager(&osos_GDT_Manager);
 
     // central kernel shell
-    KernelShell shell(&osos_TaskManager, mbi);
+    KernelShell shell(&osos_ThreadManager, mbi);
 
-    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT_Manager, &osos_TaskManager);
+    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT_Manager, &osos_ThreadManager);
     
     // object of drivers so that they will handle their corresponding Interrupts
     driver::DriverManager driverManager;
@@ -94,8 +94,8 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_InterruptManager.installTable();
     hardware_communication::InterruptManager::printLoadedTableHeader();
 
-    essential::Task haltTask(&halt, nullptr);
-    osos_TaskManager.addTask(&haltTask);
+    essential::KernelThread haltTask(&halt, nullptr);
+    osos_ThreadManager.addThread(&haltTask);
 
     shell.addShellTask(&task1);
     shell.addShellTask(&task2);

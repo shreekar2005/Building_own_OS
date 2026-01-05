@@ -2,19 +2,19 @@
 
 using namespace essential;
 
-/// @brief Global pointer to the active TaskManager instance (used by onTaskExit).
-static TaskManager* activeTaskManager = nullptr;
+/// @brief Global pointer to the active KernelThreadManager instance (used by onThreadExit).
+static KernelThreadManager* activeTaskManager = nullptr;
 
-Task::Task(void (*entrypoint)(void*), void* arg)
+KernelThread::KernelThread(void (*entrypoint)(void*), void* arg)
 {
     this->m_entrypoint = entrypoint;
     this->m_arg = arg;
     this->m_codeSegmentSelector = activeTaskManager->gdt_manager->kernel_CS_selector();
 } 
 
-Task::~Task(){}
+KernelThread::~KernelThread(){}
 
-void Task::reset()
+void KernelThread::reset()
 {
     cpustate = (CPUState*) (stack + 4096 - sizeof(CPUState));
 
@@ -29,62 +29,62 @@ void Task::reset()
     cpustate->eip = (uint32_t)m_entrypoint;
     cpustate->cs = m_codeSegmentSelector;
     cpustate->eflags = 0x202; 
-    cpustate->esp = (uint32_t)TaskManager::onTaskExit;
+    cpustate->esp = (uint32_t)KernelThreadManager::onThreadExit;
     cpustate->ss  = (uint32_t)m_arg;
 }
 
-TaskManager::TaskManager(GDT_Manager *gdt_manager)
+KernelThreadManager::KernelThreadManager(GDT_Manager *gdt_manager)
 {
     this->gdt_manager=gdt_manager;
-    numTasks = 0;
-    currentTask = -1;
+    numThreads = 0;
+    currentThread = -1;
     activeTaskManager = this;
 }
 
-TaskManager::~TaskManager(){}
+KernelThreadManager::~KernelThreadManager(){}
 
-bool TaskManager::addTask(Task *task)
+bool KernelThreadManager::addThread(KernelThread *thread)
 {
-    // Prevent adding the same task object twice
-    for(int i = 0; i < numTasks; i++) {
-        if(tasks[i] == task) {
-            return false; // Task is already running
+    // Prevent adding the same thread object twice
+    for(int i = 0; i < numThreads; i++) {
+        if(threads[i] == thread) {
+            return false; // KernelThread is already running
         }
     }
 
-    task->reset();
-    if (numTasks >= 256)
+    thread->reset();
+    if (numThreads >= 256)
         return false;
-    tasks[numTasks++] = task;
+    threads[numThreads++] = thread;
     return true;
 }
 
-void TaskManager::killCurrentTask()
+void KernelThreadManager::killCurrentThread()
 {
-    if (numTasks <= 0) return;
-    tasks[currentTask] = tasks[numTasks - 1];
-    numTasks--;
-    currentTask = -1;
+    if (numThreads <= 0) return;
+    threads[currentThread] = threads[numThreads - 1];
+    numThreads--;
+    currentThread = -1;
 }
 
-void TaskManager::onTaskExit()
+void KernelThreadManager::onThreadExit()
 {
     if (activeTaskManager != nullptr)
-        activeTaskManager->killCurrentTask();
+        activeTaskManager->killCurrentThread();
     while(true)
         asm("hlt");
 }
 
-CPUState* TaskManager::schedule(CPUState* cpustate)
+CPUState* KernelThreadManager::scheduleThreads(CPUState* cpustate)
 {
-    const int TIME_QUANTUM = 4; 
+    const int TIME_QUANTUM = 1; 
     static int tick_counter = 0;
 
-    if(numTasks <= 0) 
+    if(numThreads <= 0) 
         return cpustate;
 
-    if(currentTask >= 0)
-        tasks[currentTask]->cpustate = cpustate;
+    if(currentThread >= 0)
+        threads[currentThread]->cpustate = cpustate;
     
     tick_counter++;
     
@@ -94,10 +94,10 @@ CPUState* TaskManager::schedule(CPUState* cpustate)
 
     tick_counter = 0;
 
-    // Round Robin Logic
-    if(++currentTask >= numTasks)
-        currentTask = 0;
-    if(numTasks>1 && currentTask==0) currentTask = 1; // 0th task is init function from `kernel.cpp`
+    // Round Robin Logic for thread scheduling
+    if(++currentThread >= numThreads)
+        currentThread = 0;
+    if(numThreads>1 && currentThread==0) currentThread = 1; // 0th thread is init function from `kernel.cpp`
     
-    return tasks[currentTask]->cpustate;
+    return threads[currentThread]->cpustate;
 }

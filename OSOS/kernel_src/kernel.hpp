@@ -25,27 +25,27 @@ private:
     char m_line_buffer[256]; // Our internal line buffer (bcs after pressing enter we need full line buffer to process)
     int m_buffer_index; // Our current top position in the buffer
     hardware_communication::PCI_Controller pciController;
-    essential::TaskManager *osos_TaskManager_ptr;
-    essential::Task* shell_tasks_ptr[maxNumShellTask];
-    int numShellTasks;
+    essential::KernelThreadManager *osos_ThreadManager_ptr;
+    essential::KernelThread* shell_threads_ptr[maxNumShellTask];
+    int numShellThreads;
 
 public:
-    KernelShell(essential::TaskManager *osos_TaskManager_ptr, multiboot_info_t *mbi)
+    KernelShell(essential::KernelThreadManager *osos_ThreadManager_ptr, multiboot_info_t *mbi)
     {
-        this->osos_TaskManager_ptr=osos_TaskManager_ptr;
+        this->osos_ThreadManager_ptr=osos_ThreadManager_ptr;
         this->mbi=mbi;
         m_buffer_index = 0;
         m_line_buffer[0] = '\0';
-        numShellTasks = 0;
+        numShellThreads = 0;
     }
     ~KernelShell() {}
 
-    /// @brief to add Task to task list of shell...
-    /// @param task pointer of Task
+    /// @brief to add KernelThread to task list of shell...
+    /// @param task pointer of KernelThread
     /// @return bool : true if successfully added else false 
-    bool addShellTask(essential::Task* task){
-        if(numShellTasks >= maxNumShellTask) return false;
-        shell_tasks_ptr[numShellTasks++]=task;
+    bool addShellTask(essential::KernelThread* task){
+        if(numShellThreads >= maxNumShellTask) return false;
+        shell_threads_ptr[numShellThreads++]=task;
         return true;
     }
 
@@ -104,7 +104,7 @@ checkmem  : check how much memory is free (in KB)\n\
 checkheap : examine kernel heap\n\
 lspagedir : check active page directory entries for kernel\n\
 lspci     : list PCI devices\n\
-task<i>   : start ith task from OSOS shell\n\
+task<i>   : start ith task(thread) from OSOS shell\n\
 numtasks  : to see number of tasks in shell list\n");
         }
         else if (basic::strcmp(command, "lsmem") == 0){
@@ -117,20 +117,20 @@ numtasks  : to see number of tasks in shell list\n");
         else if (basic::strncmp(command, "task", 4) == 0){
             char* tasknumstr=(char*)command+4;
             int tasknum = basic::stoi(tasknumstr) - 1;
-            if(tasknum<0 || tasknum>=numShellTasks) 
+            if(tasknum<0 || tasknum>=numShellThreads) 
                 basic::printf("task number %d not present in task list of OSOS shell :(", tasknum+1);
             else{
                 basic::printf("Starting task number %d...\n", tasknum+1);
-                if (osos_TaskManager_ptr->addTask(shell_tasks_ptr[tasknum])==false) {
+                if (osos_ThreadManager_ptr->addThread(shell_threads_ptr[tasknum])==false) {
                      basic::printf("Error: failed to start task1.\n");
                 }
             }
         }
         else if(basic::strcmp(command, "numtasks") ==0){
-            basic::printf("Number of tasks in shell list : %d\n", numShellTasks);
+            basic::printf("Number of tasks in shell list : %d\n", numShellThreads);
         }
         else if(basic::strcmp(command, "checkmem") ==0){
-            basic::printf("%d KB\n",memory::PhysicalMemoryManager::get_free_memory_kb());
+            basic::printf("Total Free Memory : %d KB\n",memory::PhysicalMemoryManager::get_free_memory_kb());
         }
         else if(basic::strcmp(command, "checkheap") ==0){
             memory::kernel_heap.printHeapInfo();

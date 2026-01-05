@@ -10,7 +10,7 @@ namespace essential
 /// @brief Represents the state of the CPU registers.
 /// @details This structure matches the layout of registers pushed onto the stack 
 /// by the interrupt handler (common/stub) before the C++ handler is called.
-/// When switching tasks, we save the old task's state here and load the new task's state from here.
+/// When switching threads, we save the old thread's state here and load the new thread's state from here.
 struct CPUState
 {
     // General purpose registers pushed by `pusha` (mostly)
@@ -28,83 +28,83 @@ struct CPUState
 
 
 /// @brief Represents a single unit of execution (a thread or process) in the OS. 
-/// @details Each Task maintains its own private stack memory (4KB) and a pointer to its saved CPU state.
-class Task {
-    friend class TaskManager;
+/// @details Each KernelThread maintains its own private stack memory (4KB) and a pointer to its saved CPU state.
+class KernelThread {
+    friend class KernelThreadManager;
     private:
-        /// @brief The dedicated kernel stack for this task.
+        /// @brief The dedicated kernel stack for this thread.
         uint8_t stack[4096]; 
         
         /// @brief Pointer to the saved register state inside the stack.
-        /// Used by the scheduler to restore this task's context.
+        /// Used by the scheduler to restore this thread's context.
         CPUState* cpustate;
         
-        /// @brief The function to execute when the task starts.
+        /// @brief The function to execute when the thread starts.
         void (*m_entrypoint)(void*); 
 
         /// @brief this is argument pointer for entrypoint.
         void *m_arg; 
         
-        /// @brief The Code Segment selector to run this task in (Kernel vs User).
+        /// @brief The Code Segment selector to run this thread in (Kernel vs User).
         uint16_t m_codeSegmentSelector;
 
     public:
-        /// @brief Constructs a new Task.
+        /// @brief Constructs a new KernelThread.
         /// @param entrypoint The function pointer where execution should begin.
         /// @param arg Void* argument pointer for entrypoint
-        Task(void (*entrypoint)(void*), void* arg); 
+        KernelThread(void (*entrypoint)(void*), void* arg); 
         
-        ~Task();
+        ~KernelThread();
 
-        /// @brief Resets or initializes the task's stack frame.
+        /// @brief Resets or initializes the thread's stack frame.
         /// @details This function sets up a "fake" interrupt stack frame at the top of the `stack` array.
-        /// It sets the instruction pointer (EIP) to the entrypoint and the stack pointer (ESP) to the `onTaskExit` handler.
-        /// This must be called before the task is run for the first time.
+        /// It sets the instruction pointer (EIP) to the entrypoint and the stack pointer (ESP) to the `onThreadExit` handler.
+        /// This must be called before the thread is run for the first time.
         void reset(); 
 };
 
-/// @brief Manages multitasking and scheduling of tasks.
-/// @details Implements a simple Round-Robin scheduler to switch between registered tasks.
-class TaskManager{
+/// @brief Manages multitasking and scheduling of threads.
+/// @details Implements a simple Round-Robin scheduler to switch between registered threads.
+class KernelThreadManager{
     private:
-        /// @brief Array of pointers to all active tasks.
-        Task* tasks[256];
+        /// @brief Array of pointers to all active threads.
+        KernelThread* threads[256];
         
-        /// @brief The current number of active tasks.
-        int numTasks;
+        /// @brief The current number of active threads.
+        int numThreads;
         
-        /// @brief The index of the currently running task in the `tasks` array.
-        int currentTask;
+        /// @brief The index of the currently running thread in the `threads` array.
+        int currentThread;
 
     public:
         GDT_Manager *gdt_manager;
 
-        /// @brief Initializes the Task Manager.
-        TaskManager(GDT_Manager *gdt_manager);
+        /// @brief Initializes the KernelThread Manager.
+        KernelThreadManager(GDT_Manager *gdt_manager);
         
-        ~TaskManager();
+        ~KernelThreadManager();
 
-        /// @brief Adds a task to the scheduling queue.
-        /// @details Calls `reset()` on the task to prepare its stack.
-        /// @param task Pointer to the Task object to add.
-        /// @return true if the task was added successfully, false if the queue is full or task is already running.
-        bool addTask(Task* task);
+        /// @brief Adds a kernel thread to the scheduling queue.
+        /// @details Calls `reset()` on the thread to prepare its stack.
+        /// @param thread Pointer to the KernelThread object to add.
+        /// @return true if the thread was added successfully, false if the queue is full or thread is already running.
+        bool addThread(KernelThread* thread);
 
         /// @brief The core scheduling function called by the timer interrupt.
-        /// @details Saves the current task's state (passed in `cpustate`) and selects the next task to run.
+        /// @details Saves the current thread's state (passed in `cpustate`) and selects the next thread to run.
         /// Uses a Round-Robin algorithm with a time quantum.
-        /// @param cpustate The register state of the task that was just interrupted.
-        /// @return The register state of the next task to run (which the interrupt handler will restore).
-        CPUState* schedule(CPUState* cpustate);
+        /// @param cpustate The register state of the thread that was just interrupted.
+        /// @return The register state of the next thread to run (which the interrupt handler will restore).
+        CPUState* scheduleThreads(CPUState* cpustate);
 
-        /// @brief Removes the currently running task from the scheduling queue.
-        /// @details This is typically called when a task finishes execution.
-        void killCurrentTask();
+        /// @brief Removes the currently running thread from the scheduling queue.
+        /// @details This is typically called when a thread finishes execution.
+        void killCurrentThread();
 
-        /// @brief A static helper function used as the return address for tasks.
-        /// @details When a task function returns (finishes), the CPU pops this address from the stack.
-        /// This function effectively calls `killCurrentTask()` and halts the CPU until the next scheduler tick.
-        static void onTaskExit(); 
+        /// @brief A static helper function used as the return address for threads.
+        /// @details When a thread function returns (finishes), the CPU pops this address from the stack.
+        /// This function effectively calls `killCurrentThread()` and halts the CPU until the next scheduler tick.
+        static void onThreadExit(); 
 };
 
 }

@@ -25,7 +25,7 @@ Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
 Port8BitSlow InterruptManager::picSlaveData(0xA1);
 
 
-InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::TaskManager* task_manager)
+InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KernelThreadManager* task_manager)
 {
     this->task_manager = task_manager;
     // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.
@@ -181,7 +181,7 @@ uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t e
         esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);
     }
     if(interruptNumber==0x20){ //0x20 is Hardware Timer Interrupt
-        esp = (uintptr_t)installed_interrupt_manager->task_manager->schedule((essential::CPUState*)esp);
+        esp = (uintptr_t)installed_interrupt_manager->task_manager->scheduleThreads((essential::CPUState*)esp);
     }
 
     // Hardware interrupts must still be acknowledged to the PIC

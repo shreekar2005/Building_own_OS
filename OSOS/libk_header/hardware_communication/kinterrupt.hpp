@@ -57,7 +57,7 @@ class InterruptManager{
     protected:
         IDT_Row interruptDescriptorTable[256];
         InterruptHandler* handlers[256];
-        essential::TaskManager* task_manager;
+        essential::KernelThreadManager* task_manager;
 
         /// @brief Populates a specific entry in the Interrupt Descriptor Table (IDT).
         /// @param interruptNumber The index of the IDT entry to set (0-255).
@@ -78,7 +78,7 @@ class InterruptManager{
         static hardware_communication::Port8BitSlow picSlaveData;
 
     public:
-        InterruptManager(essential::GDT_Manager* gdt, essential::TaskManager* task_manager);
+        InterruptManager(essential::GDT_Manager* gdt, essential::KernelThreadManager* task_manager);
         ~InterruptManager();
 
         /// @brief Loads the Interrupt Descriptor Table (IDT) into the CPU's IDTR register.
