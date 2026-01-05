@@ -58,7 +58,7 @@ class KernelThread {
 
         /// @brief Resets or initializes the thread's stack frame.
         /// @details This function sets up a "fake" interrupt stack frame at the top of the `stack` array.
-        /// It sets the instruction pointer (EIP) to the entrypoint and the stack pointer (ESP) to the `onThreadExit` handler.
+        /// It sets the instruction pointer (EIP) to the entrypoint and the stack pointer (ESP) to the `onTaskExit` handler.
         /// This must be called before the thread is run for the first time.
         void reset(); 
 };

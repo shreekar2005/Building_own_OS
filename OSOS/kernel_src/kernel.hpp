@@ -122,7 +122,7 @@ numtasks  : to see number of tasks in shell list\n");
             else{
                 basic::printf("Starting task number %d...\n", tasknum+1);
                 if (osos_ThreadManager_ptr->addThread(shell_threads_ptr[tasknum])==false) {
-                     basic::printf("Error: failed to start task1.\n");
+                     basic::printf("Error: failed to start task%d.\n", tasknum+1);
                 }
             }
         }
