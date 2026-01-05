@@ -1,23 +1,22 @@
 # Instructions to use this makefile
-# make          		: To build elf and boot with elf and qemu
-# make qemu_elf 		: To build elf and boot with elf and qemu
-# make qemu_nographic	: To build elf and boot with elf and qemu with serial IO only (attached to terminal of host machine)
-# make qemu_serial 		: To build elf and boot with elf and qemu with both serial IO and graphical mode
-# make qemu_iso 		: To build iso and boot with iso and qemu
-# make vm       		: To build iso and boot with iso and VirtualBox (read README for setting up VM)
-# make elf      		: To build elf file by compiling and linking source code
-# make iso      		: To build iso file with existing elf 
-# make clean    		: To delete all build directories
-# make clear    		: To delete all build directories and clear the screen
-# make setup			: To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
-# make dbg_elf 			: To build elf file with -g (keep debug info) and -O0(dont optimize while compiling) 
-# make dbg_start_qemu 	: To build dbg_elf and just start QEMU (can connect that from VSCode or cli GDB)
-# make dbg_cli			: To connect QEMU instance (created by `make dbg_start_qemu`) with cli GDB
-# make docs				: To update docs - OSOS documentation (which have technical details and info for project)
+# make                  : To build elf and boot with elf and qemu
+# make qemu_elf         : To build elf and boot with elf and qemu
+# make qemu_nographic   : To build elf and boot with elf and qemu with serial IO only (attached to terminal of host machine)
+# make qemu_serial      : To build elf and boot with elf and qemu with both serial IO and graphical mode
+# make qemu_iso         : To build iso and boot with iso and qemu
+# make vm               : To build iso and boot with iso and VirtualBox (read README for setting up VM)
+# make elf              : To build elf file by compiling and linking source code
+# make iso              : To build iso file with existing elf 
+# make clean            : To delete all build directories
+# make clear            : To delete all build directories and clear the screen
+# make setup            : To install all dependencies (qemu-system-x86 virtualbox grub-pc-bin xorriso gnome-terminal)
+# make dbg_elf          : To build elf file with -g (keep debug info) and -O0(dont optimize while compiling) 
+# make dbg_start_qemu   : To build dbg_elf and just start QEMU (can connect that from VSCode or cli GDB)
+# make dbg_cli          : To connect QEMU instance (created by `make dbg_start_qemu`) with cli GDB
+# make docs             : To update docs - OSOS documentation (which have technical details and info for project)
 
 # .PHONY is for targets that are NOT files
 .PHONY: qemu_elf qemu_iso elf vm iso clear clean debug setup dbg_elf dbg_start_qemu dbg_cli docs
-
 
 # Directories
 KERNEL_SRC_DIR := kernel_src
@@ -46,12 +45,19 @@ TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
 # Toolchain flags
 CC          := osos-g++
+# Default CCPARAMS. (Note: -DserialMode=1 will be added dynamically below for specific targets)
 CCPARAMS    := -O2 -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
 AS          := osos-as
 ASPARAMS    := 
-QEMU 		:= qemu-system-i386
-GDB			:= osos-gdb
+QEMU        := qemu-system-i386
+GDB         := osos-gdb
 # -g is for adding debugging symbols
+
+# --- CONFIGURATION LOGIC ---
+# If we run 'make qemu_nographic' or 'make qemu_serial', we add the serialMode flag
+# and we force a 'clean' so the code actually recompiles with the new flag.
+qemu_nographic: CCPARAMS += -DserialMode=1
+qemu_serial: CCPARAMS += -DserialMode=1
 
 # Default target when you just type 'make'. It starts qemu virtual machine
 qemu: qemu_elf
@@ -63,11 +69,13 @@ qemu_iso: iso
 	$(QEMU) -cdrom $(TARGET_ISO) -m 4096
 
 # Have both graphic and serial mode
-qemu_serial: elf
+# DEPENDS ON CLEAN: to ensure we recompile with -DserialMode=1
+qemu_serial: clean elf
 	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -serial stdio
 
 # Have only serial mode
-qemu_nographic : elf
+# DEPENDS ON CLEAN: to ensure we recompile with -DserialMode=1
+qemu_nographic : clean elf
 	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -nographic
 
 # Rule to create the kernel ELF.
@@ -98,13 +106,13 @@ iso: $(TARGET_ISO)
 $(TARGET_ISO): $(TARGET_ELF)
 	mkdir -p $(KERNEL_BUILD_DIR)/iso/boot/grub
 	cp $(TARGET_ELF) $(KERNEL_BUILD_DIR)/iso/boot/
-	echo 'set timeout=2' 					> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo 'set default=0' 					>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo '' 								>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo 'menuentry "OSOS" {' 				>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo 'set timeout=2'                    > $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo 'set default=0'                    >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo ''                                 >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo 'menuentry "OSOS" {'               >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	echo '  multiboot /boot/OSOSkernel.elf' >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo '  boot' 							>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
-	echo '}' 								>> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo '  boot'                           >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
+	echo '}'                                >> $(KERNEL_BUILD_DIR)/iso/boot/grub/grub.cfg
 	grub-mkrescue --output=$@ $(KERNEL_BUILD_DIR)/iso
 	rm -rf $(KERNEL_BUILD_DIR)/iso
 

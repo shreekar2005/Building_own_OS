@@ -87,7 +87,9 @@ static void printCharStr(const char *str)
 
     for (int i = 0; str[i] != '\0'; i++)
     {
+        #if defined(serialMode) && serialMode == 1
         write_serial_char(str[i]);
+        #endif
         if (str[i] == '\n')
         {
             cursor_y_++;
