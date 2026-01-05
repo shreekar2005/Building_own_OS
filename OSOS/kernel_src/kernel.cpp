@@ -66,6 +66,8 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     essential::__callConstructors(); 
     basic::enable_cursor(0,15);
     basic::clearScreen();
+    
+    basic::PhysicalMemoryManager::init(mbi);
 
     essential::GDT_Manager osos_GDT_Manager;
     osos_GDT_Manager.installTable();

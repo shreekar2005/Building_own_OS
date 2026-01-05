@@ -2,7 +2,12 @@
 #include "basic/kiostream.hpp"
 
 namespace basic
-{ // namespace basic start
+{
+
+// Define static members
+uint8_t PhysicalMemoryManager::memory_bitmap[BITMAP_SIZE];
+uint32_t PhysicalMemoryManager::total_blocks = 0;
+uint32_t used_blocks = 0; // Just for statistics
 
 void printMemoryMap(multiboot_info_t *mbi)
 {
@@ -57,8 +62,116 @@ void printMemoryMap(multiboot_info_t *mbi)
     double total_mb = total_available_bytes / 1024.0;
     printf("Total available memory: %.2f KB\n\n", total_mb);
 }
-} // namespace basic end
+// -----------------------------------------------------------------------
+// Helper Functions for Bit Manipulation
+// -----------------------------------------------------------------------
 
+void PhysicalMemoryManager::mark_used(uint32_t block_index) {
+    uint32_t index = block_index / 8;
+    uint32_t offset = block_index % 8;
+    memory_bitmap[index] |= (1 << offset);
+}
+
+void PhysicalMemoryManager::mark_free(uint32_t block_index) {
+    uint32_t index = block_index / 8;
+    uint32_t offset = block_index % 8;
+    memory_bitmap[index] &= ~(1 << offset);
+}
+
+bool PhysicalMemoryManager::is_used(uint32_t block_index) {
+    uint32_t index = block_index / 8;
+    uint32_t offset = block_index % 8;
+    return (memory_bitmap[index] & (1 << offset)) != 0;
+}
+
+// -----------------------------------------------------------------------
+// Public Interface
+// -----------------------------------------------------------------------
+
+void PhysicalMemoryManager::init(multiboot_info_t* mbi)
+{
+    // 1. Initialize bitmap: Mark EVERYTHING as used (1) initially.
+    //    We only free what Multiboot tells us is actually RAM.
+    for (int i = 0; i < (int)BITMAP_SIZE; i++) {
+        memory_bitmap[i] = 0xFF; 
+    }
+
+    // 2. Parse Multiboot Map to unlock available RAM
+    uintptr_t mmap_start = mbi->mmap_addr;
+    uintptr_t mmap_end = mbi->mmap_addr + mbi->mmap_length;
+
+    for (multiboot_memory_map_t *mmap = (multiboot_memory_map_t *)mmap_start;
+         (uintptr_t)mmap < mmap_end;
+         mmap = (multiboot_memory_map_t *)((uintptr_t)mmap + mmap->size + sizeof(mmap->size)))
+    {
+        if (mmap->type == MULTIBOOT_MEMORY_AVAILABLE) {
+            // Calculate which 4KB blocks this region covers
+            uint32_t start_block = mmap->addr / PAGE_SIZE;
+            uint32_t num_blocks = mmap->len / PAGE_SIZE;
+            
+            // Mark them as free
+            for (uint32_t i = 0; i < num_blocks; i++) {
+                mark_free(start_block + i);
+            }
+            
+            // Track total system size roughly
+            if (start_block + num_blocks > total_blocks) {
+                total_blocks = start_block + num_blocks;
+            }
+        }
+    }
+
+    // 3. Protect Critical Regions
+    // Mark the first 4MB as USED. This covers:
+    // - Real Mode IVT (0x0)
+    // - BIOS Data Area
+    // - Video Memory (0xB8000)
+    // - Your Kernel Code (loaded at 1MB usually)
+    // - GRUB Modules
+    uint32_t reserved_blocks = (4 * 1024 * 1024) / PAGE_SIZE; // 1024 blocks
+    for (uint32_t i = 0; i < reserved_blocks; i++) {
+        mark_used(i);
+    }
+    
+    printf("PMM Initialized. Total Blocks: %d\n", total_blocks);
+}
+
+void* PhysicalMemoryManager::allocate_block()
+{
+    // Iterate through bitmap to find a free bit (0)
+    // Optimization: We could store the last known free index to speed this up
+    for (uint32_t i = 0; i < total_blocks; i++) {
+        if (!is_used(i)) {
+            mark_used(i);
+            used_blocks++;
+            // Convert block index -> Physical Address
+            return (void*)(uintptr_t)(i * PAGE_SIZE); 
+        }
+    }
+    printf("OOM: Out of Memory!\n");
+    return nullptr;
+}
+
+void PhysicalMemoryManager::free_block(void* address)
+{
+    uintptr_t addr = (uintptr_t)address;
+    uint32_t block_index = addr / PAGE_SIZE;
+    
+    if (is_used(block_index)) {
+        mark_free(block_index);
+        used_blocks--;
+    }
+}
+
+uint32_t PhysicalMemoryManager::get_free_memory_kb() {
+    // This is a rough calculation based on current tracking
+    // For exact numbers, you should count '0' bits in the loop
+    return (total_blocks - used_blocks) * 4;
+}
+
+// (Keep your Stub 'new'/'delete' operators here)
+
+} // namespace basic
 
 /**
  * The compiler requires these functions to be defined to handle memory
@@ -73,6 +186,7 @@ void printMemoryMap(multiboot_info_t *mbi)
 void* operator new(size_t size) noexcept
 {
     (void)size;
+    basic::printf("new called\n");
     return nullptr;
 }
 

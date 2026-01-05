@@ -127,8 +127,8 @@ void PCI_Controller::recursiveSelDriver(uint8_t bus, driver::DriverManager* driv
 
             if(dev.vendorId == 0x0000 || dev.vendorId == 0xFFFF) continue;
             
-            basic::printf("PCI Bus %#3x, Device %#3x, Function %#3x ", bus, device, function);
-            basic::printf("=> Vendor %#5hx, Device %#5hx (Class %#3x, Sub %#3x)\n", dev.vendorId, dev.deviceId, dev.classId, dev.subclassId);
+            // basic::printf("PCI Bus %#3x, Device %#3x, Function %#3x ", bus, device, function);
+            // basic::printf("=> Vendor %#5hx, Device %#5hx (Class %#3x, Sub %#3x)\n", dev.vendorId, dev.deviceId, dev.classId, dev.subclassId);
 
             for(uint16_t barNum = 0; barNum < 6; barNum++){
                 BaseAddressRegister bar = getBaseAddressRegister(bus, device, function, barNum);
@@ -248,6 +248,7 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor dev, hardware_com
     (void) interrupt_manager;
 
     driver::Driver* driver = 0;
+    return driver; ///////////////////////////////////////////////remvoe this
     switch(dev.vendorId)
     {
         case 0x1022: // AMD
