@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <cstddef>
 
-namespace basic
+namespace memory
 {
     // Standard page size for x86
     const uint32_t PAGE_SIZE = 4096; 

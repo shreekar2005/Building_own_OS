@@ -1,11 +1,12 @@
-#include "basic/kmemory.hpp"
+#include "memory/kpmm.hpp"
 #include "basic/kiostream.hpp"
 
 // This symbol is defined by your linker script (linker.ld)
 // It points to the address right after your kernel code/data.
 extern "C" uint32_t end;
+using namespace basic;
 
-namespace basic
+namespace memory
 {
 
 // Define static members
@@ -17,11 +18,11 @@ void printMemoryMap(multiboot_info_t *mbi)
 {
     // Check if the memory map flag is set (bit 6)
     if (!(mbi->flags & (1 << 6))) {
-        printf("\nError: Memory map not provided by bootloader.\n");
+        printf("Error: Memory map not provided by bootloader.\n");
         return;
     }
 
-    printf("\n--- System Memory Map ---\n");
+    printf("--- System Memory Map ---\n");
     
     // Use uint64_t to correctly accumulate total memory size
     uint64_t total_available_bytes = 0;
@@ -64,7 +65,7 @@ void printMemoryMap(multiboot_info_t *mbi)
     
     // Use floating point for the final calculation and display
     double total_mb = total_available_bytes / 1024.0;
-    printf("Total available memory: %.2f KB\n\n", total_mb);
+    printf("Total available memory: %.2f KB\n", total_mb);
 }
 // -----------------------------------------------------------------------
 // Helper Functions for Bit Manipulation
@@ -189,64 +190,4 @@ uint32_t PhysicalMemoryManager::get_free_memory_kb() {
     return (total_blocks - used_blocks) * 4;
 }
 
-// (Keep your Stub 'new'/'delete' operators here)
-
-} // namespace basic
-
-/**
- * The compiler requires these functions to be defined to handle memory
- * allocation and deallocation, especially for classes with virtual
- * destructors. Since we are not linking the standard library, we must
- * provide our own. For now, they don't have to do anything.
- */
-
-/// @brief Overload of the 'new' operator (stub).
-/// @param size The size of memory to allocate.
-/// @return Always returns nullptr as this is a stub.
-void* operator new(size_t size) noexcept
-{
-    (void)size;
-    basic::printf("new called\n");
-    return nullptr;
-}
-
-/// @brief Overload of the 'new[]' operator (stub).
-/// @param size The size of memory to allocate for the array.
-/// @return Always returns nullptr as this is a stub.
-void* operator new[](size_t size) noexcept
-{
-    (void)size;
-    return nullptr;
-}
-
-/// @brief Overload of the 'delete' operator (stub).
-/// @param ptr Pointer to the memory to deallocate.
-void operator delete(void* ptr) noexcept
-{
-    (void)ptr;
-}
-
-/// @brief Overload of the 'delete' operator with size (stub).
-/// @param ptr Pointer to the memory to deallocate.
-/// @param size The size of the memory block.
-void operator delete(void* ptr, size_t size) noexcept
-{
-    (void)ptr;
-    (void)size;
-}
-
-/// @brief Overload of the 'delete[]' operator (stub).
-/// @param ptr Pointer to the array memory to deallocate.
-void operator delete[](void* ptr) noexcept
-{
-    (void)ptr;
-}
-
-/// @brief Overload of the 'delete[]' operator with size (stub).
-/// @param ptr Pointer to the array memory to deallocate.
-/// @param size The size of the memory block.
-void operator delete[](void* ptr, size_t size) noexcept
-{
-    (void)ptr;
-    (void)size;
-}
+} // namespace memory

@@ -160,49 +160,47 @@ void PCI_Controller::scanBus(uint8_t bus)
         for(uint8_t function=0; function<numFunctions; function++)
         {
             PCI_DeviceDescriptor dev = getDeviceDescriptor(bus, device, function);
-
+            
             if(dev.vendorId == 0x0000 || dev.vendorId == 0xFFFF) continue;
             basic::printf("---\n");
-            basic::printf("PCI Bus %#3x, Device %#3x, Function %#3x ", bus, device, function);
-            basic::printf("=> Vendor %#5hx, Device %#5hx (Class %#3x, Sub %#3x)\n", dev.vendorId, dev.deviceId, dev.classId, dev.subclassId);
+            basic::printf("=> PCI Bus %#x, Device %#x, Function %#x\n", bus, device, function);
+            basic::printf("   Vendor %#hx, Device %#hx (Class %#x, Sub %#x)\n", dev.vendorId, dev.deviceId, dev.classId, dev.subclassId);
 
             switch(dev.vendorId)
             {
                 case 0x1022: // AMD
                     switch(dev.deviceId)
                     {
-                        case 0x2000: basic::printf("AMD am79c973 "); break;
+                        case 0x2000: basic::printf("   AMD am79c973 "); break;
                     }
                     break;
 
                 case 0x8086: // Intel
                     switch(dev.deviceId)
                     {
-                        case 0x1237: basic::printf("Intel 440FX Host Bridge "); break;
-                        case 0x7000: basic::printf("Intel PIIX3 ISA Bridge "); break;
-                        case 0x7010: basic::printf("Intel PIIX3 IDE Controller "); break;
-                        case 0x7113: basic::printf("Intel PIIX4 ACPI "); break;
-                        case 0x100E: basic::printf("Intel E1000 Ethernet "); break;
+                        case 0x1237: basic::printf("   Intel 440FX Host Bridge "); break;
+                        case 0x7000: basic::printf("   Intel PIIX3 ISA Bridge "); break;
+                        case 0x7010: basic::printf("   Intel PIIX3 IDE Controller "); break;
+                        case 0x7113: basic::printf("   Intel PIIX4 ACPI "); break;
+                        case 0x100E: basic::printf("   Intel E1000 Ethernet "); break;
                     }
                     break;
                     
                 case 0x1234: // QEMU / Bochs
                     switch(dev.deviceId)
                     {
-                        case 0x1111: basic::printf("QEMU VGA Graphics "); break;
+                        case 0x1111: basic::printf("   QEMU VGA Graphics "); break;
                     }
                     break;
             }
 
-            basic::printf("| ");
-
             switch(dev.classId)
             {
                 case 0x03:
-                    if(dev.subclassId == 0x00) basic::printf("Generic VGA ");
+                    if(dev.subclassId == 0x00) basic::printf("| Generic VGA ");
                     break;
                 case 0x02:
-                    basic::printf("Generic Network Card ");
+                    basic::printf("| Generic Network Card ");
                     break;
             }
 

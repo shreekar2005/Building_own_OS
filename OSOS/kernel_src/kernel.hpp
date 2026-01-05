@@ -3,7 +3,6 @@
 #include "basic/multiboot.h"
 #include "basic/kiostream.hpp" 
 #include "basic/kstring.hpp"
-#include "basic/kmemory.hpp"
 #include "essential/kgdt.hpp"
 #include "essential/kicxxabi.hpp"
 #include "essential/kmultitasking.hpp"
@@ -13,6 +12,9 @@
 #include "driver/kserial.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kpci.hpp"
+#include "memory/kpmm.hpp"
+#include "memory/kpaging.hpp"
+#include "memory/kheap.hpp"
 
 #define maxNumShellTask 100
 
@@ -95,15 +97,18 @@ public:
     void process_command(const char* command)
     {
         if (basic::strcmp(command, "help") == 0) {
-            basic::printf("OSOS Kernel Shell\n\
-'help'      : list commands\n\
-'memmap'    : print memory map provided by grub\n\
-'lspci'     : list PCI devices\n\
-'task<i>'   : start ith task from OSOS shell\n\
-'numtasks'  : to see number of tasks in shell list");
+            basic::printf("OSOS Kernel Shell Help\n\
+help      : list commands\n\
+lsmem     : print memory map provided by grub\n\
+checkmem  : check how much memory is free (in KB)\n\
+checkheap : examine kernel heap\n\
+lspagedir : check active page directory entries for kernel\n\
+lspci     : list PCI devices\n\
+task<i>   : start ith task from OSOS shell\n\
+numtasks  : to see number of tasks in shell list\n");
         }
-        else if (basic::strcmp(command, "memmap") == 0){
-            basic::printMemoryMap(mbi);
+        else if (basic::strcmp(command, "lsmem") == 0){
+            memory::printMemoryMap(mbi);
         }
         else if (basic::strcmp(command, "lspci") == 0){
             basic::printf("Listing PCI devices...\n");
@@ -124,8 +129,17 @@ public:
         else if(basic::strcmp(command, "numtasks") ==0){
             basic::printf("Number of tasks in shell list : %d\n", numShellTasks);
         }
+        else if(basic::strcmp(command, "checkmem") ==0){
+            basic::printf("%d KB\n",memory::PhysicalMemoryManager::get_free_memory_kb());
+        }
+        else if(basic::strcmp(command, "checkheap") ==0){
+            memory::kernel_heap.printHeapInfo();
+        }
+        else if(basic::strcmp(command, "lspagedir") ==0){
+            memory::PagingManager::printPageDirectory();
+        }
         else {
-            basic::printf("Unknown command: '%s'", command);
+            basic::printf("Unknown command: '%s'\n", command);
         }
     }
 };
