@@ -97,6 +97,7 @@ CPUState* TaskManager::schedule(CPUState* cpustate)
     // Round Robin Logic
     if(++currentTask >= numTasks)
         currentTask = 0;
+    if(numTasks>1 && currentTask==0) currentTask = 1; // 0th task is init function from `kernel.cpp`
     
     return tasks[currentTask]->cpustate;
 }

@@ -1,35 +1,5 @@
 #include "kernel.hpp"
 
-/// @brief To pass arguments to init function
-struct KernelArgs{
-    multiboot_info_t *mbi;
-    uint32_t magicnumber;
-    essential::GDT_Manager* osos_GDT_ptr;
-    essential::TaskManager* osos_TaskManager_ptr;
-    hardware_communication::InterruptManager* osos_InterruptManager_ptr;
-    driver::DriverManager* driverManager_ptr;
-    hardware_communication::PCI_Controller* pciController_ptr;
-};
-/// @brief This is init task... it will run just after enabling interrupts (after setting up kernel)
-void init(void* arg)
-{
-    (void) arg;
-    multiboot_info_t *mbi = ((KernelArgs*)arg)->mbi;
-    uint32_t magicnumber = ((KernelArgs*)arg)->magicnumber;
-    essential::GDT_Manager* osos_GDT_ptr = ((KernelArgs*)arg)->osos_GDT_ptr;
-    essential::TaskManager* osos_TaskManager_ptr = ((KernelArgs*)arg)->osos_TaskManager_ptr;
-    hardware_communication::InterruptManager* osos_InterruptManager_ptr = ((KernelArgs*)arg)->osos_InterruptManager_ptr;
-    driver::DriverManager* driverManager_ptr = ((KernelArgs*)arg)->driverManager_ptr;
-    hardware_communication::PCI_Controller* pciController_ptr = ((KernelArgs*)arg)->pciController_ptr;
-
-    basic::printf("\nHELLO FROM OSOS...\nEnter 'help' to see working commands :)\n");
-    basic::printf("OSOS> ");
-
-    while (true){asm("hlt");};
-    basic::disable_cursor();
-    essential::__cxa_finalize(0);
-}
-
 /// @brief taskA for testing multitasking
 void taskA(void* arg)
 {
@@ -50,6 +20,43 @@ void taskB(void* arg)
     }
 }
 
+essential::Task task1(&taskA, nullptr);
+essential::Task task2(&taskB, nullptr);
+
+/// @brief To pass arguments to init function
+struct KernelArgs{
+    multiboot_info_t *mbi;
+    uint32_t magicnumber;
+    essential::GDT_Manager* osos_GDT_ptr;
+    essential::TaskManager* osos_TaskManager_ptr;
+    hardware_communication::InterruptManager* osos_InterruptManager_ptr;
+    driver::DriverManager* driverManager_ptr;
+    hardware_communication::PCI_Controller* pciController_ptr;
+    KernelShell *shell;
+};
+
+/// @brief This is init task... it will run just after enabling interrupts (after setting up kernel)
+void init(void* arg)
+{
+    // multiboot_info_t *mbi = ((KernelArgs*)arg)->mbi;
+    // uint32_t magicnumber = ((KernelArgs*)arg)->magicnumber;
+    // essential::GDT_Manager* osos_GDT_ptr = ((KernelArgs*)arg)->osos_GDT_ptr;
+    // essential::TaskManager* osos_TaskManager_ptr = ((KernelArgs*)arg)->osos_TaskManager_ptr;
+    // hardware_communication::InterruptManager* osos_InterruptManager_ptr = ((KernelArgs*)arg)->osos_InterruptManager_ptr;
+    // driver::DriverManager* osos_driverManager_ptr = ((KernelArgs*)arg)->driverManager_ptr;
+    // hardware_communication::PCI_Controller* osos_pciController_ptr = ((KernelArgs*)arg)->pciController_ptr;
+    KernelShell *osos_shell_ptr = ((KernelArgs*)arg)->shell;
+    
+    osos_shell_ptr->addShellTask(&task1);
+    osos_shell_ptr->addShellTask(&task2);
+
+    basic::printf("\nHELLO FROM OSOS (`help` to see commands)...\npress Enter to continue... :)");
+
+    while (true){asm("hlt");};
+    basic::disable_cursor();
+    essential::__cxa_finalize(0);
+}
+
 /// @brief The main entry point for the C++ kernel.
 /// @param mbi Pointer to the Multiboot information structure provided by GRUB.
 /// @param magicnumber The magic number passed by GRUB to verify boot.
@@ -59,20 +66,16 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     basic::enable_cursor(0,15);
     basic::clearScreen();
 
-    essential::GDT_Manager osos_GDT;
-    osos_GDT.installTable();
+    essential::GDT_Manager osos_GDT_Manager;
+    osos_GDT_Manager.installTable();
     essential::GDT_Manager::printLoadedTableHeader();
 
-    essential::TaskManager osos_TaskManager(&osos_GDT);
-    
+    essential::TaskManager osos_TaskManager(&osos_GDT_Manager);
 
-    essential::Task task1(&taskA, nullptr);
-    essential::Task task2(&taskB, nullptr);
-    
     // central kernel shell
-    KernelShell shell(&osos_TaskManager, &task1, &task2);
+    KernelShell shell(&osos_TaskManager);
 
-    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT, &osos_TaskManager);
+    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT_Manager, &osos_TaskManager);
     
     // object of drivers so that they will handle their corresponding Interrupts
     driver::DriverManager driverManager;
@@ -97,9 +100,9 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_InterruptManager.installTable();
     hardware_communication::InterruptManager::printLoadedTableHeader();
 
-    KernelArgs kernelArgs = {mbi, magicnumber, &osos_GDT, &osos_TaskManager, &osos_InterruptManager, &driverManager, &pciController};
+    KernelArgs kernelArgs = {mbi, magicnumber, &osos_GDT_Manager, &osos_TaskManager, &osos_InterruptManager, &driverManager, &pciController, &shell};
     essential::Task initTask(&init, &kernelArgs);
-    osos_TaskManager.addTask(&initTask);
+    osos_TaskManager.addTask(&initTask); // this will be tasks[0] in `kmultitasking.cpp`
 
     hardware_communication::InterruptManager::activate();
     

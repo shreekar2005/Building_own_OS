@@ -64,4 +64,56 @@ namespace basic
         }
         return dest;
     }
+
+    int stoi(const char* str, int base)
+    {
+        if (!str) return 0;
+
+        int result = 0;
+        int sign = 1;
+
+        // Skip whitespace
+        while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\r') {
+            str++;
+        }
+
+        // Handle sign
+        if (*str == '-') {
+            sign = -1;
+            str++;
+        } else if (*str == '+') {
+            str++;
+        }
+
+        // Handle Hex prefix (0x) if base is 16
+        if (base == 16 && *str == '0' && (*(str + 1) == 'x' || *(str + 1) == 'X')) {
+            str += 2;
+        }
+
+        // Convert digits
+        while (*str) {
+            int digit;
+            char c = *str;
+
+            if (c >= '0' && c <= '9') {
+                digit = c - '0';
+            } else if (c >= 'a' && c <= 'z') {
+                digit = c - 'a' + 10;
+            } else if (c >= 'A' && c <= 'Z') {
+                digit = c - 'A' + 10;
+            } else {
+                break; // Invalid character (non-alphanumeric)
+            }
+
+            // Ensure the digit is valid for the current base
+            if (digit >= base) {
+                break; 
+            }
+
+            result = result * base + digit;
+            str++;
+        }
+
+        return result * sign;
+    }
 }

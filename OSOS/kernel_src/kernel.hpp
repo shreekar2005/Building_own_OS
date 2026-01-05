@@ -14,6 +14,8 @@
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kpci.hpp"
 
+#define maxNumShellTask 100
+
 /// @brief A simple shell/terminal manager for the kernel.
 class KernelShell {
 private:
@@ -21,19 +23,27 @@ private:
     int m_buffer_index; // Our current top position in the buffer
     hardware_communication::PCI_Controller pciController;
     essential::TaskManager *osos_TaskManager_ptr;
-    essential::Task *task1_ptr;
-    essential::Task *task2_ptr;
+    essential::Task* shell_tasks_ptr[maxNumShellTask];
+    int numShellTasks;
 
 public:
-    KernelShell(essential::TaskManager *osos_TaskManager_ptr, essential::Task *task1_ptr, essential::Task *task2_ptr)
+    KernelShell(essential::TaskManager *osos_TaskManager_ptr)
     {
         this->osos_TaskManager_ptr=osos_TaskManager_ptr;
-        this->task1_ptr=task1_ptr;
-        this->task2_ptr=task2_ptr;
         m_buffer_index = 0;
         m_line_buffer[0] = '\0';
+        numShellTasks = 0;
     }
     ~KernelShell() {}
+
+    /// @brief to add Task to task list of shell...
+    /// @param task pointer of Task
+    /// @return bool : true if successfully added else false 
+    bool addShellTask(essential::Task* task){
+        if(numShellTasks >= maxNumShellTask) return false;
+        shell_tasks_ptr[numShellTasks++]=task;
+        return true;
+    }
 
     /// @brief The single, centralized function for handling all key presses.
     /// @param c The character received from any input driver (keyboard or serial driver).
@@ -84,25 +94,29 @@ public:
     {
         if (basic::strcmp(command, "help") == 0) {
             basic::printf("OSOS Kernel Shell\n\
+'help' : list commands\n\
 'lspci' : list PCI devices\n\
-'task1' : start taskA\n\
-'task2' : start taskB");
+'task<i>' : start ith task from OSOS shell\n\
+'numtasks' : to see number of tasks in shell list");
         }
         else if (basic::strcmp(command, "lspci") == 0) {
             basic::printf("Listing PCI devices...\n");
             pciController.scanBus(0);
         }
-        else if (basic::strcmp(command, "task1") == 0) {
-            basic::printf("Starting task1...\n");
-            if (osos_TaskManager_ptr->addTask(task1_ptr)==false) {
-                 basic::printf("Error: failed to start task1.\n");
+        else if (basic::strncmp(command, "task", 4) == 0) {
+            char* tasknumstr=(char*)command+4;
+            int tasknum = basic::stoi(tasknumstr) - 1;
+            if(tasknum<0 || tasknum>=numShellTasks) 
+                basic::printf("task number %d not present in task list of OSOS shell :(", tasknum+1);
+            else{
+                basic::printf("Starting task number %d...\n", tasknum+1);
+                if (osos_TaskManager_ptr->addTask(shell_tasks_ptr[tasknum])==false) {
+                     basic::printf("Error: failed to start task1.\n");
+                }
             }
         }
-        else if (basic::strcmp(command, "task2") == 0) {
-            basic::printf("Starting task2...\n");
-            if (osos_TaskManager_ptr->addTask(task2_ptr)==false) {
-                 basic::printf("Error: failed to start task2.\n");
-            }
+        else if(basic::strcmp(command, "numtasks") ==0){
+            basic::printf("Number of tasks in shell list : %d\n", numShellTasks);
         }
         else {
             basic::printf("Unknown command: '%s'", command);

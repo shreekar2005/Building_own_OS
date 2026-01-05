@@ -48,6 +48,12 @@ namespace basic
     /// @param num Number of bytes to copy.
     /// @return A pointer to the destination.
     void* memcpy(void* dest, const void* src, int num);
+
+    /// @brief Converts a string to an integer.
+    /// @param str The string to convert.
+    /// @param base The numerical base (e.g., 10 for decimal, 16 for hex). Defaults to 10.
+    /// @return The converted integer value.
+    int stoi(const char* str, int base = 10);
 }
 
 #endif
