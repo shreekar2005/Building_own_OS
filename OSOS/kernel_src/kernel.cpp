@@ -45,6 +45,7 @@ void init(void* arg)
     // hardware_communication::InterruptManager* osos_InterruptManager_ptr = ((KernelArgs*)arg)->osos_InterruptManager_ptr;
     // driver::DriverManager* osos_driverManager_ptr = ((KernelArgs*)arg)->driverManager_ptr;
     // hardware_communication::PCI_Controller* osos_pciController_ptr = ((KernelArgs*)arg)->pciController_ptr;
+
     KernelShell *osos_shell_ptr = ((KernelArgs*)arg)->shell;
     
     osos_shell_ptr->addShellTask(&task1);
@@ -73,7 +74,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     essential::TaskManager osos_TaskManager(&osos_GDT_Manager);
 
     // central kernel shell
-    KernelShell shell(&osos_TaskManager);
+    KernelShell shell(&osos_TaskManager, mbi);
 
     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT_Manager, &osos_TaskManager);
     

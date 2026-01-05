@@ -4,7 +4,7 @@
 namespace basic
 { // namespace basic start
 
-void __printMemoryMap(multiboot_info_t *mbi)
+void printMemoryMap(multiboot_info_t *mbi)
 {
     // Check if the memory map flag is set (bit 6)
     if (!(mbi->flags & (1 << 6))) {

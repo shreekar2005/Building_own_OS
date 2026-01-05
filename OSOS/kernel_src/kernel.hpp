@@ -19,6 +19,7 @@
 /// @brief A simple shell/terminal manager for the kernel.
 class KernelShell {
 private:
+    multiboot_info_t *mbi;
     char m_line_buffer[256]; // Our internal line buffer (bcs after pressing enter we need full line buffer to process)
     int m_buffer_index; // Our current top position in the buffer
     hardware_communication::PCI_Controller pciController;
@@ -27,9 +28,10 @@ private:
     int numShellTasks;
 
 public:
-    KernelShell(essential::TaskManager *osos_TaskManager_ptr)
+    KernelShell(essential::TaskManager *osos_TaskManager_ptr, multiboot_info_t *mbi)
     {
         this->osos_TaskManager_ptr=osos_TaskManager_ptr;
+        this->mbi=mbi;
         m_buffer_index = 0;
         m_line_buffer[0] = '\0';
         numShellTasks = 0;
@@ -94,16 +96,20 @@ public:
     {
         if (basic::strcmp(command, "help") == 0) {
             basic::printf("OSOS Kernel Shell\n\
-'help' : list commands\n\
-'lspci' : list PCI devices\n\
-'task<i>' : start ith task from OSOS shell\n\
-'numtasks' : to see number of tasks in shell list");
+'help'      : list commands\n\
+'memmap'    : print memory map provided by grub\n\
+'lspci'     : list PCI devices\n\
+'task<i>'   : start ith task from OSOS shell\n\
+'numtasks'  : to see number of tasks in shell list");
         }
-        else if (basic::strcmp(command, "lspci") == 0) {
+        else if (basic::strcmp(command, "memmap") == 0){
+            basic::printMemoryMap(mbi);
+        }
+        else if (basic::strcmp(command, "lspci") == 0){
             basic::printf("Listing PCI devices...\n");
             pciController.scanBus(0);
         }
-        else if (basic::strncmp(command, "task", 4) == 0) {
+        else if (basic::strncmp(command, "task", 4) == 0){
             char* tasknumstr=(char*)command+4;
             int tasknum = basic::stoi(tasknumstr) - 1;
             if(tasknum<0 || tasknum>=numShellTasks) 
