@@ -99,6 +99,7 @@ public:
         if (basic::strcmp(command, "help") == 0) {
             basic::printf("OSOS Kernel Shell Help\n\
 help      : list commands\n\
+clear     : clear shell\n\
 lsmem     : print memory map provided by grub\n\
 checkmem  : check how much memory is free (in KB)\n\
 checkheap : examine kernel heap\n\
@@ -106,6 +107,9 @@ lspagedir : check active page directory entries for kernel\n\
 lspci     : list PCI devices\n\
 task<i>   : start ith task(thread) from OSOS shell\n\
 numtasks  : to see number of tasks in shell list\n");
+        }
+        else if(basic::strcmp(command, "clear") ==0){
+            basic::clearScreen();
         }
         else if (basic::strcmp(command, "lsmem") == 0){
             memory::printMemoryMap(mbi);
