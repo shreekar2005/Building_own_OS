@@ -7,7 +7,6 @@ namespace memory {
     HeapManager kernel_heap;
 
     void HeapManager::init(void* startAddress, size_t sizeTotal) {
-        // Initialize the head of the list to cover the entire range
         head = (MemoryBlockHeader*)startAddress;
         head->size = sizeTotal - sizeof(MemoryBlockHeader);
         head->is_free = true;
@@ -21,43 +20,31 @@ namespace memory {
         MemoryBlockHeader* current = head;
 
         while (current != nullptr) {
-            // 1. Check if block is free and large enough
             if (current->is_free && current->size >= size) {
-                
-                // 2. Decide if we should split the block
-                // We split if there is enough space for the requested size + a new header + at least 1 byte
                 if (current->size > size + sizeof(MemoryBlockHeader) + 1) {
-                    
-                    // Calculate address of the new split block
                     MemoryBlockHeader* newBlock = (MemoryBlockHeader*)((uintptr_t)current + sizeof(MemoryBlockHeader) + size);
                     
-                    // Setup new block
                     newBlock->size = current->size - size - sizeof(MemoryBlockHeader);
                     newBlock->is_free = true;
                     newBlock->next = current->next;
                     newBlock->prev = current;
 
-                    // Update current block
                     current->size = size;
                     current->is_free = false;
                     current->next = newBlock;
 
-                    // Update the next block's 'prev' pointer if it exists
                     if (newBlock->next != nullptr) {
                         newBlock->next->prev = newBlock;
                     }
                 } else {
-                    // Not enough space to split effectively, just give the whole block
                     current->is_free = false;
                 }
 
-                // Return pointer to the DATA area (skipping the header)
                 return (void*)((uintptr_t)current + sizeof(MemoryBlockHeader));
             }
             current = current->next;
         }
 
-        // If we get here, no suitable block was found
         basic::printf("Heap OOM: Cannot allocate %d bytes\n", size);
         return nullptr;
     }
@@ -71,7 +58,7 @@ namespace memory {
         // Mark as free
         block->is_free = true;
 
-        // Coalesce (Merge) with NEXT block if it is free
+        // Merge with NEXT block if it is free
         if (block->next != nullptr && block->next->is_free) {
             block->size += block->next->size + sizeof(MemoryBlockHeader);
             block->next = block->next->next;
@@ -80,7 +67,7 @@ namespace memory {
             }
         }
 
-        // Coalesce (Merge) with PREVIOUS block if it is free
+        // Merge with PREVIOUS block if it is free
         if (block->prev != nullptr && block->prev->is_free) {
             block->prev->size += block->size + sizeof(MemoryBlockHeader);
             block->prev->next = block->next;
@@ -93,17 +80,16 @@ namespace memory {
     void HeapManager::printHeapInfo() {
         MemoryBlockHeader* current = head;
         size_t total_free = 0;
+        int i=0;
         while (current != nullptr) {
             if (current->is_free) total_free += current->size;
-            // Uncomment below to see every block (can be spammy)
-            // basic::printf("Block %d: %s, Size: %d, Addr: 0x%x\n", i++, current->is_free ? "FREE" : "USED", current->size, current);
+            basic::printf("Block %d: %s, Size: %d, Addr: 0x%x\n", i++, current->is_free ? "FREE" : "USED", current->size, current);
             current = current->next;
         }
         basic::printf("Total Free Heap: %d bytes\n", total_free);
     }
 }
 
-// --- C-Style Wrappers ---
 
 extern "C" {
     void* malloc(size_t size) {
@@ -118,7 +104,6 @@ extern "C" {
         size_t total = num * size;
         void* ptr = malloc(total);
         if (ptr) {
-            // Manual memset to zero
             uint8_t* p = (uint8_t*)ptr;
             for (size_t i = 0; i < total; i++) {
                 p[i] = 0;
@@ -134,7 +119,6 @@ extern "C" {
             return nullptr;
         }
 
-        // We need to know the size of the old block to copy data
         memory::MemoryBlockHeader* header = (memory::MemoryBlockHeader*)((uintptr_t)ptr - sizeof(memory::MemoryBlockHeader));
         size_t old_size = header->size;
 
@@ -155,7 +139,6 @@ extern "C" {
     }
 }
 
-// --- C++ Operators ---
 
 void* operator new(size_t size) {
     return memory::kernel_heap.allocate(size);

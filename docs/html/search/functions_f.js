@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['ulltostring_0',['ullToString',['../d5/d79/a40812.html#a84a72638a4a04f5706b7f9b217359ecf',1,'basic']]],
-  ['update_5fcursor_1',['update_cursor',['../d5/d79/a40812.html#a9d1f0f838e646660db6d9284725c2b4c',1,'basic']]],
-  ['user_5fcs_5fselector_2',['user_cs_selector',['../d0/d0a/a41683.html#a3cd677f5ce4878f9c0ebb06fe3335843',1,'essential::GDT_Manager::user_CS_selector()'],['../dc/def/a40808.html#a6ef65886fcf664d696b4361309452c2c',1,'user_CS_selector():&#160;kgdt.hpp']]],
-  ['user_5fds_5fselector_3',['user_ds_selector',['../d0/d0a/a41683.html#a7f7ac69330ee9fa3cfc1841932cf5f55',1,'essential::GDT_Manager::user_DS_selector()'],['../dc/def/a40808.html#a95dcc3ea7fb0310df8f2ab457deca483',1,'user_DS_selector():&#160;kgdt.hpp']]]
+  ['task_5fo_0',['task_o',['../db/d72/a43103.html#a801da88ec50b03be9b883d3b4fb77fdd',1,'kernel.cpp']]],
+  ['task_5fx_1',['task_x',['../db/d72/a43103.html#a471ccb9cde03a1f1d2ae8f9275e88b0e',1,'kernel.cpp']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tab_5fwidth_0',['TAB_WIDTH',['../da/d6e/a40736.html#a49426d7a9b562958ad2ab7fbf134f368',1,'kiostream.cpp']]]
+  ['tab_5fwidth_0',['TAB_WIDTH',['../d4/d6b/a43115.html#a49426d7a9b562958ad2ab7fbf134f368',1,'kiostream.cpp']]]
 ];

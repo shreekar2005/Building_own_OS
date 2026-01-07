@@ -6,8 +6,6 @@ namespace memory {
     // Define the static variables
     uint32_t* PagingManager::kernelPageDirectory = nullptr;
     uint32_t* PagingManager::activePageDirectory = nullptr;
-
-    // --- Inline Assembly Helpers ---
     
     // Loads CR3 register
     inline void asm_loadPageDirectory(uint32_t* pdAddress) {
@@ -22,22 +20,17 @@ namespace memory {
         asm volatile("mov %0, %%cr0" :: "r"(cr0));
     }
 
-    // --- Implementation ---
-
     void PagingManager::init() {
         basic::printf("Initializing Paging...\n");
 
-        // 1. Allocate the Master Kernel Directory
         kernelPageDirectory = (uint32_t*)memory::PhysicalMemoryManager::allocate_block();
         
-        // 2. Clear it (Set all to "Not Present")
-        // Attributes: Supervisor (User=0), RW=1, Present=0 -> 0x00000002
+        // Clear it (Set all to "Not Present"), Attributes: Supervisor (User=0), RW=1, Present=0 -> 0x00000002
         for(int i = 0; i < 1024; i++) {
             kernelPageDirectory[i] = 0x00000002;
         }
 
-        // 3. Identity Map the first 16MB of RAM (Kernel Space)
-        // This ensures the Kernel code, PMM bitmap, and these Tables are accessible.
+        // Identity Map the first 16MB of RAM (Kernel Space). This ensures the Kernel code, PMM bitmap, and these Tables are accessible.
         uint32_t currentPhysicalAddress = 0;
 
         for (int pdIndex = 0; pdIndex < 4; pdIndex++) {
@@ -55,7 +48,7 @@ namespace memory {
             kernelPageDirectory[pdIndex] = (uint32_t)pt | 3;
         }
 
-        // 4. Map the Heap Area (16MB to 24MB) = 8MB Heap
+        // Map the Heap Area (16MB to 24MB) = 8MB Heap
         // We continue from where 'currentPhysicalAddress' left off (at 16MB).
         // pdIndex 4 covers 16MB-20MB
         // pdIndex 5 covers 20MB-24MB
@@ -63,7 +56,6 @@ namespace memory {
             uint32_t* pt = (uint32_t*)memory::PhysicalMemoryManager::allocate_block();
             
             for(int ptIndex = 0; ptIndex < 1024; ptIndex++) {
-                 // Note: This mapping assumes you have at least 24MB of physical RAM in QEMU.
                 pt[ptIndex] = currentPhysicalAddress | 3; 
                 currentPhysicalAddress += 4096; 
             }
@@ -72,10 +64,10 @@ namespace memory {
             kernelPageDirectory[4 + i] = (uint32_t)pt | 3;
         }
 
-        // 5. Activate the Kernel Directory
+        // Activate the Kernel Directory
         switchPageDirectory(kernelPageDirectory);
         
-        // 6. Turn on the CPU Paging Unit
+        // Turn on the CPU Paging Unit
         asm_enablePagingMode();
 
         basic::printf("Paging Enabled! (Mapped 0-24MB)\n");

@@ -1,17 +1,14 @@
 var searchData=
 [
-  ['pci_5fcontroller_0',['PCI_Controller',['../de/d77/a41723.html#a71d89c22009309f0d354da5cbf359dc7',1,'hardware_communication::PCI_Controller']]],
-  ['pci_5fdevicedescriptor_1',['PCI_DeviceDescriptor',['../d4/d9d/a41719.html#a5a505bd19fc7767ed91adb172a985e20',1,'hardware_communication::PCI_DeviceDescriptor']]],
-  ['port_2',['Port',['../d9/d1c/a41727.html#a782f7fad0bc431b9b56dec37b3bd5dcb',1,'hardware_communication::Port']]],
-  ['port16bit_3',['Port16Bit',['../dd/d13/a41739.html#a8441c4c12cc8141d87f53ac4917d0425',1,'hardware_communication::Port16Bit']]],
-  ['port32bit_4',['Port32Bit',['../d0/d66/a41743.html#aadd77aa826690aaf97702bb05dd0ee91',1,'hardware_communication::Port32Bit']]],
-  ['port8bit_5',['Port8Bit',['../d8/da7/a41731.html#af00b1f913ecf8f63297ec425d408c618',1,'hardware_communication::Port8Bit']]],
-  ['port8bitslow_6',['Port8BitSlow',['../d1/d1c/a41735.html#a3a4b42926d740408c5e48439bbba6a59',1,'hardware_communication::Port8BitSlow']]],
-  ['power_7',['power',['../d5/d79/a40812.html#aa7de4c6aa018e049aa8992b037cc052a',1,'basic']]],
-  ['printcharstr_8',['printCharStr',['../d5/d79/a40812.html#a3d0041ad59dbbae5bc9adbb8ab784499',1,'basic']]],
-  ['printf_9',['printf',['../d5/d79/a40812.html#a45ee52b918a784ff0e96e7c8917a91d9',1,'basic']]],
-  ['printhex_10',['printHex',['../d5/d79/a40812.html#a5ecbf4c8112c602ba65a689ebe5014f8',1,'basic']]],
-  ['printloadedtable_11',['printloadedtable',['../d0/d0a/a41683.html#a12155526ff104614deb65f1c5a35c013',1,'essential::GDT_Manager::printLoadedTable()'],['../db/ded/a41711.html#ae43c9bc0611cf6dfbac0a532e2f631ef',1,'hardware_communication::InterruptManager::printLoadedTable()'],['../dc/def/a40808.html#a0a72b35b5fcadccd545ee4c5ef7efdd3',1,'printLoadedTable():&#160;kgdt.hpp']]],
-  ['printloadedtableheader_12',['printloadedtableheader',['../dc/def/a40808.html#a6aba53071c94f3ffe96befc625602c9c',1,'printLoadedTableHeader():&#160;kgdt.hpp'],['../db/ded/a41711.html#add6866291fc50f63ccbacedc26236908',1,'hardware_communication::InterruptManager::printLoadedTableHeader()'],['../d0/d0a/a41683.html#a50eaa45b2e7e4c8579aec1d8d6aae6b7',1,'essential::GDT_Manager::printLoadedTableHeader()']]],
-  ['process_5fcommand_13',['process_command',['../d3/ddf/a41631.html#a64cee1fd80a35d996188c0034ec26b64',1,'KernelShell']]]
+  ['ondatareceived_0',['ondatareceived',['../d9/db2/a44057.html#aefe1028b4b0aac999635d5846b39c761',1,'driver::SerialEventHandler::onDataReceived()'],['../da/db9/a44029.html#add675289514a4144f97d2189183400a8',1,'SerialEventHandler_for_kernel::onDataReceived()']]],
+  ['onkeydown_1',['onkeydown',['../d2/d17/a44021.html#af82a0bd16f995dd285d4f7822117377c',1,'KeyboardEventHandler_for_kernel::onKeyDown()'],['../db/db4/a44041.html#ae2b923ef0eb58e29f57a155debadac6a',1,'driver::KeyboardEventHandler::onKeyDown()']]],
+  ['onkeyup_2',['onkeyup',['../d2/d17/a44021.html#a0d74a48573c10174ac8bf836ac39f886',1,'KeyboardEventHandler_for_kernel::onKeyUp()'],['../db/db4/a44041.html#a28547100b7420e1f73b745df873cd411',1,'driver::KeyboardEventHandler::onKeyUp()']]],
+  ['onmousedown_3',['onmousedown',['../df/d8a/a44025.html#ae860a16e70322e5c4bb01e1108e50bb1',1,'MouseEventHandler_for_kernel::onMouseDown()'],['../d2/dff/a44049.html#a2f12c5f63356c3045fd6cb46fd89374f',1,'driver::MouseEventHandler::onMouseDown()']]],
+  ['onmousemove_4',['onmousemove',['../df/d8a/a44025.html#adbb4c4e2814b335579119c324313f652',1,'MouseEventHandler_for_kernel::onMouseMove()'],['../d2/dff/a44049.html#a68f635b3b65f927d37d4e0835f7e0b30',1,'driver::MouseEventHandler::onMouseMove()']]],
+  ['onmouseup_5',['onmouseup',['../df/d8a/a44025.html#afca536c2187a65da265daa2d2af75d4d',1,'MouseEventHandler_for_kernel::onMouseUp()'],['../d2/dff/a44049.html#a09b77fe86bfa79313b5c5b91d09eb514',1,'driver::MouseEventHandler::onMouseUp()']]],
+  ['onthreadexit_6',['onThreadExit',['../d5/d25/a44085.html#a4682bf23a80681dfe49ff73f3fb71be3',1,'essential::KernelThreadManager']]],
+  ['operator_20delete_7',['operator delete',['../d5/d44/a43109.html#afa145befcf5e7b83424408ca503c8637',1,'operator delete(void *ptr) noexcept:&#160;kheap.cpp'],['../d5/d44/a43109.html#af057efbdbcd21ea12954d49cd2d245c6',1,'operator delete(void *ptr, size_t size) noexcept:&#160;kheap.cpp'],['../db/de1/a43151.html#afa145befcf5e7b83424408ca503c8637',1,'operator delete(void *ptr) noexcept:&#160;kheap.cpp'],['../db/de1/a43151.html#af057efbdbcd21ea12954d49cd2d245c6',1,'operator delete(void *ptr, size_t size) noexcept:&#160;kheap.cpp']]],
+  ['operator_20delete_5b_5d_8',['operator delete[]',['../d5/d44/a43109.html#a22aea74a1155aa798d6032da46da2391',1,'operator delete[](void *ptr) noexcept:&#160;kheap.cpp'],['../d5/d44/a43109.html#ab26fe706b29fdeb33d5f6ead76c05815',1,'operator delete[](void *ptr, size_t size) noexcept:&#160;kheap.cpp'],['../db/de1/a43151.html#a22aea74a1155aa798d6032da46da2391',1,'operator delete[](void *ptr) noexcept:&#160;kheap.cpp'],['../db/de1/a43151.html#ab26fe706b29fdeb33d5f6ead76c05815',1,'operator delete[](void *ptr, size_t size) noexcept:&#160;kheap.cpp']]],
+  ['operator_20new_9',['operator new',['../d5/d44/a43109.html#a160dcabc54bbecfc69484678cafadb81',1,'operator new(size_t size):&#160;kheap.cpp'],['../db/de1/a43151.html#a160dcabc54bbecfc69484678cafadb81',1,'operator new(size_t size):&#160;kheap.cpp']]],
+  ['operator_20new_5b_5d_10',['operator new[]',['../d5/d44/a43109.html#af2243bb4c2126b7b2b393e06090fbe59',1,'operator new[](size_t size):&#160;kheap.cpp'],['../db/de1/a43151.html#af2243bb4c2126b7b2b393e06090fbe59',1,'operator new[](size_t size):&#160;kheap.cpp']]]
 ];

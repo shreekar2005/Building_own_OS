@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['gdt_5fmanager_0',['GDT_Manager',['../d0/d0a/a41683.html#a40cb6fdff2e0b6f3d99eb6a0145062d7',1,'essential::GDT_Manager']]],
-  ['gdt_5frow_1',['gdt_row',['../dc/d6e/a41679.html#a59d7877efa0f6d5b81c16f71e893d0f5',1,'essential::GDT_Row::GDT_Row()'],['../dc/def/a40808.html#a0db6a6236a2495c565e578123b21b2d4',1,'GDT_Row():&#160;kgdt.hpp']]],
-  ['getaddress_2',['getAddress',['../de/d77/a41723.html#a99c80eb69bb5258a96fb3b9c61ce9dd3',1,'hardware_communication::PCI_Controller']]],
-  ['getbaseaddressregister_3',['getBaseAddressRegister',['../de/d77/a41723.html#a5e00e862f7af95887e09f3b90f7357fc',1,'hardware_communication::PCI_Controller']]],
-  ['getdevicedescriptor_4',['getDeviceDescriptor',['../de/d77/a41723.html#adf54e2d1841368c2f8b2d5989a2fa7b0',1,'hardware_communication::PCI_Controller']]],
-  ['getdriver_5',['getDriver',['../de/d77/a41723.html#a0a5c1a26be6003b1ef1478fdc7ae2466',1,'hardware_communication::PCI_Controller']]]
+  ['free_0',['free',['../de/d6b/a44137.html#af68b7f143c28605136325914f24f0703',1,'memory::HeapManager::free()'],['../d5/d44/a43109.html#afbedc913aa4651b3c3b4b3aecd9b4711',1,'free(void *ptr):&#160;kheap.cpp'],['../db/de1/a43151.html#afbedc913aa4651b3c3b4b3aecd9b4711',1,'free(void *ptr):&#160;kheap.cpp']]],
+  ['free_5fblock_1',['free_block',['../d5/df8/a44145.html#a7dbf1f7897b09234e6ef4758b1b1f5a4',1,'memory::PhysicalMemoryManager']]]
 ];

@@ -39,8 +39,7 @@ namespace memory
     extern HeapManager kernel_heap;
 }
 
-// --- Standard C-Style Allocation Functions ---
-// These are useful if you port C code (like Doom!) later.
+
 extern "C" {
     void* malloc(size_t size);
     void free(void* ptr);
@@ -48,7 +47,6 @@ extern "C" {
     void* realloc(void* ptr, size_t new_size);
 }
 
-// --- C++ Operator Overloads (Global) ---
 void* operator new(size_t size);
 void* operator new[](size_t size);
 void operator delete(void* ptr) noexcept;

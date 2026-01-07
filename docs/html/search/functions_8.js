@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../d0/d0a/a41683.html#aeee649c66c6b25bc2c03b9004ce9ddb4',1,'essential::GDT_Manager::kernel_CS_selector()'],['../dc/def/a40808.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
-  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../d0/d0a/a41683.html#af5f963bc66aa93608c39d294b52df657',1,'essential::GDT_Manager::kernel_DS_selector()'],['../dc/def/a40808.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
-  ['kernel_5fidle_5floop_2',['kernel_idle_loop',['../d7/de8/a40730.html#a9a9999a6b39bc57567717e63dd9fa42e',1,'kernel.cpp']]],
-  ['kernelmain_3',['kernelMain',['../d7/de8/a40730.html#abb4e4866092116b520310d61961bfe12',1,'kernel.cpp']]],
-  ['kernelshell_4',['KernelShell',['../d3/ddf/a41631.html#aa3b51e6f8ff335da9262db36ce7fbb96',1,'KernelShell']]],
-  ['keyboarddriver_5',['KeyboardDriver',['../d6/d4c/a41659.html#aab41851dc0d68f42e172bdc67bb9f06e',1,'driver::KeyboardDriver']]],
-  ['keyboardeventhandler_6',['KeyboardEventHandler',['../db/dc3/a41655.html#a37b511e50e8c1f5d294740b29d5e6c92',1,'driver::KeyboardEventHandler']]],
-  ['keyboardeventhandler_5ffor_5fkernel_7',['KeyboardEventHandler_for_kernel',['../dd/d75/a41635.html#a9d7f63ab5c08495337ba137785c0ccc4',1,'KeyboardEventHandler_for_kernel']]],
-  ['killcurrenttask_8',['killCurrentTask',['../d8/dcf/a41699.html#a9ba5eecd6f81789803ef7752699ac948',1,'essential::TaskManager']]]
+  ['idt_5frow_0',['idt_row',['../d9/dc7/a44093.html#a5975c874d89d225af019dd4f3e9e4a41',1,'hardware_communication::IDT_Row::IDT_Row()'],['../d6/d9f/a43169.html#a8fd2ce61381319526d99e87e39b58377',1,'IDT_Row():&#160;kinterrupt.hpp']]],
+  ['ignoreinterrupt_1',['ignoreInterrupt',['../d6/d9f/a43169.html#a07e074bde074261858311b014bc2b398',1,'kinterrupt.hpp']]],
+  ['init_2',['init',['../de/d6b/a44137.html#a6e2e0e21fd07debc8769d0d37cab3fb9',1,'memory::HeapManager::init()'],['../de/dc5/a44141.html#a6479b38f0447a8263f7c6381f647e7fa',1,'memory::PagingManager::init()'],['../d5/df8/a44145.html#afbafbd2adc67a3d9d1b68266f30785c1',1,'memory::PhysicalMemoryManager::init()']]],
+  ['installtable_3',['installtable',['../dd/d3a/a44069.html#a57245997207737699d75abbe1a050eda',1,'essential::GDT_Manager::installTable()'],['../d6/daa/a44097.html#a121a932dc63d87cf467fe5a57f113fcd',1,'hardware_communication::InterruptManager::installTable()'],['../df/ddb/a43193.html#a258db7c2f70fd1b20332ee3c00cd1d89',1,'installTable():&#160;kgdt.hpp']]],
+  ['interrupthandler_4',['InterruptHandler',['../d0/dbe/a44089.html#ae25905a9dd40ae150ef4a3fa8a60ece0',1,'hardware_communication::InterruptHandler']]],
+  ['interruptmanager_5',['InterruptManager',['../d6/daa/a44097.html#ae9385f06c45025ece9e6d4b93ea24db1',1,'hardware_communication::InterruptManager']]],
+  ['is_5fserial_5fready_6',['is_serial_ready',['../d3/d3b/a43197.html#a6233646eaac73374e727981e1157e5d7',1,'basic']]],
+  ['is_5fused_7',['is_used',['../d5/df8/a44145.html#a0bd12ca869bdf57915201de8755f14d2',1,'memory::PhysicalMemoryManager']]]
 ];

@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['handle_5fkey_0',['handle_key',['../d3/ddf/a41631.html#ab76062d9a8256ca7a40503fd76095903',1,'KernelShell']]],
-  ['handleinterrupt_1',['handleinterrupt',['../d6/d4c/a41659.html#ae2c4b397057c70dca386f6c13ee438a4',1,'driver::KeyboardDriver::handleInterrupt()'],['../d4/d55/a41667.html#a97d5efa8e80d23977a12815a948cace1',1,'driver::MouseDriver::handleInterrupt()'],['../d2/dee/a41675.html#a3796db38aa3fa452f9dda11b0b73d73a',1,'driver::SerialDriver::handleInterrupt()'],['../db/dab/a41703.html#aa89d41d69840cb4f1c8692fa6ded28f4',1,'hardware_communication::InterruptHandler::handleInterrupt()'],['../db/ded/a41711.html#af7658bd6006b64012ee544c6fedf6f2f',1,'hardware_communication::InterruptManager::handleInterrupt()']]],
-  ['handleirq0x00_2',['handleIRQ0x00',['../d9/d0a/a40784.html#adf60fad10b12cc19ad193c928d36445c',1,'kinterrupt.hpp']]],
-  ['handleirq0x01_3',['handleIRQ0x01',['../d9/d0a/a40784.html#a6498ed740318b424aaae4db1f223e558',1,'kinterrupt.hpp']]],
-  ['handleirq0x04_4',['handleIRQ0x04',['../d9/d0a/a40784.html#ad2f82bde7387738bbe6e10215a855619',1,'kinterrupt.hpp']]],
-  ['handleirq0x0c_5',['handleIRQ0x0C',['../d9/d0a/a40784.html#a996c60cc7e88bb1c85505c19f6c35117',1,'kinterrupt.hpp']]]
+  ['gdt_5fmanager_0',['GDT_Manager',['../dd/d3a/a44069.html#a40cb6fdff2e0b6f3d99eb6a0145062d7',1,'essential::GDT_Manager']]],
+  ['gdt_5frow_1',['gdt_row',['../d8/ddb/a44065.html#a59d7877efa0f6d5b81c16f71e893d0f5',1,'essential::GDT_Row::GDT_Row()'],['../df/ddb/a43193.html#a0db6a6236a2495c565e578123b21b2d4',1,'GDT_Row():&#160;kgdt.hpp']]],
+  ['get_5ffree_5fmemory_5fkb_2',['get_free_memory_kb',['../d5/df8/a44145.html#ae979d7141b08ef2c6594b37fb61286c8',1,'memory::PhysicalMemoryManager']]],
+  ['getaddress_3',['getAddress',['../d1/d0f/a44109.html#a99c80eb69bb5258a96fb3b9c61ce9dd3',1,'hardware_communication::PCI_Controller']]],
+  ['getbaseaddressregister_4',['getBaseAddressRegister',['../d1/d0f/a44109.html#a5e00e862f7af95887e09f3b90f7357fc',1,'hardware_communication::PCI_Controller']]],
+  ['getdevicedescriptor_5',['getDeviceDescriptor',['../d1/d0f/a44109.html#adf54e2d1841368c2f8b2d5989a2fa7b0',1,'hardware_communication::PCI_Controller']]],
+  ['getdriver_6',['getDriver',['../d1/d0f/a44109.html#a0a5c1a26be6003b1ef1478fdc7ae2466',1,'hardware_communication::PCI_Controller']]],
+  ['getphysicaladdress_7',['getPhysicalAddress',['../de/dc5/a44141.html#a3c8acfd8e420654e4e10a723740a145f',1,'memory::PagingManager']]]
 ];

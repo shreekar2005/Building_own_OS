@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['memcpy_0',['memcpy',['../d5/d79/a40812.html#ab2f028e778c32f382221057fabe4d7db',1,'basic']]],
-  ['memset_1',['memset',['../d5/d79/a40812.html#a5274bbb502f50306c4c211d8ae127a39',1,'basic']]],
-  ['mouse_5fblock_5fvideo_5fmem_5fvalue_2',['mouse_block_video_mem_value',['../d4/d55/a41667.html#adfb4220d2c664ae5ba11e04d9d182f70',1,'driver::MouseDriver']]],
-  ['mousedriver_3',['MouseDriver',['../d4/d55/a41667.html#ab3925414a9d834c2b3892498c0ae3988',1,'driver::MouseDriver']]],
-  ['mouseeventhandler_4',['MouseEventHandler',['../d3/d6b/a41663.html#a91a351ce9442ed70a5202095f0dab802',1,'driver::MouseEventHandler']]],
-  ['mouseeventhandler_5ffor_5fkernel_5',['MouseEventHandler_for_kernel',['../d5/dc8/a41639.html#a41f57ab9baa5850e39086362ce44b1cb',1,'MouseEventHandler_for_kernel']]]
+  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../dd/d3a/a44069.html#aeee649c66c6b25bc2c03b9004ce9ddb4',1,'essential::GDT_Manager::kernel_CS_selector()'],['../df/ddb/a43193.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
+  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../dd/d3a/a44069.html#af5f963bc66aa93608c39d294b52df657',1,'essential::GDT_Manager::kernel_DS_selector()'],['../df/ddb/a43193.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
+  ['kernelmain_2',['kernelMain',['../db/d72/a43103.html#abb4e4866092116b520310d61961bfe12',1,'kernel.cpp']]],
+  ['kernelshell_3',['KernelShell',['../d0/db6/a44017.html#acc1e0eb1e4c7a44c1dd15c0fb33c60bf',1,'KernelShell']]],
+  ['kernelthread_4',['KernelThread',['../d1/d77/a44081.html#ae24563cfb99085cf19de024ace1a2684',1,'essential::KernelThread']]],
+  ['kernelthreadmanager_5',['KernelThreadManager',['../d5/d25/a44085.html#a0c559df490409136381d8882bbd31c0e',1,'essential::KernelThreadManager']]],
+  ['keyboarddriver_6',['KeyboardDriver',['../dd/da6/a44045.html#aab41851dc0d68f42e172bdc67bb9f06e',1,'driver::KeyboardDriver']]],
+  ['keyboardeventhandler_7',['KeyboardEventHandler',['../db/db4/a44041.html#a37b511e50e8c1f5d294740b29d5e6c92',1,'driver::KeyboardEventHandler']]],
+  ['keyboardeventhandler_5ffor_5fkernel_8',['KeyboardEventHandler_for_kernel',['../d2/d17/a44021.html#a9d7f63ab5c08495337ba137785c0ccc4',1,'KeyboardEventHandler_for_kernel']]],
+  ['killcurrentthread_9',['killCurrentThread',['../d5/d25/a44085.html#a924806856022ea0f15926f7dbf738cd7',1,'essential::KernelThreadManager']]]
 ];
