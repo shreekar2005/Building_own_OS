@@ -53,42 +53,70 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ---
 ---
 
+Here is the updated **Features Implemented** list for OSOS, reflecting your new file structure and the addition of the memory management modules.
+
 ## What things are implemented in OSOS:
 
-1. Custom kernel library headers (checkout `./libk_header` for headers and `./libk_src/` for their source code)
-    - basic :
-        1. **kiostream.hpp** : printf(), clearScreen(), enable/update/disable_cursor().
-        2. **kmemory.hpp** : printMemoryMap(), new()/delete() baby definitions ***(will update letter)***.
-        3. **multiboot.h** : Have structures for multiboot information that grub provides.
-        4. **kstring.hpp** : Have basic string functions
-    - driver :
-        1. **kdriver.hpp** : Class to manage all driver.
-        2. **kmouse.hpp** : Mouse driver which give Interface for mouse event handlers.
-        3. **kkeyboard.hpp** : Keyboard driver which give Interface for keyboard event handlers.
-        4. **kserial.hpp** : Serial driver to handle COM1 interrupts and communicate with serial port.
-    - essential :
-        1. **kgdt.hpp** : Class GDT to setup segments (even if we use paging in future, we need to setup GDT in early stage).
-        2. **kicxxabi.hpp** : __callConstructors(), __cxa_finalize() for calling global constructors and destructors.
-        3. **kmultitasking.hpp** : have declarations for managing scheduling, adding new tasks.
-    - hardware_communication :
-        1. **kport.hpp** : class Port (which is base for class Port8bit, Port8bitslow, Port16bit, Port32bit) with methods : write(), read().
-        2. **kinterrupt.hpp** : Have InterruptManager, which can manage interrupts. 
-        3. **kpci.hpp** : Have PCI_Controller to control Peripheral Component Interconnect devices.
+1. **Custom kernel library headers** (checkout `./libk_header` for headers and `./libk_src/` for their source code)
+* **basic** :
+    1. **kiostream.hpp** : `printf()`, `clearScreen()`, `enable/update/disable_cursor()`.
+    2. **multiboot.h** : Structures for multiboot information provided by GRUB.
+    3. **kstring.hpp** : Basic string manipulation functions.
+
+* **memory** :
+    1. **kpmm.hpp** : **Physical Memory Manager**. manages allocation and deallocation of physical page frames.
+    2. **kpaging.hpp** : **Virtual Memory Manager**. Handles Page Directories and Page Tables to map virtual addresses to physical addresses.
+    3. **kheap.hpp** : **Kernel Heap Manager**. Implements `malloc`, `free`, and C++ `new`/`delete` operators for dynamic memory allocation.
+
+* **driver** :
+    1. **kdriver.hpp** : Base class to manage driver activation.
+    2. **kmouse.hpp** : Mouse driver interface for handling mouse interrupts and packets.
+    3. **kkeyboard.hpp** : Keyboard driver interface for handling scancodes and input.
+    4. **kserial.hpp** : Serial driver to handle COM1 interrupts and communicate via the serial port.
+
+* **essential** :
+    1. **kgdt.hpp** : GDT (Global Descriptor Table) setup for segment selectors.
+    2. **kicxxabi.hpp** : C++ ABI support (`__callConstructors`, `__cxa_finalize`) for global objects.
+    3. **kmultitasking.hpp** : Structures for `KernelThread`, `CPUState`, and the `KernelThreadManager`.
+
+* **hardware_communication** :
+    1. **kport.hpp** : I/O Port wrappers (`write`, `read`) for 8-bit, 16-bit, and 32-bit ports.
+    2. **kinterrupt.hpp** : `InterruptManager` to handle IDT and ISRs.
+    3. **kpci.hpp** : `PCI_Controller` to enumerate and control PCI devices.
+
+2. Accessed **multiboot info structure** provided by the GRUB bootloader.
+3. **C++ Runtime Support**: calling global object constructors and destructors using **essential/kicxxabi**.
+4. **Segmentation & Interrupts**:
+    * Initialized **Global Descriptor Table** (GDT).
+    * Initialized **Interrupt Descriptor Table** (IDT) to enable hardware interrupts.
+
+        <img src="./ScreenShots/image6.png" width="300" alt="Base Memory Setting"> 
+
+5. **Keyboard Support**: Handles interrupts (IRQ 1) via custom ISRs.
+6. **Mouse Support**: Handles interrupts (IRQ 12) via custom ISRs.
+7. **PCI Support**: Communicates with and enumerates peripheral devices using **PCI_Controller**.
+8. **KernelShell**: Basic command-line interface (in `kernel.cpp`).
+    * **Supported Commands**:
+        * `help` : list commands
+        * `clear` : clear shell
+        * `lsmem` : print memory map provided by grub
+        * `checkmem` : check how much memory is free (in KB)
+        * `checkheap` : examine kernel heap
+        * `lspagedir` : check active page directory entries for kernel
+        * `lspci` : list PCI devices
+        * `task<i>` : start ith task (thread) from OSOS shell
+        * `numtasks` : to see number of tasks in shell list
+9. **Multitasking System**:
+    * Implemented `KernelThreadManager` capable of context switching.
+    * Uses **Round Robin scheduling** to cycle through active threads.
+    * Each thread has its own dedicated stack and saved `CPUState`.
 
 
-2. Accessed multiboot info structure provided by grub bootloader.
+10. **Advanced Memory Management**:
+    * **Physical Memory**: Tracks used/free physical RAM.
+    * **Paging**: Enabled paging mechanism to abstract physical memory.
+    * **Dynamic Allocation**: Full support for standard C++ dynamic allocation (`new`, `delete`, `new[]`, `delete[]`) backed by a custom heap implementation.
 
-3. Calling global object constructors and destructors using **essential/kicxxabi**
-
-4. - Initialized **Global Descriptor Table** (GDT) : Currently I am not separating kernel and user space (Ring0 and Ring3), That is security issue; but I will implement paging in future so there is no need for separating kernel and user space in GDT (currently flat memory)
-    - Initialized **Interrupt Descriptor Table** (IDT) to enable interrupts
-    <br> <img src="./ScreenShots/image6.png" width="300" alt="Base Memory Setting"> <br>
-
-5. Can handle **Keyboard interrupts** using ISR.
-6. Can handle **Mouse interrupts** using ISR
-7. Can communicate with peripheral devices using **PCI_Controller**
-8. Have **KernelShell** (in kernel.cpp) that have basic commands working e.g. "help, lspci"
-9. **Multitasking** : OSOS can do multiple tasks with Round Robin scheduling
 ---
 ---
 
