@@ -18,6 +18,7 @@ static int cursor_y_ = 0;
 static Port8Bit vgaIndexPort(0x3D4);
 static Port8Bit vgaDataPort(0x3D5);
 
+#if defined(serialMode) && serialMode == 1
 static bool is_serial_ready()
 {
     Port8Bit lineStatusPort(0x3FD);
@@ -34,6 +35,7 @@ static void write_serial_char(char c)
     while (is_serial_ready() == 0); 
     dataPort.write((uint8_t)c);    
 }
+#endif
 
 void enable_cursor(uint8_t cursor_start, uint8_t cursor_end)
 {
@@ -65,7 +67,6 @@ static void printCharStr(const char *str)
     uint16_t *video_memory = (uint16_t *)0xb8000;
     const uint16_t color_attribute = 0x0700;
 
-    // --- SAFETY FIX: Check bounds before accessing video memory ---
     int mouse_offset = driver::MouseDriver::__mouse_y_ * MAGIC_WIDTH + driver::MouseDriver::__mouse_x_;
     
     if (mouse_offset >= 0 && mouse_offset < (MAGIC_WIDTH * MAGIC_HEIGHT)) {
@@ -121,7 +122,6 @@ static void printCharStr(const char *str)
         }
     }
 
-    // --- SAFETY FIX: Check bounds again before restoring ---
     if (mouse_offset >= 0 && mouse_offset < (MAGIC_WIDTH * MAGIC_HEIGHT)) {
         driver::MouseDriver::old_char_under_mouse_pointer = video_memory[mouse_offset];
         video_memory[mouse_offset] = driver::MouseDriver::mouse_block_video_mem_value(driver::MouseDriver::old_char_under_mouse_pointer, MOUSE_POINTER_COLOR);
@@ -139,9 +139,9 @@ void clearScreen()
     }
 
     driver::MouseDriver::old_char_under_mouse_pointer = blank;
-    
-    cursor_x_ = 0;
-    cursor_y_ = 0;
+
+    cursor_x_ = -1;
+    cursor_y_ = -1;
     update_cursor(cursor_x_, cursor_y_);
 
      #if defined(serialMode) && serialMode == 1

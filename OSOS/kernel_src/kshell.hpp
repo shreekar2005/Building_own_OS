@@ -115,7 +115,9 @@ private:
     void process_command(const char* command)
     {
         if (basic::strcmp(command, "help") == 0) {
-            basic::printf("OSOS Kernel Shell Help\n\
+            basic::printf("\
+OSOS Kernel Shell Help\n\
+Here is list of commands that are working in OSOS\n\
 help      : list commands\n\
 clear     : clear shell\n\
 lsmem     : print memory map provided by grub\n\
@@ -125,7 +127,7 @@ lspagedir : check active page directory entries for kernel\n\
 lspci     : list PCI devices\n\
 task <i>  : start ith task(thread) from OSOS shell\n\
 numtasks  : to see number of tasks in shell list\n\
-uptime    : show system uptime\n\
+uptime    : show system uptime (Hr:Min:Sec:mSec)\n\
 sleep <n> : sleep for n milliseconds\n");
         }
         else if(basic::strcmp(command, "clear") == 0) {
@@ -151,7 +153,14 @@ sleep <n> : sleep for n milliseconds\n");
             basic::printf("Number of tasks in shell list : %d\n", numShellThreads);
         }
         else if(basic::strcmp(command, "uptime") == 0) {
-            basic::printf("System Uptime: %d ms\n", (int)essential::Time::getUptimeMS());
+            uint64_t uptime = essential::Time::getUptimeMS();
+            uint64_t milliseconds = uptime % 1000;
+            uint64_t total_seconds = uptime / 1000;
+            uint64_t seconds = total_seconds % 60;
+            uint64_t total_minutes = total_seconds / 60;
+            uint64_t minutes = total_minutes % 60;
+            uint64_t hours = total_minutes / 60;
+            basic::printf("System Uptime: %02d:%02d:%02d:%03d\n", (int)hours, (int)minutes, (int)seconds, (int)milliseconds);
         }
         else if (basic::strncmp(command, "sleep", 5) == 0) {
             char* msStr = (char*)command + 5;
