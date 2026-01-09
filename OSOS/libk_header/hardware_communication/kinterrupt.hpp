@@ -78,6 +78,7 @@ class InterruptManager{
         static hardware_communication::Port8BitSlow picSlaveData;
 
     public:
+        static bool interruptActivated;
         InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* task_manager);
         ~InterruptManager();
 

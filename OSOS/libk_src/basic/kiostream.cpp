@@ -1,6 +1,7 @@
 #include "basic/kiostream.hpp"
 #include "driver/kmouse.hpp"
 #include "hardware_communication/kport.hpp"
+#include "hardware_communication/kinterrupt.hpp"
 
 using hardware_communication::Port8Bit;
 
@@ -231,7 +232,7 @@ static void printHex(uintptr_t n, int digits)
 int printf(const char *format, ...)
 {
     // --- SAFETY FIX: pushf saves flags, popf restores them ---
-    asm volatile("pushf; cli"); 
+    if(hardware_communication::InterruptManager::interruptActivated==true) asm volatile("pushf; cli");
     int chars_written = 0;
 
     va_list args;
@@ -375,7 +376,7 @@ int printf(const char *format, ...)
     update_cursor(cursor_x_, cursor_y_);
     
     // --- SAFETY FIX: restore flags ---
-    asm volatile("popf"); 
+    if(hardware_communication::InterruptManager::interruptActivated==true) asm volatile("popf"); 
     return chars_written;
 }
 

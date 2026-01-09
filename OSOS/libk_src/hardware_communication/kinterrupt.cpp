@@ -23,7 +23,7 @@ Port8BitSlow InterruptManager::picMasterCommand(0x20);
 Port8BitSlow InterruptManager::picMasterData(0x21);
 Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
 Port8BitSlow InterruptManager::picSlaveData(0xA1);
-
+bool InterruptManager::interruptActivated=false;
 
 InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* task_manager)
 {
@@ -111,12 +111,14 @@ void InterruptManager::installTable()
 void InterruptManager::activate()
 {
     __asm__ volatile ("sti");
+    interruptActivated=true;
     basic::printf("Interrupts Activated\n");
 }
 
 void InterruptManager::deactivate()
 {
     __asm__ volatile ("cli");
+    interruptActivated=false;
     basic::printf("Interrupts Deactivated\n");
 }
 
