@@ -128,7 +128,9 @@ lspci     : list PCI devices\n\
 task <i>  : start ith task(thread) from OSOS shell\n\
 numtasks  : to see number of tasks in shell list\n\
 uptime    : show system uptime (Hr:Min:Sec:mSec)\n\
-sleep <n> : sleep for n milliseconds\n");
+sleep <n> : sleep for n milliseconds\n\
+reboot    : restart the computer\n\
+poweroff  : shutdown the computer\n");
         }
         else if(basic::strcmp(command, "clear") == 0) {
             basic::clearScreen();
@@ -185,6 +187,48 @@ sleep <n> : sleep for n milliseconds\n");
                       basic::printf("Error: failed to start task%d.\n", tasknum+1);
                  }
              }
+        }
+        else if(basic::strcmp(command, "poweroff") == 0) {
+            basic::printf("Powering off system...\n");
+            
+            // QEMU Shutdown (Newer versions)
+            // Port: 0x604, Value: 0x2000
+            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0x604), "a" ((uint16_t)0x2000));
+
+            // Bochs & Older QEMU Shutdown
+            // Port: 0xB004, Value: 0x2000
+            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0xB004), "a" ((uint16_t)0x2000));
+
+            // VirtualBox Shutdown
+            // Port: 0x4004, Value: 0x3400
+            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0x4004), "a" ((uint16_t)0x3400));
+
+            basic::printf("Poweroff failed (ACPI not implemented). Halting CPU.\n");
+            while(1) { asm volatile("hlt"); }
+        }
+        else if(basic::strcmp(command, "reboot") == 0) {
+            basic::printf("Rebooting system...\n");
+            
+            // Keyboard Controller Reset
+            // Writing 0xFE to Port 0x64 pulses the CPU Reset line.
+            // Works on QEMU, Bochs, VirtualBox, and Real Hardware.
+            asm volatile ("outb %0, %1" : : "a" ((uint8_t)0xFE), "dN" ((uint16_t)0x64));
+            
+            // Give it a moment to react
+            for(volatile int i = 0; i < 1000000; i++);
+
+            // and triggering an interrupt. The CPU panics and reboots.
+            basic::printf("Keyboard reset failed. Forcing Triple Fault...\n");
+            
+            struct {
+                uint16_t limit;
+                uint32_t base;
+            } __attribute__((packed)) emptyIdt = { 0, 0 };
+            
+            asm volatile ("lidt %0" : : "m" (emptyIdt)); // Load invalid IDT
+            asm volatile ("int $3"); // Trigger interrupt -> Crash -> Reboot
+            
+            while(1) { asm volatile("hlt"); }
         }
         else {
             basic::printf("Unknown command: '%s'\n", command);
