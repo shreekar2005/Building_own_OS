@@ -1,8 +1,9 @@
 # OSOS
 > This is actual OSOS from scratch ☺️. Here I am writing 32bit kernel in c++ and kernel loader in x86_64 (not bootloader, I will use grub as bootloader)
+---
+---
+### progress in OSOS (9th Jan 2026) : [progress in brief (hindi)](https://www.youtube.com/watch?v=1927bI2CMLE)
 
----
----
 ## Documentation for OSOS development : [HTML page for OSOS](https://shreekar2005.github.io/Building_own_OS/)
 
 ### I am using Ubuntu24.04 to develop OSOS
