@@ -25,12 +25,12 @@ private:
     char m_line_buffer[256]; // Our internal line buffer (bcs after pressing enter we need full line buffer to process)
     int m_buffer_index; // Our current top position in the buffer
     hardware_communication::PCI_Controller pciController;
-    essential::KernelThreadManager *osos_ThreadManager_ptr;
-    essential::KernelThread* shell_threads_ptr[maxNumShellTask];
+    essential::KThreadManager *osos_ThreadManager_ptr;
+    essential::KThread* shell_threads_ptr[maxNumShellTask];
     int numShellThreads;
 
 public:
-    KernelShell(essential::KernelThreadManager *osos_ThreadManager_ptr, multiboot_info_t *mbi)
+    KernelShell(essential::KThreadManager *osos_ThreadManager_ptr, multiboot_info_t *mbi)
     {
         this->osos_ThreadManager_ptr=osos_ThreadManager_ptr;
         this->mbi=mbi;
@@ -40,10 +40,10 @@ public:
     }
     ~KernelShell() {}
 
-    /// @brief to add KernelThread to task list of shell...
-    /// @param task pointer of KernelThread
+    /// @brief to add KThread to task list of shell...
+    /// @param task pointer of KThread
     /// @return bool : true if successfully added else false 
-    bool addShellTask(essential::KernelThread* task){
+    bool addShellTask(essential::KThread* task){
         if(numShellThreads >= maxNumShellTask) return false;
         shell_threads_ptr[numShellThreads++]=task;
         return true;

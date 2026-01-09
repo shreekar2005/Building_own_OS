@@ -2,19 +2,19 @@
 
 using namespace essential;
 
-/// @brief Global pointer to the active KernelThreadManager instance (used by onThreadExit).
-static KernelThreadManager* activeTaskManager = nullptr;
+/// @brief Global pointer to the active KThreadManager instance (used by onThreadExit).
+static KThreadManager* activeTaskManager = nullptr;
 
-KernelThread::KernelThread(void (*entrypoint)(void*), void* arg)
+KThread::KThread(void (*entrypoint)(void*), void* arg)
 {
     this->m_entrypoint = entrypoint;
     this->m_arg = arg;
     this->m_codeSegmentSelector = activeTaskManager->gdt_manager->kernel_CS_selector();
 } 
 
-KernelThread::~KernelThread(){}
+KThread::~KThread(){}
 
-void KernelThread::reset()
+void KThread::reset()
 {
     cpustate = (CPUState*) (stack + 4096 - sizeof(CPUState));
 
@@ -29,11 +29,11 @@ void KernelThread::reset()
     cpustate->eip = (uint32_t)m_entrypoint;
     cpustate->cs = m_codeSegmentSelector;
     cpustate->eflags = 0x202; 
-    cpustate->esp = (uint32_t)KernelThreadManager::onThreadExit;
+    cpustate->esp = (uint32_t)KThreadManager::onThreadExit;
     cpustate->ss  = (uint32_t)m_arg;
 }
 
-KernelThreadManager::KernelThreadManager(GDT_Manager *gdt_manager)
+KThreadManager::KThreadManager(GDT_Manager *gdt_manager)
 {
     this->gdt_manager=gdt_manager;
     numThreads = 0;
@@ -41,14 +41,14 @@ KernelThreadManager::KernelThreadManager(GDT_Manager *gdt_manager)
     activeTaskManager = this;
 }
 
-KernelThreadManager::~KernelThreadManager(){}
+KThreadManager::~KThreadManager(){}
 
-bool KernelThreadManager::addThread(KernelThread *thread)
+bool KThreadManager::addThread(KThread *thread)
 {
     // Prevent adding the same thread object twice
     for(int i = 0; i < numThreads; i++) {
         if(threads[i] == thread) {
-            return false; // KernelThread is already running
+            return false; // KThread is already running
         }
     }
 
@@ -59,7 +59,7 @@ bool KernelThreadManager::addThread(KernelThread *thread)
     return true;
 }
 
-void KernelThreadManager::killCurrentThread()
+void KThreadManager::killCurrentThread()
 {
     if (numThreads <= 0) return;
     threads[currentThread] = threads[numThreads - 1];
@@ -67,7 +67,7 @@ void KernelThreadManager::killCurrentThread()
     currentThread = -1;
 }
 
-void KernelThreadManager::onThreadExit()
+void KThreadManager::onThreadExit()
 {
     if (activeTaskManager != nullptr)
         activeTaskManager->killCurrentThread();
@@ -75,7 +75,7 @@ void KernelThreadManager::onThreadExit()
         asm("hlt");
 }
 
-CPUState* KernelThreadManager::scheduleThreads(CPUState* cpustate)
+CPUState* KThreadManager::scheduleThreads(CPUState* cpustate)
 {
     const int TIME_QUANTUM = 1; 
     static int tick_counter = 0;

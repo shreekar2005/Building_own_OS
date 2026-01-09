@@ -25,7 +25,7 @@ Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
 Port8BitSlow InterruptManager::picSlaveData(0xA1);
 
 
-InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KernelThreadManager* task_manager)
+InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* task_manager)
 {
     this->task_manager = task_manager;
     // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.

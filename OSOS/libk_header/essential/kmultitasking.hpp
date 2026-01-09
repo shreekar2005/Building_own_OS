@@ -28,9 +28,9 @@ struct CPUState
 
 
 /// @brief Represents a single unit of execution (a thread or process) in the OS. 
-/// @details Each KernelThread maintains its own private stack memory (4KB) and a pointer to its saved CPU state.
-class KernelThread {
-    friend class KernelThreadManager;
+/// @details Each KThread maintains its own private stack memory (4KB) and a pointer to its saved CPU state.
+class KThread {
+    friend class KThreadManager;
     private:
         /// @brief The dedicated kernel stack for this thread.
         uint8_t stack[4096]; 
@@ -49,12 +49,12 @@ class KernelThread {
         uint16_t m_codeSegmentSelector;
 
     public:
-        /// @brief Constructs a new KernelThread.
+        /// @brief Constructs a new KThread.
         /// @param entrypoint The function pointer where execution should begin.
         /// @param arg Void* argument pointer for entrypoint
-        KernelThread(void (*entrypoint)(void*), void* arg); 
+        KThread(void (*entrypoint)(void*), void* arg); 
         
-        ~KernelThread();
+        ~KThread();
 
         /// @brief Resets or initializes the thread's stack frame.
         /// @details This function sets up a "fake" interrupt stack frame at the top of the `stack` array.
@@ -65,10 +65,10 @@ class KernelThread {
 
 /// @brief Manages multitasking and scheduling of threads.
 /// @details Implements a simple Round-Robin scheduler to switch between registered threads.
-class KernelThreadManager{
+class KThreadManager{
     private:
         /// @brief Array of pointers to all active threads.
-        KernelThread* threads[256];
+        KThread* threads[256];
         
         /// @brief The current number of active threads.
         int numThreads;
@@ -79,16 +79,16 @@ class KernelThreadManager{
     public:
         GDT_Manager *gdt_manager;
 
-        /// @brief Initializes the KernelThread Manager.
-        KernelThreadManager(GDT_Manager *gdt_manager);
+        /// @brief Initializes the KThread Manager.
+        KThreadManager(GDT_Manager *gdt_manager);
         
-        ~KernelThreadManager();
+        ~KThreadManager();
 
         /// @brief Adds a kernel thread to the scheduling queue.
         /// @details Calls `reset()` on the thread to prepare its stack.
-        /// @param thread Pointer to the KernelThread object to add.
+        /// @param thread Pointer to the KThread object to add.
         /// @return true if the thread was added successfully, false if the queue is full or thread is already running.
-        bool addThread(KernelThread* thread);
+        bool addThread(KThread* thread);
 
         /// @brief The core scheduling function called by the timer interrupt.
         /// @details Saves the current thread's state (passed in `cpustate`) and selects the next thread to run.

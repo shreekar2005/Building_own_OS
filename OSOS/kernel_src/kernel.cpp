@@ -20,11 +20,8 @@ void task_x(void* arg)
     }
 }
 
-essential::KernelThread task1(&task_o, nullptr);
-essential::KernelThread task2(&task_x, nullptr);
-
 /// @brief This is halt for kernelMain
-void halt(void* arg)
+void kernelTail(void* arg)
 {
     basic::printf("\nHELLO FROM OSOS (`help` to see commands)...\npress Enter to continue... :)");
     (void) arg;
@@ -64,7 +61,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_GDT_Manager.installTable();
     essential::GDT_Manager::printLoadedTableHeader();
 
-    essential::KernelThreadManager osos_ThreadManager(&osos_GDT_Manager);
+    essential::KThreadManager osos_ThreadManager(&osos_GDT_Manager);
 
     // central kernel shell
     KernelShell shell(&osos_ThreadManager, mbi);
@@ -94,11 +91,13 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_InterruptManager.installTable();
     hardware_communication::InterruptManager::printLoadedTableHeader();
 
-    essential::KernelThread haltTask(&halt, nullptr);
-    osos_ThreadManager.addThread(&haltTask);
-
-    shell.addShellTask(&task1);
-    shell.addShellTask(&task2);
+    essential::KThread *haltTask= new essential::KThread(&kernelTail, nullptr);
+    essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
+    essential::KThread* task2 = new essential::KThread(&task_x, nullptr);
+    osos_ThreadManager.addThread(haltTask);
+    
+    shell.addShellTask(task1);
+    shell.addShellTask(task2);
     
     hardware_communication::InterruptManager::activate();
     while (true){asm("hlt");};
