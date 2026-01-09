@@ -62,11 +62,11 @@ qemu_serial: CCPARAMS += -DserialMode=1
 # Default target when you just type 'make'. It starts qemu virtual machine
 qemu: qemu_elf
 qemu_elf: elf 
-	$(QEMU) -kernel $(TARGET_ELF) -m 4096
+	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -display sdl,full-screen=on
 
 # Boot from ISO file
 qemu_iso: iso
-	$(QEMU) -cdrom $(TARGET_ISO) -m 4096
+	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -display sdl,full-screen=on
 
 # Have both graphic and serial mode
 # DEPENDS ON CLEAN: to ensure we recompile with -DserialMode=1

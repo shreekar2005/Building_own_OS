@@ -20,7 +20,7 @@ void kernelTail(void* arg)
 {
     KernelArgs* args = (KernelArgs*)arg;
 
-    basic::printf("\nHELLO FROM OSOS (`help` to see commands)...\n");
+    basic::printf("\nHELLO FROM OSOS ('help' to see commands)...\n");
     basic::printf("\nOSOS> ");
     while (true){
         args->shell->update();
