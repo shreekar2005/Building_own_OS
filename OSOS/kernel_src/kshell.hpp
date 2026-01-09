@@ -19,8 +19,6 @@ private:
     multiboot_info_t *mbi;
     char m_line_buffer[256]; 
     int m_buffer_index; 
-    
-    // --- NEW: Input Queue for buffering keys ---
     char m_input_queue[SHELL_BUFFER_SIZE];
     volatile int m_write_ptr;
     volatile int m_read_ptr;
@@ -39,7 +37,6 @@ public:
         m_line_buffer[0] = '\0';
         numShellThreads = 0;
         
-        // Initialize Queue
         m_write_ptr = 0;
         m_read_ptr = 0;
     }
@@ -56,32 +53,25 @@ public:
     {
         if (c == 0) return;
         
-        // Calculate next write position
         int next_write = (m_write_ptr + 1) % SHELL_BUFFER_SIZE;
         
-        // If buffer isn't full, add the character
         if (next_write != m_read_ptr) {
             m_input_queue[m_write_ptr] = c;
             m_write_ptr = next_write;
         }
-        // If full, we drop the key (safe behavior for ISR)
     }
 
     /// @brief Called by the Main Thread. Processes keys with interrupts ENABLED.
     void update()
     {
-        // Process all keys currently in the buffer
         while (m_read_ptr != m_write_ptr) {
             char c = m_input_queue[m_read_ptr];
             m_read_ptr = (m_read_ptr + 1) % SHELL_BUFFER_SIZE;
-            
-            // Now we call the actual logic (safe to sleep here!)
             handle_key_logic(c);
         }
     }
 
 private: 
-    // This was your old handle_key, now private and called by update()
     void handle_key_logic(char c)
     {
         switch(c)
@@ -191,7 +181,7 @@ poweroff  : shutdown the computer\n");
         else if(basic::strcmp(command, "poweroff") == 0) {
             basic::printf("Powering off system...\n");
             
-            // QEMU Shutdown (Newer versions)
+            // QEMU Shutdown
             // Port: 0x604, Value: 0x2000
             asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0x604), "a" ((uint16_t)0x2000));
 
@@ -225,8 +215,8 @@ poweroff  : shutdown the computer\n");
                 uint32_t base;
             } __attribute__((packed)) emptyIdt = { 0, 0 };
             
-            asm volatile ("lidt %0" : : "m" (emptyIdt)); // Load invalid IDT
-            asm volatile ("int $3"); // Trigger interrupt -> Crash -> Reboot
+            asm volatile ("lidt %0" : : "m" (emptyIdt));
+            asm volatile ("int $3");
             
             while(1) { asm volatile("hlt"); }
         }

@@ -33,12 +33,11 @@ void kernelTail(void* arg)
 
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
-    // Basic C++ & Display Setup
     essential::__callConstructors(); 
     basic::enable_cursor(0,15);
     basic::clearScreen();
     
-    // Install GDT (Must be done before Memory Management)
+    // Install GDT
     essential::GDT_Manager osos_GDT_Manager;
     osos_GDT_Manager.installTable();
     
@@ -103,6 +102,5 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     while (true){asm("hlt");};
     basic::disable_cursor();
     essential::__cxa_finalize(0);
-    (void)mbi;
     (void)magicnumber;
 }

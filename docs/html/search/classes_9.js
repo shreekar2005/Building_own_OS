@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['pagingmanager_0',['PagingManager',['../de/dc5/a44141.html',1,'memory']]],
-  ['pci_5fcontroller_1',['PCI_Controller',['../d1/d0f/a44109.html',1,'hardware_communication']]],
-  ['pci_5fdevicedescriptor_2',['PCI_DeviceDescriptor',['../d8/db0/a44105.html',1,'hardware_communication']]],
-  ['physicalmemorymanager_3',['PhysicalMemoryManager',['../d5/df8/a44145.html',1,'memory']]],
-  ['port_4',['Port',['../d2/d97/a44113.html',1,'hardware_communication']]],
-  ['port16bit_5',['Port16Bit',['../d8/dab/a44125.html',1,'hardware_communication']]],
-  ['port32bit_6',['Port32Bit',['../dc/de6/a44129.html',1,'hardware_communication']]],
-  ['port8bit_7',['Port8Bit',['../d6/d62/a44117.html',1,'hardware_communication']]],
-  ['port8bitslow_8',['Port8BitSlow',['../d9/df7/a44121.html',1,'hardware_communication']]]
+  ['pagingmanager_0',['PagingManager',['../d2/db8/a47240.html',1,'memory']]],
+  ['pci_5fcontroller_1',['PCI_Controller',['../dd/d07/a47208.html',1,'hardware_communication']]],
+  ['pci_5fdevicedescriptor_2',['PCI_DeviceDescriptor',['../dc/d27/a47204.html',1,'hardware_communication']]],
+  ['physicalmemorymanager_3',['PhysicalMemoryManager',['../d7/d87/a47244.html',1,'memory']]],
+  ['port_4',['Port',['../df/df1/a47212.html',1,'hardware_communication']]],
+  ['port16bit_5',['Port16Bit',['../d6/d16/a47224.html',1,'hardware_communication']]],
+  ['port32bit_6',['Port32Bit',['../dc/df4/a47228.html',1,'hardware_communication']]],
+  ['port8bit_7',['Port8Bit',['../de/db0/a47216.html',1,'hardware_communication']]],
+  ['port8bitslow_8',['Port8BitSlow',['../d6/da5/a47220.html',1,'hardware_communication']]]
 ];

@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['kernelshell_0',['KernelShell',['../d0/db6/a44017.html',1,'']]],
-  ['kernelthread_1',['KernelThread',['../d1/d77/a44081.html',1,'essential']]],
-  ['kernelthreadmanager_2',['KernelThreadManager',['../d5/d25/a44085.html',1,'essential']]],
-  ['keyboarddriver_3',['KeyboardDriver',['../dd/da6/a44045.html',1,'driver']]],
-  ['keyboardeventhandler_4',['KeyboardEventHandler',['../db/db4/a44041.html',1,'driver']]],
-  ['keyboardeventhandler_5ffor_5fkernel_5',['KeyboardEventHandler_for_kernel',['../d2/d17/a44021.html',1,'']]]
+  ['kernelargs_0',['KernelArgs',['../d7/d2c/a46169.html#d6/d27/a47104',1,'']]],
+  ['kernelshell_1',['KernelShell',['../d3/d76/a47120.html',1,'']]],
+  ['keyboarddriver_2',['KeyboardDriver',['../d1/d18/a47136.html',1,'driver']]],
+  ['keyboardeventhandler_3',['KeyboardEventHandler',['../df/d8d/a47132.html',1,'driver']]],
+  ['keyboardeventhandler_5ffor_5fkernel_4',['KeyboardEventHandler_for_kernel',['../d8/d55/a47108.html',1,'']]],
+  ['kthread_5',['KThread',['../d7/def/a47176.html',1,'essential']]],
+  ['kthreadmanager_6',['KThreadManager',['../dd/d24/a47180.html',1,'essential']]]
 ];

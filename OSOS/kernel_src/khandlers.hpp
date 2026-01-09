@@ -6,7 +6,7 @@
 #include "driver/kserial.hpp"
 #include "kshell.hpp"
 
-// --- Keyboard Handler ---
+// Keyboard Handler
 class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler
 {
     private:
@@ -22,7 +22,7 @@ class KeyboardEventHandler_for_kernel : public driver::KeyboardEventHandler
         void onKeyUp(char ascii) override { (void)ascii; }
 };
 
-// --- Mouse Handler ---
+// Mouse Handler
 class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
     public:
         void onMouseDown(uint8_t button) override {
@@ -32,8 +32,7 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
         void onMouseUp(uint8_t button) override { (void)button; }
         
         void onMouseMove(int8_t delta_x, int8_t delta_y) override {
-            // [Keep your specific drawing logic here...]
-             static uint16_t* video_memory = (uint16_t*) 0xb8000;
+            static uint16_t* video_memory = (uint16_t*) 0xb8000;
             static float deltaTod=0.2;
             static float dx=0, dy=0;
             dx+=delta_x*deltaTod;
@@ -59,7 +58,7 @@ class MouseEventHandler_for_kernel : public driver::MouseEventHandler{
         }
 };
 
-// --- Serial Handler ---
+// Serial Handler
 class SerialEventHandler_for_kernel : public driver::SerialEventHandler{
     private:
         KernelShell* m_shell;

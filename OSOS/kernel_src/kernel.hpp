@@ -30,4 +30,23 @@ struct KernelArgs {
     multiboot_info_t* mbi;
 };
 
+#include "kernel.hpp"
+
+/// @brief function for shell task1
+/// @param arg necessory argument as per KThread rule
+void task_o(void* arg);
+
+/// @brief function for shell task2
+/// @param arg necessory argument as per KThread rule
+void task_x(void* arg);
+
+/// @brief This is tail of kernelMain whose CPU state will be preserved
+/// @param arg 
+void kernelTail(void* arg);
+
+/// @brief Entrypoint for C++ code. we will call this function from assembly
+/// @param mbi multiboot information provided by grub
+/// @param magicnumber magic number (just to varify)
+extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber);
+
 #endif

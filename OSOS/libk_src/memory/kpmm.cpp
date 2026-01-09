@@ -67,9 +67,8 @@ void printMemoryMap(multiboot_info_t *mbi)
     double total_mb = total_available_bytes / 1024.0;
     printf("Total available memory: %.2f KB\n", total_mb);
 }
-// -----------------------------------------------------------------------
+
 // Helper Functions for Bit Manipulation
-// -----------------------------------------------------------------------
 
 void PhysicalMemoryManager::mark_used(uint32_t block_index) {
     uint32_t index = block_index / 8;
@@ -89,10 +88,7 @@ bool PhysicalMemoryManager::is_used(uint32_t block_index) {
     return (memory_bitmap[index] & (1 << offset)) != 0;
 }
 
-// -----------------------------------------------------------------------
 // Public Interface
-// -----------------------------------------------------------------------
-
 void PhysicalMemoryManager::init(multiboot_info_t* mbi)
 {
     // placing it at the address of 'end', ensuring it doesn't overwrite kernel code.
