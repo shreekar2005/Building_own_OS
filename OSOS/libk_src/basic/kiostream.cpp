@@ -138,14 +138,19 @@ void clearScreen()
         video_memory[i] = blank;
     }
 
+    driver::MouseDriver::old_char_under_mouse_pointer = blank;
+    
     cursor_x_ = 0;
     cursor_y_ = 0;
     update_cursor(cursor_x_, cursor_y_);
 
+     #if defined(serialMode) && serialMode == 1
     const char* clear_sequence = "\e[2J\e[H";
     for (int i = 0; clear_sequence[i] != '\0'; i++) {
+       
         write_serial_char(clear_sequence[i]);
     }
+    #endif
 }
 
 static void reverse(char *str, int length)
