@@ -77,7 +77,7 @@ void KThreadManager::onThreadExit()
 
 CPUState* KThreadManager::scheduleThreads(CPUState* cpustate)
 {
-    const int TIME_QUANTUM = 1; 
+    const int TIME_QUANTUM = 20; 
     static int tick_counter = 0;
 
     if(numThreads <= 0) 
@@ -97,7 +97,6 @@ CPUState* KThreadManager::scheduleThreads(CPUState* cpustate)
     // Round Robin Logic for thread scheduling
     if(++currentThread >= numThreads)
         currentThread = 0;
-    if(numThreads>1 && currentThread==0) currentThread = 1; // 0th thread is init function from `kernel.cpp`
     
     return threads[currentThread]->cpustate;
 }

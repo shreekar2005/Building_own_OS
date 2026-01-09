@@ -1,109 +1,108 @@
 #include "kernel.hpp"
 
-/// @brief task_o for testing multitasking
-void task_o(void* arg)
-{
+void task_o(void* arg) {
     (void) arg;
-    for(int i=0; i<200; i++){
+    for(int i=0; i<2000; i++){
         basic::printf("o");
-        for(long long i=0; i<100000; i++){basic::printf("");} //for some short delay    
+        essential::Time::sleep(1);
     }
 }
 
-/// @brief task_x for testing multitasking
-void task_x(void* arg)
-{
+void task_x(void* arg) {
     (void) arg;
-    for(int i=0; i<200; i++){
+    for(int i=0; i<2000; i++){
         basic::printf("x");
-        for(long long i=0; i<100000; i++){basic::printf("");} //for some short delay
+        essential::Time::sleep(1);
     }
 }
 
-/// @brief This is halt for kernelMain
 void kernelTail(void* arg)
 {
-    basic::printf("\nHELLO FROM OSOS (`help` to see commands)...\npress Enter to continue... :)");
-    (void) arg;
-    while (true){asm("hlt");};
+    KernelArgs* args = (KernelArgs*)arg;
+
+    basic::printf("\nHELLO FROM OSOS (`help` to see commands)...\n");
+    basic::printf("\nOSOS> ");
+    while (true){
+        args->shell->update();
+        asm("hlt");
+    }
+    
     basic::disable_cursor();
     essential::__cxa_finalize(0);
 }
 
-/// @brief The main entry point for the C++ kernel.
-/// @param mbi Pointer to the Multiboot information structure provided by GRUB.
-/// @param magicnumber The magic number passed by GRUB to verify boot.
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
+    // Basic C++ & Display Setup
     essential::__callConstructors(); 
     basic::enable_cursor(0,15);
     basic::clearScreen();
     
-    // initiating PMM
-    memory::PhysicalMemoryManager::init(mbi);
-    // initiating Paging
-    memory::PagingManager::init(); // Maps 0-24MB now
-    // initiating Heap : Start at 16MB (0x1000000), Size 8MB
-    memory::kernel_heap.init((void*)0x1000000, 8 * 1024 * 1024);
-
-    // testing C++ new
-    int* arr = new int[10];
-    arr[0] = 99;
-    basic::printf("Heap Test (new): %d\n", arr[0]);
-    delete[] arr;
-
-    // testing C malloc
-    void* ptr = malloc(100);
-    basic::printf("Heap Test (malloc): 0x%x\n", ptr);
-    free(ptr);
-
+    // Install GDT (Must be done before Memory Management)
     essential::GDT_Manager osos_GDT_Manager;
     osos_GDT_Manager.installTable();
-    essential::GDT_Manager::printLoadedTableHeader();
-
+    
+    // Initialize Memory
+    memory::PhysicalMemoryManager::init(mbi);
+    memory::PagingManager::init(); 
+    memory::kernel_heap.init((void*)0x1000000, 8 * 1024 * 1024);
+    
+    // Initialize Core Kernel Managers
     essential::KThreadManager osos_ThreadManager(&osos_GDT_Manager);
-
-    // central kernel shell
-    KernelShell shell(&osos_ThreadManager, mbi);
-
     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT_Manager, &osos_ThreadManager);
     
-    // object of drivers so that they will handle their corresponding Interrupts
+    // Initialize Shell
+    KernelShell shell(&osos_ThreadManager, mbi);
+    
+    // Initialize Drivers
     driver::DriverManager driverManager;
     
-        KeyboardEventHandler_for_kernel keyboardEventHandler_for_kernel(&shell);
-        driver::KeyboardDriver keyboard(&osos_InterruptManager,&keyboardEventHandler_for_kernel);
+        driver::TimerDriver timer(&osos_InterruptManager, 1000); 
+        essential::Time::setTimerDriver(&timer); // to initialize essential::Time with timer
+        driverManager.addDriver(&timer);
+
+        KeyboardEventHandler_for_kernel kbdHandler(&shell);
+        driver::KeyboardDriver keyboard(&osos_InterruptManager, &kbdHandler);
         driverManager.addDriver(&keyboard);
         
-        MouseEventHandler_for_kernel mouseEventHandler_for_kernel;
-        driver::MouseDriver mouse(&osos_InterruptManager, &mouseEventHandler_for_kernel);
+        MouseEventHandler_for_kernel mouseHandler;
+        driver::MouseDriver mouse(&osos_InterruptManager, &mouseHandler);
         driverManager.addDriver(&mouse);
         
-        SerialEventHandler_for_kernel serialEventHandler_for_kernel(&shell);
-        driver::SerialDriver serialIO(&osos_InterruptManager, &serialEventHandler_for_kernel);
+        SerialEventHandler_for_kernel serialHandler(&shell);
+        driver::SerialDriver serialIO(&osos_InterruptManager, &serialHandler);
         driverManager.addDriver(&serialIO);
         
         hardware_communication::PCI_Controller pciController;
         pciController.selectDrivers(&driverManager, &osos_InterruptManager);
     
+    // Activate Hardware
     driverManager.activateAll();
-    
     osos_InterruptManager.installTable();
-    hardware_communication::InterruptManager::printLoadedTableHeader();
+    
+    // Prepare Thread Arguments
+    KernelArgs* kArgs = new KernelArgs();
+    kArgs->gdtManager = &osos_GDT_Manager;
+    kArgs->interruptManager = &osos_InterruptManager;
+    kArgs->driverManager = &driverManager;
+    kArgs->timer = &timer;
+    kArgs->shell = &shell;
 
-    essential::KThread *haltTask= new essential::KThread(&kernelTail, nullptr);
+    // Create Tasks
+    essential::KThread *haltTask= new essential::KThread(&kernelTail, kArgs);
     essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
     essential::KThread* task2 = new essential::KThread(&task_x, nullptr);
-    osos_ThreadManager.addThread(haltTask);
     
+    osos_ThreadManager.addThread(haltTask);
     shell.addShellTask(task1);
     shell.addShellTask(task2);
     
+    // Enable Interrupts (Start the System)
     hardware_communication::InterruptManager::activate();
+
     while (true){asm("hlt");};
     basic::disable_cursor();
     essential::__cxa_finalize(0);
     (void)mbi;
     (void)magicnumber;
 }
-
