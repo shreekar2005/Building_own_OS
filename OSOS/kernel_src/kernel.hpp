@@ -38,7 +38,7 @@ void task_o(void* arg);
 
 /// @brief function for shell task2
 /// @param arg necessory argument as per KThread rule
-void task_x(void* arg);
+void task_X(void* arg);
 
 /// @brief This is tail of kernelMain whose CPU state will be preserved
 /// @param arg 

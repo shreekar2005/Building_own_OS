@@ -8,7 +8,7 @@ void task_o(void* arg) {
     }
 }
 
-void task_x(void* arg) {
+void task_X(void* arg) {
     (void) arg;
     for(int i=0; i<2000; i++){
         basic::printf("X");
@@ -90,7 +90,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     // Create Tasks
     essential::KThread *haltTask= new essential::KThread(&kernelTail, kArgs);
     essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
-    essential::KThread* task2 = new essential::KThread(&task_x, nullptr);
+    essential::KThread* task2 = new essential::KThread(&task_X, nullptr);
     
     osos_ThreadManager.addThread(haltTask);
     shell.addShellTask(task1);
