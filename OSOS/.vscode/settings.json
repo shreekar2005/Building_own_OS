@@ -2,7 +2,10 @@
     "code-runner.runInTerminal": true,
     "code-runner.cwd": "${workspaceFolder}",
     "code-runner.executorMap": {
-        "cpp": "make clear && make qemu_elf"
+        "cpp": "make clear && make qemu_elf",
+        "makefile": "make clear && make qemu_elf",
+        "gas": "make clear && make qemu_elf",
+        "jsonc": "make clear && make qemu_elf"
     },
     "files.associations": {
         "cstdint": "cpp",

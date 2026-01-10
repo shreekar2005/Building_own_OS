@@ -11,7 +11,7 @@ void task_o(void* arg) {
 void task_x(void* arg) {
     (void) arg;
     for(int i=0; i<2000; i++){
-        basic::printf("x");
+        basic::printf("X");
         essential::Time::sleep(1);
     }
 }

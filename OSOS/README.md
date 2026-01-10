@@ -54,8 +54,6 @@ make vm # it will build OSOSkernel.iso and boot with Virtual Machine (May ask fo
 ---
 ---
 
-Here is the updated **Features Implemented** list for OSOS, reflecting your new file structure and the addition of the memory management modules.
-
 ## What things are implemented in OSOS:
 
 1. **Custom kernel library headers** (checkout `./libk_header` for headers and `./libk_src/` for their source code)

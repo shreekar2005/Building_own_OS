@@ -66,7 +66,7 @@ qemu_elf: elf
 
 # Boot from ISO file
 qemu_iso: iso
-	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -display sdl,full-screen=on
+	$(QEMU) -cdrom $(TARGET_ISO) -m 4096 -display sdl,full-screen=on
 
 # Have both graphic and serial mode
 # DEPENDS ON CLEAN: to ensure we recompile with -DserialMode=1
