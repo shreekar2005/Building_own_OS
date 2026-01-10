@@ -110,39 +110,33 @@ OSOS Kernel Shell Help\n\
 Here is list of commands that are working in OSOS\n\
 help      : list commands\n\
 clear     : clear shell\n\
-lsmem     : print memory map provided by grub\n\
-checkmem  : check how much memory is free (in KB)\n\
-checkheap : examine kernel heap\n\
-lspagedir : check active page directory entries for kernel\n\
 lspci     : list PCI devices\n\
-task <i>  : start ith task(thread) from OSOS shell\n\
-numtasks  : to see number of tasks in shell list\n\
+checkmem  : examine physical memory (in KB)\n\
+checkheap : examine current heap (in B)\n\
+lspagedir : check active page directory entries for kernel\n\
 uptime    : show system uptime (Hr:Min:Sec:mSec)\n\
 sleep <n> : sleep for n milliseconds\n\
+numtasks  : to see number of tasks in shell list\n\
+task <i>  : start ith task(thread) from OSOS shell\n\
 reboot    : restart the computer\n\
 poweroff  : shutdown the computer\n");
         }
         else if(basic::strcmp(command, "clear") == 0) {
             basic::clearScreen();
         }
-        else if (basic::strcmp(command, "lsmem") == 0) {
-            memory::printMemoryMap(mbi);
-        }
         else if (basic::strcmp(command, "lspci") == 0) {
             basic::printf("Listing PCI devices...\n");
             pciController.scanBus(0);
         }
         else if(basic::strcmp(command, "checkmem") == 0) {
-            basic::printf("Total Free Memory : %d KB\n", memory::PhysicalMemoryManager::get_free_memory_kb());
+            memory::printMemoryMap(mbi);
+            basic::printf("Total Free Physical Memory to use : %d KB\n", memory::PhysicalMemoryManager::get_free_memory_kb());
         }
         else if(basic::strcmp(command, "checkheap") == 0) {
             memory::kernel_heap.printHeapInfo();
         }
         else if(basic::strcmp(command, "lspagedir") == 0) {
             memory::PagingManager::printPageDirectory();
-        }
-        else if(basic::strcmp(command, "numtasks") == 0) {
-            basic::printf("Number of tasks in shell list : %d\n", numShellThreads);
         }
         else if(basic::strcmp(command, "uptime") == 0) {
             uint64_t uptime = essential::Time::getUptimeMS();
@@ -165,6 +159,9 @@ poweroff  : shutdown the computer\n");
                 basic::printf("Done.\n");
             }
         }
+        else if(basic::strcmp(command, "numtasks") == 0) {
+            basic::printf("Number of tasks in shell list : %d\n", numShellThreads);
+        }
         else if (basic::strncmp(command, "task", 4) == 0){
              char* tasknumstr=(char*)command+4;
              int tasknum = basic::stoi(tasknumstr) - 1;
@@ -177,24 +174,6 @@ poweroff  : shutdown the computer\n");
                       basic::printf("Error: failed to start task%d.\n", tasknum+1);
                  }
              }
-        }
-        else if(basic::strcmp(command, "poweroff") == 0) {
-            basic::printf("Powering off system...\n");
-            
-            // QEMU Shutdown
-            // Port: 0x604, Value: 0x2000
-            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0x604), "a" ((uint16_t)0x2000));
-
-            // Bochs & Older QEMU Shutdown
-            // Port: 0xB004, Value: 0x2000
-            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0xB004), "a" ((uint16_t)0x2000));
-
-            // VirtualBox Shutdown
-            // Port: 0x4004, Value: 0x3400
-            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0x4004), "a" ((uint16_t)0x3400));
-
-            basic::printf("Poweroff failed (ACPI not implemented). Halting CPU.\n");
-            while(1) { asm volatile("hlt"); }
         }
         else if(basic::strcmp(command, "reboot") == 0) {
             basic::printf("Rebooting system...\n");
@@ -218,6 +197,24 @@ poweroff  : shutdown the computer\n");
             asm volatile ("lidt %0" : : "m" (emptyIdt));
             asm volatile ("int $3");
             
+            while(1) { asm volatile("hlt"); }
+        }
+        else if(basic::strcmp(command, "poweroff") == 0) {
+            basic::printf("Powering off system...\n");
+            
+            // QEMU Shutdown
+            // Port: 0x604, Value: 0x2000
+            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0x604), "a" ((uint16_t)0x2000));
+
+            // Bochs & Older QEMU Shutdown
+            // Port: 0xB004, Value: 0x2000
+            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0xB004), "a" ((uint16_t)0x2000));
+
+            // VirtualBox Shutdown
+            // Port: 0x4004, Value: 0x3400
+            asm volatile ("outw %1, %0" : : "dN" ((uint16_t)0x4004), "a" ((uint16_t)0x3400));
+
+            basic::printf("Poweroff failed (ACPI not implemented). Halting CPU.\n");
             while(1) { asm volatile("hlt"); }
         }
         else {

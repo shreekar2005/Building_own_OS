@@ -236,7 +236,6 @@ static void printHex(uintptr_t n, int digits)
 
 int printf(const char *format, ...)
 {
-    // --- SAFETY FIX: pushf saves flags, popf restores them ---
     if(hardware_communication::InterruptManager::interruptActivated==true) asm volatile("pushf; cli");
     int chars_written = 0;
 
@@ -253,23 +252,30 @@ int printf(const char *format, ...)
             i++;
             int use_alternative_form = 0;
             int zero_pad = 0;
+            int left_align = 0;
             int width = 0;
             int precision = -1;
             
-            if (format[i] == '#') { use_alternative_form = 1; i++; }
-            if (format[i] == '0') { zero_pad = 1; i++; }
+            while(1) {
+                if (format[i] == '-') { left_align = 1; i++; }
+                else if (format[i] == '#') { use_alternative_form = 1; i++; }
+                else if (format[i] == '0') { zero_pad = 1; i++; }
+                else break;
+            }
+            // Standard Rule: If left alignment (-) is used, zero padding is ignored.
+            if (left_align) zero_pad = 0;
 
             while (format[i] >= '0' && format[i] <= '9') {
                 width = width * 10 + (format[i] - '0');
                 i++;
             }
+            
             if (format[i] == '.') {
                 i++; precision = 0;
                 while (format[i] >= '0' && format[i] <= '9') {
                     precision = precision * 10 + (format[i] - '0');
                     i++;
                 }
-                zero_pad = 0;
             }
 
             int is_long = 0, is_long_long = 0, is_short = 0, is_char = 0;
@@ -287,17 +293,43 @@ int printf(const char *format, ...)
                 {
                     const char *str = va_arg(args, char *);
                     if (!str) str = "(null)";
+                    
                     int len = 0; while (str[len]) len++;
-                    printCharStr(str);
-                    chars_written += len;
+                    int padding = (width > len) ? (width - len) : 0;
+                    chars_written += len + padding;
+
+                    // If Left Align: Print String -> Then Padding
+                    if (left_align) {
+                        printCharStr(str);
+                        for(int k=0; k<padding; k++) printCharStr(" ");
+                    } 
+                    // If Right Align: Print Padding -> Then String
+                    else {
+                        for(int k=0; k<padding; k++) printCharStr(" ");
+                        printCharStr(str);
+                    }
                     break;
                 }
                 case 'f':
                 {
                     doubleToString(va_arg(args, double), buffer, precision);
+                    
                     int len = 0; while(buffer[len]) len++;
-                    printCharStr(buffer);
-                    chars_written += len;
+                    int padding = (width > len) ? (width - len) : 0;
+                    chars_written += len + padding;
+
+                    if (left_align) {
+                        printCharStr(buffer);
+                        for(int k=0; k<padding; k++) printCharStr(" ");
+                    } else {
+                        // Handle standard space padding vs zero padding
+                        char padChar = (zero_pad && precision == -1) ? '0' : ' ';
+                        for(int k=0; k<padding; k++) {
+                            char p[2] = {padChar, 0};
+                            printCharStr(p);
+                        }
+                        printCharStr(buffer);
+                    }
                     break;
                 }
                 case 'd': case 'i': case 'u': case 'x': case 'X': case 'b': case 'o':
@@ -351,12 +383,32 @@ int printf(const char *format, ...)
                     
                     chars_written += width_pads + total_len;
 
-                    if (!zero_pad && width_pads > 0) for (int j = 0; j < width_pads; j++) printCharStr(" ");
-                    if (sign_char) { char_str[0] = sign_char; printCharStr(char_str); }
-                    if (prefix_len > 0) printCharStr(prefix);
-                    if (zero_pad && width_pads > 0) for (int j = 0; j < width_pads; j++) printCharStr("0");
-                    if (precision_pads > 0) for (int j = 0; j < precision_pads; j++) printCharStr("0");
-                    printCharStr(buffer);
+                    if (left_align) {
+                        // Left Align format: [Sign][Prefix][PrecisionZeros][Number] [Spaces]
+                        if (sign_char) { char_str[0] = sign_char; printCharStr(char_str); }
+                        if (prefix_len > 0) printCharStr(prefix);
+                        if (precision_pads > 0) for (int j = 0; j < precision_pads; j++) printCharStr("0");
+                        printCharStr(buffer);
+                        // Padding goes at the END
+                        for (int j = 0; j < width_pads; j++) printCharStr(" ");
+                    } else {
+                        // Right Align format: [Spaces][Sign][Prefix][ZeroPads][Number]
+                        // Note: If '0' flag is used, padding spaces become '0' and move AFTER sign/prefix
+                        
+                        if (!zero_pad) {
+                            for (int j = 0; j < width_pads; j++) printCharStr(" ");
+                        }
+
+                        if (sign_char) { char_str[0] = sign_char; printCharStr(char_str); }
+                        if (prefix_len > 0) printCharStr(prefix);
+
+                        if (zero_pad) {
+                            for (int j = 0; j < width_pads; j++) printCharStr("0");
+                        }
+                        
+                        if (precision_pads > 0) for (int j = 0; j < precision_pads; j++) printCharStr("0");
+                        printCharStr(buffer);
+                    }
                     break;
                 }
                 case 'p':
@@ -380,7 +432,6 @@ int printf(const char *format, ...)
     va_end(args);
     update_cursor(cursor_x_, cursor_y_);
     
-    // --- SAFETY FIX: restore flags ---
     if(hardware_communication::InterruptManager::interruptActivated==true) asm volatile("popf"); 
     return chars_written;
 }

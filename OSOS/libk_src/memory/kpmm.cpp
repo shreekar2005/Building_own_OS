@@ -22,7 +22,7 @@ void printMemoryMap(multiboot_info_t *mbi)
         return;
     }
 
-    printf("--- System Memory Map ---\n");
+    printf("Memory Map ...\n");
     
     // Use uint64_t to correctly accumulate total memory size
     uint64_t total_available_bytes = 0;
@@ -60,12 +60,12 @@ void printMemoryMap(multiboot_info_t *mbi)
         }
 
         // Use %#llx for 64-bit hex values (address and length)
-        printf("Addr: %#llx | Len: %.2fKB | Type: %s\n", mmap->addr, mmap->len/1024.0, type_str);
+        printf("Addr: %#-11llx, Size(KB): %-10.2f, Type: %s\n", mmap->addr, mmap->len/1024.0, type_str);
     }
     
     // Use floating point for the final calculation and display
     double total_mb = total_available_bytes / 1024.0;
-    printf("Total available memory: %.2f KB\n", total_mb);
+    printf("Total Available Physical Memory: %.2f KB\n", total_mb);
 }
 
 // Helper Functions for Bit Manipulation

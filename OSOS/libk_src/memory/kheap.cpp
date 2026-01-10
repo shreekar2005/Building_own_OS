@@ -83,10 +83,10 @@ namespace memory {
         int i=0;
         while (current != nullptr) {
             if (current->is_free) total_free += current->size;
-            basic::printf("Block %d: %s, Size: %d, Addr: 0x%x\n", i++, current->is_free ? "FREE" : "USED", current->size, current);
+            basic::printf("Block %-2d: %s, Size(B): %-7d, Addr: 0x%x\n", i++, current->is_free ? "FREE" : "USED", current->size, current);
             current = current->next;
         }
-        basic::printf("Total Free Heap: %d bytes\n", total_free);
+        basic::printf("Total Free Heap: %d B\n", total_free);
     }
 }
 
