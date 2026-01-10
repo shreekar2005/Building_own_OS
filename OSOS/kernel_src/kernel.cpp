@@ -43,7 +43,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     
     // Initialize Memory
     memory::PhysicalMemoryManager::init(mbi);
-    memory::PagingManager::init(); 
+    memory::PagingManager::init();
     memory::kernel_heap.init((void*)0x1000000, 8 * 1024 * 1024);
     
     // Initialize Core Kernel Managers
