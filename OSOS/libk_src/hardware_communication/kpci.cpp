@@ -1,6 +1,6 @@
 #include "hardware_communication/kpci.hpp"
 #include "basic/kiostream.hpp"
-#include <driver/kamd79c973.hpp>
+#include "driver/kamd79c973.hpp"
 
 using namespace hardware_communication;
 

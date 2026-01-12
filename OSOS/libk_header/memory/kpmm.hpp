@@ -2,8 +2,7 @@
 #define _OSOS_BASIC_KMEMORY_H
 
 #include "basic/multiboot.h"
-#include <cstdint>
-#include <cstddef>
+#include "essential/ktypes.hpp"
 
 namespace memory
 {

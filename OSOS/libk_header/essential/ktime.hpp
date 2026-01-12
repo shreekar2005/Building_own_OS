@@ -1,7 +1,7 @@
 #ifndef _OSOS_ESSENTIAL_KTIME_HPP
 #define _OSOS_ESSENTIAL_KTIME_HPP
 
-#include <cstdint>
+#include "essential/ktypes.hpp"
 #include "driver/ktimer.hpp"
 
 namespace essential {

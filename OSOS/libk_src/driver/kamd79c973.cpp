@@ -1,5 +1,5 @@
-#include <driver/kamd79c973.hpp>
-#include <basic/kiostream.hpp>
+#include "driver/kamd79c973.hpp"
+#include "basic/kiostream.hpp"
 
 using namespace basic;
 using namespace driver;

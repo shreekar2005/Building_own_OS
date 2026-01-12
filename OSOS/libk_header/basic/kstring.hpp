@@ -1,7 +1,7 @@
 #ifndef _OSOS_BASIC_KSTRING_H
 #define _OSOS_BASIC_KSTRING_H
 
-#include <cstdint>
+#include "essential/ktypes.hpp"
 
 namespace basic
 {

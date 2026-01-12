@@ -1,7 +1,7 @@
 #ifndef _OSOS_DRIVER_KKEYBOARD_H
 #define _OSOS_DRIVER_KKEYBOARD_H
 
-#include <cstdint>
+#include "essential/ktypes.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kport.hpp"
 #include "driver/kdriver.hpp"

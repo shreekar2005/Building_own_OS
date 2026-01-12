@@ -1,8 +1,8 @@
 #ifndef _OSOS_ESSENTIAL_KMULTITASKING_H
 #define _OSOS_ESSENTIAL_KMULTITASKING_H
 
-#include <cstdint>
-#include <essential/kgdt.hpp>
+#include "essential/ktypes.hpp"
+#include "essential/kgdt.hpp"
 
 namespace essential
 {

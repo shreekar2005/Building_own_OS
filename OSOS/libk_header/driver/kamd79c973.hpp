@@ -1,11 +1,11 @@
 #ifndef KAMD79C973_HPP
 #define KAMD79C973_HPP
 
-#include <cstdint>
-#include <driver/kdriver.hpp>
-#include <hardware_communication/kinterrupt.hpp>
-#include <hardware_communication/kport.hpp>
-#include <hardware_communication/kpci.hpp>
+#include "essential/ktypes.hpp"
+#include "driver/kdriver.hpp"
+#include "hardware_communication/kinterrupt.hpp"
+#include "hardware_communication/kport.hpp"
+#include "hardware_communication/kpci.hpp"
 
 namespace driver {
 

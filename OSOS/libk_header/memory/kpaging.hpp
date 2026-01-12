@@ -1,7 +1,7 @@
 #ifndef _OSOS_MEMORY_KPAGING_H
 #define _OSOS_MEMORY_KPAGING_H
 
-#include <cstdint>
+#include "essential/ktypes.hpp"
 #include "memory/kpmm.hpp" 
 
 namespace memory 

@@ -1,8 +1,8 @@
 #ifndef _OSOS_BASIC_KIOSTREAM_H
 #define _OSOS_BASIC_KIOSTREAM_H
 
-#include <cstdint>
-#include <cstdarg>
+#include "essential/ktypes.hpp"
+#include "essential/kstdarg.hpp"
 
 namespace basic
 {

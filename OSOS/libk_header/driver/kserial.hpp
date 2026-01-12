@@ -1,7 +1,7 @@
 #ifndef _OSOS_DRIVER_KSERIAL_H
 #define _OSOS_DRIVER_KSERIAL_H
 
-#include <cstdint>
+#include "essential/ktypes.hpp"
 
 #include "driver/kdriver.hpp"
 #include "hardware_communication/kinterrupt.hpp"
