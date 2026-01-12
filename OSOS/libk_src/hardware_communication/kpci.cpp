@@ -1,5 +1,6 @@
 #include "hardware_communication/kpci.hpp"
 #include "basic/kiostream.hpp"
+#include <driver/kamd79c973.hpp>
 
 using namespace hardware_communication;
 
@@ -135,7 +136,10 @@ void PCI_Controller::recursiveSelDriver(uint8_t bus, driver::DriverManager* driv
                 if(bar.address && (bar.type == inputOutput)) dev.portBase[barNum] = (uint32_t)bar.address;
             }
             driver::Driver* driver = getDriver(dev, interrupt_manager);
-            if(driver != 0) driver_manager->addDriver(driver);
+            if(driver != nullptr) {
+                driver_manager->addDriver(driver);
+                basic::printf("Driver added!\n");
+            }
             
             if(dev.classId == 0x06 && dev.subclassId == 0x04)
             {
@@ -245,15 +249,15 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor dev, hardware_com
 {
     (void) interrupt_manager;
 
-    driver::Driver* driver = 0;
-    return driver; ///////////////////////////////////////////////remvoe this
     switch(dev.vendorId)
     {
         case 0x1022: // AMD
             switch(dev.deviceId)
             {
                 case 0x2000:
-                    basic::printf("AMD am79c973 ");
+                    basic::printf("AMD am79c973 (network card) detected! ");
+                    driver::amd_am79c973* driver = new driver::amd_am79c973(&dev, interrupt_manager);
+                    return driver;
                     break;
             }
             break;
@@ -261,33 +265,32 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor dev, hardware_com
         case 0x8086: // Intel
             switch(dev.deviceId)
             {
-                case 0x1237: basic::printf("Intel 440FX Host Bridge "); break;
-                case 0x7000: basic::printf("Intel PIIX3 ISA Bridge "); break;
-                case 0x7010: basic::printf("Intel PIIX3 IDE Controller "); break;
-                case 0x7113: basic::printf("Intel PIIX4 ACPI "); break;
-                case 0x100E: basic::printf("Intel E1000 Ethernet "); break;
+                // case 0x1237: basic::printf("Intel 440FX Host Bridge "); break;
+                // case 0x7000: basic::printf("Intel PIIX3 ISA Bridge "); break;
+                // case 0x7010: basic::printf("Intel PIIX3 IDE Controller "); break;
+                // case 0x7113: basic::printf("Intel PIIX4 ACPI "); break;
+                // case 0x100E: basic::printf("Intel E1000 Ethernet "); break;
             }
             break;
             
         case 0x1234:
             switch(dev.deviceId)
             {
-                case 0x1111: basic::printf("QEMU VGA Graphics "); break;
+                // case 0x1111: basic::printf("QEMU VGA Graphics "); break;
             }
             break;
     }
-    basic::printf("| ");
-    
-    switch(dev.classId)
-    {
-        case 0x03:
-            if(dev.subclassId == 0x00) basic::printf("Generic VGA ");
-            break;
-        case 0x02:
-            basic::printf("Generic Network Card ");
-            break;
-    }
 
-    basic::printf("|\n---\n");
-    return driver;
+    // basic::printf("| ");
+    // switch(dev.classId)
+    // {
+    //     case 0x03:
+    //         if(dev.subclassId == 0x00) basic::printf("Generic VGA ");
+    //         break;
+    //     case 0x02:
+    //         basic::printf("Generic Network Card "); 
+    //         break;
+    // }
+
+    return nullptr;
 }

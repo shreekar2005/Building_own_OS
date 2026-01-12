@@ -49,7 +49,7 @@ CC          := osos-g++
 CCPARAMS    := -O2 -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
 AS          := osos-as
 ASPARAMS    := 
-QEMU        := qemu-system-i386
+QEMU 		:= qemu-system-i386 -net nic,model=pcnet -net user -m 4096
 GDB         := osos-gdb
 # -g is for adding debugging symbols
 
@@ -62,21 +62,21 @@ qemu_serial: CCPARAMS += -DserialMode=1
 # Default target when you just type 'make'. It starts qemu virtual machine
 qemu: qemu_elf
 qemu_elf: elf 
-	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -display sdl,full-screen=on
+	$(QEMU) -kernel $(TARGET_ELF) -display sdl,full-screen=on
 
 # Boot from ISO file
 qemu_iso: iso
-	$(QEMU) -cdrom $(TARGET_ISO) -m 4096 -display sdl,full-screen=on
+	$(QEMU) -cdrom $(TARGET_ISO) -display sdl,full-screen=on
 
 # Have both graphic and serial mode
 # DEPENDS ON CLEAN: to ensure we recompile with -DserialMode=1
 qemu_serial: clean elf
-	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -serial stdio
+	$(QEMU) -kernel $(TARGET_ELF) -serial stdio
 
 # Have only serial mode
 # DEPENDS ON CLEAN: to ensure we recompile with -DserialMode=1
 qemu_nographic : clean elf
-	$(QEMU) -kernel $(TARGET_ELF) -m 4096 -nographic
+	$(QEMU) -kernel $(TARGET_ELF) -nographic
 
 # Rule to create the kernel ELF.
 elf: $(TARGET_ELF)
