@@ -16,6 +16,43 @@ void task_X(void* arg) {
     }
 }
 
+// NETWORK TASK
+void task_Net(void* arg) {
+    driver::amd_am79c973* netDriver = (driver::amd_am79c973*)arg;
+    
+    // Safety check
+    if(netDriver == 0) {
+        basic::printf("[NET] No Driver Found!\n");
+        return;
+    }
+
+    uint8_t buffer[64];
+    net::EtherFrameHeader* header = (net::EtherFrameHeader*)buffer;
+
+    // Set Destination MAC: BROADCAST (FF:FF:FF:FF:FF:FF)
+    for(int i=0; i<6; i++) header->dstMAC[i] = 0xFF;
+
+    // Set Source MAC: 52:54:00:12:34:56 (QEMU Default)
+    // Note: In a real stack, this comes from the driver itself.
+    header->srcMAC[0] = 0x52; header->srcMAC[1] = 0x54; header->srcMAC[2] = 0x00;
+    header->srcMAC[3] = 0x12; header->srcMAC[4] = 0x34; header->srcMAC[5] = 0x56;
+
+    // Set EtherType: 0x0800 (IPv4)
+    header->etherType = net::htons(0x0800);
+
+    // Set Payload
+    const char* msg = "Hello Network!";
+    char* data = (char*)(buffer + sizeof(net::EtherFrameHeader));
+    for(int i=0; msg[i] != 0; i++) data[i] = msg[i];
+
+    // Loop to send packet repeatedly
+    while(true) {
+        basic::printf("[NET] Sending Packet...\n");
+        netDriver->Send(buffer, 64);
+        essential::Time::sleep(1000); // Send every 1 seconds
+    }
+}
+
 void kernelTail(void* arg)
 {
     KernelArgs* args = (KernelArgs*)arg;
@@ -73,8 +110,30 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
         driverManager.addDriver(&serialIO);
         
         hardware_communication::PCI_Controller pciController;
-        pciController.selectDrivers(&driverManager, &osos_InterruptManager);
-    
+        // pciController.selectDrivers(&driverManager, &osos_InterruptManager);
+
+
+        
+        /////////////// --- MANUAL NETWORK DRIVER SETUP (Do this better by next time) --- ////////////////
+        driver::amd_am79c973* netDriver = nullptr;
+        
+        // Check Bus 0, Device 3 (Standard QEMU Slot for NIC)
+        hardware_communication::PCI_DeviceDescriptor dev = pciController.getDeviceDescriptor(0, 3, 0);
+        
+        if(dev.vendorId == 0x1022 && dev.deviceId == 0x2000) {
+            // Found AMD Card! Instantiate manually.
+            basic::printf("Found Network Card at 0:3:0\n");
+            netDriver = new driver::amd_am79c973(&dev, &osos_InterruptManager);
+            driverManager.addDriver(netDriver);
+        } else {
+            // If not found at 0:3:0, rely on auto-scan (but netDriver will be null)
+            pciController.selectDrivers(&driverManager, &osos_InterruptManager);
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
     // Activate Hardware
     driverManager.activateAll();
     osos_InterruptManager.installTable();
@@ -92,9 +151,16 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
     essential::KThread* task2 = new essential::KThread(&task_X, nullptr);
     
+    // NEW: Create Network Task (Pass the netDriver as argument)
+    essential::KThread* task3 = new essential::KThread(&task_Net, (void*)netDriver);
+    
     osos_ThreadManager.addThread(haltTask);
     shell.addShellTask(task1);
     shell.addShellTask(task2);
+    
+    if(netDriver != 0) {
+        shell.addShellTask(task3);
+    }
     
     // Enable Interrupts (Start the System)
     hardware_communication::InterruptManager::activate();

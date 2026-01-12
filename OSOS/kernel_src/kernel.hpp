@@ -5,6 +5,7 @@
 #include "essential/kgdt.hpp"
 #include "essential/kicxxabi.hpp"
 #include "essential/kmultitasking.hpp"
+#include "essential/ktime.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kpci.hpp"
 #include "driver/kdriver.hpp"
@@ -12,11 +13,11 @@
 #include "driver/kkeyboard.hpp"
 #include "driver/kmouse.hpp"
 #include "driver/kserial.hpp"
-
+#include <driver/kamd79c973.hpp>
+#include <net/ketherframe.hpp>
 // Include the separated modules
 #include "kshell.hpp"
 #include "khandlers.hpp"
-#include "essential/ktime.hpp" // Include the new Time Library
 
 struct KernelArgs {
     essential::GDT_Manager* gdtManager;

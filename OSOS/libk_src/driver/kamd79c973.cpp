@@ -5,6 +5,23 @@ using namespace basic;
 using namespace driver;
 using namespace hardware_communication;
 
+// Helper to unmask IRQ on PIC
+void UnmaskIRQ(uint8_t irq) {
+    uint16_t port;
+    uint8_t value;
+
+    if (irq < 8) {
+        port = 0x21; // Master PIC Data Port
+    } else {
+        port = 0xA1; // Slave PIC Data Port
+        irq -= 8;
+    }
+
+    asm volatile("inb %1, %0" : "=a"(value) : "Nd"(port));
+    value &= ~(1 << irq);
+    asm volatile("outb %0, %1" : : "a"(value), "Nd"(port));
+}
+
 amd_am79c973::amd_am79c973(PCI_DeviceDescriptor* dev, InterruptManager* interrupts)
     : Driver(),
       InterruptHandler(dev->interrupt + 0x20, interrupts),
@@ -16,17 +33,19 @@ amd_am79c973::amd_am79c973(PCI_DeviceDescriptor* dev, InterruptManager* interrup
       ResetPort(dev->portBase[0] + 0x14),
       BusControlRegisterDataPort(dev->portBase[0] + 0x16)
 {
+    // Unmask the specific IRQ for this device
+    basic::printf("Network Card using IRQ %d\n", dev->interrupt);
+    UnmaskIRQ(dev->interrupt);
+    if(dev->interrupt >= 8) UnmaskIRQ(2); // Unmask Cascade if needed
+
     currentSendBuffer = 0;
     currentRecvBuffer = 0;
 
-    // --- 1. SETUP SEND DESCRIPTOR RING ---
-    // Align the pointer for the Descriptors (Structs)
+    // SETUP SEND DESCRIPTOR RING
     uint32_t raw_send_descr_ptr = (uint32_t)sendBufferDescrMemory;
     sendBufferDescr = (BufferDescriptor*)((raw_send_descr_ptr + 15) & ~0xF);
 
-    // Initialize the Descriptors to point to the Buffers
     for(uint8_t i = 0; i < 8; i++) {
-        // Align the pointer for the actual Buffer Data
         uint32_t raw_buf_ptr = (uint32_t)sendBuffers[i];
         
         sendBufferDescr[i].address = (raw_buf_ptr + 15 ) & ~0xF;
@@ -35,33 +54,29 @@ amd_am79c973::amd_am79c973(PCI_DeviceDescriptor* dev, InterruptManager* interrup
         sendBufferDescr[i].avail = 0;
     }
 
-    // --- 2. SETUP RECEIVE DESCRIPTOR RING ---
-    // Align the pointer for the Descriptors (Structs)
+    // SETUP RECEIVE DESCRIPTOR RING
     uint32_t raw_recv_descr_ptr = (uint32_t)recvBufferDescrMemory;
     recvBufferDescr = (BufferDescriptor*)((raw_recv_descr_ptr + 15) & ~0xF);
 
-    // Initialize the Descriptors to point to the Buffers
     for(uint8_t i = 0; i < 8; i++) {
-        // Align the pointer for the actual Buffer Data
         uint32_t raw_buf_ptr = (uint32_t)recvBuffers[i];
         
         recvBufferDescr[i].address = (raw_buf_ptr + 15 ) & ~0xF;
-        recvBufferDescr[i].flags = 0xF7FF | 0x80000000; // 0x80000000 = Owned by Card
+        recvBufferDescr[i].flags = 0xF7FF | 0x80000000;
         recvBufferDescr[i].flags2 = 0;
         recvBufferDescr[i].avail = 0;
     }
 
-    // --- 3. SETUP INITIALIZATION BLOCK ---
+    // SETUP INITIALIZATION BLOCK
     uint32_t raw_init_ptr = (uint32_t)initBlockMem;
     initBlock = (InitializationBlock*)((raw_init_ptr + 15) & ~0xF);
 
     initBlock->mode = 0; 
     initBlock->reserved1 = 0;
-    initBlock->numSendBuffers = 3; // 3 means 8 buffers (2^3)
+    initBlock->numSendBuffers = 3; 
     initBlock->reserved2 = 0;
-    initBlock->numRecvBuffers = 3; // 3 means 8 buffers (2^3)
+    initBlock->numRecvBuffers = 3; 
     
-    // Read MAC Address
     uint64_t mac0 = MACAddress0Port.read() % 256;
     uint64_t mac1 = MACAddress0Port.read() / 256;
     uint64_t mac2 = MACAddress2Port.read() % 256;
@@ -80,7 +95,6 @@ amd_am79c973::~amd_am79c973() {
 }
 
 void amd_am79c973::activate() {
-    // Send Init Block Address
     RegisterAddressPort.write(1);
     RegisterDataPort.write((uint32_t)initBlock & 0xFFFF);
     RegisterAddressPort.write(2);
@@ -108,30 +122,22 @@ int amd_am79c973::reset() {
 }
 
 void amd_am79c973::deactivate() {
-    // TODO: Stop the device by writing to CSR0 if needed
 }
 
 void amd_am79c973::Send(uint8_t* buffer, int count) {
     int sendDescriptor = currentSendBuffer;
     currentSendBuffer = (currentSendBuffer + 1) % 8;
 
-    if (count > 1518) count = 1518; // Ethernet MTU
+    if (count > 1518) count = 1518; 
 
-    // Copy data to the pre-allocated send buffer
-    // Note: We use the address stored in the descriptor, which we set up in the constructor
     uint8_t* dst = (uint8_t*)(sendBufferDescr[sendDescriptor].address);
     for(int i = 0; i < count; i++) {
         dst[i] = buffer[i];
     }
 
-    // Setup Flags
-    // 0xF000 in flags2 is required. 2's complement of count goes in lower bits.
     sendBufferDescr[sendDescriptor].flags2 = (uint32_t)(-count) | 0xF000;
-    
-    // OWN (0x80000000) = Card, STP (0x02000000) = Start, ENP (0x01000000) = End
     sendBufferDescr[sendDescriptor].flags = 0x8300F000;
 
-    // Trigger Transmit Demand (TDMD) in CSR0
     RegisterAddressPort.write(0);
     RegisterDataPort.write(0x48); 
     
@@ -149,32 +155,22 @@ uint32_t amd_am79c973::handleInterrupt(uint32_t esp) {
     
     if((temp & 0x0200) == 0x0200) printf("AMD am79c973 DATA SENT\n");
 
-    // Check for Receive Interrupt (RINT)
     if((temp & 0x0400) == 0x0400) 
     {
         printf("AMD am79c973 DATA RECEIVED\n");
 
-        // Loop through all buffers that the card has released (OWN bit is 0)
         while((recvBufferDescr[currentRecvBuffer].flags & 0x80000000) == 0)
         {
-            // The buffer now contains data.
-            // uint8_t* buffer = (uint8_t*)(recvBufferDescr[currentRecvBuffer].address);
-            // int size = recvBufferDescr[currentRecvBuffer].flags2 & 0xFFF;
-            
-            // TODO: Pass 'buffer' and 'size' to your Ethernet layer
             printf(" Packet handled at buffer index: ");
-            // printfHex(currentRecvBuffer); // Assuming you have a hex printer
             printf("\n");
 
-            // Hand the buffer back to the card
             recvBufferDescr[currentRecvBuffer].flags2 = 0;
-            recvBufferDescr[currentRecvBuffer].flags = 0x8000F7FF; // OWN = 1, Size = 2048
+            recvBufferDescr[currentRecvBuffer].flags = 0x8000F7FF; 
 
             currentRecvBuffer = (currentRecvBuffer + 1) % 8;
         }
     }
 
-    // Acknowledge the interrupt
     RegisterAddressPort.write(0);
     RegisterDataPort.write(temp);
 
