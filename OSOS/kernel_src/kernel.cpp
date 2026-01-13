@@ -58,6 +58,9 @@ void kernelTail(void* arg)
     KernelArgs* args = (KernelArgs*)arg;
 
     basic::printf("\nHELLO FROM OSOS ('help' to see commands)...\n");
+    #if defined(serialMode) && serialMode == 1
+        basic::printf("\nYou are using serial QEMU, Use 'ctrl+H' For Backspace\n");
+    #endif
     basic::printf("\nOSOS> ");
     while (true){
         args->shell->update();
