@@ -49,7 +49,7 @@ CC          := osos-g++
 CCPARAMS    := -O2 -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
 AS          := osos-as
 ASPARAMS    :=
-QEMU        := qemu-system-i386 -k en-us -m 4096 -net nic,model=pcnet
+QEMU        := qemu-system-i386 -m 4096 -net nic,model=pcnet
 GDB         := osos-gdb
 # -g is for adding debugging symbols
 
