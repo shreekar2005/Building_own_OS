@@ -53,6 +53,8 @@ void task_Net(void* arg) {
     }
 }
 
+driver::amd_am79c973* globalNetDriver = nullptr;
+
 void kernelTail(void* arg)
 {
     KernelArgs* args = (KernelArgs*)arg;
@@ -113,29 +115,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
         driverManager.addDriver(&serialIO);
         
         hardware_communication::PCI_Controller pciController;
-        // pciController.selectDrivers(&driverManager, &osos_InterruptManager);
-
-
-        
-        /////////////// --- MANUAL NETWORK DRIVER SETUP (Do this better by next time) --- ////////////////
-        driver::amd_am79c973* netDriver = nullptr;
-        
-        // Check Bus 0, Device 3 (Standard QEMU Slot for NIC)
-        hardware_communication::PCI_DeviceDescriptor dev = pciController.getDeviceDescriptor(0, 3, 0);
-        
-        if(dev.vendorId == 0x1022 && dev.deviceId == 0x2000) {
-            // Found AMD Card! Instantiate manually.
-            basic::printf("Found Network Card at 0:3:0\n");
-            netDriver = new driver::amd_am79c973(&dev, &osos_InterruptManager);
-            driverManager.addDriver(netDriver);
-        } else {
-            // If not found at 0:3:0, rely on auto-scan (but netDriver will be null)
-            pciController.selectDrivers(&driverManager, &osos_InterruptManager);
-        }
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
+        pciController.selectDrivers(&driverManager, &osos_InterruptManager);
 
     // Activate Hardware
     driverManager.activateAll();
@@ -155,14 +135,20 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     essential::KThread* task2 = new essential::KThread(&task_X, nullptr);
     
     // NEW: Create Network Task (Pass the netDriver as argument)
-    essential::KThread* task3 = new essential::KThread(&task_Net, (void*)netDriver);
+    // 
     
     osos_ThreadManager.addThread(haltTask);
     shell.addShellTask(task1);
     shell.addShellTask(task2);
     
-    if(netDriver != 0) {
+    // Check Bus 0, Device 3 (Standard QEMU Slot for NIC)
+    if(globalNetDriver != nullptr) {
+        // Pass the properly initialized, activated driver to the task
+        essential::KThread* task3 = new essential::KThread(&task_Net, (void*)globalNetDriver);
         shell.addShellTask(task3);
+        basic::printf("[INFO] Network Task Started.\n");
+    } else {
+        basic::printf("[WARN] Network Driver not initialized.\n");
     }
     
     // Enable Interrupts (Start the System)

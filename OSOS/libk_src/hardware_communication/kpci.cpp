@@ -2,6 +2,8 @@
 #include "basic/kiostream.hpp"
 #include "driver/kamd79c973.hpp"
 
+extern driver::amd_am79c973* globalNetDriver;
+
 using namespace hardware_communication;
 
 PCI_DeviceDescriptor::PCI_DeviceDescriptor()
@@ -135,10 +137,9 @@ void PCI_Controller::recursiveSelDriver(uint8_t bus, driver::DriverManager* driv
                 BaseAddressRegister bar = getBaseAddressRegister(bus, device, function, barNum);
                 if(bar.address && (bar.type == inputOutput)) dev.portBase[barNum] = (uint32_t)bar.address;
             }
-            driver::Driver* driver = getDriver(dev, interrupt_manager);
+            driver::Driver* driver = getDriver(&dev, interrupt_manager);
             if(driver != nullptr) {
                 driver_manager->addDriver(driver);
-                basic::printf("Driver added!\n");
             }
             
             if(dev.classId == 0x06 && dev.subclassId == 0x04)
@@ -245,25 +246,27 @@ BaseAddressRegister PCI_Controller::getBaseAddressRegister(uint8_t bus, uint8_t 
     return result;
 }
 
-driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor dev, hardware_communication::InterruptManager* interrupt_manager)
+driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor* dev, hardware_communication::InterruptManager* interrupt_manager)
 {
-    (void) interrupt_manager;
-
-    switch(dev.vendorId)
+    switch(dev->vendorId)
     {
         case 0x1022: // AMD
-            switch(dev.deviceId)
+            switch(dev->deviceId)
             {
                 case 0x2000:
                     basic::printf("AMD am79c973 (network card) detected! ");
-                    driver::amd_am79c973* driver = new driver::amd_am79c973(&dev, interrupt_manager);
+                    uint32_t command = read32(dev->bus, dev->device, dev->function, 0x04);
+                    write32(dev->bus, dev->device, dev->function, 0x04, command | 0x04);
+                    basic::printf("PCI Bus Mastering Enabled. ");
+                    driver::Driver* driver = new driver::amd_am79c973(dev, interrupt_manager);
+                    globalNetDriver = (driver::amd_am79c973*)driver;
                     return driver;
                     break;
             }
             break;
 
         case 0x8086: // Intel
-            switch(dev.deviceId)
+            switch(dev->deviceId)
             {
                 // case 0x1237: basic::printf("Intel 440FX Host Bridge "); break;
                 // case 0x7000: basic::printf("Intel PIIX3 ISA Bridge "); break;
@@ -274,7 +277,7 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor dev, hardware_com
             break;
             
         case 0x1234:
-            switch(dev.deviceId)
+            switch(dev->deviceId)
             {
                 // case 0x1111: basic::printf("QEMU VGA Graphics "); break;
             }
@@ -282,7 +285,7 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor dev, hardware_com
     }
 
     // basic::printf("| ");
-    // switch(dev.classId)
+    // switch(dev->classId)
     // {
     //     case 0x03:
     //         if(dev.subclassId == 0x00) basic::printf("Generic VGA ");

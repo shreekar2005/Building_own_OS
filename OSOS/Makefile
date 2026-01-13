@@ -44,13 +44,15 @@ TARGET_ELF := $(KERNEL_BUILD_DIR)/OSOSkernel.elf
 TARGET_ISO := $(KERNEL_BUILD_DIR)/OSOSkernel.iso
 
 # Toolchain flags
-CC          := osos-g++
+CC          := 	osos-g++
 # Default CCPARAMS. (Note: -DserialMode=1 will be added dynamically below for specific targets)
-CCPARAMS    := -O2 -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
-AS          := osos-as
+CCPARAMS    := 	-O2 -I ./libk_header -Wall -Wextra -ffreestanding -mno-red-zone -fno-exceptions -fno-rtti -nostdlib -lgcc
+AS          := 	osos-as
 ASPARAMS    :=
-QEMU        := qemu-system-i386 -m 4096 -net nic,model=pcnet
-GDB         := osos-gdb
+QEMU 		:= 	qemu-system-i386 -m 4096 \
+    			-net nic,model=pcnet \
+    			-net tap,ifname=tap0,script=no,downscript=no
+GDB         := 	osos-gdb
 # -g is for adding debugging symbols
 
 # --- CONFIGURATION LOGIC ---

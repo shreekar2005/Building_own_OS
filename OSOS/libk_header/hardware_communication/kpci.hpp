@@ -144,7 +144,7 @@ namespace hardware_communication
             /// @param dev device descriptor containing VendorID and DeviceID.
             /// @param interrupt_manager interrupt manager to pass to the driver.
             /// @return A pointer to the new driver instance, or 0 if no driver is found.
-            driver::Driver* getDriver(PCI_DeviceDescriptor dev, hardware_communication::InterruptManager* interrupt_manager);
+            driver::Driver* getDriver(PCI_DeviceDescriptor* dev, hardware_communication::InterruptManager* interrupt_manager);
 
             /// @brief Decodes a raw BAR value into a BaseAddressRegister object.
             /// @param bus bus number.

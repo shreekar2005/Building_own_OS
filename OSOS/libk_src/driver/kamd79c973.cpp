@@ -5,6 +5,17 @@ using namespace basic;
 using namespace driver;
 using namespace hardware_communication;
 
+// --- STATIC MEMORY ALLOCATION (BSS SECTION) ---
+// We move these out of the class to ensure they are in Identity Mapped memory.
+// If they are on the Heap, the Virtual Address != Physical Address, causing DMA to fail.
+
+static uint8_t bss_sendBufferDescrMemory[2048];
+static uint8_t bss_recvBufferDescrMemory[2048];
+static uint8_t bss_sendBuffers[8][2048 + 15];
+static uint8_t bss_recvBuffers[8][2048 + 15];
+static uint8_t bss_initBlockMem[256]; 
+
+
 // Helper to unmask IRQ on PIC
 void UnmaskIRQ(uint8_t irq) {
     uint16_t port;
@@ -41,12 +52,12 @@ amd_am79c973::amd_am79c973(PCI_DeviceDescriptor* dev, InterruptManager* interrup
     currentSendBuffer = 0;
     currentRecvBuffer = 0;
 
-    // SETUP SEND DESCRIPTOR RING
-    uint32_t raw_send_descr_ptr = (uint32_t)sendBufferDescrMemory;
+    // SETUP SEND DESCRIPTOR RING (Using Static Memory)
+    uint32_t raw_send_descr_ptr = (uint32_t)bss_sendBufferDescrMemory;
     sendBufferDescr = (BufferDescriptor*)((raw_send_descr_ptr + 15) & ~0xF);
 
     for(uint8_t i = 0; i < 8; i++) {
-        uint32_t raw_buf_ptr = (uint32_t)sendBuffers[i];
+        uint32_t raw_buf_ptr = (uint32_t)bss_sendBuffers[i];
         
         sendBufferDescr[i].address = (raw_buf_ptr + 15 ) & ~0xF;
         sendBufferDescr[i].flags = 0x7FF | 0xF000;
@@ -54,12 +65,12 @@ amd_am79c973::amd_am79c973(PCI_DeviceDescriptor* dev, InterruptManager* interrup
         sendBufferDescr[i].avail = 0;
     }
 
-    // SETUP RECEIVE DESCRIPTOR RING
-    uint32_t raw_recv_descr_ptr = (uint32_t)recvBufferDescrMemory;
+    // SETUP RECEIVE DESCRIPTOR RING (Using Static Memory)
+    uint32_t raw_recv_descr_ptr = (uint32_t)bss_recvBufferDescrMemory;
     recvBufferDescr = (BufferDescriptor*)((raw_recv_descr_ptr + 15) & ~0xF);
 
     for(uint8_t i = 0; i < 8; i++) {
-        uint32_t raw_buf_ptr = (uint32_t)recvBuffers[i];
+        uint32_t raw_buf_ptr = (uint32_t)bss_recvBuffers[i];
         
         recvBufferDescr[i].address = (raw_buf_ptr + 15 ) & ~0xF;
         recvBufferDescr[i].flags = 0xF7FF | 0x80000000;
@@ -67,16 +78,13 @@ amd_am79c973::amd_am79c973(PCI_DeviceDescriptor* dev, InterruptManager* interrup
         recvBufferDescr[i].avail = 0;
     }
 
-    // SETUP INITIALIZATION BLOCK
-    uint32_t raw_init_ptr = (uint32_t)initBlockMem;
+    // SETUP INITIALIZATION BLOCK (Using Static Memory)
+    uint32_t raw_init_ptr = (uint32_t)bss_initBlockMem;
     initBlock = (InitializationBlock*)((raw_init_ptr + 15) & ~0xF);
 
     initBlock->mode = 0; 
-    initBlock->reserved1 = 0;
-    initBlock->numSendBuffers = 3; 
-    initBlock->reserved2 = 0;
-    initBlock->numRecvBuffers = 3; 
-    
+    initBlock->lengthInfo = 0x3030; // 8 Buffers (Log2(8)=3) for RX and TX
+
     uint64_t mac0 = MACAddress0Port.read() % 256;
     uint64_t mac1 = MACAddress0Port.read() / 256;
     uint64_t mac2 = MACAddress2Port.read() % 256;
@@ -84,8 +92,9 @@ amd_am79c973::amd_am79c973(PCI_DeviceDescriptor* dev, InterruptManager* interrup
     uint64_t mac4 = MACAddress4Port.read() % 256;
     uint64_t mac5 = MACAddress4Port.read() / 256;
     
-    initBlock->physicalAddress = mac0 | (mac1 << 8) | (mac2 << 16) | (mac3 << 24) | (mac4 << 32) | (mac5 << 40);
-    initBlock->reserved3 = 0;
+    initBlock->physicalAddressLow = mac0 | (mac1 << 8) | (mac2 << 16) | (mac3 << 24);
+    initBlock->physicalAddressHigh = mac4 | (mac5 << 8);
+    initBlock->reserved = 0;
     initBlock->logicalAddress = 0;
     initBlock->recvBufferDescrAddress = (uint32_t)recvBufferDescr;
     initBlock->sendBufferDescrAddress = (uint32_t)sendBufferDescr;
@@ -95,22 +104,39 @@ amd_am79c973::~amd_am79c973() {
 }
 
 void amd_am79c973::activate() {
+    // 1. Switch to 32-bit mode (SWSTYLE = 2)
+    // This guarantees the card interprets our structs correctly.
+    RegisterAddressPort.write(58);
+    RegisterDataPort.write(0x0002);
+
+    // 2. Write the Init Block Address
     RegisterAddressPort.write(1);
     RegisterDataPort.write((uint32_t)initBlock & 0xFFFF);
     RegisterAddressPort.write(2);
     RegisterDataPort.write(((uint32_t)initBlock >> 16) & 0xFFFF);
     
-    // Set INIT and START
+    // 3. Set INIT (0x01) and START (0x40) -> 0x41
     RegisterAddressPort.write(0);
     RegisterDataPort.write(0x41); 
 
-    // Enable Auto Padding (ASEL)
-    RegisterAddressPort.write(4);
-    uint32_t temp = RegisterDataPort.read();
-    RegisterAddressPort.write(4);
-    RegisterDataPort.write(temp | 0xC00);
+    // 4. Poll for Init Done
+    uint32_t temp = 0;
+    while ((temp & 0x0100) == 0) {
+        RegisterAddressPort.write(0);
+        temp = RegisterDataPort.read();
+    }
+    
+    // 5. Acknowledge Init Done
+    RegisterAddressPort.write(0);
+    RegisterDataPort.write(temp | 0x0100);
 
-    // Start the device
+    // 6. Enable Auto Padding (ASEL)
+    RegisterAddressPort.write(4);
+    uint32_t temp2 = RegisterDataPort.read();
+    RegisterAddressPort.write(4);
+    RegisterDataPort.write(temp2 | 0xC00);
+
+    // 7. Start the device (Interrupts Enable = 0x42)
     RegisterAddressPort.write(0);
     RegisterDataPort.write(0x42);
 }
@@ -135,46 +161,32 @@ void amd_am79c973::Send(uint8_t* buffer, int count) {
         dst[i] = buffer[i];
     }
 
-    sendBufferDescr[sendDescriptor].flags2 = (uint32_t)(-count) | 0xF000;
-    sendBufferDescr[sendDescriptor].flags = 0x8300F000;
+    uint16_t bcnt = (uint16_t)(-count);
+    bcnt &= 0x0FFF;
+
+    sendBufferDescr[sendDescriptor].flags = 0x8300F000 | bcnt;
+    sendBufferDescr[sendDescriptor].flags2 = 0;
 
     RegisterAddressPort.write(0);
     RegisterDataPort.write(0x48); 
-    
-    printf("SENDING PACKET...\n");
 }
 
 uint32_t amd_am79c973::handleInterrupt(uint32_t esp) {
     RegisterAddressPort.write(0);
     uint32_t temp = RegisterDataPort.read();
 
-    if((temp & 0x8000) == 0x8000) printf("AMD am79c973 ERROR\n");
-    if((temp & 0x2000) == 0x2000) printf("AMD am79c973 COLLISION ERROR\n");
-    if((temp & 0x1000) == 0x1000) printf("AMD am79c973 MISSED FRAME\n");
-    if((temp & 0x0800) == 0x0800) printf("AMD am79c973 MEMORY ERROR\n");
-    
-    if((temp & 0x0200) == 0x0200) printf("AMD am79c973 DATA SENT\n");
-
     if((temp & 0x0400) == 0x0400) 
     {
-        printf("AMD am79c973 DATA RECEIVED\n");
-
         while((recvBufferDescr[currentRecvBuffer].flags & 0x80000000) == 0)
         {
-            printf(" Packet handled at buffer index: ");
-            printf("\n");
-
-            recvBufferDescr[currentRecvBuffer].flags2 = 0;
-            recvBufferDescr[currentRecvBuffer].flags = 0x8000F7FF; 
-
-            currentRecvBuffer = (currentRecvBuffer + 1) % 8;
+             recvBufferDescr[currentRecvBuffer].flags2 = 0;
+             recvBufferDescr[currentRecvBuffer].flags = 0x8000F7FF; 
+             currentRecvBuffer = (currentRecvBuffer + 1) % 8;
         }
     }
 
     RegisterAddressPort.write(0);
     RegisterDataPort.write(temp);
-
-    if((temp & 0x0100) == 0x0100) printf("AMD am79c973 INIT DONE\n");
 
     return esp;
 }
