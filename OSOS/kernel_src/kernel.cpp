@@ -134,16 +134,11 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
     essential::KThread* task2 = new essential::KThread(&task_X, nullptr);
     
-    // NEW: Create Network Task (Pass the netDriver as argument)
-    // 
-    
     osos_ThreadManager.addThread(haltTask);
     shell.addShellTask(task1);
     shell.addShellTask(task2);
     
-    // Check Bus 0, Device 3 (Standard QEMU Slot for NIC)
     if(globalNetDriver != nullptr) {
-        // Pass the properly initialized, activated driver to the task
         essential::KThread* task3 = new essential::KThread(&task_Net, (void*)globalNetDriver);
         shell.addShellTask(task3);
         basic::printf("[INFO] Network Task Started.\n");
