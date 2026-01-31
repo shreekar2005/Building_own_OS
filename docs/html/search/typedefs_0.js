@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uarch_5ft_0',['uarch_t',['../de/d41/a46277.html#a35fc01d4eba01f3f2ec636bd6b5ff34f',1,'kicxxabi.hpp']]]
+  ['etherframefooter_0',['EtherFrameFooter',['../db/d78/a49664.html#a58b91736f5bc2f5c4822f6af662f10d1',1,'net']]]
 ];

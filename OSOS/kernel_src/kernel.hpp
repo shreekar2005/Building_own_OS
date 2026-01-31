@@ -15,7 +15,7 @@
 #include "driver/kserial.hpp"
 #include <driver/kamd79c973.hpp>
 #include <net/ketherframe.hpp>
-// Include the separated modules
+
 #include "kshell.hpp"
 #include "khandlers.hpp"
 
@@ -31,17 +31,19 @@ struct KernelArgs {
     multiboot_info_t* mbi;
 };
 
-#include "kernel.hpp"
-
-/// @brief function for shell task1
+/// @brief function for shell task1 - prints o
 /// @param arg necessory argument as per KThread rule
 void task_o(void* arg);
 
-/// @brief function for shell task2
+/// @brief function for shell task2 - prints x
 /// @param arg necessory argument as per KThread rule
 void task_X(void* arg);
 
-/// @brief This is tail of kernelMain whose CPU state will be preserved
+/// @brief function for shell task3 - send network packets
+/// @param arg necessory argument as per KThread rule
+void task_Net(void* arg);
+
+/// @brief this is tail of kernelMain whose CPU state will be preserved
 /// @param arg 
 void kernelTail(void* arg);
 

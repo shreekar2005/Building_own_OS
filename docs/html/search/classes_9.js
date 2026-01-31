@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['pagingmanager_0',['PagingManager',['../d2/db8/a47240.html',1,'memory']]],
-  ['pci_5fcontroller_1',['PCI_Controller',['../dd/d07/a47208.html',1,'hardware_communication']]],
-  ['pci_5fdevicedescriptor_2',['PCI_DeviceDescriptor',['../dc/d27/a47204.html',1,'hardware_communication']]],
-  ['physicalmemorymanager_3',['PhysicalMemoryManager',['../d7/d87/a47244.html',1,'memory']]],
-  ['port_4',['Port',['../df/df1/a47212.html',1,'hardware_communication']]],
-  ['port16bit_5',['Port16Bit',['../d6/d16/a47224.html',1,'hardware_communication']]],
-  ['port32bit_6',['Port32Bit',['../dc/df4/a47228.html',1,'hardware_communication']]],
-  ['port8bit_7',['Port8Bit',['../de/db0/a47216.html',1,'hardware_communication']]],
-  ['port8bitslow_8',['Port8BitSlow',['../d6/da5/a47220.html',1,'hardware_communication']]]
+  ['memoryblockheader_0',['MemoryBlockHeader',['../d4/de6/a49661.html#d0/d9f/a50624',1,'memory']]],
+  ['mousedriver_1',['MouseDriver',['../d6/da4/a50536.html',1,'driver']]],
+  ['mouseeventhandler_2',['MouseEventHandler',['../d1/d32/a50532.html',1,'driver']]],
+  ['mouseeventhandler_5ffor_5fkernel_3',['MouseEventHandler_for_kernel',['../d4/df1/a50488.html',1,'']]]
 ];

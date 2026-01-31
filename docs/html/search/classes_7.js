@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['kernelargs_0',['KernelArgs',['../d7/d2c/a46169.html#d6/d27/a47104',1,'']]],
-  ['kernelshell_1',['KernelShell',['../d3/d76/a47120.html',1,'']]],
-  ['keyboarddriver_2',['KeyboardDriver',['../d1/d18/a47136.html',1,'driver']]],
-  ['keyboardeventhandler_3',['KeyboardEventHandler',['../df/d8d/a47132.html',1,'driver']]],
-  ['keyboardeventhandler_5ffor_5fkernel_4',['KeyboardEventHandler_for_kernel',['../d8/d55/a47108.html',1,'']]],
-  ['kthread_5',['KThread',['../d7/def/a47176.html',1,'essential']]],
-  ['kthreadmanager_6',['KThreadManager',['../dd/d24/a47180.html',1,'essential']]]
+  ['idt_5frow_0',['IDT_Row',['../d8/d41/a50584.html',1,'hardware_communication']]],
+  ['initializationblock_1',['InitializationBlock',['../dd/dcf/a50504.html#d1/d18/a50508',1,'driver::amd_am79c973']]],
+  ['interrupthandler_2',['InterruptHandler',['../d5/dbf/a50580.html',1,'hardware_communication']]],
+  ['interruptmanager_3',['InterruptManager',['../dd/daa/a50588.html',1,'hardware_communication']]]
 ];

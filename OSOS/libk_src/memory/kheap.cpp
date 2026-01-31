@@ -3,7 +3,7 @@
 
 namespace memory {
 
-    // Global instance of the kernel heap
+    // global instance of the kernel heap
     HeapManager kernel_heap;
 
     void HeapManager::init(void* startAddress, size_t sizeTotal) {
@@ -52,13 +52,13 @@ namespace memory {
     void HeapManager::free(void* ptr) {
         if (!ptr) return;
 
-        // Move pointer back to get the header
+        // move pointer back to get the header
         MemoryBlockHeader* block = (MemoryBlockHeader*)((uintptr_t)ptr - sizeof(MemoryBlockHeader));
         
-        // Mark as free
+        // mark it as free
         block->is_free = true;
 
-        // Merge with NEXT block if it is free
+        // merge with next block if it is free
         if (block->next != nullptr && block->next->is_free) {
             block->size += block->next->size + sizeof(MemoryBlockHeader);
             block->next = block->next->next;
@@ -67,7 +67,7 @@ namespace memory {
             }
         }
 
-        // Merge with PREVIOUS block if it is free
+        // merge with previous block if it is free
         if (block->prev != nullptr && block->prev->is_free) {
             block->prev->size += block->size + sizeof(MemoryBlockHeader);
             block->prev->next = block->next;

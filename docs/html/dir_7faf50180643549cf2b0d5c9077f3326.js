@@ -1,8 +1,9 @@
 var dir_7faf50180643549cf2b0d5c9077f3326 =
 [
-    [ "kdriver.hpp", "d8/d74/a46268.html", "d8/d74/a46268" ],
-    [ "kkeyboard.hpp", "de/d91/a46259.html", "de/d91/a46259" ],
-    [ "kmouse.hpp", "d1/d0e/a46265.html", "d1/d0e/a46265" ],
-    [ "kserial.hpp", "d7/d92/a46262.html", "d7/d92/a46262" ],
-    [ "ktimer.hpp", "d9/d3f/a46256.html", "d9/d3f/a46256" ]
+    [ "kamd79c973.hpp", "d9/dce/a49631.html", "d9/dce/a49631" ],
+    [ "kdriver.hpp", "d4/da7/a49637.html", "d4/da7/a49637" ],
+    [ "kkeyboard.hpp", "de/ddd/a49625.html", "de/ddd/a49625" ],
+    [ "kmouse.hpp", "d8/d27/a49634.html", "d8/d27/a49634" ],
+    [ "kserial.hpp", "dd/d9a/a49628.html", "dd/d9a/a49628" ],
+    [ "ktimer.hpp", "d2/d6b/a49622.html", "d2/d6b/a49622" ]
 ];

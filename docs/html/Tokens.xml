@@ -2,12 +2,22 @@
 <Tokens version="1.0">
   <Token>
     <TokenIdentifier>
+      <Name>driver::amd_am79c973</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>driver::Driver</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>d4/da8/a47124.html</Path>
+    <Path>d6/d06/a50516.html</Path>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -17,7 +27,7 @@
       <Type>cl</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d5/d64/a47128.html</Path>
+    <Path>d3/ddf/a50520.html</Path>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -27,7 +37,7 @@
       <Type>cl</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -37,7 +47,7 @@
       <Type>cl</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d8d/a47132.html</Path>
+    <Path>d0/de6/a50524.html</Path>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -47,7 +57,7 @@
       <Type>cl</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -57,8 +67,18 @@
       <Type>cl</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>d0/d9e/a47140.html</Path>
+    <Path>d1/d32/a50532.html</Path>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>driver::RawDataHandler</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>driver::RawDataHandler</Scope>
+    </TokenIdentifier>
+    <Path>df/d03/a50500.html</Path>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -67,7 +87,7 @@
       <Type>cl</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -77,7 +97,7 @@
       <Type>cl</Type>
       <Scope>driver::SerialEventHandler</Scope>
     </TokenIdentifier>
-    <Path>dc/d82/a47148.html</Path>
+    <Path>d3/d50/a50540.html</Path>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -87,7 +107,7 @@
       <Type>cl</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -97,7 +117,7 @@
       <Type>cl</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d9/d27/a47168.html</Path>
+    <Path>d4/db5/a50560.html</Path>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -107,7 +127,7 @@
       <Type>cl</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -117,7 +137,7 @@
       <Type>cl</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -127,7 +147,7 @@
       <Type>cl</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -137,7 +157,7 @@
       <Type>cl</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -147,7 +167,7 @@
       <Type>cl</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -157,7 +177,7 @@
       <Type>cl</Type>
       <Scope>essential::Time</Scope>
     </TokenIdentifier>
-    <Path>d0/d11/a47184.html</Path>
+    <Path>d6/dcf/a50576.html</Path>
     <DeclaredIn>ktime.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -167,7 +187,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::BaseAddressRegister</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -177,7 +197,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -187,7 +207,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>d1/dc1/a47188.html</Path>
+    <Path>d5/dbf/a50580.html</Path>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -197,7 +217,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -207,7 +227,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -217,7 +237,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -227,7 +247,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>df/df1/a47212.html</Path>
+    <Path>dd/dcb/a50604.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -237,7 +257,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/d16/a47224.html</Path>
+    <Path>d2/d06/a50616.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -247,7 +267,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>dc/df4/a47228.html</Path>
+    <Path>d1/da1/a50620.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -257,7 +277,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>de/db0/a47216.html</Path>
+    <Path>db/d97/a50608.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -267,7 +287,7 @@
       <Type>cl</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d6/da5/a47220.html</Path>
+    <Path>d0/daa/a50612.html</Path>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -277,7 +297,7 @@
       <Type>cl</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <DeclaredIn>kernel.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -287,7 +307,7 @@
       <Type>cl</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -297,7 +317,7 @@
       <Type>cl</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d55/a47108.html</Path>
+    <Path>d7/da8/a50484.html</Path>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -307,7 +327,7 @@
       <Type>cl</Type>
       <Scope>memory::HeapManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d62/a47236.html</Path>
+    <Path>dc/df0/a50628.html</Path>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -317,7 +337,7 @@
       <Type>cl</Type>
       <Scope>memory::MemoryBlockHeader</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -327,7 +347,7 @@
       <Type>cl</Type>
       <Scope>memory::PagingManager</Scope>
     </TokenIdentifier>
-    <Path>d2/db8/a47240.html</Path>
+    <Path>d1/db1/a50632.html</Path>
     <DeclaredIn>kpaging.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -337,7 +357,7 @@
       <Type>cl</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -347,8 +367,38 @@
       <Type>cl</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>dc/df0/a47112.html</Path>
+    <Path>d4/df1/a50488.html</Path>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>net::EtherFrameHandler</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>net::EtherFrameHeader</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>net::EtherFrameHeader</Scope>
+    </TokenIdentifier>
+    <Path>db/d78/a49664.html</Path>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>net::EtherFrameProvider</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -357,7 +407,7 @@
       <Type>cl</Type>
       <Scope>SerialEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d3/d26/a47116.html</Path>
+    <Path>dd/d52/a50492.html</Path>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -367,7 +417,7 @@
       <Type>ns</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -376,7 +426,29 @@
       <Type>ns</Type>
       <Scope>driver</Scope>
     </TokenIdentifier>
-    <Path>dd/d38/a46287.html</Path>
+    <Path>d5/dfc/a49662.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a1c17493b5a7969e8476454f9f624a411</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a81b5675d389fec5d0c332bffb458aa72</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -385,7 +457,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a40aaac30b4d74b646e866a53851bdfce</Anchor>
   </Token>
   <Token>
@@ -395,7 +467,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a68a97a1453d869495716b4d9366674ef</Anchor>
   </Token>
   <Token>
@@ -405,7 +477,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>ada83c26e24175c136116be890d84966f</Anchor>
   </Token>
   <Token>
@@ -415,8 +487,19 @@
       <Type>data</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>a02acf6545c95a74760d82691b73937b1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>activate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>af343f26c6a53c4336c68103a7425ef15</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -425,7 +508,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>d4/da8/a47124.html</Path>
+    <Path>d6/d06/a50516.html</Path>
     <Anchor>a8c86c1e52652d8b491d37a3b60b535b0</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -436,7 +519,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>aa4a8773bd0667333360f2fdd41efb762</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -447,7 +530,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a95771219d5104e9012f930295bd91269</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -458,7 +541,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>afef8ab1314f165d86c1442a07529ed34</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -469,7 +552,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a806626eab2df11fb707c2b9953c73490</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -480,7 +563,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>ab94a571ecb1d28fb72ffc14cb9840082</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -491,7 +574,7 @@
       <Type>instm</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d5/d64/a47128.html</Path>
+    <Path>d3/ddf/a50520.html</Path>
     <Anchor>ac5b1474ae4fd331239feff6a0f06d6c0</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -502,7 +585,7 @@
       <Type>data</Type>
       <Scope>memory::PagingManager</Scope>
     </TokenIdentifier>
-    <Path>d2/db8/a47240.html</Path>
+    <Path>d1/db1/a50632.html</Path>
     <Anchor>a98b96a9db9d190b73d0af5c257194dae</Anchor>
   </Token>
   <Token>
@@ -512,7 +595,7 @@
       <Type>data</Type>
       <Scope>essential::Time</Scope>
     </TokenIdentifier>
-    <Path>d0/d11/a47184.html</Path>
+    <Path>d6/dcf/a50576.html</Path>
     <Anchor>a7e6787a4b3618e8b2aef6786e8c7e945</Anchor>
   </Token>
   <Token>
@@ -522,7 +605,7 @@
       <Type>instm</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d5/d64/a47128.html</Path>
+    <Path>d3/ddf/a50520.html</Path>
     <Anchor>a5c5383f5f4dddb9e9e2126c8cc598f26</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -531,9 +614,19 @@
       <Name>address</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
+      <Scope>driver::amd_am79c973::BufferDescriptor</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a0078a3a7284a569069d0ba7259341a6d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>address</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
       <Scope>hardware_communication::BaseAddressRegister</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>ab9e334c4ce84a03d60cea629ddd148b8</Anchor>
   </Token>
   <Token>
@@ -543,7 +636,7 @@
       <Type>instm</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>acbc44f1e3f2f747567df2b2fc5c07b1e</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
@@ -554,7 +647,7 @@
       <Type>instm</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a147ce391a286ff17a25c174cbe405577</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -565,7 +658,7 @@
       <Type>instm</Type>
       <Scope>memory::HeapManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d62/a47236.html</Path>
+    <Path>dc/df0/a50628.html</Path>
     <Anchor>a71d995e2f38d9de88e6973142f735006</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -576,9 +669,50 @@
       <Type>clm</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>a531ac27743a1f53231cdb49e24a9d346</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>amd_am79c973</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>afd6c3c498768ef0d8b36ee96b6257d5c</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avail</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::BufferDescriptor</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a5b3dcc898843e659bf850d2c611fb1ac</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>backend</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::RawDataHandler</Scope>
+    </TokenIdentifier>
+    <Path>df/d03/a50500.html</Path>
+    <Anchor>a2ce38d6b73179628b8331ec2621535cd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>backend</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <Anchor>a9840666728bb017a328c75e3961f232a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -587,7 +721,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a29a14a80fbb46d80c05a0fe6fcb6228d</Anchor>
   </Token>
   <Token>
@@ -597,7 +731,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a6035e9db06ebeea7d8666a95568b1684</Anchor>
   </Token>
   <Token>
@@ -607,7 +741,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>ad94bd8e9c355fde3e814d4894bab0181</Anchor>
   </Token>
   <Token>
@@ -617,7 +751,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>af7522fe10f0bbf49af21324057d9f8cc</Anchor>
   </Token>
   <Token>
@@ -627,7 +761,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>a25137567f974ca350c8ff7f58c4c890d</Anchor>
   </Token>
   <Token>
@@ -637,7 +771,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>ac6a8894cd60a7e4ece772afa067830b7</Anchor>
   </Token>
   <Token>
@@ -647,7 +781,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>aaa1d55d296d88995ac49a8a9a75a79d4</Anchor>
   </Token>
   <Token>
@@ -657,8 +791,18 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a604fdd0b445c8727be6c3f0f1a3683f4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>busControlRegisterDataPort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a28816e0f8509ca7f62969edbd9d08e26</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -667,7 +811,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a7942997bd5ead2767e9627d91789dd70</Anchor>
   </Token>
   <Token>
@@ -677,7 +821,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>a8a63dbc25a08a75f62ae0674df1deb30</Anchor>
   </Token>
   <Token>
@@ -687,7 +831,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>ad622a6f55e45fd14250fcd10c42a3c97</Anchor>
   </Token>
   <Token>
@@ -697,7 +841,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>a58fc9113701ffc04637996780c843ff0</Anchor>
   </Token>
   <Token>
@@ -707,7 +851,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a2877a9f46dd83a5f05f17fd83a0a7725</Anchor>
   </Token>
   <Token>
@@ -717,7 +861,7 @@
       <Type>data</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a7c08f374ef8b97764f917dd433f58b22</Anchor>
   </Token>
   <Token>
@@ -727,7 +871,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>ab6a9e1ba7e8934198624da046fc80bad</Anchor>
   </Token>
   <Token>
@@ -737,7 +881,7 @@
       <Type>data</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>a59f5b939b5f7495adc285f7b0b47f69b</Anchor>
   </Token>
   <Token>
@@ -747,8 +891,28 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a4cf446db93b6d599bf03baec8273e6a8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>currentRecvBuffer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a91442fa4993a2a7a916ce98569b41d6a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>currentSendBuffer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>aaeef0dd7f6ae2dab46ea76cb171ee6c3</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -757,7 +921,7 @@
       <Type>data</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a4038edc7a1a7e97750802a3ab6c15e13</Anchor>
   </Token>
   <Token>
@@ -767,7 +931,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>afd6cdddb62a2a2d2b31043eb32887b41</Anchor>
   </Token>
   <Token>
@@ -777,7 +941,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a8e30a6f6c5839fcf9c3ab63aa167d046</Anchor>
   </Token>
   <Token>
@@ -787,7 +951,7 @@
       <Type>data</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>afaa6162636017946238b6b708f9dd533</Anchor>
   </Token>
   <Token>
@@ -797,7 +961,7 @@
       <Type>data</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>acde7169b9c931fd560f38371da3e71fc</Anchor>
   </Token>
   <Token>
@@ -807,8 +971,19 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a63cf29ae25d0a70ee448ac1e2896a041</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deactivate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a087d7785cb300529b700522460a62751</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -817,7 +992,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>d4/da8/a47124.html</Path>
+    <Path>d6/d06/a50516.html</Path>
     <Anchor>a4b3b5e5a163c2c0e3cb58ea752ebcef1</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -828,7 +1003,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>af4d6f71d6fa94aca02e173ca06212c98</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -839,7 +1014,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>aa44e65fab5921523b0717eb00a3cba68</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -850,7 +1025,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>ae458c67284fc459706658cb136df3e78</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -861,7 +1036,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a93c117f370ca9abe5baa645f4dd414d0</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -872,7 +1047,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a16abb95327d677ebbe5a9c1ce21db6d2</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -883,7 +1058,7 @@
       <Type>data</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d9/d27/a47168.html</Path>
+    <Path>d4/db5/a50560.html</Path>
     <Anchor>a665175c477008154e9b40ef96a8d81c2</Anchor>
   </Token>
   <Token>
@@ -893,7 +1068,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a0fabbff95539e5b1ed92a995f509da3a</Anchor>
   </Token>
   <Token>
@@ -903,7 +1078,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a54eaf77198f4b3816b9276f3d5be1661</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -914,7 +1089,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>afaf41d7a2a6080418e68115af06710b3</Anchor>
   </Token>
   <Token>
@@ -924,19 +1099,8 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>d4/da8/a47124.html</Path>
+    <Path>d6/d06/a50516.html</Path>
     <Anchor>af0658d103e3e810a8e9ef0a53bb2e261</Anchor>
-    <DeclaredIn>kdriver.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DriverManager</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>driver::DriverManager</Scope>
-    </TokenIdentifier>
-    <Path>d5/d64/a47128.html</Path>
-    <Anchor>a09c4511f7797d49195ffc64d26157a77</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -946,8 +1110,19 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>adb35f491d9c567ed430a96c1dd06f6ea</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DriverManager</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::DriverManager</Scope>
+    </TokenIdentifier>
+    <Path>d3/ddf/a50520.html</Path>
+    <Anchor>a09c4511f7797d49195ffc64d26157a77</Anchor>
+    <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -956,7 +1131,7 @@
       <Type>data</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d5/d64/a47128.html</Path>
+    <Path>d3/ddf/a50520.html</Path>
     <Anchor>acdf43f6340b26ad2d9b9c90d8974b370</Anchor>
   </Token>
   <Token>
@@ -966,7 +1141,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a0ba1737a87dbc2b2b831f8fc957f28f8</Anchor>
   </Token>
   <Token>
@@ -976,8 +1151,18 @@
       <Type>data</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d9/d27/a47168.html</Path>
+    <Path>d4/db5/a50560.html</Path>
     <Anchor>a98800f0ffd56e2dc77c46a741e1cf008</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>dstMAC_BE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>net::EtherFrameHeader</Scope>
+    </TokenIdentifier>
+    <Path>db/d78/a49664.html</Path>
+    <Anchor>a248bb04c5d55aba3d6cb34b64cc25999</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -986,7 +1171,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a734e03b9730d03bbe27c7c208a66d69d</Anchor>
   </Token>
   <Token>
@@ -996,7 +1181,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a7c04ac923fe3904695444a1c75817319</Anchor>
   </Token>
   <Token>
@@ -1006,7 +1191,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>ab70e218efdd2a410eb5cbb347c17497c</Anchor>
   </Token>
   <Token>
@@ -1016,7 +1201,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a442d175c615d61965d6283d7b3fd9ac8</Anchor>
   </Token>
   <Token>
@@ -1026,7 +1211,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>af1b373f6a82c82e0765c884a44148ca0</Anchor>
   </Token>
   <Token>
@@ -1036,7 +1221,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>aa0f63b1a2e048d4d8106a8736464364b</Anchor>
   </Token>
   <Token>
@@ -1046,7 +1231,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>acff9b48a6073955b694e94970ae69715</Anchor>
   </Token>
   <Token>
@@ -1056,7 +1241,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a56b54165a29f2c19bd71cfba778e3ee4</Anchor>
   </Token>
   <Token>
@@ -1066,7 +1251,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>abf67583f425c49825f18612dbacab354</Anchor>
   </Token>
   <Token>
@@ -1076,7 +1261,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a1057c3ca87351b9979b00c13aef3a315</Anchor>
   </Token>
   <Token>
@@ -1086,7 +1271,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>aab8baebb85e81691e5b548ad94a74c98</Anchor>
   </Token>
   <Token>
@@ -1096,8 +1281,60 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>aabc0d68f5c1f612e62820c51386483db</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EtherFrameHandler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>ffunc</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>a6614ed1a8ffc70be936db55531b881be</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EtherFrameHandler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <Anchor>a97a7b5fc341c5df2a4dc77fb3cceed6b</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EtherFrameProvider</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>a8f1d985a67adc23cbba967eacdb481f3</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>etherType_BE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>net::EtherFrameHeader</Scope>
+    </TokenIdentifier>
+    <Path>db/d78/a49664.html</Path>
+    <Anchor>a2685d185db7012efd136d42195673a44</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>etherType_BE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <Anchor>a89ad26f5c7113d5b529436e5cec35539</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1106,8 +1343,28 @@
       <Type>data</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>a472fcbc5b9932f840901595b7abeeda1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>flags</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::BufferDescriptor</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a7f596f8fe509ce6a226aa8a1a7a144f3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>flags2</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::BufferDescriptor</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a59d5024756b3b26e6bd5916f3a212aad</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1116,7 +1373,7 @@
       <Type>instm</Type>
       <Scope>memory::HeapManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d62/a47236.html</Path>
+    <Path>dc/df0/a50628.html</Path>
     <Anchor>af68b7f143c28605136325914f24f0703</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -1127,7 +1384,7 @@
       <Type>clm</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>a7dbf1f7897b09234e6ef4758b1b1f5a4</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
   </Token>
@@ -1138,7 +1395,7 @@
       <Type>data</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a318b8edd53fd7fab5d5d3b2ad302cf5d</Anchor>
   </Token>
   <Token>
@@ -1148,7 +1405,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a5eb576bb31b7e084309062cb446477ec</Anchor>
   </Token>
   <Token>
@@ -1158,7 +1415,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a6693e1484a8c125631ed61427c85b14e</Anchor>
   </Token>
   <Token>
@@ -1168,7 +1425,7 @@
       <Type>ffunc</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>aae7c07a3554da6e69e869a21134e4bf0</Anchor>
   </Token>
   <Token>
@@ -1178,7 +1435,7 @@
       <Type>instm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a40cb6fdff2e0b6f3d99eb6a0145062d7</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -1189,7 +1446,7 @@
       <Type>data</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>ab6688d1988419dacee13e77c5cffb35f</Anchor>
   </Token>
   <Token>
@@ -1199,7 +1456,7 @@
       <Type>instm</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>a59d7877efa0f6d5b81c16f71e893d0f5</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -1210,7 +1467,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>a266208eadcbe6f0ee4ea51adda04f465</Anchor>
   </Token>
   <Token>
@@ -1220,7 +1477,7 @@
       <Type>clm</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>ae979d7141b08ef2c6594b37fb61286c8</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
   </Token>
@@ -1231,7 +1488,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a99c80eb69bb5258a96fb3b9c61ce9dd3</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -1242,7 +1499,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a5e00e862f7af95887e09f3b90f7357fc</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -1253,7 +1510,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>adf54e2d1841368c2f8b2d5989a2fa7b0</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -1264,8 +1521,8 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
-    <Anchor>a0a5c1a26be6003b1ef1478fdc7ae2466</Anchor>
+    <Path>d1/d9e/a50600.html</Path>
+    <Anchor>a67669f07ef29d47adf9a0094b59089bc</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1275,7 +1532,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a3d85cf9a4229b6bb9525342dd68275bc</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -1286,9 +1543,64 @@
       <Type>clm</Type>
       <Scope>essential::Time</Scope>
     </TokenIdentifier>
-    <Path>d0/d11/a47184.html</Path>
+    <Path>d6/dcf/a50576.html</Path>
     <Anchor>a1c02896685efb2fa32e23d25742181ad</Anchor>
     <DeclaredIn>ktime.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getIPAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>aedd95d703dcc3b076c4c3f2c816620e9</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getIPAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <Anchor>a41172619ea7fd1825909d9dc2ce8e3af</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getIPAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>a2765ec832d6c03e8f706923d62ea1fb0</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMACAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>aeec856ca76a23f45de3ac921baf8a13f</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMACAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>a8578574444d8869196da39fc2f3afb5f</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1297,7 +1609,7 @@
       <Type>clm</Type>
       <Scope>memory::PagingManager</Scope>
     </TokenIdentifier>
-    <Path>d2/db8/a47240.html</Path>
+    <Path>d1/db1/a50632.html</Path>
     <Anchor>a3c8acfd8e420654e4e10a723740a145f</Anchor>
     <DeclaredIn>kpaging.hpp</DeclaredIn>
   </Token>
@@ -1308,7 +1620,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a2f9e7edd6dad273671d1bcf229944295</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -1319,7 +1631,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>acbe1e7bb5be33c94b3380a32e963db0b</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -1330,7 +1642,7 @@
       <Type>clm</Type>
       <Scope>essential::Time</Scope>
     </TokenIdentifier>
-    <Path>d0/d11/a47184.html</Path>
+    <Path>d6/dcf/a50576.html</Path>
     <Anchor>accb9cf5ce8744d277bc926476db51d57</Anchor>
     <DeclaredIn>ktime.hpp</DeclaredIn>
   </Token>
@@ -1341,7 +1653,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>afd6a6a6577994f97e83e821e500b7a7c</Anchor>
   </Token>
   <Token>
@@ -1351,7 +1663,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a3308b292348dfe77542a4a13cbc23604</Anchor>
   </Token>
   <Token>
@@ -1361,7 +1673,7 @@
       <Type>instm</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>a8aeac1a13eaf02ba12c6d086e804af53</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
@@ -1370,9 +1682,20 @@
       <Name>handleInterrupt</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ab6792a6f2851b1566d700de4a5361a5a</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>handleInterrupt</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>ae2c4b397057c70dca386f6c13ee438a4</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1383,7 +1706,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a97d5efa8e80d23977a12815a948cace1</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -1394,7 +1717,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>a3796db38aa3fa452f9dda11b0b73d73a</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -1405,7 +1728,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>ac5019da35b6dc685feb62f41b6466516</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -1416,7 +1739,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>d1/dc1/a47188.html</Path>
+    <Path>d5/dbf/a50580.html</Path>
     <Anchor>aa89d41d69840cb4f1c8692fa6ded28f4</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1427,9 +1750,19 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>af7658bd6006b64012ee544c6fedf6f2f</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>handler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>af4128451f47e8a31f92dc2ae7c695ae7</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1438,7 +1771,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>acd1dabcd4d6eabe836b20b6161d8463b</Anchor>
   </Token>
   <Token>
@@ -1448,7 +1781,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>a7fe1a8c5aa477d03c01275bc8ce762e6</Anchor>
   </Token>
   <Token>
@@ -1458,8 +1791,18 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>ac8aba191e612ad605b8b188f78e65d3b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>handlers</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>aed5e9be240617abcf46a8a4c5eec8300</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1468,7 +1811,7 @@
       <Type>data</Type>
       <Scope>memory::HeapManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d62/a47236.html</Path>
+    <Path>dc/df0/a50628.html</Path>
     <Anchor>a4b359e1354c77a6caefc1bdd981da6f3</Anchor>
   </Token>
   <Token>
@@ -1478,7 +1821,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a4b95645003dcb8c06e1646904e73a496</Anchor>
   </Token>
   <Token>
@@ -1488,7 +1831,7 @@
       <Type>instm</Type>
       <Scope>memory::HeapManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d62/a47236.html</Path>
+    <Path>dc/df0/a50628.html</Path>
     <Anchor>a7c2b152074efe13b2207a52dd4ad919a</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -1499,7 +1842,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>a5975c874d89d225af019dd4f3e9e4a41</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1510,7 +1853,7 @@
       <Type>instm</Type>
       <Scope>memory::HeapManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d62/a47236.html</Path>
+    <Path>dc/df0/a50628.html</Path>
     <Anchor>a6e2e0e21fd07debc8769d0d37cab3fb9</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -1521,7 +1864,7 @@
       <Type>clm</Type>
       <Scope>memory::PagingManager</Scope>
     </TokenIdentifier>
-    <Path>d2/db8/a47240.html</Path>
+    <Path>d1/db1/a50632.html</Path>
     <Anchor>a6479b38f0447a8263f7c6381f647e7fa</Anchor>
     <DeclaredIn>kpaging.hpp</DeclaredIn>
   </Token>
@@ -1532,9 +1875,19 @@
       <Type>clm</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>afbafbd2adc67a3d9d1b68266f30785c1</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initBlock</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ac186851d30c2f43f8c2050e83b3236ab</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1543,7 +1896,7 @@
       <Type>instm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a57245997207737699d75abbe1a050eda</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -1554,7 +1907,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a121a932dc63d87cf467fe5a57f113fcd</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1565,7 +1918,7 @@
       <Type>data</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>a47d6d6af3c4074873a59dd82e18cfedc</Anchor>
   </Token>
   <Token>
@@ -1575,7 +1928,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a40aef755e64abb912c480142443461d7</Anchor>
   </Token>
   <Token>
@@ -1585,7 +1938,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>ad2b77550b237a1d9a4665601427da19f</Anchor>
   </Token>
   <Token>
@@ -1595,7 +1948,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>d1/dc1/a47188.html</Path>
+    <Path>d5/dbf/a50580.html</Path>
     <Anchor>ae86f4eae0ce9272b2027d44bdfd71e33</Anchor>
   </Token>
   <Token>
@@ -1605,7 +1958,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a45c5745344389877b7730e2213a68817</Anchor>
   </Token>
   <Token>
@@ -1615,7 +1968,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>af678e57f417929133cf20579898929a8</Anchor>
   </Token>
   <Token>
@@ -1625,7 +1978,7 @@
       <Type>ffunc</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a9aef4ea3434f8ddeaf9c32a63e6faf05</Anchor>
   </Token>
   <Token>
@@ -1635,7 +1988,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>d1/dc1/a47188.html</Path>
+    <Path>d5/dbf/a50580.html</Path>
     <Anchor>ae25905a9dd40ae150ef4a3fa8a60ece0</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1646,7 +1999,7 @@
       <Type>ffunc</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>a6c5563315b1a2f5c67ae8b78d06e3c7f</Anchor>
   </Token>
   <Token>
@@ -1656,7 +2009,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a00738d3694da42eee505bdc033f560a2</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -1667,7 +2020,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>ad8aa9271e216fa51cb317b8613a77fda</Anchor>
   </Token>
   <Token>
@@ -1677,7 +2030,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>d1/dc1/a47188.html</Path>
+    <Path>d5/dbf/a50580.html</Path>
     <Anchor>afeede822d3e98957e76e627a54ec2f7a</Anchor>
   </Token>
   <Token>
@@ -1687,7 +2040,7 @@
       <Type>data</Type>
       <Scope>memory::MemoryBlockHeader</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>a50b1a2cbd515827ec908fe9c322bea64</Anchor>
   </Token>
   <Token>
@@ -1697,7 +2050,7 @@
       <Type>clm</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>a0bd12ca869bdf57915201de8755f14d2</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
   </Token>
@@ -1708,7 +2061,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>ac0d62fdac478ea7d8331ad422914b3cc</Anchor>
   </Token>
   <Token>
@@ -1718,7 +2071,7 @@
       <Type>clm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>aeee649c66c6b25bc2c03b9004ce9ddb4</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -1729,7 +2082,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a5c682545ec00c43cfe67ad20196c8fb0</Anchor>
   </Token>
   <Token>
@@ -1739,7 +2092,7 @@
       <Type>clm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>af5f963bc66aa93608c39d294b52df657</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -1750,7 +2103,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>add026bf0380b0386a9e3601f8be7f5e2</Anchor>
   </Token>
   <Token>
@@ -1760,7 +2113,7 @@
       <Type>data</Type>
       <Scope>memory::PagingManager</Scope>
     </TokenIdentifier>
-    <Path>d2/db8/a47240.html</Path>
+    <Path>d1/db1/a50632.html</Path>
     <Anchor>a22cd59805bad93ef2bc1bdd0099c385d</Anchor>
   </Token>
   <Token>
@@ -1770,7 +2123,7 @@
       <Type>instm</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>aba0c3122f7ca67d94c50f6d32672a53c</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
@@ -1781,7 +2134,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>aa74ef1728e3286822fe7ba66d0fe9edb</Anchor>
   </Token>
   <Token>
@@ -1791,7 +2144,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>aab41851dc0d68f42e172bdc67bb9f06e</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1802,7 +2155,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>a11ec84b7abf113ec270f124564776e1f</Anchor>
   </Token>
   <Token>
@@ -1812,7 +2165,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d8d/a47132.html</Path>
+    <Path>d0/de6/a50524.html</Path>
     <Anchor>a37b511e50e8c1f5d294740b29d5e6c92</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -1823,7 +2176,7 @@
       <Type>instm</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d55/a47108.html</Path>
+    <Path>d7/da8/a50484.html</Path>
     <Anchor>a9d7f63ab5c08495337ba137785c0ccc4</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
@@ -1834,7 +2187,7 @@
       <Type>instm</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a114f7521fcdc12100bbc394078de51f2</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -1845,7 +2198,7 @@
       <Type>instm</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>a683138357336ecc0d7ae3bbb1a20d26e</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -1856,7 +2209,7 @@
       <Type>ffunc</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>aeee814a994cbf391f8c61d22fd3c6838</Anchor>
   </Token>
   <Token>
@@ -1866,7 +2219,7 @@
       <Type>instm</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a576997fcd010f762792ba4708816a399</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -1877,7 +2230,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>aed7b5d279f6f1dffee10d5fb92ed6b1c</Anchor>
   </Token>
   <Token>
@@ -1887,7 +2240,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>aeb23e839a795005fdcdbba0d1aa75242</Anchor>
   </Token>
   <Token>
@@ -1897,7 +2250,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a1991d8428ff7c74b31f42d48bb49547a</Anchor>
   </Token>
   <Token>
@@ -1907,7 +2260,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>a2e609cc7cd4bf4c69805916e874638d2</Anchor>
   </Token>
   <Token>
@@ -1917,8 +2270,18 @@
       <Type>data</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>a692e9ffed988141831ae1c6b6e193258</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>logicalAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a74f5b13edbb267071575c0de94b77db9</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1927,7 +2290,7 @@
       <Type>data</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>a294f771eb420315fb7436312e5fc63b1</Anchor>
   </Token>
   <Token>
@@ -1937,7 +2300,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>a974cc2f880aea5fe72964caa33a64708</Anchor>
   </Token>
   <Token>
@@ -1947,7 +2310,7 @@
       <Type>data</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>a74202729d586ccec93252b4a67013490</Anchor>
   </Token>
   <Token>
@@ -1957,7 +2320,7 @@
       <Type>data</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>a2802e9d0b1f892d27ac5ffd517bc15f5</Anchor>
   </Token>
   <Token>
@@ -1967,7 +2330,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>abdc45765d9b3c3db31ce8b3a712551c1</Anchor>
   </Token>
   <Token>
@@ -1977,7 +2340,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>ab7bdf300a5afa6e6d2572bb0a0852b4c</Anchor>
   </Token>
   <Token>
@@ -1987,7 +2350,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>a27cd54a74710a7265e420112ab0207fe</Anchor>
   </Token>
   <Token>
@@ -1997,7 +2360,7 @@
       <Type>data</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d55/a47108.html</Path>
+    <Path>d7/da8/a50484.html</Path>
     <Anchor>a0acad34e831f29b886403165ba7deaa1</Anchor>
   </Token>
   <Token>
@@ -2007,7 +2370,7 @@
       <Type>data</Type>
       <Scope>SerialEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d3/d26/a47116.html</Path>
+    <Path>dd/d52/a50492.html</Path>
     <Anchor>acfccded977b423ac83b947c66010c6f8</Anchor>
   </Token>
   <Token>
@@ -2017,8 +2380,38 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>af37d4431c2b5242c2155cd937831e4e0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MACAddress0Port</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>af6bf9a0bcf08ad570cb370a9674f6fce</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MACAddress2Port</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a87c41cae965c5e6838ca9848158bea12</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MACAddress4Port</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a655f9fe9241778d49a20b79c550fb8e9</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2027,7 +2420,7 @@
       <Type>clm</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>afd570d42e70dcc0d3729c4dcca31e44b</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
   </Token>
@@ -2038,7 +2431,7 @@
       <Type>clm</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>a2f6238319856f69ecb697de8548c8c53</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
   </Token>
@@ -2049,7 +2442,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>a6af7704c636994b403be457f3bbb6fd7</Anchor>
   </Token>
   <Token>
@@ -2059,7 +2452,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>aff199179c4df0273854a281638c40432</Anchor>
   </Token>
   <Token>
@@ -2069,8 +2462,18 @@
       <Type>data</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>a0ac3c73d895bd677e848e0da96588a80</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a37de6ecac94b9253f6ed18338e96f45a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2079,7 +2482,7 @@
       <Type>data</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>a8cbc246517425bb7b37356ca0c03459b</Anchor>
   </Token>
   <Token>
@@ -2089,7 +2492,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>adaf6180446d358c5aaa874d52be0a9a1</Anchor>
   </Token>
   <Token>
@@ -2099,7 +2502,7 @@
       <Type>clm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>adfb4220d2c664ae5ba11e04d9d182f70</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2110,7 +2513,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>ab3925414a9d834c2b3892498c0ae3988</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2121,7 +2524,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>d0/d9e/a47140.html</Path>
+    <Path>d1/d32/a50532.html</Path>
     <Anchor>a91a351ce9442ed70a5202095f0dab802</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2132,7 +2535,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a804f5657a062e0a18f3b56781f884c66</Anchor>
   </Token>
   <Token>
@@ -2142,7 +2545,7 @@
       <Type>data</Type>
       <Scope>memory::MemoryBlockHeader</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>adede4de243becefcd84d6d0ed852faa0</Anchor>
   </Token>
   <Token>
@@ -2152,7 +2555,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a26909fe5dcab0bdc7ddf7c3678f3ae48</Anchor>
   </Token>
   <Token>
@@ -2162,8 +2565,28 @@
       <Type>data</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d5/d64/a47128.html</Path>
+    <Path>d3/ddf/a50520.html</Path>
     <Anchor>a347286da44d912bba3f720d8b0600946</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>numRecvBuffers</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a1656d5069c269036efaeb13703786429</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>numSendBuffers</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>af78cc6bbfa32543720b18e3a9f55500a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2172,7 +2595,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>aed313f80ef666df688ce2714ff23a59c</Anchor>
   </Token>
   <Token>
@@ -2182,7 +2605,7 @@
       <Type>data</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a7d440faf44e73eb880db75969942c1ea</Anchor>
   </Token>
   <Token>
@@ -2192,7 +2615,7 @@
       <Type>data</Type>
       <Scope>essential::atexit_func_entry_t</Scope>
     </TokenIdentifier>
-    <Path>d9/d27/a47168.html</Path>
+    <Path>d4/db5/a50560.html</Path>
     <Anchor>a24ece443578ebec2449e72e998521a11</Anchor>
   </Token>
   <Token>
@@ -2202,7 +2625,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a313426dd9aa1af1540cbffc2e77c58c1</Anchor>
   </Token>
   <Token>
@@ -2212,7 +2635,7 @@
       <Type>data</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>adae1afe77b7991c182ee1ca948413636</Anchor>
   </Token>
   <Token>
@@ -2222,7 +2645,7 @@
       <Type>instm</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>a2c5d8f96714bc8944268e7d8efd60b8a</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
@@ -2233,7 +2656,7 @@
       <Type>instm</Type>
       <Scope>SerialEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d3/d26/a47116.html</Path>
+    <Path>dd/d52/a50492.html</Path>
     <Anchor>add675289514a4144f97d2189183400a8</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
@@ -2244,9 +2667,20 @@
       <Type>instm</Type>
       <Scope>driver::SerialEventHandler</Scope>
     </TokenIdentifier>
-    <Path>dc/d82/a47148.html</Path>
+    <Path>d3/d50/a50540.html</Path>
     <Anchor>aefe1028b4b0aac999635d5846b39c761</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>onEtherFrameReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <Anchor>ac51d7333d05a6f2f67a83584fe2779c8</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2255,7 +2689,7 @@
       <Type>instm</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d55/a47108.html</Path>
+    <Path>d7/da8/a50484.html</Path>
     <Anchor>af82a0bd16f995dd285d4f7822117377c</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
@@ -2266,7 +2700,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d8d/a47132.html</Path>
+    <Path>d0/de6/a50524.html</Path>
     <Anchor>ae2b923ef0eb58e29f57a155debadac6a</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -2277,7 +2711,7 @@
       <Type>instm</Type>
       <Scope>KeyboardEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d8/d55/a47108.html</Path>
+    <Path>d7/da8/a50484.html</Path>
     <Anchor>a0d74a48573c10174ac8bf836ac39f886</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
@@ -2288,7 +2722,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d8d/a47132.html</Path>
+    <Path>d0/de6/a50524.html</Path>
     <Anchor>a28547100b7420e1f73b745df873cd411</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -2299,7 +2733,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>dc/df0/a47112.html</Path>
+    <Path>d4/df1/a50488.html</Path>
     <Anchor>ae860a16e70322e5c4bb01e1108e50bb1</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
@@ -2310,7 +2744,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>d0/d9e/a47140.html</Path>
+    <Path>d1/d32/a50532.html</Path>
     <Anchor>a2f12c5f63356c3045fd6cb46fd89374f</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2321,7 +2755,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>dc/df0/a47112.html</Path>
+    <Path>d4/df1/a50488.html</Path>
     <Anchor>adbb4c4e2814b335579119c324313f652</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
@@ -2332,7 +2766,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>d0/d9e/a47140.html</Path>
+    <Path>d1/d32/a50532.html</Path>
     <Anchor>a68f635b3b65f927d37d4e0835f7e0b30</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2343,7 +2777,7 @@
       <Type>instm</Type>
       <Scope>MouseEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>dc/df0/a47112.html</Path>
+    <Path>d4/df1/a50488.html</Path>
     <Anchor>afca536c2187a65da265daa2d2af75d4d</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
   </Token>
@@ -2354,9 +2788,31 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>d0/d9e/a47140.html</Path>
+    <Path>d1/d32/a50532.html</Path>
     <Anchor>a09b77fe86bfa79313b5c5b91d09eb514</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>onRawDataReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::RawDataHandler</Scope>
+    </TokenIdentifier>
+    <Path>df/d03/a50500.html</Path>
+    <Anchor>ad944cf4d2c763261d44e4288b47cd44d</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>onRawDataReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>a28ee9d748f1f424da58729a1b4dac154</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2365,7 +2821,7 @@
       <Type>clm</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a67d7922bbc93cde1e013da163e528174</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -2376,7 +2832,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>ac443b3a7362d2d1cd4b4954143d00c7b</Anchor>
   </Token>
   <Token>
@@ -2386,7 +2842,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a71d89c22009309f0d354da5cbf359dc7</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -2397,7 +2853,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a5a505bd19fc7767ed91adb172a985e20</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -2408,8 +2864,18 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>ac39df60c68f4965163e3d5d6892def17</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>physicalAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ae5ab80d345eb6d69ae36e9c400a8f352</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2418,7 +2884,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>af9c77ff57e676fc39052e236f9db2cf9</Anchor>
   </Token>
   <Token>
@@ -2428,7 +2894,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a89b97f27237779fb165d82988d85465a</Anchor>
   </Token>
   <Token>
@@ -2438,7 +2904,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>abeacc2cde573d48e1a1d69529588748b</Anchor>
   </Token>
   <Token>
@@ -2448,7 +2914,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a4c73820e65ebf60fa4bdd38ac747b0bd</Anchor>
   </Token>
   <Token>
@@ -2458,7 +2924,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>df/df1/a47212.html</Path>
+    <Path>dd/dcb/a50604.html</Path>
     <Anchor>a782f7fad0bc431b9b56dec37b3bd5dcb</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2469,7 +2935,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/d16/a47224.html</Path>
+    <Path>d2/d06/a50616.html</Path>
     <Anchor>a8441c4c12cc8141d87f53ac4917d0425</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2480,7 +2946,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>dc/df4/a47228.html</Path>
+    <Path>d1/da1/a50620.html</Path>
     <Anchor>aadd77aa826690aaf97702bb05dd0ee91</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2491,7 +2957,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>de/db0/a47216.html</Path>
+    <Path>db/d97/a50608.html</Path>
     <Anchor>af00b1f913ecf8f63297ec425d408c618</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2502,7 +2968,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d6/da5/a47220.html</Path>
+    <Path>d0/daa/a50612.html</Path>
     <Anchor>a3a4b42926d740408c5e48439bbba6a59</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2513,7 +2979,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a0f39aba6d685303dcde01c88d894b743</Anchor>
   </Token>
   <Token>
@@ -2523,7 +2989,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>df/df1/a47212.html</Path>
+    <Path>dd/dcb/a50604.html</Path>
     <Anchor>aab0c5c82b0190df88ddbb595bfac539a</Anchor>
   </Token>
   <Token>
@@ -2533,7 +2999,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::BaseAddressRegister</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>a0cef7240cfffa9f07d92dc14cf4d3ef9</Anchor>
   </Token>
   <Token>
@@ -2543,7 +3009,7 @@
       <Type>data</Type>
       <Scope>memory::MemoryBlockHeader</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>ad156b86bbf3fc7173c0424fca0c4f96e</Anchor>
   </Token>
   <Token>
@@ -2553,7 +3019,7 @@
       <Type>instm</Type>
       <Scope>memory::HeapManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d62/a47236.html</Path>
+    <Path>dc/df0/a50628.html</Path>
     <Anchor>ae423f7b640d144a03b98f5ae2a517987</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -2564,7 +3030,7 @@
       <Type>clm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a12155526ff104614deb65f1c5a35c013</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2575,7 +3041,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>ae43c9bc0611cf6dfbac0a532e2f631ef</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2586,7 +3052,7 @@
       <Type>clm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a50eaa45b2e7e4c8579aec1d8d6aae6b7</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -2597,7 +3063,7 @@
       <Type>clm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>add6866291fc50f63ccbacedc26236908</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -2608,7 +3074,7 @@
       <Type>clm</Type>
       <Scope>memory::PagingManager</Scope>
     </TokenIdentifier>
-    <Path>d2/db8/a47240.html</Path>
+    <Path>d1/db1/a50632.html</Path>
     <Anchor>a259a4f4f121a88e5580da7862467e217</Anchor>
     <DeclaredIn>kpaging.hpp</DeclaredIn>
   </Token>
@@ -2619,9 +3085,20 @@
       <Type>instm</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>a64cee1fd80a35d996188c0034ec26b64</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RawDataHandler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::RawDataHandler</Scope>
+    </TokenIdentifier>
+    <Path>df/d03/a50500.html</Path>
+    <Anchor>ac570745bafea8bb4b6457e14f077d1d8</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2630,7 +3107,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>de/db0/a47216.html</Path>
+    <Path>db/d97/a50608.html</Path>
     <Anchor>a425297307d64cb5d9889b32767f8fdc3</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2641,7 +3118,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/d16/a47224.html</Path>
+    <Path>d2/d06/a50616.html</Path>
     <Anchor>a5147c7c28ca813536015969ae6ba6bb6</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2652,7 +3129,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>dc/df4/a47228.html</Path>
+    <Path>d1/da1/a50620.html</Path>
     <Anchor>a742b40049c70bfda79a3031b85297948</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -2663,7 +3140,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>abbe08b680f1d06bcd047cd0c8f215bfd</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -2674,7 +3151,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a8be9d213f644608726499edca159e1e4</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -2685,9 +3162,20 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a6e21604894939edaafd1d5baae2840dd</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>receive</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ac843f3c56fb3148c8e85ca32015d9ce9</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2696,9 +3184,69 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a39f63594cdcdad7acc3860d6d339995e</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>recvBufferDescr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a7b5c5d77882621ff582c65c5a252bbc0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>recvBufferDescrAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a5381fce34cacba0a875f02ceb6899c71</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>recvBufferDescrMemory</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a8773a269f47407f55e1d4011ddbb5abb</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>recvBuffers</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a954e4be989c5fd6b618c9b46ee90a62c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>registerAddressPort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a686a40fb1b7867d8e8ba1fca1fd61e7c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>registerDataPort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a56c5ab08e36738c7070817dd0c7efab4</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2707,8 +3255,49 @@
       <Type>data</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>ab333f7e129427d5553a8dc010fbbeb0b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reserved1</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a06799b410f477ce41b7a82212494f625</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reserved2</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ac60e4447b9be0db6a61e42f3744699ce</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reserved3</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>aa11ab59c6ca5601e9d3d8e8b6b012ae3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reset</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ab1395bd98f445068a11735c10832dfee</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2717,7 +3306,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>d4/da8/a47124.html</Path>
+    <Path>d6/d06/a50516.html</Path>
     <Anchor>a98d2e779c02364fc58c172d0d2a32bdd</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -2728,7 +3317,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>afd98f610ae8577e9242298db39370108</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -2739,7 +3328,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>aa18ffdba62abee43186e473b044c1c6d</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -2750,7 +3339,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>aa8ca445b7662a47f5fb974acf7d9077d</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -2761,7 +3350,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>ab38a99b53a4ee9a8b149f568648f7313</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -2772,9 +3361,19 @@
       <Type>instm</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>aecb0b8110aab5f31e88e992902ab1752</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>resetPort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ade44be98074399749816dc7e8705a221</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2783,7 +3382,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a47709787dd44be45e9b622dbea4c17f0</Anchor>
   </Token>
   <Token>
@@ -2793,7 +3392,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a676c96d825ec578ff98c965c4b999aec</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -2804,7 +3403,7 @@
       <Type>instm</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a58a04ac928a567ba69d901ddd40b843e</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -2815,9 +3414,93 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a86f101dc2b53f938d5ac466c7ec33e2c</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::RawDataHandler</Scope>
+    </TokenIdentifier>
+    <Path>df/d03/a50500.html</Path>
+    <Anchor>a6ce3e75337ef2ecde344acb60e7ba9bd</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a7c52fe6e73fa9bc911a4db50b1e325ba</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <Anchor>a6de847c495cafe1a73e5a2152fb040e8</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>a47dcab718d413574c8a24959552823cc</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sendBufferDescr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>afabb0d7f37fd2279a84896ccc9123c98</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sendBufferDescrAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973::InitializationBlock</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a5f4f043e90b8a34ddedce2d3eb65c654</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sendBufferDescrMemory</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>ab1382438a94fece78d2243b8eedcbe36</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sendBuffers</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a4de32b0c27939c196d3cb4ca61c0772c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2826,7 +3509,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>ab91a93c2ca1d7cc62e1a49a08d979e43</Anchor>
   </Token>
   <Token>
@@ -2836,7 +3519,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>a308be05a603ae5e360244267d2e97fdd</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -2847,7 +3530,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialEventHandler</Scope>
     </TokenIdentifier>
-    <Path>dc/d82/a47148.html</Path>
+    <Path>d3/d50/a50540.html</Path>
     <Anchor>a6c1053f71267a6d1fe167a53b8a8c3dd</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -2858,9 +3541,20 @@
       <Type>instm</Type>
       <Scope>SerialEventHandler_for_kernel</Scope>
     </TokenIdentifier>
-    <Path>d3/d26/a47116.html</Path>
+    <Path>dd/d52/a50492.html</Path>
     <Anchor>a4e7ba3312ad2618afe1b7dd22e477644</Anchor>
     <DeclaredIn>khandlers.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setHandler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>a6459761b80c6ce054ae40c613f511c95</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2869,9 +3563,20 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>aafee62e0a8417524d4e23e2d497d77b0</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setIPAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>abaca7f5a57a6b4816dc125f2c5bb085f</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2880,7 +3585,7 @@
       <Type>clm</Type>
       <Scope>essential::Time</Scope>
     </TokenIdentifier>
-    <Path>d0/d11/a47184.html</Path>
+    <Path>d6/dcf/a50576.html</Path>
     <Anchor>acf89ade0b4edef4d6cac2a48843e3f67</Anchor>
     <DeclaredIn>ktime.hpp</DeclaredIn>
   </Token>
@@ -2891,7 +3596,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>ac2adfc0a220ab9a3d14a01f5b203adab</Anchor>
   </Token>
   <Token>
@@ -2901,7 +3606,7 @@
       <Type>data</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>a195be2016f2d8d8b050b1c28de1170b1</Anchor>
   </Token>
   <Token>
@@ -2911,7 +3616,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>afba07c783deebfb275c1437f7c23601d</Anchor>
   </Token>
   <Token>
@@ -2921,7 +3626,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::BaseAddressRegister</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>ad513ca741c03a35d6ef381ebc1ece371</Anchor>
   </Token>
   <Token>
@@ -2931,7 +3636,7 @@
       <Type>data</Type>
       <Scope>memory::MemoryBlockHeader</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>a0cf35b0a77bcbe4cc900f506e028d8ef</Anchor>
   </Token>
   <Token>
@@ -2941,7 +3646,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>ab7787ae42263b69d671af831bcee133b</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -2952,9 +3657,19 @@
       <Type>clm</Type>
       <Scope>essential::Time</Scope>
     </TokenIdentifier>
-    <Path>d0/d11/a47184.html</Path>
+    <Path>d6/dcf/a50576.html</Path>
     <Anchor>a5a1c1b254f7f80e1f696a8c32d5b9412</Anchor>
     <DeclaredIn>ktime.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>srcMAC_BE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>net::EtherFrameHeader</Scope>
+    </TokenIdentifier>
+    <Path>db/d78/a49664.html</Path>
+    <Anchor>a80abad3408aca7a22a79b95400c43ff4</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2963,7 +3678,7 @@
       <Type>data</Type>
       <Scope>essential::CPUState</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a079017cb68b618f4c9cab280172bea4e</Anchor>
   </Token>
   <Token>
@@ -2973,7 +3688,7 @@
       <Type>data</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>a0dbf0df1f7ffcb2850813379ccb06f9f</Anchor>
   </Token>
   <Token>
@@ -2983,7 +3698,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>aab6f4d0868ad0278d4094f49026b7cdb</Anchor>
   </Token>
   <Token>
@@ -2993,7 +3708,7 @@
       <Type>clm</Type>
       <Scope>memory::PagingManager</Scope>
     </TokenIdentifier>
-    <Path>d2/db8/a47240.html</Path>
+    <Path>d1/db1/a50632.html</Path>
     <Anchor>af9dfd83771611c9462b89f52597b9bb2</Anchor>
     <DeclaredIn>kpaging.hpp</DeclaredIn>
   </Token>
@@ -3004,7 +3719,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a27b05e54ee55b6d0c69bc4f355d28919</Anchor>
   </Token>
   <Token>
@@ -3014,7 +3729,7 @@
       <Type>data</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a15eb73128c157f50541e6e3c766759b5</Anchor>
   </Token>
   <Token>
@@ -3024,7 +3739,7 @@
       <Type>data</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a347d1ba25c5747978be514519e08580b</Anchor>
   </Token>
   <Token>
@@ -3034,7 +3749,7 @@
       <Type>data</Type>
       <Scope>KernelArgs</Scope>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>a242682cc0315708e1a3c2435862f31c4</Anchor>
   </Token>
   <Token>
@@ -3044,7 +3759,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>af195042aa005b100e49e68498ab2e8e2</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -3055,7 +3770,7 @@
       <Type>data</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>a3f58808eea71d8013268749425da5254</Anchor>
   </Token>
   <Token>
@@ -3065,7 +3780,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::BaseAddressRegister</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>a1ed46e6ec12ae23a9d647ec0f659940a</Anchor>
   </Token>
   <Token>
@@ -3075,7 +3790,7 @@
       <Type>instm</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>a037a1007b9329e9067abbb3d8e0d128c</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
@@ -3086,7 +3801,7 @@
       <Type>data</Type>
       <Scope>memory::PhysicalMemoryManager</Scope>
     </TokenIdentifier>
-    <Path>d7/d87/a47244.html</Path>
+    <Path>dd/ddf/a50636.html</Path>
     <Anchor>ad6f21e656a2a090697654eac370951a5</Anchor>
   </Token>
   <Token>
@@ -3096,7 +3811,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a6d59268a0e9d66206896d865612e9740</Anchor>
   </Token>
   <Token>
@@ -3106,7 +3821,7 @@
       <Type>clm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a3cd677f5ce4878f9c0ebb06fe3335843</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3117,7 +3832,7 @@
       <Type>data</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a6d00b87ca97dfbcc13ba6775499f54ee</Anchor>
   </Token>
   <Token>
@@ -3127,7 +3842,7 @@
       <Type>clm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>a7f7ac69330ee9fa3cfc1841932cf5f55</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3138,7 +3853,7 @@
       <Type>data</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>aee5360551eec5a3b31638a0372fdda71</Anchor>
   </Token>
   <Token>
@@ -3148,7 +3863,7 @@
       <Type>data</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>a703464394033a8f4f664d9289ae2e9f8</Anchor>
   </Token>
   <Token>
@@ -3158,7 +3873,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>de/db0/a47216.html</Path>
+    <Path>db/d97/a50608.html</Path>
     <Anchor>a6ede8fba6ba7e26c5982a91a3d5ffa72</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3169,7 +3884,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d6/da5/a47220.html</Path>
+    <Path>d0/daa/a50612.html</Path>
     <Anchor>af59dc9eca6d847543caf786f4c9c7a66</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3180,7 +3895,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/d16/a47224.html</Path>
+    <Path>d2/d06/a50616.html</Path>
     <Anchor>a24f6a288e57d4c01634926ca3580324d</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3191,7 +3906,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>dc/df4/a47228.html</Path>
+    <Path>d1/da1/a50620.html</Path>
     <Anchor>ad13c0ec90a83f05b61c023dd8a1f53e8</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3202,7 +3917,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>ac4466a0762483fd1c3ec5f2745a58386</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -3213,7 +3928,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a2f72611558fb7dcc7971e748058832d8</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -3224,9 +3939,20 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a1bbd1027e1d181bb2eb280070e3d1831</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~amd_am79c973</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::amd_am79c973</Scope>
+    </TokenIdentifier>
+    <Path>dd/dcf/a50504.html</Path>
+    <Anchor>aacbc48386a4b5f36a63dc53b2f1bae2f</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3235,7 +3961,7 @@
       <Type>instm</Type>
       <Scope>driver::Driver</Scope>
     </TokenIdentifier>
-    <Path>d4/da8/a47124.html</Path>
+    <Path>d6/d06/a50516.html</Path>
     <Anchor>ac7645eea8d3ce2bc39ddbda5e840297a</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -3246,9 +3972,31 @@
       <Type>instm</Type>
       <Scope>driver::DriverManager</Scope>
     </TokenIdentifier>
-    <Path>d5/d64/a47128.html</Path>
+    <Path>d3/ddf/a50520.html</Path>
     <Anchor>ae4dec72dfff075ed524e25e4baaf0385</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~EtherFrameHandler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameHandler</Scope>
+    </TokenIdentifier>
+    <Path>dd/ddf/a50644.html</Path>
+    <Anchor>a38ee174ede95bfe127ac6ffe106e033b</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~EtherFrameProvider</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>net::EtherFrameProvider</Scope>
+    </TokenIdentifier>
+    <Path>dc/ddb/a50648.html</Path>
+    <Anchor>a85d2da3052018cf1097d7145e3f94926</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3257,7 +4005,7 @@
       <Type>instm</Type>
       <Scope>essential::GDT_Manager</Scope>
     </TokenIdentifier>
-    <Path>db/d3e/a47164.html</Path>
+    <Path>db/d7f/a50556.html</Path>
     <Anchor>ab0fb218f4d5871f185d4acf5432e3e2a</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3268,7 +4016,7 @@
       <Type>instm</Type>
       <Scope>essential::GDT_Row</Scope>
     </TokenIdentifier>
-    <Path>dc/d29/a47160.html</Path>
+    <Path>d6/d62/a50552.html</Path>
     <Anchor>a02fc33f86cb5e47628f3029f107e9008</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3279,7 +4027,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::IDT_Row</Scope>
     </TokenIdentifier>
-    <Path>da/d36/a47192.html</Path>
+    <Path>d8/d41/a50584.html</Path>
     <Anchor>a9c02a7a81e8bde8ea0f50ff106a95b17</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -3290,7 +4038,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptHandler</Scope>
     </TokenIdentifier>
-    <Path>d1/dc1/a47188.html</Path>
+    <Path>d5/dbf/a50580.html</Path>
     <Anchor>a12b87c89015a61b702184070354e7876</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -3301,7 +4049,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::InterruptManager</Scope>
     </TokenIdentifier>
-    <Path>d6/d83/a47196.html</Path>
+    <Path>dd/daa/a50588.html</Path>
     <Anchor>a91bd23784e8ca1fa3d4123051c107319</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -3312,7 +4060,7 @@
       <Type>instm</Type>
       <Scope>KernelShell</Scope>
     </TokenIdentifier>
-    <Path>d3/d76/a47120.html</Path>
+    <Path>df/d35/a50496.html</Path>
     <Anchor>ae26132acbd55fa27781bb8210ff088ec</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
@@ -3323,7 +4071,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardDriver</Scope>
     </TokenIdentifier>
-    <Path>d1/d18/a47136.html</Path>
+    <Path>d1/d45/a50528.html</Path>
     <Anchor>ad6d861600fa8b332d42b0b3f96904329</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -3334,7 +4082,7 @@
       <Type>instm</Type>
       <Scope>driver::KeyboardEventHandler</Scope>
     </TokenIdentifier>
-    <Path>df/d8d/a47132.html</Path>
+    <Path>d0/de6/a50524.html</Path>
     <Anchor>ad52b0b5f344416c5e4ea01a4eed48746</Anchor>
     <DeclaredIn>kkeyboard.hpp</DeclaredIn>
   </Token>
@@ -3345,7 +4093,7 @@
       <Type>instm</Type>
       <Scope>essential::KThread</Scope>
     </TokenIdentifier>
-    <Path>d7/def/a47176.html</Path>
+    <Path>d6/d76/a50568.html</Path>
     <Anchor>a19fc1ea934147324545834adb9f608c9</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3356,7 +4104,7 @@
       <Type>instm</Type>
       <Scope>essential::KThreadManager</Scope>
     </TokenIdentifier>
-    <Path>dd/d24/a47180.html</Path>
+    <Path>d7/d1d/a50572.html</Path>
     <Anchor>a0140f40f4e3450be35373883dd9c2613</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3367,7 +4115,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseDriver</Scope>
     </TokenIdentifier>
-    <Path>d4/d91/a47144.html</Path>
+    <Path>d6/da4/a50536.html</Path>
     <Anchor>a6a5552a02e011b343fa8b41928f22741</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3378,7 +4126,7 @@
       <Type>instm</Type>
       <Scope>driver::MouseEventHandler</Scope>
     </TokenIdentifier>
-    <Path>d0/d9e/a47140.html</Path>
+    <Path>d1/d32/a50532.html</Path>
     <Anchor>a5fd77fcf955282a5a8a14ce37c0cddbb</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -3389,7 +4137,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_Controller</Scope>
     </TokenIdentifier>
-    <Path>dd/d07/a47208.html</Path>
+    <Path>d1/d9e/a50600.html</Path>
     <Anchor>a3ee06d7487fe4ff999d2176786c2e743</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -3400,7 +4148,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::PCI_DeviceDescriptor</Scope>
     </TokenIdentifier>
-    <Path>dc/d27/a47204.html</Path>
+    <Path>d2/d49/a50596.html</Path>
     <Anchor>a7d58a16cccfab8c55edb49943bad31a3</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -3411,7 +4159,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port</Scope>
     </TokenIdentifier>
-    <Path>df/df1/a47212.html</Path>
+    <Path>dd/dcb/a50604.html</Path>
     <Anchor>afe166c2a6b10ad34d47472a150366bc1</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3422,7 +4170,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port16Bit</Scope>
     </TokenIdentifier>
-    <Path>d6/d16/a47224.html</Path>
+    <Path>d2/d06/a50616.html</Path>
     <Anchor>abe7d942088dbe47b54bd93a13a575d6e</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3433,7 +4181,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port32Bit</Scope>
     </TokenIdentifier>
-    <Path>dc/df4/a47228.html</Path>
+    <Path>d1/da1/a50620.html</Path>
     <Anchor>a2ded98f81f6e4581d5e18dfaafbdbf47</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3444,7 +4192,7 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8Bit</Scope>
     </TokenIdentifier>
-    <Path>de/db0/a47216.html</Path>
+    <Path>db/d97/a50608.html</Path>
     <Anchor>a00937f7600d3f5062c8504814b6bf61b</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
   </Token>
@@ -3455,9 +4203,20 @@
       <Type>instm</Type>
       <Scope>hardware_communication::Port8BitSlow</Scope>
     </TokenIdentifier>
-    <Path>d6/da5/a47220.html</Path>
+    <Path>d0/daa/a50612.html</Path>
     <Anchor>a97f9eb6dba56896461cc291fb11c4ad7</Anchor>
     <DeclaredIn>kport.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~RawDataHandler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>driver::RawDataHandler</Scope>
+    </TokenIdentifier>
+    <Path>df/d03/a50500.html</Path>
+    <Anchor>a3eeacea5ece54f599eacee8575bd06a4</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3466,7 +4225,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialDriver</Scope>
     </TokenIdentifier>
-    <Path>db/dde/a47152.html</Path>
+    <Path>d1/ddd/a50544.html</Path>
     <Anchor>a31aa1a9a5d828c7f790a5a56370380d5</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -3477,7 +4236,7 @@
       <Type>instm</Type>
       <Scope>driver::SerialEventHandler</Scope>
     </TokenIdentifier>
-    <Path>dc/d82/a47148.html</Path>
+    <Path>d3/d50/a50540.html</Path>
     <Anchor>a2581310b60a10ed9e7928fa44f73ba36</Anchor>
     <DeclaredIn>kserial.hpp</DeclaredIn>
   </Token>
@@ -3488,7 +4247,7 @@
       <Type>instm</Type>
       <Scope>driver::TimerDriver</Scope>
     </TokenIdentifier>
-    <Path>d3/dd0/a47156.html</Path>
+    <Path>dd/d12/a50548.html</Path>
     <Anchor>a30e2ad6e2673bebc2c43cd53bf28fb06</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -3498,7 +4257,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d3/d4e/a46226.html</Path>
+    <Path>db/d18/a49589.html</Path>
     <Anchor>a0f75f529cf75cf0a9cd266f8d67675dc</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -3508,7 +4267,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d3/d4e/a46226.html</Path>
+    <Path>db/d18/a49589.html</Path>
     <Anchor>a05a64060e9039acf0ba3c311b2d981b7</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -3519,7 +4278,7 @@
       <Type>data</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a3212137a05cd327cafa31b7db6d6a4d4</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3530,9 +4289,20 @@
       <Type>data</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>a21c3ca5c318038eaed596c14fd2666ed</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>net</Scope>
+    </TokenIdentifier>
+    <Path>db/d78/a49664.html</Path>
+    <Anchor>a90220f4c00bb7caa62150b04ec05c3dd</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3541,7 +4311,7 @@
       <Type>func</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>af969354206f769e30a75cc221177f819</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3552,9 +4322,20 @@
       <Type>func</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>abfdb717d468296a4b6e08ea847005f01</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>net</Scope>
+    </TokenIdentifier>
+    <Path>db/d78/a49664.html</Path>
+    <Anchor>a802ee396aa3c5cbd554cb478c18afea4</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3563,7 +4344,7 @@
       <Type>func</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a433c3d2d19d89890b522ac26b05fa7aa</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
@@ -3573,7 +4354,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d3/d4e/a46226.html</Path>
+    <Path>db/d18/a49589.html</Path>
     <Anchor>a6870fb46accc462562647e3d99c0b7c7</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -3584,7 +4365,7 @@
       <Type>func</Type>
       <Scope>essential</Scope>
     </TokenIdentifier>
-    <Path>d6/db1/a46285.html</Path>
+    <Path>d2/d06/a49660.html</Path>
     <Anchor>a098e7240e26e869c035075be004b4ee9</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
   </Token>
@@ -3594,7 +4375,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d3/d4e/a46226.html</Path>
+    <Path>db/d18/a49589.html</Path>
     <Anchor>a19df960d2907e9c08a720ae7683e632c</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -3604,7 +4385,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a8b0d6200bc639dd37ff68847a0adde5f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3614,7 +4395,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>a8b0d6200bc639dd37ff68847a0adde5f</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -3624,9 +4405,19 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d6/d58/a46229.html</Path>
+    <Path>da/d86/a49592.html</Path>
     <Anchor>a93ff40ea2e4ca21521f0aa4e5e3a83bd</Anchor>
     <DeclaredIn>kmultitasking.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>address</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>ac0d31ca829f934cccd89f8054e02773e</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3635,7 +4426,7 @@
       <Type>func</Type>
       <Scope>memory</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>a14915e518c3f9746bd6cb0d6e8522267</Anchor>
     <DeclaredIn>kpaging.cpp</DeclaredIn>
   </Token>
@@ -3646,7 +4437,7 @@
       <Type>func</Type>
       <Scope>memory</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>acc4b83368845fe8ad29771293e014a59</Anchor>
     <DeclaredIn>kpaging.cpp</DeclaredIn>
   </Token>
@@ -3656,9 +4447,19 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>de/d41/a46277.html</Path>
+    <Path>df/d16/a49652.html</Path>
     <Anchor>ae07a9ad040d2fbefafcff363b77697ce</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avail</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a994194f1d73a72d2f2f18457e27546ca</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3666,7 +4467,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ad516e6ff5b7dd7f6ce2946c527ddb8b9</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3676,7 +4477,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a1a173457c7aa39c59c008fcc3332d2b3</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3686,7 +4487,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a71e21ea67de59991e9a27666a1752a8f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3696,7 +4497,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a6b67e86f6de9204d76adab79069aec29</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -3707,7 +4508,7 @@
       <Type>enum</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>ad38a4a4ac62c5165be6aad855b6dab82</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -3718,7 +4519,7 @@
       <Type>econst</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>ad38a4a4ac62c5165be6aad855b6dab82aedac33a38f15a3d9168fc0067c65cd14</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -3729,7 +4530,7 @@
       <Type>econst</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>ad38a4a4ac62c5165be6aad855b6dab82a85507086ea5f27de7d6c37f3305976d1</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -3740,7 +4541,7 @@
       <Type>data</Type>
       <Scope>memory</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>a01b83c89147e8d35e0ffe48dd640770a</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
   </Token>
@@ -3750,7 +4551,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>af4e7470f55c08b061783fe2519b65bff</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -3760,7 +4561,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>af4e7470f55c08b061783fe2519b65bff</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -3771,7 +4572,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a9d9308d071782523a3653caa8d805474</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3781,7 +4582,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a8519dc239502dfcbac171b3128dc7054</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3791,7 +4592,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d3/d4e/a46226.html</Path>
+    <Path>db/d18/a49589.html</Path>
     <Anchor>a9a50b36f9886cd6bdbe05a5a6639cd95</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -3801,7 +4602,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d3/d4e/a46226.html</Path>
+    <Path>db/d18/a49589.html</Path>
     <Anchor>a201d805094c80d48f8ee4e49ee85fb74</Anchor>
     <DeclaredIn>kicxxabi.cpp</DeclaredIn>
   </Token>
@@ -3812,7 +4613,7 @@
       <Type>data</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>ae562e5f327151ca6743dbbb4137c0525</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3823,7 +4624,7 @@
       <Type>data</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>aa7b44be0fd742e77d6658d79e81d5f02</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3834,7 +4635,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a4b31902bf2cff8ff28405aa57d9f4575</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3845,7 +4646,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>aeacdadb7f1bb76f1452689d0e5cd4dad</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3855,9 +4656,19 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a6fe20edd854a1a653ae71ccf541a6b8b</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>dstMAC_BE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/d9d/a49604.html</Path>
+    <Anchor>a9dd1f3db12beba3542823c8feee24572</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3865,7 +4676,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a93d929ad1fc57af9d4f1793c361fb4f2</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3875,7 +4686,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>aaba2ad0ff8ba480934feabfdab02b1e7</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3885,7 +4696,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>ae7c1e3339e4dead200cab41010e9127c</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3895,7 +4706,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>af2b16bef95c844028dd145264d1d3875</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3905,7 +4716,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a36ffab8d34c6c411a7e5205ddb95eaf9</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3915,7 +4726,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>ae6db045cebe7b4cf979120dccdee0d01</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3925,7 +4736,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>aeedfc39703ec8e0a1f052a832e74acd3</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3935,7 +4746,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a1588906901fc3015e0865574669a56a6</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3946,7 +4757,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a8ca6648639f335b207c748074dcf9f25</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -3956,7 +4767,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d9/d0d/a46187.html</Path>
+    <Path>d9/d22/a49544.html</Path>
     <Anchor>a204a3f4fa39b9c007f9784d3e4af4667</Anchor>
     <DeclaredIn>kpmm.cpp</DeclaredIn>
   </Token>
@@ -3966,7 +4777,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>aa8d183302fdfa4a6892f1d80300cdb32</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3976,7 +4787,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a0dacdc927bbcc6457b629ad88119cdc2</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3986,7 +4797,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>ada78e3124de6adf5a5d212f9ebc4bbe0</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -3996,9 +4807,50 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a7534a179bc9cc0ef26f0468e0959ee5c</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EtherFrameFooter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>tdef</Type>
+      <Scope>net</Scope>
+    </TokenIdentifier>
+    <Path>db/d78/a49664.html</Path>
+    <Anchor>a58b91736f5bc2f5c4822f6af662f10d1</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>etherType_BE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/d9d/a49604.html</Path>
+    <Anchor>a72ce24a9cf079420ce24a182b0242c5a</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>flags</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a773b39d480759f67926cb18ae2219281</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>flags2</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a490c6e96891b5060c8880cb8b7c85384</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4006,7 +4858,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>afbedc913aa4651b3c3b4b3aecd9b4711</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4016,7 +4868,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>afbedc913aa4651b3c3b4b3aecd9b4711</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4026,7 +4878,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a2ffb5cf275c124e8f8ff30e1d4449f80</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -4036,7 +4888,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ac4461ee84aade9ee824de64d4846ec98</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4046,7 +4898,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a01d908c8637340b21274e0176b320c05</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4056,7 +4908,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a1adfff1c72212b5c4e1df35485bb102a</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4066,7 +4918,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ac7f57dcdd84028460100b6da75ad4938</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4076,7 +4928,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a4941c819dbbef299c391bf53c24caf8d</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4086,7 +4938,7 @@
       <APILanguage>c</APILanguage>
       <Type>ffunc</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a7446d615905c4ed2cd7d97f7463f9120</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4096,9 +4948,29 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a0db6a6236a2495c565e578123b21b2d4</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>globalNetDriver</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d6/d6a/a49535.html</Path>
+    <Anchor>ad6e8af5ce1c216d1934767acbe0eabdc</Anchor>
+    <DeclaredIn>kernel.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>globalNetDriver</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d3/dc4/a49556.html</Path>
+    <Anchor>ad6e8af5ce1c216d1934767acbe0eabdc</Anchor>
+    <DeclaredIn>kpci.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4106,7 +4978,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>acfea365f69e71368a2db03333d4afd6f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4116,7 +4988,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a85904ecbf7b717abe738645b4ff2f4ff</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -4126,7 +4998,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>adf60fad10b12cc19ad193c928d36445c</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4136,7 +5008,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>a6498ed740318b424aaae4db1f223e558</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4146,7 +5018,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>ad2f82bde7387738bbe6e10215a855619</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4156,7 +5028,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>a996c60cc7e88bb1c85505c19f6c35117</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4166,7 +5038,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>a7884c02f32fe35058379ebdc96c5767c</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4176,7 +5048,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>adf5df650f7c6f6e7792d97ee2b851265</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4186,7 +5058,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>a8fd2ce61381319526d99e87e39b58377</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4196,7 +5068,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>a07e074bde074261858311b014bc2b398</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4207,7 +5079,7 @@
       <Type>econst</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>ad38a4a4ac62c5165be6aad855b6dab82a85507086ea5f27de7d6c37f3305976d1</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -4217,7 +5089,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/dde/a46202.html</Path>
+    <Path>d1/d88/a49562.html</Path>
     <Anchor>a3177271af6bf4efd5950b23eba735372</Anchor>
     <DeclaredIn>kinterrupt.cpp</DeclaredIn>
   </Token>
@@ -4227,9 +5099,49 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a258db7c2f70fd1b20332ee3c00cd1d89</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>int16_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>af8f69dcc5ac4ad6eb3bd9ac2bac36701</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>int32_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>af396eb675fca8983685633f04a5694a5</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>int64_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a454de0502a081f960cab47912b508a36</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>int8_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ace4c733d5e2381df41b0762955f74009</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4237,9 +5149,139 @@
       <APILanguage>c</APILanguage>
       <Type>ffunc</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>a6c5563315b1a2f5c67ae8b78d06e3c7f</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>intptr_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ad8e1e3c6319ce1a1a247c7fb485e1e97</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT16_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a8a11bf3356bb057a5c920f1a21f29ba0</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT16_MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>add840c0b9b9a1feb85deb36736bad582</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT32_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>af694ba32eff6a351108812af888553d4</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT32_MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a71a4d57e6dfe3b28b434c11e61c6698f</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT64_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ab47cc150fd91d4aeb2ae2c18009e2fc4</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT64_MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>af8796f9f36c0a88d6beca2de232cd117</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT8_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ac18a7ce246d833ade4ba9677451e3a4e</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_INT8_MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a541f73509d923d4ffa8da7e55fa456ae</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_UINT16_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a583371034ca34fc9cd376b3db3b3b4df</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_UINT32_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ae70280482cd8d562626a159af2885d99</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_UINT64_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a24e6c7eda959f331c22a0c4f799ee37f</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>K_UINT8_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ac613f0b97a326f13f3da730e2aa08bad</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4247,7 +5289,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>aeaae7f1943db2e30f88a0dd0d18680e1</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4257,7 +5299,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a169aef5ef99da67bb0047dfc3d6a22e4</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4267,7 +5309,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a3e8473e2d176d865dad7acc08691ed23</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4277,7 +5319,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>aaa6fbf4816b6af649fc82186fe18b4e0</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4288,7 +5330,7 @@
       <Type>data</Type>
       <Scope>memory</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>a1330326ea071fa9e0dfdcd3c70d28e70</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4298,7 +5340,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>acca378f87bf61c0de2befa4244846bfe</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>
@@ -4308,7 +5350,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d67/a46178.html</Path>
+    <Path>d6/d6a/a49535.html</Path>
     <Anchor>abb4e4866092116b520310d61961bfe12</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -4318,7 +5360,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>abb4e4866092116b520310d61961bfe12</Anchor>
     <DeclaredIn>kernel.hpp</DeclaredIn>
   </Token>
@@ -4328,7 +5370,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d67/a46178.html</Path>
+    <Path>d6/d6a/a49535.html</Path>
     <Anchor>ac3a9df5d195991d85f6e1e9416082338</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -4338,7 +5380,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>ac3a9df5d195991d85f6e1e9416082338</Anchor>
     <DeclaredIn>kernel.hpp</DeclaredIn>
   </Token>
@@ -4348,7 +5390,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>ac9670c34ae4e43ca669484a7a317e968</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4358,7 +5400,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a6d83e86a8c6b6046bae502774a4e9e83</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4368,7 +5410,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a5bc124f24ecf7e9b0b06d181a6fd7a3e</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4378,7 +5420,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a9660baab3bfc34866b252eff71da777d</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4388,7 +5430,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a804c656f97148c66dee375ad20d6326e</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4398,7 +5440,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>ae245d853ffcebef06bd052849e35471c</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4408,7 +5450,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a5882f98f21668e74fbc61e9a3cc4d4c5</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4418,7 +5460,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>ac9391d6382197266f9d814ed3d21bac2</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4428,7 +5470,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>ac874f858f617e42a6376c7092940376c</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4438,7 +5480,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>ab7f5f57837c11ae93f9a3c6ef0bba5a8</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4448,7 +5490,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a5a90c65c80e669968e259e84b095c408</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4458,7 +5500,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>acb168549620efee2737255317c814059</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4468,7 +5510,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>abfe7fa11c53fb1ea1270f0ed00bb18b8</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4478,7 +5520,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a1d9a56551248abc6954bf18c76ddcb74</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4488,7 +5530,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>abb30f17e5bf0289632c5abbd2d2dd99a</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4498,7 +5540,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>abc652aa810e06ef28716a20cb70d51d4</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
   </Token>
@@ -4508,7 +5550,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ab28e82ae69032cb4ad3ec3a0be3d7129</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4518,9 +5560,19 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>aa7ae5b5a918e00776ff07fb1c58a348d</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>logicalAddress</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a3758234a459ddf9e93bbd427820df244</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4528,7 +5580,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/dbc/a46190.html</Path>
+    <Path>d4/d78/a49550.html</Path>
     <Anchor>a887422301cbe9a94f8b96263415640cf</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -4538,7 +5590,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/dbc/a46190.html</Path>
+    <Path>d4/d78/a49550.html</Path>
     <Anchor>a5be9493285a1f50a67d98b887537217d</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -4548,7 +5600,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>a9c36d0fe3ec4675cbffdc9b52f5fb399</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4558,7 +5610,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>a9c36d0fe3ec4675cbffdc9b52f5fb399</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4568,7 +5620,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d8/d74/a46268.html</Path>
+    <Path>d4/da7/a49637.html</Path>
     <Anchor>a14e1e30a5e2cbbd23a1fd111357f9076</Anchor>
     <DeclaredIn>kdriver.hpp</DeclaredIn>
   </Token>
@@ -4578,7 +5630,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d7/da8/a46172.html</Path>
+    <Path>da/d37/a49529.html</Path>
     <Anchor>ad88722f3968407fe6f7759a3c7f70bac</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
   </Token>
@@ -4589,7 +5641,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>ab2f028e778c32f382221057fabe4d7db</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
   </Token>
@@ -4600,7 +5652,7 @@
       <Type>econst</Type>
       <Scope>hardware_communication</Scope>
     </TokenIdentifier>
-    <Path>d4/d9a/a46288.html</Path>
+    <Path>df/dce/a49663.html</Path>
     <Anchor>ad38a4a4ac62c5165be6aad855b6dab82aedac33a38f15a3d9168fc0067c65cd14</Anchor>
     <DeclaredIn>kpci.hpp</DeclaredIn>
   </Token>
@@ -4611,9 +5663,19 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a5274bbb502f50306c4c211d8ae127a39</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mode</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>af294e94ca5176720ef5e5cbedc95ca47</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4621,9 +5683,19 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d0e/a46265.html</Path>
+    <Path>d8/d27/a49634.html</Path>
     <Anchor>a637dd833f5f7af42afa1f42349a4d89e</Anchor>
     <DeclaredIn>kmouse.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NULL</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a070d2ce7b6bb7e5c05602aa8c308d0c4</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4631,9 +5703,29 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>aef2b82bef7fb75f5b80455fcd69be4ed</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>numRecvBuffers</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a36340f684c64be5544c82a3789fd506f</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>numSendBuffers</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>aeab3c9d04fb59dde6ac8d99b43eced43</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4641,7 +5733,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>afa145befcf5e7b83424408ca503c8637</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4651,7 +5743,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>af057efbdbcd21ea12954d49cd2d245c6</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4661,7 +5753,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>afa145befcf5e7b83424408ca503c8637</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4671,7 +5763,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>af057efbdbcd21ea12954d49cd2d245c6</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4681,7 +5773,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>a22aea74a1155aa798d6032da46da2391</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4691,7 +5783,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>ab26fe706b29fdeb33d5f6ead76c05815</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4701,7 +5793,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>a22aea74a1155aa798d6032da46da2391</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4711,7 +5803,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>ab26fe706b29fdeb33d5f6ead76c05815</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4721,7 +5813,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>a160dcabc54bbecfc69484678cafadb81</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4731,7 +5823,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>a160dcabc54bbecfc69484678cafadb81</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4741,7 +5833,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>af2243bb4c2126b7b2b393e06090fbe59</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4751,7 +5843,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>af2243bb4c2126b7b2b393e06090fbe59</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
   </Token>
@@ -4762,9 +5854,19 @@
       <Type>data</Type>
       <Scope>memory</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>a692a87f8360162408613c734e40b21cc</Anchor>
     <DeclaredIn>kpmm.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>physicalAddress</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a6469306281eb4a46421f00e1d4afbf2e</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4772,7 +5874,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d9/d3f/a46256.html</Path>
+    <Path>d2/d6b/a49622.html</Path>
     <Anchor>ad55de1ff5ba268d5fb64ef5d1393bcbd</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -4782,7 +5884,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d9/d3f/a46256.html</Path>
+    <Path>d2/d6b/a49622.html</Path>
     <Anchor>a4566458600827d2a7aa25cc04550d82a</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -4792,7 +5894,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d9/d3f/a46256.html</Path>
+    <Path>d2/d6b/a49622.html</Path>
     <Anchor>a4963f58f57a5f28715b99c2a016336da</Anchor>
     <DeclaredIn>ktimer.hpp</DeclaredIn>
   </Token>
@@ -4803,7 +5905,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>aa7de4c6aa018e049aa8992b037cc052a</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -4814,7 +5916,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a3d0041ad59dbbae5bc9adbb8ab784499</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -4825,7 +5927,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a45ee52b918a784ff0e96e7c8917a91d9</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -4836,7 +5938,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a5ecbf4c8112c602ba65a689ebe5014f8</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -4846,7 +5948,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a0a72b35b5fcadccd545ee4c5ef7efdd3</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4856,7 +5958,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a6aba53071c94f3ffe96befc625602c9c</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4867,9 +5969,19 @@
       <Type>func</Type>
       <Scope>memory</Scope>
     </TokenIdentifier>
-    <Path>d9/d7d/a46286.html</Path>
+    <Path>d4/de6/a49661.html</Path>
     <Anchor>a9084f7d50c5f956b7b6bde237993919d</Anchor>
     <DeclaredIn>kpmm.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ptrdiff_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a8b3dc34e20aeb16f8a92c181ca3355cc</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4877,7 +5989,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>dd/ddd/a46184.html</Path>
+    <Path>d3/d93/a49541.html</Path>
     <Anchor>a0f723f009d0b6f246530cbbac3ec1dd4</Anchor>
     <DeclaredIn>kheap.cpp</DeclaredIn>
   </Token>
@@ -4887,9 +5999,19 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d9/d8a/a46232.html</Path>
+    <Path>de/dd4/a49595.html</Path>
     <Anchor>a0f723f009d0b6f246530cbbac3ec1dd4</Anchor>
     <DeclaredIn>kheap.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>recvBufferDescrAddress</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a71f982146d09c5d3aa28065021473785</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4897,9 +6019,39 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>acb7bc06bed6f6408d719334fc41698c7</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reserved1</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>a8fe94c3cee3fe8f12d5924356194e77f</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reserved2</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>abfcf5454c37d0a8ff1562aee5a078e6e</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reserved3</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>ab2fa7b967649e7c6ddc0d86321cda4db</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4908,7 +6060,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a6cfc2f6949fb98dfc419f9fd19f95982</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -4918,7 +6070,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a0d47ea941c3bdfd06858a467d2e76d83</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4928,7 +6080,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ab9e609c85bc4472f4f9b69697f2e5067</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4938,7 +6090,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a0cb0ae4ca069ed571a3b2db9190e12df</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4948,7 +6100,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a6c474d3015717ee1a2d99ae6a7b00ec3</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4958,7 +6110,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ae04daf26bdb792ae557ef1216021cc43</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4968,7 +6120,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>add294548173871e30e54b92bf5da2758</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4978,7 +6130,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ae86357f11d481de7242f3178629241b8</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4988,7 +6140,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a9759917f0cd67a1d7c87849e211a7993</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -4998,7 +6150,7 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a79a943b17e5929ca9e06fc7cc1cb0ccc</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -5008,9 +6160,19 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a7667e7c13f08890d3a6051346233691c</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sendBufferDescrAddress</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/dce/a49631.html</Path>
+    <Anchor>af98ded2ea48957eae492b474882f591c</Anchor>
+    <DeclaredIn>kamd79c973.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5018,9 +6180,29 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d7/da8/a46172.html</Path>
+    <Path>da/d37/a49529.html</Path>
     <Anchor>af98219b0fb886040896b83966903a135</Anchor>
     <DeclaredIn>kshell.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>size_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>aeb8d016db5d616eed7d5bd2c24b70a86</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>srcMAC_BE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d9/d9d/a49604.html</Path>
+    <Anchor>afdafc3e6dd80e5c21345cc0c3a7d8411</Anchor>
+    <DeclaredIn>ketherframe.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5028,7 +6210,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d8/dd5/a46274.html</Path>
+    <Path>df/d01/a49643.html</Path>
     <Anchor>a3c59346dd338708c94ca75cf21b78195</Anchor>
     <DeclaredIn>kmultitasking.hpp</DeclaredIn>
   </Token>
@@ -5039,7 +6221,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a63ca8d876189450b295982fff644a87d</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
   </Token>
@@ -5050,7 +6232,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a99f3ad2e04e4aeed5b5c88cdcf3e4ed5</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
   </Token>
@@ -5061,7 +6243,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>aa4212b6cd7356ed270d7ec96ca6e0b7a</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
   </Token>
@@ -5072,7 +6254,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a7510b4597e3f2aadc355012fa4c0841b</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
   </Token>
@@ -5083,7 +6265,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a93f0529e1397d926317ffa75fe1d86fb</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
   </Token>
@@ -5094,7 +6276,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>ad30174c82eccdf1c3234ac9b5bdc85ac</Anchor>
     <DeclaredIn>kstring.cpp</DeclaredIn>
   </Token>
@@ -5104,17 +6286,37 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/dbc/a46190.html</Path>
+    <Path>d4/d78/a49550.html</Path>
     <Anchor>a49426d7a9b562958ad2ab7fbf134f368</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>task_Net</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d6/d6a/a49535.html</Path>
+    <Anchor>a210086608858e7590568100f2f8125ee</Anchor>
+    <DeclaredIn>kernel.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>task_Net</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/da2/a49526.html</Path>
+    <Anchor>a210086608858e7590568100f2f8125ee</Anchor>
+    <DeclaredIn>kernel.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>task_o</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d67/a46178.html</Path>
+    <Path>d6/d6a/a49535.html</Path>
     <Anchor>a801da88ec50b03be9b883d3b4fb77fdd</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
@@ -5124,28 +6326,28 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
+    <Path>d1/da2/a49526.html</Path>
     <Anchor>a801da88ec50b03be9b883d3b4fb77fdd</Anchor>
     <DeclaredIn>kernel.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>task_x</Name>
+      <Name>task_X</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d2/d67/a46178.html</Path>
-    <Anchor>a471ccb9cde03a1f1d2ae8f9275e88b0e</Anchor>
+    <Path>d6/d6a/a49535.html</Path>
+    <Anchor>a684a61a1775c2f3e6bcde1b5eb6c05af</Anchor>
     <DeclaredIn>kernel.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>task_x</Name>
+      <Name>task_X</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d7/d2c/a46169.html</Path>
-    <Anchor>a471ccb9cde03a1f1d2ae8f9275e88b0e</Anchor>
+    <Path>d1/da2/a49526.html</Path>
+    <Anchor>a684a61a1775c2f3e6bcde1b5eb6c05af</Anchor>
     <DeclaredIn>kernel.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5154,9 +6356,59 @@
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
     </TokenIdentifier>
-    <Path>de/d41/a46277.html</Path>
+    <Path>df/d16/a49652.html</Path>
     <Anchor>a35fc01d4eba01f3f2ec636bd6b5ff34f</Anchor>
     <DeclaredIn>kicxxabi.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uint16_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ae90bc0f640485134cec67960b7aeea58</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uint32_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>ae008442be20b62c4c3849cb82b2f38f4</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uint64_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a99d27d1b500078b529634bbb3ae8238e</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uint8_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a51b491b5f53e010e8644a07933b1781a</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uintptr_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d8/df4/a49646.html</Path>
+    <Anchor>a17af2adfe1c356ae7dc1dc1958044779</Anchor>
+    <DeclaredIn>ktypes.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5165,7 +6417,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a84a72638a4a04f5706b7f9b217359ecf</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -5176,7 +6428,7 @@
       <Type>func</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>a9d1f0f838e646660db6d9284725c2b4c</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -5186,7 +6438,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a4dd5e213df2a9b2ad66c49c23a14fdc5</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -5196,7 +6448,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a6ef65886fcf664d696b4361309452c2c</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -5206,7 +6458,7 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>af40b8eb1a5b52ab270a63992a3548408</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -5216,9 +6468,59 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>a95dcc3ea7fb0310df8f2ab457deca483</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>va_arg</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d5/d61/a49649.html</Path>
+    <Anchor>af7d9862332c39249bf999091734b5ee1</Anchor>
+    <DeclaredIn>kstdarg.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>va_copy</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d5/d61/a49649.html</Path>
+    <Anchor>a23a32070bb5595761e7ed3884a84eb4a</Anchor>
+    <DeclaredIn>kstdarg.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>va_end</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d5/d61/a49649.html</Path>
+    <Anchor>a823b205416e9129825841b74c3bf8484</Anchor>
+    <DeclaredIn>kstdarg.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>va_list</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>d5/d61/a49649.html</Path>
+    <Anchor>a73dbcb1f9e1dee18bc52fdca62cea304</Anchor>
+    <DeclaredIn>kstdarg.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>va_start</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d5/d61/a49649.html</Path>
+    <Anchor>aa0628ab596c3d7e78f5e08c2d98e24da</Anchor>
+    <DeclaredIn>kstdarg.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5227,7 +6529,7 @@
       <Type>data</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>afcc8f777c85dda2c73a1169ce73ea301</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -5238,7 +6540,7 @@
       <Type>data</Type>
       <Scope>basic</Scope>
     </TokenIdentifier>
-    <Path>df/db2/a46284.html</Path>
+    <Path>d6/df3/a49659.html</Path>
     <Anchor>ace443dec9f4b1869b9263d05be008e62</Anchor>
     <DeclaredIn>kiostream.cpp</DeclaredIn>
   </Token>
@@ -5248,7 +6550,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ab811be3c4548b496014638baf9274134</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -5258,7 +6560,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d5/de6/a46280.html</Path>
+    <Path>da/dfc/a49655.html</Path>
     <Anchor>ad93710bf7c9cbb3ae688f168608c406f</Anchor>
     <DeclaredIn>kgdt.hpp</DeclaredIn>
   </Token>
@@ -5268,7 +6570,7 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>de/d17/a46250.html</Path>
+    <Path>d2/dd2/a49616.html</Path>
     <Anchor>af52ef1538ab7549c816752a65748cdfc</Anchor>
     <DeclaredIn>kinterrupt.hpp</DeclaredIn>
   </Token>

@@ -1,9 +1,11 @@
 #include "kernel.hpp"
 
+using namespace basic;
+
 void task_o(void* arg) {
     (void) arg;
     for(int i=0; i<2000; i++){
-        basic::printf("o");
+        printf("o");
         essential::Time::sleep(1);
     }
 }
@@ -11,46 +13,19 @@ void task_o(void* arg) {
 void task_X(void* arg) {
     (void) arg;
     for(int i=0; i<2000; i++){
-        basic::printf("X");
+        printf("X");
         essential::Time::sleep(1);
     }
 }
 
-// NETWORK TASK
 void task_Net(void* arg) {
     driver::amd_am79c973* netDriver = (driver::amd_am79c973*)arg;
-    
-    // Safety check
+    printf("%p\n", netDriver);
     if(netDriver == 0) {
-        basic::printf("[NET] No Driver Found!\n");
+        printf("[NET ERROR] no driver found!\n");
         return;
     }
 
-    uint8_t buffer[64];
-    net::EtherFrameHeader* header = (net::EtherFrameHeader*)buffer;
-
-    // Set Destination MAC: BROADCAST (FF:FF:FF:FF:FF:FF)
-    for(int i=0; i<6; i++) header->dstMAC[i] = 0xFF;
-
-    // Set Source MAC: 52:54:00:12:34:56 (QEMU Default)
-    // Note: In a real stack, this comes from the driver itself.
-    header->srcMAC[0] = 0x52; header->srcMAC[1] = 0x54; header->srcMAC[2] = 0x00;
-    header->srcMAC[3] = 0x12; header->srcMAC[4] = 0x34; header->srcMAC[5] = 0x56;
-
-    // Set EtherType: 0x0800 (IPv4)
-    header->etherType = net::htons(0x0800);
-
-    // Set Payload
-    const char* msg = "Hello Network!";
-    char* data = (char*)(buffer + sizeof(net::EtherFrameHeader));
-    for(int i=0; msg[i] != 0; i++) data[i] = msg[i];
-
-    // Loop to send packet repeatedly
-    while(true) {
-        basic::printf("[NET] Sending Packet...\n");
-        netDriver->Send(buffer, 64);
-        essential::Time::sleep(1000); // Send every 1 seconds
-    }
 }
 
 driver::amd_am79c973* globalNetDriver = nullptr;
@@ -59,43 +34,45 @@ void kernelTail(void* arg)
 {
     KernelArgs* args = (KernelArgs*)arg;
 
-    basic::printf("\nHELLO FROM OSOS ('help' to see commands)...\n");
+    printf("\nHELLO FROM OSOS ('help' to see commands)...\n");
     #if defined(serialMode) && serialMode == 1
-        basic::printf("\nYou are using serial QEMU, Use 'ctrl+H' For Backspace\n");
+        printf("\nYou are using serial QEMU, Use 'ctrl+H' For Backspace\n");
     #endif
-    basic::printf("\nOSOS> ");
+    printf("\nOSOS> ");
     while (true){
         args->shell->update();
         asm("hlt");
     }
     
-    basic::disable_cursor();
+    disable_cursor();
     essential::__cxa_finalize(0);
 }
 
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
     essential::__callConstructors(); 
-    basic::enable_cursor(0,15);
-    basic::clearScreen();
+    enable_cursor(0,15);
+    clearScreen();
     
-    // Install GDT
+    // https://wiki.osdev.org/Global_Descriptor_Table
     essential::GDT_Manager osos_GDT_Manager;
     osos_GDT_Manager.installTable();
     
-    // Initialize Memory
+    // https://wiki.osdev.org/Memory_management
     memory::PhysicalMemoryManager::init(mbi);
     memory::PagingManager::init();
+    // https://wiki.osdev.org/Writing_a_memory_manager
     memory::kernel_heap.init((void*)0x1000000, 8 * 1024 * 1024);
     
-    // Initialize Core Kernel Managers
+    // for kernel therads
     essential::KThreadManager osos_ThreadManager(&osos_GDT_Manager);
+    // for interrupts
     hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT_Manager, &osos_ThreadManager);
     
-    // Initialize Shell
+    // creating KernelShell object to interract with OSOS
     KernelShell shell(&osos_ThreadManager, mbi);
     
-    // Initialize Drivers
+    // https://wiki.osdev.org/Category:Drivers
     driver::DriverManager driverManager;
     
         driver::TimerDriver timer(&osos_InterruptManager, 1000); 
@@ -113,15 +90,15 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
         SerialEventHandler_for_kernel serialHandler(&shell);
         driver::SerialDriver serialIO(&osos_InterruptManager, &serialHandler);
         driverManager.addDriver(&serialIO);
-        
+
         hardware_communication::PCI_Controller pciController;
         pciController.selectDrivers(&driverManager, &osos_InterruptManager);
 
-    // Activate Hardware
+    // activate all drivers
     driverManager.activateAll();
     osos_InterruptManager.installTable();
     
-    // Prepare Thread Arguments
+    // making Thread Arguments for kernelTail task
     KernelArgs* kArgs = new KernelArgs();
     kArgs->gdtManager = &osos_GDT_Manager;
     kArgs->interruptManager = &osos_InterruptManager;
@@ -129,7 +106,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     kArgs->timer = &timer;
     kArgs->shell = &shell;
 
-    // Create Tasks
+    // creating tasks (or kernel therads)
     essential::KThread *haltTask= new essential::KThread(&kernelTail, kArgs);
     essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
     essential::KThread* task2 = new essential::KThread(&task_X, nullptr);
@@ -141,16 +118,16 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     if(globalNetDriver != nullptr) {
         essential::KThread* task3 = new essential::KThread(&task_Net, (void*)globalNetDriver);
         shell.addShellTask(task3);
-        basic::printf("[INFO] Network Task Started.\n");
+        printf("[INFO] Network task added to Kernel Shell.\n");
     } else {
-        basic::printf("[WARN] Network Driver not initialized.\n");
+        printf("[WARN] Network driver not initialized.\n");
     }
     
     // Enable Interrupts (Start the System)
     hardware_communication::InterruptManager::activate();
 
     while (true){asm("hlt");};
-    basic::disable_cursor();
+    disable_cursor();
     essential::__cxa_finalize(0);
     (void)magicnumber;
 }

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['heapmanager_0',['HeapManager',['../dd/d62/a47236.html',1,'memory']]]
+  ['gdt_5fmanager_0',['GDT_Manager',['../db/d7f/a50556.html',1,'essential']]],
+  ['gdt_5frow_1',['GDT_Row',['../d6/d62/a50552.html',1,'essential']]]
 ];

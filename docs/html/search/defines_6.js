@@ -1,4 +1,14 @@
 var searchData=
 [
-  ['tab_5fwidth_0',['TAB_WIDTH',['../d1/dbc/a46190.html#a49426d7a9b562958ad2ab7fbf134f368',1,'kiostream.cpp']]]
+  ['seg_5faccess_5fdesctype_0',['SEG_ACCESS_DESCTYPE',['../da/dfc/a49655.html#a0d47ea941c3bdfd06858a467d2e76d83',1,'kgdt.hpp']]],
+  ['seg_5faccess_5fpres_1',['SEG_ACCESS_PRES',['../da/dfc/a49655.html#ab9e609c85bc4472f4f9b69697f2e5067',1,'kgdt.hpp']]],
+  ['seg_5faccess_5fpriv_2',['SEG_ACCESS_PRIV',['../da/dfc/a49655.html#a0cb0ae4ca069ed571a3b2db9190e12df',1,'kgdt.hpp']]],
+  ['seg_5faccess_5ftype_3',['SEG_ACCESS_TYPE',['../da/dfc/a49655.html#a6c474d3015717ee1a2d99ae6a7b00ec3',1,'kgdt.hpp']]],
+  ['seg_5fcode_5fexrd_4',['SEG_CODE_EXRD',['../da/dfc/a49655.html#ae04daf26bdb792ae557ef1216021cc43',1,'kgdt.hpp']]],
+  ['seg_5fdata_5frdwr_5',['SEG_DATA_RDWR',['../da/dfc/a49655.html#add294548173871e30e54b92bf5da2758',1,'kgdt.hpp']]],
+  ['seg_5fgran_5fgran_6',['SEG_GRAN_GRAN',['../da/dfc/a49655.html#ae86357f11d481de7242f3178629241b8',1,'kgdt.hpp']]],
+  ['seg_5fgran_5flong_7',['SEG_GRAN_LONG',['../da/dfc/a49655.html#a9759917f0cd67a1d7c87849e211a7993',1,'kgdt.hpp']]],
+  ['seg_5fgran_5fsavl_8',['SEG_GRAN_SAVL',['../da/dfc/a49655.html#a79a943b17e5929ca9e06fc7cc1cb0ccc',1,'kgdt.hpp']]],
+  ['seg_5fgran_5fsize_9',['SEG_GRAN_SIZE',['../da/dfc/a49655.html#a7667e7c13f08890d3a6051346233691c',1,'kgdt.hpp']]],
+  ['shell_5fbuffer_5fsize_10',['SHELL_BUFFER_SIZE',['../da/d37/a49529.html#af98219b0fb886040896b83966903a135',1,'kshell.hpp']]]
 ];

@@ -5,7 +5,7 @@
 
 namespace driver
 {
-/// @brief Base class (interface) for all hardware drivers in the operating system.
+/// @brief Base class (interface) for all hardware drivers with 3 virtual functions. 1)activate 2)reset 3)deactivate
 class Driver{ 
     public:
         Driver();

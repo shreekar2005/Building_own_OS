@@ -255,9 +255,6 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor* dev, hardware_co
             {
                 case 0x2000:
                     basic::printf("AMD am79c973 (network card) detected! ");
-                    uint32_t command = read32(dev->bus, dev->device, dev->function, 0x04);
-                    write32(dev->bus, dev->device, dev->function, 0x04, command | 0x04);
-                    basic::printf("PCI Bus Mastering Enabled. ");
                     driver::Driver* driver = new driver::amd_am79c973(dev, interrupt_manager);
                     globalNetDriver = (driver::amd_am79c973*)driver;
                     return driver;

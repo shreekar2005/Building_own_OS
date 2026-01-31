@@ -1,5 +1,5 @@
-#ifndef KAMD79C973_HPP
-#define KAMD79C973_HPP
+#ifndef _OSOS_DRIVER_KAMD79C973_H
+#define _OSOS_DRIVER_KAMD79C973_H
 
 #include "essential/ktypes.hpp"
 #include "driver/kdriver.hpp"
@@ -9,46 +9,65 @@
 
 namespace driver {
 
+    class amd_am79c973;
+        
+    class RawDataHandler
+    {
+    protected:
+        amd_am79c973* backend;
+    public:
+        RawDataHandler(amd_am79c973* backend);
+        ~RawDataHandler();
+        
+        virtual bool onRawDataReceived(uint8_t* buffer, uint32_t size);
+        void send(uint8_t* buffer, uint32_t size);
+    };
+
     class amd_am79c973 : public Driver, public hardware_communication::InterruptHandler {
         
-        hardware_communication::Port16Bit MACAddress0Port;
-        hardware_communication::Port16Bit MACAddress2Port;
-        hardware_communication::Port16Bit MACAddress4Port;
-        hardware_communication::Port16Bit RegisterDataPort;
-        hardware_communication::Port16Bit RegisterAddressPort;
-        hardware_communication::Port16Bit ResetPort;
-        hardware_communication::Port16Bit BusControlRegisterDataPort;
-
-        // Corrected struct with explicit types (No Bitfields)
-        struct InitializationBlock {
+        struct InitializationBlock
+        {
             uint16_t mode;
-            uint16_t lengthInfo; // Replaces bitfields
-            uint32_t physicalAddressLow;
-            uint16_t physicalAddressHigh;
-            uint16_t reserved;
+            unsigned reserved1 : 4; // setting 4 bits as reserver
+            unsigned numSendBuffers : 4;
+            unsigned reserved2 : 4;
+            unsigned numRecvBuffers : 4;
+            uint64_t physicalAddress : 48; // setting 48 bits for physicalAddress (MAC Address)
+            uint16_t reserved3;
             uint64_t logicalAddress;
             uint32_t recvBufferDescrAddress;
             uint32_t sendBufferDescrAddress;
         } __attribute__((packed));
 
-        // Added 'volatile' to ensure compiler doesn't cache these values
-        struct BufferDescriptor {
-            volatile uint32_t address;
-            volatile uint32_t flags;
-            volatile uint32_t flags2;
-            volatile uint32_t avail;
+        struct BufferDescriptor
+        {
+            uint32_t address;
+            uint32_t flags;
+            uint32_t flags2;
+            uint32_t avail;
         } __attribute__((packed));
 
-        InitializationBlock* initBlock;
+        hardware_communication::Port16Bit MACAddress0Port;
+        hardware_communication::Port16Bit MACAddress2Port;
+        hardware_communication::Port16Bit MACAddress4Port;
+        hardware_communication::Port16Bit registerDataPort;
+        hardware_communication::Port16Bit registerAddressPort;
+        hardware_communication::Port16Bit resetPort;
+        hardware_communication::Port16Bit busControlRegisterDataPort;
+
+        InitializationBlock initBlock;
+
         BufferDescriptor* sendBufferDescr;
-        BufferDescriptor* recvBufferDescr;
-
-        // NOTE: We REMOVED the arrays (sendBuffers, etc.) from here.
-        // They are now static variables in the .cpp file to ensure 
-        // they live in Identity Mapped memory (BSS).
-
+        uint8_t sendBufferDescrMemory[2048+15];
+        uint8_t sendBuffers[2*1024+15][8]; // 8 buffers of each size 2 KB each (15bytes are for aligning buffers e.g. address of buffer should be multiple of 16)
         uint8_t currentSendBuffer;
+        
+        BufferDescriptor* recvBufferDescr;
+        uint8_t recvBufferDescrMemory[2048+15];
+        uint8_t recvBuffers[2*1024+15][8]; // same as sendBuffers
         uint8_t currentRecvBuffer;
+
+        RawDataHandler* handler;
 
     public:
         amd_am79c973(hardware_communication::PCI_DeviceDescriptor* dev, 
@@ -57,9 +76,15 @@ namespace driver {
 
         void activate();
         int reset();
-        void deactivate();
-        void Send(uint8_t* buffer, int count);
         uint32_t handleInterrupt(uint32_t esp);
+        void deactivate();
+
+        void send(uint8_t* buffer, int count);
+        void receive();
+        void setHandler(RawDataHandler* handler);
+        uint64_t getMACAddress();
+        void setIPAddress(uint32_t);
+        uint32_t getIPAddress();
     };
 }
 

@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../db/d3e/a47164.html#aeee649c66c6b25bc2c03b9004ce9ddb4',1,'essential::GDT_Manager::kernel_CS_selector()'],['../d5/de6/a46280.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
-  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../db/d3e/a47164.html#af5f963bc66aa93608c39d294b52df657',1,'essential::GDT_Manager::kernel_DS_selector()'],['../d5/de6/a46280.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
-  ['kernelmain_2',['kernelmain',['../d2/d67/a46178.html#abb4e4866092116b520310d61961bfe12',1,'kernelMain(multiboot_info_t *mbi, uint32_t magicnumber):&#160;kernel.cpp'],['../d7/d2c/a46169.html#abb4e4866092116b520310d61961bfe12',1,'kernelMain(multiboot_info_t *mbi, uint32_t magicnumber):&#160;kernel.cpp']]],
-  ['kernelshell_3',['KernelShell',['../d3/d76/a47120.html#aba0c3122f7ca67d94c50f6d32672a53c',1,'KernelShell']]],
-  ['kerneltail_4',['kerneltail',['../d2/d67/a46178.html#ac3a9df5d195991d85f6e1e9416082338',1,'kernelTail(void *arg):&#160;kernel.cpp'],['../d7/d2c/a46169.html#ac3a9df5d195991d85f6e1e9416082338',1,'kernelTail(void *arg):&#160;kernel.cpp']]],
-  ['keyboarddriver_5',['KeyboardDriver',['../d1/d18/a47136.html#aab41851dc0d68f42e172bdc67bb9f06e',1,'driver::KeyboardDriver']]],
-  ['keyboardeventhandler_6',['KeyboardEventHandler',['../df/d8d/a47132.html#a37b511e50e8c1f5d294740b29d5e6c92',1,'driver::KeyboardEventHandler']]],
-  ['keyboardeventhandler_5ffor_5fkernel_7',['KeyboardEventHandler_for_kernel',['../d8/d55/a47108.html#a9d7f63ab5c08495337ba137785c0ccc4',1,'KeyboardEventHandler_for_kernel']]],
-  ['killcurrentthread_8',['killCurrentThread',['../dd/d24/a47180.html#a114f7521fcdc12100bbc394078de51f2',1,'essential::KThreadManager']]],
-  ['kthread_9',['KThread',['../d7/def/a47176.html#a683138357336ecc0d7ae3bbb1a20d26e',1,'essential::KThread']]],
-  ['kthreadmanager_10',['KThreadManager',['../dd/d24/a47180.html#a576997fcd010f762792ba4708816a399',1,'essential::KThreadManager']]]
+  ['kernel_5fcs_5fselector_0',['kernel_cs_selector',['../db/d7f/a50556.html#aeee649c66c6b25bc2c03b9004ce9ddb4',1,'essential::GDT_Manager::kernel_CS_selector()'],['../da/dfc/a49655.html#a169aef5ef99da67bb0047dfc3d6a22e4',1,'kernel_CS_selector():&#160;kgdt.hpp']]],
+  ['kernel_5fds_5fselector_1',['kernel_ds_selector',['../db/d7f/a50556.html#af5f963bc66aa93608c39d294b52df657',1,'essential::GDT_Manager::kernel_DS_selector()'],['../da/dfc/a49655.html#aaa6fbf4816b6af649fc82186fe18b4e0',1,'kernel_DS_selector():&#160;kgdt.hpp']]],
+  ['kernelmain_2',['kernelmain',['../d6/d6a/a49535.html#abb4e4866092116b520310d61961bfe12',1,'kernelMain(multiboot_info_t *mbi, uint32_t magicnumber):&#160;kernel.cpp'],['../d1/da2/a49526.html#abb4e4866092116b520310d61961bfe12',1,'kernelMain(multiboot_info_t *mbi, uint32_t magicnumber):&#160;kernel.cpp']]],
+  ['kernelshell_3',['KernelShell',['../df/d35/a50496.html#aba0c3122f7ca67d94c50f6d32672a53c',1,'KernelShell']]],
+  ['kerneltail_4',['kerneltail',['../d6/d6a/a49535.html#ac3a9df5d195991d85f6e1e9416082338',1,'kernelTail(void *arg):&#160;kernel.cpp'],['../d1/da2/a49526.html#ac3a9df5d195991d85f6e1e9416082338',1,'kernelTail(void *arg):&#160;kernel.cpp']]],
+  ['keyboarddriver_5',['KeyboardDriver',['../d1/d45/a50528.html#aab41851dc0d68f42e172bdc67bb9f06e',1,'driver::KeyboardDriver']]],
+  ['keyboardeventhandler_6',['KeyboardEventHandler',['../d0/de6/a50524.html#a37b511e50e8c1f5d294740b29d5e6c92',1,'driver::KeyboardEventHandler']]],
+  ['keyboardeventhandler_5ffor_5fkernel_7',['KeyboardEventHandler_for_kernel',['../d7/da8/a50484.html#a9d7f63ab5c08495337ba137785c0ccc4',1,'KeyboardEventHandler_for_kernel']]],
+  ['killcurrentthread_8',['killCurrentThread',['../d7/d1d/a50572.html#a114f7521fcdc12100bbc394078de51f2',1,'essential::KThreadManager']]],
+  ['kthread_9',['KThread',['../d6/d76/a50568.html#a683138357336ecc0d7ae3bbb1a20d26e',1,'essential::KThread']]],
+  ['kthreadmanager_10',['KThreadManager',['../d7/d1d/a50572.html#a576997fcd010f762792ba4708816a399',1,'essential::KThreadManager']]]
 ];
