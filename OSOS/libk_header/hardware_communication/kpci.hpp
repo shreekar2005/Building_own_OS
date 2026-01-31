@@ -1,7 +1,7 @@
 #ifndef _OSOS_HARDWARECOMMUNICATION_KPCI_H
 #define _OSOS_HARDWARECOMMUNICATION_KPCI_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 #include "hardware_communication/kport.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "driver/kdriver.hpp"

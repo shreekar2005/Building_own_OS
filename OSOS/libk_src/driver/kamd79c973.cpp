@@ -117,6 +117,8 @@ void amd_am79c973::activate()
     
     registerAddressPort.write(0);
     registerDataPort.write(0x42);
+
+    printf("Network Driver activated!\n");
 }
 
 int amd_am79c973::reset()

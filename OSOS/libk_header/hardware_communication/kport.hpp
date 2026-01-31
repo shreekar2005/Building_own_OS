@@ -1,7 +1,7 @@
 #ifndef _OSOS_HARDWARECOMMUNICATION_KPORT_H 
 #define _OSOS_HARDWARECOMMUNICATION_KPORT_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 
 namespace hardware_communication
 {

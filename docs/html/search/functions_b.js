@@ -1,17 +1,12 @@
 var searchData=
 [
-  ['on_5fkey_5fpressed_0',['on_key_pressed',['../df/d35/a50496.html#a2c5d8f96714bc8944268e7d8efd60b8a',1,'KernelShell']]],
-  ['ondatareceived_1',['ondatareceived',['../dd/d52/a50492.html#add675289514a4144f97d2189183400a8',1,'SerialEventHandler_for_kernel::onDataReceived()'],['../d3/d50/a50540.html#aefe1028b4b0aac999635d5846b39c761',1,'driver::SerialEventHandler::onDataReceived()']]],
-  ['onetherframereceived_2',['onEtherFrameReceived',['../dd/ddf/a50644.html#ac51d7333d05a6f2f67a83584fe2779c8',1,'net::EtherFrameHandler']]],
-  ['onkeydown_3',['onkeydown',['../d7/da8/a50484.html#af82a0bd16f995dd285d4f7822117377c',1,'KeyboardEventHandler_for_kernel::onKeyDown()'],['../d0/de6/a50524.html#ae2b923ef0eb58e29f57a155debadac6a',1,'driver::KeyboardEventHandler::onKeyDown()']]],
-  ['onkeyup_4',['onkeyup',['../d7/da8/a50484.html#a0d74a48573c10174ac8bf836ac39f886',1,'KeyboardEventHandler_for_kernel::onKeyUp()'],['../d0/de6/a50524.html#a28547100b7420e1f73b745df873cd411',1,'driver::KeyboardEventHandler::onKeyUp()']]],
-  ['onmousedown_5',['onmousedown',['../d4/df1/a50488.html#ae860a16e70322e5c4bb01e1108e50bb1',1,'MouseEventHandler_for_kernel::onMouseDown()'],['../d1/d32/a50532.html#a2f12c5f63356c3045fd6cb46fd89374f',1,'driver::MouseEventHandler::onMouseDown()']]],
-  ['onmousemove_6',['onmousemove',['../d4/df1/a50488.html#adbb4c4e2814b335579119c324313f652',1,'MouseEventHandler_for_kernel::onMouseMove()'],['../d1/d32/a50532.html#a68f635b3b65f927d37d4e0835f7e0b30',1,'driver::MouseEventHandler::onMouseMove()']]],
-  ['onmouseup_7',['onmouseup',['../d4/df1/a50488.html#afca536c2187a65da265daa2d2af75d4d',1,'MouseEventHandler_for_kernel::onMouseUp()'],['../d1/d32/a50532.html#a09b77fe86bfa79313b5c5b91d09eb514',1,'driver::MouseEventHandler::onMouseUp()']]],
-  ['onrawdatareceived_8',['onrawdatareceived',['../df/d03/a50500.html#ad944cf4d2c763261d44e4288b47cd44d',1,'driver::RawDataHandler::onRawDataReceived()'],['../dc/ddb/a50648.html#a28ee9d748f1f424da58729a1b4dac154',1,'net::EtherFrameProvider::onRawDataReceived()']]],
-  ['onthreadexit_9',['onThreadExit',['../d7/d1d/a50572.html#a67d7922bbc93cde1e013da163e528174',1,'essential::KThreadManager']]],
-  ['operator_20delete_10',['operator delete',['../d3/d93/a49541.html#afa145befcf5e7b83424408ca503c8637',1,'operator delete(void *ptr) noexcept:&#160;kheap.cpp'],['../d3/d93/a49541.html#af057efbdbcd21ea12954d49cd2d245c6',1,'operator delete(void *ptr, size_t size) noexcept:&#160;kheap.cpp'],['../de/dd4/a49595.html#afa145befcf5e7b83424408ca503c8637',1,'operator delete(void *ptr) noexcept:&#160;kheap.cpp'],['../de/dd4/a49595.html#af057efbdbcd21ea12954d49cd2d245c6',1,'operator delete(void *ptr, size_t size) noexcept:&#160;kheap.cpp']]],
-  ['operator_20delete_5b_5d_11',['operator delete[]',['../d3/d93/a49541.html#a22aea74a1155aa798d6032da46da2391',1,'operator delete[](void *ptr) noexcept:&#160;kheap.cpp'],['../d3/d93/a49541.html#ab26fe706b29fdeb33d5f6ead76c05815',1,'operator delete[](void *ptr, size_t size) noexcept:&#160;kheap.cpp'],['../de/dd4/a49595.html#a22aea74a1155aa798d6032da46da2391',1,'operator delete[](void *ptr) noexcept:&#160;kheap.cpp'],['../de/dd4/a49595.html#ab26fe706b29fdeb33d5f6ead76c05815',1,'operator delete[](void *ptr, size_t size) noexcept:&#160;kheap.cpp']]],
-  ['operator_20new_12',['operator new',['../d3/d93/a49541.html#a160dcabc54bbecfc69484678cafadb81',1,'operator new(size_t size):&#160;kheap.cpp'],['../de/dd4/a49595.html#a160dcabc54bbecfc69484678cafadb81',1,'operator new(size_t size):&#160;kheap.cpp']]],
-  ['operator_20new_5b_5d_13',['operator new[]',['../d3/d93/a49541.html#af2243bb4c2126b7b2b393e06090fbe59',1,'operator new[](size_t size):&#160;kheap.cpp'],['../de/dd4/a49595.html#af2243bb4c2126b7b2b393e06090fbe59',1,'operator new[](size_t size):&#160;kheap.cpp']]]
+  ['malloc_0',['malloc',['../da/d32/a53525.html#a9c36d0fe3ec4675cbffdc9b52f5fb399',1,'malloc(size_t size):&#160;kheap.cpp'],['../d1/dd0/a53579.html#a9c36d0fe3ec4675cbffdc9b52f5fb399',1,'malloc(size_t size):&#160;kheap.cpp']]],
+  ['mark_5ffree_1',['mark_free',['../d4/d64/a54692.html#afd570d42e70dcc0d3729c4dcca31e44b',1,'memory::PhysicalMemoryManager']]],
+  ['mark_5fused_2',['mark_used',['../d4/d64/a54692.html#a2f6238319856f69ecb697de8548c8c53',1,'memory::PhysicalMemoryManager']]],
+  ['memcpy_3',['memcpy',['../d8/dff/a53655.html#ab2f028e778c32f382221057fabe4d7db',1,'basic']]],
+  ['memset_4',['memset',['../d8/dff/a53655.html#a5274bbb502f50306c4c211d8ae127a39',1,'basic']]],
+  ['mouse_5fblock_5fvideo_5fmem_5fvalue_5',['mouse_block_video_mem_value',['../da/da1/a54560.html#adfb4220d2c664ae5ba11e04d9d182f70',1,'driver::MouseDriver']]],
+  ['mousedriver_6',['MouseDriver',['../da/da1/a54560.html#ab3925414a9d834c2b3892498c0ae3988',1,'driver::MouseDriver']]],
+  ['mouseeventhandler_7',['MouseEventHandler',['../d2/d1a/a54556.html#a91a351ce9442ed70a5202095f0dab802',1,'driver::MouseEventHandler']]],
+  ['mutex_8',['Mutex',['../d2/ddf/a54516.html#abf7627a1a91b97aa52f87eca0dc25f3a',1,'basic::Mutex']]]
 ];

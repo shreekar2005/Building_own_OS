@@ -1,4 +1,7 @@
 #include "basic/kiostream.hpp"
+#include "concurrency/kmutex.hpp"
+#include "concurrency/kspinlock.hpp"
+#include "concurrency/klockguard.hpp"
 #include "driver/kmouse.hpp"
 #include "hardware_communication/kport.hpp"
 #include "hardware_communication/kinterrupt.hpp"
@@ -234,9 +237,14 @@ static void printHex(uintptr_t n, int digits)
     printCharStr(buffer);
 }
 
+static Mutex printfMutex;
+static Spinlock printfSpin;
+
 int printf(const char *format, ...)
 {
-    if(hardware_communication::InterruptManager::interruptActivated==true) asm volatile("pushf; cli");
+    basic::LockGuard<basic::Mutex> guard(printfMutex); // i chose mutex lock (LockGuard will automatically unlocks)
+    // basic::LockGuard<basic::Spinlock> guard(printfSpin);
+
     int chars_written = 0;
 
     va_list args;
@@ -432,7 +440,6 @@ int printf(const char *format, ...)
     va_end(args);
     update_cursor(cursor_x_, cursor_y_);
     
-    if(hardware_communication::InterruptManager::interruptActivated==true) asm volatile("popf"); 
     return chars_written;
 }
 

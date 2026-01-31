@@ -48,14 +48,16 @@ void kernelTail(void* arg)
     essential::__cxa_finalize(0);
 }
 
+// https://wiki.osdev.org/Global_Descriptor_Table
+essential::GDT_Manager osos_GDT_Manager; // making this as global variable, so that it will not use stack and it last forever
+
 extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
     essential::__callConstructors(); 
     enable_cursor(0,15);
     clearScreen();
     
-    // https://wiki.osdev.org/Global_Descriptor_Table
-    essential::GDT_Manager osos_GDT_Manager;
+    
     osos_GDT_Manager.installTable();
     
     // https://wiki.osdev.org/Memory_management
@@ -65,59 +67,59 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     memory::kernel_heap.init((void*)0x1000000, 8 * 1024 * 1024);
     
     // for kernel therads
-    essential::KThreadManager osos_ThreadManager(&osos_GDT_Manager);
+    essential::KThreadManager* osos_ThreadManager = new essential::KThreadManager(&osos_GDT_Manager);
     // for interrupts
-    hardware_communication::InterruptManager osos_InterruptManager(&osos_GDT_Manager, &osos_ThreadManager);
+    hardware_communication::InterruptManager* osos_InterruptManager = new hardware_communication::InterruptManager(&osos_GDT_Manager, osos_ThreadManager);
     
     // creating KernelShell object to interract with OSOS
-    KernelShell shell(&osos_ThreadManager, mbi);
+    KernelShell* shell = new KernelShell(osos_ThreadManager, mbi);
     
     // https://wiki.osdev.org/Category:Drivers
-    driver::DriverManager driverManager;
+    driver::DriverManager* driverManager = new driver::DriverManager();
     
-        driver::TimerDriver timer(&osos_InterruptManager, 1000); 
-        essential::Time::setTimerDriver(&timer); // to initialize essential::Time with timer
-        driverManager.addDriver(&timer);
+        driver::TimerDriver* timer = new driver::TimerDriver(osos_InterruptManager, 1000); 
+        essential::Time::setTimerDriver(timer); // to initialize essential::Time with timer
+        driverManager->addDriver(timer);
 
-        KeyboardEventHandler_for_kernel kbdHandler(&shell);
-        driver::KeyboardDriver keyboard(&osos_InterruptManager, &kbdHandler);
-        driverManager.addDriver(&keyboard);
+        KeyboardEventHandler_for_kernel* kbdHandler = new KeyboardEventHandler_for_kernel(shell);
+        driver::KeyboardDriver* keyboard = new driver::KeyboardDriver(osos_InterruptManager, kbdHandler);
+        driverManager->addDriver(keyboard);
         
-        MouseEventHandler_for_kernel mouseHandler;
-        driver::MouseDriver mouse(&osos_InterruptManager, &mouseHandler);
-        driverManager.addDriver(&mouse);
+        MouseEventHandler_for_kernel* mouseHandler = new MouseEventHandler_for_kernel();
+        driver::MouseDriver* mouse = new driver::MouseDriver(osos_InterruptManager, mouseHandler);
+        driverManager->addDriver(mouse);
         
-        SerialEventHandler_for_kernel serialHandler(&shell);
-        driver::SerialDriver serialIO(&osos_InterruptManager, &serialHandler);
-        driverManager.addDriver(&serialIO);
+        SerialEventHandler_for_kernel* serialHandler = new SerialEventHandler_for_kernel(shell);
+        driver::SerialDriver* serialIO = new driver::SerialDriver(osos_InterruptManager, serialHandler);
+        driverManager->addDriver(serialIO);
 
-        hardware_communication::PCI_Controller pciController;
-        pciController.selectDrivers(&driverManager, &osos_InterruptManager);
+        hardware_communication::PCI_Controller* pciController = new hardware_communication::PCI_Controller();
+        pciController->selectDrivers(driverManager, osos_InterruptManager);
 
     // activate all drivers
-    driverManager.activateAll();
-    osos_InterruptManager.installTable();
+    driverManager->activateAll();
+    osos_InterruptManager->installTable();
     
     // making Thread Arguments for kernelTail task
     KernelArgs* kArgs = new KernelArgs();
     kArgs->gdtManager = &osos_GDT_Manager;
-    kArgs->interruptManager = &osos_InterruptManager;
-    kArgs->driverManager = &driverManager;
-    kArgs->timer = &timer;
-    kArgs->shell = &shell;
+    kArgs->interruptManager = osos_InterruptManager;
+    kArgs->driverManager = driverManager;
+    kArgs->timer = timer;
+    kArgs->shell = shell;
 
     // creating tasks (or kernel therads)
     essential::KThread *haltTask= new essential::KThread(&kernelTail, kArgs);
     essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
     essential::KThread* task2 = new essential::KThread(&task_X, nullptr);
     
-    osos_ThreadManager.addThread(haltTask);
-    shell.addShellTask(task1);
-    shell.addShellTask(task2);
+    osos_ThreadManager->addThread(haltTask);
+    shell->addShellTask(task1);
+    shell->addShellTask(task2);
     
     if(globalNetDriver != nullptr) {
         essential::KThread* task3 = new essential::KThread(&task_Net, (void*)globalNetDriver);
-        shell.addShellTask(task3);
+        shell->addShellTask(task3);
         printf("[INFO] Network task added to Kernel Shell.\n");
     } else {
         printf("[WARN] Network driver not initialized.\n");

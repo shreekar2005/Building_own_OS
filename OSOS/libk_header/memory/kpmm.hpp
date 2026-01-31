@@ -1,8 +1,8 @@
 #ifndef _OSOS_BASIC_KMEMORY_H
 #define _OSOS_BASIC_KMEMORY_H
 
-#include "basic/multiboot.h"
-#include "essential/ktypes.hpp"
+#include "essential/multiboot.h"
+#include "basic/ktypes.hpp"
 
 namespace memory
 {

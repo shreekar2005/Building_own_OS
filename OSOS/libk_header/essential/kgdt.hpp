@@ -1,7 +1,7 @@
 #ifndef _OSOS_ESSENTIAL_KGDT_H
 #define _OSOS_ESSENTIAL_KGDT_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 
 // Flags for the 8-bit ACCESS BYTE
 #define SEG_ACCESS_TYPE(x)      ((x) << 0)  // Type field (e.g., SEG_CODE_EXRD)

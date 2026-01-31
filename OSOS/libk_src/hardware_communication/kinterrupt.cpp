@@ -23,11 +23,10 @@ Port8BitSlow InterruptManager::picMasterCommand(0x20);
 Port8BitSlow InterruptManager::picMasterData(0x21);
 Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
 Port8BitSlow InterruptManager::picSlaveData(0xA1);
-bool InterruptManager::interruptActivated=false;
 
-InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* task_manager)
+InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* thread_manager)
 {
-    this->task_manager = task_manager;
+    this->thread_manager = thread_manager;
     // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.
     picMasterCommand.write(0x11);
     picSlaveCommand.write(0x11);
@@ -67,7 +66,9 @@ InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KThre
     setIDTEntry(0x20, kernelCSselectorOffset, &handleIRQ0x00, 0, IDT_INTERRUPT_GATE); // Timer
     setIDTEntry(0x21, kernelCSselectorOffset, &handleIRQ0x01, 0, IDT_INTERRUPT_GATE); // Keyboard
     setIDTEntry(0x24, kernelCSselectorOffset, &handleIRQ0x04, 0, IDT_INTERRUPT_GATE); // Serial (COM1)
+    setIDTEntry(0x2B, kernelCSselectorOffset, &handleIRQ0x0B, 0, IDT_INTERRUPT_GATE); // Network card
     setIDTEntry(0x2C, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // PS/2 Mouse
+    setIDTEntry(0x80, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // syscall to force schedule thread
 }
 
 InterruptManager::~InterruptManager(){}
@@ -111,14 +112,12 @@ void InterruptManager::installTable()
 void InterruptManager::activate()
 {
     __asm__ volatile ("sti");
-    interruptActivated=true;
     basic::printf("Interrupts Activated\n");
 }
 
 void InterruptManager::deactivate()
 {
     __asm__ volatile ("cli");
-    interruptActivated=false;
     basic::printf("Interrupts Deactivated\n");
 }
 
@@ -183,7 +182,11 @@ uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t e
         esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);
     }
     if(interruptNumber==0x20){ //0x20 is Hardware Timer Interrupt
-        esp = (uintptr_t)installed_interrupt_manager->task_manager->scheduleThreads((essential::CPUState*)esp);
+        esp = (uintptr_t)installed_interrupt_manager->thread_manager->scheduleThreads((essential::CPUState*)esp, false);
+    }
+    else if (interruptNumber == 0x80) {
+        // 2. os_yield(): FORCE a context switch immediately
+        esp = (uintptr_t)installed_interrupt_manager->thread_manager->scheduleThreads((essential::CPUState*)esp, true);
     }
 
     // Hardware interrupts must still be acknowledged to the PIC

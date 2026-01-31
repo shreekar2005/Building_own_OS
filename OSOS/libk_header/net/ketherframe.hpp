@@ -1,7 +1,7 @@
 #ifndef _OSOS_NET_KETHERFRAME_H
 #define _OSOS_NET_KETHERFRAME_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 #include "driver/kamd79c973.hpp"
 
 

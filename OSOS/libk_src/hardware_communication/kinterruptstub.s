@@ -67,9 +67,10 @@ handleIRQ\handler_suffix:
 // Generate the stubs
 handleIRQ 0x00, 0x00 // Timer (IRQ 0) -> Int 0x20
 handleIRQ 0x01, 0x01 // Keyboard (IRQ 1) -> Int 0x21
-handleIRQ 0x0C, 0x0C // Mouse (IRQ 12) -> Int 0x2C
 handleIRQ 0x04, 0x04 // COM1 (IRQ 4) -> Int 0x24
-
+handleIRQ 0x0B, 0x0B // Network Card (IRQ 11) -> Int 0x2B
+handleIRQ 0x0C, 0x0C // Mouse (IRQ 12) -> Int 0x2C
+handleIRQ 0x60, 0x60 // syscall to force schedule thread (os_yeild from kmutex.cpp will call this)
 
 .section .data
     interruptNumber: .byte 0

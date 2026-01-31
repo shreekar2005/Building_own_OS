@@ -1,7 +1,7 @@
 #ifndef _OSOS_DRIVER_KAMD79C973_H
 #define _OSOS_DRIVER_KAMD79C973_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 #include "driver/kdriver.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kport.hpp"

@@ -1,5 +1,5 @@
-#ifndef ESSENTIAL_KSTDARG_HPP
-#define ESSENTIAL_KSTDARG_HPP
+#ifndef _OSOS_ESSENTIAL_KSTDARG_HPP
+#define _OSOS_ESSENTIAL_KSTDARG_HPP
 
 // -----------------------------------------------------------------------------
 // Variadic Argument Primitives

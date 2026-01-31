@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['time_0',['Time',['../d6/dcf/a50576.html',1,'essential']]],
-  ['timerdriver_1',['TimerDriver',['../dd/d12/a50548.html',1,'driver']]]
+  ['serialdriver_0',['SerialDriver',['../d2/d01/a54568.html',1,'driver']]],
+  ['serialeventhandler_1',['SerialEventHandler',['../d5/d98/a54564.html',1,'driver']]],
+  ['serialeventhandler_5ffor_5fkernel_2',['SerialEventHandler_for_kernel',['../df/d53/a54488.html',1,'']]],
+  ['spinlock_3',['Spinlock',['../d2/d53/a54520.html',1,'basic']]]
 ];

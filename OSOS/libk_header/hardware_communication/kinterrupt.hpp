@@ -1,9 +1,9 @@
 #ifndef _OSOS_HARDWARECOMMUNCATION_KINTERRUPT_H
 #define _OSOS_HARDWARECOMMUNCATION_KINTERRUPT_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 #include "essential/kgdt.hpp"
-#include "essential/kmultitasking.hpp"
+#include "concurrency/kmultitasking.hpp"
 #include "hardware_communication/kport.hpp"
 
 extern "C" 
@@ -13,8 +13,9 @@ extern "C"
     void ignoreInterrupt(); // Ignore Interrupt
     void handleIRQ0x00();   // Timer
     void handleIRQ0x01();   // Keyboard
-    void handleIRQ0x0C();   // PS/2 Mouse 
     void handleIRQ0x04();   // Serial IO (COM1)
+    void handleIRQ0x0B();   // Network card
+    void handleIRQ0x0C();   // PS/2 Mouse 
 }
 
 namespace hardware_communication
@@ -57,7 +58,7 @@ class InterruptManager{
     protected:
         IDT_Row interruptDescriptorTable[256];
         InterruptHandler* handlers[256];
-        essential::KThreadManager* task_manager;
+        essential::KThreadManager* thread_manager;
 
         /// @brief Populates a specific entry in the Interrupt Descriptor Table (IDT).
         /// @param interruptNumber The index of the IDT entry to set (0-255).
@@ -78,8 +79,7 @@ class InterruptManager{
         static hardware_communication::Port8BitSlow picSlaveData;
 
     public:
-        static bool interruptActivated;
-        InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* task_manager);
+        InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* thread_manager);
         ~InterruptManager();
 
         /// @brief Loads the Interrupt Descriptor Table (IDT) into the CPU's IDTR register.

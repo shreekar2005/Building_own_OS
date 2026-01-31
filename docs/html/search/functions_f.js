@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['task_5fnet_0',['task_net',['../d6/d6a/a49535.html#a210086608858e7590568100f2f8125ee',1,'task_Net(void *arg):&#160;kernel.cpp'],['../d1/da2/a49526.html#a210086608858e7590568100f2f8125ee',1,'task_Net(void *arg):&#160;kernel.cpp']]],
-  ['task_5fo_1',['task_o',['../d6/d6a/a49535.html#a801da88ec50b03be9b883d3b4fb77fdd',1,'task_o(void *arg):&#160;kernel.cpp'],['../d1/da2/a49526.html#a801da88ec50b03be9b883d3b4fb77fdd',1,'task_o(void *arg):&#160;kernel.cpp']]],
-  ['task_5fx_2',['task_x',['../d6/d6a/a49535.html#a684a61a1775c2f3e6bcde1b5eb6c05af',1,'task_X(void *arg):&#160;kernel.cpp'],['../d1/da2/a49526.html#a684a61a1775c2f3e6bcde1b5eb6c05af',1,'task_X(void *arg):&#160;kernel.cpp']]],
-  ['timerdriver_3',['TimerDriver',['../dd/d12/a50548.html#af195042aa005b100e49e68498ab2e8e2',1,'driver::TimerDriver']]]
+  ['scanbus_0',['scanBus',['../d7/dc1/a54656.html#a676c96d825ec578ff98c965c4b999aec',1,'hardware_communication::PCI_Controller']]],
+  ['schedulethreads_1',['scheduleThreads',['../df/d82/a54512.html#a6b1f7939225719016451587cf3d9b38b',1,'essential::KThreadManager']]],
+  ['selectdrivers_2',['selectDrivers',['../d7/dc1/a54656.html#a86f101dc2b53f938d5ac466c7ec33e2c',1,'hardware_communication::PCI_Controller']]],
+  ['send_3',['send',['../d1/d6d/a54524.html#a6ce3e75337ef2ecde344acb60e7ba9bd',1,'driver::RawDataHandler::send()'],['../dc/d30/a54528.html#a7c52fe6e73fa9bc911a4db50b1e325ba',1,'driver::amd_am79c973::send()'],['../dc/db7/a54700.html#a6de847c495cafe1a73e5a2152fb040e8',1,'net::EtherFrameHandler::send()'],['../d6/d1e/a54704.html#a47dcab718d413574c8a24959552823cc',1,'net::EtherFrameProvider::send()']]],
+  ['serialdriver_4',['SerialDriver',['../d2/d01/a54568.html#a308be05a603ae5e360244267d2e97fdd',1,'driver::SerialDriver']]],
+  ['serialeventhandler_5',['SerialEventHandler',['../d5/d98/a54564.html#a6c1053f71267a6d1fe167a53b8a8c3dd',1,'driver::SerialEventHandler']]],
+  ['serialeventhandler_5ffor_5fkernel_6',['SerialEventHandler_for_kernel',['../df/d53/a54488.html#a4e7ba3312ad2618afe1b7dd22e477644',1,'SerialEventHandler_for_kernel']]],
+  ['sethandler_7',['setHandler',['../dc/d30/a54528.html#a6459761b80c6ce054ae40c613f511c95',1,'driver::amd_am79c973']]],
+  ['setidtentry_8',['setIDTEntry',['../d5/dd1/a54644.html#aafee62e0a8417524d4e23e2d497d77b0',1,'hardware_communication::InterruptManager']]],
+  ['setipaddress_9',['setIPAddress',['../dc/d30/a54528.html#abaca7f5a57a6b4816dc125f2c5bb085f',1,'driver::amd_am79c973']]],
+  ['settimerdriver_10',['setTimerDriver',['../d3/db1/a54496.html#acf89ade0b4edef4d6cac2a48843e3f67',1,'essential::Time']]],
+  ['sleep_11',['sleep',['../d3/db1/a54496.html#a5a1c1b254f7f80e1f696a8c32d5b9412',1,'essential::Time::sleep()'],['../d6/d78/a54572.html#ab7787ae42263b69d671af831bcee133b',1,'driver::TimerDriver::sleep()']]],
+  ['spinlock_12',['Spinlock',['../d2/d53/a54520.html#a83f47f69a4fa62889bb9d5ebf835d332',1,'basic::Spinlock']]],
+  ['stoi_13',['stoi',['../d8/dff/a53655.html#a63ca8d876189450b295982fff644a87d',1,'basic']]],
+  ['strcat_14',['strcat',['../d8/dff/a53655.html#a99f3ad2e04e4aeed5b5c88cdcf3e4ed5',1,'basic']]],
+  ['strcmp_15',['strcmp',['../d8/dff/a53655.html#aa4212b6cd7356ed270d7ec96ca6e0b7a',1,'basic']]],
+  ['strcpy_16',['strcpy',['../d8/dff/a53655.html#a7510b4597e3f2aadc355012fa4c0841b',1,'basic']]],
+  ['strlen_17',['strlen',['../d8/dff/a53655.html#a93f0529e1397d926317ffa75fe1d86fb',1,'basic']]],
+  ['strncmp_18',['strncmp',['../d8/dff/a53655.html#ad30174c82eccdf1c3234ac9b5bdc85ac',1,'basic']]],
+  ['switchpagedirectory_19',['switchPageDirectory',['../db/d24/a54688.html#af9dfd83771611c9462b89f52597b9bb2',1,'memory::PagingManager']]]
 ];

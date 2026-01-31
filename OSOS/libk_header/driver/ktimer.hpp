@@ -1,7 +1,7 @@
 #ifndef _OSOS_DRIVER_KTIMER_H
 #define _OSOS_DRIVER_KTIMER_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kport.hpp"
 #include "driver/kdriver.hpp"

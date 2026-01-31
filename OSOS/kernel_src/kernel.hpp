@@ -1,11 +1,11 @@
 #ifndef KERNEL_HPP
 #define KERNEL_HPP
 
-#include "basic/multiboot.h"
+#include "essential/multiboot.h"
 #include "essential/kgdt.hpp"
 #include "essential/kicxxabi.hpp"
-#include "essential/kmultitasking.hpp"
-#include "essential/ktime.hpp"
+#include "concurrency/kmultitasking.hpp"
+#include "basic/ktime.hpp"
 #include "hardware_communication/kinterrupt.hpp"
 #include "hardware_communication/kpci.hpp"
 #include "driver/kdriver.hpp"
@@ -13,8 +13,8 @@
 #include "driver/kkeyboard.hpp"
 #include "driver/kmouse.hpp"
 #include "driver/kserial.hpp"
-#include <driver/kamd79c973.hpp>
-#include <net/ketherframe.hpp>
+#include "driver/kamd79c973.hpp"
+#include "net/ketherframe.hpp"
 
 #include "kshell.hpp"
 #include "khandlers.hpp"

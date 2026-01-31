@@ -1,7 +1,7 @@
 #ifndef _OSOS_MEMORY_KHEAP_H
 #define _OSOS_MEMORY_KHEAP_H
 
-#include "essential/ktypes.hpp"
+#include "basic/ktypes.hpp"
 
 namespace memory 
 {

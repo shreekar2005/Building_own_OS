@@ -1,15 +1,15 @@
 #ifndef KERNEL_SHELL_HPP
 #define KERNEL_SHELL_HPP
 
-#include "basic/multiboot.h"
+#include "essential/multiboot.h"
 #include "basic/kiostream.hpp" 
 #include "basic/kstring.hpp"
-#include "essential/kmultitasking.hpp"
+#include "concurrency/kmultitasking.hpp"
 #include "hardware_communication/kpci.hpp"
 #include "memory/kpmm.hpp"
 #include "memory/kheap.hpp"
 #include "memory/kpaging.hpp"
-#include "essential/ktime.hpp" 
+#include "basic/ktime.hpp" 
 
 #define maxNumShellTask 100
 #define SHELL_BUFFER_SIZE 256

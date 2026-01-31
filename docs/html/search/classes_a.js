@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['pagingmanager_0',['PagingManager',['../d1/db1/a50632.html',1,'memory']]],
-  ['pci_5fcontroller_1',['PCI_Controller',['../d1/d9e/a50600.html',1,'hardware_communication']]],
-  ['pci_5fdevicedescriptor_2',['PCI_DeviceDescriptor',['../d2/d49/a50596.html',1,'hardware_communication']]],
-  ['physicalmemorymanager_3',['PhysicalMemoryManager',['../dd/ddf/a50636.html',1,'memory']]],
-  ['port_4',['Port',['../dd/dcb/a50604.html',1,'hardware_communication']]],
-  ['port16bit_5',['Port16Bit',['../d2/d06/a50616.html',1,'hardware_communication']]],
-  ['port32bit_6',['Port32Bit',['../d1/da1/a50620.html',1,'hardware_communication']]],
-  ['port8bit_7',['Port8Bit',['../db/d97/a50608.html',1,'hardware_communication']]],
-  ['port8bitslow_8',['Port8BitSlow',['../d0/daa/a50612.html',1,'hardware_communication']]]
+  ['memoryblockheader_0',['MemoryBlockHeader',['../d5/d0c/a53657.html#db/d4b/a54680',1,'memory']]],
+  ['mousedriver_1',['MouseDriver',['../da/da1/a54560.html',1,'driver']]],
+  ['mouseeventhandler_2',['MouseEventHandler',['../d2/d1a/a54556.html',1,'driver']]],
+  ['mouseeventhandler_5ffor_5fkernel_3',['MouseEventHandler_for_kernel',['../d4/dcf/a54484.html',1,'']]],
+  ['multiboot_5faout_5fsymbol_5ftable_4',['multiboot_aout_symbol_table',['../d8/dbf/a53642.html#de/d31/a54592',1,'']]],
+  ['multiboot_5fapm_5finfo_5',['multiboot_apm_info',['../d8/dbf/a53642.html#de/d83/a54632',1,'']]],
+  ['multiboot_5fcolor_6',['multiboot_color',['../d8/dbf/a53642.html#d2/d8d/a54620',1,'']]],
+  ['multiboot_5felf_5fsection_5fheader_5ftable_7',['multiboot_elf_section_header_table',['../d8/dbf/a53642.html#d4/d3b/a54596',1,'']]],
+  ['multiboot_5fheader_8',['multiboot_header',['../d8/dbf/a53642.html#df/d3d/a54588',1,'']]],
+  ['multiboot_5finfo_9',['multiboot_info',['../d8/dbf/a53642.html#de/d12/a54600',1,'']]],
+  ['multiboot_5finfo_2e_5f_5funnamed2_5f_5f_10',['multiboot_info.__unnamed2__',['../d8/dbf/a53642.html#db/dda/a55096',1,'']]],
+  ['multiboot_5finfo_2e_5f_5funnamed2_5f_5f_2e_5f_5funnamed4_5f_5f_11',['multiboot_info.__unnamed2__.__unnamed4__',['../d8/dbf/a53642.html#dc/d1b/a55100',1,'']]],
+  ['multiboot_5finfo_2e_5f_5funnamed2_5f_5f_2e_5f_5funnamed6_5f_5f_12',['multiboot_info.__unnamed2__.__unnamed6__',['../d8/dbf/a53642.html#d7/d4b/a55104',1,'']]],
+  ['multiboot_5finfo_2eu_13',['multiboot_info.u',['../d8/dbf/a53642.html#d7/dc9/a55092',1,'']]],
+  ['multiboot_5fmmap_5fentry_14',['multiboot_mmap_entry',['../d8/dbf/a53642.html#d9/d45/a54624',1,'']]],
+  ['multiboot_5fmod_5flist_15',['multiboot_mod_list',['../d8/dbf/a53642.html#df/d2a/a54628',1,'']]],
+  ['mutex_16',['Mutex',['../d2/ddf/a54516.html',1,'basic']]]
 ];

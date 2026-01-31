@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['ptrdiff_5ft_0',['ptrdiff_t',['../d8/df4/a49646.html#a8b3dc34e20aeb16f8a92c181ca3355cc',1,'ktypes.hpp']]]
+  ['multiboot_5fuint16_5ft_0',['multiboot_uint16_t',['../d8/dbf/a53642.html#a3a11e3c2b5e0617736a05343aa5795b3',1,'multiboot.h']]],
+  ['multiboot_5fuint32_5ft_1',['multiboot_uint32_t',['../d8/dbf/a53642.html#a009f355da41fed4badb8a52d432f5186',1,'multiboot.h']]],
+  ['multiboot_5fuint64_5ft_2',['multiboot_uint64_t',['../d8/dbf/a53642.html#a8dfdd61648b48aa31845db590970e06a',1,'multiboot.h']]],
+  ['multiboot_5fuint8_5ft_3',['multiboot_uint8_t',['../d8/dbf/a53642.html#a037f602538fccf97e90021c19fdfc047',1,'multiboot.h']]]
 ];

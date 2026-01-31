@@ -1,13 +1,20 @@
 var searchData=
 [
-  ['rawdatahandler_0',['RawDataHandler',['../df/d03/a50500.html#ac570745bafea8bb4b6457e14f077d1d8',1,'driver::RawDataHandler']]],
-  ['read_1',['read',['../db/d97/a50608.html#a425297307d64cb5d9889b32767f8fdc3',1,'hardware_communication::Port8Bit::read()'],['../d2/d06/a50616.html#a5147c7c28ca813536015969ae6ba6bb6',1,'hardware_communication::Port16Bit::read()'],['../d1/da1/a50620.html#a742b40049c70bfda79a3031b85297948',1,'hardware_communication::Port32Bit::read()']]],
-  ['read16_2',['read16',['../d1/d9e/a50600.html#abbe08b680f1d06bcd047cd0c8f215bfd',1,'hardware_communication::PCI_Controller']]],
-  ['read32_3',['read32',['../d1/d9e/a50600.html#a8be9d213f644608726499edca159e1e4',1,'hardware_communication::PCI_Controller']]],
-  ['read8_4',['read8',['../d1/d9e/a50600.html#a6e21604894939edaafd1d5baae2840dd',1,'hardware_communication::PCI_Controller']]],
-  ['realloc_5',['realloc',['../de/dd4/a49595.html#a0f723f009d0b6f246530cbbac3ec1dd4',1,'realloc(void *ptr, size_t new_size):&#160;kheap.cpp'],['../d3/d93/a49541.html#a0f723f009d0b6f246530cbbac3ec1dd4',1,'realloc(void *ptr, size_t new_size):&#160;kheap.cpp']]],
-  ['receive_6',['receive',['../dd/dcf/a50504.html#ac843f3c56fb3148c8e85ca32015d9ce9',1,'driver::amd_am79c973']]],
-  ['recursiveseldriver_7',['recursiveSelDriver',['../d1/d9e/a50600.html#a39f63594cdcdad7acc3860d6d339995e',1,'hardware_communication::PCI_Controller']]],
-  ['reset_8',['reset',['../dd/dcf/a50504.html#ab1395bd98f445068a11735c10832dfee',1,'driver::amd_am79c973::reset()'],['../d6/d76/a50568.html#aecb0b8110aab5f31e88e992902ab1752',1,'essential::KThread::reset()'],['../dd/d12/a50548.html#ab38a99b53a4ee9a8b149f568648f7313',1,'driver::TimerDriver::reset()'],['../d1/ddd/a50544.html#aa8ca445b7662a47f5fb974acf7d9077d',1,'driver::SerialDriver::reset()'],['../d6/da4/a50536.html#aa18ffdba62abee43186e473b044c1c6d',1,'driver::MouseDriver::reset()'],['../d1/d45/a50528.html#afd98f610ae8577e9242298db39370108',1,'driver::KeyboardDriver::reset()'],['../d6/d06/a50516.html#a98d2e779c02364fc58c172d0d2a32bdd',1,'driver::Driver::reset()']]],
-  ['reverse_9',['reverse',['../d6/df3/a49659.html#a6cfc2f6949fb98dfc419f9fd19f95982',1,'basic']]]
+  ['pci_5fcontroller_0',['PCI_Controller',['../d7/dc1/a54656.html#a71d89c22009309f0d354da5cbf359dc7',1,'hardware_communication::PCI_Controller']]],
+  ['pci_5fdevicedescriptor_1',['PCI_DeviceDescriptor',['../d9/d68/a54652.html#a5a505bd19fc7767ed91adb172a985e20',1,'hardware_communication::PCI_DeviceDescriptor']]],
+  ['port_2',['Port',['../d4/daf/a54660.html#a782f7fad0bc431b9b56dec37b3bd5dcb',1,'hardware_communication::Port']]],
+  ['port16bit_3',['Port16Bit',['../da/d1e/a54672.html#a8441c4c12cc8141d87f53ac4917d0425',1,'hardware_communication::Port16Bit']]],
+  ['port32bit_4',['Port32Bit',['../d2/d09/a54676.html#aadd77aa826690aaf97702bb05dd0ee91',1,'hardware_communication::Port32Bit']]],
+  ['port8bit_5',['Port8Bit',['../d4/de7/a54664.html#af00b1f913ecf8f63297ec425d408c618',1,'hardware_communication::Port8Bit']]],
+  ['port8bitslow_6',['Port8BitSlow',['../d8/dce/a54668.html#a3a4b42926d740408c5e48439bbba6a59',1,'hardware_communication::Port8BitSlow']]],
+  ['power_7',['power',['../d8/dff/a53655.html#aa7de4c6aa018e049aa8992b037cc052a',1,'basic']]],
+  ['printcharstr_8',['printCharStr',['../d8/dff/a53655.html#a3d0041ad59dbbae5bc9adbb8ab784499',1,'basic']]],
+  ['printf_9',['printf',['../d8/dff/a53655.html#a45ee52b918a784ff0e96e7c8917a91d9',1,'basic']]],
+  ['printheapinfo_10',['printHeapInfo',['../d2/d73/a54684.html#ae423f7b640d144a03b98f5ae2a517987',1,'memory::HeapManager']]],
+  ['printhex_11',['printHex',['../d8/dff/a53655.html#a5ecbf4c8112c602ba65a689ebe5014f8',1,'basic']]],
+  ['printloadedtable_12',['printloadedtable',['../d5/dd1/a54644.html#ae43c9bc0611cf6dfbac0a532e2f631ef',1,'hardware_communication::InterruptManager::printLoadedTable()'],['../d1/d34/a53651.html#a0a72b35b5fcadccd545ee4c5ef7efdd3',1,'printLoadedTable():&#160;kgdt.hpp'],['../df/d7b/a54580.html#a12155526ff104614deb65f1c5a35c013',1,'essential::GDT_Manager::printLoadedTable()']]],
+  ['printloadedtableheader_13',['printloadedtableheader',['../d1/d34/a53651.html#a6aba53071c94f3ffe96befc625602c9c',1,'printLoadedTableHeader():&#160;kgdt.hpp'],['../df/d7b/a54580.html#a50eaa45b2e7e4c8579aec1d8d6aae6b7',1,'essential::GDT_Manager::printLoadedTableHeader()'],['../d5/dd1/a54644.html#add6866291fc50f63ccbacedc26236908',1,'hardware_communication::InterruptManager::printLoadedTableHeader()']]],
+  ['printmemorymap_14',['printMemoryMap',['../d5/d0c/a53657.html#a9084f7d50c5f956b7b6bde237993919d',1,'memory']]],
+  ['printpagedirectory_15',['printPageDirectory',['../db/d24/a54688.html#a259a4f4f121a88e5580da7862467e217',1,'memory::PagingManager']]],
+  ['process_5fcommand_16',['process_command',['../dd/dba/a54492.html#a64cee1fd80a35d996188c0034ec26b64',1,'KernelShell']]]
 ];
