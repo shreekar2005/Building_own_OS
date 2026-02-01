@@ -118,6 +118,70 @@ PCI_DeviceDescriptor PCI_Controller::getDeviceDescriptor(uint8_t bus, uint8_t de
     return result;
 }
 
+BaseAddressRegister PCI_Controller::getBaseAddressRegister(uint8_t bus, uint8_t device, uint8_t function, uint16_t bar)
+{
+    BaseAddressRegister result;
+
+    uint32_t headertype = read8(bus, device, function, 0x0E) & 0x7F;
+    int maxBARs = 6 - (4 * headertype);
+    if(bar >= maxBARs) return result;
+
+    uint32_t bar_value = read32(bus, device, function, 0x10 + (4 * bar));
+    
+    result.type = (bar_value & 0x1) ? inputOutput : memoryMapping;
+
+    if(result.type == memoryMapping)
+    {
+        result.address = (uint8_t*)(bar_value & ~0xF);
+        result.prefetchable = ((bar_value & 0x8) != 0);
+    }
+    else
+    {
+        result.address = (uint8_t*)(bar_value & ~0x3);
+        result.prefetchable = false;
+    }
+
+    return result;
+}
+
+driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor* dev, hardware_communication::InterruptManager* interrupt_manager)
+{
+    switch(dev->vendorId)
+    {
+        case 0x1022: // AMD
+            switch(dev->deviceId)
+            {
+                case 0x2000:
+                    basic::printf("AMD am79c973 found : IRQ 0x%X : handled by ISR 0x%X\n", dev->interrupt, dev->interrupt + 0x20);
+                    driver::Driver* driver = new driver::amd_am79c973(dev, interrupt_manager);
+                    globalNetDriver = (driver::amd_am79c973*)driver;
+                    return driver;
+                    break;
+            }
+            break;
+
+        case 0x8086: // Intel
+            switch(dev->deviceId)
+            {
+                // case 0x1237: basic::printf("Intel 440FX Host Bridge "); break;
+                // case 0x7000: basic::printf("Intel PIIX3 ISA Bridge "); break;
+                // case 0x7010: basic::printf("Intel PIIX3 IDE Controller "); break;
+                // case 0x7113: basic::printf("Intel PIIX4 ACPI "); break;
+                // case 0x100E: basic::printf("Intel E1000 Ethernet "); break;
+            }
+            break;
+            
+        case 0x1234:
+            switch(dev->deviceId)
+            {
+                // case 0x1111: basic::printf("QEMU VGA Graphics "); break;
+            }
+            break;
+    }
+
+    return nullptr;
+}
+
 void PCI_Controller::recursiveSelDriver(uint8_t bus, driver::DriverManager* driver_manager, hardware_communication::InterruptManager* interrupt_manager)
 {
     for(uint8_t device=0; device<32; device++)
@@ -218,79 +282,4 @@ void PCI_Controller::scanBus(uint8_t bus)
             }
         }
     }
-}
-
-BaseAddressRegister PCI_Controller::getBaseAddressRegister(uint8_t bus, uint8_t device, uint8_t function, uint16_t bar)
-{
-    BaseAddressRegister result;
-
-    uint32_t headertype = read8(bus, device, function, 0x0E) & 0x7F;
-    int maxBARs = 6 - (4 * headertype);
-    if(bar >= maxBARs) return result;
-
-    uint32_t bar_value = read32(bus, device, function, 0x10 + (4 * bar));
-    
-    result.type = (bar_value & 0x1) ? inputOutput : memoryMapping;
-
-    if(result.type == memoryMapping)
-    {
-        result.address = (uint8_t*)(bar_value & ~0xF);
-        result.prefetchable = ((bar_value & 0x8) != 0);
-    }
-    else
-    {
-        result.address = (uint8_t*)(bar_value & ~0x3);
-        result.prefetchable = false;
-    }
-
-    return result;
-}
-
-driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor* dev, hardware_communication::InterruptManager* interrupt_manager)
-{
-    switch(dev->vendorId)
-    {
-        case 0x1022: // AMD
-            switch(dev->deviceId)
-            {
-                case 0x2000:
-                    basic::printf("AMD am79c973 found : IRQ 0x%X : handled by ISR 0x%X\n", dev->interrupt, dev->interrupt + 0x20);
-                    driver::Driver* driver = new driver::amd_am79c973(dev, interrupt_manager);
-                    globalNetDriver = (driver::amd_am79c973*)driver;
-                    return driver;
-                    break;
-            }
-            break;
-
-        case 0x8086: // Intel
-            switch(dev->deviceId)
-            {
-                // case 0x1237: basic::printf("Intel 440FX Host Bridge "); break;
-                // case 0x7000: basic::printf("Intel PIIX3 ISA Bridge "); break;
-                // case 0x7010: basic::printf("Intel PIIX3 IDE Controller "); break;
-                // case 0x7113: basic::printf("Intel PIIX4 ACPI "); break;
-                // case 0x100E: basic::printf("Intel E1000 Ethernet "); break;
-            }
-            break;
-            
-        case 0x1234:
-            switch(dev->deviceId)
-            {
-                // case 0x1111: basic::printf("QEMU VGA Graphics "); break;
-            }
-            break;
-    }
-
-    // basic::printf("| ");
-    // switch(dev->classId)
-    // {
-    //     case 0x03:
-    //         if(dev.subclassId == 0x00) basic::printf("Generic VGA ");
-    //         break;
-    //     case 0x02:
-    //         basic::printf("Generic Network Card "); 
-    //         break;
-    // }
-
-    return nullptr;
 }
