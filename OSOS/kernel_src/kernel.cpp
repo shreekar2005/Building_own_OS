@@ -69,13 +69,13 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
 {
     essential::__callConstructors(); 
     enable_cursor(0,15);
-    clearScreen();
-    
-    
+    clearScreen(); printf("\n");
+
     osos_GDT_Manager.installTable();
     
     // https://wiki.osdev.org/Memory_management
     memory::PhysicalMemoryManager::init(mbi);
+
     memory::PagingManager::init();
     // https://wiki.osdev.org/Writing_a_memory_manager
     memory::kernel_heap.init((void*)0x1000000, 8 * 1024 * 1024);
