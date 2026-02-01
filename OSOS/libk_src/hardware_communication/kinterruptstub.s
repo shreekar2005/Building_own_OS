@@ -33,7 +33,7 @@ common_interrupt_stub:
     call  _ZN22hardware_communication16InterruptManager15handleInterruptEhm
 
     // The C++ handler returns the (possibly new when scheduling done) stack pointer in EAX.
-    movl %eax, %esp 
+    movl %eax, %esp
 
     popl %eax
     popl %ebx
@@ -49,8 +49,7 @@ common_interrupt_stub:
     popl %ds
 
     add $4, %esp // skipping uint32_t error
-    iret // will automatically pop eip, cs, eflags, esp, ss; esp and ss will only popped if changing rings (3->0 or 3->0)
-    // iret is exact point where scheduling is happening (eip is changed here only for new therad).
+    iret // will automatically pop 1)eip, 2)cs, 3)eflags | (if going back to ring3 then following will also pop) 4)esp 5)ss
 
 .global ignoreInterrupt
 ignoreInterrupt:

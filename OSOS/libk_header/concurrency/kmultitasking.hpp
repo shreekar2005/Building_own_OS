@@ -23,7 +23,7 @@ struct CPUState
     uint32_t error;
     
     // Pushed automatically by the CPU upon interrupt/exception
-    uint32_t eip, cs, eflags, esp, ss;
+    uint32_t eip, cs, eflags, esp, ss;// we will use `esp` for task_function pointer and `ss` for argument pointer
 }__attribute__((packed));
 
 

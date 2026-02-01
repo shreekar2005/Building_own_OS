@@ -70,7 +70,7 @@ bool KThreadManager::addThread(KThread *thread)
 void KThreadManager::killCurrentThread()
 {
     if (numThreads <= 0) return;
-    threads[currentThread] = threads[numThreads - 1];
+    threads[currentThread] = threads[numThreads - 1]; // filling current thread address with last running thread
     numThreads--;
     currentThread = -1;
 }
