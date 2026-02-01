@@ -66,7 +66,7 @@ InterruptManager::InterruptManager(essential::GDT_Manager* gdt, concurrency::KTh
     setIDTEntry(0x20, kernelCSselectorOffset, &handleIRQ0x00, 0, IDT_INTERRUPT_GATE); // Timer
     setIDTEntry(0x21, kernelCSselectorOffset, &handleIRQ0x01, 0, IDT_INTERRUPT_GATE); // Keyboard
     setIDTEntry(0x24, kernelCSselectorOffset, &handleIRQ0x04, 0, IDT_INTERRUPT_GATE); // Serial (COM1)
-    setIDTEntry(0x29, kernelCSselectorOffset, &handleIRQ0x0B, 0, IDT_INTERRUPT_GATE); // (VM) Network card
+    setIDTEntry(0x29, kernelCSselectorOffset, &handleIRQ0x09, 0, IDT_INTERRUPT_GATE); // (VM) Network card
     setIDTEntry(0x2B, kernelCSselectorOffset, &handleIRQ0x0B, 0, IDT_INTERRUPT_GATE); // (QEMU) Network card
     setIDTEntry(0x2C, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // PS/2 Mouse
     // Set handlers for software interrupts
