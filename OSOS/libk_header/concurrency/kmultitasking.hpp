@@ -99,7 +99,7 @@ class KThreadManager{
         /// Uses a Round-Robin algorithm with a time quantum.
         /// @param cpustate The register state of the thread that was just interrupted.
         /// @param forceSwitch if true then just schedule thread without looking at time quantum
-        /// @return The register state of the next thread to run (which the interrupt handler will restore).
+        /// @return The cpustate of the next thread to run (which the interrupt handler will restore).
         CPUState* scheduleThreads(CPUState* cpustate, bool forceSwitch = false);
 
         /// @brief Removes the currently running thread from the scheduling queue.

@@ -254,7 +254,7 @@ driver::Driver* PCI_Controller::getDriver(PCI_DeviceDescriptor* dev, hardware_co
             switch(dev->deviceId)
             {
                 case 0x2000:
-                    basic::printf("AMD am79c973 found on IRQ 0x%X\n", dev->interrupt + 0x20);
+                    basic::printf("AMD am79c973 found : IRQ 0x%X : handled by ISR 0x%X\n", dev->interrupt, dev->interrupt + 0x20);
                     driver::Driver* driver = new driver::amd_am79c973(dev, interrupt_manager);
                     globalNetDriver = (driver::amd_am79c973*)driver;
                     return driver;

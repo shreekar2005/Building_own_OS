@@ -22,6 +22,9 @@ bool KThread::start()
 void KThread::reset()
 {
     cpustate = (CPUState*) (stack + 4096 - sizeof(CPUState));
+    // stack: the pointer to the start (lowest address) of your 4096-byte array.
+    // + 4096: moves the pointer to the very top of stack
+    // - sizeof(CPUState): reserves space at the top of the stack to hold our "fake" saved registers (defined in CPUState).
 
     cpustate->eax = 0; cpustate->ebx = 0; cpustate->ecx = 0; cpustate->edx = 0;
     cpustate->esi = 0; cpustate->edi = 0; cpustate->ebp = 0;

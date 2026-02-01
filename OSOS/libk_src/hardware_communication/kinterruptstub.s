@@ -1,3 +1,4 @@
+kinterruptstub.s:
 .set IRQ_BASE, 0x20
 
 .section .text
@@ -31,7 +32,7 @@ common_interrupt_stub:
     // Call the C++ Method
     call  _ZN22hardware_communication16InterruptManager15handleInterruptEhm
 
-    // The C++ handler returns the (possibly new) stack pointer in EAX.
+    // The C++ handler returns the (possibly new when scheduling done) stack pointer in EAX.
     movl %eax, %esp 
 
     popl %eax
@@ -47,8 +48,9 @@ common_interrupt_stub:
     popl %es
     popl %ds
 
-    add $4, %esp
-    iret
+    add $4, %esp // skipping uint32_t error
+    iret // will automatically pop eip, cs, eflags, esp, ss; esp and ss will only popped if changing rings (3->0 or 3->0)
+    // iret is exact point where scheduling is happening (eip is changed here only for new therad).
 
 .global ignoreInterrupt
 ignoreInterrupt:
@@ -68,9 +70,11 @@ handleIRQ\handler_suffix:
 handleIRQ 0x00, 0x00 // Timer (IRQ 0) -> Int 0x20
 handleIRQ 0x01, 0x01 // Keyboard (IRQ 1) -> Int 0x21
 handleIRQ 0x04, 0x04 // COM1 (IRQ 4) -> Int 0x24
-handleIRQ 0x0B, 0x0B // Network Card (IRQ 11) -> Int 0x2B
+handleIRQ 0x09, 0x09 // (VM) Network Card -> Int 0x29
+handleIRQ 0x0B, 0x0B // (QEMU) Network Card -> Int 0x2B
 handleIRQ 0x0C, 0x0C // Mouse (IRQ 12) -> Int 0x2C
-handleIRQ 0x60, 0x60 // syscall to force schedule thread (os_yeild from kmutex.cpp will call this)
+
+handleIRQ 0x60, 0x60 // syscall to force schedule thread (os_yeild from kmutex.cpp will call this) -> INT 0x80
 
 .section .data
     interruptNumber: .byte 0
