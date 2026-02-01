@@ -24,7 +24,7 @@ Port8BitSlow InterruptManager::picMasterData(0x21);
 Port8BitSlow InterruptManager::picSlaveCommand(0xA0);
 Port8BitSlow InterruptManager::picSlaveData(0xA1);
 
-InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* thread_manager)
+InterruptManager::InterruptManager(essential::GDT_Manager* gdt, concurrency::KThreadManager* thread_manager)
 {
     this->thread_manager = thread_manager;
     // ICW1: Start Initialization Sequence. Both PICs are told to listen for 3 more bytes of config data.
@@ -68,7 +68,7 @@ InterruptManager::InterruptManager(essential::GDT_Manager* gdt, essential::KThre
     setIDTEntry(0x24, kernelCSselectorOffset, &handleIRQ0x04, 0, IDT_INTERRUPT_GATE); // Serial (COM1)
     setIDTEntry(0x2B, kernelCSselectorOffset, &handleIRQ0x0B, 0, IDT_INTERRUPT_GATE); // Network card
     setIDTEntry(0x2C, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // PS/2 Mouse
-    setIDTEntry(0x80, kernelCSselectorOffset, &handleIRQ0x0C, 0, IDT_INTERRUPT_GATE); // syscall to force schedule thread
+    setIDTEntry(0x80, kernelCSselectorOffset, &handleIRQ0x60, 0, IDT_INTERRUPT_GATE); // syscall to force schedule thread
 }
 
 InterruptManager::~InterruptManager(){}
@@ -182,11 +182,7 @@ uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t e
         esp = installed_interrupt_manager->handlers[interruptNumber]->handleInterrupt(esp);
     }
     if(interruptNumber==0x20){ //0x20 is Hardware Timer Interrupt
-        esp = (uintptr_t)installed_interrupt_manager->thread_manager->scheduleThreads((essential::CPUState*)esp, false);
-    }
-    else if (interruptNumber == 0x80) {
-        // 2. os_yield(): FORCE a context switch immediately
-        esp = (uintptr_t)installed_interrupt_manager->thread_manager->scheduleThreads((essential::CPUState*)esp, true);
+        esp = (uintptr_t)installed_interrupt_manager->thread_manager->scheduleThreads((concurrency::CPUState*)esp, false);
     }
 
     // Hardware interrupts must still be acknowledged to the PIC
@@ -195,8 +191,11 @@ uintptr_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uintptr_t e
         if (0x28 <= interruptNumber) picSlaveCommand.write(0x20);
     }
 
-    else {
-        basic::printf("UNHANDLED INTERRUPT %#hx\n",interruptNumber);
+    // Software Interrupts
+
+    if (interruptNumber == 0x80) {
+        esp = (uintptr_t)installed_interrupt_manager->thread_manager->scheduleThreads((concurrency::CPUState*)esp, true);
     }
+
     return esp;
 }

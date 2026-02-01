@@ -1,14 +1,15 @@
-#ifndef _OSOS_BASIC_KMUTEX_H
-#define _OSOS_BASIC_KMUTEX_H
+#ifndef _OSOS_CONCURRENCY_KMUTEX_H
+#define _OSOS_CONCURRENCY_KMUTEX_H
 
 #include "basic/ktypes.hpp"
 
-namespace basic {
-
-    void os_yield() {
-        asm volatile("int $0x80");// 0x80 is chosen arbitrarily as our "System Call" vector.
+namespace concurrency
+{
+    /// @brief function that make systemcall 0x80 to forcefully do thread scheduling to next thread
+    static void os_yield() {
+        asm volatile("int $0x80");// 0x80 : syscall that forcefully schedules thread
     }
-
+    
     class Mutex {
     private:
         volatile int _locked; // 1 = locked, 0 = unlocked

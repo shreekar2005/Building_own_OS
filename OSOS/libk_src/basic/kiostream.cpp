@@ -7,6 +7,7 @@
 #include "hardware_communication/kinterrupt.hpp"
 
 using hardware_communication::Port8Bit;
+using namespace concurrency; // for using locks in printf
 
 namespace basic
 {
@@ -242,8 +243,8 @@ static Spinlock printfSpin;
 
 int printf(const char *format, ...)
 {
-    basic::LockGuard<basic::Mutex> guard(printfMutex); // i chose mutex lock (LockGuard will automatically unlocks)
-    // basic::LockGuard<basic::Spinlock> guard(printfSpin);
+    LockGuard<Mutex> guard(printfMutex); // i chose lock type then LockGuard will automatically locks and unlocks
+    // LockGuard<Spinlock> guard(printfSpin);
 
     int chars_written = 0;
 

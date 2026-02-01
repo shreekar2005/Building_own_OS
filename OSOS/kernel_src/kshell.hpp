@@ -26,12 +26,12 @@ private:
     volatile int m_read_ptr;
 
     hardware_communication::PCI_Controller pciController;
-    essential::KThreadManager *osos_ThreadManager_ptr;
-    essential::KThread* shell_threads_ptr[maxNumShellTask];
+    concurrency::KThreadManager *osos_ThreadManager_ptr;
+    concurrency::KThread* shell_threads_ptr[maxNumShellTask];
     int numShellThreads;
 
 public:
-    KernelShell(essential::KThreadManager *osos_ThreadManager_ptr, multiboot_info_t *mbi)
+    KernelShell(concurrency::KThreadManager *osos_ThreadManager_ptr, multiboot_info_t *mbi)
     {
         this->osos_ThreadManager_ptr = osos_ThreadManager_ptr;
         this->mbi = mbi;
@@ -44,7 +44,7 @@ public:
     }
     ~KernelShell() {}
 
-    bool addShellTask(essential::KThread* task){
+    bool addShellTask(concurrency::KThread* task){
         if(numShellThreads >= maxNumShellTask) return false;
         shell_threads_ptr[numShellThreads++] = task;
         return true;
@@ -173,7 +173,7 @@ exit      : shutdown the computer (this is temporary command for now)\n");
                  printf("task number %d not present in task list of OSOS shell :(\n", tasknum+1);
              } else {
                  printf("Starting task number %d...\n", tasknum+1);
-                 if (osos_ThreadManager_ptr->addThread(shell_threads_ptr[tasknum]) == false) {
+                 if (shell_threads_ptr[tasknum]->start() == false) {
                       printf("Error: failed to start task%d.\n", tasknum+1);
                  }
              }

@@ -3,7 +3,8 @@
 
 #include "basic/ktypes.hpp"
 
-namespace basic {
+namespace concurrency
+{
 
     class Spinlock {
     private:

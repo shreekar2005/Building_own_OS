@@ -3,6 +3,11 @@
 
 using namespace driver;
 
+/// @brief function that make systemcall 0x80 to forcefully do thread scheduling to next thread
+static void os_yield() {
+    asm volatile("int $0x80");// 0x80 : syscall that forcefully schedules thread
+}
+
 TimerDriver::TimerDriver(hardware_communication::InterruptManager* interrupt_manager, uint32_t frequency)
 : hardware_communication::InterruptHandler(0x20, interrupt_manager), // IRQ 0 maps to 0x20
   dataPort(PIT_CHANNEL0_PORT), 
@@ -44,9 +49,15 @@ void TimerDriver::sleep(uint32_t milliseconds)
     uint64_t ticksToWait = (milliseconds * frequency) / 1000;
     uint64_t endTicks = ticks + ticksToWait;
 
-    while(ticks < endTicks)
-    {
-        asm volatile("hlt");
+    if (milliseconds < 10) { // 10 is just sweet number, 20ms is time quantum for thread scheduling 
+        while(ticks < endTicks) {
+            asm volatile("hlt");
+        }
+    } 
+    else {
+        while(ticks < endTicks) {
+            os_yield();
+        }
     }
 }
 

@@ -1,7 +1,8 @@
 #ifndef _OSOS_BASIC_KLOCKGUARD_H
 #define _OSOS_BASIC_KLOCKGUARD_H
 
-namespace basic {
+namespace concurrency
+{
 
     // template allows this to work for both Spinlock and Mutex
     template <typename LockType>

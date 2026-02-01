@@ -2,20 +2,31 @@
 
 using namespace basic;
 
+
+KernelArgs* kArgs;
+
 void task_o(void* arg) {
     (void) arg;
-    for(int i=0; i<2000; i++){
+    int time1, time2;
+    time1 = kArgs->timer->getUptimeMS();
+    for(int i=0; i<100; i++){
         printf("o");
-        essential::Time::sleep(1);
+        essential::Time::sleep(40);
     }
+    time2 = kArgs->timer->getUptimeMS();
+    printf("\ntask1 took : %dms\n",time2-time1);
 }
 
 void task_X(void* arg) {
     (void) arg;
-    for(int i=0; i<2000; i++){
-        printf("X");
-        essential::Time::sleep(1);
+    int time1, time2;
+    time1 = kArgs->timer->getUptimeMS();
+    for(int i=0; i<100; i++){
+        if(i%1==0) printf("X");
+        essential::Time::sleep(40);
     }
+    time2 = kArgs->timer->getUptimeMS();
+    printf("\ntask2 took : %dms\n",time2-time1);
 }
 
 void task_Net(void* arg) {
@@ -25,6 +36,7 @@ void task_Net(void* arg) {
         printf("[NET ERROR] no driver found!\n");
         return;
     }
+    return;
 
 }
 
@@ -32,15 +44,17 @@ driver::amd_am79c973* globalNetDriver = nullptr;
 
 void kernelTail(void* arg)
 {
-    KernelArgs* args = (KernelArgs*)arg;
+    KernelArgs* kArgs = (KernelArgs*)arg;
 
     printf("\nHELLO FROM OSOS ('help' to see commands)...\n");
+    
     #if defined(serialMode) && serialMode == 1
-        printf("\nYou are using serial QEMU, Use 'ctrl+H' For Backspace\n");
+    printf("\nYou are using serial QEMU, Use 'ctrl+H' For Backspace\n");
     #endif
+
     printf("\nOSOS> ");
     while (true){
-        args->shell->update();
+        kArgs->shell->update();
         asm("hlt");
     }
     
@@ -67,7 +81,7 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     memory::kernel_heap.init((void*)0x1000000, 8 * 1024 * 1024);
     
     // for kernel therads
-    essential::KThreadManager* osos_ThreadManager = new essential::KThreadManager(&osos_GDT_Manager);
+    concurrency::KThreadManager* osos_ThreadManager = new concurrency::KThreadManager(&osos_GDT_Manager);
     // for interrupts
     hardware_communication::InterruptManager* osos_InterruptManager = new hardware_communication::InterruptManager(&osos_GDT_Manager, osos_ThreadManager);
     
@@ -101,30 +115,33 @@ extern "C" void kernelMain(multiboot_info_t *mbi, uint32_t magicnumber)
     osos_InterruptManager->installTable();
     
     // making Thread Arguments for kernelTail task
-    KernelArgs* kArgs = new KernelArgs();
+    kArgs = new KernelArgs();
     kArgs->gdtManager = &osos_GDT_Manager;
     kArgs->interruptManager = osos_InterruptManager;
     kArgs->driverManager = driverManager;
     kArgs->timer = timer;
     kArgs->shell = shell;
+    kArgs->theradManager = osos_ThreadManager;
 
     // creating tasks (or kernel therads)
-    essential::KThread *haltTask= new essential::KThread(&kernelTail, kArgs);
-    essential::KThread* task1 = new essential::KThread(&task_o, nullptr);
-    essential::KThread* task2 = new essential::KThread(&task_X, nullptr);
+    concurrency::KThread* task1 = new concurrency::KThread(&task_o, nullptr);
+    concurrency::KThread* task2 = new concurrency::KThread(&task_X, nullptr);
     
-    osos_ThreadManager->addThread(haltTask);
+    
     shell->addShellTask(task1);
     shell->addShellTask(task2);
     
     if(globalNetDriver != nullptr) {
-        essential::KThread* task3 = new essential::KThread(&task_Net, (void*)globalNetDriver);
+        concurrency::KThread* task3 = new concurrency::KThread(&task_Net, (void*)globalNetDriver);
         shell->addShellTask(task3);
         printf("[INFO] Network task added to Kernel Shell.\n");
     } else {
         printf("[WARN] Network driver not initialized.\n");
     }
     
+    concurrency::KThread *haltTask= new concurrency::KThread(&kernelTail, kArgs);
+    haltTask->start(); // will not start executing till interrupts are off
+
     // Enable Interrupts (Start the System)
     hardware_communication::InterruptManager::activate();
 

@@ -1,18 +1,23 @@
 #include "concurrency/kmultitasking.hpp"
 
-using namespace essential;
+using namespace concurrency;
 
 /// @brief Global pointer to the active KThreadManager instance (used by onThreadExit).
-static KThreadManager* activeTaskManager = nullptr;
+static KThreadManager* activeKThreadManager = nullptr;
 
 KThread::KThread(void (*entrypoint)(void*), void* arg)
 {
     this->m_entrypoint = entrypoint;
     this->m_arg = arg;
-    this->m_codeSegmentSelector = activeTaskManager->gdt_manager->kernel_CS_selector();
+    this->m_codeSegmentSelector = activeKThreadManager->gdt_manager->kernel_CS_selector();
 } 
 
 KThread::~KThread(){}
+
+bool KThread::start()
+{
+    return activeKThreadManager->addThread(this);
+}
 
 void KThread::reset()
 {
@@ -33,12 +38,12 @@ void KThread::reset()
     cpustate->ss  = (uint32_t)m_arg;
 }
 
-KThreadManager::KThreadManager(GDT_Manager *gdt_manager)
+KThreadManager::KThreadManager(essential::GDT_Manager *gdt_manager)
 {
     this->gdt_manager=gdt_manager;
     numThreads = 0;
     currentThread = -1;
-    activeTaskManager = this;
+    activeKThreadManager = this;
 }
 
 KThreadManager::~KThreadManager(){}
@@ -69,12 +74,13 @@ void KThreadManager::killCurrentThread()
 
 void KThreadManager::onThreadExit()
 {
-    if (activeTaskManager != nullptr)
-        activeTaskManager->killCurrentThread();
+    if (activeKThreadManager != nullptr)
+        activeKThreadManager->killCurrentThread();
     while(true)
         asm("hlt");
 }
 
+#include "basic/kiostream.hpp"
 CPUState* KThreadManager::scheduleThreads(CPUState* cpustate, bool forceSwitch)
 {
     const int TIME_QUANTUM = 20; 

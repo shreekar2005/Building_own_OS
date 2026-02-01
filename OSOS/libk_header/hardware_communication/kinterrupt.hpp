@@ -16,6 +16,7 @@ extern "C"
     void handleIRQ0x04();   // Serial IO (COM1)
     void handleIRQ0x0B();   // Network card
     void handleIRQ0x0C();   // PS/2 Mouse 
+    void handleIRQ0x60();   // Sys call 0x80 : forcefully schedule thread 
 }
 
 namespace hardware_communication
@@ -58,7 +59,7 @@ class InterruptManager{
     protected:
         IDT_Row interruptDescriptorTable[256];
         InterruptHandler* handlers[256];
-        essential::KThreadManager* thread_manager;
+        concurrency::KThreadManager* thread_manager;
 
         /// @brief Populates a specific entry in the Interrupt Descriptor Table (IDT).
         /// @param interruptNumber The index of the IDT entry to set (0-255).
@@ -79,7 +80,7 @@ class InterruptManager{
         static hardware_communication::Port8BitSlow picSlaveData;
 
     public:
-        InterruptManager(essential::GDT_Manager* gdt, essential::KThreadManager* thread_manager);
+        InterruptManager(essential::GDT_Manager* gdt, concurrency::KThreadManager* thread_manager);
         ~InterruptManager();
 
         /// @brief Loads the Interrupt Descriptor Table (IDT) into the CPU's IDTR register.

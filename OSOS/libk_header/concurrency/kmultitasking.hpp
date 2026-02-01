@@ -4,7 +4,7 @@
 #include "basic/ktypes.hpp"
 #include "essential/kgdt.hpp"
 
-namespace essential
+namespace concurrency
 {
 
 /// @brief Represents the state of the CPU registers.
@@ -55,6 +55,10 @@ class KThread {
         KThread(void (*entrypoint)(void*), void* arg); 
         
         ~KThread();
+        
+        /// @brief start thread (add thread to thread scheduling)
+        /// @return true if the thread was added successfully, false if the queue is full or thread is already running.
+        bool start();
 
         /// @brief Resets or initializes the thread's stack frame.
         /// @details This function sets up a "fake" interrupt stack frame at the top of the `stack` array.
@@ -77,10 +81,10 @@ class KThreadManager{
         int currentThread;
 
     public:
-        GDT_Manager *gdt_manager;
+        essential::GDT_Manager *gdt_manager;
 
         /// @brief Initializes the KThread Manager.
-        KThreadManager(GDT_Manager *gdt_manager);
+        KThreadManager(essential::GDT_Manager *gdt_manager);
         
         ~KThreadManager();
 

@@ -22,6 +22,7 @@
 struct KernelArgs {
     essential::GDT_Manager* gdtManager;
     hardware_communication::InterruptManager* interruptManager;
+    concurrency::KThreadManager* theradManager;
     driver::DriverManager* driverManager;
     driver::TimerDriver* timer;
     driver::KeyboardDriver* keyboard;
